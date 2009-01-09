@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Known bugs in Scribd Uploader</title>
+		<meta name="keywords" content="bugs, todo" />
+		<meta name="project" content="Scribd Uploader Help" />
+		<meta name="description" content="A list of bugs in Scribd Uploader already known to the developers." />
+    <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+    <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+    <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+	</head>
+
+	<body class="en">
+		<div id="Nav">
+			<a id="known_bugs" />
+			<div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Scribd Uploader Help">Home</a></div>
+			<!-- div id="NavRight"><a class="NavLinkRight" href="help:anchor='index' bookID=Scribd Uploader Help">Index</a></div -->
+		</div>
+		
+		<div class="AppleTopic">
+			<div class="Section">
+				<div id="Header">
+					<div id="Icon"><img id="iconimg" src="../gfx/icon32.png" alt="Scribd Uploader icon" height="32" width="32" /></div>
+					<div class="Name">Known bugs in Scribd Uploader</div>
+				</div>
+				<div class="AppleTopicBody">
+					<div class="Intro">
+						<p class="Para">Scribd Uploader is a continual work in progress. Occasionally Scribd may elect to release a version of the Uploader despite knowing that some bugs remain in the software. This is usually because the bugs, while not ideal, were not so intrusive as to warrant a release delay. For your information, all bugs in Scribd Uploader known to Scribd are listed below.</p>
+						<div class="Task">
+							<div class="Name">Known bugs</div>
+							<ul class="ListBullet">
+								<li>
+									<p class="Para">Upload progress is either zero or one. This manifests itself in the upload progress bar, which is either completely empty or completely full. This appears to be due to a limitation in <tt>ASIHTTPRequest</tt>.</p>
+								</li>
+								<li>
+									<p class="Para">The Upload button does not disable when the list of files to be uploaded is empty. The Cocoa Binding has been configured properly, but appears not to work nonetheless.</p>
+								</li>
+								<li>
+									<p class="Para">The Upload button does not disable when files are uploading. As above, the Cocoa Binding is correctly configured, but apparently doesn&rsquo;t work.</p>
+								</li>
+								<li>
+									<p class="Para">The alert that appears when a file is moved or deleted between Scribd Uploader processes is not aligned with its parent window.</p>
+								</li>
+								<li>
+									<p class="Para">The error sheet that appears after a login-password mismatch is not the front window by default. This appears to be a limitation of spawning sheets from other sheets.</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

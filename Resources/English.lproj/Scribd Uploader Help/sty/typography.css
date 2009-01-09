@@ -1,0 +1,3508 @@
+/* typography.css      version 1.0.1n  HTML   12-04-08 */
+
+#Header {
+    margin-top: 2.85em;
+    padding-right: 6px
+}
+
+#Icon {
+    margin-bottom: -3px;
+    padding-right: .5em;
+    float: left
+}
+
+
+#Header #Icon + .Name {
+    font-size : 100%;
+    line-height: 125%;
+    font-weight : bold;
+    padding-top : .6em;
+    padding-right: 1em;
+    padding-bottom: 1.15em;
+    /* margin-left: 2.55em; */
+    color : black;
+}
+
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* APPLE ACCESS TOC */
+/* ------------------------------------------------------*/
+
+
+.AppleAccessTOCBody {
+    margin-top: -.15em;
+    margin-left: 2.5em;
+}
+
+.AppleAccessTOCBody .TOC:first-child {
+    margin-top: .4em !important;
+}
+
+.AppleAccessTOCBody .TOC + .TOC {
+    margin-top : 1.65em !important;
+}
+
+.AppleAccessTOCBody > .Intro {
+    margin-bottom: 1.65em;
+    margin-right: 2em;
+}
+
+.AppleAccessTOCBody > .Intro + .TOC {
+    margin-top : -.2em;
+}
+
+.AppleAccessTOCBody > .Intro + .TOC > .LinkTopicPage:first-child {
+    margin-top : -.25em;
+    margin-right: 2em;
+}
+
+.AppleAccessTOCBody .TOC > .Name {
+    font-size : 75%;
+    line-height: 150%;
+    font-weight : bold;
+    margin-bottom : 0em;
+    padding-right: 1em;
+    color : black;
+}
+
+.AppleAccessTOCBody .TOC > .Name + p.Para {
+    margin-left: .85em;
+    margin-right: 2em;
+    margin-top : 0em !important;
+}
+
+.AppleAccessTOCBody .TOC > .Name + p.Para + p.Para {
+    margin-left: .85em;
+    margin-right: 2em;
+    margin-top : -.25em !important;
+}
+
+.AppleAccessTOCBody .TOC > .Name + p.Para + p.Para ~ p.Para {
+    margin-left: .85em;
+    margin-right: 2em;
+    margin-top : -.25em !important;
+}
+
+.AppleAccessTOCBody .TOC > .Name + .LinkTopicPage{
+    margin-top : 0em !important;
+    margin-right: 2em;
+}
+
+.AppleAccessTOCBody .TOC > .Name ~ .LinkTopicPage{
+    margin-left: .65em;
+    margin-right: 2em;
+}
+
+
+.TOC > p.Para + .LinkTopicPage {
+    margin-left: .65em;
+    margin-right: 2em;
+    margin-top : -.25em !important;
+    margin-bottom : 0em;
+}
+
+.TOC > p.Para + .LinkTopicPage ~ .LinkTopicPage {
+    margin-left: .65em;
+    margin-right: 2em;
+    margin-top: .19em;
+    margin-bottom: .19em;
+}
+
+.AppleAccessTOCBody .TOC > .LinkTopicPage {
+    line-height: 95%;
+    margin-right: 2em;
+    margin-top: .19em;
+    margin-bottom: .19em;
+}
+
+.AppleAccessTOCBody .TOC > .LinkTopicPage:first-child {
+    margin-top : .25em;
+}
+
+.AppleAccessTOCBody .LinkTopicPage a:link:after {
+    content: "\25B8";
+    font-size : 120%;
+    color : #3366cc;
+    vertical-align:-7%;
+    padding-left: .1em;
+}
+
+.AppleAccessTOCBody .LinkTopicPage a:visited:after {
+    content: "\25B8";
+    font-size : 112.5%;
+    color : #011e57;
+    vertical-align:-7%;
+    padding-left: .1em;
+}
+
+
+.AppleAccessTOCBody .TOC > .Name ~ .ShowAll{
+    margin-left: .66em;
+    line-height: 115%;
+}
+
+.ShowAll {
+    font-size : .95em;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #3366cc;
+    margin-right : -.5em;
+}
+
+.ShowAll:after {
+    content: "\25B8";
+    font-size : 95%;
+    color : #3366cc;
+    vertical-align:-65%;
+    padding-left: .1em;
+}
+
+.AppleAccessTOCBody + #feedback {
+    margin-left: 2.45em;
+}
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* APPLE TOPIC */
+/* ------------------------------------------------------*/
+
+
+.AppleTopicBody>.Task:first-child {
+    margin-top: .6em !important;
+}
+
+.AppleTopicBody > .Intro > table:first-child {
+    margin-top: .5em;
+}
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* SECTION */
+/* ------------------------------------------------------*/
+
+.Section >.Name {
+    font-size : 100%;
+    line-height: 115%;
+    font-weight : bold;
+    padding-top : .5em;
+    padding-right: 1em;
+    color : black;
+}
+
+.Section .Name + .Para { 
+    margin-top : 0em;
+}
+
+p, ul, ol   { 
+    margin-right : 0em; 
+}
+
+p.Para { 
+    font-size : 75%;
+    line-height: 150%;
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.subscript {
+    vertical-align: baseline;
+	font-size: 0.8em;
+	position: relative;
+	top: 0.4em;}
+
+.superscript {
+    vertical-align: baseline;
+	font-size: 0.8em;
+	position: relative;
+	top: -0.4em;
+}
+
+/* AppleIcons */
+
+span.AppleIconBody {
+    font : .75em "AppleSymbols", sans-serif;
+    font-weight:normal;
+    color : #333;
+}
+
+span.Emphasis {
+    font-style : italic;
+}
+
+span.EmphasisDisplay {
+    font-weight : bold;
+}
+
+span.yBlack {
+    font-weight : bold;
+    color: black;
+}
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* INTRO */
+/* ------------------------------------------------------*/
+
+.Intro {
+    margin-top : 0em;
+    margin-bottom : -.4em;
+}
+
+.Intro >.Para {
+    margin-top : .5em;
+    margin-bottom: .75em;
+}
+
+.Intro > table:first-child {
+    margin-top : .25em;
+}
+
+.Intro > table:last-child {
+    margin-bottom : 1.9em;
+}
+
+.Intro > table + p.Para  { 
+     margin-top: -1em;
+}
+
+.Intro p.Para + table {
+    margin-top: 1.2em !important;
+}
+
+table + table {
+    margin-top: -.6em !important;
+}
+
+.Intro + .Outro {
+    margin-top: -.5em !important;
+}
+
+.Intro + .Outro > .Subhead {
+    margin-top: 1.5em !important;
+}
+
+
+
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* OUTRO */
+/* ------------------------------------------------------*/
+
+.Outro {
+    margin-top : 1.25em;
+    margin-bottom : 0em;
+}
+
+.Outro >.Para {
+    margin-top : .5em;
+    margin-bottom: .75em;
+}
+
+.Outro > p.Para:only-child {
+    margin-top : -.25em;
+    margin-bottom: -.4em;
+}
+
+.Outro p.Para:first-child {
+    padding-top: .75em !Important;
+}
+
+.Outro > p.Para:last-child {
+    margin-bottom: -.5em !important;
+}
+
+.Outro >.Alert {
+    margin-top : .5em;
+    margin-bottom: .5em;
+}
+
+.Outro > .Alert:last-child {
+    margin-bottom: -.5em !important;
+}
+
+.Outro > .ListBullet:last-child {
+    margin-bottom: -.4em !important;
+}
+
+.Outro > p.Para + ul.ListBullet {
+    margin-top: 1em;
+    margin-bottom: .75em;
+}
+
+.Outro p.Para + table {
+    margin-top: 1.2em !important;
+}
+
+.Outro > table:first-child {
+    margin-top : 1.75em;
+}
+
+.Outro > table:last-child {
+    margin-bottom : 1em;
+}
+
+.Outro > table + p.Para  { 
+     margin-top: -1em;
+}
+
+.Task + .Outro > .Subhead {
+    margin-top: 1.25em !important;
+}
+
+
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ALERTS */
+/* ------------------------------------------------------*/
+
+.Caution {
+    font-size : 75%;
+    color: #333;
+}
+
+span.Caution {
+    font-size : .95em;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #000;
+    margin-right : -.5em;
+}
+
+.Task span.Caution {
+    font-size : .9em !important;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #000;
+    margin-right : -.5em;
+    margin-left : 0em !important;
+}
+
+/* ------------------------------------------------------*/
+
+.Notice {
+    font-size : 75%;
+    color: #333;
+}
+
+span.Notice {
+    font-size : .95em;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #000;
+    margin-right : -.5em;
+}
+
+.Task span.Notice {
+    font-size : .9em !important;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #000;
+    margin-right : -.5em;
+    margin-left : 0em !important;
+}
+
+/* ------------------------------------------------------*/
+
+.Important {
+    font-size : 75%;
+    color: #333;
+}
+
+span.Important {
+    font-size : .95em;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #000;
+    margin-right : -.5em;
+}
+
+.Task span.Important {
+    font-size : .9em !important;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #000;
+    margin-right : -.5em;
+    margin-left : 0em !important;
+}
+
+/* ------------------------------------------------------*/
+
+.Note {
+    font-size : 75%;
+    color: #333;
+    margin-top: .25em;
+    margin-bottom: .5em;
+
+}
+
+span.Note {
+    font-size : .95em;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #000;
+    margin-right : -.5em;
+}
+
+.Task span.Note {
+    font-size : .9em !important;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #000;
+    margin-right : -.5em;
+    margin-left : 0em !important;
+}
+
+.Intro span.Note {
+    font-size : .9em !important;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #000;
+    margin-right : -.5em;
+    margin-left : 0em !important;
+}
+
+/* ------------------------------------------------------*/
+
+.Tip {
+    font-size : 75%;
+    color: #333;
+}
+
+span.Tip {
+    font-size : .95em;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #000;
+    margin-right : -.5em;
+}
+
+.Task span.Tip {
+    font-size : .9em !important;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #000;
+    margin-right : -.5em;
+    margin-left : 0em !important;
+}
+
+/* ------------------------------------------------------*/
+
+.Warning {
+    font-size : 75%;
+    color: #333;
+}
+
+span.Warning {
+    font-size : .95em;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #000;
+    margin-right : -.5em;
+}
+
+.Task span.Warning {
+    font-size : .9em !important;
+    font-weight : bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color : #000;
+    margin-right : -.5em;
+    margin-left : 0em !important;
+}
+
+.Caution > a, .Notice > a, .Note > a, .Important > a, .Tip > a, .Warning > a {
+    font-size : 100%;
+}
+
+/* ------------------------------------------------------*/
+/* ALERTS IN INTRO */
+
+.Intro .Caution, .Intro .Important, .Intro .Notice, .Intro .Note, .Intro .Tip, .Intro .Warning {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.Intro .ListBullet .Caution,  .Intro .ListBullet .Important, .Intro .ListBullet .Notice, .Intro .ListBullet .Note, .Intro .ListBullet .Tip, .Intro .ListBullet .Warning {
+    font-size : 100%;
+}
+
+.Intro >.Alert {
+    margin-top : .5em;
+    margin-bottom: .5em;
+}
+
+/* tightens space before first link*/
+
+.Intro > .Alert + ul.ListBullet  { 
+    margin-top: 1em;
+    margin-bottom: .75em;
+}
+
+.Intro > .Alert:only-child {
+    margin-bottom: -.25em;
+}
+
+.Intro > .Alert:only-child >.Tip {
+    margin-bottom: -.5em !important;
+}
+
+.Intro > .Alert:last-child {
+    margin-bottom: -.5em !important;
+}
+
+/* ------------------------------------------------------*/
+/* ALERTS IN TASK INTRO */
+
+.Task > .Intro > .Alert {
+    font-size : 100%;
+    margin-top : .5em;
+    margin-bottom: .5em;
+}
+
+.Task .Intro .Caution, .Task .Intro .Important, .Task .Intro .Notice, .Task .Intro .Note, .Task .Intro .Tip, .Task .Intro .Warning {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.Task .Intro .Alert + p.Para {
+    margin-top: .5em;
+}
+
+/* ------------------------------------------------------*/
+/* ALERTS IN TASK BULLET */
+
+.Task .ListBullet .Caution,  .Task .ListBullet .Important, .ListBullet .Notice, .Task .ListBullet .Note, .Task .ListBullet .Tip, .Task .ListBullet .Warning {
+    margin-top : .25em;
+    margin-bottom: .5em;
+}
+
+.Task .ListBullet > .Alert {
+    font-size : 100%;
+}
+
+.Task .ListBullet > .Alert + p.Para {
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.Task .ListBullet + .Outro .Alert {
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.Task .ListBullet.Alert:last-child {
+    margin-bottom: 1.75em;
+}
+
+/* ------------------------------------------------------*/
+/* ALERTS IN TASK */
+
+.Task .Alert {
+    font-size : 130%;
+    margin-top : .65em;
+    margin-bottom: .5em;
+}
+
+.Task .ListNumber > li > .ListBullet > li > .Alert {
+    font-size : 100%;
+    margin-top : .65em;
+    margin-bottom: .5em;
+}
+
+.Task .ListNumber > li > .Alert + .ListBullet {
+    margin-top : 1.15em !important;
+}
+
+/* ------------------------------------------------------*/
+/* ALERTS IN TASK SINGLE */
+
+.Task .ListSingle .Caution,  .Task .ListSingle .Important,  .Task .ListSingle .Notice, .Task .ListSingle .Note, .Task .ListSingle .Tip, .Task .ListSingle .Warning {
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.Task .ListSingle > .Alert {
+    font-size : 100%;
+    margin-top : 0em !important;
+}
+
+.Task .ListSingle > .Alert + p.Para {
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.Task .ListSingle + .Outro .Alert {
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.Task .ListSingle .Alert:last-child {
+    margin-bottom: 1.25em;
+}
+
+.TaskMulti > .Task > .ListSingle +.Outro >.Alert  { 
+    margin-bottom: .5em;
+}
+
+.TaskMulti > .Task > .ListSingle +.Outro >.Alert + .ListBullet  { 
+    margin-top: -.75em;
+}
+
+/* ------------------------------------------------------*/
+/* ALERTS IN OUTRO */
+
+.Outro .Caution, .Outro .Important, .Outro .Notice, .Outro .Note, .Outro .Tip, .Outro .Warning {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.Outro > .Alert + ul.ListBullet  { 
+    margin-top: 1em;
+    margin-bottom: .75em;
+}
+
+.Outro > .Alert:only-child {
+    margin-bottom: -.25em;
+}
+
+.Outro > .Alert:first-child {
+    margin-top: 1.65em;
+}
+
+
+
+.Outro > .Alert:only-child >.Tip {
+    margin-bottom: -.5em !important;
+}
+
+
+
+/* ------------------------------------------------------*/
+/* ALERTS IN TASK OUTRO */
+
+.Task > .Outro > .Alert {
+    font-size : 100%;
+}
+
+.Task .Outro .Caution, .Task .Outro .Important, .Task .Outro .Notice, .Task .Outro .Note, .Task .Outro .Tip, .Task .Outro .Warning {
+    margin-top: .25em !Important;
+    margin-bottom: .75em;
+}
+
+
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* CODE */
+/* ------------------------------------------------------*/
+
+.CodeListing {
+    margin-top : .5em;
+    margin-bottom : .5em;
+}
+
+/* code 12px */
+
+.CodeLine {
+    font : .75em "Courier", sans-serif;
+    line-height : 1.75;
+    color : #333;
+}
+
+.CodeLine:last-child { 
+    margin-bottom : .75em;
+}
+
+/* ------------------------------------------------------*/
+/* inline code 12px */
+
+p.Para span.CodeBody {
+    font : 1em "Courier", sans-serif;
+}
+
+.CodeLine span.CodeEmphasis {
+    font-style:italic;
+    color : #333;
+}
+
+.CodeLine span.CodeEmphasisDisplay {
+    font-weight:bold;
+    color : #333;
+}
+
+span.CodeUnderline {
+    font-weight:normal;
+    text-decoration:underline;
+    color : #333;
+}
+
+/* ------------------------------------------------------*/
+/* CODE combinations  */
+/* ------------------------------------------------------*/
+
+.CodeListing + table {
+    margin-top : 1.25em !important;
+}
+
+.Task .CodeLine {
+    font-size : 100% !important;
+    line-height : 1.75;
+    color : #333;
+}
+
+.Task .ListBullet .CodeLine {
+    font-size : 100% !important;
+    line-height : 1.75;
+    color : #333;
+}
+
+.Task .ListSingle .CodeLine {
+    font-size : 75% !important;
+    line-height : 1.75;
+    color : #333;
+}
+
+.Task > .Name + .CodeListing {
+    font-size : 75% !important;
+    line-height : 1.75;
+    color : #333;
+    margin-left: .5em;
+    margin-top: -.35em;
+    margin-bottom: .5em:
+}
+
+.Task > .Name + .CodeListing:last-child {
+    margin-bottom: 1.5em !important:
+}
+
+.Task > .Name + .Intro + .CodeListing {
+    font-size : 75% !important;
+    line-height : 1.75;
+    color : #333;
+}
+
+.Task > .Name + .Intro + .CodeListing:last-child {
+    margin-bottom: 1.5em !important:
+}
+
+.Task > .ListSingle > .CodeListing + table {
+    margin-top: 1.25em !important;
+    margin-bottom: 1.25em !important;
+}
+
+.ListBullet .CodeLine {
+    font-size : 80% !important;
+    line-height : 1.75;
+    color : #333;
+}
+
+.Intro .ListBullet .CodeLine {
+    font-size : 100% !important;
+    line-height : 1.75;
+    color : #333;
+}
+
+.Outro .ListBullet .CodeLine {
+    font-size : 100% !important;
+    line-height : 1.75;
+    color : #333;
+}
+
+
+/* ------------------------------------------------------*/
+/* CODE Table code  */
+/* ------------------------------------------------------*/
+
+
+td .CodeListing {
+    display: block;
+    font-size : 100%;
+    margin-top: .3em;
+    margin-bottom: .5em;
+}
+
+td .CodeListing:last-child {
+    margin-bottom: -.25em;
+}
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* FIGURE */
+/* ------------------------------------------------------*/
+
+.Figure {
+    padding-top : 0em;
+    margin-top : .4em;
+    margin-bottom : 1.4em;
+}
+
+.Intro > .Figure {
+    padding-top : .5em;
+    margin-bottom : .75em;
+}
+
+.Intro > .Figure:last-child {
+    margin-bottom : 1em;
+}
+
+.Outro > .Figure {
+    padding-top : .25em;
+    margin-bottom : .75em;
+}
+
+.Outro > .Figure:first-child {
+    padding-top : .65em;
+}
+
+.Outro > .Figure:last-child {
+    margin-bottom : 1.25em;
+}
+
+th > .Figure {
+    padding-top : .5em;
+    margin-bottom : .5em;
+}
+
+td > .Figure {
+    padding-top : .3em;
+    margin-bottom : .5em;
+}
+
+td > .Figure:first-child {
+    padding-top : .3em;
+    margin-bottom : .5em;
+}
+
+td > .Figure:last-child {
+    margin-bottom : .4em;
+}
+
+.inlineGraphic {
+    display:inline;
+    vertical-align:middle;
+    padding-right: .5em;
+}
+
+.ConditionPrint >.inlineGraphic {
+    display:none;
+}
+
+img[src$=".ai"] {
+/* change extension to .png and convert ai to png on the fly ---*/
+}
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* HISTRINGS */
+/* ------------------------------------------------------*/
+
+
+.HIStrings {
+    list-style : none;
+    font-size : 75%;
+    margin-top : 1.5em;
+}
+
+.HISubString {
+    list-style : none;
+    list-style-position : outside;
+    margin-left : 0em;
+    margin-top: 0em;
+    margin-bottom: 1em;
+}
+
+.HISubString .HISubString {
+    margin-top: 0em;
+    margin-left : .25em;
+}
+
+/* bullet */
+
+.HISubString > li:before {
+    content: counter(mycounter, square) "";
+    color : #666;
+    font-size : 150%;
+    float: left;
+    position: relative;
+    clear:both;
+    top: -.3em;
+    margin-left : .15em;
+    margin-right : .35em;
+}
+
+/* nested HISubstring */
+
+.HISubString>li .HISubString > li:before {
+    content: counter(mycounter, square) "";
+    color : #fff;
+    font-size : 150%;
+    float: left;
+    position: relative;
+    top: -.3em;
+    margin-left : 0em;
+    margin-right : .3em;
+}
+
+/* description inside an HISubString */
+
+.HISubString .Description {
+    font-size : 100%;
+    font-weight : normal;
+    margin-bottom : .75em;
+    margin-left: 1.5em;
+    color: #333;
+}
+
+.HISubString .HISubString .Description {
+    margin-left: 1.25em;
+}
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* LINKS */
+/* ------------------------------------------------------*/
+
+
+a:link {
+    font-size : 75%;
+    color: #3366cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    font-size : 75%;
+    color: #011e57;
+    text-decoration: none;
+}
+
+p > a:link, .Caution > a:link, .Important > a:link, .Note > a:link, .Notice > a:link, .Tip > a:link, .Warning > a:link {
+    font-size : 100%;
+    line-height:inherit;
+    color: #3366cc;
+    text-decoration: none;
+    position: relative;
+}
+
+p > a:hover, .Caution > a:hover, .Important > a:hover, .Note > a:hover, .Notice > a:hover, .Tip > a:hover, .Warning > a:hover {
+    text-decoration: underline;
+}
+
+p > a:visited, .Caution > a:visited, .Important > a:visited, .Note > a:visited, .Notice > a:visited, .Tip > a:visited, .Warning > a:visited {
+    font-size : 100%;
+    color: #011e57;
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------*/
+
+.LinkTopicPage > a:visited, .LinkSubjectAnchor > a:visited, .LinkOpenApp > a:visited, .LinkOpenWithScript > a:visited {
+    color: #011e57;
+}
+
+.LinkTopicPage > a:hover, .LinkSubjectAnchor > a:hover, .LinkTopicPage > a:hover, .LinkOpenWithScript > a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------------------------------------*/
+/*  inline link */
+
+span.embeddedLinkTopicPage  { 
+    font-size : 135%;
+}
+
+span.LinkTopicPage  { 
+    font-size : 135%;
+}
+
+/* ------------------------------------------------------*/
+.AppleAccessTOCBody .LinkOpenApp, .AppleAccessTOCBody .LinkOpenPrefs, .AppleAccessTOCBody .LinkOpenWithScript, .AppleAccessTOCBody .LinkSubjectAnchor, .AppleAccessTOCBody .LinkTopicPage {
+    font-size : 100% !important;
+    line-height : 135%;
+    color: #3366cc;
+    text-decoration: none;
+    margin-top : -.25em;
+    margin-bottom : .25em;
+}
+
+.LinkOpenApp, .LinkOpenPrefs, .LinkOpenWithScript, .LinkSubjectAnchor, .LinkTopicPage {
+    font-size : 130% !important;
+    line-height : 135%;
+    color: #3366cc;
+    text-decoration: none;
+    margin-top : -.25em;
+    margin-bottom : .5em;
+}
+
+.ListSingle .LinkOpenApp, .ListSingle .LinkOpenPrefs, .ListSingle .LinkOpenWithScript, .ListSingle .LinkSubjectAnchor, .ListSingle .LinkTopicPage {
+    font-size : 100% !important;
+    line-height : 135%;
+    color: #3366cc;
+    text-decoration: none;
+    margin-top : -.25em;
+    margin-bottom : .5em;
+}
+
+/* ------------------------------------------------------*/
+
+.Intro .LinkOpenApp, .Intro .LinkOpenPrefs, .Intro .LinkOpenWithScript, .Intro .LinkSubjectAnchor, .Intro .LinkTopicPage {
+    font-size : 100% !important;
+    line-height : 135%;
+    color: #3366cc;
+    text-decoration: none;
+    margin-top : -.25em;
+    margin-bottom : .25em;
+}
+
+.Intro .LinkOpenApp:last-child, .Intro .LinkOpenPrefs:last-child, .Intro .LinkOpenWithScript:last-child, .Intro .LinkSubjectAnchor:last-child, .Intro .LinkTopicPage:last-child {
+     margin-bottom : -.5em;
+}
+
+/* ------------------------------------------------------*/
+
+.Intro .ListBullet > li > .LinkOpenApp, .Intro .ListBullet > li > .LinkOpenPrefs, .Intro .ListBullet > li > .LinkOpenWithScript, .Intro .ListBullet > li > .LinkSubjectAnchor, .Intro .ListBullet > li > .LinkTopicPage {
+    font-size : 130% !important;
+    margin-top : -.15em;
+    margin-bottom : .65em;
+}
+
+
+
+
+/*------------------------------------------------------*/
+
+
+.Task .LinkTopicPage + .LinkTopicPage, .Task .LinkTopicPage + .LinkOpenApp, .Task .LinkTopicPage + .LinkOpenPrefs, .Task .LinkTopicPage + .LinkOpenWithScript, .Task .LinkTopicPage + .LinkSubjectAnchor {
+    margin-top : -.5em;
+}
+
+.Task .LinkOpenApp + .LinkTopicPage, .Task .LinkOpenApp + .LinkOpenApp, .Task .LinkOpenApp + .LinkOpenPrefs, .Task .LinkOpenApp + .LinkOpenWithScript, .Task .LinkOpenApp + .LinkSubjectAnchor {
+    margin-top : -.5em;
+}
+
+.Task .LinkOpenPrefs + .LinkTopicPage, .Task .LinkOpenPrefs + .LinkOpenApp, .Task .LinkOpenPrefs + .LinkOpenPrefs, .Task .LinkOpenPrefs + .LinkOpenWithScript, .Task .LinkOpenPrefs + .LinkSubjectAnchor {
+    margin-top : -.5em;
+}
+
+.Task .LinkOpenWithScript + .LinkTopicPage, .Task .LinkOpenWithScript + .LinkOpenApp, .Task .LinkOpenWithScript + .LinkOpenPrefs, .Task .LinkOpenWithScript + .LinkOpenWithScript, .Task .LinkOpenWithScript + .LinkSubjectAnchor {
+    margin-top : -.5em;
+}
+
+.Task .LinkSubjectAnchor + .LinkTopicPage, .Task .LinkSubjectAnchor + .LinkOpenApp, .Task .LinkSubjectAnchor + .LinkOpenPrefs, .Task .LinkSubjectAnchor + .LinkOpenWithScript, .Task .LinkSubjectAnchor + .LinkSubjectAnchor {
+    margin-top : -.5em;
+}
+
+
+/* ------------------------------------------------------*/
+
+
+.Outro .LinkOpenApp, .Outro .LinkOpenPrefs, .Outro .LinkOpenWithScript, .Outro .LinkSubjectAnchor, .Outro .LinkTopicPage {
+    font-size : 100% !important;
+    line-height : 135%;
+    color: #3366cc;
+    text-decoration: none;
+    margin-top : -.25em;
+    margin-bottom : .25em;
+}
+
+.Outro .LinkOpenApp:last-child, .Outro .LinkOpenPrefs:last-child, .Outro .LinkOpenWithScript:last-child, .Outro .LinkSubjectAnchor:last-child, .Outro .LinkTopicPage:last-child {
+     margin-bottom : -.75em;
+}
+
+
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* LINK INTERNAL */
+/* ------------------------------------------------------*/
+
+
+div.LinkInternal:before  { 
+    content:"";
+    display: block;
+    -webkit-box-shadow: 0em .1em .2em #ccc;
+    border-top:.1em solid #d7d7d7;
+    overflow: visible;
+    height: 0em;
+    width: 100%;
+    display: block;
+    margin-top: 1em;
+}
+
+/* hides rule above for LinkInternal box that directly follows a Task box*/
+
+.TaskMulti + .LinkInternal:before, .Task + .LinkInternal:before, .TaskMulti + .LinkExternal:before, .Task + .LinkExternal:before  { 
+    content:"";
+    display: block;
+    -webkit-box-shadow: 0em 0em 0em #fff;
+    border-top: 0em solid #fff;
+    height: 0em;
+    width: 0%;
+    display: block;
+    margin-top: 0em;
+}
+
+span.LinkInternal  { 
+    display: block;
+    font-size : 75%;
+    font-weight : bold;
+    color : #000;
+    margin-right : .2em;
+    margin-top: 1.8em;
+    margin-bottom: .15em;
+}
+
+div.LinkInternal:last-child  { 
+    margin-bottom: -.5em;
+}
+
+.Intro + .LinkInternal  { 
+    margin-top: 1.75em !important;
+}
+
+div.LinkInternal > .LinkSubjectAnchor, div.LinkInternal > .LinkTopicPage  { 
+    font-size : 100% !important;
+    line-height : 135%;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+/* ------------------------------------------------------*/
+
+.Outro + div.LinkInternal  { 
+    margin-top: 1.75em;
+}
+
+/* ------------------------------------------------------*/
+
+div.LinkInternal + div.LinkExternal  { 
+    margin-top: -.25em;
+}
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* LINK EXTERNAL */
+/* ------------------------------------------------------*/
+
+
+div.LinkExternal:before  { 
+    content:"";
+    display: block;
+    -webkit-box-shadow: 0em .1em .2em #ccc;
+    border-top:.1em solid #d7d7d7;
+    overflow: visible;
+    height: 0em;
+    width: 100%;
+    display: block;
+    margin-top: 1.25em;
+}
+
+span.LinkExternal  { 
+    display: block;
+    font-size : 75%;
+    font-weight : bold;
+    color : #000;
+    margin-right : .2em;
+    margin-top: 1.8em;
+    margin-bottom: -.25em;
+}
+
+/* ------------------------------------------------------*/
+
+.Intro + div.LinkExternal:before  { 
+    content:"";
+    display: block;
+    -webkit-box-shadow: 0em .1em .2em #ccc;
+    border-top:.1em solid #d7d7d7;
+    overflow: visible;
+    height: 0em;
+    width: 100%;
+    display: block;
+    margin-top: 1.6em;
+}
+
+.Outro + div.LinkExternal:before  { 
+    content:"";
+    display: block;
+    -webkit-box-shadow: 0em .1em .2em #ccc;
+    border-top:.1em solid #d7d7d7;
+    overflow: visible;
+    height: 0em;
+    width: 100%;
+    display: block;
+    margin-top: 1.6em;
+}
+
+div.LinkExternal > .LinkAppleWeb, div.LinkExternal > .LinkCustomWeb, div.LinkExternal > .LinkHandBuilt, div.LinkExternal > .LinkOpenApp, div.LinkExternal > .LinkOpenPrefs, div.LinkExternal > .LinkOpenWithScript  { 
+    font-size : 100% !important;
+    margin-bottom : 0em;
+}
+
+/* ------------------------------------------------------*/
+
+.Task + .LinkExternal  { 
+    margin-top: 1.25em;
+}
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* LINK FEEDBACK */
+/* ------------------------------------------------------*/
+
+
+#feedback {
+    margin-top: 1em;
+}
+
+.LinkFeedback {
+	font-size: 75%;
+	font-family: "Lucida Grande", Arial, sans-serif;
+	margin-left:.15em;
+	margin-right:.25em;
+} 
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* SUBHEAD */
+/* ------------------------------------------------------*/
+
+.Subhead > .Name {
+    font-size : 75%;
+    font-weight : bold; 
+    margin-top : 1.5em;
+    color : black;
+}
+
+/* ------------------------------------------------------*/
+/* subhead combinations */
+/* ------------------------------------------------------*/
+
+.Subhead > .ListBullet {
+    font-size : 75%;
+    margin-left : 1.4em;
+}
+
+.Subhead > .ListBullet >li {
+    font-size : 100%;
+    margin-top : .25em;
+    margin-bottom : .5em;
+}
+
+.Subhead > .ListBullet >li > p.Para {
+    font-size : 100%;
+    margin-top : .5em;
+    margin-bottom : .75em;
+}
+
+.Subhead > .ListBullet >li > .ListBullet {
+    margin-left : 1.4em;
+    margin-top : 1.25em !important;
+    margin-bottom : .75em !important;
+}
+
+.Subhead > .ListBullet >li > .ListBullet >li > p.Para {
+    font-size : 100%;
+    margin-top : .25em;
+    margin-bottom : .25em;
+}
+
+.Subhead + table {
+    margin-top : 1em !important;
+}
+
+table + .Subhead {
+    margin-top : -.75em !Important;
+}
+
+.Subhead > p.Para:first-of-type {
+    font-size : 75%;
+    margin-top : .5em !Important;
+}
+
+.Subhead + .Subhead {
+    margin-top : 0em;
+}
+
+.Subhead > ul.ListDescriptor { 
+    font-size : 75%;
+    margin-top : .75em;
+}
+
+/* bullet size, shape, and position */
+
+.Subhead > table ul.ListBullet > li:before {
+    content: counter(mycounter, square) "";
+    color : #666;
+    font-size : 150%;
+    float: left;
+    position: relative;
+    top: .25em;
+    margin-right : .3em;
+    margin-left : -.9em;
+}
+
+.Subhead > table ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 75%;
+    margin-left : 1.4em;
+    margin-top: .25em;
+    margin-bottom: .75em;
+}
+
+
+.Subhead > table ul.ListBullet > li p.Para {
+    margin-top: .25em;
+    margin-bottom: .75em;
+}
+
+.Subhead > table:last-child {
+    margin-bottom: 0em !important;
+}
+
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* TASK LISTS */
+/* ------------------------------------------------------*/
+
+.Task {
+    margin-top : 1.6em;
+    margin-left : -.1em;
+    padding-top : .75em;
+    padding-left : 1em;
+    padding-right : 1.25em;
+    -webkit-border-bottom-left-radius: .75em .75em;
+    -webkit-border-bottom-right-radius: .75em .75em;
+    -webkit-border-top-left-radius: .75em .75em;
+    -webkit-border-top-right-radius: .75em .75em;
+    border-color: #d7d7d7;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-box-shadow: 0em 0.1em 0.25em #cccccc;
+}
+
+.AppleTopicBody .Task > .Name {
+    font-size : 90% !Important;
+    line-height: 135%;
+    font-weight : bold; 
+    color : #000;
+    margin-left: .4em;
+    margin-top: .5em;
+    margin-bottom: 1.5em;
+    padding-right: 1em;
+}
+
+
+.Task + .Task {
+    margin-top: 1.45em;
+}
+
+.Task + .Outro {
+    margin-top: .75em;
+}
+
+.Task + .Outro  { 
+    margin-top: .9em;
+}
+
+
+.TaskMulti + .Outro {
+    margin-top: .85em !important;
+}
+
+
+/* --------------------------------------------------------------------*/
+/* LIST BULLET  includes bullet lists outside of a task*/
+/* --------------------------------------------------------------------*/
+
+/* bullet size, shape, and position */
+
+.Intro ul.ListBullet > li:before, .Task > ul.ListBullet > li:before, .Task > ul.ListBullet > li > ul.ListBullet > li:before {
+    content: counter(mycounter, square) "";
+    color : #666;
+    font-size : 150%;
+    float: left;
+    clear:both;
+    position: relative;
+    top: -.3em;
+    margin-right : .3em;
+    margin-left : -.9em;
+}
+
+/* entire parent bullet list*/
+
+.Intro > ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 75%;
+    margin-left : 1.4em;
+    margin-top: .25em;
+    margin-bottom: .75em;
+}
+
+.Intro > ul.ListBullet > li:first-child {
+    margin-top: -.5em;
+}
+
+.Intro > ul.ListBullet:last-child {
+    margin-bottom: -.5em !important;
+}
+
+.Intro > ul.ListBullet > li p.Para {
+    font-size : 100%;
+    margin-top: .25em;
+    margin-bottom: .75em;
+}
+
+.Intro > ul.ListBullet > li:first-of-type {
+    margin-top: -.35em;
+}
+
+.Intro > ul.ListBullet + table {
+    margin-top: 2.75em !important;
+}
+
+.Intro > .ListBullet + table {
+    margin-top: 1em !important;
+}
+
+.ListBullet + table {
+    margin-top: .5em !important;
+}
+
+.Intro ul.ListBullet + table {
+    margin-top: 1.25em !important;
+}
+
+.Intro > ul.ListBullet > li p.Para + p.Para {
+    margin-top: .25em;
+    margin-bottom: .75em;
+}
+
+.Intro > ul.ListBullet > li p.Para + p.Para + p.Para {
+    margin-top: .25em;
+    margin-bottom: .75em;
+}
+
+
+.Intro ul.ListBullet + p.Para {
+    margin-top: .25em;
+    margin-bottom: .75em;
+}
+
+.Intro ul.ListBullet + p.Para:last-child {
+     margin-top: .25em !important;
+}
+
+.Intro > ul.ListBullet ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 100%;
+    margin-left : 1.4em;
+    margin-bottom: 1em;
+}
+
+.Intro > p.Para + ul.ListBullet {
+    margin-top: 1em;
+    margin-bottom: .75em;
+}
+
+
+/* ------------------------------------------------------*/
+
+.Task > ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 75%;
+    margin-left : 2.15em;
+    margin-bottom: 1.6em;
+}
+
+.Task > .Name + .ListBullet {
+    margin-top: 2em !important;
+}
+
+.Task > ul.ListBullet > li {
+    margin-bottom: 1.5em;
+}
+
+.Task > ul.ListBullet > li:first-of-type {
+    margin-top: -.5em;
+}
+
+.Task > ul.ListBullet > li:last-of-type {
+    margin-bottom: 1.5em;
+}
+
+.Task > ul.ListBullet > li > p.Para:first-child {
+    font-size : 100%;
+    line-height: 150%;
+    margin-bottom: .75em;
+    color : #333;
+}
+
+.Task > ul.ListBullet > li p {
+    font-size : 100%;
+}
+
+.Task > ul.ListBullet > li > p + p.Para {
+    font-size : 100%;
+    line-height: 150%;
+    margin-bottom: .75em;
+    color : #333;
+}
+
+.Task > ul.ListBullet ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 100%;
+    margin-left : 1.3em;
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.Task > ul.ListBullet ul.ListBullet > li {
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.TaskMulti > .Task > .Intro + .ListBullet {
+    margin-top: 1.95em !important;
+    margin-bottom: .5em;
+}
+
+.TaskMulti > .Task > .ListBullet + .Outro {
+    margin-left: .4em !important;
+    margin-top: -.5em !important;
+    margin-bottom: 1.25em;
+}
+
+/* ------------------------------------------------------*/
+/* TASK OUTRO */
+
+.ListBullet + .Outro  { 
+    margin-left: .25em !important;
+    margin-top: 1em !important;
+    margin-bottom: .5em;
+}
+
+.TaskMulti > .Task > .ListSingle +.Outro >.ListBullet  { 
+    margin-left: 1.75em;
+}
+
+.TaskMulti > .Task > .Outro {
+    margin-top: 0em !important;
+}
+
+
+
+/* ------------------------------------------------------*/
+
+/* bullet size, shape, and position */
+
+.Outro ul.ListBullet > li:before {
+    content: counter(mycounter, square) "";
+    color : #666;
+    font-size : 150%;
+    float: left;
+    position: relative;
+    top: .25em;
+    margin-right : .3em;
+    margin-left : -.9em;
+}
+
+.Outro > ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 75%;
+    margin-left : 1.4em;
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.Outro > ul.ListBullet > li {
+    font-size : 100%;
+    margin-top: -.75em;
+    margin-bottom: 0em;
+}
+
+.Outro > ul.ListBullet > li p.Para {
+    font-size : 100%;
+}
+
+.Outro > ul.ListBullet > li p.Para + p.Para {
+    margin-top: .5em;
+}
+
+.Outro ul.ListBullet + p.Para {
+    margin-top: .5em;
+}
+
+.Outro p.Para + ul.ListBullet {
+   margin-top: -.75em !important;
+   margin-bottom: .75em;
+}
+
+.Outro > ul.ListBullet:last-child {
+    margin-bottom: -.5em !important;
+}
+
+.Outro ul.ListBullet + table {
+    margin-top: 1.25em !important;
+}
+
+.Outro > ul.ListBullet ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 100%;
+    padding-top: .70em;
+    margin-left : 1.4em;
+    margin-bottom: 1em;
+}
+
+
+
+/* ------------------------------------------------------*/
+/* LIST DESCRIPTOR */
+/* ------------------------------------------------------*/
+
+ul.ListDescriptor { 
+    list-style : none;
+}
+
+.Description > a:link { 
+    font-size : 100%;
+    line-height:inherit;
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.Description > a:hover { 
+    text-decoration: underline;
+}
+
+.Description > a:visited { 
+    font-size : 100%;
+    color: #011e57;
+    text-decoration: none;
+}
+
+/* term */
+
+.Term {
+    display: run-in;
+    font-size : 100%;
+    font-weight : bold;
+    color: #333;
+    float: left; 
+    margin-right: .12em;
+}
+
+/* description */
+
+.Description {
+    font-size : 100%;
+    font-weight : normal;
+    margin-bottom : .75em;
+    color: #333;
+}
+
+.TermNotString {
+    display : inline;
+}
+
+.Description span.DescriptionNotString {
+}
+
+/* link inside a ListDescriptor */
+
+ul.ListDescriptor > li>.Term+.Description > a {
+    font-size : 100%;
+    line-height:inherit;
+    color: #3366cc;
+    text-decoration: none;
+    position: relative;
+}
+
+ul.ListDescriptor > li>.Term + .Description + p.Para, ul.ListDescriptor > li>.Term + .Description + p.Para ~ p.Para {
+    font-size : 100%;
+}
+
+/* ------------------------------------------------------*/
+/* intro ListDescriptor */
+/* ------------------------------------------------------*/
+
+.Intro ul.ListDescriptor {
+    font-size : 75%;
+    margin-left: 0em;
+    margin-top: .25em;
+    margin-bottom: .5em;
+}
+
+.Intro ul.ListBullet+ table { 
+    margin-top: 1.5em !important;
+}
+
+.Intro ul.ListBullet > li > p.Para + ul.ListDescriptor {
+    font-size : 100%;
+    margin-top : .75em;
+}
+
+.Intro ul.ListDescriptor > li > ul.ListBullet {
+    font-size : 100%;
+    margin-top : .75em;
+    margin-left : 1.4em;
+    margin-top: .25em;
+    margin-bottom: .75em;
+}
+
+.Intro ul.ListDescriptor > li > ul.ListBullet > li p.Para {
+    font-size : 100%;
+    margin-top: .25em;
+    margin-bottom: .75em;
+}
+
+
+
+/* ------------------------------------------------------*/
+/* outro ListDescriptor */
+/* ------------------------------------------------------*/
+
+.Outro ul.ListDescriptor {
+    font-size : 75%;
+    margin-top : .75em;
+    margin-bottom : 0em;
+}
+
+.Outro ul.ListBullet > li > p.Para + ul.ListDescriptor {
+    font-size : 100%;
+    margin-top : .75em;
+    margin-bottom : -.25em;
+}
+
+.Outro ul.ListDescriptor + ul.ListDescriptor {
+    margin-top: -.25em;
+}
+
+.Outro ul.ListBullet > li > p.Para + ul.ListDescriptor {
+    margin-top : .75em;
+    margin-bottom : -.25em;
+}
+
+.Outro .ListDescriptor + .Subhead {
+    margin-top : .75em;
+}
+
+/* ------------------------------------------------------*/
+/* task bullet ListDescriptor*/
+/* ------------------------------------------------------*/
+
+.Task ul.ListBullet > ul.ListDescriptor { 
+    margin-bottom: 1em;
+}
+
+/* task ListBullet item with child ListDescriptor followed by para*/
+
+.Task ul.ListBullet > li > ul.ListDescriptor + p.Para { 
+    margin-top: .75em !important;
+}
+
+/* task ListBullet item with child para followed by ListDescriptor*/
+
+.Task ul.ListBullet > li > p.Para + ul.ListDescriptor {
+    font-size : 100%;
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+
+/* ------------------------------------------------------*/
+/* task number ListDescriptor*/
+/* ------------------------------------------------------*/
+
+
+.Task > ol ul.ListDescriptor {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 100%;
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.Task > ol ul.ListDescriptor ul.ListDescriptor {
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.Task > ol ul.ListBullet > li {
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.Task ol > li > .ListDescriptor>ul:last-of-type {
+    margin-bottom : 1.5em;
+}
+
+.Task ol > li > .ListDescriptor:last-child {
+    margin-bottom : 1.5em !important;
+}
+
+.Task ol > li > .Figure + .ListDescriptor + p.Para {
+    margin-top: .75em;
+}
+
+.Task ol > li > .ListDescriptor > li > p.Para:last-child {
+    margin-bottom: .75em;
+}
+
+/* adjusts spacing for last para */
+
+.Task ol > li > .Description + p.Para:last-of-type {
+    margin-top: 0em;
+    margin-bottom: 1em;
+}
+
+/* ListDescriptor followed by ListBullet block */
+
+.Task ol > li > .ListDescriptor + .ListBullet {
+     margin-top: 1em;
+     margin-bottom: .75em !important;
+}
+
+.Task ol > li > .ListBullet + .ListDescriptor {
+     margin-top: -.75em  !important;
+     margin-bottom: .75em !important;
+}
+
+/* ListDescriptor followed by ListBullet item */
+
+.Task ol > li > .ListDescriptor > li> .Description + .ListBullet > li {
+     margin-top: .5em !important;
+     margin-bottom: 1em !important;
+}
+
+/* ListDescriptor item with child ListBullet ListBullet item spacing */
+
+.Task ol > li > .ListDescriptor > li> .Description + .ListBullet + .ListBullet > li {
+     margin-top: -.75em !important;
+     margin-bottom: 0em !important;
+}
+
+
+/* ------------------------------------------------------*/
+/* task single ListDescriptor*/
+/* ------------------------------------------------------*/
+
+
+/* task ListDescriptor  ListSingle*/
+
+
+.Task .ListSingle > p + ul.ListDescriptor {
+    font-size : 75%;
+    margin-left: 0em;
+    margin-top: .85em;
+    margin-bottom: 1em;
+}
+
+.Task .ListSingle > ul.ListDescriptor {
+    font-size : 75%;
+    margin-left: 0em;
+    margin-top: .85em;
+    margin-bottom: 1em;
+}
+
+/* last ListDescriptor in list single, tightens spacing below */
+
+.Task .ListSingle > .ListDescriptor> ul:last-of-type {
+    margin-bottom : 1.5em;
+}
+
+/* last ListDescriptor adjusts spacing below */
+
+.Task .ListSingle > .ListDescriptor:last-child {
+    margin-bottom : 1.5em !important;
+}
+
+/* adjusts spacing above following para */
+
+.Task .ListSingle > .ListDescriptor + p.Para {
+    margin-top : -.25em !important;
+}
+
+/* ListDescriptor followed by ListBullet block */
+
+.Task .ListSingle > .ListDescriptor + .ListBullet {
+    margin-top: -.25em !important;
+}
+
+/* ListDescriptor followed by ListBullet item */
+
+.Task .ListSingle > .ListDescriptor > li> .Description + .ListBullet {
+     margin-top: 0em;
+     margin-bottom: 0em;
+}
+
+/* ListDescriptor item with child ListBullet ListBullet item spacing */
+
+.Task .ListSingle > .ListDescriptor + .ListBullet + .ListBullet > li {
+     margin-top: -.75em !important;
+     margin-bottom: 0em !important;
+}
+
+/* ListDescriptor followed by ListBullet followed by ListDescriptor */
+
+.Task .ListSingle > .ListDescriptor + .ListBullet + .ListDescriptor {
+    font-size : 75%;
+    margin-left: .45em;
+    margin-top: -.25em;
+    margin-bottom: .5em;
+}
+
+/* ListBullet with nested ListDescriptor */
+
+.Task .ListSingle ul.ListBullet > li > p.Para + ul.ListDescriptor {
+    font-size : 75%;
+    margin-top: .5em;
+    margin-bottom: .25em;
+}
+
+.Task .ListSingle ul.ListDescriptor > li > p.Para {
+    font-size : 100%;
+    margin-top: -.15em !important;
+    margin-bottom: .75em;
+}
+
+.Task .ListSingle > p + ul.ListDescriptor:last-child {
+    margin-bottom: 1.5em;
+}
+
+
+/* ------------------------------------------------------*/
+/* LIST NUMBER */
+/* ------------------------------------------------------*/
+
+
+/* entire numbered list block */
+
+.Task > ol {
+    list-style : decimal;
+    list-style-position : outside;
+    font-size : 75%;
+    font-weight : normal;
+    padding-left : 4.15em;
+    margin-left : -2em;
+    margin-bottom : 1.25em;
+    color : #333;
+}
+
+.Task > ol > li {
+    margin-left: 0em;
+    margin-top: .5em;
+    margin-bottom: 1.5em;
+}
+
+.Task ol > li:first-of-type {
+    margin-top: -.2em !important;
+}
+
+.Task ol > li > p.Para {
+    font-size : 100%;
+    font-weight: normal;
+    line-height: 1.55;
+    color : #333;
+}
+
+.Task ol > li  p.Para {
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.Task ol ul.ListBullet > li:before {
+    content: counter(mycounter, square) "";
+    color : #666;
+    font-size : 115%;
+    float: left;
+    position: relative;
+    clear:right;
+    margin-top: -.3em;
+    margin-right : .3em;
+    margin-left : -.9em;
+}
+
+
+.Task ol > li > ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 130%;
+    margin-left : 1em;
+    margin-bottom : .85em;
+    color : #333;
+}
+
+.Task ol > li .ListBullet >li {
+    margin-left : 0em;
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.Task ol > li > p.Para + .ListBullet {
+    margin-top: 1.25em;
+}
+
+
+/* first nested bullet item */
+
+.Task ol > li ul.ListBullet>li:first-of-type {
+    margin-top : -.5em;
+}
+
+/* last nested bullet item */
+
+.Task ol > li ul.ListBullet>li:last-of-type {
+    margin-bottom : 1.2em;
+}
+
+
+.Task ol > li ul.ListBullet:last-of-type + p.Para + p.Para {
+    margin-top : .5em !important;
+}
+
+.Task ol > li > .ListBullet > li > p.Para + p.Para {
+    margin-top : .5em;
+    margin-bottom : .75em;
+}
+
+.Task ol > li > .ListBullet + p.Para  {
+    margin-top : -.65em !important;
+}
+
+.Task ol > li > .ListBullet + .Alert  {
+    margin-top : -.5em !important;
+}
+
+.Task ol > li table {
+    font-size : 130%;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+}
+
+.Task > .Name + .ListNumber {
+    margin-top: .75em !important;
+}
+
+.Task > .Intro {
+    margin-left: .4em;
+    margin-top: -.2em;
+    margin-bottom: 1em;
+}
+
+.Task > .Intro + .ListNumber {
+    margin-top: 1.65em !important;
+    margin-bottom: .5em;
+}
+
+.Task > .ListNumber + .Outro {
+    margin-top: -.6em !important;
+}
+
+
+
+/* ------------------------------------------------------*/
+/* TASK OUTRO */
+
+.Task > .Outro {
+    margin-left: .4em;
+    margin-top: -1.5em;
+    margin-bottom: 1.4em;
+}
+
+
+
+/* ------------------------------------------------------*/
+/* LIST SINGLE */
+/* ------------------------------------------------------*/
+
+.Task > .Name + .ListSingle {
+    margin-top: -.15em !important;
+}
+
+.Task .ListSingle {
+    margin-left: .35em;
+    margin-bottom: 1em;
+}
+
+/* first list item */
+.Task .ListSingle > p.Para + p.Para {
+    margin-top: 0em;
+    margin-bottom: .75em;
+}
+
+.Task .ListSingle > p ~ p:last-child {
+    margin-bottom : 1.5em !important;
+}
+
+.TaskMulti > .Task > .Intro + .ListSingle {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.TaskMulti > .Task > .ListSingle + .Outro {
+    margin-left: .35em !important;
+    margin-top: -.75em !important;
+    margin-bottom: 1.5em;
+}
+
+.Task > .ListSingle > ul li table {
+    font-size : 130%;
+    margin-top: -.25em !important;
+    margin-bottom: 1.5em !important;
+}
+
+.Task .ListSingle ul.ListBullet > li:before {
+    content: counter(mycounter, square) "";
+    color : #666;
+    font-size : 120%;
+    float: left;
+    position: relative;
+    top: -.35em;
+    margin-right : .3em;
+    margin-left : -.85em;
+}
+
+.Task .ListSingle > p.Para:only-child {
+    margin-bottom: 1.65em;
+}
+
+
+.Task .ListSingle > p.Para:first-child {
+    margin-top: .25em !important;
+}
+
+/* sub bullets in list */
+
+.Task .ListSingle > ul.ListBullet {
+    font-size : 100%;
+    margin-left : 1.2em;
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+.Task .ListSingle li .ListBullet >li {
+    margin-top: .5em;
+    margin-bottom: .75em;
+}
+
+/* first nested bullet item */
+
+.Task .ListSingle li ul.ListBullet>li:first-of-type {
+    margin-top : -1em;
+}
+
+/* last nested bullet item */
+
+.Task .ListSingle .ListBullet:last-child {
+    margin-top: .5em;
+    margin-bottom: 1.25em !important;
+}
+
+.Task .ListSingle .ListBullet + p.Para {
+    margin-top: .5em;
+    margin-bottom: 1em;
+}
+
+/* ------------------------------------------------------*/
+/* TASK OUTRO */
+
+.Task .ListSingle + .Outro  { 
+    margin-left: .25em !important;
+    margin-top: 1em !important;
+    margin-bottom: .5em;
+}
+
+.Task .ListBullet + .Outro  { 
+    margin-left: .25em !important;
+    margin-top: 1em !important;
+    margin-bottom: .5em;
+}
+
+.Task .ListBullet + .Outro > p.Para:last-child {
+     margin-bottom: 1.5em !important;
+}
+
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* URL inline and standalone */
+/* ------------------------------------------------------*/
+
+
+span.URL {
+    text-decoration : none;
+    font-size : 100%;
+    color : #3366cc;
+}
+
+.URL {
+    text-decoration : none;
+    font-size : 75%;
+    color : #3366cc;
+}
+
+.URL:hover {
+    text-decoration: underline;
+}
+
+.URL:visited {
+    color: #14387e;
+    text-decoration: underline;
+}
+
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* TABLES -----------------------------------------------*/
+/*------------------------------------------------------*/
+
+
+/*------------------------------------------------------------*/
+/* TABLE MULTICOLUMN -----------------------------------------*/
+/*------------------------------------------------------------*/
+
+
+table[type="Multicolumn"], table[type="Full width"] {
+    width: 100%;
+    margin-top : 1.4em;
+    margin-bottom : 2em;
+    background-color: white;
+}
+
+table[type="Multicolumn"] > tbody > tr.TableHead, table[type="Full width"] > tbody > tr.TableHead  {
+    display: table-header-group;
+    float: left;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    width: 100%;
+    -webkit-border-bottom-left-radius: .3em .3em;
+    -webkit-border-bottom-right-radius: .3em .3em;
+    -webkit-border-top-left-radius: .3em .3em;
+    -webkit-border-top-right-radius: .3em .3em;
+    border-color: #999999;
+    border-style: solid;
+    border-width: 1px;
+    background: #999999;
+}
+
+
+.Intro > table[type="Multicolumn"] tr.TableHead + tr.TableDisplay, .Intro > table[type="Multicolumn"] tr.TableHead + tr.TableSubhead {
+    display: table-row;
+    border-top: 0px solid #D0D0D0;
+}
+
+.Intro > table[type="Multicolumn"] tr.TableDisplay, .Intro > table[type="Multicolumn"] tr.TableSubhead {
+    display: table-row;
+    border-top: 3px solid #D0D0D0;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+
+.Outro > table[type="Multicolumn"] tr.TableHead + tr.TableDisplay, .Outro > table[type="Multicolumn"] tr.TableHead + tr.TableSubhead {
+    display: table-row;
+    border-top: 0px solid #D0D0D0;
+}
+
+.Outro > table[type="Multicolumn"] tr.TableDisplay, .Outro > table[type="Multicolumn"] tr.TableSubhead {
+    display: table-row;
+    border-top: 3px solid #D0D0D0;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+table[type="Multicolumn"] > tbody, table[type="Full width"] > tbody  {
+    display: table-row-group;
+}
+
+
+/* heading cell  */
+
+table[type="Multicolumn"] > tbody > tr > th, table[type="Full width"] > tbody > tr > th {
+    display: table-cell;
+    float: left;
+    vertical-align:top;
+    padding-left: .3em;
+    padding-right: .6em;
+}
+
+/* makes body row 100% width of page, adds rule bottom */
+
+table[type="Multicolumn"] > tbody tr, table[type="Full width"] > tbody tr   {
+    display: table-row;
+    width: 100%;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+
+/* body cell, includes the row height spacing  */
+
+table[type="Multicolumn"] > tbody > tr > td, table[type="Full width"] > tbody > tr > td {
+    display: table-cell;
+    float: left;
+    vertical-align:top;
+    padding-left: .3em;
+    padding-right: .6em;
+}
+
+/* table heading font style*/
+
+table[type="Multicolumn"] div.TableHead, table[type="Full width"] div.TableHead {
+    display:block;
+    font-size:70%;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing: 0.15em;
+    position:relative;
+    left:0;
+    top:0;
+    color:#fff;
+}
+
+/*------------------------------------------------------------*/
+/* table subheading and display, includes row height spacing*/
+
+table[type="Multicolumn"] div.TableSubhead, table[type="Multicolumn"] div.TableDisplay {
+    display: block;
+    font-size : 75%;
+    font-weight : bold;
+    color : #000;
+    padding-top: .65em;
+    margin-bottom: .65em;
+}
+
+table[type="Multicolumn"] td > p.Para, table[type="Full width"] td > p.Para {
+    display: block;
+    font-size : 75%;
+    margin-top: .3em;
+    margin-bottom: .5em;
+}
+
+table[type="Multicolumn"] td > ul.ListBullet > li:before {
+    content: counter(mycounter, square) "";
+    color : #666;
+    font-size : 115%;
+    float: left;
+    position: relative;
+    top: -.3em;
+    margin-right : .3em;
+    margin-left : -.9em;
+}
+
+.Outro > table[type="Multicolumn"] td > ul.ListBullet > li:before {
+    content: counter(mycounter, square) "";
+    color : #666;
+    font-size : 115%;
+    float: left;
+    position: relative;
+    top: .25em;
+    margin-right : .3em;
+    margin-left : -.9em;
+}
+
+
+.Intro > table ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 75%;
+    margin-left : 1.4em;
+    margin-top: .25em;
+    margin-bottom: .75em;
+}
+
+
+.Intro > table ul.ListBullet > li p.Para {
+    margin-top: .25em;
+    margin-bottom: .75em;
+}
+
+.Outro > table ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 100%;
+    margin-left : 1.4em;
+    margin-top: .25em;
+    margin-bottom: .75em;
+}
+
+
+.Outro > [type="Multicolumn"] td > ul.ListBullet  > li > p.Para {
+    margin-top: .25em;
+    margin-bottom: .25em;
+}
+
+
+table[type="Multicolumn"] td > .ListBullet > li > p.Para {
+    display: block;
+    margin-top: .3em;
+}
+
+table[type="Multicolumn"] td > .ListBullet > li > p.Para + p.Para {
+    display: block;
+    font-size : 75%;
+    margin-top: .3em;
+}
+
+table[type="Multicolumn"] td > p.Para:first-child {
+    display: block;
+    font-size : 75%;
+    margin-top: .5em !important;
+}
+
+table[type="Multicolumn"] td > p.Para:last-child {
+    display: block;
+    font-size : 75%;
+    margin-bottom: .5em !important;
+}
+
+/*------------------------------------------------------------*/
+
+.Intro table[type="Multicolumn"] td > p.Para {
+    display: block;
+    font-size : 75%;
+    margin-top: .25em;
+}
+
+.Outro table[type="Multicolumn"] td > p.Para {
+    display: block;
+    font-size : 75%;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.Outro table[type="Multicolumn"] td > p.Para:first-child {
+    display: block;
+    font-size : 75%;
+    margin-top: -.25em !important;
+}
+
+.Outro table[type="Multicolumn"] td > p.Para:last-child {
+    display: block;
+    font-size : 75%;
+    margin-bottom: .3em;
+}
+
+
+/*------------------------------------------------------------*/
+
+table[type="Multicolumn"][cols="2"] tbody th, table[type="Multicolumn"][cols="2"] tbody td {
+    display: table-cell;
+    width: 45%;
+}
+
+table[type="Multicolumn"][cols="3"] tbody th, table[type="Multicolumn"][cols="3"] tbody td {
+    display: table-cell;
+    width: 28%;
+}
+
+table[type="Multicolumn"][cols="4"] tbody th, table[type="Multicolumn"][cols="4"] tbody td {
+    display: table-cell;
+    width: 20%;
+}
+
+table[type="Multicolumn"][cols="5"] tbody th, table[type="Multicolumn"][cols="5"] tbody td {
+    display: table-cell;
+    width: 15%;
+}
+
+table[type="Multicolumn"][cols="6"] tbody th, table[type="Multicolumn"][cols="6"] tbody td {
+    display: table-cell;
+    width: 14%;
+}
+
+table[type="Multicolumn"][cols="7"] tbody th, table[type="Multicolumn"][cols="7"] tbody td {
+    display: table-cell;
+    width: 12%;
+}
+
+table[type="Multicolumn"][cols="8"] tbody th, table[type="Multicolumn"][cols="8"] tbody td {
+    display: table-cell;
+    width: 10%;
+}
+
+
+/*------------------------------------------------------------*/
+/* TABLE 3 COLUMN --------------------------------------------*/
+/*------------------------------------------------------------*/
+
+table[type="3 column"] {
+    display: table;
+    width: 100%;
+    margin-top: 1.4em;
+    margin-bottom: 2em;
+    background-color: white;
+}
+
+table[type="3 column"] > tbody > tr.TableHead  {
+    display: table-header-group;
+    float: left;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    width: 100%;
+    -webkit-border-bottom-left-radius: .3em .3em;
+    -webkit-border-bottom-right-radius: .3em .3em;
+    -webkit-border-top-left-radius: .3em .3em;
+    -webkit-border-top-right-radius: .3em .3em;
+    border-color: #999999;
+    border-style: solid;
+    border-width: 1px;
+    background: #999999;
+}
+
+/* table without a heading row */
+
+table[type="3 column"] > tbody  {
+    display:table-row-group;
+    width: 100%;
+}
+
+/* heading cell  */
+
+table[type="3 column"] > tbody > tr > th {
+    display: table-cell;
+    float: left;
+    vertical-align:top;
+    padding-left: .3em;
+    padding-right: .6em;
+    width: 25%;
+}
+
+/* makes body row 100% width of page, adds rule bottom */
+
+table[type="3 column"] > tbody tr   {
+    display: table-row;
+    width: 100%;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+/* body cell  */
+
+table[type="3 column"] > tbody > tr > td:nth-child(1) {
+    display: table-cell;
+    float: left;
+    width: 30%;
+}
+
+table[type="3 column"] > tbody > tr > td:nth-child(3) {
+    display: table-cell;
+    float: left;
+    width: auto;
+}
+
+table[type="3 column"] > tbody > tr > td {
+    display: table-cell;
+    float: left;
+    width: 30%;
+    vertical-align:top;
+    padding-left: .3em;
+    padding-right: .6em;
+    margin-bottom: -.4em;
+}
+
+/* table heading font style*/
+
+table[type="3 column"] div.TableHead {
+    display:block;
+    font-size: 70%;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    position:relative;
+    left: 0;
+    top: 0;
+    color : #fff;
+}
+
+table[type="3 column"] div.TableDisplay, table[type="3 column"] div.TableSubhead {
+    display:block;
+    font-size : 75%;
+    font-weight : bold;
+    color : #000;
+    padding-top: .65em;
+    margin-bottom: .65em;
+}
+
+table[type="3 column"] td > p.Para {
+    display: block;
+    font-size : 75%;
+    margin-bottom: .5em;
+}
+
+table[type="3 column"] td > p.Para:first-child {
+    margin-top: -.2em;
+}
+
+table[type="3 column"] td > p.Para:last-child {
+    display: block;
+    font-size : 75%;
+    padding-top: .15em;
+    margin-bottom: 1em;
+}
+
+/*------------------------------------------------------------*/
+/* TABLE 2 COLUMN --------------------------------------------*/
+/*------------------------------------------------------------*/
+
+table[type="2 column"] {
+    width: 100%;
+    margin-top : 1.4em;
+    margin-bottom : 2em;
+    background-color: white;
+}
+
+/* heading row */
+
+table[type="2 column"] > tbody > tr.TableHead  {
+    display: table-header-group;
+    float: left;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    width: 100%;
+    -webkit-border-bottom-left-radius: .3em .3em;
+    -webkit-border-bottom-right-radius: .3em .3em;
+    -webkit-border-top-left-radius: .3em .3em;
+    -webkit-border-top-right-radius: .3em .3em;
+    border-color: #999999;
+    border-style: solid;
+    border-width: 1px;
+    background: #999999;
+}
+
+table[type="2 column"] > tbody  {
+    display: table-row-group;
+    width: 100%;
+}
+
+/* heading cell  */
+
+table[type="2 column"] > tbody > tr > th {
+    display: table-cell;
+    float: left;
+    vertical-align:top;
+    padding-left: .3em;
+    padding-right: .6em;
+    width: 45%;
+}
+
+/* makes body row 100% width of page, adds rule bottom */
+
+table[type="2 column"] > tbody tr   {
+    display: table-row;
+    width: 100%;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+/* body cell  */
+
+table[type="2 column"] > tbody > tr > td {
+    display: table-cell;
+    float: left;
+    width: 45%;
+    vertical-align:top;
+    padding-left: .3em;
+    padding-right: .6em;
+}
+
+/* table heading font style*/
+
+table[type="2 column"] div.TableHead {
+    display:block;
+    font-size: 70%;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    position:relative;
+    left: 0;
+    top: 0;
+    color : #fff;
+}
+
+table[type="2 column"] div.TableSubhead, table[type="2 column"] div.TableDisplay {
+    display:block;
+    font-size : 75%;
+    font-weight : bold;
+    color : #000;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+table[type="2 column"] td > p.Para {
+    display: block;
+    font-size : 75%;
+    margin-top: .3em;
+    margin-bottom: .5em;
+}
+
+table[type="2 column"] td > p.Para:first-child {
+    display: block;
+    font-size : 75%;
+    margin-top: .5em !important;
+}
+
+table[type="2 column"] td > p.Para:last-child {
+    display: block;
+    font-size : 75%;
+    margin-bottom: .5em !important;
+}
+
+
+/*------------------------------------------------------------*/
+/* TABLE 1 COLUMN --------------------------------------------*/
+/*------------------------------------------------------------*/
+
+
+table[type="1 column"] {
+    width: 100%;
+    margin-top : 1.4em;
+    margin-bottom : 2em;
+    background-color: white;
+}
+
+/* body row group */
+
+table[type="1 column"] > tbody  {
+    display: table-row-group;
+    width: 100%;
+}
+
+
+.Intro > table[type="1 column"] > tbody > tr   {
+    display: table-row;
+    width: 100%;
+    border-top: 1px solid #D0D0D0;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+.Intro > table[type="1 column"] > tbody > tr.TableDisplay, .Intro > table[type="1 column"] > tbody > tr.TableSubhead  {
+    border-top: 3px solid #D0D0D0;
+}
+
+.Intro > table[type="1 column"] tr.TableSubhead + tr.TableDisplay {
+    display: table-row;
+    border-top: 0px solid #D0D0D0;
+}
+
+.Intro > table[type="1 column"] tr.TableSubhead + tr.TableSubhead {
+    display: table-row;
+    border-top: 3px solid #D0D0D0;
+}
+
+.Intro > table[type="1 column"] tr.TableSubhead + tr.TableDisplay tr.TableSubhead, .Intro > table[type="1 column"] tr.TableSubhead + tr.TableSubhead tr.TableSubhead, .Intro > table[type="1 column"] tr.TableDisplay + tr.TableDisplay tr.TableDisplay {
+    display: table-row;
+    border-top: 3px solid #D0D0D0;
+}
+
+
+.Outro > table[type="1 column"] > tbody > tr.TableDisplay, .Outro > table[type="1 column"] > tbody > tr.TableSubhead  {
+    border-top: 3px solid #D0D0D0;
+}
+
+.Outro > table[type="1 column"] tr.TableSubhead + tr.TableDisplay {
+    display: table-row;
+    border-top: 0px solid #D0D0D0;
+}
+
+.Outro > table[type="1 column"] tr.TableSubhead + tr.TableSubhead {
+    display: table-row;
+    border-top: 3px solid #D0D0D0;
+}
+
+.Outro > table[type="1 column"] tr.TableSubhead + tr.TableDisplay tr.TableSubhead, .Outro > table[type="1 column"] tr.TableSubhead + tr.TableSubhead tr.TableSubhead, .Outro > table[type="1 column"] tr.TableDisplay + tr.TableDisplay tr.TableDisplay {
+    display: table-row;
+    border-top: 3px solid #D0D0D0;
+}
+
+
+/* heading cell */
+
+table[type="1 column"] > tbody > tr > th {
+    display: table-cell;
+    padding-left: .3em;
+    padding-right: .6em;
+    padding-top: .35em;
+    padding-bottom: .3em;
+}
+
+
+/* font style   */
+
+table[type="1 column"] div.TableHead, table[type="1 column"] div.TableSubhead, table[type="1 column"] div.TableDisplay {
+    display: block;
+    font-size : 75%;
+    font-weight : bold;
+    color : #000;
+}
+
+.Intro > table[type="1 column"] tr > td > p.Para:first-child {
+}
+
+
+.Outro > table[type="1 column"] tr > td > p.Para:first-child {
+    margin-top: -.5em;
+}
+
+.Outro > table[type="1 column"] tr > td > p.Para:last-child {
+    margin-bottom: .5em;
+}
+
+
+table[type="1 column"] td > p.Para {
+    display: block;
+    font-size : 75%;
+    margin-top: .3em;
+}
+
+table[type="1 column"] td > p.Para:last-child {
+    display: block;
+    font-size : 75%;
+    margin-top: .3em;
+    margin-bottom: .75em;
+}
+
+
+/* bullet size, shape, and position in a th cell */
+
+.Intro table[type="1 column"] tr > th > ul.ListBullet > li:before {
+    content: counter(mycounter, square) "";
+    color : #666;
+    font-size : 115%;
+    float: left;
+    position: relative;
+    clear:both;
+    margin-top: 0em;
+    margin-right : .3em;
+}
+
+.Intro table[type="1 column"] tr > th > ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 100%;
+    color : #333;
+    margin-left: .95em;
+    margin-top: .5em !important;
+    margin-bottom: .25em;
+}
+
+.Intro table[type="1 column"] th .ListBullet > li {
+    margin-top: 0em !important;
+    margin-bottom: .25em;
+}
+
+.Outro table[type="1 column"] th .ListBullet > li {
+    margin-top: -.5em !important;
+    margin-bottom: .25em;
+}
+
+/* bullet size, shape, and position in an td cell */
+
+.Intro table[type="1 column"] tr > td > ul.ListBullet > li:before {
+    content: counter(mycounter, square) "";
+    color : #666;
+    font-size : 115%;
+    float: left;
+    position: relative;
+    clear:both;
+    margin-top: 0em;
+    margin-right : .3em;
+}
+
+
+.Intro table[type="1 column"] tr > td > ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 100%;
+    color : #333;
+    margin-left: 1.25em;
+}
+
+.Intro table[type="1 column"] tr > td .ListBullet > li {
+    margin-top: .6em !important;
+    margin-bottom: .6em;
+}
+
+.Outro table[type="1 column"] tr > td ul.ListBullet {
+    margin-left: 1.25em;
+    margin-top: -.5em !important;
+}
+
+.Outro table[type="1 column"] tr > td ul.ListBullet > li > p.Para {
+    margin-top: 0em !important;
+}
+
+/* bullet size, shape, and position */
+
+.Task table[type="1 column"] ul.ListBullet > li:before {
+    content: counter(mycounter, square) "";
+    color : #666;
+    font-size : 115%;
+    float: left;
+    position: relative;
+    clear:both;
+    margin-top: -.3em;
+    margin-right : .3em;
+}
+
+
+.Task table[type="1 column"] ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 100%;
+    color : #333;
+    margin-left: 1em;
+    margin-top: 1em !important;
+    margin-bottom: .25em;
+}
+
+.Task table[type="1 column"] td .ListBullet >li, .Outro table[type="1 column"] th .ListBullet >li {
+    margin-top: -.5em !important;
+    margin-bottom: .25em;
+}
+
+
+/* bullet size, shape, and position */
+
+.Outro table[type="1 column"] ul.ListBullet > li:before {
+    content: counter(mycounter, square) "";
+    color : #666;
+    font-size : 115%;
+    float: left;
+    position: relative;
+    clear:both;
+    margin-top: 0em;
+    margin-right : .3em;
+}
+
+
+.Outro table[type="1 column"] ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 100%;
+    color : #333;
+    margin-left: .95em;
+    margin-top: -.5em !important;
+    margin-bottom: .25em;
+}
+
+.Outro table[type="1 column"] td .ListBullet >li, .Outro table[type="1 column"] th .ListBullet >li {
+    margin-top: -.5em !important;
+    margin-bottom: .25em;
+}
+
+
+
+/*------------------------------------------------------------*/
+/* TABLE Intro ListBullet ------------------------------------*/
+/*------------------------------------------------------------*/
+
+
+.Intro table ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 100%;
+    color : #333;
+}
+
+.Intro table .ListBullet >li:first-of-type {
+    margin-top: .3em;
+}
+
+.Intro td .ListBullet:first-child {
+    margin-top: .4em !important;
+}
+
+.Intro td .ListBullet >li:last-child {
+    margin-bottom: .25em;
+}
+
+.Intro td .ListBullet >li {
+    margin-left: -.4em;
+}
+
+
+.Intro td .ListBullet >li > p.Para {
+    margin-left: 0em;
+    margin-top: .25em;
+    margin-bottom: .5em;
+}
+
+.Intro td .ListBullet >li > p.Para + p.Para {
+    margin-top: -.25em !important;
+    margin-bottom: .5em;
+}
+
+/*------------------------------------------------------------*/
+/* TABLE Outro ListBullet ------------------------------------*/
+/*------------------------------------------------------------*/
+
+/* bullet size, shape, and position */
+
+  /* .Outro table ul.ListBullet > li:before {
+    content: counter(mycounter, square) "";
+    color : #666;
+    font-size : 115%;
+    float: left;
+    position: relative;
+    clear:both;
+    margin-top: .5em;
+    margin-right : .3em;
+}
+
+
+.Outro table ul.ListBullet {
+    list-style : none;
+    list-style-position : inside;
+    font-size : 100%;
+    color : #333;
+  margin-top: -.2em;
+    margin-bottom: 0em;
+}
+
+.Outro td .ListBullet >li {
+    margin-left: -.4em;
+    margin-top: -.25em;
+    margin-bottom: -.5em;
+}
+
+.Outro td .ListBullet >li:last-child {
+    margin-bottom: .25em;
+}*/
+
+.Outro td .ListBullet >li p.Para {
+    margin-left: 0em;
+    margin-top: -.25em;
+}
+
+.Outro td .ListBullet >li > p.Para + p.Para{
+    margin-top: -.5em !important;
+    margin-bottom: .5em !important;
+}
+
+.Outro td .ListBullet >li > p.Para + p.Para + p.Para{
+    margin-top: 0em !important;
+}
+
+
+/*------------------------------------------------------------*/
+/* TABLE DATA DATAFULLWIDTH ----------------------------------*/
+/*------------------------------------------------------------*/
+
+/* Data table border around outside*/
+
+table[type="Data"], table[type="DataFullWidth"] {
+    width: 100%;
+    margin-top : 1.75em;
+    margin-bottom : 2em;
+    background-color: white;
+}
+
+table[type="1 column"] + table[type="Data"], table[type="1 column"] + table[type="DataFullWidth"] {
+    margin-top : -.25em !important;
+}
+
+table[type="Data"] + table[type="1 column"], table[type="DataFullWidth"] + table[type="1 column"] {
+    margin-top : -.3em !important;
+}
+
+
+/* body row group */
+
+table[type="Data"] > tbody, table[type="DataFullWidth"] > tbody {
+    display: table-row-group;
+    width: 100%;
+}
+
+
+/* body cell */
+
+.Intro > table[type="Data"] > tbody > tr > th, .Intro > table[type="DataFullWidth"] > tbody > tr > th {
+    display: table-cell;
+    padding: .4em;
+    vertical-align:top;
+    border:1px solid #D0D0D0;
+}
+
+.Outro > table[type="Data"] > tbody > tr > th, .Outro > table[type="DataFullWidth"] > tbody > tr > th {
+    display: table-cell;
+    padding: .4em;
+    vertical-align:top;
+    border:1px solid #D0D0D0;
+}
+
+
+.Intro > table[type="Data"] > tbody > tr > td, .Intro > table[type="DataFullWidth"] > tbody > tr > td {
+    display: table-cell;
+    padding-bottom: 0em;
+    padding-left:.4em;
+    padding-right:.4em;
+    vertical-align:top;
+    border:1px solid #D0D0D0;
+}
+
+.Outro > table[type="Data"] > tbody > tr > td, .Outro > table[type="DataFullWidth"] > tbody > tr > td {
+    display: table-cell;
+    padding-bottom: 0em;
+    padding-left:.4em;
+    padding-right:.4em;
+    vertical-align:top;
+    border:1px solid #D0D0D0;
+}
+
+
+/* font style */
+
+
+.Intro > table[type="Data"] td > p.Para:first-child, .Intro > table[type="DataFullWidth"] td > p.Para:first-child {
+    display: block;
+    font-size: 75%;
+    text-align:left;
+    margin-top: -.25em;
+    padding-top:.75em;
+    margin-bottom: .25em;
+}
+
+.Intro > table[type="Data"] td > p.Para, .Intro > table[type="DataFullWidth"] td > p.Para {
+    display: block;
+    font-size: 75%;
+    text-align:left;
+    margin-top: .25em;
+    margin-bottom: .25em;
+}
+
+.Intro > table[type="Data"] th > div.TableDisplay, .Intro > table[type="Data"] th > div.TableSubhead, .Intro > table[type="DataFullWidth"] th > div.TableDisplay, .Intro > table[type="DataFullWidth"] th > div.TableSubhead {
+    display: block;
+    font-size : 75%;
+    font-weight : bold;
+    color : #333;
+    text-align:left;
+    margin-bottom: 0em;
+}
+
+
+.Outro > table[type="Data"] td > p.Para:first-child, .Outro > table[type="DataFullWidth"] td > p.Para:first-child {
+    display: block;
+    font-size: 75%;
+    text-align:left;
+    margin-top: -.25em;
+    padding-top:.75em;
+    margin-bottom: .25em;
+}
+
+.Outro > table[type="Data"] td > p.Para, .Outro > table[type="DataFullWidth"] td > p.Para {
+    display: block;
+    font-size: 75%;
+    text-align:left;
+    margin-top: .25em;
+    margin-bottom: .25em;
+}
+
+
+.Outro > table[type="Data"] th > div.TableDisplay, .Outro > table[type="Data"] th > div.TableSubhead, .Outro > table[type="DataFullWidth"] th > div.TableDisplay, .Outro > table[type="DataFullWidth"] th > div.TableSubhead {
+    display: block;
+    font-size : 75%;
+    font-weight : bold;
+    color : #333;
+    text-align:left;
+    margin-bottom: 0em;
+}
+
+
+
+/*------------------------------------------------------------*/
+/* TABLE CUSTOM ----------------------------------------------*/
+/*------------------------------------------------------------*/
+
+
+table[type="Custom"] {
+    display : table;
+    width: 100%;
+    margin-top : 1.75em;
+    margin-bottom : 2em;
+    padding-right: .5em;
+}
+
+table[type="Custom"] > thead  {
+    display: table-header-group;
+    float: left;
+    width: 100%;
+    -webkit-border-bottom-left-radius: .3em .3em;
+    -webkit-border-bottom-right-radius: .3em .3em;
+    -webkit-border-top-left-radius: .3em .3em;
+    -webkit-border-top-right-radius: .3em .3em;
+    border-color: #999999;
+    border-style: solid;
+    border-width: 1px;
+    background: #999999;
+}
+
+/* table without a heading row */
+
+table[type="Custom"] > tbody:only-child  {
+    display: table-row-group;
+}
+
+table[type="Custom"] > tbody:only-child > tr:first-of-type  {
+    display: table-row;
+    float: left;
+    width: 98%;
+    border-top: 3px solid #D0D0D0;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+/*  heading row */
+
+table[type="Custom"] > thead > tr   {
+    display: table-row;
+    float: left;
+    width: 98%;
+    padding-left: .4em;
+}
+
+
+/* heading cell  */
+
+table[type="Custom"] > thead > tr > td {
+   display: table-cell;
+    padding-top: .15em;
+    padding-bottom: .1em;
+    padding-left: 0em;
+    padding-right: .5em;
+}
+
+/* body row group */
+
+table[type="Custom"]  > thead + tbody {
+	display: table-row-group;
+}
+
+/* body row */
+
+table[type="Custom"] > tbody > tr   {
+    display: table-row;
+    float: left;
+    width: 98%;
+    padding-left: .4em;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+/* body cell  */
+
+table[type="Custom"] > tbody > tr > td {
+    display: table-cell;
+    padding-top: .6em;
+    padding-bottom: .2em;
+    padding-left: 0em;
+    padding-right: .5em;
+}
+
+
+/* table heading font style*/
+
+table[type="Custom"] .TableHead {
+    display:block;
+    font-size : 75%;
+    font-weight : bold;
+    text-transform:uppercase;
+    letter-spacing: 0.15em;
+    left: 0;
+    top: 0;
+    width: 50%;
+    color : #fff;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+
+/*------------------------------------------------------------*/
+/* TABLE ICONS -----------------------------------------------*/
+/*------------------------------------------------------------*/
+
+
+table[type="Icons"] {
+    display: table;
+    width: 100%;
+    margin-top : 1.75em;
+    margin-bottom : 2em;
+    background-color: white;
+}
+
+/* body row group */
+
+table[type="Icons"] > tbody  {
+    display: table-row-group;
+    width: 100%;
+}
+
+table[type="Icons"] > tbody > tr   {
+    display: table-row-group;
+    width: 100%;
+    border-top: 1px solid #D0D0D0;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+table[type="Icons"] > tbody > tr:first-of-type   {
+    border-top: 3px solid #D0D0D0;
+}
+
+
+/* heading cell */
+
+table[type="Icons"] > tbody > tr > th {
+    display: table-cell;
+    padding-left: .3em;
+    padding-right: .6em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+/* body row group */
+
+table[type="Icons"]  > tbody {
+	display: table-row-group;
+}
+
+/* body row*/
+
+table[type="Icons"] > tbody > tr  {
+    display: table-row;
+    width: 100%;
+    border-bottom: 1px solid #D0D0D0;
+} 
+
+/* body cell */
+
+table[type="1 column"] > tbody > tr > td {
+    display: table-cell;
+    vertical-align:top;
+    padding-left: .3em;
+    padding-right: .6em;
+    padding-top: .25em;
+    padding-bottom: 0em;
+}
+
+
+/* font style   */
+
+table[type="Icons"] .TableHead, table[type="Icons"] div.TableSubhead, table[type="Icons"] div.TableDisplay {
+    display: block;
+    font-size : 70%;
+    font-weight : bold;
+    color : #333;
+    margin-bottom: 0em
+}
+
+table[type="Icons"] td > p.Para {
+    display: block;
+    font-size : 75%;
+    padding-top: .5em;
+    margin-bottom: .25em;
+}
+
+table[type="Icons"] td > p.Para:last-child {
+    display: block;
+    font-size : 75%;
+    padding-top: .5em;
+    margin-bottom: 1em;
+}
+
+
+
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
+

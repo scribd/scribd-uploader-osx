@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>doc</key>
+	<string>Microsoft Word document</string>
+	<key>docx</key>
+	<string>Microsoft Word document</string>
+	<key>odf</key>
+	<string>OpenDocument formula</string>
+	<key>odg</key>
+	<string>OpenDocument graphics</string>
+	<key>odp</key>
+	<string>OpenDocument presentation</string>
+	<key>ods</key>
+	<string>OpenDocument spreadsheet</string>
+	<key>odt</key>
+	<string>OpenDocument text</string>
+	<key>pdf</key>
+	<string>PDF document</string>
+	<key>pps</key>
+	<string>Microsoft PowerPoint show</string>
+	<key>ppt</key>
+	<string>Microsoft PowerPoint presentation</string>
+	<key>pptx</key>
+	<string>Microsoft PowerPoint presentation</string>
+	<key>ps</key>
+	<string>PostScript document</string>
+	<key>rtf</key>
+	<string>Rich text file</string>
+	<key>sxc</key>
+	<string>StarCalc spreadsheet</string>
+	<key>sxd</key>
+	<string>StarDraw image</string>
+	<key>sxi</key>
+	<string>StarImpress presentation</string>
+	<key>sxw</key>
+	<string>StarWriter document</string>
+	<key>txt</key>
+	<string>Text file</string>
+	<key>xls</key>
+	<string>Microsoft Excel spreadsheet</string>
+	<key>xlsx</key>
+	<string>Microsoft Excel spreadsheet</string>
+</dict>
+</plist>

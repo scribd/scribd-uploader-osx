@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0106EE850F154403001B701B /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0106EE840F154403001B701B /* Icon.icns */; };
+		0128AF310F1478F300EC3C28 /* SUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */; };
+		0128AF320F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDD0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m */; };
+		0128AF330F1478F300EC3C28 /* SULoginSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDF0F1478F300EC3C28 /* SULoginSheetDelegate.m */; };
+		0128AF340F1478F300EC3C28 /* SUQuickLookDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEE10F1478F300EC3C28 /* SUQuickLookDelegate.m */; };
+		0128AF350F1478F300EC3C28 /* SUUploadDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEE30F1478F300EC3C28 /* SUUploadDelegate.m */; };
+		0128AF360F1478F300EC3C28 /* NSError_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEE60F1478F300EC3C28 /* NSError_SUAdditions.m */; };
+		0128AF370F1478F300EC3C28 /* SUDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEE80F1478F300EC3C28 /* SUDatabaseHelper.m */; };
+		0128AF380F1478F300EC3C28 /* SUDocumentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEEA0F1478F300EC3C28 /* SUDocumentHelper.m */; };
+		0128AF390F1478F300EC3C28 /* SUUploadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEEC0F1478F300EC3C28 /* SUUploadHelper.m */; };
+		0128AF3A0F1478F300EC3C28 /* SUDocumentArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEEE0F1478F300EC3C28 /* SUDocumentArrayController.m */; };
+		0128AF3B0F1478F300EC3C28 /* SUUploadErrorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF00F1478F300EC3C28 /* SUUploadErrorController.m */; };
+		0128AF3C0F1478F300EC3C28 /* SUDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF30F1478F300EC3C28 /* SUDocument.m */; };
+		0128AF3D0F1478F300EC3C28 /* SUScribdAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF50F1478F300EC3C28 /* SUScribdAPI.m */; };
+		0128AF3E0F1478F300EC3C28 /* SUFileListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF80F1478F300EC3C28 /* SUFileListView.m */; };
+		0128AF3F0F1478F300EC3C28 /* SUTableStatusColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEFA0F1478F300EC3C28 /* SUTableStatusColumn.m */; };
+		0128AF400F1478F300EC3C28 /* SUBusyActionValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEFD0F1478F300EC3C28 /* SUBusyActionValueTransformer.m */; };
+		0128AF410F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEFF0F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.m */; };
+		0128AF420F1478F300EC3C28 /* SUFileStatusColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF010F1478F300EC3C28 /* SUFileStatusColorValueTransformer.m */; };
+		0128AF430F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF030F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.m */; };
+		0128AF440F1478F300EC3C28 /* SULoginLabelValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF050F1478F300EC3C28 /* SULoginLabelValueTransformer.m */; };
+		0128AF450F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF070F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m */; };
+		0128AF460F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF090F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m */; };
+		0128AF470F1478F300EC3C28 /* Scribd_Uploader_DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF0B0F1478F300EC3C28 /* Scribd_Uploader_DataModel.xcdatamodel */; };
+		0128AF480F1478F300EC3C28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF0D0F1478F300EC3C28 /* main.m */; };
+		0128AF490F1478F300EC3C28 /* SUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF0F0F1478F300EC3C28 /* SUConstants.m */; };
+		0128AF5D0F1478F300EC3C28 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF2A0F1478F300EC3C28 /* ASIFormDataRequest.m */; };
+		0128AF5E0F1478F300EC3C28 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF2C0F1478F300EC3C28 /* ASIHTTPRequest.m */; };
+		0128AF5F0F1478F300EC3C28 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF2E0F1478F300EC3C28 /* ASINetworkQueue.m */; };
+		0128AF600F1478F300EC3C28 /* NSHTTPCookieAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF300F1478F300EC3C28 /* NSHTTPCookieAdditions.m */; };
+		0128AF880F14799100EC3C28 /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF6E0F14799100EC3C28 /* Add.png */; };
+		0128AF890F14799100EC3C28 /* error.tif in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF6F0F14799100EC3C28 /* error.tif */; };
+		0128AF8C0F14799100EC3C28 /* Remove.png in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF720F14799100EC3C28 /* Remove.png */; };
+		0128AF900F14799100EC3C28 /* success.tif in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF760F14799100EC3C28 /* success.tif */; };
+		0128AF910F14799100EC3C28 /* Upload Complete.aif in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF770F14799100EC3C28 /* Upload Complete.aif */; };
+		0128AF920F14799100EC3C28 /* Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF780F14799100EC3C28 /* Upload.png */; };
+		0128AF9E0F1479A000EC3C28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF9D0F1479A000EC3C28 /* InfoPlist.strings */; };
+		0128AFA00F1479A000EC3C28 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF9F0F1479A000EC3C28 /* MainMenu.xib */; };
+		0128AFA20F1479A000EC3C28 /* Scribd_Uploader_DataModelModel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0128AFA10F1479A000EC3C28 /* Scribd_Uploader_DataModelModel.strings */; };
+		0132BFF70F169DF8000B17C5 /* FileTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0132BFF60F169DF8000B17C5 /* FileTypes.plist */; };
+		0132C07D0F16BF99000B17C5 /* Scribd Uploader Help in Resources */ = {isa = PBXBuildFile; fileRef = 0132C07C0F16BF99000B17C5 /* Scribd Uploader Help */; };
+		0132C0970F16C3A6000B17C5 /* SUAboutWindowDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */; };
+		01ABF7D70F147AB400EE7142 /* ScribdAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */; };
+		01ABF7FA0F147DCC00EE7142 /* SUSessionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0106EE840F154403001B701B /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		0106EE870F15441C001B701B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		0106EF6D0F156D4E001B701B /* QuickLook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickLook.h; sourceTree = "<group>"; };
+		0128AEDA0F1478F300EC3C28 /* SUAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAppDelegate.h; sourceTree = "<group>"; };
+		0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUAppDelegate.m; sourceTree = "<group>"; };
+		0128AEDC0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileNotFoundAlertDelegate.h; sourceTree = "<group>"; };
+		0128AEDD0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileNotFoundAlertDelegate.m; sourceTree = "<group>"; };
+		0128AEDE0F1478F300EC3C28 /* SULoginSheetDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SULoginSheetDelegate.h; sourceTree = "<group>"; };
+		0128AEDF0F1478F300EC3C28 /* SULoginSheetDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SULoginSheetDelegate.m; sourceTree = "<group>"; };
+		0128AEE00F1478F300EC3C28 /* SUQuickLookDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUQuickLookDelegate.h; sourceTree = "<group>"; };
+		0128AEE10F1478F300EC3C28 /* SUQuickLookDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUQuickLookDelegate.m; sourceTree = "<group>"; };
+		0128AEE20F1478F300EC3C28 /* SUUploadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUploadDelegate.h; sourceTree = "<group>"; };
+		0128AEE30F1478F300EC3C28 /* SUUploadDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUploadDelegate.m; sourceTree = "<group>"; };
+		0128AEE50F1478F300EC3C28 /* NSError_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSError_SUAdditions.h; sourceTree = "<group>"; };
+		0128AEE60F1478F300EC3C28 /* NSError_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSError_SUAdditions.m; sourceTree = "<group>"; };
+		0128AEE70F1478F300EC3C28 /* SUDatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDatabaseHelper.h; sourceTree = "<group>"; };
+		0128AEE80F1478F300EC3C28 /* SUDatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDatabaseHelper.m; sourceTree = "<group>"; };
+		0128AEE90F1478F300EC3C28 /* SUDocumentHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDocumentHelper.h; sourceTree = "<group>"; };
+		0128AEEA0F1478F300EC3C28 /* SUDocumentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDocumentHelper.m; sourceTree = "<group>"; };
+		0128AEEB0F1478F300EC3C28 /* SUUploadHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUploadHelper.h; sourceTree = "<group>"; };
+		0128AEEC0F1478F300EC3C28 /* SUUploadHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUploadHelper.m; sourceTree = "<group>"; };
+		0128AEED0F1478F300EC3C28 /* SUDocumentArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDocumentArrayController.h; sourceTree = "<group>"; };
+		0128AEEE0F1478F300EC3C28 /* SUDocumentArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDocumentArrayController.m; sourceTree = "<group>"; };
+		0128AEEF0F1478F300EC3C28 /* SUUploadErrorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUploadErrorController.h; sourceTree = "<group>"; };
+		0128AEF00F1478F300EC3C28 /* SUUploadErrorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUploadErrorController.m; sourceTree = "<group>"; };
+		0128AEF20F1478F300EC3C28 /* SUDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDocument.h; sourceTree = "<group>"; };
+		0128AEF30F1478F300EC3C28 /* SUDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDocument.m; sourceTree = "<group>"; };
+		0128AEF40F1478F300EC3C28 /* SUScribdAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUScribdAPI.h; sourceTree = "<group>"; };
+		0128AEF50F1478F300EC3C28 /* SUScribdAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUScribdAPI.m; sourceTree = "<group>"; };
+		0128AEF70F1478F300EC3C28 /* SUFileListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileListView.h; sourceTree = "<group>"; };
+		0128AEF80F1478F300EC3C28 /* SUFileListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileListView.m; sourceTree = "<group>"; };
+		0128AEF90F1478F300EC3C28 /* SUTableStatusColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTableStatusColumn.h; sourceTree = "<group>"; };
+		0128AEFA0F1478F300EC3C28 /* SUTableStatusColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTableStatusColumn.m; sourceTree = "<group>"; };
+		0128AEFC0F1478F300EC3C28 /* SUBusyActionValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUBusyActionValueTransformer.h; sourceTree = "<group>"; };
+		0128AEFD0F1478F300EC3C28 /* SUBusyActionValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUBusyActionValueTransformer.m; sourceTree = "<group>"; };
+		0128AEFE0F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileStatusButtonImageValueTransformer.h; sourceTree = "<group>"; };
+		0128AEFF0F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileStatusButtonImageValueTransformer.m; sourceTree = "<group>"; };
+		0128AF000F1478F300EC3C28 /* SUFileStatusColorValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileStatusColorValueTransformer.h; sourceTree = "<group>"; };
+		0128AF010F1478F300EC3C28 /* SUFileStatusColorValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileStatusColorValueTransformer.m; sourceTree = "<group>"; };
+		0128AF020F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SULogInButtonTitleValueTransformer.h; sourceTree = "<group>"; };
+		0128AF030F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SULogInButtonTitleValueTransformer.m; sourceTree = "<group>"; };
+		0128AF040F1478F300EC3C28 /* SULoginLabelValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SULoginLabelValueTransformer.h; sourceTree = "<group>"; };
+		0128AF050F1478F300EC3C28 /* SULoginLabelValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SULoginLabelValueTransformer.m; sourceTree = "<group>"; };
+		0128AF060F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUPrivateDescriptionValueTransformer.h; sourceTree = "<group>"; };
+		0128AF070F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUPrivateDescriptionValueTransformer.m; sourceTree = "<group>"; };
+		0128AF080F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUnarchiveErrorValueTransformer.h; sourceTree = "<group>"; };
+		0128AF090F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUnarchiveErrorValueTransformer.m; sourceTree = "<group>"; };
+		0128AF0B0F1478F300EC3C28 /* Scribd_Uploader_DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Scribd_Uploader_DataModel.xcdatamodel; sourceTree = "<group>"; };
+		0128AF0D0F1478F300EC3C28 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0128AF0E0F1478F300EC3C28 /* SUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUConstants.h; sourceTree = "<group>"; };
+		0128AF0F0F1478F300EC3C28 /* SUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUConstants.m; sourceTree = "<group>"; };
+		0128AF290F1478F300EC3C28 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		0128AF2A0F1478F300EC3C28 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		0128AF2B0F1478F300EC3C28 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		0128AF2C0F1478F300EC3C28 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		0128AF2D0F1478F300EC3C28 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		0128AF2E0F1478F300EC3C28 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		0128AF2F0F1478F300EC3C28 /* NSHTTPCookieAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSHTTPCookieAdditions.h; sourceTree = "<group>"; };
+		0128AF300F1478F300EC3C28 /* NSHTTPCookieAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHTTPCookieAdditions.m; sourceTree = "<group>"; };
+		0128AF6E0F14799100EC3C28 /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Add.png; sourceTree = "<group>"; };
+		0128AF6F0F14799100EC3C28 /* error.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = error.tif; sourceTree = "<group>"; };
+		0128AF700F14799100EC3C28 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0128AF710F14799100EC3C28 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0128AF720F14799100EC3C28 /* Remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Remove.png; sourceTree = "<group>"; };
+		0128AF730F14799100EC3C28 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Scribd_Uploader_DataModelModel.strings; sourceTree = "<group>"; };
+		0128AF740F14799100EC3C28 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = English.lproj/ScribdAPI.plist; sourceTree = "<group>"; };
+		0128AF760F14799100EC3C28 /* success.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = success.tif; sourceTree = "<group>"; };
+		0128AF770F14799100EC3C28 /* Upload Complete.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Upload Complete.aif"; sourceTree = "<group>"; };
+		0128AF780F14799100EC3C28 /* Upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Upload.png; sourceTree = "<group>"; };
+		0132BFF40F169DF5000B17C5 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = English.lproj/FileTypes.plist; sourceTree = "<group>"; };
+		0132C0170F16BF97000B17C5 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/Scribd Uploader Help"; sourceTree = "<group>"; };
+		0132C0950F16C3A6000B17C5 /* SUAboutWindowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAboutWindowDelegate.h; sourceTree = "<group>"; };
+		0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUAboutWindowDelegate.m; sourceTree = "<group>"; };
+		01ABF7F80F147DCC00EE7142 /* SUSessionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSessionHelper.h; sourceTree = "<group>"; };
+		01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSessionHelper.m; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		77C82804067257F0000B614F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		8D1107320486CEB800E47090 /* Scribd Uploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scribd Uploader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0128AED60F1478F300EC3C28 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0128AED70F1478F300EC3C28 /* Controller */,
+				0128AEF10F1478F300EC3C28 /* Model */,
+				0128AEF60F1478F300EC3C28 /* View */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0128AED70F1478F300EC3C28 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0128AED80F1478F300EC3C28 /* Delegates */,
+				0128AEE40F1478F300EC3C28 /* Helpers */,
+				0128AEED0F1478F300EC3C28 /* SUDocumentArrayController.h */,
+				0128AEEE0F1478F300EC3C28 /* SUDocumentArrayController.m */,
+				0128AEEF0F1478F300EC3C28 /* SUUploadErrorController.h */,
+				0128AEF00F1478F300EC3C28 /* SUUploadErrorController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0128AED80F1478F300EC3C28 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0128AEDA0F1478F300EC3C28 /* SUAppDelegate.h */,
+				0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */,
+				0128AEDC0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.h */,
+				0128AEDD0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m */,
+				0128AEDE0F1478F300EC3C28 /* SULoginSheetDelegate.h */,
+				0128AEDF0F1478F300EC3C28 /* SULoginSheetDelegate.m */,
+				0128AEE00F1478F300EC3C28 /* SUQuickLookDelegate.h */,
+				0128AEE10F1478F300EC3C28 /* SUQuickLookDelegate.m */,
+				0128AEE20F1478F300EC3C28 /* SUUploadDelegate.h */,
+				0128AEE30F1478F300EC3C28 /* SUUploadDelegate.m */,
+				0132C0950F16C3A6000B17C5 /* SUAboutWindowDelegate.h */,
+				0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		0128AEE40F1478F300EC3C28 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0128AEE50F1478F300EC3C28 /* NSError_SUAdditions.h */,
+				0128AEE60F1478F300EC3C28 /* NSError_SUAdditions.m */,
+				0128AEE70F1478F300EC3C28 /* SUDatabaseHelper.h */,
+				0128AEE80F1478F300EC3C28 /* SUDatabaseHelper.m */,
+				0128AEE90F1478F300EC3C28 /* SUDocumentHelper.h */,
+				0128AEEA0F1478F300EC3C28 /* SUDocumentHelper.m */,
+				0128AEEB0F1478F300EC3C28 /* SUUploadHelper.h */,
+				0128AEEC0F1478F300EC3C28 /* SUUploadHelper.m */,
+				01ABF7F80F147DCC00EE7142 /* SUSessionHelper.h */,
+				01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0128AEF10F1478F300EC3C28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0128AEF20F1478F300EC3C28 /* SUDocument.h */,
+				0128AEF30F1478F300EC3C28 /* SUDocument.m */,
+				0128AEF40F1478F300EC3C28 /* SUScribdAPI.h */,
+				0128AEF50F1478F300EC3C28 /* SUScribdAPI.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0128AEF60F1478F300EC3C28 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0128AEF70F1478F300EC3C28 /* SUFileListView.h */,
+				0128AEF80F1478F300EC3C28 /* SUFileListView.m */,
+				0128AEF90F1478F300EC3C28 /* SUTableStatusColumn.h */,
+				0128AEFA0F1478F300EC3C28 /* SUTableStatusColumn.m */,
+				0128AEFB0F1478F300EC3C28 /* Transformers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0128AEFB0F1478F300EC3C28 /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				0128AEFC0F1478F300EC3C28 /* SUBusyActionValueTransformer.h */,
+				0128AEFD0F1478F300EC3C28 /* SUBusyActionValueTransformer.m */,
+				0128AEFE0F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.h */,
+				0128AEFF0F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.m */,
+				0128AF000F1478F300EC3C28 /* SUFileStatusColorValueTransformer.h */,
+				0128AF010F1478F300EC3C28 /* SUFileStatusColorValueTransformer.m */,
+				0128AF020F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.h */,
+				0128AF030F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.m */,
+				0128AF040F1478F300EC3C28 /* SULoginLabelValueTransformer.h */,
+				0128AF050F1478F300EC3C28 /* SULoginLabelValueTransformer.m */,
+				0128AF060F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.h */,
+				0128AF070F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m */,
+				0128AF080F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.h */,
+				0128AF090F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m */,
+			);
+			path = Transformers;
+			sourceTree = "<group>";
+		};
+		0128AF0A0F1478F300EC3C28 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0128AF0B0F1478F300EC3C28 /* Scribd_Uploader_DataModel.xcdatamodel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0128AF0C0F1478F300EC3C28 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0128AF0D0F1478F300EC3C28 /* main.m */,
+				0128AF0E0F1478F300EC3C28 /* SUConstants.h */,
+				0128AF0F0F1478F300EC3C28 /* SUConstants.m */,
+			);
+			path = "Other Sources";
+			sourceTree = "<group>";
+		};
+		0128AF280F1478F300EC3C28 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				0128AF290F1478F300EC3C28 /* ASIFormDataRequest.h */,
+				0128AF2A0F1478F300EC3C28 /* ASIFormDataRequest.m */,
+				0128AF2B0F1478F300EC3C28 /* ASIHTTPRequest.h */,
+				0128AF2C0F1478F300EC3C28 /* ASIHTTPRequest.m */,
+				0128AF2D0F1478F300EC3C28 /* ASINetworkQueue.h */,
+				0128AF2E0F1478F300EC3C28 /* ASINetworkQueue.m */,
+				0128AF2F0F1478F300EC3C28 /* NSHTTPCookieAdditions.h */,
+				0128AF300F1478F300EC3C28 /* NSHTTPCookieAdditions.m */,
+				0106EF6D0F156D4E001B701B /* QuickLook.h */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		0128AF6C0F14799100EC3C28 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0128AF6E0F14799100EC3C28 /* Add.png */,
+				0128AF6F0F14799100EC3C28 /* error.tif */,
+				0132BFF60F169DF8000B17C5 /* FileTypes.plist */,
+				0106EE840F154403001B701B /* Icon.icns */,
+				0106EE870F15441C001B701B /* Info.plist */,
+				0128AF9D0F1479A000EC3C28 /* InfoPlist.strings */,
+				0128AF9F0F1479A000EC3C28 /* MainMenu.xib */,
+				0128AF720F14799100EC3C28 /* Remove.png */,
+				0132C07C0F16BF99000B17C5 /* Scribd Uploader Help */,
+				0128AFA10F1479A000EC3C28 /* Scribd_Uploader_DataModelModel.strings */,
+				01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */,
+				0128AF760F14799100EC3C28 /* success.tif */,
+				0128AF770F14799100EC3C28 /* Upload Complete.aif */,
+				0128AF780F14799100EC3C28 /* Upload.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77C82804067257F0000B614F /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* Scribd Uploader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Scribd Uploader */ = {
+			isa = PBXGroup;
+			children = (
+				0128AED60F1478F300EC3C28 /* Classes */,
+				0128AF0A0F1478F300EC3C28 /* Models */,
+				0128AF6C0F14799100EC3C28 /* Resources */,
+				0128AF0C0F1478F300EC3C28 /* Other Sources */,
+				0128AF280F1478F300EC3C28 /* Vendor */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = "Scribd Uploader";
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Scribd Uploader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26FC0A840875C7B200E6366F /* Build configuration list for PBXNativeTarget "Scribd Uploader" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Scribd Uploader";
+			productInstallPath = "$(HOME)/Applications";
+			productName = "Scribd Uploader";
+			productReference = 8D1107320486CEB800E47090 /* Scribd Uploader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 26FC0A880875C7B200E6366F /* Build configuration list for PBXProject "Scribd Uploader" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Scribd Uploader */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Scribd Uploader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0128AF880F14799100EC3C28 /* Add.png in Resources */,
+				0128AF890F14799100EC3C28 /* error.tif in Resources */,
+				0128AF9E0F1479A000EC3C28 /* InfoPlist.strings in Resources */,
+				0128AFA00F1479A000EC3C28 /* MainMenu.xib in Resources */,
+				0128AF8C0F14799100EC3C28 /* Remove.png in Resources */,
+				0128AFA20F1479A000EC3C28 /* Scribd_Uploader_DataModelModel.strings in Resources */,
+				01ABF7D70F147AB400EE7142 /* ScribdAPI.plist in Resources */,
+				0128AF900F14799100EC3C28 /* success.tif in Resources */,
+				0128AF910F14799100EC3C28 /* Upload Complete.aif in Resources */,
+				0128AF920F14799100EC3C28 /* Upload.png in Resources */,
+				0106EE850F154403001B701B /* Icon.icns in Resources */,
+				0132BFF70F169DF8000B17C5 /* FileTypes.plist in Resources */,
+				0132C07D0F16BF99000B17C5 /* Scribd Uploader Help in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0128AF310F1478F300EC3C28 /* SUAppDelegate.m in Sources */,
+				0128AF320F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m in Sources */,
+				0128AF330F1478F300EC3C28 /* SULoginSheetDelegate.m in Sources */,
+				0128AF340F1478F300EC3C28 /* SUQuickLookDelegate.m in Sources */,
+				0128AF350F1478F300EC3C28 /* SUUploadDelegate.m in Sources */,
+				0128AF360F1478F300EC3C28 /* NSError_SUAdditions.m in Sources */,
+				0128AF370F1478F300EC3C28 /* SUDatabaseHelper.m in Sources */,
+				0128AF380F1478F300EC3C28 /* SUDocumentHelper.m in Sources */,
+				0128AF390F1478F300EC3C28 /* SUUploadHelper.m in Sources */,
+				0128AF3A0F1478F300EC3C28 /* SUDocumentArrayController.m in Sources */,
+				0128AF3B0F1478F300EC3C28 /* SUUploadErrorController.m in Sources */,
+				0128AF3C0F1478F300EC3C28 /* SUDocument.m in Sources */,
+				0128AF3D0F1478F300EC3C28 /* SUScribdAPI.m in Sources */,
+				0128AF3E0F1478F300EC3C28 /* SUFileListView.m in Sources */,
+				0128AF3F0F1478F300EC3C28 /* SUTableStatusColumn.m in Sources */,
+				0128AF400F1478F300EC3C28 /* SUBusyActionValueTransformer.m in Sources */,
+				0128AF410F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.m in Sources */,
+				0128AF420F1478F300EC3C28 /* SUFileStatusColorValueTransformer.m in Sources */,
+				0128AF430F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.m in Sources */,
+				0128AF440F1478F300EC3C28 /* SULoginLabelValueTransformer.m in Sources */,
+				0128AF450F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m in Sources */,
+				0128AF460F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m in Sources */,
+				0128AF470F1478F300EC3C28 /* Scribd_Uploader_DataModel.xcdatamodel in Sources */,
+				0128AF480F1478F300EC3C28 /* main.m in Sources */,
+				0128AF490F1478F300EC3C28 /* SUConstants.m in Sources */,
+				0128AF5D0F1478F300EC3C28 /* ASIFormDataRequest.m in Sources */,
+				0128AF5E0F1478F300EC3C28 /* ASIHTTPRequest.m in Sources */,
+				0128AF5F0F1478F300EC3C28 /* ASINetworkQueue.m in Sources */,
+				0128AF600F1478F300EC3C28 /* NSHTTPCookieAdditions.m in Sources */,
+				01ABF7FA0F147DCC00EE7142 /* SUSessionHelper.m in Sources */,
+				0132C0970F16C3A6000B17C5 /* SUAboutWindowDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0128AF9D0F1479A000EC3C28 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0128AF700F14799100EC3C28 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0128AF9F0F1479A000EC3C28 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0128AF710F14799100EC3C28 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		0128AFA10F1479A000EC3C28 /* Scribd_Uploader_DataModelModel.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0128AF730F14799100EC3C28 /* English */,
+			);
+			name = Scribd_Uploader_DataModelModel.strings;
+			sourceTree = "<group>";
+		};
+		0132BFF60F169DF8000B17C5 /* FileTypes.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0132BFF40F169DF5000B17C5 /* English */,
+			);
+			name = FileTypes.plist;
+			sourceTree = "<group>";
+		};
+		0132C07C0F16BF99000B17C5 /* Scribd Uploader Help */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0132C0170F16BF97000B17C5 /* English */,
+			);
+			name = "Scribd Uploader Help";
+			sourceTree = "<group>";
+		};
+		01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0128AF740F14799100EC3C28 /* English */,
+			);
+			name = ScribdAPI.plist;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26FC0A850875C7B200E6366F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Scribd_Uploader_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "Scribd Uploader";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		26FC0A860875C7B200E6366F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Scribd_Uploader_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "Scribd Uploader";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		26FC0A890875C7B200E6366F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
+			};
+			name = Debug;
+		};
+		26FC0A8A0875C7B200E6366F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26FC0A840875C7B200E6366F /* Build configuration list for PBXNativeTarget "Scribd Uploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FC0A850875C7B200E6366F /* Debug */,
+				26FC0A860875C7B200E6366F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26FC0A880875C7B200E6366F /* Build configuration list for PBXProject "Scribd Uploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FC0A890875C7B200E6366F /* Debug */,
+				26FC0A8A0875C7B200E6366F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

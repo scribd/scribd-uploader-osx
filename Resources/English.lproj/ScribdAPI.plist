@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseURL</key>
+	<string>http://www.scribd.com/api?</string>
+	<key>APIKey</key>
+	<string>4n01s97v3qimxlixkuz8s</string>
+	<key>APISecret</key>
+	<string>sec-5qwk78grmqsj98veknx86mazrh</string>
+	<key>ErrorMessages</key>
+	<dict>
+		<key>Upload</key>
+		<dict>
+			<key>Default</key>
+			<string>An error occurred when trying to upload: %@.</string>
+			<key>612</key>
+			<dict>
+				<key>Message</key>
+				<string>The file was not uploaded because it no longer exists.</string>
+			</dict>
+			<key>611</key>
+			<dict>
+				<key>Message</key>
+				<string>The file was not uploaded because you don’t have permission to look at that file.</string>
+			</dict>
+			<key>603</key>
+			<dict>
+				<key>Message</key>
+				<string>The file was not uploaded because it is empty.</string>
+			</dict>
+			<key>602</key>
+			<dict>
+				<key>Message</key>
+				<string>The file could not be uploaded because Scribd doesn’t accept files of that type.</string>
+			</dict>
+		</dict>
+		<key>SignUp</key>
+		<dict>
+			<key>601</key>
+			<dict>
+				<key>Message</key>
+				<string>You must provide an email address and password to sign up for a Scribd account.</string>
+			</dict>
+			<key>628</key>
+			<dict>
+				<key>Message</key>
+				<string>The email address “%@” is invalid. Please provide a valid, real email address.</string>
+				<key>Invalidate</key>
+				<string>newUserEmail</string>
+			</dict>
+			<key>Default</key>
+			<string>An error occurred while signing up (“%@”); your account has not been created and your files couldn’t be uploaded.</string>
+			<key>616</key>
+			<dict>
+				<key>Message</key>
+				<string>There is already a Scribd user with the email address %@.</string>
+				<key>Invalidate</key>
+				<string>newUserEmail</string>
+			</dict>
+			<key>615</key>
+			<dict>
+				<key>Message</key>
+				<string>The username “%@” has already been taken. Please choose another one.</string>
+				<key>Invalidate</key>
+				<string>newUserLogin</string>
+			</dict>
+		</dict>
+		<key>LogIn</key>
+		<dict>
+			<key>Default</key>
+			<string>An error occurred while logging in (“%@”); your files couldn’t be uploaded.</string>
+			<key>613</key>
+			<dict>
+				<key>Message</key>
+				<string>Your login and password didn’t match. Please double-check them and try again.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>RecoverySuggestions</key>
+	<dict>
+		<key>LogIn</key>
+		<string>Your documents have not yet been uploaded. They are still in the list should you want to try again later.</string>
+		<key>SignUp</key>
+		<string>Your documents have not yet been uploaded. They are still in the list should you want to try again later.</string>
+		<key>Upload</key>
+		<string>The file is still in your queue, and you can try uploading it again later.</string>
+	</dict>
+</dict>
+</plist>
