@@ -112,7 +112,7 @@
 		return NO;
 	}
 	
-	[[SUSessionHelper sessionHelper] storeSessionKey:[result objectForKey:@"session_key"] username:newUserEmail];
+	[[SUSessionHelper sessionHelper] storeSessionKey:[result objectForKey:@"session_key"] username:newUserLogin];
 	
 	[params release];
 	return YES;
