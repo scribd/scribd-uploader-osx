@@ -22,7 +22,9 @@
 	BOOL atLeastOneWasAdded = NO;
 	for (NSString *path in files) {
 		if ([[[SUDocumentHelper documentManager] scribdFileTypes] containsObject:[path pathExtension]]) {
-			if ([[SUDocumentHelper documentManager] findDocumentByPath:path inManagedObjectContext:db.managedObjectContext]) continue;
+			SUDocument *existingDocument = NULL;
+			if (existingDocument = [[SUDocumentHelper documentManager] findDocumentByPath:path inManagedObjectContext:db.managedObjectContext])
+				[db.managedObjectContext deleteObject:existingDocument];
 			NSManagedObject *file = [NSEntityDescription insertNewObjectForEntityForName:@"Document" inManagedObjectContext:db.managedObjectContext];
 			[file setValue:[path stringByStandardizingPath] forKey:@"path"];
 			atLeastOneWasAdded = YES;
