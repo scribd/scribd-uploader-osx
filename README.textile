@@ -1,0 +1,11 @@
+h1. Scribd Uploader
+
+Information about this project and its source code is available from its help
+book. To view:
+
+# Check out this source code.
+# Compile the Scribd Uploader application.
+# Run Scribd Uploader.
+# Select Scribd Uploader Help from the Help menu.
+# Click About Scribd Uploader.
+# Click "Overview of the Scribd Uploader codebase."
