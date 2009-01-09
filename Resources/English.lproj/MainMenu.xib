@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="2"/>
+			<integer value="705"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -355,7 +355,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<string key="NSWindowContentMinSize">{491, 372}</string>
 				<object class="NSView" key="NSWindowView" id="823886803">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -744,7 +744,6 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 						</object>
 					</object>
 					<string key="NSFrameSize">{491, 401}</string>
-					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
 				<string key="NSMinSize">{491, 450}</string>
@@ -2005,7 +2004,7 @@ ciBoZWxwIHZpZXdlci4</string>
 				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<string key="NSWindowContentMinSize">{463, 228}</string>
 				<object class="NSView" key="NSWindowView" id="132618809">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2686,6 +2685,7 @@ ciBoZWxwIHZpZXdlci4</string>
 						</object>
 					</object>
 					<string key="NSFrameSize">{463, 259}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
 				<string key="NSMinSize">{463, 250}</string>
@@ -3391,35 +3391,6 @@ ciBoZWxwIHZpZXdlci4</string>
 					<int key="connectionID">838</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: newUserName</string>
-						<reference key="source" ref="813516906"/>
-						<reference key="destination" ref="108242027"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="813516906"/>
-							<reference key="NSDestination" ref="108242027"/>
-							<string key="NSLabel">value: newUserName</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">newUserName</string>
-							<object class="NSDictionary" key="NSOptions">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSMutableArray" key="dict.sortedKeys">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>NSNoSelectionPlaceholder</string>
-									<string>NSNullPlaceholder</string>
-								</object>
-								<object class="NSMutableArray" key="dict.values">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>Your real name (optional)</string>
-									<string>Your real name (optional)</string>
-								</object>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">854</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">loginSheetDelegate</string>
 						<reference key="source" ref="612578685"/>
@@ -3533,97 +3504,6 @@ ciBoZWxwIHZpZXdlci4</string>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: newUserEmail</string>
-						<reference key="source" ref="58870801"/>
-						<reference key="destination" ref="108242027"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="58870801"/>
-							<reference key="NSDestination" ref="108242027"/>
-							<string key="NSLabel">value: newUserEmail</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">newUserEmail</string>
-							<object class="NSDictionary" key="NSOptions">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSMutableArray" key="dict.sortedKeys">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>NSNoSelectionPlaceholder</string>
-									<string>NSNullPlaceholder</string>
-									<string>NSValidatesImmediately</string>
-								</object>
-								<object class="NSMutableArray" key="dict.values">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>Your email address</string>
-									<string>Your email address</string>
-									<integer value="1" id="9"/>
-								</object>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">900</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: newUserPassword</string>
-						<reference key="source" ref="665978566"/>
-						<reference key="destination" ref="108242027"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="665978566"/>
-							<reference key="NSDestination" ref="108242027"/>
-							<string key="NSLabel">value: newUserPassword</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">newUserPassword</string>
-							<object class="NSDictionary" key="NSOptions">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSMutableArray" key="dict.sortedKeys">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>NSNoSelectionPlaceholder</string>
-									<string>NSNullPlaceholder</string>
-								</object>
-								<object class="NSMutableArray" key="dict.values">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>Your new password</string>
-									<string>Your new password</string>
-								</object>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">907</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: newUserLogin</string>
-						<reference key="source" ref="469642331"/>
-						<reference key="destination" ref="108242027"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="469642331"/>
-							<reference key="NSDestination" ref="108242027"/>
-							<string key="NSLabel">value: newUserLogin</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">newUserLogin</string>
-							<object class="NSDictionary" key="NSOptions">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSMutableArray" key="dict.sortedKeys">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>NSNoSelectionPlaceholder</string>
-									<string>NSNullPlaceholder</string>
-									<string>NSRaisesForNotApplicableKeys</string>
-								</object>
-								<object class="NSMutableArray" key="dict.values">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>Your new login nickname</string>
-									<string>Your new login nickname</string>
-									<reference ref="8"/>
-								</object>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">909</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.scribdPassword</string>
 						<reference key="source" ref="758266464"/>
 						<reference key="destination" ref="706999351"/>
@@ -3635,7 +3515,7 @@ ciBoZWxwIHZpZXdlci4</string>
 							<string key="NSKeyPath">values.scribdPassword</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<reference key="NS.object.0" ref="9"/>
+								<integer value="1" key="NS.object.0" id="9"/>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
@@ -3948,7 +3828,7 @@ ciBoZWxwIHZpZXdlci4</string>
 								</object>
 								<object class="NSMutableArray" key="dict.values">
 									<bool key="EncodedWithXMLCoder">YES</bool>
-									<boolean value="YES"/>
+									<boolean value="YES" id="5"/>
 									<boolean value="NO" id="6"/>
 									<string>displayError:atIndex:</string>
 									<string>SUUnarchiveError</string>
@@ -4170,6 +4050,132 @@ ciBoZWxwIHZpZXdlci4</string>
 						<reference key="destination" ref="160869461"/>
 					</object>
 					<int key="connectionID">1097</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: newUserEmail</string>
+						<reference key="source" ref="58870801"/>
+						<reference key="destination" ref="108242027"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="58870801"/>
+							<reference key="NSDestination" ref="108242027"/>
+							<string key="NSLabel">value: newUserEmail</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">newUserEmail</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMutableArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSContinuouslyUpdatesValue</string>
+									<string>NSNoSelectionPlaceholder</string>
+									<string>NSNullPlaceholder</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<reference ref="5"/>
+									<string>Your email address</string>
+									<string>Your email address</string>
+								</object>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1099</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: newUserPassword</string>
+						<reference key="source" ref="665978566"/>
+						<reference key="destination" ref="108242027"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="665978566"/>
+							<reference key="NSDestination" ref="108242027"/>
+							<string key="NSLabel">value: newUserPassword</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">newUserPassword</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMutableArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSContinuouslyUpdatesValue</string>
+									<string>NSNoSelectionPlaceholder</string>
+									<string>NSNullPlaceholder</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<reference ref="5"/>
+									<string>Your new password</string>
+									<string>Your new password</string>
+								</object>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1100</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: newUserLogin</string>
+						<reference key="source" ref="469642331"/>
+						<reference key="destination" ref="108242027"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="469642331"/>
+							<reference key="NSDestination" ref="108242027"/>
+							<string key="NSLabel">value: newUserLogin</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">newUserLogin</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMutableArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSContinuouslyUpdatesValue</string>
+									<string>NSNoSelectionPlaceholder</string>
+									<string>NSNullPlaceholder</string>
+									<string>NSRaisesForNotApplicableKeys</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<reference ref="5"/>
+									<string>Your new login nickname</string>
+									<string>Your new login nickname</string>
+									<reference ref="6"/>
+								</object>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1101</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: newUserName</string>
+						<reference key="source" ref="813516906"/>
+						<reference key="destination" ref="108242027"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="813516906"/>
+							<reference key="NSDestination" ref="108242027"/>
+							<string key="NSLabel">value: newUserName</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">newUserName</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMutableArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSContinuouslyUpdatesValue</string>
+									<string>NSNoSelectionPlaceholder</string>
+									<string>NSNullPlaceholder</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<reference ref="5"/>
+									<string>Your real name (optional)</string>
+									<string>Your real name (optional)</string>
+								</object>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1102</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6543,7 +6549,7 @@ bnRzIHdpdGhvdXQgeW91ciBwZXJtaXNzaW9uLg</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1097</int>
+			<int key="maxID">1102</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
