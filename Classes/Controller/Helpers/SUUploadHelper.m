@@ -37,7 +37,7 @@
 	self.isBusy = NO;
 	
 	if (error) {
-		[error addMessagesForAction:SULogInAction sender:self];		
+		[error addMessagesForAction:SULogInAction sender:self];
 		NSAlert *alert = [[NSAlert alloc] init];
 		[alert setAlertStyle:NSCriticalAlertStyle];
 		[alert setMessageText:[error localizedDescription]];
@@ -78,6 +78,8 @@
 		for (SUDocument *document in documents) {
 			SUUploadDelegate *delegate = [[SUUploadDelegate alloc] initWithDocument:document inManagedObjectContext:db.managedObjectContext fromUploader:self];
 			delegate.uploadWindow = uploadWindow;
+			delegate.uploadCompleteSheet = uploadCompleteSheet;
+			delegate.uploadCompleteSheetDelegate = uploadCompleteSheetDelegate;
 			self.currentlyUploadingCount++;
 			[[SUScribdAPI sharedAPI] apiSubmitFile:document apiMethod:@"docs.upload" parameters:parameters delegate:delegate];
 		}
@@ -116,6 +118,10 @@
 	
 	[params release];
 	return YES;
+}
+
+- (BOOL) uploadComplete {
+	return !currentlyUploadingCount;
 }
 
 /*

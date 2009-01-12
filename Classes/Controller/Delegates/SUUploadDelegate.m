@@ -3,6 +3,8 @@
 @implementation SUUploadDelegate
 
 @synthesize uploadWindow;
+@synthesize uploadCompleteSheet;
+@synthesize uploadCompleteSheetDelegate;
 
 /*
  Prevent initialization without a document.
@@ -18,6 +20,8 @@
 		progress = 0.0;
 		progressMax = 1.0;
 		uploadWindow = NULL;
+		uploadCompleteSheet = NULL;
+		uploadCompleteSheetDelegate = NULL;
 		managedObjectContext = [context retain];
 		uploader = [caller retain];
 	}
@@ -33,13 +37,13 @@
 	[managedObjectContext release];
 	[uploader release];
 	if (uploadWindow) [uploadWindow release];
+	if (uploadCompleteSheet) [uploadCompleteSheet release];
+	if (uploadCompleteSheetDelegate) [uploadCompleteSheetDelegate release];
 	[super dealloc];
 }
 
 - (void) requestFinished:(ASIHTTPRequest *)request {
-	[uploader setValue:[NSNumber numberWithInt:[[uploader valueForKey:@"currentlyUploadingCount"] intValue] - 1] forKey:@"currentlyUploadingCount"];
-	if ([[uploader valueForKey:@"currentlyUploadingCount"] intValue] == 0)
-		[[NSSound soundNamed:@"Upload Complete"] play];
+	[uploader setValue:[NSNumber numberWithInteger:[[uploader valueForKey:@"currentlyUploadingCount"] integerValue] - 1] forKey:@"currentlyUploadingCount"];
 	
 	NSError *error = NULL;
 	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithXMLString:[request dataString] options:0 error:&error];
@@ -47,15 +51,22 @@
 		NSDictionary *response = [[SUScribdAPI sharedAPI] parseXML:xml error:&error];
 		//TODO shouldn't use a private method here
 		if (response) {
-			//[managedObjectContext deleteObject:document];
 			document.success = [NSNumber numberWithBool:YES];
 			document.error = NULL;
-			return;
+			document.scribdID = [NSNumber numberWithInteger:[[response objectForKey:@"doc_id"] integerValue]];
 		}
+		else document.success = [NSNumber numberWithBool:NO];
 	}
-	[error addMessagesForAction:SUUploadAction sender:self];
-	document.error = [NSArchiver archivedDataWithRootObject:error];
-	document.success = [NSNumber numberWithBool:NO];
+	else document.success = [NSNumber numberWithBool:NO];
+	if (![document.success boolValue]) {
+		[error addMessagesForAction:SUUploadAction sender:self];
+		document.error = [NSArchiver archivedDataWithRootObject:error];
+	}
+	
+	if ([uploader uploadComplete]) {
+		[[NSSound soundNamed:@"Upload Complete"] play];
+		[[NSApplication sharedApplication] beginSheet:uploadCompleteSheet modalForWindow:uploadWindow modalDelegate:uploadCompleteSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+	}
 }
 
 /*
@@ -67,7 +78,7 @@
 };
 
 - (void) requestFailed:(ASIHTTPRequest *)request {
-	[uploader setValue:[NSNumber numberWithInt:[[uploader valueForKey:@"currentlyUploadingCount"] intValue] - 1] forKey:@"currentlyUploadingCount"];
+	[uploader setValue:[NSNumber numberWithInteger:[[uploader valueForKey:@"currentlyUploadingCount"] integerValue] - 1] forKey:@"currentlyUploadingCount"];
 	
 	NSError *outerError = [request error];
 	NSError *innerError = [[outerError userInfo] objectForKey:NSUnderlyingErrorKey];

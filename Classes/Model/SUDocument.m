@@ -1,11 +1,12 @@
 #import "SUDocument.h"
 
-@implementation SUDocument 
+@implementation SUDocument
 
 @dynamic path;
 @dynamic progress;
 @dynamic success;
 @dynamic error;
+@dynamic scribdID;
 
 /*
  You're not really supposed to override init for managed objects, but I see no

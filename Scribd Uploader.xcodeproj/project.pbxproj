@@ -51,6 +51,8 @@
 		0132C0970F16C3A6000B17C5 /* SUAboutWindowDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */; };
 		01ABF7D70F147AB400EE7142 /* ScribdAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */; };
 		01ABF7FA0F147DCC00EE7142 /* SUSessionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */; };
+		01AC0E520F1BF12200D6C515 /* Upload Complete.png in Resources */ = {isa = PBXBuildFile; fileRef = 01AC0E510F1BF12200D6C515 /* Upload Complete.png */; };
+		01AC0EAD0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AC0EAC0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.m */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +132,9 @@
 		0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUAboutWindowDelegate.m; sourceTree = "<group>"; };
 		01ABF7F80F147DCC00EE7142 /* SUSessionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSessionHelper.h; sourceTree = "<group>"; };
 		01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSessionHelper.m; sourceTree = "<group>"; };
+		01AC0E510F1BF12200D6C515 /* Upload Complete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upload Complete.png"; sourceTree = "<group>"; };
+		01AC0EAB0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUploadCompleteSheetDelegate.h; sourceTree = "<group>"; };
+		01AC0EAC0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUploadCompleteSheetDelegate.m; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -187,6 +192,8 @@
 				0128AEE30F1478F300EC3C28 /* SUUploadDelegate.m */,
 				0132C0950F16C3A6000B17C5 /* SUAboutWindowDelegate.h */,
 				0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */,
+				01AC0EAB0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.h */,
+				01AC0EAC0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.m */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -302,6 +309,7 @@
 				01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */,
 				0128AF760F14799100EC3C28 /* success.tif */,
 				0128AF770F14799100EC3C28 /* Upload Complete.aif */,
+				01AC0E510F1BF12200D6C515 /* Upload Complete.png */,
 				0128AF780F14799100EC3C28 /* Upload.png */,
 			);
 			path = Resources;
@@ -337,10 +345,10 @@
 			isa = PBXGroup;
 			children = (
 				0128AED60F1478F300EC3C28 /* Classes */,
-				0128AF0A0F1478F300EC3C28 /* Models */,
-				0128AF6C0F14799100EC3C28 /* Resources */,
 				0128AF0C0F1478F300EC3C28 /* Other Sources */,
 				0128AF280F1478F300EC3C28 /* Vendor */,
+				0128AF0A0F1478F300EC3C28 /* Models */,
+				0128AF6C0F14799100EC3C28 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -412,6 +420,7 @@
 				0106EE850F154403001B701B /* Icon.icns in Resources */,
 				0132BFF70F169DF8000B17C5 /* FileTypes.plist in Resources */,
 				0132C07D0F16BF99000B17C5 /* Scribd Uploader Help in Resources */,
+				01AC0E520F1BF12200D6C515 /* Upload Complete.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +462,7 @@
 				0128AF600F1478F300EC3C28 /* NSHTTPCookieAdditions.m in Sources */,
 				01ABF7FA0F147DCC00EE7142 /* SUSessionHelper.m in Sources */,
 				0132C0970F16C3A6000B17C5 /* SUAboutWindowDelegate.m in Sources */,
+				01AC0EAD0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

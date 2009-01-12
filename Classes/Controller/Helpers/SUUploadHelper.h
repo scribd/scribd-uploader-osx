@@ -3,6 +3,7 @@
 #import "SUDatabaseHelper.h"
 #import "NSError_SUAdditions.h"
 #import "SUSessionHelper.h"
+#import "SUUploadCompleteSheetDelegate.h"
 
 /*!
  @class SUUploadHelper
@@ -25,7 +26,8 @@
 	NSString *busyAction;
 	NSString *newUserLogin, *newUserEmail, *newUserPassword, *newUserName;
 	NSError *newUserLoginError, *newUserEmailError, *newUserPasswordError, *newUserNameError;
-	IBOutlet NSWindow *uploadWindow, *loginSheet;
+	IBOutlet NSWindow *uploadWindow, *loginSheet, *uploadCompleteSheet;
+	IBOutlet SUUploadCompleteSheetDelegate *uploadCompleteSheetDelegate;
 	IBOutlet SUDatabaseHelper *db;
 }
 
@@ -119,5 +121,15 @@
  */
 
 - (void) uploadFiles;
+
+/*!
+ @method uploadComplete
+ @abstract Returns YES if all uploads are complete (if
+ @link currentlyUploadingCount currentlyUploadingCount @/link is zero).
+ @result YES if all uploads are complete; NO if some uploads are still ongoing
+ or if uploads have not yet been started.
+ */
+
+- (BOOL) uploadComplete;
 
 @end

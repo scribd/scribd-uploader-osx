@@ -5,6 +5,7 @@
 #import "SUScribdAPI.h"
 #import "NSError_SUAdditions.h"
 #import "SUConstants.h"
+#import "SUUploadCompleteSheetDelegate.h"
 
 @class SUUploadHelper;
 
@@ -24,7 +25,8 @@
 @interface SUUploadDelegate : NSObject {
 	SUDocument *document;
 	double progress, progressMax;
-	NSWindow *uploadWindow;
+	NSWindow *uploadWindow, *uploadCompleteSheet;
+	SUUploadCompleteSheetDelegate *uploadCompleteSheetDelegate;
 	NSManagedObjectContext *managedObjectContext;
 	SUUploadHelper *uploader;
 }
@@ -37,6 +39,21 @@
  */
 
 @property (retain) NSWindow *uploadWindow;
+
+/*!
+ @property uploadCompleteSheet
+ @abstract The window displayed as a sheet when all uploads are complete.
+ */
+
+@property (retain) NSWindow *uploadCompleteSheet;
+
+/*!
+ @property uploadCompleteSheetDelegate
+ @abstract The delegate object that will receive events from the
+ @link uploadCompleteSheet uploadCompleteSheet @/link.
+ */
+
+@property (retain) SUUploadCompleteSheetDelegate *uploadCompleteSheetDelegate;
 
 /*!
  @method initWithDocument:

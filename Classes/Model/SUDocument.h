@@ -55,6 +55,14 @@
 @property (retain) NSData *error;
 
 /*!
+ @property scribdID
+ @abstract The Scribd.com ID given to this document, once it has been
+ successfully uploaded.
+ */
+
+@property (retain) NSNumber *scribdID;
+
+/*!
  @property filename
  @abstract The name of the file, derived from the path.
  @discussion This is a calculated property, and is not written to the persistent
