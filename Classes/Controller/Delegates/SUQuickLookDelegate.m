@@ -47,7 +47,7 @@
 	}
 }
 
-- (IBAction) toggleDisplay:(id)sender {
+- (void) toggleDisplay {
 	if (!useQuickLook) return;
 	if ([[QLPreviewPanel sharedPreviewPanel] isOpen])
 		[[QLPreviewPanel sharedPreviewPanel] closeWithEffect:2];

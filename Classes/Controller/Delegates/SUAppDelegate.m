@@ -9,7 +9,7 @@
 + (void) initialize {
 	[NSValueTransformer setValueTransformer:[[[SUPrivateDescriptionValueTransformer alloc] init] autorelease]
 									forName:@"SUPrivateDescription"];
-	[NSValueTransformer setValueTransformer:[[SUFileStatusColorValueTransformer alloc] init] forName:@"SUFileStatusColor"];	
+	[NSValueTransformer setValueTransformer:[[SUFileStatusColorValueTransformer alloc] init] forName:@"SUFileStatusColor"];
 	[NSValueTransformer setValueTransformer:[[SUFileStatusButtonImageValueTransformer alloc] init] forName:@"SUFileStatusButtonImage"];
 	[NSValueTransformer setValueTransformer:[[SUUnarchiveErrorValueTransformer alloc] init] forName:@"SUUnarchiveError"];
 	[NSValueTransformer setValueTransformer:[[SULogInButtonTitleValueTransformer alloc] init] forName:@"SULogInButtonTitle"];
@@ -22,7 +22,6 @@
  */
 
 - (void) awakeFromNib {
-	[aboutText readRTFDFromFile:[[NSBundle mainBundle] pathForResource:@"About" ofType:@"rtf"]];
 	[uploadTable registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
 	[uploadTable setVerticalMotionCanBeginDrag:NO];
 }
@@ -83,13 +82,13 @@
 		if ([db.managedObjectContext commitEditing]) {
 			if ([db.managedObjectContext hasChanges] && ![db.managedObjectContext save:&error]) {
 				
-				// This error handling simply presents error information in a panel with an 
-				// "Ok" button, which does not include any attempt at error recovery (meaning, 
-				// attempting to fix the error.) As a result, this implementation will 
-				// present the information to the user and then follow up with a panel asking 
+				// This error handling simply presents error information in a panel with an
+				// "Ok" button, which does not include any attempt at error recovery (meaning,
+				// attempting to fix the error.) As a result, this implementation will
+				// present the information to the user and then follow up with a panel asking
 				// if the user wishes to "Quit Anyway", without saving the changes.
 				
-				// Typically, this process should be altered to include application-specific 
+				// Typically, this process should be altered to include application-specific
 				// recovery steps.
 				
 				BOOL errorResult = [[NSApplication sharedApplication] presentError:error];
@@ -102,11 +101,11 @@
 					
 					int alertReturn = NSRunAlertPanel(NULL, @"Could not save changes while quitting. Quit anyway?" , @"Quit anyway", @"Cancel", NULL);
 					if (alertReturn == NSAlertAlternateReturn) {
-						reply = NSTerminateCancel;	
+						reply = NSTerminateCancel;
 					}
 				}
 			}
-		} 
+		}
 		
 		else {
 			reply = NSTerminateCancel;

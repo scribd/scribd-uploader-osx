@@ -22,9 +22,8 @@
 /*!
  @method toggleDisplay:
  @abstract Shows and hides the Quick Look preview pane.
- @param sender The object that initiated this action.
  */
 
-- (IBAction) toggleDisplay:(id)sender;
+- (void) toggleDisplay;
 
 @end

@@ -21,7 +21,6 @@
 
 @interface SUAppDelegate : NSObject {
 	IBOutlet NSWindow *window, *loginSheet;
-	IBOutlet NSTextView *aboutText;
 	IBOutlet SULoginSheetDelegate *loginSheetDelegate;
 	IBOutlet SUDatabaseHelper *db;
 	IBOutlet NSTableView *uploadTable;

@@ -8,7 +8,7 @@
 
 - (void) keyDown:(NSEvent *)event {
 	if ([[event characters] isEqualToString:@" "]) {
-		[quickLook toggleDisplay:self];
+		[quickLook toggleDisplay];
 	}
 }
 

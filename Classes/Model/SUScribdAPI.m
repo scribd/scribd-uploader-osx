@@ -33,7 +33,7 @@ static SUScribdAPI *sharedAPI;
 
 + (void) initialize {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSDictionary *appDefaults = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:4] forKey:@"SUMaximumSimultaneousUploads"];
+	NSDictionary *appDefaults = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:4] forKey:@"SUMaximumSimultaneousUploads"];
 	[defaults registerDefaults:appDefaults];
 }
 
@@ -190,7 +190,7 @@ static SUScribdAPI *sharedAPI;
 		
 		NSXMLElement *errorNode = [[[xml rootElement] elementsForName:@"error"] objectAtIndex:0];
 		if (errorNode) {
-			errorCode = [[[errorNode attributeForName:@"code"] stringValue] intValue];
+			errorCode = [[[errorNode attributeForName:@"code"] stringValue] integerValue];
 			errorInfo = [NSDictionary dictionaryWithObject:[[errorNode attributeForName:@"message"] stringValue] forKey:NSLocalizedFailureReasonErrorKey];
 		}
 		else {

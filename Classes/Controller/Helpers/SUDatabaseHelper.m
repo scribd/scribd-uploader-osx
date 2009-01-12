@@ -56,7 +56,7 @@
 		return managedObjectModel;
 	}
 	
-	managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:NULL] retain];	
+	managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:NULL] retain];
 	return managedObjectModel;
 }
 
@@ -84,7 +84,7 @@
 	persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
 	if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:NULL URL:url options:NULL error:&error]){
 		[[NSApplication sharedApplication] presentError:error];
-	}	
+	}
 	
 	return persistentStoreCoordinator;
 }
