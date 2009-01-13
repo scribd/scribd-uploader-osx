@@ -1,6 +1,3 @@
-#import <Cocoa/Cocoa.h>
-#import "SUConstants.h"
-
 /*!
  @category NSError(SUAdditions)
  @abstract Additions to the @link //apple_ref/occ/cl/NSError NSError @/link.

@@ -1,7 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
-#import "SUConstants.h"
-
 /*!
  @class SUSessionHelper
  @abstract Singleton class with helper methods for managing Scribd sessions.

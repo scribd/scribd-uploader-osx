@@ -1,7 +1,3 @@
-#import <Cocoa/Cocoa.h>
-#import "SUDatabaseHelper.h"
-#import "SUUploadHelper.h"
-
 /*!
  @class SUDocumentArrayController
  @abstract A subclass of

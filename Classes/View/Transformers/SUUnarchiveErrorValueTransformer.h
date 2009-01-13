@@ -1,5 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
 /*!
  @class SUUnarchiveErrorValueTransformer
  @abstract Unarchives an @link //apple_ref/occ/cl/NSError NSError @/link object

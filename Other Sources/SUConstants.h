@@ -1,5 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
 #pragma mark Error Domains
 
 /*!

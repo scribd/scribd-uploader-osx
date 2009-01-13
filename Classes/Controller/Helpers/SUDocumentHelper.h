@@ -1,6 +1,3 @@
-#import <Cocoa/Cocoa.h>
-#import "SUDocument.h"
-
 /*!
  @class SUDocumentHelper
  @abstract Controller-level functions that work with documents.

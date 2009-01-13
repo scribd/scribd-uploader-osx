@@ -1,6 +1,3 @@
-#import <Cocoa/Cocoa.h>
-#import "QuickLook.h"
-
 /*!
  @class SUQuickLookDelegate
  @abstract Interface for the Quick Look feature of Mac OS X 10.5 that allows

@@ -1,5 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
 /*!
  @class SUPrivateDescriptionValueTransformer
  @abstract Configures the text displayed for the informative label beneath the

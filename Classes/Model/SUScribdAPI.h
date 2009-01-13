@@ -1,10 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
-#import "SUConstants.h"
-#import "SUDocument.h"
-#import "ASIHTTPRequest.h"
-#import "SUUploadDelegate.h"
-
 /*!
  @class SUScribdAPI
  @abstract An Objective-C interface to the Scribd HTTP API.

@@ -1,5 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
 /*!
  @class SUBusyActionValueTransformer
  @abstract Converts a @link SUUploadHelper SUUploadHelper @/link busy status into a

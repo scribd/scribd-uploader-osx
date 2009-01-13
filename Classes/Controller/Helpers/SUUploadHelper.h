@@ -1,10 +1,3 @@
-#import <Cocoa/Cocoa.h>
-#import "SUScribdAPI.h"
-#import "SUDatabaseHelper.h"
-#import "NSError_SUAdditions.h"
-#import "SUSessionHelper.h"
-#import "SUUploadCompleteSheetDelegate.h"
-
 /*!
  @class SUUploadHelper
  @abstract Controller interface for uploading files, logging in, and creating

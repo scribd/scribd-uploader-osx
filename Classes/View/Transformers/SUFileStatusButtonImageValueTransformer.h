@@ -1,5 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
 /*!
  @class SUFileStatusButtonImageValueTransformer
  @abstract Converts a file status object into an icon representing the status of

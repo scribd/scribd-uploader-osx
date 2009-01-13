@@ -1,8 +1,3 @@
-#import <Cocoa/Cocoa.h>
-#import "SUDocument.h"
-#import "SUFileNotFoundAlertDelegate.h"
-#import "SUDocumentHelper.h"
-
 /*!
  @class SUDatabaseHelper
  @abstract Convenience methods for working with the Core Data objects of this

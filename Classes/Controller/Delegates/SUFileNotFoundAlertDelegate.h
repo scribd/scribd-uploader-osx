@@ -1,5 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
 /*!
  @class SUFileNotFoundAlertDelegate
  @discussion This class displays an alert when the upload list contains files

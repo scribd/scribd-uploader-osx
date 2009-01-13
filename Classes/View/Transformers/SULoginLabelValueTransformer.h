@@ -1,5 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
 /*!
  @class SULoginLabelValueTransformer
  @abstract Converts a stored session username into a descriptive label for the

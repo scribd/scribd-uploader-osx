@@ -1,6 +1,3 @@
-#import <Cocoa/Cocoa.h>
-#import "SUConstants.h"
-
 /*!
  @class SUUploadErrorController
  @abstract This class displays upload errors. Its

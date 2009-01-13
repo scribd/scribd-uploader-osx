@@ -1,5 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
 /*!
  @class SUAboutWindowDelegate
  @abstract Responder for events in the About window.

@@ -1,14 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
-#import "ASIFormDataRequest.h"
-#import "SUDocument.h"
-#import "SUScribdAPI.h"
-#import "NSError_SUAdditions.h"
-#import "SUConstants.h"
-#import "SUUploadCompleteSheetDelegate.h"
-
-@class SUUploadHelper;
-
 /*!
  @class SUUploadDelegate
  @abstract Receives asynchronous events pertaining to a file's upload progress,

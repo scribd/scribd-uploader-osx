@@ -1,7 +1,3 @@
-#import <Cocoa/Cocoa.h>
-#import "SUUploadHelper.h"
-#import "SUBusyActionValueTransformer.h"
-
 /*!
  @class SULoginSheetDelegate
  @abstract Delegate class for the login/signup sheet. Handles animations for

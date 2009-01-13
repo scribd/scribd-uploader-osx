@@ -1,7 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
-#import "SUDatabaseHelper.h"
-
 /*!
  @class SUUploadCompleteSheetDelegate
  @abstract Receives events from the upload-complete sheet.

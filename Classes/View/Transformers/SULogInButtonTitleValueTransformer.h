@@ -1,5 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
 /*!
  @class SULogInButtonTitleValueTransformer
  @abstract Sets the title of the "Log In"/"Log Out" button.

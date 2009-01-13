@@ -1,12 +1,9 @@
-#import <CoreData/CoreData.h>
-
 /*!
  @class SUDocument
  @discussion Core Data object describing a document to be uploaded. This
  class adds file-specific operations and derived properties to the basic
  Core Data entity type.
  */
-
 
 @interface SUDocument : NSManagedObject {
 	NSFileWrapper *wrapper;

@@ -1,6 +1,3 @@
-#import <Cocoa/Cocoa.h>
-#import "SUQuickLookDelegate.h"
-
 /*!
  @class SUFileListView
  @abstract A simple subclass of

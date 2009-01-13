@@ -1,5 +1,3 @@
-#import <Cocoa/Cocoa.h>
-
 /*!
  @class SUFileStatusColorValueTransformer
  @abstract Converts a file's upload status into a color value.
