@@ -17,8 +17,7 @@
 }
 
 /*
- Copies the text of the About.rtf file into the text view of the About
- dialog, and registers drag-and-drop types for the upload list.
+ Registers drag-and-drop types for the upload list.
  */
 
 - (void) awakeFromNib {
@@ -54,6 +53,10 @@
 		[uploader uploadFiles];
 	else
 		[[NSApplication sharedApplication] beginSheet:loginSheet modalForWindow:window modalDelegate:loginSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:@"all"];
+}
+
+- (IBAction) displayPreferences:(id)sender {
+	[[SUPreferencesWindowController sharedPrefsWindowController] showWindow:sender];
 }
 
 /*

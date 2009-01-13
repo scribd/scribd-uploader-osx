@@ -58,4 +58,12 @@
 
 - (IBAction) addFile:(id)sender;
 
+/*!
+ @method displayPreferences:
+ @abstract Displays the Preferences window.
+ @param sender The object that initiated the action.
+ */
+
+- (IBAction) displayPreferences:(id)sender;
+
 @end

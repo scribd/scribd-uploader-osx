@@ -2062,9 +2062,6 @@ ciBoZWxwIHZpZXdlci4</string>
 			<object class="NSUserDefaultsController" id="706999351">
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
-			<object class="NSCustomObject" id="709688459">
-				<string key="NSClassName">SUQuickLookDelegate</string>
-			</object>
 			<object class="NSCustomObject" id="27757150">
 				<string key="NSClassName">SUAboutWindowDelegate</string>
 			</object>
@@ -2863,30 +2860,6 @@ ciBoZWxwIHZpZXdlci4</string>
 					<int key="connectionID">1048</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">filesController</string>
-						<reference key="source" ref="709688459"/>
-						<reference key="destination" ref="603642860"/>
-					</object>
-					<int key="connectionID">1051</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">quickLook</string>
-						<reference key="source" ref="951211197"/>
-						<reference key="destination" ref="709688459"/>
-					</object>
-					<int key="connectionID">1055</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">table</string>
-						<reference key="source" ref="709688459"/>
-						<reference key="destination" ref="698356824"/>
-					</object>
-					<int key="connectionID">1056</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">argument: arrangedObjects.error</string>
 						<reference key="source" ref="277013613"/>
@@ -3630,6 +3603,30 @@ ciBoZWxwIHZpZXdlci4</string>
 						<reference key="destination" ref="644516250"/>
 					</object>
 					<int key="connectionID">1232</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">displayPreferences:</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="124073989"/>
+					</object>
+					<int key="connectionID">1368</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: updateInProgress</string>
+						<reference key="source" ref="644516250"/>
+						<reference key="destination" ref="365444412"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="644516250"/>
+							<reference key="NSDestination" ref="365444412"/>
+							<string key="NSLabel">enabled: updateInProgress</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">updateInProgress</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1369</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4660,12 +4657,6 @@ ciBoZWxwIHZpZXdlci4</string>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">1050</int>
-						<reference key="object" ref="709688459"/>
-						<reference key="parent" ref="0"/>
-						<string key="objectName">Quick Look</string>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">1077</int>
 						<reference key="object" ref="231784562"/>
 						<object class="NSMutableArray" key="children">
@@ -4902,7 +4893,6 @@ ciBoZWxwIHZpZXdlci4</string>
 					<string>-3.ImportedFromIB2</string>
 					<string>103.IBPluginDependency</string>
 					<string>103.ImportedFromIB2</string>
-					<string>1050.IBPluginDependency</string>
 					<string>106.IBEditorWindowLastContentRect</string>
 					<string>106.IBPluginDependency</string>
 					<string>106.ImportedFromIB2</string>
@@ -5155,7 +5145,6 @@ ciBoZWxwIHZpZXdlci4</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{603, 931}, {218, 23}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
@@ -5288,7 +5277,7 @@ ciBoZWxwIHZpZXdlci4</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>{{427, 647}, {413, 20}}</string>
+					<string>{{427, 646}, {413, 20}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -5466,7 +5455,7 @@ bnRzIHdpdGhvdXQgeW91ciBwZXJtaXNzaW9uLg</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1232</int>
+			<int key="maxID">1371</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5491,6 +5480,7 @@ bnRzIHdpdGhvdXQgeW91ciBwZXJtaXNzaW9uLg</string>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addFile:</string>
+							<string>displayPreferences:</string>
 							<string>loginAction:</string>
 							<string>saveAction:</string>
 							<string>uploadAllAction:</string>
@@ -5498,6 +5488,7 @@ bnRzIHdpdGhvdXQgeW91ciBwZXJtaXNzaW9uLg</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
