@@ -10,6 +10,7 @@
 	if ([[event characters] isEqualToString:@" "]) {
 		[quickLook toggleDisplay];
 	}
+	[super keyDown:event];
 }
 
 @end
