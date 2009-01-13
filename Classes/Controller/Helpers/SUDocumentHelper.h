@@ -56,7 +56,7 @@
 
 /*!
  @method pendingDocumentsInManagedObjectContext:error:
- @abstract Returns an array of every document in the context which has not yet
+ @abstract Returns an array of every document in the context that has not yet
  been successfully uploaded.
  @param managedObjectContext The managed object context.
  @param error Stores any errors in fetching the documents.
@@ -67,7 +67,7 @@
 
 /*!
  @method completedDocumentsInManagedObjectContext:error:
- @abstract Returns an array of every document in the context which has been
+ @abstract Returns an array of every document in the context that has been
  successfully uploaded.
  @param managedObjectContext The managed object context.
  @param error Stores any errors in fetching the documents.
@@ -75,5 +75,16 @@
  */
 
 - (NSArray *) completedDocumentsInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
+
+/*!
+ @method numberOfPendingDocumentsInManagedObjectContext:error:
+ @abstract Returns the total number of documents in the context that have yet to
+ be uploaded.
+ @param managedObjectContext The managed object context.
+ @param error Stores any errors in fetching the document count.
+ @result The number of documents yet to be uploaded, or zero if an error occurred.
+ */
+
+- (NSUInteger) numberOfPendingDocumentsInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
 
 @end

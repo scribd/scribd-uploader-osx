@@ -68,9 +68,18 @@ static SUDocumentHelper *sharedDocumentManager = NULL;
 
 - (SUDocument *) findDocumentByPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
 	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
+	
+	NSExpression *lhs = [NSExpression expressionForKeyPath:@"path"];
+	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSArray arrayWithObject:[path stringByStandardizingPath]]];
+	NSPredicate *predicate = [NSComparisonPredicate predicateWithLeftExpression:lhs
+																rightExpression:rhs
+																	   modifier:NSDirectPredicateModifier
+																		   type:NSEqualToPredicateOperatorType
+																		options:NSCaseInsensitivePredicateOption];
+	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
-	[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"path = %@" argumentArray:[NSArray arrayWithObject:[path stringByStandardizingPath]]]];
+	[fetchRequest setPredicate:predicate];
 	
 	NSError *error = NULL;
 	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
@@ -90,31 +99,77 @@ static SUDocumentHelper *sharedDocumentManager = NULL;
 
 - (NSArray *) allDocumentsInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
 	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
+	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
+	
 	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:error];
 	[fetchRequest release];
+	
 	return objects;
 }
 
 - (NSArray *) pendingDocumentsInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
 	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
+	
+	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
+	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNull null]];
+	NSPredicate *predicate = [NSComparisonPredicate predicateWithLeftExpression:lhs
+																rightExpression:rhs
+																	   modifier:NSDirectPredicateModifier
+																		   type:NSEqualToPredicateOperatorType
+																		options:NSCaseInsensitivePredicateOption];
+	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
-	[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"success = NULL"]];
+	[fetchRequest setPredicate:predicate];
+	
 	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:error];
 	[fetchRequest release];
+	
 	return objects;
 }
 
 - (NSArray *) completedDocumentsInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
 	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
+	
+	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
+	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNumber numberWithBool:YES]];
+	NSPredicate *predicate = [NSComparisonPredicate predicateWithLeftExpression:lhs
+																rightExpression:rhs
+																	   modifier:NSDirectPredicateModifier
+																		   type:NSEqualToPredicateOperatorType
+																		options:NSCaseInsensitivePredicateOption];	
+	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
-	[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"success = %@" argumentArray:[NSArray arrayWithObject:[NSNumber numberWithBool:YES]]]];
+	[fetchRequest setPredicate:predicate];
+	
 	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:error];
 	[fetchRequest release];
+	
 	return objects;
+}
+
+- (NSUInteger) numberOfPendingDocumentsInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
+	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
+	
+	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
+	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNull null]];
+	NSPredicate *predicate = [NSComparisonPredicate predicateWithLeftExpression:lhs
+																rightExpression:rhs
+																	   modifier:NSDirectPredicateModifier
+																		   type:NSEqualToPredicateOperatorType
+																		options:NSCaseInsensitivePredicateOption];
+	
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setEntity:docEntity];
+	[fetchRequest setPredicate:predicate];
+	
+	NSUInteger count = [managedObjectContext countForFetchRequest:fetchRequest error:error];
+	[fetchRequest release];
+	
+	return count;
 }
 
 @end

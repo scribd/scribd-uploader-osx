@@ -56,6 +56,19 @@
 		[[NSApplication sharedApplication] beginSheet:loginSheet modalForWindow:window modalDelegate:loginSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:@"all"];
 }
 
+/*
+ Disables the Upload button if there are no files to upload or if an upload is
+ in progress.
+ */
+
+- (BOOL) validateToolbarItem:(NSToolbarItem *)item {
+	if ([item action] == @selector(uploadAllAction:) || [item action] == @selector(uploadSelectionAction:)) {
+		NSError *error = NULL;
+		return (![uploader isUploading] && [[SUDocumentHelper documentManager] numberOfPendingDocumentsInManagedObjectContext:db.managedObjectContext error:&error] > 0);
+	}
+	else return YES;
+}
+
 - (IBAction) loginAction:(id)sender {
 	[[NSApplication sharedApplication] beginSheet:loginSheet modalForWindow:window modalDelegate:loginSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:@"login"];
 }

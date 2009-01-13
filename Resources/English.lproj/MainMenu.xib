@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="626"/>
+			<integer value="2"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -3662,78 +3662,6 @@ ciBoZWxwIHZpZXdlci4</string>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled2: currentlyUploadingCount</string>
-						<reference key="source" ref="787615947"/>
-						<reference key="destination" ref="108242027"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="787615947"/>
-							<reference key="NSDestination" ref="108242027"/>
-							<string key="NSLabel">enabled2: currentlyUploadingCount</string>
-							<string key="NSBinding">enabled2</string>
-							<string key="NSKeyPath">currentlyUploadingCount</string>
-							<object class="NSDictionary" key="NSOptions">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSMutableArray" key="dict.sortedKeys">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>NSMultipleValuesPlaceholder</string>
-									<string>NSNoSelectionPlaceholder</string>
-									<string>NSNotApplicablePlaceholder</string>
-									<string>NSNullPlaceholder</string>
-									<string>NSValueTransformerName</string>
-								</object>
-								<object class="NSMutableArray" key="dict.values">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<integer value="-1" id="7"/>
-									<reference ref="7"/>
-									<reference ref="7"/>
-									<reference ref="7"/>
-									<string>NSNegateBoolean</string>
-								</object>
-							</object>
-							<reference key="NSPreviousConnector" ref="1176"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">938</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled2: currentlyUploadingCount</string>
-						<reference key="source" ref="347198453"/>
-						<reference key="destination" ref="108242027"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="347198453"/>
-							<reference key="NSDestination" ref="108242027"/>
-							<string key="NSLabel">enabled2: currentlyUploadingCount</string>
-							<string key="NSBinding">enabled2</string>
-							<string key="NSKeyPath">currentlyUploadingCount</string>
-							<object class="NSDictionary" key="NSOptions">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSMutableArray" key="dict.sortedKeys">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>NSMultipleValuesPlaceholder</string>
-									<string>NSNoSelectionPlaceholder</string>
-									<string>NSNotApplicablePlaceholder</string>
-									<string>NSNullPlaceholder</string>
-									<string>NSValueTransformerName</string>
-								</object>
-								<object class="NSMutableArray" key="dict.values">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<reference ref="7"/>
-									<reference ref="7"/>
-									<reference ref="7"/>
-									<reference ref="7"/>
-									<string>NSNegateBoolean</string>
-								</object>
-							</object>
-							<reference key="NSPreviousConnector" ref="1112"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">940</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: uploadAsPrivate</string>
 						<reference key="source" ref="731283827"/>
 						<reference key="destination" ref="108242027"/>
@@ -4364,7 +4292,7 @@ ciBoZWxwIHZpZXdlci4</string>
 								</object>
 								<object class="NSMutableArray" key="dict.values">
 									<bool key="EncodedWithXMLCoder">YES</bool>
-									<reference ref="7"/>
+									<integer value="-1" id="7"/>
 									<reference ref="7"/>
 									<reference ref="7"/>
 									<reference ref="9"/>
@@ -4379,27 +4307,11 @@ ciBoZWxwIHZpZXdlci4</string>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: arrangedObjects.@count</string>
-						<reference key="source" ref="36596628"/>
-						<reference key="destination" ref="603642860"/>
-						<object class="NSNibBindingConnector" key="connector" id="751302804">
-							<reference key="NSSource" ref="36596628"/>
-							<reference key="NSDestination" ref="603642860"/>
-							<string key="NSLabel">enabled: arrangedObjects.@count</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">arrangedObjects.@count</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1185</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled2: isUploading</string>
-						<reference key="source" ref="36596628"/>
+						<reference key="source" ref="347198453"/>
 						<reference key="destination" ref="108242027"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="36596628"/>
+							<reference key="NSSource" ref="347198453"/>
 							<reference key="NSDestination" ref="108242027"/>
 							<string key="NSLabel">enabled2: isUploading</string>
 							<string key="NSBinding">enabled2</string>
@@ -4423,11 +4335,47 @@ ciBoZWxwIHZpZXdlci4</string>
 									<string>NSNegateBoolean</string>
 								</object>
 							</object>
-							<reference key="NSPreviousConnector" ref="751302804"/>
+							<reference key="NSPreviousConnector" ref="1112"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">1186</int>
+					<int key="connectionID">1194</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled2: isUploading</string>
+						<reference key="source" ref="787615947"/>
+						<reference key="destination" ref="108242027"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="787615947"/>
+							<reference key="NSDestination" ref="108242027"/>
+							<string key="NSLabel">enabled2: isUploading</string>
+							<string key="NSBinding">enabled2</string>
+							<string key="NSKeyPath">isUploading</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMutableArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSMultipleValuesPlaceholder</string>
+									<string>NSNoSelectionPlaceholder</string>
+									<string>NSNotApplicablePlaceholder</string>
+									<string>NSNullPlaceholder</string>
+									<string>NSValueTransformerName</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<reference ref="7"/>
+									<reference ref="7"/>
+									<reference ref="7"/>
+									<reference ref="9"/>
+									<string>NSNegateBoolean</string>
+								</object>
+							</object>
+							<reference key="NSPreviousConnector" ref="1176"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1196</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6800,7 +6748,7 @@ ciBoZWxwIHZpZXdlci4</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{342, 530}, {617, 169}}</string>
+					<string>{{342, 699}, {617, 0}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6949,7 +6897,7 @@ bnRzIHdpdGhvdXQgeW91ciBwZXJtaXNzaW9uLg</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1186</int>
+			<int key="maxID">1201</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
