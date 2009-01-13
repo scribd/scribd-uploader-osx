@@ -25,7 +25,7 @@
  @abstract The filesystem path to the file being uploaded.
  */
 
-@property (retain) NSString *path;
+@property (copy) NSString *path;
 
 /*!
  @property progress
@@ -33,7 +33,7 @@
  to 1.0.
  */
 
-@property (retain) NSNumber *progress;
+@property (copy) NSNumber *progress;
 
 /*!
  @property success
@@ -41,7 +41,7 @@
  occurred, and NULL if the file has not completed upload yet.
  */
 
-@property (retain) NSNumber *success;
+@property (copy) NSNumber *success;
 
 /*!
  @property error
@@ -49,7 +49,7 @@
  last error returned by the server upon upload.
  */
 
-@property (retain) NSData *error;
+@property (copy) NSData *error;
 
 /*!
  @property scribdID
@@ -57,7 +57,7 @@
  successfully uploaded.
  */
 
-@property (retain) NSNumber *scribdID;
+@property (copy) NSNumber *scribdID;
 
 /*!
  @property filename
@@ -66,7 +66,7 @@
  store.
  */
 
-@property (nonatomic, readonly) NSString *filename;
+@property (readonly) NSString *filename;
 
 /*!
  @property icon
@@ -75,7 +75,7 @@
  store.
  */
 
-@property (nonatomic, readonly) NSImage *icon;
+@property (readonly) NSImage *icon;
 
 /*!
  @property kind
@@ -84,6 +84,6 @@
  store.
  */
 
-@property (nonatomic, readonly) NSString *kind;
+@property (readonly) NSString *kind;
 
 @end

@@ -8,6 +8,10 @@
 @dynamic error;
 @dynamic scribdID;
 
+@dynamic filename;
+@dynamic icon;
+@dynamic kind;
+
 /*
  You're not really supposed to override init for managed objects, but I see no
  other way I can ensure that wrapper is nilled out before anyone else touches it.
