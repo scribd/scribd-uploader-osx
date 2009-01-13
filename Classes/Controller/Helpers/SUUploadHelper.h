@@ -49,6 +49,14 @@
 @property (assign) NSUInteger currentlyUploadingCount;
 
 /*!
+ @property isUploading
+ @abstract YES if uploads are currently in progress (if
+ @link currentlyUploadingCount currentlyUploadingCount @/link is at least 1).
+ */
+
+@property (readonly) BOOL isUploading;
+
+/*!
  @property busyAction
  @abstract A description of what network operation this helper is currently
  performing (if any).
@@ -114,15 +122,6 @@
  */
 
 - (void) uploadFiles;
-
-/*!
- @method isUploading
- @abstract Returns YES if uploads are currently in progress.
- @result YES if at least one file is currently uploading; NO if there is no
- upload operation underway.
- */
-
-- (BOOL) isUploading;
 
 /*!
  @method uploadComplete

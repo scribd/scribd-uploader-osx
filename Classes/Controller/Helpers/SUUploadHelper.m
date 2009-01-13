@@ -5,6 +5,7 @@
 @synthesize uploadAsPrivate;
 @synthesize isBusy;
 @synthesize currentlyUploadingCount;
+@dynamic isUploading;
 @synthesize busyAction;
 @synthesize newUserLogin;
 @synthesize newUserEmail;
@@ -20,7 +21,6 @@
 	self.currentlyUploadingCount = 0;
 	newUserLoginError = newUserPasswordError = newUserEmailError = newUserNameError = NULL;
 }
-
 
 - (BOOL) authenticate {
 	NSString *login = [[NSUserDefaults standardUserDefaults] stringForKey:@"scribdLogin"];
@@ -122,11 +122,19 @@
 }
 
 - (BOOL) isUploading {
-	return currentlyUploadingCount;
+	return self.currentlyUploadingCount != 0;
+}
+
+/*
+ When the current upload count changes the isUploading bool must change as well.
+ */
+
++ (NSSet *) keyPathsForValuesAffectingIsUploading {
+	return [NSSet setWithObject:@"currentlyUploadingCount"];
 }
 
 - (BOOL) uploadComplete {
-	return !currentlyUploadingCount;
+	return self.currentlyUploadingCount == 0;
 }
 
 /*

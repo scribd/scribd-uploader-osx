@@ -8,7 +8,7 @@
  */
 
 - (NSDragOperation) tableView:(NSTableView *)tableView validateDrop:(id<NSDraggingInfo>)info proposedRow:(int)row proposedDropOperation:(NSTableViewDropOperation)operation {
-	if (![uploader isUploading] && [[[info draggingPasteboard] types] containsObject:NSFilenamesPboardType])
+	if (!uploader.isUploading && [[[info draggingPasteboard] types] containsObject:NSFilenamesPboardType])
 		return NSDragOperationGeneric;
 	else return NSDragOperationNone;
 }
