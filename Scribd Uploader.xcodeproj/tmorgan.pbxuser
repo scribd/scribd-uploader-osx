@@ -7,7 +7,10 @@
 	};
 	0106EE870F15441C001B701B /* Info.plist */ = {
 		uiCtxt = {
-			sepNavWindowFrame = "{{131, -58}, {860, 955}}";
+			sepNavIntBoundsRect = "{{0, 0}, {801, 827}}";
+			sepNavSelRange = "{1225, 0}";
+			sepNavVisRange = "{0, 1243}";
+			sepNavWindowFrame = "{{683, 39}, {860, 955}}";
 		};
 	};
 	0128AECC0F14783400EC3C28 /* Scribd Uploader */ = {
@@ -553,7 +556,10 @@
 	};
 	0128AF740F14799100EC3C28 /* English */ = {
 		uiCtxt = {
-			sepNavWindowFrame = "{{613, 101}, {714, 640}}";
+			sepNavIntBoundsRect = "{{0, 0}, {864, 1235}}";
+			sepNavSelRange = "{171, 0}";
+			sepNavVisRange = "{0, 2011}";
+			sepNavWindowFrame = "{{683, 39}, {860, 955}}";
 		};
 	};
 	0132BFF40F169DF5000B17C5 /* English */ = {
@@ -652,7 +658,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					315,
+					238,
 					20,
 					48,
 					43,
@@ -669,8 +675,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 253484472;
-			PBXWorkspaceStateSaveDate = 253484472;
+			PBXPerProjectTemplateStateSaveDate = 253511911;
+			PBXWorkspaceStateSaveDate = 253511911;
 		};
 		sourceControlManager = 0128AED40F14783800EC3C28 /* Source Control */;
 		userBuildSettings = {

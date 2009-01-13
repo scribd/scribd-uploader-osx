@@ -353,7 +353,7 @@
 									<real>43</real>
 								</array>
 								<key>RubberWindowFrame</key>
-								<string>1018 120 470 786 0 0 1680 1028 </string>
+								<string>1123 129 470 786 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXSmartGroupTreeModule</string>
@@ -386,7 +386,10 @@
 								<key>PBXSmartGroupTreeModuleOutlineStateKey_v7</key>
 								<dict>
 									<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
-									<array/>
+									<array>
+										<string>1C37FBAC04509CD000000102</string>
+										<string>1C37FAAC04509CD000000102</string>
+									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
@@ -490,8 +493,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>01AC0E1F0F1BDDC200D6C515</string>
-				<string>01AC0E200F1BDDC200D6C515</string>
+				<string>01EC085C0F1C490400F2098B</string>
+				<string>01EC085D0F1C490400F2098B</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -509,7 +512,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>253511102.90122801</real>
+	<real>253520814.053204</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -524,16 +527,15 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>01AC10630F1C2B2B00D6C515</string>
-		<string>01AC10640F1C2B2B00D6C515</string>
-		<string>1C530D5B069F1CE1000CFCEE</string>
+		<string>1C335F2C07B51CD20023D4EE</string>
 		<string>1C530D54069F1CE1000CFCEE</string>
-		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>1C530D52069F1CE1000CFCEE</string>
+		<string>1C530D5B069F1CE1000CFCEE</string>
 		<string>/Users/tmorgan/Documents/Scribd/scribd-uploader/Scribd Uploader.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>1018 120 470 786 0 0 1680 1028 </string>
+	<string>1123 129 470 786 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -655,7 +657,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C335F2C07B51CD20023D4EE</string>
-				<string>0132C0110F16BF04000B17C5</string>
+				<string>01EC08A10F1C69DB00F2098B</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
 				<string>1CA1AED706398EBD00589147</string>
 			</array>
@@ -685,14 +687,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SUUploadDelegate.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -709,6 +709,8 @@
 							<string>424pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -748,7 +750,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>01AC0E2C0F1BE5C300D6C515</string>
+				<string>01EC08660F1C676300F2098B</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -868,13 +870,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D54069F1CE1000CFCEE</string>
-				<string>01AC0E2D0F1BE5C300D6C515</string>
+				<string>01EC088E0F1C696000F2098B</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>01AC0E2E0F1BE5C300D6C515</string>
-				<string>01AC0E2F0F1BE5C300D6C515</string>
-				<string>01AC0E300F1BE5C300D6C515</string>
-				<string>01AC0E310F1BE5C300D6C515</string>
-				<string>01AC0E320F1BE5C300D6C515</string>
+				<string>01EC088F0F1C696000F2098B</string>
+				<string>01EC08900F1C696000F2098B</string>
+				<string>01EC08910F1C696000F2098B</string>
+				<string>01EC08920F1C696000F2098B</string>
+				<string>01EC08930F1C696000F2098B</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -906,7 +908,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SUUploadDelegate.m</string>
+										<string></string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -964,8 +966,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>01AC0E260F1BE57400D6C515</string>
-				<string>01AC0E270F1BE57400D6C515</string>
+				<string>01EC08700F1C680F00F2098B</string>
+				<string>01EC08710F1C680F00F2098B</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>
@@ -1030,7 +1032,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D5B069F1CE1000CFCEE</string>
-				<string>01AC0E330F1BE5C300D6C515</string>
+				<string>01EC08940F1C696000F2098B</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -1040,7 +1042,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D5B069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

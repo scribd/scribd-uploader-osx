@@ -30,5 +30,11 @@
 	<string>Scribd Uploader Help</string>
 	<key>CFBundleHelpBookName</key>
 	<string>Scribd Uploader Help</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
+	<key>SUFeedURL</key>
+	<string>http://localhost:3000/mac_uploader_releases.rss</string>
+	<key>SUEnableSystemProfiling</key>
+	<true />
 </dict>
 </plist>
