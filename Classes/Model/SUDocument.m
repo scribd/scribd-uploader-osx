@@ -50,6 +50,7 @@
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	if ([keyPath isEqualToString:@"path"]) {
+		if (wrapper) [wrapper release];
 		wrapper = NULL;
 		if (kind) [kind release];
 		kind = NULL;
@@ -86,7 +87,7 @@
  */
 
 - (void) dealloc {
-	[wrapper release]; wrapper = NULL;
+	if (wrapper) [wrapper release];
 	if (kind) [kind release];
 	[super dealloc];
 }
