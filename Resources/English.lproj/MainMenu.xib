@@ -3623,10 +3623,14 @@ ciBoZWxwIHZpZXdlci4</string>
 							<string key="NSLabel">enabled: updateInProgress</string>
 							<string key="NSBinding">enabled</string>
 							<string key="NSKeyPath">updateInProgress</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">1369</int>
+					<int key="connectionID">1372</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -5291,7 +5295,7 @@ ciBoZWxwIHZpZXdlci4</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>{{439, 444}, {247, 203}}</string>
+					<string>{{439, 443}, {247, 203}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>SUDocumentArrayController</string>
@@ -5455,7 +5459,7 @@ bnRzIHdpdGhvdXQgeW91ciBwZXJtaXNzaW9uLg</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1371</int>
+			<int key="maxID">1372</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
