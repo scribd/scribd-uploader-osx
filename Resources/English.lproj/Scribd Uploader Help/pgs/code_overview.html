@@ -62,6 +62,8 @@
 						<p class="Para">If a login is successful, the <strong><tt>SUSessionHelper</tt></strong> singleton stores the Scribd.com session key in the user defaults, so that the login step can be skipped for future uploads.</p>
 						<p class="Para">When the upload is underway, <tt>SUUploadHelper</tt> creates a <strong><tt>SUUploadDelegate</tt></strong> instance for each file that is being uploaded. This delegate responds to <tt>ASIHTTPRequest</tt> events, updating the <tt>SUDocument</tt>'s attributes (which are bound to view objects). If an error occurs, the upload delegate serializes the <tt>NSError</tt> and stores it in the <tt>SUDocument</tt> entity's <tt>error</tt> property.</p>
 						<p class="Para">Files that error have small error widgets displayed next to them. These widgets are <tt>NSButton</tt>s that, when clicked, use <strong><tt>SUUploadErrorController</tt></strong> to display a sheet with information about the error. To facilitate binding the icon for this button to the error state for the file, the table column is subclassed as <strong><tt>SUTableStatusColumn</tt></strong>.</p>
+						<p class="Para">When a batch upload is complete, a sheet is displayed giving the user a chance to visit the Scribd.com website and edit the newly uploaded documents. This sheet&rsquo;s events are handled by <tt>SUUploadCompleteSheetDelegate</tt>, which builds the Scribd.com URL to visit, among other tasks.</p>
+						<p class="Para">The About window also has its own delegate, mainly for showing a relevant help page when the &ldquo;?&rdquo; button is clicked; it is <tt>SUAboutWindowDelegate</tt>.</p>
 						
 						<table type="Multicolumn" cols="2" border="0" cellspacing="2" cellpadding="2">
 							<tr class="TableHead">
