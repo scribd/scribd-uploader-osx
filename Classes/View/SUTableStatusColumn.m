@@ -22,6 +22,7 @@
 		for (row=0; row!=[successes count]; row++)
 			[(NSButtonCell *)([self dataCellForRow:row]) setImage:[buttonImageTransformer transformedValue:[successes objectAtIndex:row]]];
 	}
+	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
 @end

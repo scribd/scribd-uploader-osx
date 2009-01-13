@@ -43,7 +43,7 @@
 }
 
 - (void) requestFinished:(ASIHTTPRequest *)request {
-	[uploader setValue:[NSNumber numberWithInteger:[[uploader valueForKey:@"currentlyUploadingCount"] integerValue] - 1] forKey:@"currentlyUploadingCount"];
+	uploader.currentlyUploadingCount--;
 	
 	NSError *error = NULL;
 	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithXMLString:[request dataString] options:0 error:&error];
@@ -78,7 +78,7 @@
 };
 
 - (void) requestFailed:(ASIHTTPRequest *)request {
-	[uploader setValue:[NSNumber numberWithInteger:[[uploader valueForKey:@"currentlyUploadingCount"] integerValue] - 1] forKey:@"currentlyUploadingCount"];
+	uploader.currentlyUploadingCount--;
 	
 	NSError *outerError = [request error];
 	NSError *innerError = [[outerError userInfo] objectForKey:NSUnderlyingErrorKey];

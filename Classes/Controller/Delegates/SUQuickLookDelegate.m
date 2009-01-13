@@ -36,7 +36,10 @@
  */
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-	if (!useQuickLook) return;
+	if (!useQuickLook) {
+		if (![keyPath isEqualToString:@"selectedObjects"]) [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+		return;
+	}
 	if ([keyPath isEqualToString:@"selectedObjects"]) {
 		NSMutableArray *URLs = [[NSMutableArray alloc] init];
 		for (NSString *path in [filesController valueForKeyPath:@"arrangedObjects.path"]) [URLs addObject:[NSURL fileURLWithPath:path]];
@@ -45,6 +48,7 @@
 		else
 			[[QLPreviewPanel sharedPreviewPanel] setURLs:[URLs autorelease] currentIndex:[filesController selectionIndex] preservingDisplayState:YES];
 	}
+	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
 - (void) toggleDisplay {

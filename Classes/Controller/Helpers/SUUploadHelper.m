@@ -21,6 +21,7 @@
 	newUserLoginError = newUserPasswordError = newUserEmailError = newUserNameError = NULL;
 }
 
+
 - (BOOL) authenticate {
 	NSString *login = [[NSUserDefaults standardUserDefaults] stringForKey:@"scribdLogin"];
 	NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"scribdPassword"];
@@ -118,6 +119,10 @@
 	
 	[params release];
 	return YES;
+}
+
+- (BOOL) isUploading {
+	return currentlyUploadingCount;
 }
 
 - (BOOL) uploadComplete {

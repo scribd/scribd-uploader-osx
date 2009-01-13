@@ -116,6 +116,15 @@
 - (void) uploadFiles;
 
 /*!
+ @method isUploading
+ @abstract Returns YES if uploads are currently in progress.
+ @result YES if at least one file is currently uploading; NO if there is no
+ upload operation underway.
+ */
+
+- (BOOL) isUploading;
+
+/*!
  @method uploadComplete
  @abstract Returns YES if all uploads are complete (if
  @link currentlyUploadingCount currentlyUploadingCount @/link is zero).
