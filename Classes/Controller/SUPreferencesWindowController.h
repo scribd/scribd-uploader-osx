@@ -18,4 +18,12 @@
 
 - (IBAction) checkForUpdates:(id)sender;
 
+/*!
+ @method showHelp:
+ @abstract Displays a help page relevant to the selected tab.
+ @param sender The object that initiated the action.
+ */
+
+- (IBAction) showHelp:(id)sender;
+
 @end
