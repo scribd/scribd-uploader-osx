@@ -70,7 +70,7 @@ static SUDocumentHelper *sharedDocumentManager = NULL;
 	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"path"];
-	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSArray arrayWithObject:[path stringByStandardizingPath]]];
+	NSExpression *rhs = [NSExpression expressionForConstantValue:[path stringByStandardizingPath]];
 	NSPredicate *predicate = [NSComparisonPredicate predicateWithLeftExpression:lhs
 																rightExpression:rhs
 																	   modifier:NSDirectPredicateModifier
