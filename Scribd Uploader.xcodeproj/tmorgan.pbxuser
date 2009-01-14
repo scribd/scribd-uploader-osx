@@ -62,10 +62,10 @@
 	};
 	0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1260, 1976}}";
-			sepNavSelRange = "{1099, 0}";
-			sepNavVisRange = "{0, 2213}";
-			sepNavWindowFrame = "{{567, 95}, {791, 864}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1434, 1976}}";
+			sepNavSelRange = "{5395, 0}";
+			sepNavVisRange = "{4875, 855}";
+			sepNavWindowFrame = "{{229, 164}, {791, 864}}";
 		};
 	};
 	0128AEDC0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.h */ = {
@@ -175,8 +175,8 @@
 	0128AEEA0F1478F300EC3C28 /* SUDocumentHelper.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {865, 2288}}";
-			sepNavSelRange = "{5244, 70}";
-			sepNavVisRange = "{2977, 2948}";
+			sepNavSelRange = "{3813, 0}";
+			sepNavVisRange = "{2157, 3019}";
 			sepNavWindowFrame = "{{572, 35}, {924, 961}}";
 		};
 	};
@@ -190,9 +190,9 @@
 	};
 	0128AEEC0F1478F300EC3C28 /* SUUploadHelper.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {966, 2769}}";
-			sepNavSelRange = "{887, 0}";
-			sepNavVisRange = "{109, 1937}";
+			sepNavIntBoundsRect = "{{0, 0}, {966, 2548}}";
+			sepNavSelRange = "{2623, 110}";
+			sepNavVisRange = "{1698, 1312}";
 			sepNavWindowFrame = "{{640, 164}, {791, 864}}";
 		};
 	};
@@ -206,10 +206,10 @@
 	};
 	0128AEEE0F1478F300EC3C28 /* SUDocumentArrayController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 481}}";
-			sepNavSelRange = "{183, 0}";
-			sepNavVisRange = "{0, 1477}";
-			sepNavWindowFrame = "{{447, 104}, {992, 844}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1050, 716}}";
+			sepNavSelRange = "{1124, 0}";
+			sepNavVisRange = "{0, 1516}";
+			sepNavWindowFrame = "{{577, 143}, {992, 844}}";
 		};
 	};
 	0128AEEF0F1478F300EC3C28 /* SUUploadErrorController.h */ = {
@@ -656,7 +656,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Install;
 		activeExecutable = 0128AECC0F14783400EC3C28 /* Scribd Uploader */;
 		activeTarget = 8D1107260486CEB800E47090 /* Scribd Uploader */;
 		addToTargets = (
@@ -715,8 +715,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 253587864;
-			PBXWorkspaceStateSaveDate = 253587864;
+			PBXPerProjectTemplateStateSaveDate = 253598452;
+			PBXWorkspaceStateSaveDate = 253598452;
 		};
 		sourceControlManager = 0128AED40F14783800EC3C28 /* Source Control */;
 		userBuildSettings = {
