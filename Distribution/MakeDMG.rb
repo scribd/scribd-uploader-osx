@@ -4,6 +4,7 @@ product = "Scribd\\ Uploader"
 dist_dir = "build/Install/dist"
 app = "#{dist_dir}/#{product}.app"
 sla = "Distribution/SLA.r"
+img_icon = "Distribution/Disk\\ Image\\ Icon.r"
 vol_template = "Distribution/Volume\\ Template"
 big_dmg = "#{dist_dir}/#{product}-tmp.dmg"
 dmg = "#{dist_dir}/#{product}.dmg"
@@ -35,3 +36,6 @@ mountpoint.gsub! ' ', '\\ '
 
 `hdiutil internet-enable -yes #{dmg}`
 `rm -f #{big_dmg}`
+
+`Rez #{img_icon} -a -o #{dmg}`
+`SetFile -a C #{dmg}`
