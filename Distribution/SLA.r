@@ -10,69 +10,10 @@ data 'LPic' (5000) {
 
 
 data 'TEXT' (5002, "English") {
-    "Copyright (c) 2009 Scribd Inc.\n"
+	"Copyright (c) 2009 Scribd Inc.\n"
 	"\n"
-	"Permission is hereby granted, free of charge, to any person\n"
-	"obtaining a copy of this software and associated documentation\n"
-	"files (the \"Software\"), to deal in the Software without\n"
-	"restriction, including without limitation the rights to use,\n"
-	"copy, modify, merge, publish, distribute, sublicense, and/or sell\n"
-	"copies of the Software, and to permit persons to whom the\n"
-	"Software is furnished to do so, subject to the following\n"
-	"conditions:\n"
-	"\n"
-	"The above copyright notice and this permission notice shall be\n"
-	"included in all copies or substantial portions of the Software.\n"
-	"\n"
-	"THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\n"
-	"EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\n"
-	"OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\n"
-	"NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\n"
-	"HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\n"
-	"WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\n"
-	"FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\n"
-	"OTHER DEALINGS IN THE SOFTWARE.\n"
-	"\n"
-	"Except as contained in this notice, the name(s) of the above\n"
-	"copyright holders shall not be used in advertising or otherwise\n"
-	"to promote the sale, use or other dealings in this Software \n"
-	"without prior written authorization.\n"
-	"\n"
-	"Portions of this software (ASIHTTPRequest) are distributed under\n"
-	"a separate license, which is reprinted in full below.\n"
-	"\n"
-	"* Copyright (c) 2007-2008, All-Seeing Interactive\n"
-	"* All rights reserved.\n"
-	"*\n"
-	"* Redistribution and use in source and binary forms, with or without\n"
-	"* modification, are permitted provided that the following conditions are met:\n"
-	"*     * Redistributions of source code must retain the above copyright\n"
-	"*       notice, this list of conditions and the following disclaimer.\n"
-	"*     * Redistributions in binary form must reproduce the above copyright\n"
-	"*       notice, this list of conditions and the following disclaimer in the\n"
-	"*       documentation and/or other materials provided with the distribution.\n"
-	"*     * Neither the name of the All-Seeing Interactive nor the\n"
-	"*       names of its contributors may be used to endorse or promote products\n"
-	"*       derived from this software without specific prior written permission.\n"
-	"*\n"
-	"* THIS SOFTWARE IS PROVIDED BY All-Seeing Interactive ''AS IS'' AND ANY\n"
-	"* EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n"
-	"* WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\n"
-	"* DISCLAIMED. IN NO EVENT SHALL All-Seeing Interactive BE LIABLE FOR ANY\n"
-	"* DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n"
-	"* (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n"
-	"* LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n"
-	"* ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n"
-	"* (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n"
-	"* SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n"
-	"\n"
-	"Portions of this software (Sparkle) are distributed under a separate license,\n"
-	"which is reprinted in full below.\n"
-	"\n"
-	"Copyright (c) 2006 Andy Matuschak\n"
-	"\n"
-	"Permission is hereby granted, free of charge, to any person obtaining a copy of\n"
-	"this software and associated documentation files (the \"Software\"), to deal in\n"
+	"Permission is hereby granted, free of charge, to any person obtaining a copy\n"
+	"ofthis software and associated documentation files (the \"Software\"), to deal in\n"
 	"the Software without restriction, including without limitation the rights to\n"
 	"use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\n"
 	"the Software, and to permit persons to whom the Software is furnished to do so,\n"
@@ -88,580 +29,509 @@ data 'TEXT' (5002, "English") {
 	"IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n"
 	"CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
 	"\n"
-	"=================\n"
-	"EXTERNAL LICENSES\n"
-	"=================\n"
+	"Except as contained in this notice, the name(s) of the above copyright holders\n"
+	"shall not be used in advertising or otherwise to promote the sale, use or other\n"
+	"dealings in this Software without prior written authorization.\n"
 	"\n"
-	"Thanks to Brent Simmons, whose RSS reader class was modiﬁed and used for appcast \n"
-	"support. His class is licensed as follows:\n"
-	"Copyright (c) 2002, Brent Simmons \n"
-	"All rights reserved. \n"
-	"Redistribution and use in source and binary forms, with or without modiﬁcation,\n"
-	"are permitted provided that the following conditions are met:\n"
-	"*	\n"
+	"Portions of this software (ASIHTTPRequest) are distributed under a separate\n"
+	"license, which is reprinted in full below.\n"
 	"\n"
-	" Redistributions of source code must retain the above copyright notice, this\n"
-	"list of conditions and the following disclaimer.\n"
-	"*	\n"
+	"	Copyright (c) 2007-2008, All-Seeing Interactive All rights reserved.\n"
 	"\n"
-	" Redistributions in binary form must reproduce the above copyright notice, this\n"
-	"list of conditions and the following disclaimer in the documentation and/or\n"
-	"other materials provided with the distribution.\n"
-	"*	\n"
+	"	Redistribution and use in source and binary forms, with or without\n"
+	"	modification, are permitted provided that the following conditions are met:\n"
 	"\n"
-	" Neither the name of ranchero.com or Brent Simmons nor the names of its\n"
-	"contributors may be used to endorse or promote products derived from this\n"
-	"software without speciﬁc prior written permission.\n"
-	"THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND\n"
-	"ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n"
-	"WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\n"
-	"DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\n"
-	"ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n"
-	"(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n"
-	"LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\n"
-	"ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n"
-	"(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n"
-	"SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n"
+	"	* Redistributions of source code must retain the above copyright notice, this\n"
+	"	  list of conditions and the following disclaimer.\n"
 	"\n"
-	"This project uses software developed by the OpenSSL Project for use in the\n"
-	"OpenSSL Toolkit (http://www.openssl.org). This toolkit is licensed as follows:\n"
-	"/* ==================================================================== \n"
-	"* Copyright (c) 1998-2005 The OpenSSL Project.  All rights reserved. \n"
-	"* \n"
-	"* Redistribution and use in source and binary forms, with or without \n"
-	"* modiﬁcation, are permitted provided that the following conditions \n"
-	"* are met: \n"
-	"* \n"
-	"* 1. Redistributions of source code must retain the above copyright \n"
-	"*    notice, this list of conditions and the following disclaimer. \n"
-	"* \n"
-	"* 2. Redistributions in binary form must reproduce the above copyright \n"
-	"*    notice, this list of conditions and the following disclaimer in \n"
-	"*    the documentation and/or other materials provided with the \n"
-	"*    distribution. \n"
-	"* \n"
-	"* 3. All advertising materials mentioning features or use of this \n"
-	"*    software must display the following acknowledgment: \n"
-	"*    “This product includes software developed by the OpenSSL Project \n"
-	"*    for use in the OpenSSL Toolkit. (http://www.openssl.org/)” \n"
-	"* \n"
-	"* 4. The names “OpenSSL Toolkit” and “OpenSSL Project” must not be used to \n"
-	"*    endorse or promote products derived from this software without \n"
-	"*    prior written permission. For written permission, please contact \n"
-	"*    openssl-core@openssl.org. \n"
-	"* \n"
-	"* 5. Products derived from this software may not be called “OpenSSL” \n"
-	"*    nor may “OpenSSL” appear in their names without prior written \n"
-	"*    permission of the OpenSSL Project. \n"
-	"* \n"
-	"* 6. Redistributions of any form whatsoever must retain the following \n"
+	"	* Redistributions in binary form must reproduce the above copyright notice,\n"
+	"	  this list of conditions and the following disclaimer in the documentation\n"
+	"	  and/or other materials provided with the distribution.\n"
 	"\n"
-	"*    acknowledgment: \n"
-	"*    “This product includes software developed by the OpenSSL Project \n"
-	"*    for use in the OpenSSL Toolkit (http://www.openssl.org/)” \n"
-	"* \n"
-	"* THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS’’ AND ANY \n"
-	"* EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE \n"
-	"* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR \n"
-	"* PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR \n"
-	"* ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, \n"
-	"* SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT \n"
-	"* NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; \n"
-	"* LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) \n"
-	"* HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, \n"
-	"* STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) \n"
-	"* ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED \n"
-	"* OF THE POSSIBILITY OF SUCH DAMAGE. \n"
-	"* ==================================================================== \n"
-	"* \n"
-	"* This product includes cryptographic software written by Eric Young \n"
-	"* (eay@cryptsoft.com).  This product includes software written by Tim \n"
-	"* Hudson (tjh@cryptsoft.com). \n"
-	"* \n"
-	"*/\n"
-	" \n"
-	"Original SSLeay License \n"
-	"/* Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com) \n"
-	"* All rights reserved. \n"
-	"* \n"
-	"* This package is an SSL implementation written \n"
-	"* by Eric Young (eay@cryptsoft.com). \n"
-	"* The implementation was written so as to conform with Netscapes SSL. \n"
-	"* \n"
-	"* This library is free for commercial and non-commercial use as long as \n"
-	"* the following conditions are aheared to.  The following conditions \n"
-	"* apply to all code found in this distribution, be it the RC4, RSA, \n"
-	"* lhash, DES, etc., code; not just the SSL code.  The SSL documentation \n"
-	"* included with this distribution is covered by the same copyright terms \n"
-	"* except that the holder is Tim Hudson (tjh@cryptsoft.com). \n"
-	"* \n"
-	"* Copyright remains Eric Young’s, and as such any Copyright notices in \n"
-	"* the code are not to be removed. \n"
-	"* If this package is used in a product, Eric Young should be given attribution \n"
-	"* as the author of the parts of the library used. \n"
-	"* This can be in the form of a textual message at program startup or \n"
-	"* in documentation (online or textual) provided with the package. \n"
-	"* \n"
-	"* Redistribution and use in source and binary forms, with or without \n"
-	"* modiﬁcation, are permitted provided that the following conditions \n"
-	"* are met: \n"
-	"* 1. Redistributions of source code must retain the copyright \n"
-	"*    notice, this list of conditions and the following disclaimer. \n"
-	"* 2. Redistributions in binary form must reproduce the above copyright \n"
-	"*    notice, this list of conditions and the following disclaimer in the \n"
-	"*    documentation and/or other materials provided with the distribution. \n"
-	"* 3. All advertising materials mentioning features or use of this software \n"
-	"*    must display the following acknowledgement: \n"
-	"*    “This product includes cryptographic software written by \n"
-	"*     Eric Young (eay@cryptsoft.com)”\n"
-	"*    The word ‘cryptographic’ can be left out if the rouines from the library \n"
-	"*    being used are not cryptographic related :-). \n"
-	"* 4. If you include any Windows speciﬁc code (or a derivative thereof) from \n"
-	"*    the apps directory (application code) you must include an acknowledgement: \n"
-	"*    “This product includes software written by Tim Hudson (tjh@cryptsoft.com)” \n"
-	"* \n"
-	"* THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS’’ AND \n"
-	"* ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE \n"
-	"* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE \n"
-	"* ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE \n"
-	"* FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL \n"
-	"* DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS \n"
-	"* OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) \n"
-	"* HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT \n"
-	"* LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY \n"
-	"* OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF \n"
-	"* SUCH DAMAGE. \n"
-	"* \n"
-	"* The licence and distribution terms for any publically available version or \n"
-	"* derivative of this code cannot be changed.  i.e. this code cannot simply be \n"
-	"* copied and put under another distribution licence \n"
-	"* [including the GNU Public Licence.] \n"
-	"*/\n"
+	"	* Neither the name of the All-Seeing Interactive nor the names of its\n"
+	"	  contributors may be used to endorse or promote products derived from this\n"
+	"	  software without specific prior written permission.\n"
+	"\n"
+	"	THIS SOFTWARE IS PROVIDED BY All-Seeing Interactive \"AS IS\" AND ANY EXPRESS OR\n"
+	"	IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\n"
+	"	MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO\n"
+	"	EVENT SHALL All-Seeing Interactive BE LIABLE FOR ANY DIRECT, INDIRECT,\n"
+	"	INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n"
+	"	LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR\n"
+	"	PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\n"
+	"	LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n"
+	"	NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,\n"
+	"	EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n"
+	"\n"
+	"Portions of this software (Sparkle) are distributed under a separate license,\n"
+	"which is reprinted in full below.\n"
+	"\n"
+	"	Copyright (c) 2006 Andy Matuschak\n"
+	"\n"
+	"	Permission is hereby granted, free of charge, to any person obtaining a copy\n"
+	"	of this software and associated documentation files (the \"Software\"), to deal\n"
+	"	in the Software without restriction, including without limitation the rights\n"
+	"	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n"
+	"	copies of the Software, and to permit persons to whom the Software is\n"
+	"	furnished to do so, subject to the following conditions:\n"
+	"\n"
+	"	The above copyright notice and this permission notice shall be included in all\n"
+	"	copies or substantial portions of the Software.\n"
+	"\n"
+	"	THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n"
+	"	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n"
+	"	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n"
+	"	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n"
+	"	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
+	"	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n"
+	"	SOFTWARE.\n"
+	"\n"
+	"	External Licenses\n"
+	"\n"
+	"	Thanks to Brent Simmons, whose RSS reader class was modified and used for\n"
+	"	appcast support. His class is licensed as follows:\n"
+	"\n"
+	"		Copyright (c) 2002, Brent Simmons\n"
+	"\n"
+	"		All rights reserved.\n"
+	"\n"
+	"		Redistribution and use in source and binary forms, with or without\n"
+	"		modification, are permitted provided that the following conditions are met:\n"
+	"\n"
+	"		* Redistributions of source code must retain the above copyright notice,\n"
+	"		  this list of conditions and the following disclaimer.\n"
+	"\n"
+	"		* Redistributions in binary form must reproduce the above copyright notice,\n"
+	"		  this list of conditions and the following disclaimer in the documentation\n"
+	"		  and/or other materials provided with the distribution.\n"
+	"\n"
+	"		* Neither the name of ranchero.com or Brent Simmons nor the names of its\n"
+	"		  contributors may be used to endorse or promote products derived from this\n"
+	"		  software without specific prior written permission.\n"
+	"\n"
+	"		THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\n"
+	"		AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n"
+	"		IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n"
+	"		ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE\n"
+	"		LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\n"
+	"		CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n"
+	"		SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n"
+	"		INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n"
+	"		CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n"
+	"		ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE\n"
+	"		POSSIBILITY OF SUCH DAMAGE.\n"
+	"\n"
+	"	This project uses software developed by the OpenSSL Project for use in the\n"
+	"	OpenSSL Toolkit (http://www.openssl.org). This toolkit is licensed as follows:\n"
+	"\n"
+	"		Copyright (c) 1998-2005 The OpenSSL Project. All rights reserved.\n"
+	"\n"
+	"		Redistribution and use in source and binary forms, with or without\n"
+	"		modification, are permitted provided that the following conditions are met:\n"
+	"\n"
+	"		1. Redistributions of source code must retain the above copyright notice,\n"
+	"		   this list of conditions and the following disclaimer.\n"
+	"\n"
+	"		2. Redistributions in binary form must reproduce the above copyright notice,\n"
+	"		   this list of conditions and the following disclaimer in the documentation\n"
+	"		   and/or other materials provided with the distribution.\n"
+	"\n"
+	"		3. All advertising materials mentioning features or use of this software\n"
+	"		   must display the following acknowledgment: \"This product includes\n"
+	"		   software developed by the OpenSSL Project for use in the OpenSSL Toolkit.\n"
+	"		   (http://www.openssl.org/)\"\n"
+	"\n"
+	"		4. The names \"OpenSSL Toolkit\" and \"OpenSSL Project\" must not be used to\n"
+	"		   endorse or promote products derived from this software without prior\n"
+	"		   written permission. For written permission, please contact\n"
+	"		   openssl-core@openssl.org.\n"
+	"\n"
+	"		5. Products derived from this software may not be called \"OpenSSL\" nor may\n"
+	"		   \"OpenSSL\" appear in their names without prior written permission of the\n"
+	"		   OpenSSL Project.\n"
+	"\n"
+	"		6. Redistributions of any form whatsoever must retain the following\n"
+	"		   acknowledgment:\n"
+	"\n"
+	"		  \"This product includes software developed by the OpenSSL Project for use\n"
+	"		   in the OpenSSL Toolkit (http://www.openssl.org/)\"\n"
+	"\n"
+	"		THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT \"AS IS\" AND ANY EXPRESSED\n"
+	"		OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\n"
+	"		OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN\n"
+	"		NO EVENT SHALL THE OpenSSL PROJECT OR ITS CONTRIBUTORS BE LIABLE FOR ANY\n"
+	"		DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n"
+	"		(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n"
+	"		LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n"
+	"		ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n"
+	"		(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF\n"
+	"		THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n"
+	"\n"
+	"	This product includes cryptographic software written by Eric Young\n"
+	"	(eay@cryptsoft.com). This product includes software written by Tim Hudson\n"
+	"	(tjh@cryptsoft.com).\n"
+	"\n"
+	"		Original SSLeay License\n"
+	"\n"
+	"		Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com) All rights reserved.\n"
+	"\n"
+	"		This package is an SSL implementation written by Eric Young\n"
+	"		(eay@cryptsoft.com). The implementation was written so as to conform with\n"
+	"		Netscapes SSL.\n"
+	"\n"
+	"		This library is free for commercial and non-commercial use as long as the\n"
+	"		following conditions are aheared to. The following conditions apply to all\n"
+	"		code found in this distribution, be it the RC4, RSA, lhash, DES, etc., code;\n"
+	"		not just the SSL code. The SSL documentation included with this distribution\n"
+	"		is covered by the same copyright terms except that the holder is Tim Hudson\n"
+	"		(tjh@cryptsoft.com).\n"
+	"\n"
+	"		Copyright remains Eric Young's, and as such any Copyright notices in the\n"
+	"		code are not to be removed. If this package is used in a product, Eric Young\n"
+	"		should be given attribution as the author of the parts of the library used.\n"
+	"		This can be in the form of a textual message at program startup or in\n"
+	"		documentation (online or textual) provided with the package.\n"
+	"\n"
+	"		Redistribution and use in source and binary forms, with or without\n"
+	"		modification, are permitted provided that the following conditions are met:\n"
+	"\n"
+	"		1. Redistributions of source code must retain the copyright notice, this\n"
+	"		   list of conditions and the following disclaimer.\n"
+	"\n"
+	"		2. Redistributions in binary form must reproduce the above copyright notice,\n"
+	"		   this list of conditions and the following disclaimer in the documentation\n"
+	"		   and/or other materials provided with the distribution.\n"
+	"\n"
+	"		3. All advertising materials mentioning features or use of this software\n"
+	"		   must display the following acknowledgement:\n"
+	"\n"
+	"		  \"This product includes cryptographic software written by Eric Young\n"
+	"		   (eay@cryptsoft.com)\"\n"
+	"\n"
+	"		   The word 'cryptographic' can be left out if the rouines from the library\n"
+	"		   being used are not cryptographic related :-).\n"
+	"\n"
+	"		4. If you include any Windows specific code (or a derivative thereof) from\n"
+	"		   the apps directory (application code) you must include an\n"
+	"		   acknowledgement: \"This product includes software written by Tim Hudson\n"
+	"		   (tjh@cryptsoft.com)\"\n"
+	"\n"
+	"		THIS SOFTWARE IS PROVIDED BY ERIC YOUNG \"AS IS\" AND ANY EXPRESS OR IMPLIED\n"
+	"		WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\n"
+	"		MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO\n"
+	"		EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\n"
+	"		INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n"
+	"		LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,\n"
+	"		OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\n"
+	"		LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n"
+	"		NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,\n"
+	"		EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n"
+	"\n"
+	"		The licence and distribution terms for any publically available version or\n"
+	"		derivative of this code cannot be changed. i.e. this code cannot simply be\n"
+	"		copied and put under another distribution licence [including the GNU Public\n"
+	"		Licence.]\n"
 	"\n"
 	"Portions of this software (DBPreferencesWindow) are distributed under a separate\n"
 	"license. This license is reprinted in full below:\n"
 	"\n"
-	"Copyright 2007. Some rights reserved.\n"
-	"This work is licensed under a Creative Commons license:\n"
-	"http://creativecommons.org/licenses/by/3.0/\n"
+	"	Copyright 2007. Some rights reserved. This work is licensed under a Creative\n"
+	"	Commons license: http://creativecommons.org/licenses/by/3.0/\n"
+	"\n"
+	"Portions of this software (the Blend icon set) are distributed under a separate\n"
+	"license. This license is reprinted in full below:\n"
+	"\n"
+	"	These icons are released under Creative Commons License\n"
+	"\n"
+	"	You are free:\n"
+	"\n"
+	"	* to copy, distribute, display, and perform the work\n"
+	"\n"
+	"	* to make derivative works\n"
+	"\n"
+	"	Under the following conditions:\n"
+	"\n"
+	"	* You must attribute the work in the manner specified by the author or\n"
+	"	  licensor.\n"
+	"\n"
+	"	* You may not use this work for commercial purposes.\n"
+	"\n"
+	"	* If you alter, transform, or build upon this work, you may distribute the\n"
+	"	  resulting work only under a license identical to this one.\n"
+	"\n"
+	"	* For any reuse or distribution, you must make clear to others the license\n"
+	"	  terms of this work.\n"
+	"\n"
+	"	* Any of these conditions can be waived if you get permission from the\n"
+	"	  copyright holder.\n"
 };
 
-
-resource 'STR#' (5001, "German") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Deutsch",
-        /* [2] */
-        "Akzeptieren",
-        /* [3] */
-        "Ablehnen",
-        /* [4] */
-        "Drucken",
-        /* [5] */
-        "Sichern...",
-        /* [6] */
-        "Klicken Sie auf “Akzeptieren”, wenn Sie mit den Bestimmungen des "
-        "Software-Lizenzvertrages einverstanden sind. Falls nicht, klicken "
-        "Sie bitte “Ablehnen” an. Sie können die Software nur installieren, "
-        "wenn Sie “Akzeptieren” angeklickt haben.",
-        /* [7] */
-        "Software-Lizenzvertrag",
-        /* [8] */
-        "Dieser Text kann nicht gesichert werden. Diese Festplatte ist "
-        "möglicherweise voll oder geschützt oder der Ordner ist geschützt.",
-        /* [9] */
-        "Es kann nicht gedruckt werden. Bitte stellen Sie sicher, daß ein "
-        "Drucker ausgewählt ist."
-    }
+data 'styl' (5002, "English") {
+	$"0001 0000 0000 000C 0009 0014 0000 000A"
+	$"0000 0000 0000"
 };
 
-resource 'STR#' (5002, "English") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "English",
-        /* [2] */
-        "Agree",
-        /* [3] */
-        "Disagree",
-        /* [4] */
-        "Print",
-        /* [5] */
-        "Save...",
-        /* [6] */
-        "IMPORTANT - Read this License Agreement carefully before clicking on "
-        "the \"Agree\" button.  By clicking on the \"Agree\" button, you agree "
-        "to be bound by the terms of the License Agreement.",
-        /* [7] */
-        "Software License Agreement",
-        /* [8] */
-        "This text cannot be saved. This disk may be full or locked, or the file "
-        "may be locked.",
-        /* [9] */
-        "Unable to print. Make sure you’ve selected a printer."
-    }
+data 'STR#' (5000, "English") {
+	$"0006 0D45 6E67 6C69 7368 2074 6573 7431"            /* ...English test1 */
+	$"0541 6772 6565 0844 6973 6167 7265 6505"            /* .Agree.Disagree. */
+	$"5072 696E 7407 5361 7665 2E2E 2E7A 4966"            /* Print.Save...zIf */
+	$"2079 6F75 2061 6772 6565 2077 6974 6820"            /*  you agree with  */
+	$"7468 6520 7465 726D 7320 6F66 2074 6869"            /* the terms of thi */
+	$"7320 6C69 6365 6E73 652C 2063 6C69 636B"            /* s license, click */
+	$"2022 4167 7265 6522 2074 6F20 6163 6365"            /*  "Agree" to acce */
+	$"7373 2074 6865 2073 6F66 7477 6172 652E"            /* ss the software. */
+	$"2020 4966 2079 6F75 2064 6F20 6E6F 7420"            /*   If you do not  */
+	$"6167 7265 652C 2070 7265 7373 2022 4469"            /* agree, press "Di */
+	$"7361 6772 6565 2E22"                                /* sagree." */
 };
 
-resource 'STR#' (5003, "Spanish") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Español",
-        /* [2] */
-        "Aceptar",
-        /* [3] */
-        "No aceptar",
-        /* [4] */
-        "Imprimir",
-        /* [5] */
-        "Guardar...",
-        /* [6] */
-        "Si está de acuerdo con los términos de esta licencia, pulse \"Aceptar\" "
-        "para instalar el software. En el supuesto de que no esté de acuerdo con "
-        "los términos de esta licencia, pulse \"No aceptar.\"",
-        /* [7] */
-        "Licencia de Software",
-        /* [8] */
-        "Este texto no se puede guardar. El disco puede estar lleno o bloqueado, "
-        "o el archivo puede estar bloqueado.",
-        /* [9] */
-        "No se puede imprimir. Compruebe que ha seleccionado una impresora."
-    }
+data 'STR#' (5001, "German") {
+	$"0006 0744 6575 7473 6368 0B41 6B7A 6570"            /* ...Deutsch.Akzep */
+	$"7469 6572 656E 0841 626C 6568 6E65 6E07"            /* tieren.Ablehnen. */
+	$"4472 7563 6B65 6E0A 5369 6368 6572 6E2E"            /* Drucken¬¨Sichern. */
+	$"2E2E E74B 6C69 636B 656E 2053 6965 2069"            /* ..√ÅKlicken Sie i */
+	$"6E20 D241 6B7A 6570 7469 6572 656E D32C"            /* n ‚ÄúAkzeptieren‚Äù, */
+	$"2077 656E 6E20 5369 6520 6D69 7420 6465"            /*  wenn Sie mit de */
+	$"6E20 4265 7374 696D 6D75 6E67 656E 2064"            /* n Bestimmungen d */
+	$"6573 2053 6F66 7477 6172 652D 4C69 7A65"            /* es Software-Lize */
+	$"6E7A 7665 7274 7261 6773 2065 696E 7665"            /* nzvertrags einve */
+	$"7273 7461 6E64 656E 2073 696E 642E 2046"            /* rstanden sind. F */
+	$"616C 6C73 206E 6963 6874 2C20 6269 7474"            /* alls nicht, bitt */
+	$"6520 D241 626C 6568 6E65 6ED3 2061 6E6B"            /* e ‚ÄúAblehnen‚Äù ank */
+	$"6C69 636B 656E 2E20 5369 6520 6B9A 6E6E"            /* licken. Sie k√∂nn */
+	$"656E 2064 6965 2053 6F66 7477 6172 6520"            /* en die Software  */
+	$"6E75 7220 696E 7374 616C 6C69 6572 656E"            /* nur installieren */
+	$"2C20 7765 6E6E 2053 6965 20D2 416B 7A65"            /* , wenn Sie ‚ÄúAkze */
+	$"7074 6965 7265 6ED3 2061 6E67 656B 6C69"            /* ptieren‚Äù angekli */
+	$"636B 7420 6861 6265 6E2E"                           /* ckt haben. */
 };
 
-resource 'STR#' (5004, "French") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Français",
-        /* [2] */
-        "Accepter",
-        /* [3] */
-        "Refuser",
-        /* [4] */
-        "Imprimer",
-        /* [5] */
-        "Enregistrer...",
-        /* [6] */
-        "Si vous acceptez les termes de la présente licence, cliquez sur "
-        "\"Accepter\" afin d'installer le logiciel. Si vous n'êtes pas d'accord "
-        "avec les termes de la licence, cliquez sur \"Refuser\".",
-        /* [7] */
-        "Contrat de licence de logiciel",
-        /* [8] */
-        "Ce texte ne peut être sauvegardé. Le disque est peut-être saturé ou "
-        "verrouillé, ou bien le fichier est peut-être verrouillé.",
-        /* [9] */
-        "Impression impossible. Assurez-vous d’avoir sélectionné une imprimante."
-    }
+data 'STR#' (5002, "English") {
+	$"0006 0745 6E67 6C69 7368 0541 6772 6565"            /* ...English.Agree */
+	$"0844 6973 6167 7265 6505 5072 696E 7407"            /* .Disagree.Print. */
+	$"5361 7665 2E2E 2E7B 4966 2079 6F75 2061"            /* Save...{If you a */
+	$"6772 6565 2077 6974 6820 7468 6520 7465"            /* gree with the te */
+	$"726D 7320 6F66 2074 6869 7320 6C69 6365"            /* rms of this lice */
+	$"6E73 652C 2070 7265 7373 2022 4167 7265"            /* nse, press "Agre */
+	$"6522 2074 6F20 696E 7374 616C 6C20 7468"            /* e" to install th */
+	$"6520 736F 6674 7761 7265 2E20 2049 6620"            /* e software.  If  */
+	$"796F 7520 646F 206E 6F74 2061 6772 6565"            /* you do not agree */
+	$"2C20 7072 6573 7320 2244 6973 6167 7265"            /* , press "Disagre */
+	$"6522 2E"                                            /* e". */
 };
 
-resource 'STR#' (5005, "Italian") {
-    {    /* array StringArray: 9 elements */
-        /* [1] */
-        "Italiano",
-        /* [2] */
-        "Accetto",
-        /* [3] */
-        "Rifiuto",
-        /* [4] */
-        "Stampa",
-        /* [5] */
-        "Registra...",
-        /* [6] */
-        "Se accetti le condizioni di questa licenza, fai clic su \"Accetto\" per "
-        "installare il software. Altrimenti fai clic su \"Rifiuto\".",
-        /* [7] */
-        "Licenza Software",
-        /* [8] */
-        "Non posso registrare il testo. Il disco potrebbe essere pieno o protetto "
-        "oppure il documento potrebbe essere protetto.",
-        /* [9] */
-        "Non posso stampare. Assicurati di aver selezionato una stampante."
-    }
+data 'STR#' (5003, "Spanish") {
+	$"0006 0745 7370 6196 6F6C 0741 6365 7074"            /* ...Espa√±ol.Acept */
+	$"6172 0A4E 6F20 6163 6570 7461 7208 496D"            /* ar¬¨No aceptar.Im */
+	$"7072 696D 6972 0A47 7561 7264 6172 2E2E"            /* primir¬¨Guardar.. */
+	$"2EC0 5369 2065 7374 8720 6465 2061 6375"            /* .¬øSi est√° de acu */
+	$"6572 646F 2063 6F6E 206C 6F73 2074 8E72"            /* erdo con los t√©r */
+	$"6D69 6E6F 7320 6465 2065 7374 6120 6C69"            /* minos de esta li */
+	$"6365 6E63 6961 2C20 7075 6C73 6520 2241"            /* cencia, pulse "A */
+	$"6365 7074 6172 2220 7061 7261 2069 6E73"            /* ceptar" para ins */
+	$"7461 6C61 7220 656C 2073 6F66 7477 6172"            /* talar el softwar */
+	$"652E 2045 6E20 656C 2073 7570 7565 7374"            /* e. En el supuest */
+	$"6F20 6465 2071 7565 206E 6F20 6573 748E"            /* o de que no est√© */
+	$"2064 6520 6163 7565 7264 6F20 636F 6E20"            /*  de acuerdo con  */
+	$"6C6F 7320 748E 726D 696E 6F73 2064 6520"            /* los t√©rminos de  */
+	$"6573 7461 206C 6963 656E 6369 612C 2070"            /* esta licencia, p */
+	$"756C 7365 2022 4E6F 2061 6365 7074 6172"            /* ulse "No aceptar */
+	$"2E22"                                               /* ." */
 };
 
-resource 'STR#' (5006, "Japanese") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Japanese",
-        /* [2] */
-        "ìØà”ÇµÇ‹Ç∑",
-        /* [3] */
-        "ìØà”ÇµÇ‹ÇπÇÒ",
-        /* [4] */
-        "àÛç¸Ç∑ÇÈ",
-        /* [5] */
-        "ï€ë∂...",
-        /* [6] */
-        "ñ{É\\ÉtÉgÉEÉGÉAégópãñë¯å_ñÒÇÃèåèÇ…ìØà”Ç≥"
-        "ÇÍÇÈèÍçáÇ…ÇÕÅAÉ\\ÉtÉgÉEÉGÉAÇÉCÉìÉXÉgÅ[Éã"
-        "Ç∑ÇÈÇΩÇﬂÇ…ÅuìØà”ÇµÇ‹Ç∑ÅvÇâüÇµÇƒÇ≠ÇæÇ≥Ç¢"
-        "ÅBÅ@ìØà”Ç≥ÇÍÇ»Ç¢èÍçáÇ…ÇÕÅAÅuìØà”ÇµÇ‹ÇπÇÒ"
-        "ÅvÇâüÇµÇƒÇ≠ÇæÇ≥Ç¢ÅB",
-        /* [7] */
-        "É\\ÉtÉgÉEÉFÉAégópãñë¯å_ñÒ",
-        /* [8] */
-        "Ç±ÇÃÉeÉLÉXÉgÇÕÅAï€ë∂Ç≈Ç´Ç‹ÇπÇÒÅBÇ±ÇÃÉfÉB"
-        "ÉXÉNÇ…ãÛÇ´Ç™ñ≥Ç¢Ç©ÉçÉbÉNÇ≥ÇÍÇƒÇ¢ÇÈâ¬î\\ê´"
-        "Ç™Ç†ÇËÇ‹Ç∑ÅBÇ‹ÇΩÇÕÅAÇ±ÇÃÉtÉ@ÉCÉãÇ™ÉçÉbÉN"
-        "Ç≥ÇÍÇƒÇ¢ÇÈâ¬î\\ê´Ç™Ç†ÇËÇ‹Ç∑ÅB",
-        /* [9] */
-        "àÛç¸Ç≈Ç´Ç‹ÇπÇÒÅBÉvÉäÉìÉ^Ç™ê≥ÇµÇ≠ëIëÇ≥ÇÍ"
-        "ÇƒÇ¢ÇÈÇ±Ç∆ÇämîFÇµÇƒÇ≠ÇæÇ≥Ç¢ÅB"
-    }
+data 'STR#' (5004, "French") {
+	$"0006 0846 7261 6E8D 6169 7308 4163 6365"            /* ...Fran√ßais.Acce */
+	$"7074 6572 0752 6566 7573 6572 0849 6D70"            /* pter.Refuser.Imp */
+	$"7269 6D65 720E 456E 7265 6769 7374 7265"            /* rimer.Enregistre */
+	$"722E 2E2E BA53 6920 766F 7573 2061 6363"            /* r...‚à´Si vous acc */
+	$"6570 7465 7A20 6C65 7320 7465 726D 6573"            /* eptez les termes */
+	$"2064 6520 6C61 2070 728E 7365 6E74 6520"            /*  de la pr√©sente  */
+	$"6C69 6365 6E63 652C 2063 6C69 7175 657A"            /* licence, cliquez */
+	$"2073 7572 2022 4163 6365 7074 6572 2220"            /*  sur "Accepter"  */
+	$"6166 696E 2064 2769 6E73 7461 6C6C 6572"            /* afin d'installer */
+	$"206C 6520 6C6F 6769 6369 656C 2E20 5369"            /*  le logiciel. Si */
+	$"2076 6F75 7320 6E27 9074 6573 2070 6173"            /*  vous n'√™tes pas */
+	$"2064 2761 6363 6F72 6420 6176 6563 206C"            /*  d'accord avec l */
+	$"6573 2074 6572 6D65 7320 6465 206C 6120"            /* es termes de la  */
+	$"6C69 6365 6E63 652C 2063 6C69 7175 657A"            /* licence, cliquez */
+	$"2073 7572 2022 5265 6675 7365 7222 2E"              /*  sur "Refuser". */
 };
 
-resource 'STR#' (5007, "Dutch") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Nederlands",
-        /* [2] */
-        "Ja",
-        /* [3] */
-        "Nee",
-        /* [4] */
-        "Print",
-        /* [5] */
-        "Bewaar...",
-        /* [6] */
-        "Indien u akkoord gaat met de voorwaarden van deze licentie, kunt u op 'Ja' "
-        "klikken om de programmatuur te installeren. Indien u niet akkoord gaat, "
-        "klikt u op 'Nee'.",
-        /* [7] */
-        "Softwarelicentie",
-        /* [8] */
-        "De tekst kan niet worden bewaard. Het kan zijn dat uw schijf vol of "
-        "beveiligd is of dat het bestand beveiligd is.",
-        /* [9] */
-        "Afdrukken niet mogelijk. Zorg dat er een printer is geselecteerd."
-    }
+data 'STR#' (5005, "Italian") {
+	$"0006 0849 7461 6C69 616E 6F07 4163 6365"            /* ...Italiano.Acce */
+	$"7474 6F07 5269 6669 7574 6F06 5374 616D"            /* tto.Rifiuto.Stam */
+	$"7061 0B52 6567 6973 7472 612E 2E2E 7F53"            /* pa.Registra....S */
+	$"6520 6163 6365 7474 6920 6C65 2063 6F6E"            /* e accetti le con */
+	$"6469 7A69 6F6E 6920 6469 2071 7565 7374"            /* dizioni di quest */
+	$"6120 6C69 6365 6E7A 612C 2066 6169 2063"            /* a licenza, fai c */
+	$"6C69 6320 7375 2022 4163 6365 7474 6F22"            /* lic su "Accetto" */
+	$"2070 6572 2069 6E73 7461 6C6C 6172 6520"            /*  per installare  */
+	$"696C 2073 6F66 7477 6172 652E 2041 6C74"            /* il software. Alt */
+	$"7269 6D65 6E74 6920 6661 6920 636C 6963"            /* rimenti fai clic */
+	$"2073 7520 2252 6966 6975 746F 222E"                 /*  su "Rifiuto". */
 };
 
-resource 'STR#' (5008, "Swedish") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Svensk",
-        /* [2] */
-        "Godkänns",
-        /* [3] */
-        "Avböjs",
-        /* [4] */
-        "Skriv ut",
-        /* [5] */
-        "Spara...",
-        /* [6] */
-        "Om Du godkänner licensvillkoren klicka på \"Godkänns\" för att installera "
-        "programprodukten. Om Du inte godkänner licensvillkoren, klicka på \"Avböjs\".",
-        /* [7] */
-        "Licensavtal för Programprodukt",
-        /* [8] */
-        "Den här texten kan inte sparas eftersom antingen skivan är full eller skivan "
-        "och/eller dokumentet är låst.",
-        /* [9] */
-        "Kan inte skriva ut. Kontrollera att du har valt en skrivare. "
-    }
+data 'STR#' (5006, "Japanese") {
+	$"0006 084A 6170 616E 6573 650A 93AF 88D3"            /* ...Japanese¬¨√¨√ò√†‚Äù */
+	$"82B5 82DC 82B7 0C93 AF88 D382 B582 DC82"            /* √á¬µ√á‚Äπ√á‚àë.√¨√ò√†‚Äù√á¬µ√á‚Äπ√á */
+	$"B982 F108 88F3 8DFC 82B7 82E9 0795 DB91"            /* œÄ√á√í.√†√õ√ß¬∏√á‚àë√á√à.√Ø‚Ç¨√´ */
+	$"B62E 2E2E B496 7B83 5C83 7483 6783 4583"            /* ‚àÇ...¬•√±{√â\√ât√âg√âE√â */
+	$"4783 418E 6797 708B 9691 F88C 5F96 F182"            /* G√âA√©g√≥p√£√±√´¬Ø√•_√±√í√á */
+	$"CC8F F08C 8F82 C993 AF88 D382 B382 EA82"            /* √É√®Ô£ø√•√®√á‚Ä¶√¨√ò√†‚Äù√á‚â•√á√ç√á */
+	$"E98F EA8D 8782 C982 CD81 4183 5C83 7483"            /* √à√®√ç√ß√°√á‚Ä¶√á√ï√ÖA√â\√ât√â */
+	$"6783 4583 4783 4182 F083 4383 9383 5883"            /* g√âE√âG√âA√áÔ£ø√âC√â√¨√âX√â */
+	$"6781 5B83 8B82 B782 E982 BD82 DF82 C981"            /* g√Ö[√â√£√á‚àë√á√à√áŒ©√áÔ¨Ç√á‚Ä¶√Ö */
+	$"7593 AF88 D382 B582 DC82 B781 7682 F089"            /* u√¨√ò√†‚Äù√á¬µ√á‚Äπ√á‚àë√Öv√áÔ£ø√¢ */
+	$"9F82 B582 C482 AD82 BE82 B382 A281 4281"            /* √º√á¬µ√á∆í√á‚â†√á√¶√á‚â•√á¬¢√ÖB√Ö */
+	$"4093 AF88 D382 B382 EA82 C882 A28F EA8D"            /* @√¨√ò√†‚Äù√á‚â•√á√ç√á¬ª√á¬¢√®√ç√ß */
+	$"8782 C982 CD81 4181 7593 AF88 D382 B582"            /* √°√á‚Ä¶√á√ï√ÖA√Öu√¨√ò√†‚Äù√á¬µ√á */
+	$"DC82 B982 F181 7682 F089 9F82 B582 C482"            /* ‚Äπ√áœÄ√á√í√Öv√áÔ£ø√¢√º√á¬µ√á∆í√á */
+	$"AD82 BE82 B382 A281 42"                             /* ‚â†√á√¶√á‚â•√á¬¢√ÖB */
 };
 
-resource 'STR#' (5009, "Brazilian Portuguese") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Português, Brasil",
-        /* [2] */
-        "Concordar",
-        /* [3] */
-        "Discordar",
-        /* [4] */
-        "Imprimir",
-        /* [5] */
-        "Salvar...",
-        /* [6] */
-        "Se está de acordo com os termos desta licença, pressione \"Concordar\" para "
-        "instalar o software. Se não está de acordo, pressione \"Discordar\".",
-        /* [7] */
-        "Licença de Uso de Software",
-        /* [8] */
-        "Este texto não pode ser salvo. O disco pode estar cheio ou\nbloqueado, ou o "
-        "arquivo pode estar bloqueado.",
-        /* [9] */
-        "Não é possível imprimir. Comprove que você selecionou uma impressora."
-    }
+data 'STR#' (5007, "Dutch") {
+	$"0006 0A4E 6564 6572 6C61 6E64 7302 4A61"            /* ..¬¨Nederlands.Ja */
+	$"034E 6565 0550 7269 6E74 0942 6577 6161"            /* .Nee.Print‚àÜBewaa */
+	$"722E 2E2E A449 6E64 6965 6E20 7520 616B"            /* r...¬ßIndien u ak */
+	$"6B6F 6F72 6420 6761 6174 206D 6574 2064"            /* koord gaat met d */
+	$"6520 766F 6F72 7761 6172 6465 6E20 7661"            /* e voorwaarden va */
+	$"6E20 6465 7A65 206C 6963 656E 7469 652C"            /* n deze licentie, */
+	$"206B 756E 7420 7520 6F70 2027 4A61 2720"            /*  kunt u op 'Ja'  */
+	$"6B6C 696B 6B65 6E20 6F6D 2064 6520 7072"            /* klikken om de pr */
+	$"6F67 7261 6D6D 6174 7575 7220 7465 2069"            /* ogrammatuur te i */
+	$"6E73 7461 6C6C 6572 656E 2E20 496E 6469"            /* nstalleren. Indi */
+	$"656E 2075 206E 6965 7420 616B 6B6F 6F72"            /* en u niet akkoor */
+	$"6420 6761 6174 2C20 6B6C 696B 7420 7520"            /* d gaat, klikt u  */
+	$"6F70 2027 4E65 6527 2E"                             /* op 'Nee'. */
 };
 
-resource 'STR#' (5010, "Simplified Chinese") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Simplified Chinese",
-        /* [2] */
-        "Õ¨“‚",
-        /* [3] */
-        "≤ªÕ¨“‚",
-        /* [4] */
-        "¥Ú”°",
-        /* [5] */
-        "¥Ê¥¢°≠",
-        /* [6] */
-        "»Áπ˚ƒ˙Õ¨“‚±æ–Ìø…–≠“ÈµƒÃıøÓ£¨«Î∞¥°∞Õ¨“‚°±"
-        "¿¥∞≤◊∞¥À»Ìº˛°£»Áπ˚ƒ˙≤ªÕ¨“‚£¨«Î∞¥°∞≤ªÕ¨“‚"
-        "°±°£",
-        /* [7] */
-        "»Ìº˛–Ìø…–≠“È",
-        /* [8] */
-        "≤ªƒ‹¥Ê¥¢’‚∏ˆŒƒº˛°£¥≈≈Ãø…ƒ‹±ªÀ¯∂®ªÚ“—¬˙£¨"
-        "“≤–Ì «Œƒº˛±ªÀ¯∂®¡À°£",
-        /* [9] */
-        "Œﬁ∑®¥Ú”°°£«Î»∑∂®ƒ˙“——°‘Ò¡À“ªÃ®¥Ú”°ª˙°£"
-    }
+data 'STR#' (5008, "Swedish") {
+	$"0006 0653 7665 6E73 6B08 476F 646B 8A6E"            /* ...Svensk.Godk√§n */
+	$"6E73 0641 7662 9A6A 7308 536B 7269 7620"            /* ns.Avb√∂js.Skriv  */
+	$"7574 0853 7061 7261 2E2E 2E93 4F6D 2044"            /* ut.Spara...√¨Om D */
+	$"7520 676F 646B 8A6E 6E65 7220 6C69 6365"            /* u godk√§nner lice */
+	$"6E73 7669 6C6C 6B6F 7265 6E20 6B6C 6963"            /* nsvillkoren klic */
+	$"6B61 2070 8C20 2247 6F64 6B8A 6E6E 7322"            /* ka p√• "Godk√§nns" */
+	$"2066 9A72 2061 7474 2069 6E73 7461 6C6C"            /*  f√∂r att install */
+	$"6572 6120 7072 6F67 7261 6D70 726F 6475"            /* era programprodu */
+	$"6B74 656E 2E20 4F6D 2044 7520 696E 7465"            /* kten. Om Du inte */
+	$"2067 6F64 6B8A 6E6E 6572 206C 6963 656E"            /*  godk√§nner licen */
+	$"7376 696C 6C6B 6F72 656E 2C20 6B6C 6963"            /* svillkoren, klic */
+	$"6B61 2070 8C20 2241 7662 9A6A 7322 2E"              /* ka p√• "Avb√∂js". */
 };
 
-resource 'STR#' (5011, "Traditional Chinese") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Traditional Chinese",
-        /* [2] */
-        "¶P∑N",
-        /* [3] */
-        "§£¶P∑N",
-        /* [4] */
-        "¶C¶L",
-        /* [5] */
-        "¿x¶s°K",
-        /* [6] */
-        "¶p™G±z¶P∑N•ª≥\\•i√“∏Ã™∫±¯¥⁄°AΩ–´ˆ°ß¶P∑N°®"
-        "•H¶w∏À≥n≈È°C¶p™G§£¶P∑N°AΩ–´ˆ°ß§£¶P∑N°®°C",
-        /* [7] */
-        "≥n≈È≥\\•i®Ûƒ≥",
-        /* [8] */
-        "•ª§Â¶rµL™k¿x¶s°C≥o≠”∫œ∫–•iØ‡§w∫°©Œ¨O¬Í©w"
-        "°A©Œ¿…Æ◊§w∏g¬Í©w°C",
-        /* [9] */
-        "µL™k¶C¶L°CΩ–ΩT©w±z§w∏gøÔæ‹§F¶L™Ìæ˜°C"
-    }
+data 'STR#' (5009, "Brazilian Portuguese") {
+	$"0006 1150 6F72 7475 6775 9073 2C20 4272"            /* ...Portugu√™s, Br */
+	$"6173 696C 0943 6F6E 636F 7264 6172 0944"            /* asil‚àÜConcordar‚àÜD */
+	$"6973 636F 7264 6172 0849 6D70 7269 6D69"            /* iscordar.Imprimi */
+	$"7209 5361 6C76 6172 2E2E 2E8C 5365 2065"            /* r‚àÜSalvar...√•Se e */
+	$"7374 8720 6465 2061 636F 7264 6F20 636F"            /* st√° de acordo co */
+	$"6D20 6F73 2074 6572 6D6F 7320 6465 7374"            /* m os termos dest */
+	$"6120 6C69 6365 6E8D 612C 2070 7265 7373"            /* a licen√ßa, press */
+	$"696F 6E65 2022 436F 6E63 6F72 6461 7222"            /* ione "Concordar" */
+	$"2070 6172 6120 696E 7374 616C 6172 206F"            /*  para instalar o */
+	$"2073 6F66 7477 6172 652E 2053 6520 6E8B"            /*  software. Se n√£ */
+	$"6F20 6573 7487 2064 6520 6163 6F72 646F"            /* o est√° de acordo */
+	$"2C20 7072 6573 7369 6F6E 6520 2244 6973"            /* , pressione "Dis */
+	$"636F 7264 6172 222E"                                /* cordar". */
 };
 
-resource 'STR#' (5012, "Danish") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Dansk",
-        /* [2] */
-        "Enig",
-        /* [3] */
-        "Uenig",
-        /* [4] */
-        "Udskriv",
-        /* [5] */
-        "Arkiver...",
-        /* [6] */
-        "Hvis du accepterer betingelserne i licensaftalen, skal du klikke på “Enig” "
-        "for at installere softwaren. Klik på “Uenig” for at annullere installeringen.",
-        /* [7] */
-        "Licensaftale for software",
-        /* [8] */
-        "Teksten kan ikke arkiveres. Disken er evt. fuld eller låst, eller også er "
-        "arkivet låst.",
-        /* [9] */
-        "Kan ikke udskrive. Sørg for, at der er valgt en printer."
-    }
+data 'STR#' (5010, "Simplified Chinese") {
+	$"0006 1253 696D 706C 6966 6965 6420 4368"            /* ...Simplified Ch */
+	$"696E 6573 6504 CDAC D2E2 06B2 BBCD ACD2"            /* inese.√ï¬®‚Äú‚Äö.‚â§¬™√ï¬®‚Äú */
+	$"E204 B4F2 D3A1 06B4 E6B4 A2A1 AD54 C8E7"            /* ‚Äö.¬•√ö‚Äù¬∞.¬•√ä¬•¬¢¬∞‚â†T¬ª√Å */
+	$"B9FB C4FA CDAC D2E2 B1BE D0ED BFC9 D0AD"            /* œÄÀö∆íÀô√ï¬®‚Äú‚Äö¬±√¶‚Äì√å√∏‚Ä¶‚Äì‚â† */
+	$"D2E9 B5C4 CCF5 BFEE A3AC C7EB B0B4 A1B0"            /* ‚Äú√à¬µ∆í√Éƒ±√∏√ì¬£¬®¬´√é‚àû¬•¬∞‚àû */
+	$"CDAC D2E2 A1B1 C0B4 B0B2 D7B0 B4CB C8ED"            /* √ï¬®‚Äú‚Äö¬∞¬±¬ø¬•‚àû‚â§‚óä‚àû¬•√Ä¬ª√å */
+	$"BCFE A1A3 C8E7 B9FB C4FA B2BB CDAC D2E2"            /* ¬∫Àõ¬∞¬£¬ª√ÅœÄÀö∆íÀô‚â§¬™√ï¬®‚Äú‚Äö */
+	$"A3AC C7EB B0B4 A1B0 B2BB CDAC D2E2 A1B1"            /* ¬£¬®¬´√é‚àû¬•¬∞‚àû‚â§¬™√ï¬®‚Äú‚Äö¬∞¬± */
+	$"A1A3"                                               /* ¬∞¬£ */
 };
 
-resource 'STR#' (5013, "Finnish") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Suomi",
-        /* [2] */
-        "Hyväksyn",
-        /* [3] */
-        "En hyväksy",
-        /* [4] */
-        "Tulosta",
-        /* [5] */
-        "Tallenna…",
-        /* [6] */
-        "Hyväksy lisenssisopimuksen ehdot osoittamalla ’Hyväksy’. Jos et hyväksy "
-        "sopimuksen ehtoja, osoita ’En hyväksy’.",
-        /* [7] */
-        "Lisenssisopimus",
-        /* [8] */
-        "Tekstiä ei voida tallentaa. Levy voi olla täynnä tai lukittu.",
-        /* [9] */
-        "Tekstiä ei voida tulostaa. Varmista, että kirjoitin on valittu."
-    }
+data 'STR#' (5011, "Traditional Chinese") {
+	$"0006 1354 7261 6469 7469 6F6E 616C 2043"            /* ...Traditional C */
+	$"6869 6E65 7365 04A6 50B7 4E06 A4A3 A650"            /* hinese.¬∂P‚àëN.¬ß¬£¬∂P */
+	$"B74E 04A6 43A6 4C06 C078 A673 A14B 50A6"            /* ‚àëN.¬∂C¬∂L.¬øx¬∂s¬∞KP¬∂ */
+	$"70AA 47B1 7AA6 50B7 4EA5 BBB3 5CA5 69C3"            /* p‚Ñ¢G¬±z¬∂P‚àëN‚Ä¢¬™‚â•\‚Ä¢i‚àö */
+	$"D2B8 CCAA BAB1 F8B4 DAA1 41BD D0AB F6A1"            /* ‚Äú‚àè√É‚Ñ¢‚à´¬±¬Ø¬•‚ÅÑ¬∞AŒ©‚Äì¬¥ÀÜ¬∞ */
+	$"A7A6 50B7 4EA1 A8A5 48A6 77B8 CBB3 6EC5"            /* √ü¬∂P‚àëN¬∞¬Æ‚Ä¢H¬∂w‚àè√Ä‚â•n‚âà */
+	$"E9A1 43A6 70AA 47A4 A3A6 50B7 4EA1 41BD"            /* √à¬∞C¬∂p‚Ñ¢G¬ß¬£¬∂P‚àëN¬∞AŒ© */
+	$"D0AB F6A1 A7A4 A3A6 50B7 4EA1 A8A1 43"              /* ‚Äì¬¥ÀÜ¬∞√ü¬ß¬£¬∂P‚àëN¬∞¬Æ¬∞C */
 };
 
-resource 'STR#' (5014, "French Canadian") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Français canadien",
-        /* [2] */
-        "Accepter",
-        /* [3] */
-        "Refuser",
-        /* [4] */
-        "Imprimer",
-        /* [5] */
-        "Enregistrer...",
-        /* [6] */
-        "Si vous acceptez les termes de la présente licence, cliquez sur \"Accepter\" "
-        "afin d'installer le logiciel. Si vous n'êtes pas d'accord avec les termes de "
-        "la licence, cliquez sur \"Refuser\".",
-        /* [7] */
-        "Contrat de licence de logiciel",
-        /* [8] */
-        "Ce texte ne peut être sauvegardé. Le disque est peut-être saturé ou verrouillé, "
-        "ou bien le fichier est peut-être verrouillé.",
-        /* [9] */
-        "Impression impossible. Assurez-vous d’avoir sélectionné une imprimante."
-    }
+data 'STR#' (5012, "Danish") {
+	$"0006 0544 616E 736B 0445 6E69 6705 5565"            /* ...Dansk.Enig.Ue */
+	$"6E69 6707 5564 736B 7269 760A 4172 6B69"            /* nig.Udskriv¬¨Arki */
+	$"7665 722E 2E2E 9848 7669 7320 6475 2061"            /* ver...√≤Hvis du a */
+	$"6363 6570 7465 7265 7220 6265 7469 6E67"            /* ccepterer beting */
+	$"656C 7365 726E 6520 6920 6C69 6365 6E73"            /* elserne i licens */
+	$"6166 7461 6C65 6E2C 2073 6B61 6C20 6475"            /* aftalen, skal du */
+	$"206B 6C69 6B6B 6520 708C 20D2 456E 6967"            /*  klikke p√• ‚ÄúEnig */
+	$"D320 666F 7220 6174 2069 6E73 7461 6C6C"            /* ‚Äù for at install */
+	$"6572 6520 736F 6674 7761 7265 6E2E 204B"            /* ere softwaren. K */
+	$"6C69 6B20 708C 20D2 5565 6E69 67D3 2066"            /* lik p√• ‚ÄúUenig‚Äù f */
+	$"6F72 2061 7420 616E 6E75 6C6C 6572 6520"            /* or at annullere  */
+	$"696E 7374 616C 6C65 7269 6E67 656E 2E"              /* installeringen. */
 };
 
-resource 'STR#' (5015, "Korean") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Korean",
-        /* [2] */
-        "µø¿«",
-        /* [3] */
-        "µø¿« æ»«‘",
-        /* [4] */
-        "«¡∏∞∆Æ",
-        /* [5] */
-        "¿˙¿Â...",
-        /* [6] */
-        "ªÁøÎ ∞Ëæ‡º≠¿« ≥ªøÎø° µø¿««œ∏È, \"µø¿«\" ¥‹"
-        "√ﬂ∏¶ ¥≠∑Ø º“«¡∆Æø˛æÓ∏¶ º≥ƒ°«œΩ Ω√ø¿. µø¿"
-        "««œ¡ˆ æ ¥¬¥Ÿ∏È, \"µø¿« æ»«‘\" ¥‹√ﬂ∏¶ ¥©∏£Ω"
-        " Ω√ø¿.",
-        /* [7] */
-        "ªÁøÎ ∞Ëæ‡ µø¿«º≠",
-        /* [8] */
-        "¿Ã ≈ÿΩ∫∆Æ∏¶ ¿˙¿Â«“ ºˆ æ¯Ω¿¥œ¥Ÿ. ¿Ã µΩ∫≈"
-        "©¥¬ ≤À √°∞≈≥™ ¿·∞‹ ¿÷Ω¿¥œ¥Ÿ. ∂«¥¬ ∆ƒ¿œ¿Ã"
-        " ¿·∞‹ ¿÷¿ª ºˆµµ ¿÷Ω¿¥œ¥Ÿ.",
-        /* [9] */
-        "«¡∏∞∆Æ«“ ºˆ æ¯Ω¿¥œ¥Ÿ. «¡∏∞≈Õ∏¶ º±≈√«ﬂ¥¬¡"
-        "ˆ »Æ¿Œ«œΩ Ω√ø¿."
-    }
+data 'STR#' (5013, "Finnish") {
+	$"0006 0553 756F 6D69 0848 7976 8A6B 7379"            /* ...Suomi.Hyv√§ksy */
+	$"6E0A 456E 2068 7976 8A6B 7379 0754 756C"            /* n¬¨En hyv√§ksy.Tul */
+	$"6F73 7461 0954 616C 6C65 6E6E 61C9 6F48"            /* osta‚àÜTallenna‚Ä¶oH */
+	$"7976 8A6B 7379 206C 6973 656E 7373 6973"            /* yv√§ksy lisenssis */
+	$"6F70 696D 756B 7365 6E20 6568 646F 7420"            /* opimuksen ehdot  */
+	$"6F73 6F69 7474 616D 616C 6C61 20D5 4879"            /* osoittamalla ‚ÄôHy */
+	$"768A 6B73 79D5 2E20 4A6F 7320 6574 2068"            /* v√§ksy‚Äô. Jos et h */
+	$"7976 8A6B 7379 2073 6F70 696D 756B 7365"            /* yv√§ksy sopimukse */
+	$"6E20 6568 746F 6A61 2C20 6F73 6F69 7461"            /* n ehtoja, osoita */
+	$"20D5 456E 2068 7976 8A6B 7379 D52E"                 /*  ‚ÄôEn hyv√§ksy‚Äô. */
 };
 
-resource 'STR#' (5016, "Norwegian") {
-    {   /* array StringArray: 9 elements */
-        /* [1] */
-        "Norsk",
-        /* [2] */
-        "Enig",
-        /* [3] */
-        "Ikke enig",
-        /* [4] */
-        "Skriv ut",
-        /* [5] */
-        "Arkiver...",
-        /* [6] */
-        "Hvis De er enig i bestemmelsene i denne lisensavtalen, klikker De på "
-        "\"Enig\"-knappen for å installere programvaren. Hvis De ikke er enig, "
-        "klikker De på \"Ikke enig\".",
-        /* [7] */
-        "Programvarelisensavtale",
-        /* [8] */
-        "Denne teksten kan ikke arkiveres. Disken kan være full eller låst, "
-        "eller filen kan være låst. ",
-        /* [9] */
-        "Kan ikke skrive ut. Forsikre deg om at du har valgt en skriver. "
-    }
+data 'STR#' (5014, "French Canadian") {
+	$"0006 1146 7261 6E8D 6169 7320 6361 6E61"            /* ...Fran√ßais cana */
+	$"6469 656E 0841 6363 6570 7465 7207 5265"            /* dien.Accepter.Re */
+	$"6675 7365 7208 496D 7072 696D 6572 0E45"            /* fuser.Imprimer.E */
+	$"6E72 6567 6973 7472 6572 2E2E 2EBA 5369"            /* nregistrer...‚à´Si */
+	$"2076 6F75 7320 6163 6365 7074 657A 206C"            /*  vous acceptez l */
+	$"6573 2074 6572 6D65 7320 6465 206C 6120"            /* es termes de la  */
+	$"7072 8E73 656E 7465 206C 6963 656E 6365"            /* pr√©sente licence */
+	$"2C20 636C 6971 7565 7A20 7375 7220 2241"            /* , cliquez sur "A */
+	$"6363 6570 7465 7222 2061 6669 6E20 6427"            /* ccepter" afin d' */
+	$"696E 7374 616C 6C65 7220 6C65 206C 6F67"            /* installer le log */
+	$"6963 6965 6C2E 2053 6920 766F 7573 206E"            /* iciel. Si vous n */
+	$"2790 7465 7320 7061 7320 6427 6163 636F"            /* '√™tes pas d'acco */
+	$"7264 2061 7665 6320 6C65 7320 7465 726D"            /* rd avec les term */
+	$"6573 2064 6520 6C61 206C 6963 656E 6365"            /* es de la licence */
+	$"2C20 636C 6971 7565 7A20 7375 7220 2252"            /* , cliquez sur "R */
+	$"6566 7573 6572 222E"                                /* efuser". */
+};
+
+data 'STR#' (5015, "Korean") {
+	$"0006 064B 6F72 6561 6E04 B5BF C0C7 09B5"            /* ...Korean.¬µ√∏¬ø¬´‚àÜ¬µ */
+	$"BFC0 C720 BEC8 C7D4 06C7 C1B8 B0C6 AE07"            /* √∏¬ø¬´ √¶¬ª¬´‚Äò.¬´¬°‚àè‚àû‚àÜ√Ü. */
+	$"C0FA C0E5 2E2E 2E7E BBE7 BFEB 20B0 E8BE"            /* ¬øÀô¬ø√Ç...~¬™√Å√∏√é ‚àû√ã√¶ */
+	$"E0BC ADC0 C720 B3BB BFEB BFA1 20B5 BFC0"            /* ‚Ä°¬∫‚â†¬ø¬´ ‚â•¬™√∏√é√∏¬∞ ¬µ√∏¬ø */
+	$"C7C7 CFB8 E92C 2022 B5BF C0C7 2220 B4DC"            /* ¬´¬´≈ì‚àè√à, "¬µ√∏¬ø¬´" ¬•‚Äπ */
+	$"C3DF B8A6 20B4 ADB7 AF20 BCD2 C7C1 C6AE"            /* ‚àöÔ¨Ç‚àè¬∂ ¬•‚â†‚àë√ò ¬∫‚Äú¬´¬°‚àÜ√Ü */
+	$"BFFE BEEE B8A6 20BC B3C4 A1C7 CFBD CABD"            /* √∏Àõ√¶√ì‚àè¬∂ ¬∫‚â•∆í¬∞¬´≈ìŒ©¬†Œ© */
+	$"C3BF C02E 20B5 BFC0 C7C7 CFC1 F620 BECA"            /* ‚àö√∏¬ø. ¬µ√∏¬ø¬´¬´≈ì¬°ÀÜ √¶¬† */
+	$"B4C2 B4D9 B8E9 2C20 22B5 BFC0 C720 BEC8"            /* ¬•¬¨¬•≈∏‚àè√à, "¬µ√∏¬ø¬´ √¶¬ª */
+	$"C7D4 2220 B4DC C3DF B8A6 20B4 A9B8 A3BD"            /* ¬´‚Äò" ¬•‚Äπ‚àöÔ¨Ç‚àè¬∂ ¬•¬©‚àè¬£Œ© */
+	$"CABD C3BF C02E"                                     /* ¬†Œ©‚àö√∏¬ø. */
+};
+
+data 'STR#' (5016, "Norwegian") {
+	$"0006 054E 6F72 736B 0445 6E69 6709 496B"            /* ...Norsk.Enig‚àÜIk */
+	$"6B65 2065 6E69 6708 536B 7269 7620 7574"            /* ke enig.Skriv ut */
+	$"0A41 726B 6976 6572 2E2E 2EA3 4876 6973"            /* ¬¨Arkiver...¬£Hvis */
+	$"2044 6520 6572 2065 6E69 6720 6920 6265"            /*  De er enig i be */
+	$"7374 656D 6D65 6C73 656E 6520 6920 6465"            /* stemmelsene i de */
+	$"6E6E 6520 6C69 7365 6E73 6176 7461 6C65"            /* nne lisensavtale */
+	$"6E2C 206B 6C69 6B6B 6572 2044 6520 708C"            /* n, klikker De p√• */
+	$"2022 456E 6967 222D 6B6E 6170 7065 6E20"            /*  "Enig"-knappen  */
+	$"666F 7220 8C20 696E 7374 616C 6C65 7265"            /* for √• installere */
+	$"2070 726F 6772 616D 7661 7265 6E2E 2048"            /*  programvaren. H */
+	$"7669 7320 4465 2069 6B6B 6520 6572 2065"            /* vis De ikke er e */
+	$"6E69 672C 206B 6C69 6B6B 6572 2044 6520"            /* nig, klikker De  */
+	$"708C 2022 496B 6B65 2065 6E69 6722 2E"              /* p√• "Ikke enig". */
 };
