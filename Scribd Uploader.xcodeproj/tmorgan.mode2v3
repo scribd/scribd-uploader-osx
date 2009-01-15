@@ -496,8 +496,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>019049910F1E96BD00CB66CE</string>
-				<string>019049920F1E96BD00CB66CE</string>
+				<string>014DB7D80F1EE25B00F50460</string>
+				<string>014DB7D90F1EE25B00F50460</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -515,7 +515,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>253673393.55373701</real>
+	<real>253683747.42997599</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -530,9 +530,9 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D5B069F1CE1000CFCEE</string>
 		<string>1C530D54069F1CE1000CFCEE</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
+		<string>1C530D5B069F1CE1000CFCEE</string>
 		<string>/Users/tmorgan/Documents/Scribd/scribd-uploader/Scribd Uploader.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -702,7 +702,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1097, 424}}</string>
 								<key>RubberWindowFrame</key>
-								<string>105 55 1097 706 0 0 1680 1028 </string>
+								<string>404 176 1097 706 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -714,8 +714,6 @@
 							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
-								<key>PBXBuildLogShowsTranscriptDefaultKey</key>
-								<string>{{0, 93}, {1097, 143}}</string>
 								<key>PBXProjectModuleGUID</key>
 								<string>XCMainBuildResultsModuleGUID</string>
 								<key>PBXProjectModuleLabel</key>
@@ -730,7 +728,7 @@
 								<key>Frame</key>
 								<string>{{0, 429}, {1097, 236}}</string>
 								<key>RubberWindowFrame</key>
-								<string>105 55 1097 706 0 0 1680 1028 </string>
+								<string>404 176 1097 706 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -753,14 +751,14 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>019049960F1E998E00CB66CE</string>
+				<string>014DB9540F1EE5D200F50460</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.buildV3</string>
 			<key>WindowString</key>
-			<string>105 55 1097 706 0 0 1680 1028 </string>
+			<string>404 176 1097 706 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
 			<string>1C530D52069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
@@ -873,13 +871,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D54069F1CE1000CFCEE</string>
-				<string>019049970F1E998E00CB66CE</string>
+				<string>014DB9550F1EE5D200F50460</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>019049980F1E998E00CB66CE</string>
-				<string>019049990F1E998E00CB66CE</string>
-				<string>0190499A0F1E998E00CB66CE</string>
-				<string>0190499B0F1E998E00CB66CE</string>
-				<string>0190499C0F1E998E00CB66CE</string>
+				<string>014DB9560F1EE5D200F50460</string>
+				<string>014DB9570F1EE5D200F50460</string>
+				<string>014DB9580F1EE5D200F50460</string>
+				<string>014DB9590F1EE5D200F50460</string>
+				<string>014DB95A0F1EE5D200F50460</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -1035,7 +1033,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D5B069F1CE1000CFCEE</string>
-				<string>0190499D0F1E998E00CB66CE</string>
+				<string>014DB95B0F1EE5D200F50460</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -1045,7 +1043,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D5B069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

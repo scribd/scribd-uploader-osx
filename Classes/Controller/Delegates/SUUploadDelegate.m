@@ -64,6 +64,14 @@
 	}
 	
 	if ([uploader uploadComplete]) {
+		if (![[NSApplication sharedApplication] isActive])
+			[GrowlApplicationBridge notifyWithTitle:@"All uploads have completed."
+										description:@"Your files are now ready to be viewed on Scribd.com."
+								   notificationName:@"All uploads complete"
+										   iconData:NULL
+										   priority:0
+										   isSticky:NO 
+									   clickContext:NULL];
 		[[NSSound soundNamed:@"Upload Complete"] play];
 		[[NSApplication sharedApplication] beginSheet:uploadCompleteSheet modalForWindow:uploadWindow modalDelegate:uploadCompleteSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 	}

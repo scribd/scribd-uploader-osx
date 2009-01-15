@@ -10,6 +10,7 @@
 #import "QuickLook.h"
 #import "DBPrefsWindowController.h"
 #import <Sparkle/SUUpdater.h>
+#import <Growl/GrowlApplicationBridge.h>
 
 #import "SUConstants.h"
 #import "SUDocument.h"

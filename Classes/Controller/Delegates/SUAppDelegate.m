@@ -23,6 +23,9 @@
 - (void) awakeFromNib {
 	[uploadTable registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
 	[uploadTable setVerticalMotionCanBeginDrag:NO];
+	
+	// configure Growl (necessary because of a bug in growl)
+	[GrowlApplicationBridge setGrowlDelegate:@""];
 }
 
 /*
