@@ -30,7 +30,6 @@
 		0128AF440F1478F300EC3C28 /* SULoginLabelValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF050F1478F300EC3C28 /* SULoginLabelValueTransformer.m */; };
 		0128AF450F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF070F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m */; };
 		0128AF460F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF090F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m */; };
-		0128AF470F1478F300EC3C28 /* Scribd_Uploader_DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF0B0F1478F300EC3C28 /* Scribd_Uploader_DataModel.xcdatamodel */; };
 		0128AF480F1478F300EC3C28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF0D0F1478F300EC3C28 /* main.m */; };
 		0128AF490F1478F300EC3C28 /* SUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF0F0F1478F300EC3C28 /* SUConstants.m */; };
 		0128AF880F14799100EC3C28 /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF6E0F14799100EC3C28 /* Add.png */; };
@@ -42,6 +41,8 @@
 		0128AF9E0F1479A000EC3C28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF9D0F1479A000EC3C28 /* InfoPlist.strings */; };
 		0128AFA00F1479A000EC3C28 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF9F0F1479A000EC3C28 /* MainMenu.xib */; };
 		0128AFA20F1479A000EC3C28 /* Scribd_Uploader_DataModelModel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0128AFA10F1479A000EC3C28 /* Scribd_Uploader_DataModelModel.strings */; };
+		012E5DC80F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 012E5DC70F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld */; };
+		012E5DE10F1F39A40037ECDA /* Scribd_Uploader_DataModel_200-210.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 012E5DE00F1F39A40037ECDA /* Scribd_Uploader_DataModel_200-210.xcmappingmodel */; };
 		0132BFF70F169DF8000B17C5 /* FileTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0132BFF60F169DF8000B17C5 /* FileTypes.plist */; };
 		0132C07D0F16BF99000B17C5 /* Scribd Uploader Help in Resources */ = {isa = PBXBuildFile; fileRef = 0132C07C0F16BF99000B17C5 /* Scribd Uploader Help */; };
 		0132C0970F16C3A6000B17C5 /* SUAboutWindowDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */; };
@@ -127,7 +128,7 @@
 		0128AF070F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUPrivateDescriptionValueTransformer.m; sourceTree = "<group>"; };
 		0128AF080F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUnarchiveErrorValueTransformer.h; sourceTree = "<group>"; };
 		0128AF090F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUnarchiveErrorValueTransformer.m; sourceTree = "<group>"; };
-		0128AF0B0F1478F300EC3C28 /* Scribd_Uploader_DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Scribd_Uploader_DataModel.xcdatamodel; sourceTree = "<group>"; };
+		0128AF0B0F1478F300EC3C28 /* Scribd_Uploader_DataModel 200.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = "Scribd_Uploader_DataModel 200.xcdatamodel"; sourceTree = "<group>"; };
 		0128AF0D0F1478F300EC3C28 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0128AF0E0F1478F300EC3C28 /* SUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUConstants.h; sourceTree = "<group>"; };
 		0128AF0F0F1478F300EC3C28 /* SUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUConstants.m; sourceTree = "<group>"; };
@@ -141,6 +142,8 @@
 		0128AF760F14799100EC3C28 /* success.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = success.tif; sourceTree = "<group>"; };
 		0128AF770F14799100EC3C28 /* Upload Complete.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Upload Complete.aif"; sourceTree = "<group>"; };
 		0128AF780F14799100EC3C28 /* Upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Upload.png; sourceTree = "<group>"; };
+		012E5DC90F1F32B10037ECDA /* Scribd_Uploader_DataModel 210.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Scribd_Uploader_DataModel 210.xcdatamodel"; sourceTree = "<group>"; };
+		012E5DE00F1F39A40037ECDA /* Scribd_Uploader_DataModel_200-210.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "Scribd_Uploader_DataModel_200-210.xcmappingmodel"; sourceTree = "<group>"; };
 		0132BFF40F169DF5000B17C5 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = English.lproj/FileTypes.plist; sourceTree = "<group>"; };
 		0132C0170F16BF97000B17C5 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/Scribd Uploader Help"; sourceTree = "<group>"; };
 		0132C0950F16C3A6000B17C5 /* SUAboutWindowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAboutWindowDelegate.h; sourceTree = "<group>"; };
@@ -300,7 +303,7 @@
 		0128AF0A0F1478F300EC3C28 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0128AF0B0F1478F300EC3C28 /* Scribd_Uploader_DataModel.xcdatamodel */,
+				012E5DC70F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -528,7 +531,7 @@
 				0128AF440F1478F300EC3C28 /* SULoginLabelValueTransformer.m in Sources */,
 				0128AF450F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m in Sources */,
 				0128AF460F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m in Sources */,
-				0128AF470F1478F300EC3C28 /* Scribd_Uploader_DataModel.xcdatamodel in Sources */,
+				012E5DC80F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld in Sources */,
 				0128AF480F1478F300EC3C28 /* main.m in Sources */,
 				0128AF490F1478F300EC3C28 /* SUConstants.m in Sources */,
 				01ABF7FA0F147DCC00EE7142 /* SUSessionHelper.m in Sources */,
@@ -540,6 +543,7 @@
 				01AF60010F1D27D300D51D07 /* NSHTTPCookieAdditions.m in Sources */,
 				01AF60020F1D27D300D51D07 /* DBPrefsWindowController.m in Sources */,
 				01AF60050F1D284900D51D07 /* SUPreferencesWindowController.m in Sources */,
+				012E5DE10F1F39A40037ECDA /* Scribd_Uploader_DataModel_200-210.xcmappingmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +750,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		012E5DC70F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0128AF0B0F1478F300EC3C28 /* Scribd_Uploader_DataModel 200.xcdatamodel */,
+				012E5DC90F1F32B10037ECDA /* Scribd_Uploader_DataModel 210.xcdatamodel */,
+				012E5DE00F1F39A40037ECDA /* Scribd_Uploader_DataModel_200-210.xcmappingmodel */,
+			);
+			currentVersion = 012E5DC90F1F32B10037ECDA /* Scribd_Uploader_DataModel 210.xcdatamodel */;
+			path = Scribd_Uploader_DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }

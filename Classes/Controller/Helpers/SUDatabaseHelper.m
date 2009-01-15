@@ -80,9 +80,11 @@
 		[fileManager createDirectoryAtPath:applicationSupportFolder attributes:NULL];
 	}
 	
-	url = [NSURL fileURLWithPath: [applicationSupportFolder stringByAppendingPathComponent: @"Queue.xml"]];
+	url = [NSURL fileURLWithPath:[applicationSupportFolder stringByAppendingPathComponent: @"Queue.xml"]];
 	persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-	if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:NULL URL:url options:NULL error:&error]){
+	
+	NSDictionary *options = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:NSMigratePersistentStoresAutomaticallyOption];
+	if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:NULL URL:url options:options error:&error]){
 		[[NSApplication sharedApplication] presentError:error];
 	}
 	
