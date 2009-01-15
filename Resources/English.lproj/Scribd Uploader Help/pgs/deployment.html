@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Deploying new versions of Scribd Uploader</title>
+		<meta name="keywords" content="deploy, install, distribution, redistribution" />
+		<meta name="project" content="Scribd Uploader Help" />
+		<meta name="description" content="Information on the application's creator." />
+    <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+    <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+    <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+	</head>
+
+	<body class="en">
+		<div id="Nav">
+			<a id="deployment" />
+			<div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Scribd Uploader Help">Home</a></div>
+			<!-- div id="NavRight"><a class="NavLinkRight" href="help:anchor='index' bookID=Scribd Uploader Help">Index</a></div -->
+		</div>
+		
+		<div class="AppleTopic">
+			<div class="Section">
+				<div id="Header">
+					<div id="Icon"><img id="iconimg" src="../gfx/icon32.png" alt="Scribd Uploader icon" height="32" width="32" /></div>
+					<div class="Name">Deploying new versions of Scribd Uploader</div>
+				</div>
+				<div class="AppleTopicBody">
+						<p class="Para">Preparing a copy of Scribd Uploader for release is a two-step process, described below.</p>
+					</div>
+					<div class="Task">
+						<div class="Name">To build the release files for Scribd Uploader:</div>
+						<ol class="ListNumber">
+							<li>
+								<p class="Para">Build using the Install configuration in Xcode.</p>
+							</li>
+							<li>
+								<p class="Para">At the command line, run the Distribution/MakeDMG.rb script.</p>
+								<p class="Para">This script will create a new disk image containing the release application, adorn it with a custom icon and background, compress it, add a license agreement, and prepare it for Internet distribution.</p>
+							</li>
+						</ol>
+					</div>
+					<div class="Outro">
+						<p class="Para">The release application and disk image will be in build/Install/dist. The disk image is ready to be distributed online.</p>
+						<h2>Automatic updates</h2>
+						<p class="Para">Scribd uses <a href="http://sparkle.andymatuschak.org/">Sparkle</a> for automatic updating. If you distribute your own version of Scribd Uploader, by default it will use Scribd.com to check for updates, and therefore only see official updates (instead of your updates).</p>
+						<p class="Para">If you want your users to see your updates, you will have to syndicate your own appcast, and update the Info.plist file to read from it, instead of the Scribd.com appcast. See the <a href="http://sparkle.andymatuschak.org/documentation/pmwiki.php/Documentation/BasicSetup">Sparkle documentation</a> for information on how to do this.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
