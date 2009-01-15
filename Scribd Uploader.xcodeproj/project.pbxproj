@@ -436,7 +436,6 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				017077BD0F1C47DF008A3CB0 /* CopyFiles */,
-				01F4766C0F1DA13200DED8E2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -491,26 +490,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		01F4766C0F1DA13200DED8E2 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Distribution/buildDMG.pl",
-				"$(SRCROOT)/Distribution/SLA.r",
-				"$(INSTALL_PATH)/$(FULL_PRODUCT_NAME)",
-			);
-			outputPaths = (
-				"$(TARGET_BUILD_DIR)/$(PRODUCT_NAME).dmg",
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/Distribution/buildDMG.pl\" -dmgName \"$PRODUCT_NAME\" \\\n                                    -buildDir \"$TARGET_BUILD_DIR\" \\\n                                    -volName \"$PRODUCT_NAME\" \\\n                                    -compressionLevel 9 \\\n                                    -slaRsrcFile \"$SRCROOT/Distribution/SLA.r\" \\\n                                    -deleteHeaders \\\n                                    -internetEnabled \\\n                                    \"$INSTALL_PATH/$FULL_PRODUCT_NAME\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
@@ -622,16 +601,15 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DEPLOYMENT_LOCATION = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
-				DSTROOT = /;
 				FRAMEWORK_SEARCH_PATHS = (
 					"Linked\\ Frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INSTALL_PATH = $TARGET_BUILD_DIR/dist;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
+				SKIP_INSTALL = NO;
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
 			};
 			name = Install;
@@ -640,6 +618,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DSTROOT = $BUILT_PRODUCTS_DIR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -649,8 +628,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Scribd_Uploader_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
+				INSTALL_PATH = /dist;
 				PRODUCT_NAME = "Scribd Uploader";
+				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Install;
