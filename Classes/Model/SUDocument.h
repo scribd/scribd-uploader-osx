@@ -1,8 +1,10 @@
 /*!
  @class SUDocument
- @discussion Core Data object describing a document to be uploaded. This
- class adds file-specific operations and derived properties to the basic
- Core Data entity type.
+ @abstract Core Data object representing a document to be uploaded. Its entity
+ name is "Document".
+ @discussion This class adds file-specific operations and derived properties to
+ the basic Core Data entity type, as well as some derived properties from the
+ path and the metadata.
  */
 
 @interface SUDocument : NSManagedObject {
