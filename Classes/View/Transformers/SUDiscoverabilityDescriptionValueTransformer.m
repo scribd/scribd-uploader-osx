@@ -1,6 +1,6 @@
-#import "SUPrivateDescriptionValueTransformer.h"
+#import "SUDiscoverabilityDescriptionValueTransformer.h"
 
-@implementation SUPrivateDescriptionValueTransformer
+@implementation SUDiscoverabilityDescriptionValueTransformer
 
 /*
  This transformer converts between different subclasses of NSObject.
@@ -24,8 +24,8 @@
 
 - (id) transformedValue:(id)value {
 	if ([value isEqualTo:[NSNumber numberWithBool:true]])
-		return @"This document will only be visible to you or people you choose.";
-	else return @"This document will be visible to everyone once it is uploaded.";
+		return @"Your document is private, so no one will be able to discover it.";
+	else return @"To make your document more discoverable, add more information above.";
 }
 
 @end

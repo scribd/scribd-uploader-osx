@@ -11,14 +11,7 @@
 	NSObject *status;
 }
 
-/*!
- @method wrapper
- @abstract Returns an @link //apple_ref/occ/cl/NSFileWrapper NSFileWrapper @/link
- for the file pointed to by this object.
- @result A file wrapper for the file.
- */
-
-- (NSFileWrapper *) wrapper;
+#pragma mark Absolute attributes
 
 /*!
  @property path
@@ -60,6 +53,53 @@
 @property (copy) NSNumber *scribdID;
 
 /*!
+ @property hidden
+ @abstract If YES, the document will be uploaded as private. If no, the document
+ will be publically viewable.
+ */
+
+@property (copy) NSNumber *hidden;
+
+/*!
+ @property title
+ @abstract The title to use for the Scribd document.
+ */
+
+@property (copy) NSString *title;
+
+/*!
+ @property summary
+ @abstract The description to use for the Scribd document.
+ */
+
+@property (copy) NSString *summary;
+
+#pragma mark Relationships
+
+/*!
+ @property type
+ @abstract The Type assigned to this document.
+ */
+
+@property (retain) NSManagedObject *type;
+
+/*!
+ @property category
+ @abstract The Category assigned to this document.
+ */
+
+@property (retain) NSManagedObject *category;
+
+/*!
+ @property tags
+ @abstract The Tags assigned to this document.
+ */
+
+@property (retain) NSSet *tags;
+
+#pragma mark Derived attributes
+
+/*!
  @property filename
  @abstract The name of the file, derived from the path.
  @discussion This is a calculated property, and is not written to the persistent
@@ -85,5 +125,26 @@
  */
 
 @property (readonly) NSString *kind;
+
+/*!
+ @property discoverability
+ @abstract A numerical index of how easy it is for others to find this document
+ in normal searching.
+ @discussion The discoverability is based on the length of the title and summary
+ as well as the presence of other metadata.
+ */
+
+@property (readonly) NSNumber *discoverability;
+
+#pragma mark Methods
+
+/*!
+ @method wrapper
+ @abstract Returns an @link //apple_ref/occ/cl/NSFileWrapper NSFileWrapper @/link
+ for the file pointed to by this object.
+ @result A file wrapper for the file.
+ */
+
+- (NSFileWrapper *) wrapper;
 
 @end

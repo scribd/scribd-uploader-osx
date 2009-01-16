@@ -7,10 +7,18 @@
 @dynamic success;
 @dynamic error;
 @dynamic scribdID;
+@dynamic hidden;
+@dynamic title;
+@dynamic summary;
+
+@dynamic type;
+@dynamic category;
+@dynamic tags;
 
 @dynamic filename;
 @dynamic icon;
 @dynamic kind;
+@dynamic discoverability;
 
 /*
  You're not really supposed to override init for managed objects, but I see no
@@ -41,6 +49,15 @@
 
 - (NSImage *) icon {
 	return [[self wrapper] icon];
+}
+
+- (NSNumber *) discoverability {
+	if ([self.hidden boolValue]) return [NSNumber numberWithUnsignedInteger:0];
+	NSUInteger disc = 1;
+	if ([[NSSpellChecker sharedSpellChecker] countWordsInString:self.summary language:NULL] >= 5) disc++;
+	if ([[NSSpellChecker sharedSpellChecker] countWordsInString:self.title language:NULL] >= 2) disc++;
+	if (self.category && self.type) disc++;
+	return [NSNumber numberWithUnsignedInteger:disc];
 }
 
 /*
@@ -84,6 +101,15 @@
 
 + (NSSet *) keyPathsForValuesAffectingIcon {
 	return [NSSet setWithObject:@"path"];
+}
+
+/*
+ Discoverability is determined by title, description, category, type, and the
+ private setting.
+ */
+
++ (NSSet *) keyPathsForValuesAffectingDiscoverability {
+	return [NSSet setWithObjects:@"title", @"summary", @"category", @"type", @"hidden", NULL];
 }
 
 /*
