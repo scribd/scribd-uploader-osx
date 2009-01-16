@@ -44,6 +44,8 @@
 		012E5DC80F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 012E5DC70F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld */; };
 		012E5E040F20258F0037ECDA /* Scribd_UploaderDataModel 200-210.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 012E5E030F20258F0037ECDA /* Scribd_UploaderDataModel 200-210.xcmappingmodel */; };
 		012E5E250F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5E240F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m */; };
+		012E5E740F20837C0037ECDA /* SUInformationPanelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5E730F20837C0037ECDA /* SUInformationPanelDelegate.m */; };
+		012E5E830F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5E820F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.m */; };
 		0132BFF70F169DF8000B17C5 /* FileTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0132BFF60F169DF8000B17C5 /* FileTypes.plist */; };
 		0132C07D0F16BF99000B17C5 /* Scribd Uploader Help in Resources */ = {isa = PBXBuildFile; fileRef = 0132C07C0F16BF99000B17C5 /* Scribd Uploader Help */; };
 		0132C0970F16C3A6000B17C5 /* SUAboutWindowDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */; };
@@ -147,6 +149,10 @@
 		012E5E030F20258F0037ECDA /* Scribd_UploaderDataModel 200-210.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "Scribd_UploaderDataModel 200-210.xcmappingmodel"; sourceTree = "<group>"; };
 		012E5E230F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDiscoverabilityDescriptionValueTransformer.h; sourceTree = "<group>"; };
 		012E5E240F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDiscoverabilityDescriptionValueTransformer.m; sourceTree = "<group>"; };
+		012E5E720F20837C0037ECDA /* SUInformationPanelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUInformationPanelDelegate.h; sourceTree = "<group>"; };
+		012E5E730F20837C0037ECDA /* SUInformationPanelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUInformationPanelDelegate.m; sourceTree = "<group>"; };
+		012E5E810F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSingleSelectionOnlyValueTransformer.h; sourceTree = "<group>"; };
+		012E5E820F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSingleSelectionOnlyValueTransformer.m; sourceTree = "<group>"; };
 		0132BFF40F169DF5000B17C5 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = English.lproj/FileTypes.plist; sourceTree = "<group>"; };
 		0132C0170F16BF97000B17C5 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/Scribd Uploader Help"; sourceTree = "<group>"; };
 		0132C0950F16C3A6000B17C5 /* SUAboutWindowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAboutWindowDelegate.h; sourceTree = "<group>"; };
@@ -238,6 +244,8 @@
 				0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */,
 				01AC0EAB0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.h */,
 				01AC0EAC0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.m */,
+				012E5E720F20837C0037ECDA /* SUInformationPanelDelegate.h */,
+				012E5E730F20837C0037ECDA /* SUInformationPanelDelegate.m */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -301,6 +309,8 @@
 				0128AF090F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m */,
 				012E5E230F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.h */,
 				012E5E240F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m */,
+				012E5E810F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.h */,
+				012E5E820F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.m */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
@@ -550,6 +560,8 @@
 				01AF60050F1D284900D51D07 /* SUPreferencesWindowController.m in Sources */,
 				012E5E040F20258F0037ECDA /* Scribd_UploaderDataModel 200-210.xcmappingmodel in Sources */,
 				012E5E250F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m in Sources */,
+				012E5E740F20837C0037ECDA /* SUInformationPanelDelegate.m in Sources */,
+				012E5E830F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

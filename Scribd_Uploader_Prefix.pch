@@ -32,7 +32,9 @@
 #import "SUPrivateDescriptionValueTransformer.h"
 #import "SUDiscoverabilityDescriptionValueTransformer.h"
 #import "SUUnarchiveErrorValueTransformer.h"
+#import "SUSingleSelectionOnlyValueTransformer.h"
 
 #import "SULoginSheetDelegate.h"
 #import "SUPreferencesWindowController.h"
 #import "SUQuickLookDelegate.h"
+#import "SUDocumentArrayController.h"
