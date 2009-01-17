@@ -66,4 +66,15 @@
 
 - (void) apiSubmitFile:(SUDocument *)file apiMethod:(NSString *)method parameters:(NSDictionary *)parameters delegate:(id)delegate;
 
+/*!
+ @method autocompletionsForSubstring:
+ @abstract Returns a list of predefined tag names beginning with a substring.
+ @discussion A remote call to the Scribd server is made. Tag names are returned
+ as strings ordered by their frequency of appearance in normal English use.
+ @param substring The string to search for tags by.
+ @result An ordered list of tag names beginning with the substring.
+ */
+
+- (NSArray *) autocompletionsForSubstring:(NSString *)substring;
+
 @end

@@ -17,6 +17,7 @@
 	[NSValueTransformer setValueTransformer:[[SUUnarchiveErrorValueTransformer alloc] init] forName:@"SUUnarchiveError"];
 	[NSValueTransformer setValueTransformer:[[SULogInButtonTitleValueTransformer alloc] init] forName:@"SULogInButtonTitle"];
 	[NSValueTransformer setValueTransformer:[[SULoginLabelValueTransformer alloc] init] forName:@"SULoginLabel"];
+	[NSValueTransformer setValueTransformer:[[SUDelimitedStringValueTransformer alloc] init] forName:@"SUDelimitTags"];
 }
 
 /*

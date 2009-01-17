@@ -330,14 +330,15 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>89</integer>
-											<integer>88</integer>
-											<integer>87</integer>
+											<integer>5</integer>
+											<integer>3</integer>
+											<integer>2</integer>
+											<integer>1</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 1221}, {453, 700}}</string>
+									<string>{{0, 0}, {453, 700}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -519,7 +520,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>253843635.79491001</real>
+	<real>253851765.82825699</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -534,12 +535,13 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>012E5DEA0F1F39CE0037ECDA</string>
 		<string>012E5DEB0F1F39CE0037ECDA</string>
-		<string>1C530D5B069F1CE1000CFCEE</string>
 		<string>1C530D54069F1CE1000CFCEE</string>
-		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>/Documents/Programs/Cocoa/scribd-uploader/Scribd Uploader.xcodeproj</string>
+		<string>1C530D52069F1CE1000CFCEE</string>
+		<string>1C530D5B069F1CE1000CFCEE</string>
 	</array>
 	<key>WindowString</key>
 	<string>865 93 470 786 0 0 1680 1028 </string>
@@ -699,7 +701,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>&lt;No Editor&gt;</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -708,7 +710,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1097, 424}}</string>
 								<key>RubberWindowFrame</key>
-								<string>404 176 1097 706 0 0 1680 1028 </string>
+								<string>271 156 1097 706 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -734,7 +736,7 @@
 								<key>Frame</key>
 								<string>{{0, 429}, {1097, 236}}</string>
 								<key>RubberWindowFrame</key>
-								<string>404 176 1097 706 0 0 1680 1028 </string>
+								<string>271 156 1097 706 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -764,11 +766,11 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.buildV3</string>
 			<key>WindowString</key>
-			<string>404 176 1097 706 0 0 1680 1028 </string>
+			<string>271 156 1097 706 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
 			<string>1C530D52069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -924,7 +926,7 @@
 										<key>Frame</key>
 										<string>{{0, 0}, {962, 431}}</string>
 										<key>RubberWindowFrame</key>
-										<string>190 138 962 776 0 0 1680 1028 </string>
+										<string>441 126 962 776 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXNavigatorGroup</string>
@@ -936,8 +938,6 @@
 							<string>431pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -950,7 +950,7 @@
 								<key>Frame</key>
 								<string>{{0, 436}, {962, 299}}</string>
 								<key>RubberWindowFrame</key>
-								<string>190 138 962 776 0 0 1680 1028 </string>
+								<string>441 126 962 776 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXProjectFindModule</string>
@@ -973,13 +973,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>01F476760F1DA43B00DED8E2</string>
-				<string>01F476770F1DA43B00DED8E2</string>
+				<string>012E5EDE0F216E250037ECDA</string>
+				<string>012E5EDF0F216E250037ECDA</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>
 			<key>WindowString</key>
-			<string>190 138 962 776 0 0 1680 1028 </string>
+			<string>441 126 962 776 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
 			<string>1C530D57069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
@@ -1049,7 +1049,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D5B069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>EditURL</key>
-	<string>http://www.scribd.com/upload/describe_docs?docs=%@</string>
 	<key>BaseURL</key>
 	<string>http://www.scribd.com/api?</string>
+	<key>EditURL</key>
+	<string>http://www.scribd.com/upload/describe_docs?docs=%@</string>
+	<key>TagsURL</key>
+	<string>http://www.scribd.com/tags/suggest?query=%@</string>
 	<key>APIKey</key>
 	<string>4n01s97v3qimxlixkuz8s</string>
 	<key>APISecret</key>

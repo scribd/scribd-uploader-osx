@@ -10,10 +10,10 @@
 @dynamic hidden;
 @dynamic title;
 @dynamic summary;
+@dynamic tags;
 
 @dynamic type;
 @dynamic category;
-@dynamic tags;
 
 @dynamic filename;
 @dynamic icon;

@@ -1,13 +1,13 @@
-#import <Cocoa/Cocoa.h>
-
 /*!
  @class SUInformationPanelDelegate
- @abstract Receives events from the information panel.
+ @abstract Receives events from the information panel. This class is also the
+ delegate for the Tags token field.
  */
 
 @interface SUInformationPanelDelegate : NSObject {
 	IBOutlet SUDocumentArrayController *documentsController;
 	IBOutlet NSPanel *categoriesPanel;
+	IBOutlet NSTokenField *tagsField;
 }
 
 /*!

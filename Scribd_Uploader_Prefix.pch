@@ -13,8 +13,10 @@
 #import <Growl/GrowlApplicationBridge.h>
 
 #import "SUConstants.h"
-#import "SUDocument.h"
+#import "NSArray_SUAdditions.h"
 #import "NSError_SUAdditions.h"
+
+#import "SUDocument.h"
 #import "SUFileNotFoundAlertDelegate.h"
 #import "SUDocumentHelper.h"
 #import "SUDatabaseHelper.h"
@@ -33,6 +35,7 @@
 #import "SUDiscoverabilityDescriptionValueTransformer.h"
 #import "SUUnarchiveErrorValueTransformer.h"
 #import "SUSingleSelectionOnlyValueTransformer.h"
+#import "SUDelimitedStringValueTransformer.h"
 
 #import "SULoginSheetDelegate.h"
 #import "SUPreferencesWindowController.h"

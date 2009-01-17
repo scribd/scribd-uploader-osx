@@ -149,6 +149,29 @@ static SUScribdAPI *sharedAPI;
 	[uploadQueue addOperation:uploadOperation];
 }
 
+- (NSArray *) autocompletionsForSubstring:(NSString *)substring {
+	NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:[[self settings] objectForKey:@"TagsURL"], [substring stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+	NSString *response = [[NSString alloc] initWithContentsOfURL:url];
+	if ([response isEqualToString:@""]) return [NSArray array];
+	
+	NSArray *lines = [response componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+	NSMutableDictionary *tagsByFrequency = [[NSMutableDictionary alloc] initWithCapacity:[lines count]];
+	for (NSString *line in lines) {
+		NSArray *elements = [line componentsSeparatedByString:@"|"];
+		NSString *tag = [elements objectAtIndex:0];
+		NSUInteger freq = [[elements objectAtIndex:1] integerValue];
+		[tagsByFrequency setObject:[NSNumber numberWithUnsignedInteger:freq] forKey:tag];
+	}
+	
+	NSArray *tags = [tagsByFrequency keysSortedByValueUsingSelector:@selector(compare:)];
+	
+	[url release];
+	[response release];
+	[tagsByFrequency release];
+	
+	return [tags reversedArray];
+}
+
 @end
 
 @implementation SUScribdAPI (Private)

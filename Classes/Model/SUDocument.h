@@ -76,6 +76,13 @@
 
 @property (copy) NSString *summary;
 
+/*!
+ @property tags
+ @abstract A comma-delimited list of tags to assign to the document.
+ */
+
+@property (copy) NSString *tags;
+
 #pragma mark Relationships
 
 /*!
@@ -91,13 +98,6 @@
  */
 
 @property (retain) NSManagedObject *category;
-
-/*!
- @property tags
- @abstract The Tags assigned to this document.
- */
-
-@property (retain) NSSet *tags;
 
 #pragma mark Derived properties
 
