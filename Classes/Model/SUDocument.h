@@ -13,7 +13,7 @@
 	NSObject *status;
 }
 
-#pragma mark Absolute attributes
+#pragma mark First-order properties
 
 /*!
  @property path
@@ -99,7 +99,7 @@
 
 @property (retain) NSSet *tags;
 
-#pragma mark Derived attributes
+#pragma mark Derived properties
 
 /*!
  @property filename

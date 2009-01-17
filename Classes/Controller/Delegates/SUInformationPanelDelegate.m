@@ -3,7 +3,7 @@
 @implementation SUInformationPanelDelegate
 
 - (IBAction) changeCategory:(id)sender {
-	
+	[categoriesPanel makeKeyAndOrderFront:sender];
 }
 
 - (IBAction) showHelp:(id)sender {

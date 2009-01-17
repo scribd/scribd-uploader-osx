@@ -7,6 +7,7 @@
 
 @interface SUInformationPanelDelegate : NSObject {
 	IBOutlet SUDocumentArrayController *documentsController;
+	IBOutlet NSPanel *categoriesPanel;
 }
 
 /*!
