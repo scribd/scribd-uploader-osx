@@ -10,6 +10,8 @@
 	<string>http://www.scribd.com/tags/suggest?query=%@</string>
 	<key>TitleCleanURL</key>
 	<string>http://www.scribd.com/titlecleaner?title=%@</string>
+	<key>CategoriesURL</key>
+	<string>http://www.scribd.com/categories.xml</string>
 	<key>APIKey</key>
 	<string>4n01s97v3qimxlixkuz8s</string>
 	<key>APISecret</key>

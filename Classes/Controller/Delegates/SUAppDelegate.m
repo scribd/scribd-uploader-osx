@@ -1,5 +1,16 @@
 #import "SUAppDelegate.h"
 
+@interface SUAppDelegate (Private)
+
+/*
+ Tells the SUScribdAPI to load the categories from the server, then marks the
+ current date as the last category load time.
+ */
+
+- (void) loadCategories:(id)unused;
+
+@end
+
 @implementation SUAppDelegate
 
 /*
@@ -18,18 +29,29 @@
 	[NSValueTransformer setValueTransformer:[[SULogInButtonTitleValueTransformer alloc] init] forName:@"SULogInButtonTitle"];
 	[NSValueTransformer setValueTransformer:[[SULoginLabelValueTransformer alloc] init] forName:@"SULoginLabel"];
 	[NSValueTransformer setValueTransformer:[[SUDelimitedStringValueTransformer alloc] init] forName:@"SUDelimitTags"];
+	[NSValueTransformer setValueTransformer:[[SUIndexPathValueTransformer alloc] init] forName:@"SUIndexPath"];
 }
 
 /*
- Registers drag-and-drop types for the upload list.
+ Registers drag-and-drop types for the upload list, configures Growl, and
+ reloads categories if necessary.
  */
 
 - (void) awakeFromNib {
+	[[NSValueTransformer valueTransformerForName:@"SUIndexPath"] setValue:db.managedObjectContext forKey:@"managedObjectContext"];
+	
 	[uploadTable registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
 	[uploadTable setVerticalMotionCanBeginDrag:NO];
 	
 	// configure Growl (necessary because of a bug in growl)
 	[GrowlApplicationBridge setGrowlDelegate:@""];
+	
+	[categoriesController setSortDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES]]];
+	
+	NSDate *lastCheckTime = [[NSUserDefaults standardUserDefaults] objectForKey:SUDefaultKeyLastCategoryLoad];
+	if (!lastCheckTime || -[lastCheckTime timeIntervalSinceNow] >= SUTimeBetweenCategoryLoads) {
+		[NSThread detachNewThreadSelector:@selector(loadCategories:) toTarget:self withObject:NULL];
+	}
 }
 
 /*
@@ -153,6 +175,17 @@
 			[file setValue:[path stringByStandardizingPath] forKey:@"path"];
 		}
 	}
+}
+
+@end
+
+@implementation SUAppDelegate (Private)
+
+- (void) loadCategories:(id)unused {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	[[SUScribdAPI sharedAPI] loadCategoriesIntoManagedObjectContext:db.managedObjectContext];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:SUDefaultKeyLastCategoryLoad];
+	[pool release];
 }
 
 @end

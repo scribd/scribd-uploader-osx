@@ -89,4 +89,16 @@
 
 - (NSString *) titleForFilename:(NSString *)filename;
 
+/*!
+ @method loadCategoriesIntoManagedObjectContext:
+ @abstract Downloads an XML list of categories from the server and populates the
+ persistent store with the categories.
+ @param managedObjectContext The managed object context to load the categories
+ into.
+ @discussion Clears out existing categories, if any, before replacing them with
+ the new category list.
+ */
+
+- (void) loadCategoriesIntoManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
 @end

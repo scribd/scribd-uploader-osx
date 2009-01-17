@@ -16,8 +16,10 @@
 #import "NSString_SUAdditions.h"
 #import "NSArray_SUAdditions.h"
 #import "NSError_SUAdditions.h"
+#import "NSIndexPath_SUAdditions.h"
 
 #import "SUDocument.h"
+#import "SUCategory.h"
 #import "SUFileNotFoundAlertDelegate.h"
 #import "SUDocumentHelper.h"
 #import "SUDatabaseHelper.h"
@@ -37,6 +39,7 @@
 #import "SUUnarchiveErrorValueTransformer.h"
 #import "SUSingleSelectionOnlyValueTransformer.h"
 #import "SUDelimitedStringValueTransformer.h"
+#import "SUIndexPathValueTransformer.h"
 
 #import "SULoginSheetDelegate.h"
 #import "SUPreferencesWindowController.h"

@@ -5,6 +5,13 @@ static SUScribdAPI *sharedAPI;
 @interface SUScribdAPI (Private)
 
 /*
+ Adds a Category entity for every child of the given node to the managed object
+ context, given a proxy set for the parent.
+ */
+
+- (void) setChildren:(NSMutableSet *)children ofNode:(NSXMLElement *)element managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
+/*
  Returns settings in the ScribdAPI.plist resource.
  */
 
@@ -151,8 +158,10 @@ static SUScribdAPI *sharedAPI;
 
 - (NSArray *) autocompletionsForSubstring:(NSString *)substring {
 	NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:[[self settings] objectForKey:@"TagsURL"], [substring stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-	NSString *response = [[NSString alloc] initWithContentsOfURL:url];
+	NSError *error = NULL;
+	NSString *response = [[NSString alloc] initWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
 	[url release];
+	if (error) return NULL;
 	
 	if ([response isEmpty]) {
 		[response release];
@@ -178,8 +187,10 @@ static SUScribdAPI *sharedAPI;
 
 - (NSString *) titleForFilename:(NSString *)filename {
 	NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:[[self settings] objectForKey:@"TitleCleanURL"], [filename stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-	NSString *response = [[NSString alloc] initWithContentsOfURL:url];
+	NSError *error = NULL;
+	NSString *response = [[NSString alloc] initWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
 	[url release];
+	if (error) return NULL;
 	
 	if ([response isEqualToString:filename]) {
 		[response release];
@@ -188,9 +199,48 @@ static SUScribdAPI *sharedAPI;
 	else return [response autorelease];
 }
 
+- (void) loadCategoriesIntoManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+	// download category XML from scribd
+	NSURL *url = [[NSURL alloc] initWithString:[[self settings] objectForKey:@"CategoriesURL"]];
+	NSError *error = NULL;
+	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithContentsOfURL:url options:NSXMLDocumentTidyXML error:&error];
+	[url release];
+	if (error) return;
+	
+	// delete all categories
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setEntity:[NSEntityDescription entityForName:@"Category" inManagedObjectContext:managedObjectContext]];
+	NSArray *categories = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+	[fetchRequest release];
+	if (error) return;
+	for (SUCategory *category in categories) [managedObjectContext deleteObject:category];
+	
+	// load in new categories
+	for (NSXMLElement *element in [[xml rootElement] children]) {
+		SUCategory *category = [NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:managedObjectContext];
+		category.name = [[element attributeForName:@"name"] stringValue];
+		category.position = [NSNumber numberWithUnsignedInteger:[element index]];
+		NSMutableSet *children = [category mutableSetValueForKey:@"children"];
+		[self setChildren:children ofNode:element managedObjectContext:managedObjectContext];
+	}
+	
+	[xml release];
+}
+
 @end
 
 @implementation SUScribdAPI (Private)
+
+- (void) setChildren:(NSMutableSet *)children ofNode:(NSXMLElement *)element managedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+	for (NSXMLElement *child in [element children]) {
+		SUCategory *category = [NSEntityDescription insertNewObjectForEntityForName:@"Category" inManagedObjectContext:managedObjectContext];
+		category.name = [[child attributeForName:@"name"] stringValue];
+		category.position = [NSNumber numberWithUnsignedInteger:[child index]];
+		NSMutableSet *grandkids = [category mutableSetValueForKey:@"children"];
+		[self setChildren:grandkids ofNode:child managedObjectContext:managedObjectContext];
+		[children addObject:category];
+	}
+}
 
 - (NSDictionary *) settings {
 	return [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];

@@ -12,6 +12,7 @@
 	IBOutlet SUDatabaseHelper *db;
 	IBOutlet NSTableView *uploadTable;
 	IBOutlet SUUploadHelper *uploader;
+	IBOutlet NSTreeController *categoriesController;
 }
 
 /*!

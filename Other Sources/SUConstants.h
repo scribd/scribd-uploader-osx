@@ -1,3 +1,13 @@
+#pragma mark Constants
+
+/*!
+ @const SUTimeBetweenCategoryLoads
+ @abstract The amount of time that must pass before categories are considered
+ stale and are reloaded from the server.
+ */
+
+const NSTimeInterval SUTimeBetweenCategoryLoads;
+
 #pragma mark Error Domains
 
 /*!
@@ -8,7 +18,6 @@
 
 NSString *SUScribdAPIErrorDomain;
 
-#pragma mark -
 #pragma mark Error user-info keys
 
 /*!
@@ -28,7 +37,6 @@ NSString *SUInvalidatePropertyErrorKey;
 
 NSString *SUActionErrorKey;
 
-#pragma mark -
 #pragma mark Error codes
 
 /*!
@@ -40,7 +48,6 @@ NSString *SUActionErrorKey;
 
 const NSInteger SUErrorCodeUploadFailed;
 
-#pragma mark -
 #pragma mark Actions
 
 /*!
@@ -67,7 +74,6 @@ NSString *SUSignUpAction;
 
 NSString *SUUploadAction;
 
-#pragma mark -
 #pragma mark User defaults keys
 
 /*!
@@ -87,3 +93,11 @@ NSString *SUDefaultKeySessionKey;
  */
 
 NSString *SUDefaultKeySessionUsername;
+
+/*!
+ @const SUDefaultKeyLastCategoryLoad
+ @abstract The User Defaults key for the last time that the category list was
+ downloaded from the server.
+ */
+
+NSString *SUDefaultKeyLastCategoryLoad;

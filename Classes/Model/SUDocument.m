@@ -98,8 +98,10 @@
 		if (kind) [kind release];
 		kind = NULL;
 		
-		if (!self.title || [self.title isEmpty])
-			self.title = [[SUScribdAPI sharedAPI] titleForFilename:self.filename];
+		if (self.path && (!self.title || [self.title isEmpty])) {
+			NSString *suggestedTitle = [[SUScribdAPI sharedAPI] titleForFilename:self.filename];
+			if (suggestedTitle) self.title = suggestedTitle;
+		}
 	}
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
