@@ -30,9 +30,26 @@
 		wrapper = NULL;
 		kind = NULL;
 		status = NULL;
-		[self addObserver:self forKeyPath:@"path" options:NSKeyValueObservingOptionNew context:NULL];
 	}
 	return self;
+}
+
+/*
+ Observe the path attribute so that we can prepare dependent attributes if it
+ changes.
+ */
+
+- (void) awakeFromInsert {
+	[self addObserver:self forKeyPath:@"path" options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+/*
+ Observe the path attribute so that we can prepare dependent attributes if it
+ changes.
+ */
+
+- (void) awakeFromFetch {
+	[self addObserver:self forKeyPath:@"path" options:NSKeyValueObservingOptionNew context:NULL];
 }
 
 - (NSString *) filename {
@@ -69,14 +86,23 @@
 	return wrapper;
 }
 
+/*
+ When the path changes, we need to release the wrapper and kind to prepare for
+ new lazy inits. We also need to check the title cleaner and suggest a title if
+ one hasn't been added yet.
+ */
+
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	if ([keyPath isEqualToString:@"path"]) {
 		if (wrapper) [wrapper release];
 		wrapper = NULL;
 		if (kind) [kind release];
 		kind = NULL;
+		
+		if (!self.title || [self.title isEmpty])
+			self.title = [[SUScribdAPI sharedAPI] titleForFilename:self.filename];
 	}
-	[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
 /*

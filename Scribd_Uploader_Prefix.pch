@@ -13,6 +13,7 @@
 #import <Growl/GrowlApplicationBridge.h>
 
 #import "SUConstants.h"
+#import "NSString_SUAdditions.h"
 #import "NSArray_SUAdditions.h"
 #import "NSError_SUAdditions.h"
 

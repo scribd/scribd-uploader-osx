@@ -152,7 +152,12 @@ static SUScribdAPI *sharedAPI;
 - (NSArray *) autocompletionsForSubstring:(NSString *)substring {
 	NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:[[self settings] objectForKey:@"TagsURL"], [substring stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
 	NSString *response = [[NSString alloc] initWithContentsOfURL:url];
-	if ([response isEqualToString:@""]) return [NSArray array];
+	[url release];
+	
+	if ([response isEmpty]) {
+		[response release];
+		return [NSArray array];
+	}
 	
 	NSArray *lines = [response componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
 	NSMutableDictionary *tagsByFrequency = [[NSMutableDictionary alloc] initWithCapacity:[lines count]];
@@ -165,11 +170,22 @@ static SUScribdAPI *sharedAPI;
 	
 	NSArray *tags = [tagsByFrequency keysSortedByValueUsingSelector:@selector(compare:)];
 	
-	[url release];
 	[response release];
 	[tagsByFrequency release];
 	
 	return [tags reversedArray];
+}
+
+- (NSString *) titleForFilename:(NSString *)filename {
+	NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:[[self settings] objectForKey:@"TitleCleanURL"], [filename stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+	NSString *response = [[NSString alloc] initWithContentsOfURL:url];
+	[url release];
+	
+	if ([response isEqualToString:filename]) {
+		[response release];
+		return NULL;
+	}
+	else return [response autorelease];
 }
 
 @end

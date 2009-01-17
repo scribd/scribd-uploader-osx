@@ -77,4 +77,16 @@
 
 - (NSArray *) autocompletionsForSubstring:(NSString *)substring;
 
+/*!
+ @method titleForFilename:
+ @abstract Given the name of a file, returns a "cleaned up" title with spaces
+ added, file extension removed, and other formatting improvements.
+ @discussion A remote call to the Scribd server is made.
+ @param filename The name of the file.
+ @result A title suggestion for the file, or NULL if no suggestion could be
+ made.
+ */
+
+- (NSString *) titleForFilename:(NSString *)filename;
+
 @end
