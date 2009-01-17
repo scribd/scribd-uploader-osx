@@ -86,13 +86,6 @@
 #pragma mark Relationships
 
 /*!
- @property type
- @abstract The Type assigned to this document.
- */
-
-@property (retain) NSManagedObject *type;
-
-/*!
  @property category
  @abstract The Category assigned to this document.
  */

@@ -12,7 +12,6 @@
 @dynamic summary;
 @dynamic tags;
 
-@dynamic type;
 @dynamic category;
 
 @dynamic filename;
@@ -73,7 +72,7 @@
 	NSUInteger disc = 1;
 	if ([[NSSpellChecker sharedSpellChecker] countWordsInString:self.summary language:NULL] >= 5) disc++;
 	if ([[NSSpellChecker sharedSpellChecker] countWordsInString:self.title language:NULL] >= 2) disc++;
-	if (self.category && self.type) disc++;
+	if (self.category) disc++;
 	return [NSNumber numberWithUnsignedInteger:disc];
 }
 
@@ -130,12 +129,12 @@
 }
 
 /*
- Discoverability is determined by title, description, category, type, and the
- private setting.
+ Discoverability is determined by title, description, category, and the private
+ setting.
  */
 
 + (NSSet *) keyPathsForValuesAffectingDiscoverability {
-	return [NSSet setWithObjects:@"title", @"summary", @"category", @"type", @"hidden", NULL];
+	return [NSSet setWithObjects:@"title", @"summary", @"category", @"hidden", NULL];
 }
 
 /*

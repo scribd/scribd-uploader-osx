@@ -94,8 +94,8 @@
 	};
 	0128AEDF0F1478F300EC3C28 /* SULoginSheetDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 1339}}";
-			sepNavSelRange = "{2122, 105}";
+			sepNavIntBoundsRect = "{{0, 0}, {901, 1352}}";
+			sepNavSelRange = "{1998, 4}";
 			sepNavVisRange = "{1561, 1236}";
 			sepNavWindowFrame = "{{432, 79}, {791, 864}}";
 		};
@@ -230,17 +230,17 @@
 	};
 	0128AEF20F1478F300EC3C28 /* SUDocument.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {732, 2054}}";
-			sepNavSelRange = "{1473, 0}";
-			sepNavVisRange = "{0, 1283}";
+			sepNavIntBoundsRect = "{{0, 0}, {901, 1885}}";
+			sepNavSelRange = "{231, 4}";
+			sepNavVisRange = "{0, 727}";
 			sepNavWindowFrame = "{{370, 89}, {791, 864}}";
 		};
 	};
 	0128AEF30F1478F300EC3C28 /* SUDocument.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {870, 1937}}";
-			sepNavSelRange = "{1824, 0}";
-			sepNavVisRange = "{1138, 1765}";
+			sepNavIntBoundsRect = "{{0, 0}, {901, 1937}}";
+			sepNavSelRange = "{3252, 0}";
+			sepNavVisRange = "{2781, 658}";
 			sepNavWindowFrame = "{{552, 107}, {791, 864}}";
 		};
 	};
@@ -254,8 +254,8 @@
 	};
 	0128AEF50F1478F300EC3C28 /* SUScribdAPI.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1206, 3406}}";
-			sepNavSelRange = "{4832, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1314, 3315}}";
+			sepNavSelRange = "{4297, 0}";
 			sepNavVisRange = "{3226, 2313}";
 			sepNavWindowFrame = "{{365, 13}, {992, 844}}";
 		};
@@ -615,8 +615,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {515, 220}}",
-							"{{520, 0}, {271, 220}}",
+							"{{0, 0}, {515, 218}}",
+							"{{520, 0}, {271, 218}}",
 						);
 					};
 					diagramSplitGeometry = {
@@ -635,8 +635,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {168, 220}}",
-							"{{173, 0}, {342, 220}}",
+							"{{0, 0}, {167, 218}}",
+							"{{172, 0}, {341, 218}}",
 						);
 					};
 				};
@@ -834,13 +834,6 @@
 			sepNavWindowFrame = "{{544, 92}, {735, 911}}";
 		};
 	};
-	012E5F080F2178A90037ECDA /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */ = {
-		uiCtxt = {
-			"Xdesign Model Editor Bookmark Key" = {
-			};
-			sepNavWindowFrame = "{{541, 41}, {735, 911}}";
-		};
-	};
 	012E5F100F217AF30037ECDA /* NSString_SUAdditions.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {676, 783}}";
@@ -870,7 +863,7 @@
 		fRef = 0128AEF30F1478F300EC3C28 /* SUDocument.m */;
 		name = "SUDocument.m: 76";
 		rLen = 0;
-		rLoc = 1824;
+		rLoc = 1796;
 		rType = 0;
 		vrLen = 1765;
 		vrLoc = 1138;
@@ -905,6 +898,70 @@
 			sepNavVisRange = "{0, 215}";
 			sepNavWindowFrame = "{{217, 40}, {826, 863}}";
 		};
+	};
+	013C91030F219DB000061162 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */ = {
+		uiCtxt = {
+			"Xdesign Model Editor Bookmark Key" = {
+			};
+			sepNavWindowFrame = "{{15, 112}, {735, 911}}";
+		};
+	};
+	013C91090F219DFD00061162 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0128AEF30F1478F300EC3C28 /* SUDocument.m */;
+		name = "SUDocument.m: 133";
+		rLen = 0;
+		rLoc = 3252;
+		rType = 0;
+		vrLen = 658;
+		vrLoc = 2781;
+	};
+	013C910A0F219DFD00061162 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0128AEF20F1478F300EC3C28 /* SUDocument.h */;
+		name = "SUDocument.h: 6";
+		rLen = 4;
+		rLoc = 231;
+		rType = 0;
+		vrLen = 727;
+		vrLoc = 0;
+	};
+	013C910B0F219DFD00061162 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0128AEDF0F1478F300EC3C28 /* SULoginSheetDelegate.m */;
+		rLen = 4;
+		rLoc = 1998;
+		rType = 0;
+	};
+	013C910C0F219DFD00061162 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0128AEF30F1478F300EC3C28 /* SUDocument.m */;
+		name = "SUDocument.m: 133";
+		rLen = 0;
+		rLoc = 3252;
+		rType = 0;
+		vrLen = 658;
+		vrLoc = 2781;
+	};
+	013C910D0F219DFD00061162 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0128AEF20F1478F300EC3C28 /* SUDocument.h */;
+		name = "SUDocument.h: 6";
+		rLen = 4;
+		rLoc = 231;
+		rType = 0;
+		vrLen = 727;
+		vrLoc = 0;
+	};
+	013C910E0F219DFD00061162 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0128AEDF0F1478F300EC3C28 /* SULoginSheetDelegate.m */;
+		name = "SULoginSheetDelegate.m: 57";
+		rLen = 4;
+		rLoc = 1998;
+		rType = 0;
+		vrLen = 1236;
+		vrLoc = 1561;
 	};
 	014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */ = {
 		uiCtxt = {
@@ -1038,14 +1095,20 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 253691133;
-			PBXWorkspaceStateSaveDate = 253691133;
+			PBXPerProjectTemplateStateSaveDate = 253854271;
+			PBXWorkspaceStateSaveDate = 253854271;
 		};
 		perUserProjectItems = {
-			012E5F160F217D3B0037ECDA /* PBXBookmark */ = 012E5F160F217D3B0037ECDA /* PBXBookmark */;
-			012E5F1F0F217DDB0037ECDA /* PBXBookmark */ = 012E5F1F0F217DDB0037ECDA /* PBXBookmark */;
-			012E5F460F2182140037ECDA /* PBXTextBookmark */ = 012E5F460F2182140037ECDA /* PBXTextBookmark */;
-			012E5F470F2182140037ECDA /* PBXTextBookmark */ = 012E5F470F2182140037ECDA /* PBXTextBookmark */;
+			012E5F160F217D3B0037ECDA = 012E5F160F217D3B0037ECDA /* PBXBookmark */;
+			012E5F1F0F217DDB0037ECDA = 012E5F1F0F217DDB0037ECDA /* PBXBookmark */;
+			012E5F460F2182140037ECDA = 012E5F460F2182140037ECDA /* PBXTextBookmark */;
+			012E5F470F2182140037ECDA = 012E5F470F2182140037ECDA /* PBXTextBookmark */;
+			013C91090F219DFD00061162 /* PBXTextBookmark */ = 013C91090F219DFD00061162 /* PBXTextBookmark */;
+			013C910A0F219DFD00061162 /* PBXTextBookmark */ = 013C910A0F219DFD00061162 /* PBXTextBookmark */;
+			013C910B0F219DFD00061162 /* PBXTextBookmark */ = 013C910B0F219DFD00061162 /* PBXTextBookmark */;
+			013C910C0F219DFD00061162 /* PBXTextBookmark */ = 013C910C0F219DFD00061162 /* PBXTextBookmark */;
+			013C910D0F219DFD00061162 /* PBXTextBookmark */ = 013C910D0F219DFD00061162 /* PBXTextBookmark */;
+			013C910E0F219DFD00061162 /* PBXTextBookmark */ = 013C910E0F219DFD00061162 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 0128AED40F14783800EC3C28 /* Source Control */;
 		userBuildSettings = {
