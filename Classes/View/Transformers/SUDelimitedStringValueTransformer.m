@@ -46,8 +46,10 @@
  */
 
 - (id) reverseTransformedValue:(id)value {
-	if ([value isKindOfClass:[NSArray class]])
-		return [(NSArray *)(value) componentsJoinedByString:self.delimiter];
+	if ([value isKindOfClass:[NSArray class]]) {
+		if ([(NSArray *)value count]) return [(NSArray *)(value) componentsJoinedByString:self.delimiter];
+		else return NULL;
+	}
 	else return value;
 }
 
