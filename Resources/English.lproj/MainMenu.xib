@@ -8,6 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="1622"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2617,13 +2618,13 @@ ciBoZWxwIHZpZXdlci4</string>
 				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<string key="NSWindowContentMinSize">{299, 305}</string>
 				<object class="NSView" key="NSWindowView" id="187849160">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSBrowser" id="82934213">
 							<reference key="NSNextResponder" ref="187849160"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">274</int>
 							<string key="NSFrame">{{-0.5, -0.5}, {300, 328}}</string>
 							<reference key="NSSuperview" ref="187849160"/>
 							<bool key="NSEnabled">YES</bool>
@@ -2647,6 +2648,7 @@ ciBoZWxwIHZpZXdlci4</string>
 						</object>
 					</object>
 					<string key="NSFrameSize">{299, 305}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
 				<string key="NSMinSize">{299, 321}</string>
@@ -6064,21 +6066,26 @@ ciBoZWxwIHZpZXdlci4</string>
 					<string>1378.IBPluginDependency</string>
 					<string>1379.IBPluginDependency</string>
 					<string>1380.IBPluginDependency</string>
+					<string>1381.IBAttributePlaceholdersKey</string>
 					<string>1381.IBPluginDependency</string>
 					<string>1382.IBPluginDependency</string>
 					<string>1383.IBPluginDependency</string>
 					<string>1384.IBPluginDependency</string>
+					<string>1385.IBAttributePlaceholdersKey</string>
 					<string>1385.IBPluginDependency</string>
 					<string>1386.IBPluginDependency</string>
 					<string>1387.IBPluginDependency</string>
 					<string>1402.IBPluginDependency</string>
 					<string>1403.IBPluginDependency</string>
+					<string>1404.IBAttributePlaceholdersKey</string>
 					<string>1404.IBPluginDependency</string>
 					<string>1405.IBPluginDependency</string>
 					<string>1406.IBPluginDependency</string>
 					<string>1407.IBPluginDependency</string>
+					<string>1409.IBAttributePlaceholdersKey</string>
 					<string>1409.IBPluginDependency</string>
 					<string>1410.IBPluginDependency</string>
+					<string>1415.IBAttributePlaceholdersKey</string>
 					<string>1415.IBPluginDependency</string>
 					<string>1416.IBPluginDependency</string>
 					<string>1417.IBPluginDependency</string>
@@ -6103,6 +6110,7 @@ ciBoZWxwIHZpZXdlci4</string>
 					<string>1527.IBPluginDependency</string>
 					<string>1548.IBPluginDependency</string>
 					<string>1549.IBPluginDependency</string>
+					<string>1553.IBAttributePlaceholdersKey</string>
 					<string>1553.IBPluginDependency</string>
 					<string>1554.IBPluginDependency</string>
 					<string>1555.IBPluginDependency</string>
@@ -6379,21 +6387,62 @@ ciBoZWxwIHZpZXdlci4</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSMutableDictionary">
+						<string key="NS.key.0">ToolTip</string>
+						<object class="IBToolTipAttribute" key="NS.object.0">
+							<string key="name">ToolTip</string>
+							<reference key="object" ref="657096786"/>
+							<string key="toolTip">Entering a good title for your document will help others find it.</string>
+						</object>
+					</object>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSMutableDictionary">
+						<string key="NS.key.0">ToolTip</string>
+						<object class="IBToolTipAttribute" key="NS.object.0">
+							<string key="name">ToolTip</string>
+							<reference key="object" ref="977606836"/>
+							<string key="toolTip">Summarize your document so others can find it more easily.</string>
+						</object>
+					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSMutableDictionary">
+						<string key="NS.key.0">ToolTip</string>
+						<object class="IBToolTipAttribute" key="NS.object.0">
+							<string key="name">ToolTip</string>
+							<reference key="object" ref="855261418"/>
+							<string key="toolTip">Enter a comma-separated list of keywords others might type when looking for your document.</string>
+						</object>
+					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSMutableDictionary">
+						<string key="NS.key.0">ToolTip</string>
+						<object class="IBToolTipAttribute" key="NS.object.0">
+							<string key="name">ToolTip</string>
+							<reference key="object" ref="538704704"/>
+							<string key="toolTip">The more discoverability bars are shown, the more likely others will find your document on the Web.</string>
+						</object>
+					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSMutableDictionary">
+						<string key="NS.key.0">ToolTip</string>
+						<object class="IBToolTipAttribute" key="NS.object.0">
+							<string key="name">ToolTip</string>
+							<reference key="object" ref="277965383"/>
+							<string type="base64-UTF8" key="toolTip">Q2hlY2sgdGhpcyBib3ggaWYgeW91IGRvbuKAmXQgd2FudCBwZW9wbGUgeW91IGRvbuKAmXQgdHJ1c3Qg
+dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
+						</object>
+					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -6418,6 +6467,14 @@ ciBoZWxwIHZpZXdlci4</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSMutableDictionary">
+						<string key="NS.key.0">ToolTip</string>
+						<object class="IBToolTipAttribute" key="NS.object.0">
+							<string key="name">ToolTip</string>
+							<reference key="object" ref="366698925"/>
+							<string type="base64-UTF8" key="toolTip">Q2xpY2sgdG8gY2hhbmdlIHlvdXIgZG9jdW1lbnTigJlzIGNhdGVnb3J5Lg</string>
+						</object>
+					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
