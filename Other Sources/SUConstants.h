@@ -74,6 +74,14 @@ NSString *SUSignUpAction;
 
 NSString *SUUploadAction;
 
+/*!
+ @const SUChangeSettingsAction
+ @abstract A string representing the action of setting a document's metadata.
+ Scribd error codes are organized by the action that could cause the error.
+ */
+
+NSString *SUChangeSettingsAction;
+
 #pragma mark User defaults keys
 
 /*!

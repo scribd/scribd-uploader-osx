@@ -18,6 +18,7 @@ const NSInteger SUErrorCodeUploadFailed = -100;
 NSString *SULogInAction = @"LogIn";
 NSString *SUSignUpAction = @"SignUp";
 NSString *SUUploadAction = @"Upload";
+NSString *SUChangeSettingsAction = @"ChangeSettings";
 
 /* User defaults keys */
 NSString *SUDefaultKeySessionKey = @"sessionKey";

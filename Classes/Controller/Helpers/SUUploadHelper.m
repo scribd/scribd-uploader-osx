@@ -81,7 +81,6 @@
 			delegate.uploadCompleteSheetDelegate = uploadCompleteSheetDelegate;
 			self.currentlyUploadingCount++;
 			NSMutableDictionary *docParams = [[NSMutableDictionary alloc] initWithDictionary:parameters];
-			NSLog([document description]);
 			[docParams setObject:([document.hidden boolValue] ? @"private" : @"public") forKey:@"access"];
 			[[SUScribdAPI sharedAPI] apiSubmitFile:document apiMethod:@"docs.upload" parameters:docParams delegate:delegate];
 			[docParams release];

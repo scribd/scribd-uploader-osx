@@ -18,6 +18,26 @@
 	<string>sec-5qwk78grmqsj98veknx86mazrh</string>
 	<key>ErrorMessages</key>
 	<dict>
+		<key>ChangeSettings</key>
+		<dict>
+			<key>Default</key>
+			<string>An error occurred when trying to set %@’s metadata: %@.</string>
+			<key>607</key>
+			<dict>
+				<key>Message</key>
+				<string>Scribd.com could not save the metadata you provided for %@.</string>
+			</dict>
+			<key>612</key>
+			<dict>
+				<key>Message</key>
+				<string>Scribd.com tried to set the metadata for %@, but couldn’t find the document.</string>
+			</dict>
+			<key>650</key>
+			<dict>
+				<key>Message</key>
+				<string>Scribd.com couldn’t set the metadata for %@ because one of the values was invalid.</string>
+			</dict>
+		</dict>
 		<key>Upload</key>
 		<dict>
 			<key>Default</key>
@@ -93,6 +113,8 @@
 		<string>Your documents have not yet been uploaded. They are still in the list should you want to try again later.</string>
 		<key>Upload</key>
 		<string>The file is still in your queue, and you can try uploading it again later.</string>
+		<key>ChangeSettings</key>
+		<string>Your documents have been uploaded, but you will have to go to www.scribd.com to set their metadata.</string>
 	</dict>
 </dict>
 </plist>

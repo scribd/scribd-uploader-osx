@@ -1,5 +1,11 @@
 #import "SUUploadDelegate.h"
 
+@interface SUUploadDelegate (Private)
+
+- (void) changeSettings;
+
+@end
+
 @implementation SUUploadDelegate
 
 @synthesize uploadWindow;
@@ -54,6 +60,7 @@
 			document.success = [NSNumber numberWithBool:YES];
 			document.error = NULL;
 			document.scribdID = [NSNumber numberWithInteger:[[response objectForKey:@"doc_id"] integerValue]];
+			[self changeSettings];
 		}
 		else document.success = [NSNumber numberWithBool:NO];
 	}
@@ -131,6 +138,35 @@
 
 - (void) setMaxValue:(double)newMax {
 	progressMax = newMax;
+}
+
+@end
+
+@implementation SUUploadDelegate (Private)
+
+- (void) changeSettings {
+	NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+	[parameters setObject:[SUSessionHelper sessionHelper].key forKey:@"session_key"];
+	[parameters setObject:document.scribdID forKey:@"doc_ids"];
+	if (document.title && ![document.title isBlank]) [parameters setObject:document.tags forKey:@"title"];
+	if (document.summary && ![document.summary isBlank]) [parameters setObject:document.summary forKey:@"description"];
+	if (document.tags && ![document.tags isBlank]) [parameters setObject:document.title forKey:@"tags"];
+	
+	NSError *error = NULL;
+	[[SUScribdAPI sharedAPI] callApiMethod:@"docs.changeSettings" parameters:parameters error:&error];
+	[parameters release];
+	
+	if (error) {
+		[error addMessagesForAction:SUChangeSettingsAction title:document.filename];
+		NSAlert *alert = [[NSAlert alloc] init];
+		[alert setAlertStyle:NSCriticalAlertStyle];
+		[alert setMessageText:[error localizedDescription]];
+		[alert setInformativeText:[error localizedRecoverySuggestion]];
+		[alert addButtonWithTitle:@"OK"];
+		[alert setShowsHelp:YES];
+		[alert setHelpAnchor:[NSString stringWithFormat:@"changesettings_error", [error code]]];
+		[alert runModal];
+	}
 }
 
 @end
