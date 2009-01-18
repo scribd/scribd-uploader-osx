@@ -1,6 +1,6 @@
-#import "SUInformationPanelDelegate.h"
+#import "SUInformationDrawerDelegate.h"
 
-@implementation SUInformationPanelDelegate
+@implementation SUInformationDrawerDelegate
 
 - (void) awakeFromNib {
 	[tagsField setTokenizingCharacterSet:[NSCharacterSet characterSetWithCharactersInString:@" \n\r,;|-"]];

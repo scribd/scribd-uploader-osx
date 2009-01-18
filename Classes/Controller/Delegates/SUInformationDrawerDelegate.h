@@ -1,10 +1,10 @@
 /*!
- @class SUInformationPanelDelegate
+ @class SUInformationDrawerDelegate
  @abstract Receives events from the information panel. This class is also the
  delegate for the Tags token field.
  */
 
-@interface SUInformationPanelDelegate : NSObject {
+@interface SUInformationDrawerDelegate : NSObject {
 	IBOutlet SUDocumentArrayController *documentsController;
 	IBOutlet NSTokenField *tagsField;
 	IBOutlet NSDrawer *drawer;

@@ -2591,7 +2591,7 @@ ciBoZWxwIHZpZXdlci4</string>
 				<bool key="NSAutomaticallyRearrangesObjects">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="264068378">
-				<string key="NSClassName">SUInformationPanelDelegate</string>
+				<string key="NSClassName">SUInformationDrawerDelegate</string>
 			</object>
 			<object class="NSTreeController" id="925721565">
 				<object class="NSMutableArray" key="NSDeclaredKeys">
@@ -4277,22 +4277,6 @@ ciBoZWxwIHZpZXdlci4</string>
 					<int key="connectionID">1528</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">documentsController</string>
-						<reference key="source" ref="264068378"/>
-						<reference key="destination" ref="603642860"/>
-					</object>
-					<int key="connectionID">1556</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">showHelp:</string>
-						<reference key="source" ref="264068378"/>
-						<reference key="destination" ref="886749108"/>
-					</object>
-					<int key="connectionID">1558</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: selectedObjects.@count</string>
 						<reference key="source" ref="366698925"/>
@@ -4358,14 +4342,6 @@ ciBoZWxwIHZpZXdlci4</string>
 						</object>
 					</object>
 					<int key="connectionID">1567</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">tagsField</string>
-						<reference key="source" ref="264068378"/>
-						<reference key="destination" ref="855261418"/>
-					</object>
-					<int key="connectionID">1592</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -4493,12 +4469,20 @@ ciBoZWxwIHZpZXdlci4</string>
 					<int key="connectionID">1669</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">toggleDrawerItem</string>
+					<object class="IBActionConnection" key="connection">
+						<string key="label">toggleMenuItem:</string>
 						<reference key="source" ref="264068378"/>
 						<reference key="destination" ref="534002808"/>
 					</object>
-					<int key="connectionID">1670</int>
+					<int key="connectionID">1673</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showHelp:</string>
+						<reference key="source" ref="264068378"/>
+						<reference key="destination" ref="886749108"/>
+					</object>
+					<int key="connectionID">1674</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -4506,15 +4490,31 @@ ciBoZWxwIHZpZXdlci4</string>
 						<reference key="source" ref="264068378"/>
 						<reference key="destination" ref="152670149"/>
 					</object>
-					<int key="connectionID">1671</int>
+					<int key="connectionID">1675</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">toggleMenuItem:</string>
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">tagsField</string>
+						<reference key="source" ref="264068378"/>
+						<reference key="destination" ref="855261418"/>
+					</object>
+					<int key="connectionID">1676</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">documentsController</string>
+						<reference key="source" ref="264068378"/>
+						<reference key="destination" ref="603642860"/>
+					</object>
+					<int key="connectionID">1677</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">toggleDrawerItem</string>
 						<reference key="source" ref="264068378"/>
 						<reference key="destination" ref="534002808"/>
 					</object>
-					<int key="connectionID">1672</int>
+					<int key="connectionID">1678</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6796,7 +6796,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1672</int>
+			<int key="maxID">1678</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -6931,7 +6931,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">SUInformationPanelDelegate</string>
+					<string key="className">SUInformationDrawerDelegate</string>
 					<string key="superclassName">NSObject</string>
 					<object class="NSMutableDictionary" key="actions">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -6965,7 +6965,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/Controller/Delegates/SUInformationPanelDelegate.h</string>
+						<string key="minorKey">Classes/Controller/Delegates/SUInformationDrawerDelegate.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

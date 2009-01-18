@@ -42,7 +42,7 @@
 		0128AFA20F1479A000EC3C28 /* Scribd_Uploader_DataModelModel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0128AFA10F1479A000EC3C28 /* Scribd_Uploader_DataModelModel.strings */; };
 		012E5DC80F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 012E5DC70F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld */; };
 		012E5E250F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5E240F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m */; };
-		012E5E740F20837C0037ECDA /* SUInformationPanelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5E730F20837C0037ECDA /* SUInformationPanelDelegate.m */; };
+		012E5E740F20837C0037ECDA /* SUInformationDrawerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5E730F20837C0037ECDA /* SUInformationDrawerDelegate.m */; };
 		012E5E830F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5E820F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.m */; };
 		012E5EBD0F214EE70037ECDA /* SUCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5EBC0F214EE70037ECDA /* SUCategory.m */; };
 		012E5EDA0F216DB60037ECDA /* NSArray_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5ED90F216DB60037ECDA /* NSArray_SUAdditions.m */; };
@@ -151,8 +151,8 @@
 		012E5DC90F1F32B10037ECDA /* Scribd_Uploader_DataModel 210.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Scribd_Uploader_DataModel 210.xcdatamodel"; sourceTree = "<group>"; };
 		012E5E230F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDiscoverabilityDescriptionValueTransformer.h; sourceTree = "<group>"; };
 		012E5E240F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDiscoverabilityDescriptionValueTransformer.m; sourceTree = "<group>"; };
-		012E5E720F20837C0037ECDA /* SUInformationPanelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUInformationPanelDelegate.h; sourceTree = "<group>"; };
-		012E5E730F20837C0037ECDA /* SUInformationPanelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUInformationPanelDelegate.m; sourceTree = "<group>"; };
+		012E5E720F20837C0037ECDA /* SUInformationDrawerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUInformationDrawerDelegate.h; sourceTree = "<group>"; };
+		012E5E730F20837C0037ECDA /* SUInformationDrawerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUInformationDrawerDelegate.m; sourceTree = "<group>"; };
 		012E5E810F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSingleSelectionOnlyValueTransformer.h; sourceTree = "<group>"; };
 		012E5E820F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSingleSelectionOnlyValueTransformer.m; sourceTree = "<group>"; };
 		012E5EBB0F214EE70037ECDA /* SUCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUCategory.h; sourceTree = "<group>"; };
@@ -259,8 +259,8 @@
 				0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */,
 				01AC0EAB0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.h */,
 				01AC0EAC0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.m */,
-				012E5E720F20837C0037ECDA /* SUInformationPanelDelegate.h */,
-				012E5E730F20837C0037ECDA /* SUInformationPanelDelegate.m */,
+				012E5E720F20837C0037ECDA /* SUInformationDrawerDelegate.h */,
+				012E5E730F20837C0037ECDA /* SUInformationDrawerDelegate.m */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -583,7 +583,7 @@
 				01AF60020F1D27D300D51D07 /* DBPrefsWindowController.m in Sources */,
 				01AF60050F1D284900D51D07 /* SUPreferencesWindowController.m in Sources */,
 				012E5E250F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m in Sources */,
-				012E5E740F20837C0037ECDA /* SUInformationPanelDelegate.m in Sources */,
+				012E5E740F20837C0037ECDA /* SUInformationDrawerDelegate.m in Sources */,
 				012E5E830F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.m in Sources */,
 				012E5EBD0F214EE70037ECDA /* SUCategory.m in Sources */,
 				012E5EDA0F216DB60037ECDA /* NSArray_SUAdditions.m in Sources */,
