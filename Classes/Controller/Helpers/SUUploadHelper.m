@@ -2,7 +2,6 @@
 
 @implementation SUUploadHelper
 
-@synthesize uploadAsPrivate;
 @synthesize isBusy;
 @synthesize currentlyUploadingCount;
 @dynamic isUploading;
@@ -70,7 +69,6 @@
 	}
 	
 	NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-								(uploadAsPrivate ? @"private" : @"public"), @"access",
 								[SUSessionHelper sessionHelper].key, @"session_key",
 								NULL];
 	NSError *error = NULL;
@@ -82,7 +80,11 @@
 			delegate.uploadCompleteSheet = uploadCompleteSheet;
 			delegate.uploadCompleteSheetDelegate = uploadCompleteSheetDelegate;
 			self.currentlyUploadingCount++;
-			[[SUScribdAPI sharedAPI] apiSubmitFile:document apiMethod:@"docs.upload" parameters:parameters delegate:delegate];
+			NSMutableDictionary *docParams = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+			NSLog([document description]);
+			[docParams setObject:([document.hidden boolValue] ? @"private" : @"public") forKey:@"access"];
+			[[SUScribdAPI sharedAPI] apiSubmitFile:document apiMethod:@"docs.upload" parameters:docParams delegate:delegate];
+			[docParams release];
 		}
 	}
 }

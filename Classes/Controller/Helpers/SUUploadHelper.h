@@ -13,7 +13,6 @@
  */
 
 @interface SUUploadHelper : NSObject {
-	BOOL uploadAsPrivate;
 	BOOL isBusy;
 	NSUInteger currentlyUploadingCount;
 	NSString *busyAction;
@@ -23,14 +22,6 @@
 	IBOutlet SUUploadCompleteSheetDelegate *uploadCompleteSheetDelegate;
 	IBOutlet SUDatabaseHelper *db;
 }
-
-/*!
- @property uploadAsPrivate
- @abstract If YES, documents will be uploaded with the private flag set to true.
- Otherwise, documents will be public.
- */
-
-@property (assign) BOOL uploadAsPrivate;
 
 /*!
  @property isBusy
