@@ -96,7 +96,7 @@
 - (BOOL) validateToolbarItem:(NSToolbarItem *)item {
 	if ([item action] == @selector(uploadAllAction:) || [item action] == @selector(uploadSelectionAction:)) {
 		NSError *error = NULL;
-		return (![uploader isUploading] && [[SUDocumentHelper documentManager] numberOfPendingDocumentsInManagedObjectContext:db.managedObjectContext error:&error] > 0);
+		return (![uploader isUploading] && [SUDocument numberOfPendingInManagedObjectContext:db.managedObjectContext error:&error] > 0);
 	}
 	else return YES;
 }
@@ -110,7 +110,7 @@
 	
 	[openPanel setAllowsMultipleSelection:YES];
 	[openPanel setPrompt:@"Add"];
-	[openPanel beginSheetForDirectory:NULL file:NULL types:[[SUDocumentHelper documentManager] scribdFileTypes] modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+	[openPanel beginSheetForDirectory:NULL file:NULL types:[SUDocument scribdFileTypes] modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 }
 
 /*
@@ -169,7 +169,7 @@
 		NSArray *filesToAdd = [panel filenames];
 		for (NSString *path in filesToAdd) {
 			SUDocument *existingDocument = NULL;
-			if (existingDocument = [[SUDocumentHelper documentManager] findDocumentByPath:path inManagedObjectContext:db.managedObjectContext])
+			if (existingDocument = [SUDocument findByPath:path inManagedObjectContext:db.managedObjectContext])
 				[db.managedObjectContext deleteObject:existingDocument];
 			NSManagedObject *file = [NSEntityDescription insertNewObjectForEntityForName:@"Document" inManagedObjectContext:db.managedObjectContext];
 			[file setValue:[path stringByStandardizingPath] forKey:@"path"];

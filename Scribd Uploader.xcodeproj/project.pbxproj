@@ -15,7 +15,6 @@
 		0128AF350F1478F300EC3C28 /* SUUploadDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEE30F1478F300EC3C28 /* SUUploadDelegate.m */; };
 		0128AF360F1478F300EC3C28 /* NSError_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEE60F1478F300EC3C28 /* NSError_SUAdditions.m */; };
 		0128AF370F1478F300EC3C28 /* SUDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEE80F1478F300EC3C28 /* SUDatabaseHelper.m */; };
-		0128AF380F1478F300EC3C28 /* SUDocumentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEEA0F1478F300EC3C28 /* SUDocumentHelper.m */; };
 		0128AF390F1478F300EC3C28 /* SUUploadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEEC0F1478F300EC3C28 /* SUUploadHelper.m */; };
 		0128AF3A0F1478F300EC3C28 /* SUDocumentArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEEE0F1478F300EC3C28 /* SUDocumentArrayController.m */; };
 		0128AF3B0F1478F300EC3C28 /* SUUploadErrorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF00F1478F300EC3C28 /* SUUploadErrorController.m */; };
@@ -107,8 +106,6 @@
 		0128AEE60F1478F300EC3C28 /* NSError_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSError_SUAdditions.m; sourceTree = "<group>"; };
 		0128AEE70F1478F300EC3C28 /* SUDatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDatabaseHelper.h; sourceTree = "<group>"; };
 		0128AEE80F1478F300EC3C28 /* SUDatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDatabaseHelper.m; sourceTree = "<group>"; };
-		0128AEE90F1478F300EC3C28 /* SUDocumentHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDocumentHelper.h; sourceTree = "<group>"; };
-		0128AEEA0F1478F300EC3C28 /* SUDocumentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDocumentHelper.m; sourceTree = "<group>"; };
 		0128AEEB0F1478F300EC3C28 /* SUUploadHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUploadHelper.h; sourceTree = "<group>"; };
 		0128AEEC0F1478F300EC3C28 /* SUUploadHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUploadHelper.m; sourceTree = "<group>"; };
 		0128AEED0F1478F300EC3C28 /* SUDocumentArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDocumentArrayController.h; sourceTree = "<group>"; };
@@ -275,8 +272,6 @@
 				0128AEE60F1478F300EC3C28 /* NSError_SUAdditions.m */,
 				0128AEE70F1478F300EC3C28 /* SUDatabaseHelper.h */,
 				0128AEE80F1478F300EC3C28 /* SUDatabaseHelper.m */,
-				0128AEE90F1478F300EC3C28 /* SUDocumentHelper.h */,
-				0128AEEA0F1478F300EC3C28 /* SUDocumentHelper.m */,
 				0128AEEB0F1478F300EC3C28 /* SUUploadHelper.h */,
 				0128AEEC0F1478F300EC3C28 /* SUUploadHelper.m */,
 				01ABF7F80F147DCC00EE7142 /* SUSessionHelper.h */,
@@ -561,7 +556,6 @@
 				0128AF350F1478F300EC3C28 /* SUUploadDelegate.m in Sources */,
 				0128AF360F1478F300EC3C28 /* NSError_SUAdditions.m in Sources */,
 				0128AF370F1478F300EC3C28 /* SUDatabaseHelper.m in Sources */,
-				0128AF380F1478F300EC3C28 /* SUDocumentHelper.m in Sources */,
 				0128AF390F1478F300EC3C28 /* SUUploadHelper.m in Sources */,
 				0128AF3A0F1478F300EC3C28 /* SUDocumentArrayController.m in Sources */,
 				0128AF3B0F1478F300EC3C28 /* SUUploadErrorController.m in Sources */,

@@ -21,9 +21,9 @@
 	NSArray *files = [[info draggingPasteboard] propertyListForType:NSFilenamesPboardType];
 	BOOL atLeastOneWasAdded = NO;
 	for (NSString *path in files) {
-		if ([[[SUDocumentHelper documentManager] scribdFileTypes] containsObject:[path pathExtension]]) {
+		if ([[SUDocument scribdFileTypes] containsObject:[path pathExtension]]) {
 			SUDocument *existingDocument = NULL;
-			if (existingDocument = [[SUDocumentHelper documentManager] findDocumentByPath:path inManagedObjectContext:db.managedObjectContext])
+			if (existingDocument = [SUDocument findByPath:path inManagedObjectContext:db.managedObjectContext])
 				[db.managedObjectContext deleteObject:existingDocument];
 			NSManagedObject *file = [NSEntityDescription insertNewObjectForEntityForName:@"Document" inManagedObjectContext:db.managedObjectContext];
 			[file setValue:[path stringByStandardizingPath] forKey:@"path"];

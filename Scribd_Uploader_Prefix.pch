@@ -21,7 +21,6 @@
 #import "SUDocument.h"
 #import "SUCategory.h"
 #import "SUFileNotFoundAlertDelegate.h"
-#import "SUDocumentHelper.h"
 #import "SUDatabaseHelper.h"
 #import "SUUploadCompleteSheetDelegate.h"
 #import "SUUploadHelper.h"

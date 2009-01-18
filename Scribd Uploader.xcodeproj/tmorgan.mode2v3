@@ -330,14 +330,11 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>39</integer>
-											<integer>37</integer>
-											<integer>1</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 310}, {453, 700}}</string>
+									<string>{{0, 0}, {453, 700}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -519,7 +516,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>253926945.27129599</real>
+	<real>253999381.22295699</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -534,7 +531,6 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>013C934F0F229E2100061162</string>
 		<string>013C91660F21ADF400061162</string>
 		<string>013C91670F21ADF400061162</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
@@ -696,30 +692,30 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SUDocument.m</string>
+								<string>SUScribdAPI.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1097, 424}}</string>
+								<string>{{0, 0}, {1118, 644}}</string>
 								<key>RubberWindowFrame</key>
-								<string>362 123 1097 706 0 0 1680 1028 </string>
+								<string>122 64 1118 926 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>424pt</string>
+							<string>644pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -734,9 +730,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 429}, {1097, 236}}</string>
+								<string>{{0, 649}, {1118, 236}}</string>
 								<key>RubberWindowFrame</key>
-								<string>362 123 1097 706 0 0 1680 1028 </string>
+								<string>122 64 1118 926 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -745,7 +741,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>665pt</string>
+					<string>885pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -766,7 +762,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.buildV3</string>
 			<key>WindowString</key>
-			<string>362 123 1097 706 0 0 1680 1028 </string>
+			<string>122 64 1118 926 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
 			<string>1C530D52069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
@@ -912,14 +908,12 @@
 							<key>Dock</key>
 							<array>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SUScribdAPI.m</string>
+										<string>SUCategory.m</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -940,6 +934,8 @@
 							<string>431pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

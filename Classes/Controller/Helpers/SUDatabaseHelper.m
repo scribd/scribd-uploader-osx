@@ -132,12 +132,12 @@
 
 - (void) purgeNonexistentDocuments {
 	NSError *error = NULL;
-	NSArray *objects = [[SUDocumentHelper documentManager] allDocumentsInManagedObjectContext:self.managedObjectContext error:&error];
+	NSArray *objects = [SUDocument findAllInManagedObjectContext:self.managedObjectContext error:&error];
 	int deleteCount = 0;
 	NSString *singleFileName;
 	if (objects) {
 		for (SUDocument *doc in objects) {
-			if (![[SUDocumentHelper documentManager] documentPointsToActualFile:doc]) {
+			if (![doc pointsToActualFile]) {
 				// store the name of the file in case it's the only one
 				if (deleteCount == 0) singleFileName = [doc filename];
 				[self.managedObjectContext deleteObject:doc];
@@ -153,7 +153,7 @@
 
 - (void) purgeCompletedDocuments {
 	NSError *error = NULL;
-	NSArray *objects = [[SUDocumentHelper documentManager] completedDocumentsInManagedObjectContext:self.managedObjectContext error:&error];
+	NSArray *objects = [SUDocument findCompletedInManagedObjectContext:self.managedObjectContext error:&error];
 	if (objects)
 		for (SUDocument *doc in objects) [self.managedObjectContext deleteObject:doc];
 }

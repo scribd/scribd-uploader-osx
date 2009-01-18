@@ -19,6 +19,8 @@
 @dynamic kind;
 @dynamic discoverability;
 
+#pragma mark Initialization/deallocation
+
 /*
  You're not really supposed to override init for managed objects, but I see no
  other way I can ensure that wrapper is nilled out before anyone else touches it.
@@ -50,6 +52,19 @@
 - (void) awakeFromFetch {
 	[self addObserver:self forKeyPath:@"path" options:NSKeyValueObservingOptionNew context:NULL];
 }
+
+/*
+ Releases retained objects.
+ */
+
+- (void) dealloc {
+	if (wrapper) [wrapper release];
+	if (kind) [kind release];
+	[super dealloc];
+}
+
+#pragma mark -
+#pragma mark Derived properties
 
 - (NSString *) filename {
 	return [[NSFileManager defaultManager] displayNameAtPath:self.path];
@@ -84,6 +99,13 @@
 	if (!wrapper) wrapper = [[NSFileWrapper alloc] initWithPath:self.path];
 	return wrapper;
 }
+
+- (BOOL) pointsToActualFile {
+	return [[NSFileManager defaultManager] fileExistsAtPath:self.path];
+}
+
+#pragma mark -
+#pragma mark Key paths
 
 /*
  When the path changes, we need to release the wrapper and kind to prepare for
@@ -139,14 +161,117 @@
 	return [NSSet setWithObjects:@"title", @"summary", @"category", @"hidden", NULL];
 }
 
-/*
- Releases retained objects.
- */
+#pragma mark -
+#pragma mark Finders
 
-- (void) dealloc {
-	if (wrapper) [wrapper release];
-	if (kind) [kind release];
-	[super dealloc];
++ (SUDocument *) findByPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
+	
+	NSExpression *lhs = [NSExpression expressionForKeyPath:@"path"];
+	NSExpression *rhs = [NSExpression expressionForConstantValue:[path stringByStandardizingPath]];
+	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																   rightExpression:rhs
+																		  modifier:NSDirectPredicateModifier
+																			  type:NSEqualToPredicateOperatorType
+																		   options:NSCaseInsensitivePredicateOption];
+	
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setEntity:docEntity];
+	[fetchRequest setPredicate:predicate];
+	
+	NSError *error = NULL;
+	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+	[predicate release];
+	[fetchRequest release];
+	
+	if (objects && [objects count] > 0) return [objects objectAtIndex:0];
+	else return NULL;
+}
+	
+
++ (NSArray *) findAllInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
+	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
+	
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setEntity:docEntity];
+	
+	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:error];
+	[fetchRequest release];
+	
+	return objects;
+}
+
++ (NSArray *) findPendingInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
+	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
+	
+	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
+	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNull null]];
+	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																   rightExpression:rhs
+																		  modifier:NSDirectPredicateModifier
+																			  type:NSEqualToPredicateOperatorType
+																		   options:NSCaseInsensitivePredicateOption];
+	
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setEntity:docEntity];
+	[fetchRequest setPredicate:predicate];
+	
+	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:error];
+	[predicate release];
+	[fetchRequest release];
+	
+	return objects;
+}
+
++ (NSArray *) findCompletedInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
+	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
+	
+	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
+	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNumber numberWithBool:YES]];
+	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																   rightExpression:rhs
+																		  modifier:NSDirectPredicateModifier
+																			  type:NSEqualToPredicateOperatorType
+																		   options:NSCaseInsensitivePredicateOption];
+	
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setEntity:docEntity];
+	[fetchRequest setPredicate:predicate];
+	
+	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:error];
+	[predicate release];
+	[fetchRequest release];
+	
+	return objects;
+}
+
++ (NSUInteger) numberOfPendingInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
+	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
+	
+	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
+	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNull null]];
+	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																   rightExpression:rhs
+																		  modifier:NSDirectPredicateModifier
+																			  type:NSEqualToPredicateOperatorType
+																		   options:NSCaseInsensitivePredicateOption];
+	
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setEntity:docEntity];
+	[fetchRequest setPredicate:predicate];
+	
+	NSUInteger count = [managedObjectContext countForFetchRequest:fetchRequest error:error];
+	[predicate release];
+	[fetchRequest release];
+	
+	return count;
+}
+
+#pragma mark -
+#pragma mark Other
+
++ (NSArray *) scribdFileTypes {
+	return [[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FileTypes" ofType:@"plist"]] allKeys];
 }
 
 @end

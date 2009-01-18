@@ -131,7 +131,73 @@
 
 @property (readonly) NSNumber *discoverability;
 
-#pragma mark Methods
+#pragma mark Class methods
+
+/*!
+ @method findByPath:inManagedObjectContext:
+ @abstract Finds a document by its path. Assumes that only one or zero
+ document object(s) will exist with that path.
+ @param path The path to search by.
+ @param managedObjectContext The managed object context to search in.
+ @result The document with that path, or NULL if no such document was found.
+ */
+
++ (SUDocument *) findByPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
+/*!
+ @method scribdFileTypes
+ @abstract Returns an array of strings, each containing a valid file extension
+ accepted by Scribd.
+ @result An array of acceptable file types.
+ */
+
++ (NSArray *) scribdFileTypes;
+
+/*!
+ @method findAllInManagedObjectContext:error:
+ @abstract Returns an array of every document in the context.
+ @param managedObjectContext The managed object context.
+ @param error Stores any errors in fetching the documents.
+ @result An array of all documents.
+ */
+
++ (NSArray *) findAllInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
+
+/*!
+ @method findPendingInManagedObjectContext:error:
+ @abstract Returns an array of every document in the context that has not yet
+ been successfully uploaded.
+ @param managedObjectContext The managed object context.
+ @param error Stores any errors in fetching the documents.
+ @result An array of all pending documents.
+ */
+
++ (NSArray *) findPendingInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
+
+/*!
+ @method findCompletedInManagedObjectContext:error:
+ @abstract Returns an array of every document in the context that has been
+ successfully uploaded.
+ @param managedObjectContext The managed object context.
+ @param error Stores any errors in fetching the documents.
+ @result An array of all completed documents.
+ */
+
++ (NSArray *) findCompletedInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
+
+/*!
+ @method numberOfPendingInManagedObjectContext:error:
+ @abstract Returns the total number of documents in the context that have yet to
+ be uploaded.
+ @param managedObjectContext The managed object context.
+ @param error Stores any errors in fetching the document count.
+ @result The number of documents yet to be uploaded, or zero if an error
+ occurred.
+ */
+
++ (NSUInteger) numberOfPendingInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
+
+#pragma mark Instance methods
 
 /*!
  @method wrapper
@@ -141,5 +207,13 @@
  */
 
 - (NSFileWrapper *) wrapper;
+
+/*!
+ @method pointsToActualFile:
+ @abstract Tests if a file actually exists at the path stored by the document.
+ @result YES if the path yields an actual file.
+ */
+
+- (BOOL) pointsToActualFile;
 
 @end

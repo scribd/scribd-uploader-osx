@@ -74,7 +74,7 @@
 								[SUSessionHelper sessionHelper].key, @"session_key",
 								NULL];
 	NSError *error = NULL;
-	NSArray *documents = [[SUDocumentHelper documentManager] pendingDocumentsInManagedObjectContext:db.managedObjectContext error:&error];
+	NSArray *documents = [SUDocument findPendingInManagedObjectContext:db.managedObjectContext error:&error];
 	if (documents && [documents count]) {
 		for (SUDocument *document in documents) {
 			SUUploadDelegate *delegate = [[SUUploadDelegate alloc] initWithDocument:document inManagedObjectContext:db.managedObjectContext fromUploader:self];
