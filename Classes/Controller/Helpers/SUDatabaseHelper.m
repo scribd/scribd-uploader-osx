@@ -162,7 +162,15 @@
 	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:self.managedObjectContext];
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
-	[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"progress != %@" argumentArray:[NSArray arrayWithObject:[NSNumber numberWithFloat:0.0]]]];
+	
+	NSExpression *lhs = [NSExpression expressionForKeyPath:@"progress"];
+	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNumber numberWithFloat:0.0]];
+	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																   rightExpression:rhs
+																		  modifier:NSDirectPredicateModifier
+																			  type:NSNotEqualToPredicateOperatorType
+																		   options:0];
+	[fetchRequest setPredicate:predicate];
 	
 	NSError *error = NULL;
 	NSArray *objects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
@@ -173,6 +181,7 @@
 		[self.managedObjectContext save:&error];
 	}
 	
+	[predicate release];
 	[fetchRequest release];
 }
 

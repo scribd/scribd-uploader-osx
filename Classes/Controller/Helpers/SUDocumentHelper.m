@@ -71,11 +71,11 @@ static SUDocumentHelper *sharedDocumentManager = NULL;
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"path"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[path stringByStandardizingPath]];
-	NSPredicate *predicate = [NSComparisonPredicate predicateWithLeftExpression:lhs
-																rightExpression:rhs
-																	   modifier:NSDirectPredicateModifier
-																		   type:NSEqualToPredicateOperatorType
-																		options:NSCaseInsensitivePredicateOption];
+	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																   rightExpression:rhs
+																		  modifier:NSDirectPredicateModifier
+																			  type:NSEqualToPredicateOperatorType
+																		   options:NSCaseInsensitivePredicateOption];
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
@@ -83,6 +83,7 @@ static SUDocumentHelper *sharedDocumentManager = NULL;
 	
 	NSError *error = NULL;
 	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+	[predicate release];
 	[fetchRequest release];
 	
 	if (objects && [objects count] > 0) return [objects objectAtIndex:0];
@@ -114,17 +115,18 @@ static SUDocumentHelper *sharedDocumentManager = NULL;
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNull null]];
-	NSPredicate *predicate = [NSComparisonPredicate predicateWithLeftExpression:lhs
-																rightExpression:rhs
-																	   modifier:NSDirectPredicateModifier
-																		   type:NSEqualToPredicateOperatorType
-																		options:NSCaseInsensitivePredicateOption];
+	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																   rightExpression:rhs
+																		  modifier:NSDirectPredicateModifier
+																			  type:NSEqualToPredicateOperatorType
+																		   options:NSCaseInsensitivePredicateOption];
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
 	[fetchRequest setPredicate:predicate];
 	
 	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:error];
+	[predicate release];
 	[fetchRequest release];
 	
 	return objects;
@@ -135,17 +137,18 @@ static SUDocumentHelper *sharedDocumentManager = NULL;
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNumber numberWithBool:YES]];
-	NSPredicate *predicate = [NSComparisonPredicate predicateWithLeftExpression:lhs
-																rightExpression:rhs
-																	   modifier:NSDirectPredicateModifier
-																		   type:NSEqualToPredicateOperatorType
-																		options:NSCaseInsensitivePredicateOption];	
+	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																   rightExpression:rhs
+																		  modifier:NSDirectPredicateModifier
+																			  type:NSEqualToPredicateOperatorType
+																		   options:NSCaseInsensitivePredicateOption];
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
 	[fetchRequest setPredicate:predicate];
 	
 	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:error];
+	[predicate release];
 	[fetchRequest release];
 	
 	return objects;
@@ -156,17 +159,18 @@ static SUDocumentHelper *sharedDocumentManager = NULL;
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNull null]];
-	NSPredicate *predicate = [NSComparisonPredicate predicateWithLeftExpression:lhs
-																rightExpression:rhs
-																	   modifier:NSDirectPredicateModifier
-																		   type:NSEqualToPredicateOperatorType
-																		options:NSCaseInsensitivePredicateOption];
+	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																   rightExpression:rhs
+																		  modifier:NSDirectPredicateModifier
+																			  type:NSEqualToPredicateOperatorType
+																		   options:NSCaseInsensitivePredicateOption];
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
 	[fetchRequest setPredicate:predicate];
 	
 	NSUInteger count = [managedObjectContext countForFetchRequest:fetchRequest error:error];
+	[predicate release];
 	[fetchRequest release];
 	
 	return count;
