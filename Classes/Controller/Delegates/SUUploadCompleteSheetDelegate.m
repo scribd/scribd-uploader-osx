@@ -5,7 +5,7 @@
 - (IBAction) editOnWebsite:(id)sender {
 	NSString *URLFormat = [[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]] objectForKey:@"EditURL"];
 	NSError *error = NULL;
-	NSArray *docs = [SUDocument completedDocumentsInManagedObjectContext:db.managedObjectContext error:&error];
+	NSArray *docs = [SUDocument findCompletedInManagedObjectContext:db.managedObjectContext error:&error];
 	if (error) {
 		NSAlert *alert = [[NSAlert alloc] init];
 		[alert setAlertStyle:NSCriticalAlertStyle];
