@@ -14,4 +14,15 @@
 	return [[SUScribdAPI sharedAPI] autocompletionsForSubstring:substring];
 }
 
+- (IBAction) toggleMenuItem:(id)sender {
+	if ([drawer state] == NSDrawerOpenState || [drawer state] == NSDrawerOpeningState) {
+		[drawer close:self];
+		[toggleDrawerItem setTitle:@"Show Information Drawer"];
+	}
+	else {
+		[drawer open:self];
+		[toggleDrawerItem setTitle:@"Hide Information Drawer"];
+	}
+}
+
 @end
