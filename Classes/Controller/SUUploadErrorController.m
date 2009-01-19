@@ -6,7 +6,7 @@
 	NSError *error = [errors objectAtIndex:[index unsignedIntValue]];
 	if ([error isEqualTo:[NSNull null]]) return;
 	NSAlert *alert = [[NSAlert alloc] init];
-	[alert setAlertStyle:NSWarningAlertStyle];
+	[alert setAlertStyle:NSWarningAlertStyle]; //TODO warning or critical depending on error type
 	[alert setMessageText:[error localizedDescription]];
 	[alert setInformativeText:[error localizedRecoverySuggestion]];
 	[alert addButtonWithTitle:@"OK"];

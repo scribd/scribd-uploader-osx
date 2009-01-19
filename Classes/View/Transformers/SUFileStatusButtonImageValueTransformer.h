@@ -10,7 +10,7 @@
  */
 
 @interface SUFileStatusButtonImageValueTransformer : NSValueTransformer {
-	NSImage *successImage, *errorImage;
+	NSImage *successImage, *cautionImage, *errorImage;
 }
 
 @end

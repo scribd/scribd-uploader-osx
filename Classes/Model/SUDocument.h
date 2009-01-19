@@ -47,6 +47,14 @@
 @property (copy) NSData *error;
 
 /*!
+ @property errorIsUnrecoverable
+ @abstract YES if the error was bad enough that the document was not uploaded;
+ NO if the document was uploaded but another problem occurred.
+ */
+
+@property (copy) NSNumber *errorIsUnrecoverable;
+
+/*!
  @property scribdID
  @abstract The Scribd.com ID given to this document, once it has been
  successfully uploaded.
@@ -131,6 +139,16 @@
 
 @property (readonly) NSNumber *discoverability;
 
+/*!
+ @property errorLevel
+ @abstract Returns a string describing the error state of this document.
+ @result "Success" if no error has occurred, "Caution" if the document was
+ uploaded but an error occurred, "Error" if an error occurred preventing the
+ document from being uploaded, or "Pending" if no upload has occurred yet.
+ */
+
+@property (readonly) NSString *errorLevel;
+
 #pragma mark Class methods
 
 /*!
@@ -175,7 +193,7 @@
 + (NSArray *) findPendingInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
 
 /*!
- @method findCompletedInManagedObjectContext:error:
+ @method findUploadedInManagedObjectContext:error:
  @abstract Returns an array of every document in the context that has been
  successfully uploaded.
  @param managedObjectContext The managed object context.
@@ -183,7 +201,7 @@
  @result An array of all completed documents.
  */
 
-+ (NSArray *) findCompletedInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
++ (NSArray *) findUploadedInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
 
 /*!
  @method numberOfPendingInManagedObjectContext:error:

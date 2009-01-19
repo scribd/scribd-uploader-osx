@@ -7,7 +7,7 @@
  */
 
 - (void) awakeFromNib {
-	[[[self tableView] dataSource] addObserver:self forKeyPath:@"arrangedObjects.success" options:NSKeyValueObservingOptionNew context:NULL];
+	[[[self tableView] dataSource] addObserver:self forKeyPath:@"arrangedObjects.errorLevel" options:NSKeyValueObservingOptionNew context:NULL];
 }
 
 /*
@@ -15,12 +15,12 @@
  */
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-	if ([keyPath isEqualToString:@"arrangedObjects.success"]) {
-		NSArray *successes = [object valueForKeyPath:keyPath];
+	if ([keyPath isEqualToString:@"arrangedObjects.errorLevel"]) {
+		NSArray *levels = [object valueForKeyPath:keyPath];
 		NSValueTransformer *buttonImageTransformer = [NSValueTransformer valueTransformerForName:@"SUFileStatusButtonImage"];
 		NSInteger row;
-		for (row=0; row!=[successes count]; row++)
-			[(NSButtonCell *)([self dataCellForRow:row]) setImage:[buttonImageTransformer transformedValue:[successes objectAtIndex:row]]];
+		for (row = 0; row != [levels count]; row++)
+			[(NSButtonCell *)([self dataCellForRow:row]) setImage:[buttonImageTransformer transformedValue:[levels objectAtIndex:row]]];
 	}
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }

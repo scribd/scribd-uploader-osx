@@ -6,6 +6,7 @@
 @dynamic progress;
 @dynamic success;
 @dynamic error;
+@dynamic errorIsUnrecoverable;
 @dynamic scribdID;
 @dynamic hidden;
 @dynamic title;
@@ -18,6 +19,7 @@
 @dynamic icon;
 @dynamic kind;
 @dynamic discoverability;
+@dynamic errorLevel;
 
 #pragma mark Initialization/deallocation
 
@@ -91,10 +93,6 @@
 	return [NSNumber numberWithUnsignedInteger:disc];
 }
 
-/*
- Lazily initializes an NSFileWrapper for the file.
- */
-
 - (NSFileWrapper *) wrapper {
 	if (!wrapper) wrapper = [[NSFileWrapper alloc] initWithPath:self.path];
 	return wrapper;
@@ -102,6 +100,15 @@
 
 - (BOOL) pointsToActualFile {
 	return [[NSFileManager defaultManager] fileExistsAtPath:self.path];
+}
+
+- (NSString *) errorLevel {
+	if (self.success && [self.success boolValue]) return @"Success";
+	if (self.error) {
+		if (self.errorIsUnrecoverable && [self.errorIsUnrecoverable boolValue]) return @"Error";
+		else return @"Caution";
+	}
+	return @"Pending";
 }
 
 #pragma mark -
@@ -161,6 +168,14 @@
 	return [NSSet setWithObjects:@"title", @"summary", @"category", @"hidden", NULL];
 }
 
+/*
+ Error level is determined by success, error, and unrecoverable status.
+ */
+
++ (NSSet *) keyPathsForValuesAffectingErrorLevel {
+	return [NSSet setWithObjects:@"error", @"success", @"errorIsUnrecoverable", NULL];
+}
+
 #pragma mark -
 #pragma mark Finders
 
@@ -210,7 +225,7 @@
 																   rightExpression:rhs
 																		  modifier:NSDirectPredicateModifier
 																			  type:NSEqualToPredicateOperatorType
-																		   options:NSCaseInsensitivePredicateOption];
+																		   options:0];
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
@@ -223,22 +238,42 @@
 	return objects;
 }
 
-+ (NSArray *) findCompletedInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
++ (NSArray *) findUploadedInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
 	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNumber numberWithBool:YES]];
-	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+	NSPredicate *successPredicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
 																   rightExpression:rhs
 																		  modifier:NSDirectPredicateModifier
 																			  type:NSEqualToPredicateOperatorType
-																		   options:NSCaseInsensitivePredicateOption];
+																		   options:0];
+	lhs = [NSExpression expressionForKeyPath:@"error"];
+	rhs = [NSExpression expressionForConstantValue:[NSNull null]];
+	NSPredicate *errorPredicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																		rightExpression:rhs
+																			   modifier:NSDirectPredicateModifier
+																				   type:NSNotEqualToPredicateOperatorType
+																				options:0];
+	lhs = [NSExpression expressionForKeyPath:@"errorIsUnrecoverable"];
+	rhs = [NSExpression expressionForConstantValue:[NSNumber numberWithBool:NO]];
+	NSPredicate *unrecoverablePredicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																				rightExpression:rhs
+																					   modifier:NSDirectPredicateModifier
+																						   type:NSEqualToPredicateOperatorType
+																						options:0];
+	NSPredicate *unrecoverableErrorOnlyPredicate = [[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:[NSArray arrayWithObjects:errorPredicate, unrecoverablePredicate, NULL]];
+	NSPredicate *predicate = [[NSCompoundPredicate alloc] initWithType:NSOrPredicateType subpredicates:[NSArray arrayWithObjects:successPredicate, unrecoverableErrorOnlyPredicate, NULL]];
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
 	[fetchRequest setPredicate:predicate];
 	
 	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:error];
+	[successPredicate release];
+	[errorPredicate release];
+	[unrecoverablePredicate release];
+	[unrecoverableErrorOnlyPredicate release];
 	[predicate release];
 	[fetchRequest release];
 	
@@ -254,7 +289,7 @@
 																   rightExpression:rhs
 																		  modifier:NSDirectPredicateModifier
 																			  type:NSEqualToPredicateOperatorType
-																		   options:NSCaseInsensitivePredicateOption];
+																		   options:0];
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];

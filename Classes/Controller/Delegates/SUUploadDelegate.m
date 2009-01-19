@@ -65,9 +65,10 @@
 		else document.success = [NSNumber numberWithBool:NO];
 	}
 	else document.success = [NSNumber numberWithBool:NO];
-	if (![document.success boolValue]) {
+	if (error) {
 		[error addMessagesForAction:SUUploadAction sender:self];
 		document.error = [NSArchiver archivedDataWithRootObject:error];
+		document.errorIsUnrecoverable = [NSNumber numberWithBool:YES];
 	}
 	
 	if ([uploader uploadComplete]) {
@@ -112,6 +113,7 @@
 	NSError *error = [NSError errorWithDomain:SUScribdAPIErrorDomain code:SUErrorCodeUploadFailed userInfo:errorDict];
 	document.success = [NSNumber numberWithBool:NO];
 	document.error = [NSArchiver archivedDataWithRootObject:error];
+	document.errorIsUnrecoverable = [NSNumber numberWithBool:YES];
 }
 
 /*
@@ -146,11 +148,11 @@
 
 - (void) changeSettings {
 	NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-	[parameters setObject:[SUSessionHelper sessionHelper].key forKey:@"session_key"];
+	//[parameters setObject:[SUSessionHelper sessionHelper].key forKey:@"session_key"];
 	[parameters setObject:document.scribdID forKey:@"doc_ids"];
-	if (document.title && ![document.title isBlank]) [parameters setObject:document.tags forKey:@"title"];
+	if (document.title && ![document.title isBlank]) [parameters setObject:document.title forKey:@"title"];
 	if (document.summary && ![document.summary isBlank]) [parameters setObject:document.summary forKey:@"description"];
-	if (document.tags && ![document.tags isBlank]) [parameters setObject:document.title forKey:@"tags"];
+	if (document.tags && ![document.tags isBlank]) [parameters setObject:document.tags forKey:@"tags"];
 	
 	NSError *error = NULL;
 	[[SUScribdAPI sharedAPI] callApiMethod:@"docs.changeSettings" parameters:parameters error:&error];
@@ -158,14 +160,9 @@
 	
 	if (error) {
 		[error addMessagesForAction:SUChangeSettingsAction title:document.filename];
-		NSAlert *alert = [[NSAlert alloc] init];
-		[alert setAlertStyle:NSCriticalAlertStyle];
-		[alert setMessageText:[error localizedDescription]];
-		[alert setInformativeText:[error localizedRecoverySuggestion]];
-		[alert addButtonWithTitle:@"OK"];
-		[alert setShowsHelp:YES];
-		[alert setHelpAnchor:[NSString stringWithFormat:@"changesettings_error", [error code]]];
-		[alert runModal];
+		document.error = [NSArchiver archivedDataWithRootObject:error];
+		document.errorIsUnrecoverable = [NSNumber numberWithBool:NO];
+		document.success = [NSNumber numberWithBool:NO];
 	}
 }
 

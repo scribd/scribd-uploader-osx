@@ -153,7 +153,7 @@
 
 - (void) purgeCompletedDocuments {
 	NSError *error = NULL;
-	NSArray *objects = [SUDocument findCompletedInManagedObjectContext:self.managedObjectContext error:&error];
+	NSArray *objects = [SUDocument findUploadedInManagedObjectContext:self.managedObjectContext error:&error];
 	if (objects)
 		for (SUDocument *doc in objects) [self.managedObjectContext deleteObject:doc];
 }

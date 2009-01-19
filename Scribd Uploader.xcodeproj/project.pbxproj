@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0106EE850F154403001B701B /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0106EE840F154403001B701B /* Icon.icns */; };
+		0125626B0F23E3D5004E1055 /* caution.tif in Resources */ = {isa = PBXBuildFile; fileRef = 0125626A0F23E3D5004E1055 /* caution.tif */; };
 		0128AF310F1478F300EC3C28 /* SUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */; };
 		0128AF320F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDD0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m */; };
 		0128AF330F1478F300EC3C28 /* SULoginSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDF0F1478F300EC3C28 /* SULoginSheetDelegate.m */; };
@@ -92,6 +93,7 @@
 /* Begin PBXFileReference section */
 		0106EE840F154403001B701B /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		0106EE870F15441C001B701B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		0125626A0F23E3D5004E1055 /* caution.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = caution.tif; sourceTree = "<group>"; };
 		0128AEDA0F1478F300EC3C28 /* SUAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAppDelegate.h; sourceTree = "<group>"; };
 		0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUAppDelegate.m; sourceTree = "<group>"; };
 		0128AEDC0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileNotFoundAlertDelegate.h; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 			children = (
 				0128AF6E0F14799100EC3C28 /* Add.png */,
 				01AF5F630F1C6DEB00D51D07 /* Automatic Updates.icns */,
+				0125626A0F23E3D5004E1055 /* caution.tif */,
 				01EC085E0F1C499100F2098B /* dsa_pub.pem */,
 				0128AF6F0F14799100EC3C28 /* error.tif */,
 				0132BFF60F169DF8000B17C5 /* FileTypes.plist */,
@@ -539,6 +542,7 @@
 				01EC085F0F1C499100F2098B /* dsa_pub.pem in Resources */,
 				01AF5F640F1C6DEB00D51D07 /* Automatic Updates.icns in Resources */,
 				01AF60440F1D321100D51D07 /* Preferences.xib in Resources */,
+				0125626B0F23E3D5004E1055 /* caution.tif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

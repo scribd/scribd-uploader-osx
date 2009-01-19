@@ -9,6 +9,7 @@
 - (id) init {
 	if (self = [super init]) {
 		successImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"success" ofType:@"tif"]];
+		cautionImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"caution" ofType:@"tif"]];
 		errorImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"error" ofType:@"tif"]];
 	}
 	return self;
@@ -20,6 +21,7 @@
 
 - (void) dealloc {
 	[successImage release];
+	[cautionImage release];
 	[errorImage release];
 	[super dealloc];
 }
@@ -41,13 +43,13 @@
 }
 
 /*
- Transforms an error or success indicator into the front-end visual indication.
+ Transforms an error level indicator into the front-end visual indication.
  */
 
 - (id) transformedValue:(id)value {
-	if (!value) return NULL;
-	if ([value isEqual:[NSNumber numberWithBool:YES]]) return successImage;
-	if ([value isEqual:[NSNumber numberWithBool:NO]]) return errorImage;
+	if ([value isEqualToString:@"Success"]) return successImage;
+	else if ([value isEqualToString:@"Caution"]) return cautionImage;
+	else if ([value isEqualToString:@"Error"]) return errorImage;
 	else return NULL;
 }
 
