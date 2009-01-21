@@ -42,30 +42,30 @@
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"position"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNumber numberWithUnsignedInteger:[path indexAtPosition:0]]];
-	NSPredicate *positionPredicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
-																		   rightExpression:rhs
-																				  modifier:NSDirectPredicateModifier
-																					  type:NSEqualToPredicateOperatorType
-																				   options:0];
+	NSPredicate *positionedAtPathIndex = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																			   rightExpression:rhs
+																					  modifier:NSDirectPredicateModifier
+																						  type:NSEqualToPredicateOperatorType
+																					   options:0]; // position = ?
 	lhs = [NSExpression expressionForKeyPath:@"parent"];
 	rhs = [NSExpression expressionForConstantValue:[NSNull null]];
-	NSPredicate *parentPredicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
-																		 rightExpression:rhs
-																				modifier:NSDirectPredicateModifier
-																					type:NSEqualToPredicateOperatorType
-																				 options:0];
-	NSArray *subpredicates = [[NSArray alloc] initWithObjects:parentPredicate, positionPredicate, NULL];
-	NSPredicate *predicate = [[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:subpredicates];
+	NSPredicate *noParent = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																  rightExpression:rhs
+																		 modifier:NSDirectPredicateModifier
+																			 type:NSEqualToPredicateOperatorType
+																		  options:0]; // parent IS NULL
+	NSArray *subpredicates = [[NSArray alloc] initWithObjects:noParent, positionedAtPathIndex, NULL];
+	NSPredicate *rootNodePositionedAtPathIndex = [[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:subpredicates]; // position = ? AND parent IS NULL
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:entity];
-	[fetchRequest setPredicate:predicate];
+	[fetchRequest setPredicate:rootNodePositionedAtPathIndex];
 	
 	NSError *error = NULL;
 	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
 	[subpredicates release];
-	[positionPredicate release];
-	[parentPredicate release];
-	[predicate release];
+	[positionedAtPathIndex release];
+	[noParent release];
+	[rootNodePositionedAtPathIndex release];
 	[fetchRequest release];
 	
 	SUCategory *category;
@@ -79,13 +79,13 @@
 - (SUCategory *) categoryAtIndexPath:(NSIndexPath *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"position"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNumber numberWithUnsignedInteger:[path indexAtPosition:0]]];
-	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
-																   rightExpression:rhs
-																		  modifier:NSDirectPredicateModifier
-																			  type:NSEqualToPredicateOperatorType
-																		   options:NSCaseInsensitivePredicateOption];
-	NSSet *objects = [self.children filteredSetUsingPredicate:predicate];
-	[predicate release];
+	NSPredicate *positionedAtPathIndex = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																			   rightExpression:rhs
+																					  modifier:NSDirectPredicateModifier
+																						  type:NSEqualToPredicateOperatorType
+																					   options:NSCaseInsensitivePredicateOption]; // position = ?
+	NSSet *objects = [self.children filteredSetUsingPredicate:positionedAtPathIndex];
+	[positionedAtPathIndex release];
 	
 	SUCategory *category;
 	if (objects && [objects count] == 1) category = [objects anyObject];
@@ -106,3 +106,4 @@
 }
 
 @end
+

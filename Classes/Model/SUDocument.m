@@ -196,19 +196,19 @@ static NSDictionary *kinds = NULL;
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"path"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[path stringByStandardizingPath]];
-	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
-																   rightExpression:rhs
-																		  modifier:NSDirectPredicateModifier
-																			  type:NSEqualToPredicateOperatorType
-																		   options:NSCaseInsensitivePredicateOption];
+	NSPredicate *pathMatches = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																	 rightExpression:rhs
+																			modifier:NSDirectPredicateModifier
+																				type:NSEqualToPredicateOperatorType
+																			 options:NSCaseInsensitivePredicateOption]; // path == ?
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
-	[fetchRequest setPredicate:predicate];
+	[fetchRequest setPredicate:pathMatches];
 	
 	NSError *error = NULL;
 	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-	[predicate release];
+	[pathMatches release];
 	[fetchRequest release];
 	
 	if (objects && [objects count] > 0) return [objects objectAtIndex:0];
@@ -233,18 +233,18 @@ static NSDictionary *kinds = NULL;
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNull null]];
-	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
-																   rightExpression:rhs
-																		  modifier:NSDirectPredicateModifier
-																			  type:NSEqualToPredicateOperatorType
-																		   options:0];
+	NSPredicate *docIsPending = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																	  rightExpression:rhs
+																			 modifier:NSDirectPredicateModifier
+																				 type:NSEqualToPredicateOperatorType
+																			  options:0]; // success IS NULL
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
-	[fetchRequest setPredicate:predicate];
+	[fetchRequest setPredicate:docIsPending];
 	
 	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:error];
-	[predicate release];
+	[docIsPending release];
 	[fetchRequest release];
 	
 	return objects;
@@ -255,42 +255,42 @@ static NSDictionary *kinds = NULL;
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNumber numberWithBool:YES]];
-	NSPredicate *successPredicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
-																   rightExpression:rhs
-																		  modifier:NSDirectPredicateModifier
-																			  type:NSEqualToPredicateOperatorType
-																		   options:0];
+	NSPredicate *uploadSuccessful = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																		  rightExpression:rhs
+																				 modifier:NSDirectPredicateModifier
+																					 type:NSEqualToPredicateOperatorType
+																				  options:0]; // success = TRUE
 	lhs = [NSExpression expressionForKeyPath:@"error"];
 	rhs = [NSExpression expressionForConstantValue:[NSNull null]];
-	NSPredicate *errorPredicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
-																		rightExpression:rhs
-																			   modifier:NSDirectPredicateModifier
-																				   type:NSNotEqualToPredicateOperatorType
-																				options:0];
+	NSPredicate *noError = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																 rightExpression:rhs
+																		modifier:NSDirectPredicateModifier
+																			type:NSNotEqualToPredicateOperatorType
+																		 options:0]; // error IS NOT NULL
 	lhs = [NSExpression expressionForKeyPath:@"errorIsUnrecoverable"];
 	rhs = [NSExpression expressionForConstantValue:[NSNumber numberWithBool:NO]];
-	NSPredicate *unrecoverablePredicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
-																				rightExpression:rhs
-																					   modifier:NSDirectPredicateModifier
-																						   type:NSEqualToPredicateOperatorType
-																						options:0];
-	NSArray *subpredicates = [[NSArray alloc] initWithObjects:errorPredicate, unrecoverablePredicate, NULL];
-	NSPredicate *unrecoverableErrorOnlyPredicate = [[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:subpredicates];
+	NSPredicate *errorWasWarning = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																		 rightExpression:rhs
+																				modifier:NSDirectPredicateModifier
+																					type:NSEqualToPredicateOperatorType
+																				 options:0]; // errorIsUnrecoverable = FALSE
+	NSArray *subpredicates = [[NSArray alloc] initWithObjects:noError, errorWasWarning, NULL];
+	NSPredicate *withRecoverableErrors = [[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:subpredicates]; // error IS NOT NULL AND errorIsUnrecoverable = FALSE
 	[subpredicates release];
-	subpredicates = [[NSArray alloc] initWithObjects:successPredicate, unrecoverableErrorOnlyPredicate, NULL];
-	NSPredicate *predicate = [[NSCompoundPredicate alloc] initWithType:NSOrPredicateType subpredicates:subpredicates];
+	subpredicates = [[NSArray alloc] initWithObjects:uploadSuccessful, withRecoverableErrors, NULL];
+	NSPredicate *docWasUploaded = [[NSCompoundPredicate alloc] initWithType:NSOrPredicateType subpredicates:subpredicates]; // success = TRUE OR (error IS NOT NULL AND errorIsUnrecoverable = FALSE)
 	[subpredicates release];
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
-	[fetchRequest setPredicate:predicate];
+	[fetchRequest setPredicate:docWasUploaded];
 	
 	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:error];
-	[successPredicate release];
-	[errorPredicate release];
-	[unrecoverablePredicate release];
-	[unrecoverableErrorOnlyPredicate release];
-	[predicate release];
+	[uploadSuccessful release];
+	[noError release];
+	[errorWasWarning release];
+	[withRecoverableErrors release];
+	[docWasUploaded release];
 	[fetchRequest release];
 	
 	return objects;
@@ -301,18 +301,18 @@ static NSDictionary *kinds = NULL;
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNull null]];
-	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
-																   rightExpression:rhs
-																		  modifier:NSDirectPredicateModifier
-																			  type:NSEqualToPredicateOperatorType
-																		   options:0];
+	NSPredicate *docIsPending = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																	  rightExpression:rhs
+																			 modifier:NSDirectPredicateModifier
+																				 type:NSEqualToPredicateOperatorType
+																			  options:0]; // success IS NULL
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
-	[fetchRequest setPredicate:predicate];
+	[fetchRequest setPredicate:docIsPending];
 	
 	NSUInteger count = [managedObjectContext countForFetchRequest:fetchRequest error:error];
-	[predicate release];
+	[docIsPending release];
 	[fetchRequest release];
 	
 	return count;

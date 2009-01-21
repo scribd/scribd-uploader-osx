@@ -165,12 +165,12 @@
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"progress"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNumber numberWithFloat:0.0]];
-	NSPredicate *predicate = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
-																   rightExpression:rhs
-																		  modifier:NSDirectPredicateModifier
-																			  type:NSNotEqualToPredicateOperatorType
-																		   options:0];
-	[fetchRequest setPredicate:predicate];
+	NSPredicate *atLeastSomeProgress = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
+																			 rightExpression:rhs
+																					modifier:NSDirectPredicateModifier
+																						type:NSNotEqualToPredicateOperatorType
+																					 options:0]; // progress != 0.0
+	[fetchRequest setPredicate:atLeastSomeProgress];
 	
 	NSError *error = NULL;
 	NSArray *objects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
@@ -181,7 +181,7 @@
 		[self.managedObjectContext save:&error];
 	}
 	
-	[predicate release];
+	[atLeastSomeProgress release];
 	[fetchRequest release];
 }
 
