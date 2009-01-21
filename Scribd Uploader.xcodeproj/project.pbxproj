@@ -54,7 +54,7 @@
 		0132C0970F16C3A6000B17C5 /* SUAboutWindowDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */; };
 		013C920E0F21E21200061162 /* SUIndexPathValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 013C920D0F21E21200061162 /* SUIndexPathValueTransformer.m */; };
 		013C92170F21E53300061162 /* NSIndexPath_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 013C92160F21E53300061162 /* NSIndexPath_SUAdditions.m */; };
-		013C92910F21ECF200061162 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 013C92900F21ECF200061162 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */; };
+		013F58650F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 013F58640F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */; };
 		014DB9480F1EE55100F50460 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014DB9470F1EE55100F50460 /* Growl.framework */; };
 		014DB94F0F1EE58D00F50460 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 014DB9470F1EE55100F50460 /* Growl.framework */; };
 		014DB95D0F1EE5FD00F50460 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */; };
@@ -173,7 +173,7 @@
 		013C920D0F21E21200061162 /* SUIndexPathValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUIndexPathValueTransformer.m; sourceTree = "<group>"; };
 		013C92150F21E53300061162 /* NSIndexPath_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSIndexPath_SUAdditions.h; sourceTree = "<group>"; };
 		013C92160F21E53300061162 /* NSIndexPath_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSIndexPath_SUAdditions.m; sourceTree = "<group>"; };
-		013C92900F21ECF200061162 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "Scribd_Uploader_DataModel 200-210.xcmappingmodel"; sourceTree = "<group>"; };
+		013F58640F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "Scribd_Uploader_DataModel 200-210.xcmappingmodel"; sourceTree = "<group>"; };
 		014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		014DB9470F1EE55100F50460 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = "Linked Frameworks/Growl.framework"; sourceTree = "<group>"; };
 		017077B60F1C47AC008A3CB0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Linked Frameworks/Sparkle.framework"; sourceTree = "<group>"; };
@@ -595,7 +595,7 @@
 				012E5F120F217AF30037ECDA /* NSString_SUAdditions.m in Sources */,
 				013C920E0F21E21200061162 /* SUIndexPathValueTransformer.m in Sources */,
 				013C92170F21E53300061162 /* NSIndexPath_SUAdditions.m in Sources */,
-				013C92910F21ECF200061162 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel in Sources */,
+				013F58650F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,7 +809,7 @@
 			children = (
 				0128AF0B0F1478F300EC3C28 /* Scribd_Uploader_DataModel 200.xcdatamodel */,
 				012E5DC90F1F32B10037ECDA /* Scribd_Uploader_DataModel 210.xcdatamodel */,
-				013C92900F21ECF200061162 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */,
+				013F58640F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */,
 			);
 			currentVersion = 012E5DC90F1F32B10037ECDA /* Scribd_Uploader_DataModel 210.xcdatamodel */;
 			path = Scribd_Uploader_DataModel.xcdatamodeld;

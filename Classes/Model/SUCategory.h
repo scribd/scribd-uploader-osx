@@ -38,6 +38,13 @@
 
 @property (copy) NSNumber *position;
 
+/*!
+ @property scribdID
+ @abstract The ID of the category as used by Scribd.com.
+ */
+
+@property (copy) NSNumber *scribdID;
+
 #pragma mark Relationships
 
 /*!
@@ -88,5 +95,14 @@
  */ 
 
 - (SUCategory *) categoryAtIndexPath:(NSIndexPath *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
+/*!
+ @method count
+ @abstract Returns the number of categories in a managed object context.
+ @param managedObjectContext The managed object context.
+ @result The number of category records.
+ */
+
++ (NSUInteger) countInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 @end

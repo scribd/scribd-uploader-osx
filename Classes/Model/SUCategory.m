@@ -4,6 +4,7 @@
 
 @dynamic name;
 @dynamic position;
+@dynamic scribdID;
 
 @dynamic parent;
 @dynamic children;
@@ -90,6 +91,16 @@
 	
 	if ([path length] == 1) return category;
 	else return [category categoryAtIndexPath:[path indexPathByRemovingFirstIndex] inManagedObjectContext:managedObjectContext];	
+}
+
++ (NSUInteger) countInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Category" inManagedObjectContext:managedObjectContext];
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setEntity:entity];
+	NSError *error = NULL;
+	NSUInteger numRecords = [managedObjectContext countForFetchRequest:fetchRequest error:&error];
+	[fetchRequest release];
+	return numRecords;
 }
 
 @end

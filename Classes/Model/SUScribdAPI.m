@@ -253,7 +253,21 @@ static SUScribdAPI *sharedAPI;
 	[urlParameters setObject:method forKey:@"method"];
 	
 	NSMutableArray *urlParameterSubstrings = [[NSMutableArray alloc] initWithCapacity:[parameters count]];
-	for (NSString *key in urlParameters) [urlParameterSubstrings addObject:[[NSString stringWithFormat:@"%@=%@", key, [urlParameters objectForKey:key]] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	for (NSString *key in urlParameters) {
+		id value = [urlParameters objectForKey:key];
+		NSString *valueString;
+		if ([value isKindOfClass:[NSString class]]) valueString = value;
+		else valueString = [value stringValue];
+		
+		NSString *paramName = [key stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		NSString *paramValue = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+																	   (CFStringRef)valueString,
+																	   NULL,
+																	   (CFStringRef)@"&",
+																	   NSUTF8StringEncoding);
+		[urlParameterSubstrings addObject:[NSString stringWithFormat:@"%@=%@", paramName, paramValue]];
+		[paramValue release];
+	}
 	
 	NSMutableString *urlString = [[NSMutableString alloc] initWithString:[[self settings] objectForKey:@"BaseURL"]];
 	[urlString appendString:[urlParameterSubstrings componentsJoinedByString:@"&"]];

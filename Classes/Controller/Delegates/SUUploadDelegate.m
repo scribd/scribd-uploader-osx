@@ -148,11 +148,18 @@
 
 - (void) changeSettings {
 	NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-	//[parameters setObject:[SUSessionHelper sessionHelper].key forKey:@"session_key"];
+	[parameters setObject:[SUSessionHelper sessionHelper].key forKey:@"session_key"];
 	[parameters setObject:document.scribdID forKey:@"doc_ids"];
 	if (document.title && ![document.title isBlank]) [parameters setObject:document.title forKey:@"title"];
 	if (document.summary && ![document.summary isBlank]) [parameters setObject:document.summary forKey:@"description"];
 	if (document.tags && ![document.tags isBlank]) [parameters setObject:document.tags forKey:@"tags"];
+	if (document.category) {
+		if (document.category.parent) {
+			[parameters setObject:document.category.name forKey:@"subcategory"];
+			[parameters setObject:document.category.parent.name forKey:@"category"];
+		}
+		else [parameters setObject:document.category.name forKey:@"category"];
+	}
 	
 	NSError *error = NULL;
 	[[SUScribdAPI sharedAPI] callApiMethod:@"docs.changeSettings" parameters:parameters error:&error];

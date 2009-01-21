@@ -18,8 +18,8 @@
 #import "NSError_SUAdditions.h"
 #import "NSIndexPath_SUAdditions.h"
 
-#import "SUDocument.h"
 #import "SUCategory.h"
+#import "SUDocument.h"
 #import "SUFileNotFoundAlertDelegate.h"
 #import "SUDatabaseHelper.h"
 #import "SUUploadCompleteSheetDelegate.h"

@@ -98,7 +98,7 @@
  @abstract The Category assigned to this document.
  */
 
-@property (retain) NSManagedObject *category;
+@property (retain) SUCategory *category;
 
 #pragma mark Derived properties
 
