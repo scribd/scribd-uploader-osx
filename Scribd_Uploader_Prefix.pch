@@ -17,6 +17,7 @@
 #import "NSArray_SUAdditions.h"
 #import "NSError_SUAdditions.h"
 #import "NSIndexPath_SUAdditions.h"
+#import "NSDictionary_SUAdditions.h"
 
 #import "SUCategory.h"
 #import "SUDocument.h"

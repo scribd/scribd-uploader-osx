@@ -100,17 +100,18 @@
 	NSError *innerError = [[outerError userInfo] objectForKey:NSUnderlyingErrorKey];
 	NSDictionary *errorDict;
 	if (innerError) {
-		errorDict = [NSDictionary dictionaryWithObjectsAndKeys:
+		errorDict = [[NSDictionary alloc] initWithObjectsAndKeys:
 					 [NSString stringWithFormat:@"A problem prevented the upload from completing: %@", [outerError localizedDescription]], NSLocalizedDescriptionKey,
 					 [NSString stringWithFormat:@"The underlying error was: %@", [innerError localizedDescription]], NSLocalizedRecoverySuggestionErrorKey,
 					 NULL];
 	} else {
-		errorDict = [NSDictionary dictionaryWithObjectsAndKeys:
+		errorDict = [[NSDictionary alloc] initWithObjectsAndKeys:
 					 [NSString stringWithFormat:@"A problem prevented the upload from completing: %@", [outerError localizedDescription]], NSLocalizedDescriptionKey,
 					 @"No additional information was provided.", NSLocalizedRecoverySuggestionErrorKey,
 					 NULL];
 	}
 	NSError *error = [NSError errorWithDomain:SUScribdAPIErrorDomain code:SUErrorCodeUploadFailed userInfo:errorDict];
+	[errorDict release];
 	document.success = [NSNumber numberWithBool:NO];
 	document.error = [NSArchiver archivedDataWithRootObject:error];
 	document.errorIsUnrecoverable = [NSNumber numberWithBool:YES];

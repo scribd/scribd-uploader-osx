@@ -54,13 +54,15 @@
 																				modifier:NSDirectPredicateModifier
 																					type:NSEqualToPredicateOperatorType
 																				 options:0];
-	NSPredicate *predicate = [[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:[NSArray arrayWithObjects:parentPredicate, positionPredicate, NULL]];
+	NSArray *subpredicates = [[NSArray alloc] initWithObjects:parentPredicate, positionPredicate, NULL];
+	NSPredicate *predicate = [[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:subpredicates];
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:entity];
 	[fetchRequest setPredicate:predicate];
 	
 	NSError *error = NULL;
 	NSArray *objects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+	[subpredicates release];
 	[positionPredicate release];
 	[parentPredicate release];
 	[predicate release];

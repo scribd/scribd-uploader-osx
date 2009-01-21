@@ -1,6 +1,7 @@
 #import "SUScribdAPI.h"
 
-static SUScribdAPI *sharedAPI;
+static SUScribdAPI *sharedAPI = NULL;
+static NSDictionary *settings = NULL;
 
 @interface SUScribdAPI (Private)
 
@@ -40,8 +41,9 @@ static SUScribdAPI *sharedAPI;
 
 + (void) initialize {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSDictionary *appDefaults = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:4] forKey:@"SUMaximumSimultaneousUploads"];
+	NSDictionary *appDefaults = [[NSDictionary alloc] initWithObject:[NSNumber numberWithInteger:4] forKey:@"SUMaximumSimultaneousUploads"];
 	[defaults registerDefaults:appDefaults];
+	[appDefaults release];
 }
 
 + (SUScribdAPI *) sharedAPI {
@@ -243,7 +245,8 @@ static SUScribdAPI *sharedAPI;
 }
 
 - (NSDictionary *) settings {
-	return [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
+	if (!settings) settings = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
+	return settings;
 }
 
 - (NSURL *) apiUrlWithMethod:(NSString *)method parameters:(NSDictionary *)parameters {
@@ -294,13 +297,14 @@ static SUScribdAPI *sharedAPI;
 		NSXMLElement *errorNode = [[[xml rootElement] elementsForName:@"error"] objectAtIndex:0];
 		if (errorNode) {
 			errorCode = [[[errorNode attributeForName:@"code"] stringValue] integerValue];
-			errorInfo = [NSDictionary dictionaryWithObject:[[errorNode attributeForName:@"message"] stringValue] forKey:NSLocalizedFailureReasonErrorKey];
+			errorInfo = [[NSDictionary alloc] initWithObject:[[errorNode attributeForName:@"message"] stringValue] forKey:NSLocalizedFailureReasonErrorKey];
 		}
 		else {
 			errorCode = -1;
-			errorInfo = [NSDictionary dictionaryWithObject:@"Improper format" forKey:NSLocalizedFailureReasonErrorKey];
+			errorInfo = [[NSDictionary alloc] initWithObject:@"Improper format" forKey:NSLocalizedFailureReasonErrorKey];
 		}
 		*error = [NSError errorWithDomain:SUScribdAPIErrorDomain code:errorCode userInfo:errorInfo];
+		[errorInfo release];
 		return NULL;
 	}
 }

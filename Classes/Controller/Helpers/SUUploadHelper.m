@@ -68,7 +68,7 @@
 		[alert runModal];
 	}
 	
-	NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+	NSDictionary *parameters = [[NSDictionary alloc] initWithObjectsAndKeys:
 								[SUSessionHelper sessionHelper].key, @"session_key",
 								NULL];
 	NSError *error = NULL;
@@ -86,6 +86,8 @@
 			[docParams release];
 		}
 	}
+	
+	[parameters release];
 }
 
 - (BOOL) createAccount {

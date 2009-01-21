@@ -5,7 +5,7 @@
 - (void) addMessagesForAction:(NSString *)action sender:(id)sender {
 	if (![[self domain] isEqualToString:SUScribdAPIErrorDomain]) return;
 	
-	NSDictionary *messages = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
+	NSDictionary *messages = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
 	NSDictionary *errorSettings = [messages valueForKeyPath:[NSString stringWithFormat:@"ErrorMessages.%@.%i", action, [self code]]];
 	NSMutableDictionary *newUserInfo = [[NSMutableDictionary alloc] initWithDictionary:[self userInfo]];
 	
@@ -26,12 +26,14 @@
 	[newUserInfo setObject:action forKey:SUActionErrorKey];
 	
 	[self setValue:newUserInfo forKey:@"userInfo"];
+	
+	[messages release];
 }
 
 - (void) addMessagesForAction:(NSString *)action title:(NSString *)docTitle {
 	if (![[self domain] isEqualToString:SUScribdAPIErrorDomain]) return;
 	
-	NSDictionary *messages = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
+	NSDictionary *messages = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
 	NSDictionary *errorSettings = [messages valueForKeyPath:[NSString stringWithFormat:@"ErrorMessages.%@.%i", action, [self code]]];
 	NSMutableDictionary *newUserInfo = [[NSMutableDictionary alloc] initWithDictionary:[self userInfo]];
 	
@@ -45,6 +47,8 @@
 	[newUserInfo setObject:action forKey:SUActionErrorKey];
 	
 	[self setValue:newUserInfo forKey:@"userInfo"];
+	
+	[messages release];
 }
 
 @end

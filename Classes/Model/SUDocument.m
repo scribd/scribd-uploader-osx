@@ -1,5 +1,18 @@
 #import "SUDocument.h"
 
+static NSDictionary *kinds = NULL;
+
+@interface SUDocument (Private)
+
+/*
+ Returns a list of supported filetypes mapped to descriptions of each type.
+ */
+
++ (NSDictionary *) kinds;
+
+@end
+
+
 @implementation SUDocument
 
 @dynamic path;
@@ -74,8 +87,7 @@
 
 - (NSString *) kind {
 	if (!kind) {
-		NSDictionary *kinds = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FileTypes" ofType:@"plist"]];
-		kind = [[kinds objectForKey:[self.path pathExtension]] retain];
+		kind = [[[SUDocument kinds] objectForKey:[self.path pathExtension]] retain];
 	}
 	return kind;
 }
@@ -262,8 +274,12 @@
 																					   modifier:NSDirectPredicateModifier
 																						   type:NSEqualToPredicateOperatorType
 																						options:0];
-	NSPredicate *unrecoverableErrorOnlyPredicate = [[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:[NSArray arrayWithObjects:errorPredicate, unrecoverablePredicate, NULL]];
-	NSPredicate *predicate = [[NSCompoundPredicate alloc] initWithType:NSOrPredicateType subpredicates:[NSArray arrayWithObjects:successPredicate, unrecoverableErrorOnlyPredicate, NULL]];
+	NSArray *subpredicates = [[NSArray alloc] initWithObjects:errorPredicate, unrecoverablePredicate, NULL];
+	NSPredicate *unrecoverableErrorOnlyPredicate = [[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:subpredicates];
+	[subpredicates release];
+	subpredicates = [[NSArray alloc] initWithObjects:successPredicate, unrecoverableErrorOnlyPredicate, NULL];
+	NSPredicate *predicate = [[NSCompoundPredicate alloc] initWithType:NSOrPredicateType subpredicates:subpredicates];
+	[subpredicates release];
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
@@ -306,7 +322,16 @@
 #pragma mark Other
 
 + (NSArray *) scribdFileTypes {
-	return [[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FileTypes" ofType:@"plist"]] allKeys];
+	return [[self kinds] allKeys];
+}
+
+@end
+
+@implementation SUDocument (Private)
+
++ (NSDictionary *) kinds {
+	if (!kinds) kinds = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FileTypes" ofType:@"plist"]];
+	return kinds;
 }
 
 @end
