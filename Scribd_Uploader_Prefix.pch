@@ -23,7 +23,6 @@
 #import "SUDocument.h"
 #import "SUFileNotFoundAlertDelegate.h"
 #import "SUDatabaseHelper.h"
-#import "SUUploadCompleteSheetDelegate.h"
 #import "SUUploadHelper.h"
 #import "SUUploadDelegate.h"
 #import "SUScribdAPI.h"

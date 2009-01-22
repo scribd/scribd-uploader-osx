@@ -255,7 +255,6 @@
 										   isSticky:NO 
 									   clickContext:NULL];
 		[[NSSound soundNamed:@"Upload Complete"] play];
-		[[NSApplication sharedApplication] beginSheet:uploadCompleteSheet modalForWindow:uploadWindow modalDelegate:uploadCompleteSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 	}	
 }
 

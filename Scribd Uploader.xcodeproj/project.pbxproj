@@ -63,7 +63,6 @@
 		01ABF7D70F147AB400EE7142 /* ScribdAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */; };
 		01ABF7FA0F147DCC00EE7142 /* SUSessionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */; };
 		01AC0E520F1BF12200D6C515 /* Upload Complete.png in Resources */ = {isa = PBXBuildFile; fileRef = 01AC0E510F1BF12200D6C515 /* Upload Complete.png */; };
-		01AC0EAD0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AC0EAC0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.m */; };
 		01AF5F640F1C6DEB00D51D07 /* Automatic Updates.icns in Resources */ = {isa = PBXBuildFile; fileRef = 01AF5F630F1C6DEB00D51D07 /* Automatic Updates.icns */; };
 		01AF5FFE0F1D27D300D51D07 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF5FF20F1D27D300D51D07 /* ASIFormDataRequest.m */; };
 		01AF5FFF0F1D27D300D51D07 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF5FF40F1D27D300D51D07 /* ASIHTTPRequest.m */; };
@@ -184,8 +183,6 @@
 		01ABF7F80F147DCC00EE7142 /* SUSessionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSessionHelper.h; sourceTree = "<group>"; };
 		01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSessionHelper.m; sourceTree = "<group>"; };
 		01AC0E510F1BF12200D6C515 /* Upload Complete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upload Complete.png"; sourceTree = "<group>"; };
-		01AC0EAB0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUploadCompleteSheetDelegate.h; sourceTree = "<group>"; };
-		01AC0EAC0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUploadCompleteSheetDelegate.m; sourceTree = "<group>"; };
 		01AF5F630F1C6DEB00D51D07 /* Automatic Updates.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Automatic Updates.icns"; sourceTree = "<group>"; };
 		01AF5FF10F1D27D300D51D07 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
 		01AF5FF20F1D27D300D51D07 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
@@ -264,8 +261,6 @@
 				0128AEE30F1478F300EC3C28 /* SUUploadDelegate.m */,
 				0132C0950F16C3A6000B17C5 /* SUAboutWindowDelegate.h */,
 				0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */,
-				01AC0EAB0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.h */,
-				01AC0EAC0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.m */,
 				012E5E720F20837C0037ECDA /* SUInformationDrawerDelegate.h */,
 				012E5E730F20837C0037ECDA /* SUInformationDrawerDelegate.m */,
 			);
@@ -588,7 +583,6 @@
 				0128AF490F1478F300EC3C28 /* SUConstants.m in Sources */,
 				01ABF7FA0F147DCC00EE7142 /* SUSessionHelper.m in Sources */,
 				0132C0970F16C3A6000B17C5 /* SUAboutWindowDelegate.m in Sources */,
-				01AC0EAD0F1BFAC700D6C515 /* SUUploadCompleteSheetDelegate.m in Sources */,
 				01AF5FFE0F1D27D300D51D07 /* ASIFormDataRequest.m in Sources */,
 				01AF5FFF0F1D27D300D51D07 /* ASIHTTPRequest.m in Sources */,
 				01AF60000F1D27D300D51D07 /* ASINetworkQueue.m in Sources */,
