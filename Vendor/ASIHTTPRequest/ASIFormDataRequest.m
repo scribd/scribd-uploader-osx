@@ -1,9 +1,9 @@
 //
-// ASIFormDataRequest.m
-// asi-http-request
+//  ASIFormDataRequest.m
+//  asi-http-request
 //
-// Created by Ben Copsey on 07/11/2008.
-// Copyright 2008 All-Seeing Interactive. All rights reserved.
+//  Created by Ben Copsey on 07/11/2008.
+//  Copyright 2008 All-Seeing Interactive. All rights reserved.
 //
 
 #import "ASIFormDataRequest.h"
@@ -30,12 +30,12 @@
 
 #pragma mark setup request
 
-- (void)setPostValue:(id)value forKey:(NSString *)key
+- (void)setPostValue:(id <NSObject>)value forKey:(NSString *)key
 {
 	if (!postData) {
 		postData = [[NSMutableDictionary alloc] init];
 	}
-	[postData setValue:value forKey:key];
+	[postData setValue:[value description] forKey:key];
 	[self setRequestMethod:@"POST"];
 }
 
@@ -44,8 +44,23 @@
 	if (!fileData) {
 		fileData = [[NSMutableDictionary alloc] init];
 	}
-	[fileData setValue:filePath forKey:key];
+	NSMutableDictionary *file = [[[NSMutableDictionary alloc] init] autorelease];
+	[file setObject:[NSData dataWithContentsOfFile:filePath options:NSUncachedRead error:NULL] forKey:@"data"];
+	[file setObject:[filePath lastPathComponent] forKey:@"filename"];
+	[fileData setValue:file forKey:key];
 	[self setRequestMethod:@"POST"];
+}
+
+- (void)setData:(NSData *)data forKey:(NSString *)key
+{
+	if (!fileData) {
+		fileData = [[NSMutableDictionary alloc] init];
+	}
+	NSMutableDictionary *file = [[[NSMutableDictionary alloc] init] autorelease];
+	[file setObject:data forKey:@"data"];
+	[file setObject:@"file" forKey:@"filename"];
+	[fileData setValue:file forKey:key];
+	[self setRequestMethod:@"POST"];	
 }
 
 - (void)buildPostBody
@@ -83,10 +98,10 @@
 	e = [fileData keyEnumerator];
 	i=0;
 	while (key = [e nextObject]) {
-		NSString *filePath = [fileData objectForKey:key];
-		[body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",key,[filePath lastPathComponent]] dataUsingEncoding:NSUTF8StringEncoding]];
+		NSDictionary *fileInfo = [fileData objectForKey:key];
+		[body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",key,[fileInfo objectForKey:@"filename"]] dataUsingEncoding:NSUTF8StringEncoding]];
 		[body appendData:contentTypeHeader];
-		[body appendData: [NSData dataWithContentsOfFile:filePath options:NSUncachedRead error:NULL]];
+		[body appendData: [fileInfo objectForKey:@"data"]];
 		i++;
 		// Only add the boundary if this is not the last item in the post body
 		if (i != [fileData count]) { 

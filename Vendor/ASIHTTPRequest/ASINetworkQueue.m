@@ -1,9 +1,9 @@
 //
-// ASINetworkQueue.m
-// asi-http-request
+//  ASINetworkQueue.m
+//  asi-http-request
 //
-// Created by Ben Copsey on 07/11/2008.
-// Copyright 2008 All-Seeing Interactive. All rights reserved.
+//  Created by Ben Copsey on 07/11/2008.
+//  Copyright 2008 All-Seeing Interactive. All rights reserved.
 //
 
 #import "ASINetworkQueue.h"
@@ -193,6 +193,16 @@
 	}
 }
 
+
+- (void)setUploadBufferSize:(unsigned long long)bytes
+{
+	if (!uploadProgressDelegate) {
+		return;
+	}
+	uploadProgressTotalBytes -= bytes;
+	[self incrementUploadProgressBy:0];
+}
+
 - (void)incrementUploadSizeBy:(unsigned long long)bytes
 {
 	if (!uploadProgressDelegate) {
@@ -251,6 +261,18 @@
 	if ([delegate respondsToSelector:@selector(authorizationNeededForRequest:)]) {
 		[delegate performSelector:@selector(authorizationNeededForRequest:) withObject:request];
 	}
+}
+
+
+- (BOOL)respondsToSelector:(SEL)selector
+{
+	if (selector == @selector(authorizationNeededForRequest:)) {
+		if ([delegate respondsToSelector:@selector(authorizationNeededForRequest:)]) {
+			return YES;
+		}
+		return NO;
+	}
+	return [super respondsToSelector:selector];
 }
 
 

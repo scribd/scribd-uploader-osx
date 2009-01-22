@@ -1,24 +1,29 @@
 //
-// ASIHTTPRequest.h
+//  ASIHTTPRequest.h
 //
-// Created by Ben Copsey on 04/10/2007.
-// Copyright 2007-2008 All-Seeing Interactive. All rights reserved.
+//  Created by Ben Copsey on 04/10/2007.
+//  Copyright 2007-2008 All-Seeing Interactive. All rights reserved.
 //
-// A guide to the main features is available at:
-// http://allseeing-i.com/asi-http-request
+//  A guide to the main features is available at:
+//  http://allseeing-i.com/ASIHTTPRequest
 //
-// Portions are based on the ImageClient example from Apple:
-// See: http://developer.apple.com/samplecode/ImageClient/listing37.html
+//  Portions are based on the ImageClient example from Apple:
+//  See: http://developer.apple.com/samplecode/ImageClient/listing37.html
 
+
+// Dammit, importing frameworks when you are targetting two platforms is a PITA
+#if TARGET_OS_IPHONE
+	#import <CFNetwork/CFNetwork.h>
+#endif
 
 typedef enum _ASINetworkErrorType {
-	ASIConnectionFailureErrorType = 1,
-	ASIRequestTimedOutErrorType = 2,
-	ASIAuthenticationErrorType = 3,
-	ASIRequestCancelledErrorType = 4,
-	ASIUnableToCreateRequestErrorType = 5,
-	ASIInternalErrorWhileBuildingRequestType = 6,
-	ASIInternalErrorWhileApplyingCredentialsType = 7
+    ASIConnectionFailureErrorType = 1,
+    ASIRequestTimedOutErrorType = 2,
+    ASIAuthenticationErrorType = 3,
+    ASIRequestCancelledErrorType = 4,
+    ASIUnableToCreateRequestErrorType = 5,
+    ASIInternalErrorWhileBuildingRequestType  = 6,
+    ASIInternalErrorWhileApplyingCredentialsType  = 7
 	
 } ASINetworkErrorType;
 
@@ -88,17 +93,17 @@ typedef enum _ASINetworkErrorType {
 	id downloadProgressDelegate;
 	
 	// Whether we've seen the headers of the response yet
-	BOOL haveExaminedHeaders;
+    BOOL haveExaminedHeaders;
 	
 	// Data we receive will be stored here
 	NSMutableData *receivedData;
 	
 	// Used for sending and receiving data
-	CFHTTPMessageRef request;	
+    CFHTTPMessageRef request;	
 	CFReadStreamRef readStream;
 	
 	// Authentication currently being used for prompting and resuming
-	CFHTTPAuthenticationRef requestAuthentication; 
+    CFHTTPAuthenticationRef requestAuthentication; 
 	NSMutableDictionary *requestCredentials;
 	
 	// HTTP status code, eg: 200 = OK, 404 = Not found etc
@@ -159,6 +164,11 @@ typedef enum _ASINetworkErrorType {
 	
 	// Prevents the body of the post being built more than once (largely for subclasses)
 	BOOL haveBuiltPostBody;
+	
+	unsigned long long uploadBufferSize;
+	
+	NSStringEncoding defaultResponseEncoding;
+	NSStringEncoding responseEncoding;
 }
 
 #pragma mark init / dealloc
@@ -280,6 +290,7 @@ typedef enum _ASINetworkErrorType {
 @property (retain) NSError *error;
 @property (assign,readonly) BOOL complete;
 @property (retain) NSDictionary *responseHeaders;
+@property (retain) NSMutableDictionary *requestHeaders;
 @property (retain) NSMutableArray *requestCookies;
 @property (retain) NSArray *responseCookies;
 @property (assign) BOOL useCookiePersistance;
@@ -296,4 +307,7 @@ typedef enum _ASINetworkErrorType {
 @property (retain) ASIHTTPRequest *mainRequest;
 @property (assign) BOOL showAccurateProgress;
 @property (assign,readonly) unsigned long long totalBytesRead;
+@property (assign) unsigned long long uploadBufferSize;
+@property (assign) NSStringEncoding defaultResponseEncoding;
+@property (assign) NSStringEncoding responseEncoding;
 @end
