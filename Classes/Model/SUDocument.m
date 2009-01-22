@@ -33,6 +33,7 @@ static NSDictionary *kinds = NULL;
 @dynamic kind;
 @dynamic discoverability;
 @dynamic errorLevel;
+@dynamic scribdURL;
 
 #pragma mark Initialization/deallocation
 
@@ -123,6 +124,14 @@ static NSDictionary *kinds = NULL;
 	return @"Pending";
 }
 
+- (NSURL *) scribdURL {
+	if (!self.scribdID) return NULL;
+	NSString *urlString = [[NSString alloc] initWithFormat:@"http://www.scribd.com/doc/%@", self.scribdID];
+	NSURL *url = [[NSURL alloc] initWithString:urlString];
+	[urlString release];
+	return [url autorelease];
+}
+
 #pragma mark -
 #pragma mark Key paths
 
@@ -186,6 +195,14 @@ static NSDictionary *kinds = NULL;
 
 + (NSSet *) keyPathsForValuesAffectingErrorLevel {
 	return [NSSet setWithObjects:@"error", @"success", @"errorIsUnrecoverable", NULL];
+}
+
+/*
+ Scribd URL is determined by Scribd URL.
+ */
+
++ (NSSet *) keyPathsForValuesAffectingScribdURL {
+	return [NSSet setWithObject:@"scribdID"];
 }
 
 #pragma mark -

@@ -8,6 +8,7 @@
 
 @interface SUUploadErrorController : NSObject {
 	IBOutlet NSWindow *window;
+	IBOutlet SUDocumentArrayController *documentController;
 }
 
 /*!

@@ -140,6 +140,15 @@
 @property (readonly) NSNumber *discoverability;
 
 /*!
+ @property scribdURL
+ @abstract Returns a URL at which the Scribd document can be viewed.
+ @result The URL for the Scribd document, or NULL if the document hasn't been
+ uploaded yet.
+ */
+
+@property (readonly) NSURL *scribdURL;
+
+/*!
  @property errorLevel
  @abstract Returns a string describing the error state of this document.
  @result "Success" if no error has occurred, "Caution" if the document was

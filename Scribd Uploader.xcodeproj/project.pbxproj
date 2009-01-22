@@ -72,6 +72,7 @@
 		01AF60020F1D27D300D51D07 /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF5FFB0F1D27D300D51D07 /* DBPrefsWindowController.m */; };
 		01AF60050F1D284900D51D07 /* SUPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF60040F1D284900D51D07 /* SUPreferencesWindowController.m */; };
 		01AF60440F1D321100D51D07 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AF60430F1D321100D51D07 /* Preferences.xib */; };
+		01BBE05E0F281AB0001778FC /* go.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BBE05D0F281AB0001778FC /* go.png */; };
 		01EC085F0F1C499100F2098B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 01EC085E0F1C499100F2098B /* dsa_pub.pem */; };
 		01EC08690F1C677400F2098B /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 017077B60F1C47AC008A3CB0 /* Sparkle.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -200,6 +201,7 @@
 		01AF60030F1D284900D51D07 /* SUPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUPreferencesWindowController.h; sourceTree = "<group>"; };
 		01AF60040F1D284900D51D07 /* SUPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUPreferencesWindowController.m; sourceTree = "<group>"; };
 		01AF60230F1D2FE200D51D07 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
+		01BBE05D0F281AB0001778FC /* go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = go.png; sourceTree = "<group>"; };
 		01EC085E0F1C499100F2098B /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -374,6 +376,7 @@
 				01EC085E0F1C499100F2098B /* dsa_pub.pem */,
 				0128AF6F0F14799100EC3C28 /* error.tif */,
 				0132BFF60F169DF8000B17C5 /* FileTypes.plist */,
+				01BBE05D0F281AB0001778FC /* go.png */,
 				014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */,
 				0106EE840F154403001B701B /* Icon.icns */,
 				0106EE870F15441C001B701B /* Info.plist */,
@@ -548,6 +551,7 @@
 				01AF5F640F1C6DEB00D51D07 /* Automatic Updates.icns in Resources */,
 				01AF60440F1D321100D51D07 /* Preferences.xib in Resources */,
 				0125626B0F23E3D5004E1055 /* caution.tif in Resources */,
+				01BBE05E0F281AB0001778FC /* go.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

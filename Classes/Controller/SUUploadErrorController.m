@@ -4,22 +4,28 @@
 
 - (void) displayError:(NSArray *)errors atIndex:(NSNumber *)index {
 	NSError *error = [errors objectAtIndex:[index unsignedIntValue]];
-	if ([error isEqualTo:[NSNull null]]) return;
-	NSAlert *alert = [[NSAlert alloc] init];
-	[alert setAlertStyle:NSWarningAlertStyle]; //TODO warning or critical depending on error type
-	[alert setMessageText:[error localizedDescription]];
-	[alert setInformativeText:[error localizedRecoverySuggestion]];
-	[alert addButtonWithTitle:@"OK"];
-	
-	NSString *action = NULL;
-	NSString *anchor = @"upload_failed";
-	if (action = [[error userInfo] objectForKey:SUActionErrorKey]) {
-		anchor = [NSString stringWithFormat:@"%@_%d", [action lowercaseString], [error code]];
+	if ([error isEqualTo:[NSNull null]]) {
+		// go to the file
+		SUDocument *doc = [documentController.arrangedObjects objectAtIndex:[index unsignedIntegerValue]];
+		if (doc.scribdID) [[NSWorkspace sharedWorkspace] openURL:doc.scribdURL];
+	} else {
+		// display the error
+		NSAlert *alert = [[NSAlert alloc] init];
+		[alert setAlertStyle:NSWarningAlertStyle]; //TODO warning or critical depending on error type
+		[alert setMessageText:[error localizedDescription]];
+		[alert setInformativeText:[error localizedRecoverySuggestion]];
+		[alert addButtonWithTitle:@"OK"];
+		
+		NSString *action = NULL;
+		NSString *anchor = @"upload_failed";
+		if (action = [[error userInfo] objectForKey:SUActionErrorKey]) {
+			anchor = [NSString stringWithFormat:@"%@_%d", [action lowercaseString], [error code]];
+		}
+		[alert setShowsHelp:YES];
+		[alert setHelpAnchor:anchor];
+		
+		[alert beginSheetModalForWindow:window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:NULL];		
 	}
-	[alert setShowsHelp:YES];
-	[alert setHelpAnchor:anchor];
-	
-	[alert beginSheetModalForWindow:window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 }
 
 /*
