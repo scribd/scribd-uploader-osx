@@ -303,8 +303,8 @@
 	0128AEFF0F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {901, 741}}";
-			sepNavSelRange = "{1266, 6}";
-			sepNavVisRange = "{669, 613}";
+			sepNavSelRange = "{539, 0}";
+			sepNavVisRange = "{0, 791}";
 			sepNavWindowFrame = "{{598, 45}, {814, 946}}";
 		};
 	};
@@ -1087,8 +1087,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 254359695;
-			PBXWorkspaceStateSaveDate = 254359695;
+			PBXPerProjectTemplateStateSaveDate = 254360481;
+			PBXWorkspaceStateSaveDate = 254360481;
 		};
 		sourceControlManager = 0128AED40F14783800EC3C28 /* Source Control */;
 		userBuildSettings = {

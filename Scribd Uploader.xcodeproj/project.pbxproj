@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0106EE850F154403001B701B /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0106EE840F154403001B701B /* Icon.icns */; };
-		0125626B0F23E3D5004E1055 /* caution.tif in Resources */ = {isa = PBXBuildFile; fileRef = 0125626A0F23E3D5004E1055 /* caution.tif */; };
 		0128AF310F1478F300EC3C28 /* SUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */; };
 		0128AF320F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDD0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m */; };
 		0128AF330F1478F300EC3C28 /* SULoginSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDF0F1478F300EC3C28 /* SULoginSheetDelegate.m */; };
@@ -33,7 +32,6 @@
 		0128AF480F1478F300EC3C28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF0D0F1478F300EC3C28 /* main.m */; };
 		0128AF490F1478F300EC3C28 /* SUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF0F0F1478F300EC3C28 /* SUConstants.m */; };
 		0128AF880F14799100EC3C28 /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF6E0F14799100EC3C28 /* Add.png */; };
-		0128AF890F14799100EC3C28 /* error.tif in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF6F0F14799100EC3C28 /* error.tif */; };
 		0128AF8C0F14799100EC3C28 /* Remove.png in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF720F14799100EC3C28 /* Remove.png */; };
 		0128AF910F14799100EC3C28 /* Upload Complete.aif in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF770F14799100EC3C28 /* Upload Complete.aif */; };
 		0128AF920F14799100EC3C28 /* Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF780F14799100EC3C28 /* Upload.png */; };
@@ -69,7 +67,9 @@
 		01AF60020F1D27D300D51D07 /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF5FFB0F1D27D300D51D07 /* DBPrefsWindowController.m */; };
 		01AF60050F1D284900D51D07 /* SUPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF60040F1D284900D51D07 /* SUPreferencesWindowController.m */; };
 		01AF60440F1D321100D51D07 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AF60430F1D321100D51D07 /* Preferences.xib */; };
-		01BBE05E0F281AB0001778FC /* go.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BBE05D0F281AB0001778FC /* go.png */; };
+		01E821340F293BB100473993 /* Caution.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821310F293BB100473993 /* Caution.png */; };
+		01E821350F293BB100473993 /* Error.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821320F293BB100473993 /* Error.png */; };
+		01E821360F293BB100473993 /* Go.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821330F293BB100473993 /* Go.png */; };
 		01EC085F0F1C499100F2098B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 01EC085E0F1C499100F2098B /* dsa_pub.pem */; };
 		01EC08690F1C677400F2098B /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 017077B60F1C47AC008A3CB0 /* Sparkle.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -92,7 +92,6 @@
 /* Begin PBXFileReference section */
 		0106EE840F154403001B701B /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		0106EE870F15441C001B701B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
-		0125626A0F23E3D5004E1055 /* caution.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = caution.tif; sourceTree = "<group>"; };
 		0128AEDA0F1478F300EC3C28 /* SUAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAppDelegate.h; sourceTree = "<group>"; };
 		0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUAppDelegate.m; sourceTree = "<group>"; };
 		0128AEDC0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileNotFoundAlertDelegate.h; sourceTree = "<group>"; };
@@ -140,7 +139,6 @@
 		0128AF0E0F1478F300EC3C28 /* SUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUConstants.h; sourceTree = "<group>"; };
 		0128AF0F0F1478F300EC3C28 /* SUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUConstants.m; sourceTree = "<group>"; };
 		0128AF6E0F14799100EC3C28 /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Add.png; sourceTree = "<group>"; };
-		0128AF6F0F14799100EC3C28 /* error.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = error.tif; sourceTree = "<group>"; };
 		0128AF700F14799100EC3C28 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0128AF710F14799100EC3C28 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0128AF720F14799100EC3C28 /* Remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Remove.png; sourceTree = "<group>"; };
@@ -194,7 +192,9 @@
 		01AF60030F1D284900D51D07 /* SUPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUPreferencesWindowController.h; sourceTree = "<group>"; };
 		01AF60040F1D284900D51D07 /* SUPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUPreferencesWindowController.m; sourceTree = "<group>"; };
 		01AF60230F1D2FE200D51D07 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
-		01BBE05D0F281AB0001778FC /* go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = go.png; sourceTree = "<group>"; };
+		01E821310F293BB100473993 /* Caution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Caution.png; sourceTree = "<group>"; };
+		01E821320F293BB100473993 /* Error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Error.png; sourceTree = "<group>"; };
+		01E821330F293BB100473993 /* Go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Go.png; sourceTree = "<group>"; };
 		01EC085E0F1C499100F2098B /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -361,25 +361,25 @@
 		0128AF6C0F14799100EC3C28 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0128AF6E0F14799100EC3C28 /* Add.png */,
-				014204E30F29389700C7401A /* Automatic Updates.png */,
-				0125626A0F23E3D5004E1055 /* caution.tif */,
-				01EC085E0F1C499100F2098B /* dsa_pub.pem */,
-				0128AF6F0F14799100EC3C28 /* error.tif */,
-				0132BFF60F169DF8000B17C5 /* FileTypes.plist */,
-				01BBE05D0F281AB0001778FC /* go.png */,
-				014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */,
-				0106EE840F154403001B701B /* Icon.icns */,
 				0106EE870F15441C001B701B /* Info.plist */,
+				0132BFF60F169DF8000B17C5 /* FileTypes.plist */,
+				01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */,
 				0128AF9D0F1479A000EC3C28 /* InfoPlist.strings */,
+				0128AFA10F1479A000EC3C28 /* Scribd_Uploader_DataModelModel.strings */,
 				0128AF9F0F1479A000EC3C28 /* MainMenu.xib */,
 				01AF60430F1D321100D51D07 /* Preferences.xib */,
-				0128AF720F14799100EC3C28 /* Remove.png */,
-				0132C07C0F16BF99000B17C5 /* Scribd Uploader Help */,
-				0128AFA10F1479A000EC3C28 /* Scribd_Uploader_DataModelModel.strings */,
-				01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */,
-				0128AF770F14799100EC3C28 /* Upload Complete.aif */,
+				0106EE840F154403001B701B /* Icon.icns */,
+				01E821310F293BB100473993 /* Caution.png */,
+				01E821320F293BB100473993 /* Error.png */,
+				01E821330F293BB100473993 /* Go.png */,
+				0128AF6E0F14799100EC3C28 /* Add.png */,
 				0128AF780F14799100EC3C28 /* Upload.png */,
+				0128AF720F14799100EC3C28 /* Remove.png */,
+				014204E30F29389700C7401A /* Automatic Updates.png */,
+				0128AF770F14799100EC3C28 /* Upload Complete.aif */,
+				01EC085E0F1C499100F2098B /* dsa_pub.pem */,
+				014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */,
+				0132C07C0F16BF99000B17C5 /* Scribd Uploader Help */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -522,7 +522,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0128AF880F14799100EC3C28 /* Add.png in Resources */,
-				0128AF890F14799100EC3C28 /* error.tif in Resources */,
 				014DB95D0F1EE5FD00F50460 /* Growl Registration Ticket.growlRegDict in Resources */,
 				0128AF9E0F1479A000EC3C28 /* InfoPlist.strings in Resources */,
 				0128AFA00F1479A000EC3C28 /* MainMenu.xib in Resources */,
@@ -536,9 +535,10 @@
 				0132C07D0F16BF99000B17C5 /* Scribd Uploader Help in Resources */,
 				01EC085F0F1C499100F2098B /* dsa_pub.pem in Resources */,
 				01AF60440F1D321100D51D07 /* Preferences.xib in Resources */,
-				0125626B0F23E3D5004E1055 /* caution.tif in Resources */,
-				01BBE05E0F281AB0001778FC /* go.png in Resources */,
 				014204E40F29389700C7401A /* Automatic Updates.png in Resources */,
+				01E821340F293BB100473993 /* Caution.png in Resources */,
+				01E821350F293BB100473993 /* Error.png in Resources */,
+				01E821360F293BB100473993 /* Go.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

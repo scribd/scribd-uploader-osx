@@ -8,9 +8,9 @@
 
 - (id) init {
 	if (self = [super init]) {
-		successImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"go" ofType:@"png"]];
-		cautionImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"caution" ofType:@"tif"]];
-		errorImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"error" ofType:@"tif"]];
+		successImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Go" ofType:@"png"]];
+		cautionImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Caution" ofType:@"png"]];
+		errorImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Error" ofType:@"png"]];
 	}
 	return self;
 }
