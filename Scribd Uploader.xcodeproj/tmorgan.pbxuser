@@ -110,10 +110,10 @@
 	};
 	0128AEE10F1478F300EC3C28 /* SUQuickLookDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {933, 806}}";
-			sepNavSelRange = "{376, 0}";
-			sepNavVisRange = "{0, 2238}";
-			sepNavWindowFrame = "{{526, 134}, {992, 844}}";
+			sepNavIntBoundsRect = "{{0, 0}, {933, 910}}";
+			sepNavSelRange = "{1160, 0}";
+			sepNavVisRange = "{205, 2257}";
+			sepNavWindowFrame = "{{326, 130}, {992, 844}}";
 		};
 	};
 	0128AEE20F1478F300EC3C28 /* SUUploadDelegate.h */ = {
@@ -547,8 +547,8 @@
 	};
 	0128AF0D0F1478F300EC3C28 /* main.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 399}}";
-			sepNavSelRange = "{36, 6}";
+			sepNavIntBoundsRect = "{{0, 0}, {546, 592}}";
+			sepNavSelRange = "{90, 2}";
 			sepNavVisRange = "{0, 92}";
 			sepNavWindowFrame = "{{834, 34}, {605, 720}}";
 		};
@@ -1087,8 +1087,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 254344070;
-			PBXWorkspaceStateSaveDate = 254344070;
+			PBXPerProjectTemplateStateSaveDate = 254357738;
+			PBXWorkspaceStateSaveDate = 254357738;
 		};
 		sourceControlManager = 0128AED40F14783800EC3C28 /* Source Control */;
 		userBuildSettings = {

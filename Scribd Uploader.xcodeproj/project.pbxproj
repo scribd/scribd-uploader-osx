@@ -35,7 +35,6 @@
 		0128AF880F14799100EC3C28 /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF6E0F14799100EC3C28 /* Add.png */; };
 		0128AF890F14799100EC3C28 /* error.tif in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF6F0F14799100EC3C28 /* error.tif */; };
 		0128AF8C0F14799100EC3C28 /* Remove.png in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF720F14799100EC3C28 /* Remove.png */; };
-		0128AF900F14799100EC3C28 /* success.tif in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF760F14799100EC3C28 /* success.tif */; };
 		0128AF910F14799100EC3C28 /* Upload Complete.aif in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF770F14799100EC3C28 /* Upload Complete.aif */; };
 		0128AF920F14799100EC3C28 /* Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF780F14799100EC3C28 /* Upload.png */; };
 		0128AF9E0F1479A000EC3C28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF9D0F1479A000EC3C28 /* InfoPlist.strings */; };
@@ -62,7 +61,6 @@
 		017077B70F1C47AC008A3CB0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017077B60F1C47AC008A3CB0 /* Sparkle.framework */; };
 		01ABF7D70F147AB400EE7142 /* ScribdAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */; };
 		01ABF7FA0F147DCC00EE7142 /* SUSessionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */; };
-		01AC0E520F1BF12200D6C515 /* Upload Complete.png in Resources */ = {isa = PBXBuildFile; fileRef = 01AC0E510F1BF12200D6C515 /* Upload Complete.png */; };
 		01AF5F640F1C6DEB00D51D07 /* Automatic Updates.icns in Resources */ = {isa = PBXBuildFile; fileRef = 01AF5F630F1C6DEB00D51D07 /* Automatic Updates.icns */; };
 		01AF5FFE0F1D27D300D51D07 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF5FF20F1D27D300D51D07 /* ASIFormDataRequest.m */; };
 		01AF5FFF0F1D27D300D51D07 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF5FF40F1D27D300D51D07 /* ASIHTTPRequest.m */; };
@@ -148,7 +146,6 @@
 		0128AF720F14799100EC3C28 /* Remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Remove.png; sourceTree = "<group>"; };
 		0128AF730F14799100EC3C28 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Scribd_Uploader_DataModelModel.strings; sourceTree = "<group>"; };
 		0128AF740F14799100EC3C28 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = English.lproj/ScribdAPI.plist; sourceTree = "<group>"; };
-		0128AF760F14799100EC3C28 /* success.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = success.tif; sourceTree = "<group>"; };
 		0128AF770F14799100EC3C28 /* Upload Complete.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Upload Complete.aif"; sourceTree = "<group>"; };
 		0128AF780F14799100EC3C28 /* Upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Upload.png; sourceTree = "<group>"; };
 		012E5DC90F1F32B10037ECDA /* Scribd_Uploader_DataModel 210.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Scribd_Uploader_DataModel 210.xcdatamodel"; sourceTree = "<group>"; };
@@ -182,7 +179,6 @@
 		017077B60F1C47AC008A3CB0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Linked Frameworks/Sparkle.framework"; sourceTree = "<group>"; };
 		01ABF7F80F147DCC00EE7142 /* SUSessionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSessionHelper.h; sourceTree = "<group>"; };
 		01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSessionHelper.m; sourceTree = "<group>"; };
-		01AC0E510F1BF12200D6C515 /* Upload Complete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upload Complete.png"; sourceTree = "<group>"; };
 		01AF5F630F1C6DEB00D51D07 /* Automatic Updates.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Automatic Updates.icns"; sourceTree = "<group>"; };
 		01AF5FF10F1D27D300D51D07 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
 		01AF5FF20F1D27D300D51D07 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
@@ -382,9 +378,7 @@
 				0132C07C0F16BF99000B17C5 /* Scribd Uploader Help */,
 				0128AFA10F1479A000EC3C28 /* Scribd_Uploader_DataModelModel.strings */,
 				01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */,
-				0128AF760F14799100EC3C28 /* success.tif */,
 				0128AF770F14799100EC3C28 /* Upload Complete.aif */,
-				01AC0E510F1BF12200D6C515 /* Upload Complete.png */,
 				0128AF780F14799100EC3C28 /* Upload.png */,
 			);
 			path = Resources;
@@ -535,13 +529,11 @@
 				0128AF8C0F14799100EC3C28 /* Remove.png in Resources */,
 				0128AFA20F1479A000EC3C28 /* Scribd_Uploader_DataModelModel.strings in Resources */,
 				01ABF7D70F147AB400EE7142 /* ScribdAPI.plist in Resources */,
-				0128AF900F14799100EC3C28 /* success.tif in Resources */,
 				0128AF910F14799100EC3C28 /* Upload Complete.aif in Resources */,
 				0128AF920F14799100EC3C28 /* Upload.png in Resources */,
 				0106EE850F154403001B701B /* Icon.icns in Resources */,
 				0132BFF70F169DF8000B17C5 /* FileTypes.plist in Resources */,
 				0132C07D0F16BF99000B17C5 /* Scribd Uploader Help in Resources */,
-				01AC0E520F1BF12200D6C515 /* Upload Complete.png in Resources */,
 				01EC085F0F1C499100F2098B /* dsa_pub.pem in Resources */,
 				01AF5F640F1C6DEB00D51D07 /* Automatic Updates.icns in Resources */,
 				01AF60440F1D321100D51D07 /* Preferences.xib in Resources */,
