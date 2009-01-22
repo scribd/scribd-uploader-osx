@@ -90,7 +90,7 @@
 								[SUSessionHelper sessionHelper].key, @"session_key",
 								NULL];
 	NSError *error = NULL;
-	NSArray *documents = [SUDocument findPendingInManagedObjectContext:db.managedObjectContext error:&error];
+	NSArray *documents = [SUDocument findUploadableInManagedObjectContext:db.managedObjectContext error:&error];
 	if (documents && [documents count]) {
 		for (SUDocument *document in documents) {
 			self.currentlyUploadingCount++;

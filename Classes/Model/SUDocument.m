@@ -245,16 +245,16 @@ static NSDictionary *kinds = NULL;
 	return objects;
 }
 
-+ (NSArray *) findPendingInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
++ (NSArray *) findUploadableInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
 	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
 	
-	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
+	NSExpression *lhs = [NSExpression expressionForKeyPath:@"scribdID"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNull null]];
 	NSPredicate *docIsPending = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
 																	  rightExpression:rhs
 																			 modifier:NSDirectPredicateModifier
 																				 type:NSEqualToPredicateOperatorType
-																			  options:0]; // success IS NULL
+																			  options:0]; // scribdID IS NULL
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];
@@ -313,16 +313,16 @@ static NSDictionary *kinds = NULL;
 	return objects;
 }
 
-+ (NSUInteger) numberOfPendingInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
++ (NSUInteger) numberOfUploadableInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
 	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
 	
-	NSExpression *lhs = [NSExpression expressionForKeyPath:@"success"];
+	NSExpression *lhs = [NSExpression expressionForKeyPath:@"scribdID"];
 	NSExpression *rhs = [NSExpression expressionForConstantValue:[NSNull null]];
 	NSPredicate *docIsPending = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
 																	  rightExpression:rhs
 																			 modifier:NSDirectPredicateModifier
 																				 type:NSEqualToPredicateOperatorType
-																			  options:0]; // success IS NULL
+																			  options:0]; // scribdID IS NULL
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:docEntity];

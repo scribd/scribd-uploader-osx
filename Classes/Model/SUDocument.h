@@ -191,15 +191,17 @@
 + (NSArray *) findAllInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
 
 /*!
- @method findPendingInManagedObjectContext:error:
+ @method findUploadableInManagedObjectContext:error:
  @abstract Returns an array of every document in the context that has not yet
  been successfully uploaded.
  @param managedObjectContext The managed object context.
  @param error Stores any errors in fetching the documents.
  @result An array of all pending documents.
+ @discussion Documents that have been uploaded but have not successfully had
+ their settings set will not be included in the result.
  */
 
-+ (NSArray *) findPendingInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
++ (NSArray *) findUploadableInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
 
 /*!
  @method findUploadedInManagedObjectContext:error:
@@ -213,16 +215,18 @@
 + (NSArray *) findUploadedInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
 
 /*!
- @method numberOfPendingInManagedObjectContext:error:
- @abstract Returns the total number of documents in the context that have yet to
- be uploaded.
+ @method numberOfUploadableInManagedObjectContext:error:
+ @abstract Returns the total number of documents in the context that have not
+ been successfully uploaded.
  @param managedObjectContext The managed object context.
  @param error Stores any errors in fetching the document count.
  @result The number of documents yet to be uploaded, or zero if an error
  occurred.
+ @discussion Documents that were uploaded but could not have their settings
+ changed will not be included in this count, as they have already been uploaded.
  */
 
-+ (NSUInteger) numberOfPendingInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
++ (NSUInteger) numberOfUploadableInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
 
 #pragma mark Instance methods
 

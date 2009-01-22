@@ -102,7 +102,7 @@
 - (BOOL) validateToolbarItem:(NSToolbarItem *)item {
 	if ([item action] == @selector(uploadAllAction:) || [item action] == @selector(uploadSelectionAction:)) {
 		NSError *error = NULL;
-		return (![uploader isUploading] && [SUDocument numberOfPendingInManagedObjectContext:db.managedObjectContext error:&error] > 0);
+		return (![uploader isUploading] && [SUDocument numberOfUploadableInManagedObjectContext:db.managedObjectContext error:&error] > 0);
 	}
 	else return YES;
 }
