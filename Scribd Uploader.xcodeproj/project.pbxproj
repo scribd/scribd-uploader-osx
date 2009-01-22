@@ -54,6 +54,7 @@
 		013C920E0F21E21200061162 /* SUIndexPathValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 013C920D0F21E21200061162 /* SUIndexPathValueTransformer.m */; };
 		013C92170F21E53300061162 /* NSIndexPath_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 013C92160F21E53300061162 /* NSIndexPath_SUAdditions.m */; };
 		013F58650F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 013F58640F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */; };
+		014204E40F29389700C7401A /* Automatic Updates.png in Resources */ = {isa = PBXBuildFile; fileRef = 014204E30F29389700C7401A /* Automatic Updates.png */; };
 		014DB9480F1EE55100F50460 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014DB9470F1EE55100F50460 /* Growl.framework */; };
 		014DB94F0F1EE58D00F50460 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 014DB9470F1EE55100F50460 /* Growl.framework */; };
 		014DB95D0F1EE5FD00F50460 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */; };
@@ -61,7 +62,6 @@
 		017077B70F1C47AC008A3CB0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017077B60F1C47AC008A3CB0 /* Sparkle.framework */; };
 		01ABF7D70F147AB400EE7142 /* ScribdAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */; };
 		01ABF7FA0F147DCC00EE7142 /* SUSessionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */; };
-		01AF5F640F1C6DEB00D51D07 /* Automatic Updates.icns in Resources */ = {isa = PBXBuildFile; fileRef = 01AF5F630F1C6DEB00D51D07 /* Automatic Updates.icns */; };
 		01AF5FFE0F1D27D300D51D07 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF5FF20F1D27D300D51D07 /* ASIFormDataRequest.m */; };
 		01AF5FFF0F1D27D300D51D07 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF5FF40F1D27D300D51D07 /* ASIHTTPRequest.m */; };
 		01AF60000F1D27D300D51D07 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF5FF60F1D27D300D51D07 /* ASINetworkQueue.m */; };
@@ -172,6 +172,7 @@
 		013C92150F21E53300061162 /* NSIndexPath_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSIndexPath_SUAdditions.h; sourceTree = "<group>"; };
 		013C92160F21E53300061162 /* NSIndexPath_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSIndexPath_SUAdditions.m; sourceTree = "<group>"; };
 		013F58640F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "Scribd_Uploader_DataModel 200-210.xcmappingmodel"; sourceTree = "<group>"; };
+		014204E30F29389700C7401A /* Automatic Updates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Automatic Updates.png"; sourceTree = "<group>"; };
 		014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		014DB9470F1EE55100F50460 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = "Linked Frameworks/Growl.framework"; sourceTree = "<group>"; };
 		01684E090F271DA700BA6ECB /* NSDictionary_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_SUAdditions.h; sourceTree = "<group>"; };
@@ -179,7 +180,6 @@
 		017077B60F1C47AC008A3CB0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Linked Frameworks/Sparkle.framework"; sourceTree = "<group>"; };
 		01ABF7F80F147DCC00EE7142 /* SUSessionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSessionHelper.h; sourceTree = "<group>"; };
 		01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSessionHelper.m; sourceTree = "<group>"; };
-		01AF5F630F1C6DEB00D51D07 /* Automatic Updates.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Automatic Updates.icns"; sourceTree = "<group>"; };
 		01AF5FF10F1D27D300D51D07 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
 		01AF5FF20F1D27D300D51D07 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
 		01AF5FF30F1D27D300D51D07 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
@@ -362,7 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				0128AF6E0F14799100EC3C28 /* Add.png */,
-				01AF5F630F1C6DEB00D51D07 /* Automatic Updates.icns */,
+				014204E30F29389700C7401A /* Automatic Updates.png */,
 				0125626A0F23E3D5004E1055 /* caution.tif */,
 				01EC085E0F1C499100F2098B /* dsa_pub.pem */,
 				0128AF6F0F14799100EC3C28 /* error.tif */,
@@ -535,10 +535,10 @@
 				0132BFF70F169DF8000B17C5 /* FileTypes.plist in Resources */,
 				0132C07D0F16BF99000B17C5 /* Scribd Uploader Help in Resources */,
 				01EC085F0F1C499100F2098B /* dsa_pub.pem in Resources */,
-				01AF5F640F1C6DEB00D51D07 /* Automatic Updates.icns in Resources */,
 				01AF60440F1D321100D51D07 /* Preferences.xib in Resources */,
 				0125626B0F23E3D5004E1055 /* caution.tif in Resources */,
 				01BBE05E0F281AB0001778FC /* go.png in Resources */,
+				014204E40F29389700C7401A /* Automatic Updates.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

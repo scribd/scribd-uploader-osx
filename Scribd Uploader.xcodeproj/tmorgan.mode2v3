@@ -497,8 +497,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>014357A70F2930EB00E76F2A</string>
-				<string>014357A80F2930EB00E76F2A</string>
+				<string>014204DB0F29389100C7401A</string>
+				<string>014204DC0F29389100C7401A</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -516,7 +516,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>254359634.665115</real>
+	<real>254359723.90252</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -711,8 +711,6 @@
 							<string>644pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -752,7 +750,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>014357B50F29366100E76F2A</string>
+				<string>014204E70F2938A800C7401A</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -872,13 +870,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D54069F1CE1000CFCEE</string>
-				<string>014357A90F2930EB00E76F2A</string>
+				<string>014204DD0F29389100C7401A</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>014357AA0F2930EB00E76F2A</string>
-				<string>014357AB0F2930EB00E76F2A</string>
-				<string>014357AC0F2930EB00E76F2A</string>
-				<string>014357AD0F2930EB00E76F2A</string>
-				<string>014357AE0F2930EB00E76F2A</string>
+				<string>014204DE0F29389100C7401A</string>
+				<string>014204DF0F29389100C7401A</string>
+				<string>014204E00F29389100C7401A</string>
+				<string>014204E10F29389100C7401A</string>
+				<string>014204E20F29389100C7401A</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -1034,7 +1032,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D5B069F1CE1000CFCEE</string>
-				<string>014357B60F29366100E76F2A</string>
+				<string>014204E80F2938A800C7401A</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
