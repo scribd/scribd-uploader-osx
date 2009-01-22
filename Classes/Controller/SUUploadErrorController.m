@@ -19,7 +19,7 @@
 		NSString *action = NULL;
 		NSString *anchor = @"upload_failed";
 		if (action = [[error userInfo] objectForKey:SUActionErrorKey]) {
-			anchor = [NSString stringWithFormat:@"%@_%d", [action lowercaseString], [error code]];
+			anchor = [[[NSString alloc] initWithFormat:@"%@_%d", [action lowercaseString], [error code]] autorelease];
 		}
 		[alert setShowsHelp:YES];
 		[alert setHelpAnchor:anchor];

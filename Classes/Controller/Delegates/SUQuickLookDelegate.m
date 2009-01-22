@@ -41,12 +41,12 @@
 		return;
 	}
 	if ([keyPath isEqualToString:@"selectedObjects"]) {
-		NSMutableArray *URLs = [[NSMutableArray alloc] init];
+		NSMutableArray *URLs = [NSMutableArray arrayWithCapacity:[filesController.arrangedObjects count]];
 		for (NSString *path in [filesController valueForKeyPath:@"arrangedObjects.path"]) [URLs addObject:[NSURL fileURLWithPath:path]];
 		if ([filesController selectionIndex] == NSNotFound)
-			[[QLPreviewPanel sharedPreviewPanel] setURLs:[URLs autorelease] currentIndex:-1 preservingDisplayState:YES];
+			[[QLPreviewPanel sharedPreviewPanel] setURLs:URLs currentIndex:-1 preservingDisplayState:YES];
 		else
-			[[QLPreviewPanel sharedPreviewPanel] setURLs:[URLs autorelease] currentIndex:[filesController selectionIndex] preservingDisplayState:YES];
+			[[QLPreviewPanel sharedPreviewPanel] setURLs:URLs currentIndex:[filesController selectionIndex] preservingDisplayState:YES];
 	}
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }

@@ -18,6 +18,7 @@
 	NSString *busyAction;
 	NSString *newUserLogin, *newUserEmail, *newUserPassword, *newUserName;
 	NSError *newUserLoginError, *newUserEmailError, *newUserPasswordError, *newUserNameError;
+	NSMutableSet *uploadDelegates;
 	IBOutlet NSWindow *uploadWindow, *loginSheet, *uploadCompleteSheet;
 	IBOutlet SUUploadCompleteSheetDelegate *uploadCompleteSheetDelegate;
 	IBOutlet SUDatabaseHelper *db;

@@ -109,3 +109,29 @@ NSString *SUDefaultKeySessionUsername;
  */
 
 NSString *SUDefaultKeyLastCategoryLoad;
+
+#pragma mark Notifications
+
+/*!
+ @const SUUploadCompleteNotification
+ @abstract Posted when a file completes or fails uploading. The included object
+ is the @link SUUploadDelegate SUUploadDelegate @/link for the upload.
+ */
+
+NSString *SUUploadCompleteNotification;
+
+/*!
+ @const SUUploadSucceededNotification
+ @abstract Posted when a file uploads successfully. The included object is the
+ @link SUUploadDelegate SUUploadDelegate @/link for the upload.
+ */
+
+NSString *SUUploadSucceededNotification;
+
+/*!
+ @const SUUploadFailedNotification
+ @abstract Posted when a file fails to upload. The included object is the
+ @link SUUploadDelegate SUUploadDelegate @/link for the upload.
+ */
+
+NSString *SUUploadFailedNotification;

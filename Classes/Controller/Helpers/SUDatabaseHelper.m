@@ -171,6 +171,7 @@
 																						type:NSNotEqualToPredicateOperatorType
 																					 options:0]; // progress != 0.0
 	[fetchRequest setPredicate:atLeastSomeProgress];
+	[atLeastSomeProgress release];
 	
 	NSError *error = NULL;
 	NSArray *objects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
@@ -181,7 +182,6 @@
 		[self.managedObjectContext save:&error];
 	}
 	
-	[atLeastSomeProgress release];
 	[fetchRequest release];
 }
 

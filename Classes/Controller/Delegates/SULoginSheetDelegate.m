@@ -7,7 +7,7 @@
  */
 
 + (void) initialize {
-	[NSValueTransformer setValueTransformer:[[SUBusyActionValueTransformer alloc] init] forName:@"SUBusyAction"];
+	[NSValueTransformer setValueTransformer:[[[SUBusyActionValueTransformer alloc] init] autorelease] forName:@"SUBusyAction"];
 }
 
 /*

@@ -1,5 +1,16 @@
 #import "SUUploadHelper.h"
 
+@interface SUUploadHelper (Private)
+
+/*
+ Called when a file finishes uploading. Changes the currentlyUploadingCount and
+ handles the case when all files are finished.
+ */
+
+- (void) uploadComplete:(SUUploadDelegate *)delegate;
+
+@end
+
 @implementation SUUploadHelper
 
 @synthesize isBusy;
@@ -19,6 +30,8 @@
 	self.isBusy = NO;
 	self.currentlyUploadingCount = 0;
 	newUserLoginError = newUserPasswordError = newUserEmailError = newUserNameError = NULL;
+	uploadDelegates = [[NSMutableSet alloc] init]; // just used to retain delegates which are created in transient autorelease pools
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uploadComplete:) name:SUUploadCompleteNotification object:NULL];
 }
 
 - (BOOL) authenticate {
@@ -44,8 +57,12 @@
 		[alert setInformativeText:[error localizedRecoverySuggestion]];
 		[alert addButtonWithTitle:@"OK"];
 		[alert setShowsHelp:YES];
-		[alert setHelpAnchor:[NSString stringWithFormat:@"login_%d", [error code]]];
+		NSString *anchor = [[NSString alloc] initWithFormat:@"login_%d", [error code]];
+		[alert setHelpAnchor:anchor];
+		[anchor release];
+		
 		[alert beginSheetModalForWindow:loginSheet modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+		
 		[params release];
 		return NO;
 	}
@@ -66,6 +83,7 @@
 		[alert setShowsHelp:YES];
 		[alert setHelpAnchor:@"existing_account"];
 		[alert runModal];
+		[alert release];
 	}
 	
 	NSDictionary *parameters = [[NSDictionary alloc] initWithObjectsAndKeys:
@@ -75,14 +93,16 @@
 	NSArray *documents = [SUDocument findPendingInManagedObjectContext:db.managedObjectContext error:&error];
 	if (documents && [documents count]) {
 		for (SUDocument *document in documents) {
-			SUUploadDelegate *delegate = [[SUUploadDelegate alloc] initWithDocument:document inManagedObjectContext:db.managedObjectContext fromUploader:self];
-			delegate.uploadWindow = uploadWindow;
-			delegate.uploadCompleteSheet = uploadCompleteSheet;
-			delegate.uploadCompleteSheetDelegate = uploadCompleteSheetDelegate;
 			self.currentlyUploadingCount++;
+			
+			SUUploadDelegate *delegate = [[SUUploadDelegate alloc] initWithDocument:document inManagedObjectContext:db.managedObjectContext];
+			[uploadDelegates addObject:delegate];
+			
 			NSMutableDictionary *docParams = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 			[docParams setObject:([document.hidden boolValue] ? @"private" : @"public") forKey:@"access"];
 			[[SUScribdAPI sharedAPI] apiSubmitFile:document apiMethod:@"docs.upload" parameters:docParams delegate:delegate];
+			
+			[delegate release]; // the uploadDelegates set will retain it past the life of this thread's autorelease pool
 			[docParams release];
 		}
 	}
@@ -112,8 +132,12 @@
 		[alert setInformativeText:[error localizedRecoverySuggestion]];
 		[alert addButtonWithTitle:@"OK"];
 		[alert setShowsHelp:YES];
-		[alert setHelpAnchor:[NSString stringWithFormat:@"signup_%d", [error code]]];
+		NSString *anchor = [[NSString alloc] initWithFormat:@"signup_%d", [error code]];
+		[alert setHelpAnchor:anchor];
+		[anchor release];
+
 		[alert beginSheetModalForWindow:loginSheet modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+		
 		[params release];
 		return NO;
 	}
@@ -201,6 +225,7 @@
 	if (newUserPasswordError) [newUserPasswordError release];
 	if (newUserEmailError) [newUserEmailError release];
 	if (newUserNameError) [newUserNameError release];
+	[uploadDelegates release];
 	[super dealloc];
 }
 
@@ -210,6 +235,28 @@
 
 - (void) alertDidEnd:(NSAlert *)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo {
 	[alert release];
+}
+
+@end
+
+@implementation SUUploadHelper (Private)
+
+- (void) uploadComplete:(SUUploadDelegate *)delegate {
+	[uploadDelegates removeObject:delegate];
+	
+	self.currentlyUploadingCount--;
+	if ([self uploadComplete]) {
+		if (![[NSApplication sharedApplication] isActive])
+			[GrowlApplicationBridge notifyWithTitle:@"All uploads have completed."
+										description:@"Your files are now ready to be viewed on Scribd.com."
+								   notificationName:@"All uploads complete"
+										   iconData:NULL
+										   priority:0
+										   isSticky:NO 
+									   clickContext:NULL];
+		[[NSSound soundNamed:@"Upload Complete"] play];
+		[[NSApplication sharedApplication] beginSheet:uploadCompleteSheet modalForWindow:uploadWindow modalDelegate:uploadCompleteSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+	}	
 }
 
 @end

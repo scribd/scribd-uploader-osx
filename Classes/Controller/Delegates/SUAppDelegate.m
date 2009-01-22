@@ -22,14 +22,14 @@
 									forName:@"SUPrivateDescription"];
 	[NSValueTransformer setValueTransformer:[[[SUDiscoverabilityDescriptionValueTransformer alloc] init] autorelease]
 									forName:@"SUDiscoverabilityDescription"];
-	[NSValueTransformer setValueTransformer:[[SUSingleSelectionOnlyValueTransformer alloc] init] forName:@"SUSingleSelectionOnly"];
-	[NSValueTransformer setValueTransformer:[[SUFileStatusColorValueTransformer alloc] init] forName:@"SUFileStatusColor"];
-	[NSValueTransformer setValueTransformer:[[SUFileStatusButtonImageValueTransformer alloc] init] forName:@"SUFileStatusButtonImage"];
-	[NSValueTransformer setValueTransformer:[[SUUnarchiveErrorValueTransformer alloc] init] forName:@"SUUnarchiveError"];
-	[NSValueTransformer setValueTransformer:[[SULogInButtonTitleValueTransformer alloc] init] forName:@"SULogInButtonTitle"];
-	[NSValueTransformer setValueTransformer:[[SULoginLabelValueTransformer alloc] init] forName:@"SULoginLabel"];
-	[NSValueTransformer setValueTransformer:[[SUDelimitedStringValueTransformer alloc] init] forName:@"SUDelimitTags"];
-	[NSValueTransformer setValueTransformer:[[SUIndexPathValueTransformer alloc] init] forName:@"SUIndexPath"];
+	[NSValueTransformer setValueTransformer:[[[SUSingleSelectionOnlyValueTransformer alloc] init] autorelease] forName:@"SUSingleSelectionOnly"];
+	[NSValueTransformer setValueTransformer:[[[SUFileStatusColorValueTransformer alloc] init] autorelease] forName:@"SUFileStatusColor"];
+	[NSValueTransformer setValueTransformer:[[[SUFileStatusButtonImageValueTransformer alloc] init] autorelease] forName:@"SUFileStatusButtonImage"];
+	[NSValueTransformer setValueTransformer:[[[SUUnarchiveErrorValueTransformer alloc] init] autorelease] forName:@"SUUnarchiveError"];
+	[NSValueTransformer setValueTransformer:[[[SULogInButtonTitleValueTransformer alloc] init] autorelease] forName:@"SULogInButtonTitle"];
+	[NSValueTransformer setValueTransformer:[[[SULoginLabelValueTransformer alloc] init] autorelease] forName:@"SULoginLabel"];
+	[NSValueTransformer setValueTransformer:[[[SUDelimitedStringValueTransformer alloc] init] autorelease] forName:@"SUDelimitTags"];
+	[NSValueTransformer setValueTransformer:[[[SUIndexPathValueTransformer alloc] init] autorelease] forName:@"SUIndexPath"];
 }
 
 /*
@@ -40,13 +40,19 @@
 - (void) awakeFromNib {
 	[[NSValueTransformer valueTransformerForName:@"SUIndexPath"] setValue:db.managedObjectContext forKey:@"managedObjectContext"];
 	
-	[uploadTable registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
+	NSArray *acceptedTypes = [[NSArray alloc] initWithObject:NSFilenamesPboardType];
+	[uploadTable registerForDraggedTypes:acceptedTypes];
+	[acceptedTypes release];
 	[uploadTable setVerticalMotionCanBeginDrag:NO];
 	
 	// configure Growl (necessary because of a bug in growl)
 	[GrowlApplicationBridge setGrowlDelegate:@""];
 	
-	[categoriesController setSortDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES]]];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
+	NSArray *sortDescriptors = [[NSArray alloc] initWithObject:sortDescriptor];
+	[sortDescriptor release];
+	[categoriesController setSortDescriptors:sortDescriptors];
+	[sortDescriptors release];
 	
 	NSDate *lastCheckTime = [[NSUserDefaults standardUserDefaults] objectForKey:SUDefaultKeyLastCategoryLoad];
 	if (!lastCheckTime || -[lastCheckTime timeIntervalSinceNow] >= SUTimeBetweenCategoryLoads || [SUCategory countInManagedObjectContext:db.managedObjectContext] == 0) {

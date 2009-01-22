@@ -7,11 +7,15 @@
 	[alert setAlertStyle:NSWarningAlertStyle];
 	[alert addButtonWithTitle:@"OK"];
 	if (deletedFiles == 1) {
-		[alert setMessageText:[NSString stringWithFormat:@"The file “%@” could not be found.", filename]];
+		NSString *message = [[NSString alloc] initWithFormat:@"The file “%@” could not be found.", filename];
+		[alert setMessageText:message];
+		[message release];
 		[alert setInformativeText:@"It has been removed from the list."];
 	}
 	else {
-		[alert setMessageText:[NSString stringWithFormat:@"%d files could not be found.", deletedFiles]];
+		NSString *message = [[NSString alloc] initWithFormat:@"%d files could not be found.", deletedFiles];
+		[alert setMessageText:message];
+		[message release];
 		[alert setInformativeText:@"These files have been removed from the list."];
 	}
 	[alert setShowsHelp:YES];

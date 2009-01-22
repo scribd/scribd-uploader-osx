@@ -1,7 +1,6 @@
 #import "SUConstants.h"
 
 /* Constants */
-
 const NSTimeInterval SUTimeBetweenCategoryLoads = 1209600.0; // two weeks
 
 /* Error domains */
@@ -24,3 +23,8 @@ NSString *SUChangeSettingsAction = @"ChangeSettings";
 NSString *SUDefaultKeySessionKey = @"sessionKey";
 NSString *SUDefaultKeySessionUsername = @"sessionUsername";
 NSString *SUDefaultKeyLastCategoryLoad = @"lastCategoryLoad";
+
+/* Notifications */
+NSString *SUUploadCompleteNotification = @"SUUploadCompleteNotification";
+NSString *SUUploadSucceededNotification = @"SUUploadSucceededNotification";
+NSString *SUUploadFailedNotification = @"SUUploadFailedNotification";

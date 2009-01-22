@@ -135,6 +135,7 @@ static NSDictionary *settings = NULL;
 	
 	if (parseError) {
 		*error = parseError;
+		[xml release];
 		return NULL;
 	}
 	
@@ -147,23 +148,29 @@ static NSDictionary *settings = NULL;
 	NSURL *url = [self apiUrlWithMethod:method parameters:parameters];
 	ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:url];
 	
-	[request setDelegate:delegate];
-	[request setUploadProgressDelegate:delegate];
-	//[request setDownloadProgressDelegate:delegate];
+	request.delegate = delegate;
+	request.uploadProgressDelegate = delegate;
+	//request.downloadProgressDelegate = delegate;
 	
 	[request setFile:file.path forKey:@"file"];
 	for (NSString *key in parameters) [request setPostValue:[parameters objectForKey:key] forKey:key];
 	
 	NSOperation *uploadOperation = [[NSInvocationOperation alloc] initWithTarget:[request autorelease] selector:@selector(start) object:NULL];
 	[uploadQueue addOperation:uploadOperation];
+	[uploadOperation release];
 }
 
 - (NSArray *) autocompletionsForSubstring:(NSString *)substring {
-	NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:[[self settings] objectForKey:@"TagsURL"], [substring stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+	NSString *urlString = [[NSString alloc] initWithFormat:[[self settings] objectForKey:@"TagsURL"], [substring stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSURL *url = [[NSURL alloc] initWithString:urlString];
+	[urlString release];
 	NSError *error = NULL;
 	NSString *response = [[NSString alloc] initWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
 	[url release];
-	if (error) return NULL;
+	if (error) {
+		[response release];
+		return NULL;
+	}
 	
 	if ([response isEmpty]) {
 		[response release];
@@ -188,11 +195,16 @@ static NSDictionary *settings = NULL;
 }
 
 - (NSString *) titleForFilename:(NSString *)filename {
-	NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:[[self settings] objectForKey:@"TitleCleanURL"], [filename stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+	NSString *urlString = [[NSString alloc] initWithFormat:[[self settings] objectForKey:@"TitleCleanURL"], [filename stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSURL *url = [[NSURL alloc] initWithString:urlString];
+	[urlString release];
 	NSError *error = NULL;
 	NSString *response = [[NSString alloc] initWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
 	[url release];
-	if (error) return NULL;
+	if (error) {
+		[response release];
+		return NULL;
+	}
 	
 	if ([response isEqualToString:filename]) {
 		[response release];
@@ -207,14 +219,20 @@ static NSDictionary *settings = NULL;
 	NSError *error = NULL;
 	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithContentsOfURL:url options:NSXMLDocumentTidyXML error:&error];
 	[url release];
-	if (error) return;
+	if (error) {
+		[xml release];
+		return;
+	};
 	
 	// delete all categories
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:[NSEntityDescription entityForName:@"Category" inManagedObjectContext:managedObjectContext]];
 	NSArray *categories = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
 	[fetchRequest release];
-	if (error) return;
+	if (error) {
+		[xml release];
+		return;
+	};
 	for (SUCategory *category in categories) [managedObjectContext deleteObject:category];
 	
 	// load in new categories
@@ -268,7 +286,9 @@ static NSDictionary *settings = NULL;
 																	   NULL,
 																	   (CFStringRef)@"&",
 																	   NSUTF8StringEncoding);
-		[urlParameterSubstrings addObject:[NSString stringWithFormat:@"%@=%@", paramName, paramValue]];
+		NSString *paramString = [[NSString alloc] initWithFormat:@"%@=%@", paramName, paramValue];
+		[urlParameterSubstrings addObject:paramString];
+		[paramString release];
 		[paramValue release];
 	}
 	

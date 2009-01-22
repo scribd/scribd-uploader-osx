@@ -7,6 +7,15 @@
 @interface NSArray (SUAdditions)
 
 /*!
+ @method initWithObject:
+ @abstract Initializes an array containing a single object.
+ @param object The object to place in the new array.
+ @result The initialized array.
+ */
+
+- (NSArray *) initWithObject:(id)object;
+
+/*!
  @method reversedArray
  @abstract Returns an array whose elements are in the reverse order of this
  array.

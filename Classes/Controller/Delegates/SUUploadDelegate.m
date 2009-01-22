@@ -8,10 +8,6 @@
 
 @implementation SUUploadDelegate
 
-@synthesize uploadWindow;
-@synthesize uploadCompleteSheet;
-@synthesize uploadCompleteSheetDelegate;
-
 /*
  Prevent initialization without a document.
  */
@@ -20,16 +16,12 @@
 	return NULL;
 }
 
-- (id) initWithDocument:(SUDocument *)doc inManagedObjectContext:(NSManagedObjectContext *)context fromUploader:(SUUploadHelper *)caller {
+- (id) initWithDocument:(SUDocument *)doc inManagedObjectContext:(NSManagedObjectContext *)context {
 	if (self = [super init]) {
 		document = [doc retain];
 		progress = 0.0;
 		progressMax = 1.0;
-		uploadWindow = NULL;
-		uploadCompleteSheet = NULL;
-		uploadCompleteSheetDelegate = NULL;
 		managedObjectContext = [context retain];
-		uploader = [caller retain];
 	}
 	return self;
 }
@@ -41,16 +33,10 @@
 - (void) dealloc {
 	[document release];
 	[managedObjectContext release];
-	[uploader release];
-	if (uploadWindow) [uploadWindow release];
-	if (uploadCompleteSheet) [uploadCompleteSheet release];
-	if (uploadCompleteSheetDelegate) [uploadCompleteSheetDelegate release];
 	[super dealloc];
 }
 
 - (void) requestFinished:(ASIHTTPRequest *)request {
-	uploader.currentlyUploadingCount--;
-	
 	NSError *error = NULL;
 	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithXMLString:[request dataString] options:0 error:&error];
 	if (xml) {
@@ -63,6 +49,7 @@
 			[self changeSettings];
 		}
 		else document.success = [NSNumber numberWithBool:NO];
+		[xml release];
 	}
 	else document.success = [NSNumber numberWithBool:NO];
 	if (error) {
@@ -71,18 +58,8 @@
 		document.errorIsUnrecoverable = [NSNumber numberWithBool:YES];
 	}
 	
-	if ([uploader uploadComplete]) {
-		if (![[NSApplication sharedApplication] isActive])
-			[GrowlApplicationBridge notifyWithTitle:@"All uploads have completed."
-										description:@"Your files are now ready to be viewed on Scribd.com."
-								   notificationName:@"All uploads complete"
-										   iconData:NULL
-										   priority:0
-										   isSticky:NO 
-									   clickContext:NULL];
-		[[NSSound soundNamed:@"Upload Complete"] play];
-		[[NSApplication sharedApplication] beginSheet:uploadCompleteSheet modalForWindow:uploadWindow modalDelegate:uploadCompleteSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:NULL];
-	}
+	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadCompleteNotification object:self];
+	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadSucceededNotification object:self];
 }
 
 /*
@@ -94,27 +71,34 @@
 };
 
 - (void) requestFailed:(ASIHTTPRequest *)request {
-	uploader.currentlyUploadingCount--;
-	
 	NSError *outerError = [request error];
 	NSError *innerError = [[outerError userInfo] objectForKey:NSUnderlyingErrorKey];
 	NSDictionary *errorDict;
 	if (innerError) {
+		NSString *description = [[NSString alloc] initWithFormat:@"A problem prevented the upload from completing: %@", [outerError localizedDescription]];
+		NSString *recoverySuggestion = [[NSString alloc] initWithFormat:@"The underlying error was: %@", [innerError localizedDescription]];
 		errorDict = [[NSDictionary alloc] initWithObjectsAndKeys:
-					 [NSString stringWithFormat:@"A problem prevented the upload from completing: %@", [outerError localizedDescription]], NSLocalizedDescriptionKey,
-					 [NSString stringWithFormat:@"The underlying error was: %@", [innerError localizedDescription]], NSLocalizedRecoverySuggestionErrorKey,
+					 description, NSLocalizedDescriptionKey,
+					 recoverySuggestion, NSLocalizedRecoverySuggestionErrorKey,
 					 NULL];
+		[description release];
+		[recoverySuggestion release];
 	} else {
+		NSString *description = [[NSString alloc] initWithFormat:@"A problem prevented the upload from completing: %@", [outerError localizedDescription]];
 		errorDict = [[NSDictionary alloc] initWithObjectsAndKeys:
-					 [NSString stringWithFormat:@"A problem prevented the upload from completing: %@", [outerError localizedDescription]], NSLocalizedDescriptionKey,
+					 description, NSLocalizedDescriptionKey,
 					 @"No additional information was provided.", NSLocalizedRecoverySuggestionErrorKey,
 					 NULL];
+		[description release];
 	}
 	NSError *error = [NSError errorWithDomain:SUScribdAPIErrorDomain code:SUErrorCodeUploadFailed userInfo:errorDict];
 	[errorDict release];
 	document.success = [NSNumber numberWithBool:NO];
 	document.error = [NSArchiver archivedDataWithRootObject:error];
 	document.errorIsUnrecoverable = [NSNumber numberWithBool:YES];
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadCompleteNotification object:self];
+	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadFailedNotification object:self];
 }
 
 /*

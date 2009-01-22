@@ -6,27 +6,40 @@
 	if (![[self domain] isEqualToString:SUScribdAPIErrorDomain]) return;
 	
 	NSDictionary *messages = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
-	NSDictionary *errorSettings = [messages valueForKeyPath:[NSString stringWithFormat:@"ErrorMessages.%@.%i", action, [self code]]];
+	NSString *messageLocation = [[NSString alloc] initWithFormat:@"ErrorMessages.%@.%i", action, [self code]];
+	NSDictionary *errorSettings = [messages valueForKeyPath:messageLocation];
+	[messageLocation release];
 	NSMutableDictionary *newUserInfo = [[NSMutableDictionary alloc] initWithDictionary:[self userInfo]];
 	
 	if (errorSettings) {
 		NSString *invalidateProperty = [errorSettings objectForKey:@"Invalidate"];
 		if (invalidateProperty) {
-			[sender setValue:self forKey:[NSString stringWithFormat:@"%@Error", invalidateProperty]];
+			NSString *errorStringLocation = [[NSString alloc] initWithFormat:@"%@Error", invalidateProperty];
+			[sender setValue:self forKey:errorStringLocation];
+			[errorStringLocation release];
 			// in order to get the view to recognize the error and invalid property, we need to pretend to have changed it
 			[sender willChangeValueForKey:invalidateProperty];
 			[sender didChangeValueForKey:invalidateProperty];
 		}
-		[newUserInfo setObject:[NSString stringWithFormat:[errorSettings objectForKey:@"Message"], (invalidateProperty ? [sender valueForKey:invalidateProperty] : NULL)] forKey:NSLocalizedDescriptionKey];
+		NSString *description = [[NSString alloc] initWithFormat:[errorSettings objectForKey:@"Message"], (invalidateProperty ? [sender valueForKey:invalidateProperty] : NULL)];
+		[newUserInfo setObject:description forKey:NSLocalizedDescriptionKey];
+		[description release];
 	} else {
-		[newUserInfo setObject:[NSString stringWithFormat:[messages valueForKeyPath:[NSString stringWithFormat:@"ErrorMessages.%@.Default", action]], [[self userInfo] objectForKey:NSLocalizedFailureReasonErrorKey]] forKey:NSLocalizedDescriptionKey];
+		NSString *messageLocation = [[NSString alloc] initWithFormat:@"ErrorMessages.%@.Default", action];
+		NSString *description = [[NSString alloc] initWithFormat:[messages valueForKeyPath:messageLocation], [[self userInfo] objectForKey:NSLocalizedFailureReasonErrorKey]];
+		[messageLocation release];
+		[newUserInfo setObject:description forKey:NSLocalizedDescriptionKey];
+		[description release];
 	}
 	
-	[newUserInfo setObject:[messages valueForKeyPath:[NSString stringWithFormat:@"RecoverySuggestions.%@", action]] forKey:NSLocalizedRecoverySuggestionErrorKey];
+	NSString *recoverySuggestion = [[NSString alloc] initWithFormat:@"RecoverySuggestions.%@", action];
+	[newUserInfo setObject:[messages valueForKeyPath:recoverySuggestion] forKey:NSLocalizedRecoverySuggestionErrorKey];
+	[recoverySuggestion release];
 	[newUserInfo setObject:action forKey:SUActionErrorKey];
 	
 	[self setValue:newUserInfo forKey:@"userInfo"];
 	
+	[newUserInfo release];
 	[messages release];
 }
 
@@ -34,20 +47,31 @@
 	if (![[self domain] isEqualToString:SUScribdAPIErrorDomain]) return;
 	
 	NSDictionary *messages = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
-	NSDictionary *errorSettings = [messages valueForKeyPath:[NSString stringWithFormat:@"ErrorMessages.%@.%i", action, [self code]]];
+	NSString *settingsLocation = [[NSString alloc] initWithFormat:@"ErrorMessages.%@.%i", action, [self code]];
+	NSDictionary *errorSettings = [messages valueForKeyPath:settingsLocation];
+	[settingsLocation release];
 	NSMutableDictionary *newUserInfo = [[NSMutableDictionary alloc] initWithDictionary:[self userInfo]];
 	
 	if (errorSettings) {
-		[newUserInfo setObject:[NSString stringWithFormat:[errorSettings objectForKey:@"Message"], docTitle] forKey:NSLocalizedDescriptionKey];
+		NSString *description = [[NSString alloc] initWithFormat:[errorSettings objectForKey:@"Message"], docTitle];
+		[newUserInfo setObject:description forKey:NSLocalizedDescriptionKey];
+		[description release];
 	} else {
-		[newUserInfo setObject:[NSString stringWithFormat:[messages valueForKeyPath:[NSString stringWithFormat:@"ErrorMessages.%@.Default", action]], docTitle, [[self userInfo] objectForKey:NSLocalizedFailureReasonErrorKey]] forKey:NSLocalizedDescriptionKey];
+		NSString *descLocation = [[NSString alloc] initWithFormat:@"ErrorMessages.%@.Default", action];
+		NSString *description = [[NSString alloc] initWithFormat:[messages valueForKeyPath:descLocation], docTitle, [[self userInfo] objectForKey:NSLocalizedFailureReasonErrorKey]];
+		[descLocation release];
+		[newUserInfo setObject:description forKey:NSLocalizedDescriptionKey];
+		[description release];
 	}
 	
-	[newUserInfo setObject:[messages valueForKeyPath:[NSString stringWithFormat:@"RecoverySuggestions.%@", action]] forKey:NSLocalizedRecoverySuggestionErrorKey];
+	NSString *suggestionLocation = [[NSString alloc] initWithFormat:@"RecoverySuggestions.%@", action];
+	[newUserInfo setObject:[messages valueForKeyPath:suggestionLocation] forKey:NSLocalizedRecoverySuggestionErrorKey];
+	[suggestionLocation release];
 	[newUserInfo setObject:action forKey:SUActionErrorKey];
 	
 	[self setValue:newUserInfo forKey:@"userInfo"];
 	
+	[newUserInfo release];
 	[messages release];
 }
 
