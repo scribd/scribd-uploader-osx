@@ -8,6 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="2"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -379,7 +380,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<string key="NSWindowContentMinSize">{491, 450}</string>
 				<object class="NSView" key="NSWindowView" id="823886803">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -613,7 +614,6 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 									</object>
 									<string key="NSFrame">{{1, 17}, {434, 374}}</string>
 									<reference key="NSSuperview" ref="951211197"/>
-									<reference key="NSNextKeyView" ref="698356824"/>
 									<reference key="NSDocView" ref="698356824"/>
 									<reference key="NSBGColor" ref="1031550130"/>
 									<int key="NScvFlags">4</int>
@@ -646,7 +646,6 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 									</object>
 									<string key="NSFrame">{{1, 0}, {434, 17}}</string>
 									<reference key="NSSuperview" ref="951211197"/>
-									<reference key="NSNextKeyView" ref="839961220"/>
 									<reference key="NSDocView" ref="839961220"/>
 									<reference key="NSBGColor" ref="1031550130"/>
 									<int key="NScvFlags">4</int>
@@ -655,7 +654,6 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 							</object>
 							<string key="NSFrame">{{20, 44}, {451, 407}}</string>
 							<reference key="NSSuperview" ref="823886803"/>
-							<reference key="NSNextKeyView" ref="162761041"/>
 							<int key="NSsFlags">50</int>
 							<reference key="NSVScroller" ref="561533614"/>
 							<reference key="NSHScroller" ref="439128272"/>
@@ -725,6 +723,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 						</object>
 					</object>
 					<string key="NSFrameSize">{491, 496}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
 				<string key="NSMinSize">{491, 528}</string>
@@ -1379,6 +1378,9 @@ ciBoZWxwIHZpZXdlci4</string>
 			</object>
 			<object class="NSCustomObject" id="227621579">
 				<string key="NSClassName">SUFileNotFoundAlertDelegate</string>
+			</object>
+			<object class="NSCustomObject" id="471825690">
+				<string key="NSClassName">SUQuickLookDelegate</string>
 			</object>
 			<object class="NSWindowTemplate" id="372838559">
 				<int key="NSWindowStyleMask">1</int>
@@ -4542,6 +4544,30 @@ ciBoZWxwIHZpZXdlci4</string>
 					</object>
 					<int key="connectionID">1682</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">filesController</string>
+						<reference key="source" ref="471825690"/>
+						<reference key="destination" ref="603642860"/>
+					</object>
+					<int key="connectionID">1684</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">table</string>
+						<reference key="source" ref="471825690"/>
+						<reference key="destination" ref="698356824"/>
+					</object>
+					<int key="connectionID">1685</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">quickLook</string>
+						<reference key="source" ref="951211197"/>
+						<reference key="destination" ref="471825690"/>
+					</object>
+					<int key="connectionID">1686</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -6093,6 +6119,11 @@ ciBoZWxwIHZpZXdlci4</string>
 						<reference key="object" ref="391783670"/>
 						<reference key="parent" ref="960517776"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1683</int>
+						<reference key="object" ref="471825690"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -6239,6 +6270,7 @@ ciBoZWxwIHZpZXdlci4</string>
 					<string>1659.IBPluginDependency</string>
 					<string>1668.IBAttributePlaceholdersKey</string>
 					<string>1668.IBPluginDependency</string>
+					<string>1683.IBPluginDependency</string>
 					<string>169.IBEditorWindowLastContentRect</string>
 					<string>169.IBPluginDependency</string>
 					<string>169.ImportedFromIB2</string>
@@ -6622,6 +6654,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 						</object>
 					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{430, 506}, {161, 153}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
@@ -6822,7 +6855,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1682</int>
+			<int key="maxID">1686</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
