@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+info_plist = File.read("Info.plist")
+version = info_plist.scan(/<key>CFBundleShortVersionString<\/key>\n\s*<string>(.+?)<\/string>/).first.first
+
 product = "Scribd\\ Uploader"
 dist_dir = "build/Install/dist"
 app = "#{dist_dir}/#{product}.app"
@@ -7,7 +10,7 @@ sla = "Distribution/SLA.r"
 img_icon = "Distribution/Disk\\ Image\\ Icon.r"
 vol_template = "Distribution/Volume\\ Template"
 big_dmg = "#{dist_dir}/#{product}-tmp.dmg"
-dmg = "#{dist_dir}/#{product}.dmg"
+dmg = "#{dist_dir}/#{product}-#{version}.dmg"
 
 `rm -f #{big_dmg}`
 `rm -f #{dmg}`

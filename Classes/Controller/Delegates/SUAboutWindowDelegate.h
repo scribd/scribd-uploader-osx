@@ -4,8 +4,16 @@
  */
 
 @interface SUAboutWindowDelegate : NSObject {
-
+	
 }
+
+/*!
+ @property version
+ @abstract Returns the current human-readable short version number of this
+ application.
+ */
+
+@property (readonly) NSString *version;
 
 /*!
  @method showAboutHelp:
