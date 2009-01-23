@@ -13,6 +13,13 @@
 			sepNavWindowFrame = "{{103, 67}, {924, 961}}";
 		};
 	};
+	011BD6980F2A7E5300C4FD65 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */ = {
+		uiCtxt = {
+			"Xdesign Model Editor Bookmark Key" = {
+			};
+			sepNavWindowFrame = "{{79, 98}, {906, 925}}";
+		};
+	};
 	0128AECC0F14783400EC3C28 /* Scribd Uploader */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -126,26 +133,26 @@
 	};
 	0128AEE30F1478F300EC3C28 /* SUUploadDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {942, 2263}}";
-			sepNavSelRange = "{1157, 0}";
-			sepNavVisRange = "{413, 1859}";
+			sepNavIntBoundsRect = "{{0, 0}, {901, 2328}}";
+			sepNavSelRange = "{5210, 74}";
+			sepNavVisRange = "{4189, 1289}";
 			sepNavWindowFrame = "{{483, 91}, {826, 863}}";
 		};
 	};
 	0128AEE50F1478F300EC3C28 /* NSError_SUAdditions.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {786, 792}}";
-			sepNavSelRange = "{1145, 0}";
-			sepNavVisRange = "{0, 1162}";
+			sepNavSelRange = "{1387, 0}";
+			sepNavVisRange = "{0, 1552}";
 			sepNavWindowFrame = "{{595, 29}, {845, 920}}";
 		};
 	};
 	0128AEE60F1478F300EC3C28 /* NSError_SUAdditions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1098, 1027}}";
-			sepNavSelRange = "{2438, 6}";
-			sepNavVisRange = "{1861, 1587}";
-			sepNavWindowFrame = "{{589, -12}, {845, 920}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1098, 1118}}";
+			sepNavSelRange = "{2321, 0}";
+			sepNavVisRange = "{807, 3469}";
+			sepNavWindowFrame = "{{756, 43}, {845, 920}}";
 		};
 	};
 	0128AEE70F1478F300EC3C28 /* SUDatabaseHelper.h */ = {
@@ -158,10 +165,10 @@
 	};
 	0128AEE80F1478F300EC3C28 /* SUDatabaseHelper.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 2457}}";
-			sepNavSelRange = "{3647, 6}";
-			sepNavVisRange = "{3125, 1089}";
-			sepNavWindowFrame = "{{474, 146}, {826, 863}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1158, 2522}}";
+			sepNavSelRange = "{1270, 0}";
+			sepNavVisRange = "{756, 1966}";
+			sepNavWindowFrame = "{{600, 97}, {826, 863}}";
 		};
 	};
 	0128AEEB0F1478F300EC3C28 /* SUUploadHelper.h */ = {
@@ -174,9 +181,9 @@
 	};
 	0128AEEC0F1478F300EC3C28 /* SUUploadHelper.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 3627}}";
-			sepNavSelRange = "{7520, 0}";
-			sepNavVisRange = "{7142, 837}";
+			sepNavIntBoundsRect = "{{0, 0}, {912, 3380}}";
+			sepNavSelRange = "{4559, 0}";
+			sepNavVisRange = "{3998, 1123}";
 			sepNavWindowFrame = "{{636, 62}, {906, 925}}";
 		};
 	};
@@ -206,25 +213,25 @@
 	};
 	0128AEF00F1478F300EC3C28 /* SUUploadErrorController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {924, 735}}";
-			sepNavSelRange = "{1090, 0}";
-			sepNavVisRange = "{0, 1426}";
-			sepNavWindowFrame = "{{573, 116}, {826, 863}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1057, 612}}";
+			sepNavSelRange = "{515, 0}";
+			sepNavVisRange = "{0, 1420}";
+			sepNavWindowFrame = "{{579, 113}, {826, 863}}";
 		};
 	};
 	0128AEF20F1478F300EC3C28 /* SUDocument.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 2990}}";
-			sepNavSelRange = "{6321, 0}";
-			sepNavVisRange = "{5670, 1194}";
+			sepNavIntBoundsRect = "{{0, 0}, {774, 3263}}";
+			sepNavSelRange = "{1328, 20}";
+			sepNavVisRange = "{416, 1270}";
 			sepNavWindowFrame = "{{586, 69}, {791, 864}}";
 		};
 	};
 	0128AEF30F1478F300EC3C28 /* SUDocument.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1194, 4615}}";
-			sepNavSelRange = "{11384, 6}";
-			sepNavVisRange = "{10714, 692}";
+			sepNavIntBoundsRect = "{{0, 0}, {1194, 4771}}";
+			sepNavSelRange = "{4626, 7}";
+			sepNavVisRange = "{4137, 690}";
 			sepNavWindowFrame = "{{396, 67}, {904, 915}}";
 		};
 	};
@@ -238,9 +245,9 @@
 	};
 	0128AEF50F1478F300EC3C28 /* SUScribdAPI.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1110, 4810}}";
-			sepNavSelRange = "{2592, 0}";
-			sepNavVisRange = "{2182, 2075}";
+			sepNavIntBoundsRect = "{{0, 0}, {948, 4134}}";
+			sepNavSelRange = "{10754, 22}";
+			sepNavVisRange = "{9719, 1143}";
 			sepNavWindowFrame = "{{229, 43}, {992, 844}}";
 		};
 	};
@@ -629,8 +636,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {515, 220}}",
-							"{{520, 0}, {271, 220}}",
+							"{{0, 0}, {515, 218}}",
+							"{{520, 0}, {271, 218}}",
 						);
 					};
 					diagramSplitGeometry = {
@@ -649,8 +656,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {168, 220}}",
-							"{{173, 0}, {342, 220}}",
+							"{{0, 0}, {168, 218}}",
+							"{{173, 0}, {342, 218}}",
 						);
 					};
 				};
@@ -778,8 +785,8 @@
 	};
 	012E5E730F20837C0037ECDA /* SUInformationDrawerDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1098, 399}}";
-			sepNavSelRange = "{542, 6}";
+			sepNavIntBoundsRect = "{{0, 0}, {1098, 733}}";
+			sepNavSelRange = "{920, 0}";
 			sepNavVisRange = "{0, 927}";
 			sepNavWindowFrame = "{{410, 131}, {961, 861}}";
 		};
@@ -917,13 +924,6 @@
 			sepNavWindowFrame = "{{15, 112}, {735, 911}}";
 		};
 	};
-	013F58640F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */ = {
-		uiCtxt = {
-			"Xdesign Model Editor Bookmark Key" = {
-			};
-			sepNavWindowFrame = "{{61, 52}, {1232, 929}}";
-		};
-	};
 	014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {865, 833}}";
@@ -1028,7 +1028,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Install;
 		activeExecutable = 0128AECC0F14783400EC3C28 /* Scribd Uploader */;
 		activeTarget = 8D1107260486CEB800E47090 /* Scribd Uploader */;
 		addToTargets = (
@@ -1087,8 +1087,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 254360481;
-			PBXWorkspaceStateSaveDate = 254360481;
+			PBXPerProjectTemplateStateSaveDate = 254441047;
+			PBXWorkspaceStateSaveDate = 254441047;
 		};
 		sourceControlManager = 0128AED40F14783800EC3C28 /* Source Control */;
 		userBuildSettings = {

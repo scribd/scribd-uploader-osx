@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0106EE850F154403001B701B /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0106EE840F154403001B701B /* Icon.icns */; };
+		011BD6990F2A7E5300C4FD65 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 011BD6980F2A7E5300C4FD65 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */; };
 		0128AF310F1478F300EC3C28 /* SUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */; };
 		0128AF320F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDD0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m */; };
 		0128AF330F1478F300EC3C28 /* SULoginSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDF0F1478F300EC3C28 /* SULoginSheetDelegate.m */; };
@@ -51,7 +52,6 @@
 		0132C0970F16C3A6000B17C5 /* SUAboutWindowDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */; };
 		013C920E0F21E21200061162 /* SUIndexPathValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 013C920D0F21E21200061162 /* SUIndexPathValueTransformer.m */; };
 		013C92170F21E53300061162 /* NSIndexPath_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 013C92160F21E53300061162 /* NSIndexPath_SUAdditions.m */; };
-		013F58650F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 013F58640F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */; };
 		014204E40F29389700C7401A /* Automatic Updates.png in Resources */ = {isa = PBXBuildFile; fileRef = 014204E30F29389700C7401A /* Automatic Updates.png */; };
 		014DB9480F1EE55100F50460 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014DB9470F1EE55100F50460 /* Growl.framework */; };
 		014DB94F0F1EE58D00F50460 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 014DB9470F1EE55100F50460 /* Growl.framework */; };
@@ -92,6 +92,7 @@
 /* Begin PBXFileReference section */
 		0106EE840F154403001B701B /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		0106EE870F15441C001B701B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		011BD6980F2A7E5300C4FD65 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "Scribd_Uploader_DataModel 200-210.xcmappingmodel"; sourceTree = "<group>"; };
 		0128AEDA0F1478F300EC3C28 /* SUAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAppDelegate.h; sourceTree = "<group>"; };
 		0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUAppDelegate.m; sourceTree = "<group>"; };
 		0128AEDC0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileNotFoundAlertDelegate.h; sourceTree = "<group>"; };
@@ -169,7 +170,6 @@
 		013C920D0F21E21200061162 /* SUIndexPathValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUIndexPathValueTransformer.m; sourceTree = "<group>"; };
 		013C92150F21E53300061162 /* NSIndexPath_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSIndexPath_SUAdditions.h; sourceTree = "<group>"; };
 		013C92160F21E53300061162 /* NSIndexPath_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSIndexPath_SUAdditions.m; sourceTree = "<group>"; };
-		013F58640F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "Scribd_Uploader_DataModel 200-210.xcmappingmodel"; sourceTree = "<group>"; };
 		014204E30F29389700C7401A /* Automatic Updates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Automatic Updates.png"; sourceTree = "<group>"; };
 		014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		014DB9470F1EE55100F50460 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = "Linked Frameworks/Growl.framework"; sourceTree = "<group>"; };
@@ -590,8 +590,8 @@
 				012E5F120F217AF30037ECDA /* NSString_SUAdditions.m in Sources */,
 				013C920E0F21E21200061162 /* SUIndexPathValueTransformer.m in Sources */,
 				013C92170F21E53300061162 /* NSIndexPath_SUAdditions.m in Sources */,
-				013F58650F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel in Sources */,
 				01684E0B0F271DA700BA6ECB /* NSDictionary_SUAdditions.m in Sources */,
+				011BD6990F2A7E5300C4FD65 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,7 +805,7 @@
 			children = (
 				0128AF0B0F1478F300EC3C28 /* Scribd_Uploader_DataModel 200.xcdatamodel */,
 				012E5DC90F1F32B10037ECDA /* Scribd_Uploader_DataModel 210.xcdatamodel */,
-				013F58640F2714B700391E0D /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */,
+				011BD6980F2A7E5300C4FD65 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */,
 			);
 			currentVersion = 012E5DC90F1F32B10037ECDA /* Scribd_Uploader_DataModel 210.xcdatamodel */;
 			path = Scribd_Uploader_DataModel.xcdatamodeld;
