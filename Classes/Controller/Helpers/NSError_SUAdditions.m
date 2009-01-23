@@ -2,8 +2,8 @@
 
 @implementation NSError (SUAdditions)
 
-- (void) addMessagesForAction:(NSString *)action sender:(id)sender {
-	if (![[self domain] isEqualToString:SUScribdAPIErrorDomain]) return;
+- (NSError *) addMessagesForAction:(NSString *)action sender:(id)sender {
+	if (![[self domain] isEqualToString:SUScribdAPIErrorDomain]) return self;
 	
 	NSDictionary *messages = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
 	NSString *messageLocation = [[NSString alloc] initWithFormat:@"ErrorMessages.%@.%i", action, [self code]];
@@ -41,10 +41,21 @@
 	
 	[newUserInfo release];
 	[messages release];
+	return self;
 }
 
-- (void) addMessagesForAction:(NSString *)action title:(NSString *)docTitle {
-	if (![[self domain] isEqualToString:SUScribdAPIErrorDomain]) return;
+- (NSError *) addMessagesForAction:(NSString *)action title:(NSString *)docTitle {
+	if (![[self domain] isEqualToString:SUScribdAPIErrorDomain]) {
+		NSString *description = [[NSString alloc] initWithFormat:@"Your document was not configured because of a problem: %@", [self localizedDescription]];
+		NSMutableDictionary *info = [[NSMutableDictionary alloc] initWithDictionary:[self userInfo]];
+		[info setObject:description forKey:NSLocalizedDescriptionKey];
+		[description release];
+		[info setObject:@"Your file uploaded successfully, however. You will have to visit Scribd.com to change its metadata." forKey:NSLocalizedRecoverySuggestionErrorKey];
+		[info setObject:SUChangeSettingsAction forKey:SUActionErrorKey];
+		NSError *newError = [NSError errorWithDomain:SUScribdAPIErrorDomain code:1 userInfo:info];
+		[info release];
+		return newError;
+	}
 	
 	NSDictionary *messages = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
 	NSString *settingsLocation = [[NSString alloc] initWithFormat:@"ErrorMessages.%@.%i", action, [self code]];
@@ -73,6 +84,7 @@
 	
 	[newUserInfo release];
 	[messages release];
+	return self;
 }
 
 @end

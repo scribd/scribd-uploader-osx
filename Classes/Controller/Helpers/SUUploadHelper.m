@@ -50,7 +50,7 @@
 	self.isBusy = NO;
 	
 	if (error) {
-		[error addMessagesForAction:SULogInAction sender:self];
+		error = [error addMessagesForAction:SULogInAction sender:self];
 		NSAlert *alert = [[NSAlert alloc] init];
 		[alert setAlertStyle:NSCriticalAlertStyle];
 		[alert setMessageText:[error localizedDescription]];
@@ -125,7 +125,7 @@
 	self.isBusy = NO;
 	
 	if (error) {
-		[error addMessagesForAction:SUSignUpAction sender:self];
+		error = [error addMessagesForAction:SUSignUpAction sender:self];
 		NSAlert *alert = [[NSAlert alloc] init];
 		[alert setAlertStyle:NSCriticalAlertStyle];
 		[alert setMessageText:[error localizedDescription]];

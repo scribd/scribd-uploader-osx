@@ -53,7 +53,7 @@
 	}
 	else document.success = [NSNumber numberWithBool:NO];
 	if (error) {
-		[error addMessagesForAction:SUUploadAction sender:self];
+		error = [error addMessagesForAction:SUUploadAction sender:self];
 		document.error = [NSArchiver archivedDataWithRootObject:error];
 		document.errorIsUnrecoverable = [NSNumber numberWithBool:YES];
 	}
@@ -151,7 +151,7 @@
 	[parameters release];
 	
 	if (error) {
-		[error addMessagesForAction:SUChangeSettingsAction title:document.filename];
+		error = [error addMessagesForAction:SUChangeSettingsAction title:document.filename];
 		document.error = [NSArchiver archivedDataWithRootObject:error];
 		document.errorIsUnrecoverable = [NSNumber numberWithBool:NO];
 		document.success = [NSNumber numberWithBool:NO];
