@@ -70,6 +70,9 @@
 		01AF60020F1D27D300D51D07 /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF5FFB0F1D27D300D51D07 /* DBPrefsWindowController.m */; };
 		01AF60050F1D284900D51D07 /* SUPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF60040F1D284900D51D07 /* SUPreferencesWindowController.m */; };
 		01AF60440F1D321100D51D07 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AF60430F1D321100D51D07 /* Preferences.xib */; };
+		01BF112B0F2AD45A007CED18 /* Go Clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BF11280F2AD45A007CED18 /* Go Clicked.png */; };
+		01BF112C0F2AD45A007CED18 /* Caution Clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BF11290F2AD45A007CED18 /* Caution Clicked.png */; };
+		01BF112D0F2AD45A007CED18 /* Error Clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BF112A0F2AD45A007CED18 /* Error Clicked.png */; };
 		01E821340F293BB100473993 /* Caution.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821310F293BB100473993 /* Caution.png */; };
 		01E821350F293BB100473993 /* Error.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821320F293BB100473993 /* Error.png */; };
 		01E821360F293BB100473993 /* Go.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821330F293BB100473993 /* Go.png */; };
@@ -200,6 +203,9 @@
 		01AF60030F1D284900D51D07 /* SUPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUPreferencesWindowController.h; sourceTree = "<group>"; };
 		01AF60040F1D284900D51D07 /* SUPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUPreferencesWindowController.m; sourceTree = "<group>"; };
 		01AF60230F1D2FE200D51D07 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
+		01BF11280F2AD45A007CED18 /* Go Clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Go Clicked.png"; sourceTree = "<group>"; };
+		01BF11290F2AD45A007CED18 /* Caution Clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Caution Clicked.png"; sourceTree = "<group>"; };
+		01BF112A0F2AD45A007CED18 /* Error Clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Error Clicked.png"; sourceTree = "<group>"; };
 		01E821310F293BB100473993 /* Caution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Caution.png; sourceTree = "<group>"; };
 		01E821320F293BB100473993 /* Error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Error.png; sourceTree = "<group>"; };
 		01E821330F293BB100473993 /* Go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Go.png; sourceTree = "<group>"; };
@@ -392,6 +398,9 @@
 				01E821310F293BB100473993 /* Caution.png */,
 				01E821320F293BB100473993 /* Error.png */,
 				01E821330F293BB100473993 /* Go.png */,
+				01BF11290F2AD45A007CED18 /* Caution Clicked.png */,
+				01BF112A0F2AD45A007CED18 /* Error Clicked.png */,
+				01BF11280F2AD45A007CED18 /* Go Clicked.png */,
 				0128AF6E0F14799100EC3C28 /* Add.png */,
 				0128AF780F14799100EC3C28 /* Upload.png */,
 				0128AF720F14799100EC3C28 /* Remove.png */,
@@ -561,6 +570,9 @@
 				01E821340F293BB100473993 /* Caution.png in Resources */,
 				01E821350F293BB100473993 /* Error.png in Resources */,
 				01E821360F293BB100473993 /* Go.png in Resources */,
+				01BF112B0F2AD45A007CED18 /* Go Clicked.png in Resources */,
+				01BF112C0F2AD45A007CED18 /* Caution Clicked.png in Resources */,
+				01BF112D0F2AD45A007CED18 /* Error Clicked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

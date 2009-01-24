@@ -24,7 +24,6 @@
 									forName:@"SUDiscoverabilityDescription"];
 	[NSValueTransformer setValueTransformer:[[[SUSingleSelectionOnlyValueTransformer alloc] init] autorelease] forName:@"SUSingleSelectionOnly"];
 	[NSValueTransformer setValueTransformer:[[[SUFileStatusColorValueTransformer alloc] init] autorelease] forName:@"SUFileStatusColor"];
-	[NSValueTransformer setValueTransformer:[[[SUFileStatusButtonImageValueTransformer alloc] init] autorelease] forName:@"SUFileStatusButtonImage"];
 	[NSValueTransformer setValueTransformer:[[[SUUnarchiveErrorValueTransformer alloc] init] autorelease] forName:@"SUUnarchiveError"];
 	[NSValueTransformer setValueTransformer:[[[SULogInButtonTitleValueTransformer alloc] init] autorelease] forName:@"SULogInButtonTitle"];
 	[NSValueTransformer setValueTransformer:[[[SULoginLabelValueTransformer alloc] init] autorelease] forName:@"SULoginLabel"];

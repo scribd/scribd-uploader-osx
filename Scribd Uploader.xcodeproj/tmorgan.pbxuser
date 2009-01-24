@@ -86,8 +86,8 @@
 	0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1224, 2483}}";
-			sepNavSelRange = "{3763, 15}";
-			sepNavVisRange = "{3308, 1018}";
+			sepNavSelRange = "{923, 0}";
+			sepNavVisRange = "{232, 1696}";
 			sepNavWindowFrame = "{{574, 161}, {791, 864}}";
 		};
 	};
@@ -229,8 +229,8 @@
 	};
 	0128AEF00F1478F300EC3C28 /* SUUploadErrorController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1057, 612}}";
-			sepNavSelRange = "{515, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {924, 735}}";
+			sepNavSelRange = "{437, 9}";
 			sepNavVisRange = "{0, 1420}";
 			sepNavWindowFrame = "{{579, 113}, {826, 863}}";
 		};
@@ -245,9 +245,9 @@
 	};
 	0128AEF30F1478F300EC3C28 /* SUDocument.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 5174}}";
-			sepNavSelRange = "{2823, 0}";
-			sepNavVisRange = "{2369, 1044}";
+			sepNavIntBoundsRect = "{{0, 0}, {912, 5200}}";
+			sepNavSelRange = "{3007, 0}";
+			sepNavVisRange = "{1798, 2077}";
 			sepNavWindowFrame = "{{396, 67}, {904, 915}}";
 		};
 	};
@@ -293,10 +293,10 @@
 	};
 	0128AEFA0F1478F300EC3C28 /* SUTableStatusColumn.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {876, 735}}";
-			sepNavSelRange = "{1062, 0}";
-			sepNavVisRange = "{0, 1062}";
-			sepNavWindowFrame = "{{530, 161}, {826, 863}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1086, 520}}";
+			sepNavSelRange = "{1407, 8}";
+			sepNavVisRange = "{0, 1311}";
+			sepNavWindowFrame = "{{379, 87}, {826, 863}}";
 		};
 	};
 	0128AEFC0F1478F300EC3C28 /* SUBusyActionValueTransformer.h */ = {
@@ -318,17 +318,17 @@
 	0128AEFE0F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {546, 592}}";
-			sepNavSelRange = "{638, 0}";
-			sepNavVisRange = "{0, 658}";
+			sepNavSelRange = "{850, 0}";
+			sepNavVisRange = "{0, 1214}";
 			sepNavWindowFrame = "{{711, 95}, {605, 720}}";
 		};
 	};
 	0128AEFF0F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 741}}";
-			sepNavSelRange = "{539, 0}";
-			sepNavVisRange = "{0, 791}";
-			sepNavWindowFrame = "{{598, 45}, {814, 946}}";
+			sepNavIntBoundsRect = "{{0, 0}, {822, 897}}";
+			sepNavSelRange = "{1228, 0}";
+			sepNavVisRange = "{0, 1989}";
+			sepNavWindowFrame = "{{381, 82}, {814, 946}}";
 		};
 	};
 	0128AF000F1478F300EC3C28 /* SUFileStatusColorValueTransformer.h */ = {
@@ -1103,8 +1103,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 254460365;
-			PBXWorkspaceStateSaveDate = 254460365;
+			PBXPerProjectTemplateStateSaveDate = 254465100;
+			PBXWorkspaceStateSaveDate = 254465100;
 		};
 		sourceControlManager = 0128AED40F14783800EC3C28 /* Source Control */;
 		userBuildSettings = {

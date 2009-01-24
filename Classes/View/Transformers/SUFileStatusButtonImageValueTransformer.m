@@ -2,15 +2,27 @@
 
 @implementation SUFileStatusButtonImageValueTransformer
 
-/*
- Loads the icon images.
- */
-
 - (id) init {
+	return [self initWithSuffix:NULL];
+}
+
+- (id) initWithSuffix:(NSString *)suffix {
 	if (self = [super init]) {
-		successImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Go" ofType:@"png"]];
-		cautionImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Caution" ofType:@"png"]];
-		errorImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Error" ofType:@"png"]];
+		if (suffix) {
+			NSString *successString = [[NSString alloc] initWithFormat:@"Go %@", suffix];
+			NSString *cautionString = [[NSString alloc] initWithFormat:@"Caution %@", suffix];
+			NSString *errorString = [[NSString alloc] initWithFormat:@"Error %@", suffix];
+			successImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:successString ofType:@"png"]];
+			cautionImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:cautionString ofType:@"png"]];
+			errorImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:errorString ofType:@"png"]];
+			[successString release];
+			[cautionString release];
+			[errorString release];
+		} else {
+			successImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Go" ofType:@"png"]];
+			cautionImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Caution" ofType:@"png"]];
+			errorImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Error" ofType:@"png"]];
+		}
 	}
 	return self;
 }
