@@ -28,3 +28,7 @@ NSString *SUDefaultKeyLastCategoryLoad = @"lastCategoryLoad";
 NSString *SUUploadCompleteNotification = @"SUUploadCompleteNotification";
 NSString *SUUploadSucceededNotification = @"SUUploadSucceededNotification";
 NSString *SUUploadFailedNotification = @"SUUploadFailedNotification";
+
+/* Info.plist keys */
+NSString *SUMyDocsURLInfoKey = @"SUMyDocsURL";
+NSString *SUDocumentURLInfoKey = @"SUDocumentURL";

@@ -126,7 +126,7 @@ static NSDictionary *kinds = NULL;
 
 - (NSURL *) scribdURL {
 	if (!self.scribdID) return NULL;
-	NSString *urlString = [[NSString alloc] initWithFormat:@"http://www.scribd.com/doc/%@", self.scribdID];
+	NSString *urlString = [[NSString alloc] initWithFormat:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUMyDocsURLInfoKey], self.scribdID];
 	NSURL *url = [[NSURL alloc] initWithString:urlString];
 	[urlString release];
 	return [url autorelease];

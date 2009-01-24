@@ -16,7 +16,7 @@
 }
 
 /*!
- @method saveAction:sender
+ @method saveAction:
  @abstract Performs the save action for the application, which is to send the
  save: message to the application's managed object context.
  @discussion Any encountered errors are presented to the user.
@@ -26,15 +26,15 @@
 - (IBAction) saveAction:(id)sender;
 
 /*!
- @method uploadSelectionAction:sender
- @abstract Uploads every selected @link SUDocument SUDocument @/link to Scribd.
+ @method viewAllDocumentsAction:
+ @abstract Opens the Scribd.com My Docs page in the default web browser.
  @param sender The object that initiated the action.
  */
 
-- (IBAction) uploadSelectionAction:(id)sender;
+- (IBAction) viewAllDocumentsAction:(id)sender;
 
 /*!
- @method uploadAllAction:sender
+ @method uploadAllAction:
  @abstract Uploads every @link SUDocument SUDocument @/link to Scribd.
  @discussion Any encountered errors are presented to the user.
  @param sender The object that initiated the action.
@@ -43,7 +43,7 @@
 - (IBAction) uploadAllAction:(id)sender;
 
 /*!
- @method loginAction:sender:
+ @method loginAction:
  @abstract Displays the login sheet.
  @param sender The object that initiated the action.
  */
@@ -51,7 +51,7 @@
 - (IBAction) loginAction:(id)sender;
 
 /*!
- @method addFile:sender
+ @method addFile:
  @abstract Displays an open-file sheet where the user can choose files to add to
  the upload list.
  @param sender The object that initiated the action.

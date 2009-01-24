@@ -76,11 +76,10 @@
 	}
 }
 
-- (IBAction) uploadSelectionAction:(id)sender {
-	if ([[SUSessionHelper sessionHelper] sessionStored])
-		[uploader uploadFiles];
-	else
-		[[NSApplication sharedApplication] beginSheet:loginSheet modalForWindow:window modalDelegate:loginSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:@"selection"];
+- (IBAction) viewAllDocumentsAction:(id)sender {
+	NSURL *URL = [[NSURL alloc] initWithString:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUMyDocsURLInfoKey]];
+	[[NSWorkspace sharedWorkspace] openURL:URL];
+	[URL release];
 }
 
 - (IBAction) uploadAllAction:(id)sender {
@@ -100,7 +99,7 @@
  */
 
 - (BOOL) validateToolbarItem:(NSToolbarItem *)item {
-	if ([item action] == @selector(uploadAllAction:) || [item action] == @selector(uploadSelectionAction:)) {
+	if ([item action] == @selector(uploadAllAction:)) {
 		NSError *error = NULL;
 		return (![uploader isUploading] && [SUDocument numberOfUploadableInManagedObjectContext:db.managedObjectContext error:&error] > 0);
 	}

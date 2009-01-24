@@ -3,6 +3,12 @@
 @interface SUUploadHelper (Private)
 
 /*
+ Returns YES if at least one upload has been started since last launch.
+ */
+
+- (BOOL) uploadStarted;
+
+/*
  Called when a file finishes uploading. Changes the currentlyUploadingCount and
  handles the case when all files are finished.
  */
@@ -16,6 +22,7 @@
 @synthesize isBusy;
 @synthesize currentlyUploadingCount;
 @dynamic isUploading;
+@dynamic uploadComplete;
 @synthesize busyAction;
 @synthesize newUserLogin;
 @synthesize newUserEmail;
@@ -27,6 +34,7 @@
  */
 
 - (void) awakeFromNib {
+	uploadStarted = NO;
 	self.isBusy = NO;
 	self.currentlyUploadingCount = 0;
 	newUserLoginError = newUserPasswordError = newUserEmailError = newUserNameError = NULL;
@@ -85,6 +93,8 @@
 		[alert runModal];
 		[alert release];
 	}
+	
+	uploadStarted = YES;
 	
 	NSDictionary *parameters = [[NSDictionary alloc] initWithObjectsAndKeys:
 								[SUSessionHelper sessionHelper].key, @"session_key",
@@ -160,8 +170,17 @@
 	return [NSSet setWithObject:@"currentlyUploadingCount"];
 }
 
+/*
+ The upload complete flag is based on the number of files currently uploading
+ and whether at least one upload has occurred.
+ */
+
++ (NSSet *) keyPathsForValuesAffectingUploadComplete {
+	return [NSSet setWithObjects:@"currentlyUploadingCount", @"uploadStarted", NULL];
+}
+
 - (BOOL) uploadComplete {
-	return self.currentlyUploadingCount == 0;
+	return uploadStarted && self.currentlyUploadingCount == 0;
 }
 
 /*
@@ -240,6 +259,10 @@
 @end
 
 @implementation SUUploadHelper (Private)
+
+- (BOOL) uploadStarted {
+	return uploadStarted;
+}
 
 - (void) uploadComplete:(SUUploadDelegate *)delegate {
 	[uploadDelegates removeObject:delegate];

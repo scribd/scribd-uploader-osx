@@ -36,5 +36,9 @@
 	<string>http://www.scribd.com/mac_uploader_releases.rss</string>
 	<key>SUEnableSystemProfiling</key>
 	<true/>
+	<key>SUDocumentURL</key>
+	<string>http://www.scribd.com/doc/%@</string>
+	<key>SUMyDocsURL</key>
+	<string>http://www.scribd.com/my_docs</string>
 </dict>
 </plist>

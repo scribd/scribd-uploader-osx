@@ -13,7 +13,7 @@
  */
 
 @interface SUUploadHelper : NSObject {
-	BOOL isBusy;
+	BOOL isBusy, uploadStarted;
 	NSUInteger currentlyUploadingCount;
 	NSString *busyAction;
 	NSString *newUserLogin, *newUserEmail, *newUserPassword, *newUserName;
@@ -46,6 +46,14 @@
  */
 
 @property (readonly) BOOL isUploading;
+
+/*!
+ @property uploadComplete
+ @abstract YES if at least one upload has occurred and no files are currently
+ being transferred; NO otherwise.
+ */
+
+@property (readonly) BOOL uploadComplete;
 
 /*!
  @property busyAction

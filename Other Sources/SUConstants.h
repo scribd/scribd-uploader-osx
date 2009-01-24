@@ -135,3 +135,21 @@ NSString *SUUploadSucceededNotification;
  */
 
 NSString *SUUploadFailedNotification;
+
+#pragma mark Info.plist keys
+
+/*!
+ @const SUMyDocsURLInfoKey
+ @abstract Info.plist dictionary key whose value is the URL for the Scribd.com
+ My Docs page.
+ */
+
+NSString *SUMyDocsURLInfoKey;
+
+/*!
+ @const SUDocumentURLInfoKey
+ @abstract Info.plist dictionary key whose value is the format of a document's
+ URL on Scribd.com.
+ */
+
+NSString *SUDocumentURLInfoKey;
