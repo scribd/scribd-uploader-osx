@@ -43,18 +43,19 @@
 - (void) storeSessionKey:(NSString *)key username:(NSString *)username;
 
 /*!
- @method clearSession
- @abstract Removes the session information from the user defaults store.
- */
-
-- (void) clearSession;
-
-/*!
  @method sessionStored
  @abstract Returns YES if session information is stored for the next upload; NO
  if not.
  */
 
 - (BOOL) sessionStored;
+
+/*!
+ @method setupForLaunch
+ @abstract This method should be called when the application first launches. It
+ clears out the session username if the session keychain item has been deleted.
+ */
+
+- (void) setupForLaunch;
 
 @end

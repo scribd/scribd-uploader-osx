@@ -20,7 +20,6 @@ NSString *SUUploadAction = @"Upload";
 NSString *SUChangeSettingsAction = @"ChangeSettings";
 
 /* User defaults keys */
-NSString *SUDefaultKeySessionKey = @"sessionKey";
 NSString *SUDefaultKeySessionUsername = @"sessionUsername";
 NSString *SUDefaultKeyLastCategoryLoad = @"lastCategoryLoad";
 

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0106EE850F154403001B701B /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0106EE840F154403001B701B /* Icon.icns */; };
 		011BD6990F2A7E5300C4FD65 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 011BD6980F2A7E5300C4FD65 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */; };
+		0123846C0F2AAE1F007D2B54 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 012384690F2AAE1F007D2B54 /* EMKeychainItem.m */; };
+		0123846D0F2AAE1F007D2B54 /* EMKeychainProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123846B0F2AAE1F007D2B54 /* EMKeychainProxy.m */; };
+		012385FE0F2AB3D7007D2B54 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012385FD0F2AB3D7007D2B54 /* Security.framework */; };
 		0128AF310F1478F300EC3C28 /* SUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */; };
 		0128AF320F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDD0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m */; };
 		0128AF330F1478F300EC3C28 /* SULoginSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDF0F1478F300EC3C28 /* SULoginSheetDelegate.m */; };
@@ -93,6 +96,11 @@
 		0106EE840F154403001B701B /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		0106EE870F15441C001B701B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		011BD6980F2A7E5300C4FD65 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "Scribd_Uploader_DataModel 200-210.xcmappingmodel"; sourceTree = "<group>"; };
+		012384680F2AAE1F007D2B54 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
+		012384690F2AAE1F007D2B54 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
+		0123846A0F2AAE1F007D2B54 /* EMKeychainProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainProxy.h; sourceTree = "<group>"; };
+		0123846B0F2AAE1F007D2B54 /* EMKeychainProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainProxy.m; sourceTree = "<group>"; };
+		012385FD0F2AB3D7007D2B54 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		0128AEDA0F1478F300EC3C28 /* SUAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAppDelegate.h; sourceTree = "<group>"; };
 		0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUAppDelegate.m; sourceTree = "<group>"; };
 		0128AEDC0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileNotFoundAlertDelegate.h; sourceTree = "<group>"; };
@@ -211,12 +219,24 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				017077B70F1C47AC008A3CB0 /* Sparkle.framework in Frameworks */,
 				014DB9480F1EE55100F50460 /* Growl.framework in Frameworks */,
+				012385FE0F2AB3D7007D2B54 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012384670F2AAE1F007D2B54 /* EMKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				012384680F2AAE1F007D2B54 /* EMKeychainItem.h */,
+				012384690F2AAE1F007D2B54 /* EMKeychainItem.m */,
+				0123846A0F2AAE1F007D2B54 /* EMKeychainProxy.h */,
+				0123846B0F2AAE1F007D2B54 /* EMKeychainProxy.m */,
+			);
+			path = EMKeychain;
+			sourceTree = "<group>";
+		};
 		0128AED60F1478F300EC3C28 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +409,7 @@
 			children = (
 				01AF5FF00F1D27D300D51D07 /* ASIHTTPRequest */,
 				01AF5FF90F1D27D300D51D07 /* DBPrefsWindow */,
+				012384670F2AAE1F007D2B54 /* EMKeychain */,
 				01AF5FFC0F1D27D300D51D07 /* QuickLook */,
 			);
 			path = Vendor;
@@ -439,6 +460,7 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				012385FD0F2AB3D7007D2B54 /* Security.framework */,
 				77C82804067257F0000B614F /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
@@ -592,6 +614,8 @@
 				013C92170F21E53300061162 /* NSIndexPath_SUAdditions.m in Sources */,
 				01684E0B0F271DA700BA6ECB /* NSDictionary_SUAdditions.m in Sources */,
 				011BD6990F2A7E5300C4FD65 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel in Sources */,
+				0123846C0F2AAE1F007D2B54 /* EMKeychainItem.m in Sources */,
+				0123846D0F2AAE1F007D2B54 /* EMKeychainProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -85,19 +85,11 @@ NSString *SUChangeSettingsAction;
 #pragma mark User defaults keys
 
 /*!
- @const SUDefaultKeySessionKey
- @abstract The User Defaults key for the Scribd-given session key for the
- currently logged-in user.
- @discussion NULL if no user is currently logged in.
- */
-
-NSString *SUDefaultKeySessionKey;
-
-/*!
  @const SUDefaultKeySessionUsername
  @abstract The User Defaults key for the login or email address of the currently
  logged in user.
- @discussion NULL if no user is currently logged in.
+ @discussion NULL if no user is currently logged in. The session key is stored
+ in the keychain.
  */
 
 NSString *SUDefaultKeySessionUsername;

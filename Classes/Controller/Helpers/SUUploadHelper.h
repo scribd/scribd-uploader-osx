@@ -16,6 +16,7 @@
 	BOOL isBusy, uploadStarted;
 	NSUInteger currentlyUploadingCount;
 	NSString *busyAction;
+	NSString *scribdLogin, *scribdPassword;
 	NSString *newUserLogin, *newUserEmail, *newUserPassword, *newUserName;
 	NSError *newUserLoginError, *newUserEmailError, *newUserPasswordError, *newUserNameError;
 	NSMutableSet *uploadDelegates;
@@ -91,6 +92,20 @@
  */
 
 @property (retain) NSString *newUserName;
+
+/*!
+ @property scribdLogin
+ @abstract The username used when signing in to an existing account.
+ */
+
+@property (retain) NSString *scribdLogin;
+
+/*!
+ @property scribdPassword
+ @abstract The password used when signing in to an existing account.
+ */
+
+@property (retain) NSString *scribdPassword;
 
 /*!
  @method authenticate

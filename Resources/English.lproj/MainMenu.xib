@@ -3015,46 +3015,6 @@ ciBoZWxwIHZpZXdlci4</string>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.scribdPassword</string>
-						<reference key="source" ref="758266464"/>
-						<reference key="destination" ref="706999351"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="758266464"/>
-							<reference key="NSDestination" ref="706999351"/>
-							<string key="NSLabel">value: values.scribdPassword</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.scribdPassword</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<integer value="1" key="NS.object.0" id="9"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">921</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.scribdLogin</string>
-						<reference key="source" ref="177607311"/>
-						<reference key="destination" ref="706999351"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="177607311"/>
-							<reference key="NSDestination" ref="706999351"/>
-							<string key="NSLabel">value: values.scribdLogin</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.scribdLogin</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<reference key="NS.object.0" ref="9"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">922</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: busyAction</string>
 						<reference key="source" ref="721942137"/>
 						<reference key="destination" ref="108242027"/>
@@ -3484,7 +3444,7 @@ ciBoZWxwIHZpZXdlci4</string>
 								</object>
 								<object class="NSMutableArray" key="dict.values">
 									<bool key="EncodedWithXMLCoder">YES</bool>
-									<reference ref="9"/>
+									<integer value="1" id="9"/>
 									<string>NSNegateBoolean</string>
 								</object>
 							</object>
@@ -4458,6 +4418,46 @@ ciBoZWxwIHZpZXdlci4</string>
 						<reference key="destination" ref="516835730"/>
 					</object>
 					<int key="connectionID">1701</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: scribdLogin</string>
+						<reference key="source" ref="177607311"/>
+						<reference key="destination" ref="108242027"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="177607311"/>
+							<reference key="NSDestination" ref="108242027"/>
+							<string key="NSLabel">value: scribdLogin</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">scribdLogin</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<reference key="NS.object.0" ref="5"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1703</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: scribdPassword</string>
+						<reference key="source" ref="758266464"/>
+						<reference key="destination" ref="108242027"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="758266464"/>
+							<reference key="NSDestination" ref="108242027"/>
+							<string key="NSLabel">value: scribdPassword</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">scribdPassword</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<reference key="NS.object.0" ref="5"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1705</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6636,7 +6636,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1701</int>
+			<int key="maxID">1705</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

@@ -58,6 +58,8 @@
 	if (!lastCheckTime || -[lastCheckTime timeIntervalSinceNow] >= SUTimeBetweenCategoryLoads || [SUCategory countInManagedObjectContext:db.managedObjectContext] == 0) {
 		[NSThread detachNewThreadSelector:@selector(loadCategories:) toTarget:self withObject:NULL];
 	}
+	
+	[[SUSessionHelper sessionHelper] setupForLaunch];
 }
 
 /*

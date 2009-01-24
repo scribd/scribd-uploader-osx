@@ -2,6 +2,16 @@
 
 static SUSessionHelper *sharedSessionHelper = NULL;
 
+@interface SUSessionHelper (Private)
+
+/*
+ Returns the keychain item used to store the Scribd.com session key.
+ */
+
+- (EMGenericKeychainItem *) keychainItem;
+
+@end
+
 @implementation SUSessionHelper
 
 @dynamic key;
@@ -68,34 +78,40 @@ static SUSessionHelper *sharedSessionHelper = NULL;
 	return self;
 }
 
-/*
- Returns the session key stored in the user defaults.
- */
-
-- (NSString *) key {
-	return [[NSUserDefaults standardUserDefaults] stringForKey:SUDefaultKeySessionKey];
+- (void) setupForLaunch {
+	if (self.username && ![self keychainItem]) [[NSUserDefaults standardUserDefaults] removeObjectForKey:SUDefaultKeySessionUsername];
 }
 
-/*
- Returns the session username stored in the user defaults.
- */
+- (NSString *) key {
+	return [[self keychainItem] password];
+}
 
 - (NSString *) username {
 	return [[NSUserDefaults standardUserDefaults] stringForKey:SUDefaultKeySessionUsername];
 }
 
 - (void) storeSessionKey:(NSString *)key username:(NSString *)username {
-	[[NSUserDefaults standardUserDefaults] setObject:key forKey:SUDefaultKeySessionKey];
+	EMGenericKeychainItem *keychainItem = [self keychainItem];
+	if (self.username && keychainItem) {
+		[keychainItem setUsername:username];
+		[keychainItem setPassword:key];
+	}
+	else
+		[[EMKeychainProxy sharedProxy] addGenericKeychainItemForService:@"Scribd Uploader session key" withUsername:username password:key];
+	
 	[[NSUserDefaults standardUserDefaults] setObject:username forKey:SUDefaultKeySessionUsername];
 }
 
-- (void) clearSession {
-	[[NSUserDefaults standardUserDefaults] setObject:NULL forKey:SUDefaultKeySessionKey];
-	[[NSUserDefaults standardUserDefaults] setObject:NULL forKey:SUDefaultKeySessionUsername];
+- (BOOL) sessionStored {
+	return [self keychainItem] != NULL;
 }
 
-- (BOOL) sessionStored {
-	return [[NSUserDefaults standardUserDefaults] objectForKey:SUDefaultKeySessionKey] != NULL;
+@end
+
+@implementation SUSessionHelper (Private)
+
+- (EMGenericKeychainItem *) keychainItem {
+	return [[EMKeychainProxy sharedProxy] genericKeychainItemForService:@"Scribd Uploader session key" withUsername:self.username];
 }
 
 @end

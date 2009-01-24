@@ -11,6 +11,7 @@
 #import "DBPrefsWindowController.h"
 #import <Sparkle/SUUpdater.h>
 #import <Growl/GrowlApplicationBridge.h>
+#import "EMKeychainProxy.h"
 
 #import "SUConstants.h"
 #import "NSString_SUAdditions.h"
