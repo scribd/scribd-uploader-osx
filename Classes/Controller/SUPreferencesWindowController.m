@@ -24,6 +24,9 @@
 
 - (void) setupToolbar {
 	[self addView:automaticUpdatesView label:@"Automatic Updates"];
+	NSImage *image = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Upload" ofType:@"png"]];
+	[self addView:uploadingView label:@"Uploading" image:image];
+	[image release];
 }
 
 - (IBAction) checkForUpdates:(id)sender {
@@ -33,6 +36,7 @@
 - (IBAction) showHelp:(id)sender {
 	NSString *anchor;
 	if ([[self activeView] isEqualTo:automaticUpdatesView]) anchor = @"automatic_updates";
+	if ([[self activeView] isEqualTo:uploadingView]) anchor = @"uploading_preferences";
 	[[NSHelpManager sharedHelpManager] openHelpAnchor:anchor inBook:@"Scribd Uploader Help"];
 }
 

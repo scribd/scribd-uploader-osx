@@ -27,6 +27,7 @@
 				[db.managedObjectContext deleteObject:existingDocument];
 			NSManagedObject *file = [NSEntityDescription insertNewObjectForEntityForName:@"Document" inManagedObjectContext:db.managedObjectContext];
 			[file setValue:[path stringByStandardizingPath] forKey:@"path"];
+			if ([[NSUserDefaults standardUserDefaults] objectForKey:SUDefaultKeyUploadPrivateDefault]) [file setValue:[NSNumber numberWithBool:YES] forKey:@"hidden"];
 			atLeastOneWasAdded = YES;
 		}
 	}

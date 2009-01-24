@@ -22,6 +22,7 @@ NSString *SUChangeSettingsAction = @"ChangeSettings";
 /* User defaults keys */
 NSString *SUDefaultKeySessionUsername = @"sessionUsername";
 NSString *SUDefaultKeyLastCategoryLoad = @"lastCategoryLoad";
+NSString *SUDefaultKeyUploadPrivateDefault = @"privateUploadsByDefault";
 
 /* Notifications */
 NSString *SUUploadCompleteNotification = @"SUUploadCompleteNotification";

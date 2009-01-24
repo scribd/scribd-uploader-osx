@@ -102,6 +102,14 @@ NSString *SUDefaultKeySessionUsername;
 
 NSString *SUDefaultKeyLastCategoryLoad;
 
+/*!
+ @const SUDefaultKeyUploadPrivateDefault
+ @abstract The User Defaults key for the boolean which indicates if newly added
+ documents should be marked to upload as private by default.
+ */
+
+NSString *SUDefaultKeyUploadPrivateDefault;
+
 #pragma mark Notifications
 
 /*!
