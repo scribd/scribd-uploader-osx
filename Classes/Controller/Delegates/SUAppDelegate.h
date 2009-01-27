@@ -7,12 +7,13 @@
  */
 
 @interface SUAppDelegate : NSObject {
-	IBOutlet NSWindow *window, *loginSheet;
+	IBOutlet NSWindow *window, *loginSheet, *directoryScanSheet;
 	IBOutlet SULoginSheetDelegate *loginSheetDelegate;
 	IBOutlet SUDatabaseHelper *db;
 	IBOutlet NSTableView *uploadTable;
 	IBOutlet SUUploadHelper *uploader;
 	IBOutlet NSTreeController *categoriesController;
+	IBOutlet SUDirectoryScanner *directoryScanner;
 }
 
 /*!
@@ -58,6 +59,16 @@
  */
 
 - (IBAction) addFile:(id)sender;
+
+/*!
+ @method addAllFiles:
+ @abstract Displays an open-file sheet where the user can choose a directory.
+ This directory will be scanned and all uploadable documents within it will be
+ added.
+ @param sender The object that initiated the action.
+ */
+
+- (IBAction) addAllFiles:(id)sender;
 
 /*!
  @method displayPreferences:

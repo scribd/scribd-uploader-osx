@@ -19,6 +19,7 @@
 #import "NSError_SUAdditions.h"
 #import "NSIndexPath_SUAdditions.h"
 #import "NSDictionary_SUAdditions.h"
+#import "SUDeferredOperationQueue.h"
 
 #import "SUCategory.h"
 #import "SUDocument.h"
@@ -28,6 +29,7 @@
 #import "SUUploadDelegate.h"
 #import "SUScribdAPI.h"
 #import "SUSessionHelper.h"
+#import "SUDirectoryScanner.h"
 
 #import "SUBusyActionValueTransformer.h"
 #import "SUFileStatusButtonImageValueTransformer.h"

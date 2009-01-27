@@ -28,6 +28,8 @@ NSString *SUDefaultKeyUploadPrivateDefault = @"privateUploadsByDefault";
 NSString *SUUploadCompleteNotification = @"SUUploadCompleteNotification";
 NSString *SUUploadSucceededNotification = @"SUUploadSucceededNotification";
 NSString *SUUploadFailedNotification = @"SUUploadFailedNotification";
+NSString *SUScanningStartedNotification = @"SUScanningStartedNotification";
+NSString *SUScanningDoneNotification = @"SUScanningDoneNotification";
 
 /* Info.plist keys */
 NSString *SUMyDocsURLInfoKey = @"SUMyDocsURL";

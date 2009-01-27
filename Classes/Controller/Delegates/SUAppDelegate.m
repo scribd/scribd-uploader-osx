@@ -7,7 +7,19 @@
  current date as the last category load time.
  */
 
-- (void) loadCategories:(id)unused;
+- (void) loadCategories:(id)context;
+
+/*
+ Responds to the scanning-started notification by opening the sheet.
+ */
+
+- (void) scanningStarted:(id)context;
+
+/*
+ Responds to the scanning-complete notification by closing the sheet.
+ */
+
+- (void) scanningDone:(id)context;
 
 @end
 
@@ -59,6 +71,9 @@
 	}
 	
 	[[SUSessionHelper sessionHelper] setupForLaunch];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanningStarted:) name:SUScanningStartedNotification object:NULL];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanningDone:) name:SUScanningDoneNotification object:NULL];
 }
 
 /*
@@ -119,6 +134,17 @@
 	[openPanel beginSheetForDirectory:NULL file:NULL types:[SUDocument scribdFileTypes] modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 }
 
+- (IBAction) addAllFiles:(id)sender {
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+	
+	[openPanel setAllowsMultipleSelection:YES];
+	[openPanel setPrompt:@"Scan"];
+	[openPanel setMessage:@"Choose a directory to scan for documents:"];
+	[openPanel setCanChooseFiles:NO];
+	[openPanel setCanChooseDirectories:YES];
+	[openPanel beginSheetForDirectory:NULL file:NULL types:NULL modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+}
+
 /*
  Implementation of the applicationShouldTerminate: method, used here to
  handle the saving of changes in the application managed object context
@@ -172,15 +198,17 @@
 
 - (void) openPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo {
 	if (returnCode == NSOKButton) {
+		BOOL willScan = NO;
 		NSArray *filesToAdd = [panel filenames];
 		for (NSString *path in filesToAdd) {
-			SUDocument *existingDocument = NULL;
-			if (existingDocument = [SUDocument findByPath:path inManagedObjectContext:db.managedObjectContext])
-				[db.managedObjectContext deleteObject:existingDocument];
-			NSManagedObject *file = [NSEntityDescription insertNewObjectForEntityForName:@"Document" inManagedObjectContext:db.managedObjectContext];
-			[file setValue:[path stringByStandardizingPath] forKey:@"path"];
-			if ([[NSUserDefaults standardUserDefaults] objectForKey:SUDefaultKeyUploadPrivateDefault]) [file setValue:[NSNumber numberWithBool:YES] forKey:@"hidden"];
+			BOOL dir = NO;
+			if ([[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&dir] && dir) {
+				[directoryScanner addDirectoryPath:path];
+				willScan = YES;
+			}
+			else [SUDocument createFromPath:path inManagedObjectContext:db.managedObjectContext];
 		}
+		if (willScan) [directoryScanner beginScanning];
 	}
 }
 
@@ -188,11 +216,29 @@
 
 @implementation SUAppDelegate (Private)
 
-- (void) loadCategories:(id)unused {
+- (void) loadCategories:(id)context {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	[[SUScribdAPI sharedAPI] loadCategoriesIntoManagedObjectContext:db.managedObjectContext];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:SUDefaultKeyLastCategoryLoad];
 	[pool release];
+}
+
+- (void) scanningStarted:(id)context {
+	if ([context isKindOfClass:[NSNotification class]]) [NSThread detachNewThreadSelector:@selector(scanningStarted:) toTarget:self withObject:NULL];
+	else {
+		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		while ([window attachedSheet]); // wait for the open panel to disappear, otherwise strange things happen
+		@synchronized(directoryScanner) {
+			// to prevent the sheet from hanging there, we perform these tasks in a critical block
+			if (!directoryScanner.isScanning) return;
+			[[NSApplication sharedApplication] beginSheet:directoryScanSheet modalForWindow:window modalDelegate:directoryScanner didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+		}
+		[pool release];
+	}
+}
+
+- (void) scanningDone:(id)context {
+	[[NSApplication sharedApplication] endSheet:directoryScanSheet];
 }
 
 @end

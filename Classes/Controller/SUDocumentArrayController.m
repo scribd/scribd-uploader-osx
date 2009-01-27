@@ -22,12 +22,7 @@
 	BOOL atLeastOneWasAdded = NO;
 	for (NSString *path in files) {
 		if ([[SUDocument scribdFileTypes] containsObject:[path pathExtension]]) {
-			SUDocument *existingDocument = NULL;
-			if (existingDocument = [SUDocument findByPath:path inManagedObjectContext:db.managedObjectContext])
-				[db.managedObjectContext deleteObject:existingDocument];
-			NSManagedObject *file = [NSEntityDescription insertNewObjectForEntityForName:@"Document" inManagedObjectContext:db.managedObjectContext];
-			[file setValue:[path stringByStandardizingPath] forKey:@"path"];
-			if ([[NSUserDefaults standardUserDefaults] objectForKey:SUDefaultKeyUploadPrivateDefault]) [file setValue:[NSNumber numberWithBool:YES] forKey:@"hidden"];
+			[SUDocument createFromPath:path inManagedObjectContext:db.managedObjectContext];
 			atLeastOneWasAdded = YES;
 		}
 	}

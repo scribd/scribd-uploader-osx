@@ -228,6 +228,16 @@
 
 + (NSUInteger) numberOfUploadableInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
 
+/*!
+ @method createFromPath:inManagedObjectContext:
+ @abstract Creates a new document record from a path.
+ @param path The path to the file.
+ @param managedObjectContext The managed object context to insert the document into.
+ @result The newly created, unsaved document managed object.
+ */
+
++ (SUDocument *) createFromPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
 #pragma mark Instance methods
 
 /*!

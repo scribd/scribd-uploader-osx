@@ -136,6 +136,21 @@ NSString *SUUploadSucceededNotification;
 
 NSString *SUUploadFailedNotification;
 
+/*!
+ @const SUScanningStartedNotification
+ @abstract Posted by @link SUDirectoryScanner SUDirectoryScanner @/link when a
+ directory scan commences.
+ */
+
+NSString *SUScanningStartedNotification;
+/*!
+ @const SUScanningDoneNotification
+ @abstract Posted by @link SUDirectoryScanner SUDirectoryScanner @/link when a
+ directory scan completes.
+ */
+
+NSString *SUScanningDoneNotification;
+
 #pragma mark Info.plist keys
 
 /*!

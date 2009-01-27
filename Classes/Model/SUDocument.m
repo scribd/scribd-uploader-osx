@@ -336,6 +336,19 @@ static NSDictionary *kinds = NULL;
 }
 
 #pragma mark -
+#pragma mark Creators
+
++ (SUDocument *) createFromPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+	SUDocument *existingDocument = NULL;
+	if (existingDocument = [SUDocument findByPath:path inManagedObjectContext:managedObjectContext])
+		[managedObjectContext deleteObject:existingDocument];
+	SUDocument *file = [NSEntityDescription insertNewObjectForEntityForName:@"Document" inManagedObjectContext:managedObjectContext];
+	[file setValue:[path stringByStandardizingPath] forKey:@"path"];
+	if ([[NSUserDefaults standardUserDefaults] objectForKey:SUDefaultKeyUploadPrivateDefault]) [file setValue:[NSNumber numberWithBool:YES] forKey:@"hidden"];	
+	return file;
+}
+
+#pragma mark -
 #pragma mark Other
 
 + (NSArray *) scribdFileTypes {
