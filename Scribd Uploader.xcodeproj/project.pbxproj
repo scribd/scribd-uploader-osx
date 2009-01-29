@@ -61,6 +61,7 @@
 		014DB95D0F1EE5FD00F50460 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */; };
 		01684E0B0F271DA700BA6ECB /* NSDictionary_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01684E0A0F271DA700BA6ECB /* NSDictionary_SUAdditions.m */; };
 		017077B70F1C47AC008A3CB0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017077B60F1C47AC008A3CB0 /* Sparkle.framework */; };
+		01A9664E0F315F4000A60A5C /* Add All.png in Resources */ = {isa = PBXBuildFile; fileRef = 01A9664D0F315F4000A60A5C /* Add All.png */; };
 		01ABF7D70F147AB400EE7142 /* ScribdAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */; };
 		01ABF7FA0F147DCC00EE7142 /* SUSessionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */; };
 		01AF5FFE0F1D27D300D51D07 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AF5FF20F1D27D300D51D07 /* ASIFormDataRequest.m */; };
@@ -189,6 +190,7 @@
 		01684E090F271DA700BA6ECB /* NSDictionary_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_SUAdditions.h; sourceTree = "<group>"; };
 		01684E0A0F271DA700BA6ECB /* NSDictionary_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_SUAdditions.m; sourceTree = "<group>"; };
 		017077B60F1C47AC008A3CB0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Linked Frameworks/Sparkle.framework"; sourceTree = "<group>"; };
+		01A9664D0F315F4000A60A5C /* Add All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add All.png"; sourceTree = "<group>"; };
 		01ABF7F80F147DCC00EE7142 /* SUSessionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSessionHelper.h; sourceTree = "<group>"; };
 		01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSessionHelper.m; sourceTree = "<group>"; };
 		01AF5FF10F1D27D300D51D07 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 				01BF112A0F2AD45A007CED18 /* Error Clicked.png */,
 				01BF11280F2AD45A007CED18 /* Go Clicked.png */,
 				0128AF6E0F14799100EC3C28 /* Add.png */,
+				01A9664D0F315F4000A60A5C /* Add All.png */,
 				0128AF780F14799100EC3C28 /* Upload.png */,
 				0128AF720F14799100EC3C28 /* Remove.png */,
 				014204E30F29389700C7401A /* Automatic Updates.png */,
@@ -583,6 +586,7 @@
 				01BF112B0F2AD45A007CED18 /* Go Clicked.png in Resources */,
 				01BF112C0F2AD45A007CED18 /* Caution Clicked.png in Resources */,
 				01BF112D0F2AD45A007CED18 /* Error Clicked.png in Resources */,
+				01A9664E0F315F4000A60A5C /* Add All.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
