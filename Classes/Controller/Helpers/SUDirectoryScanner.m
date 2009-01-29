@@ -1,18 +1,7 @@
 #import "SUDirectoryScanner.h"
 
-@interface SUDirectoryScanner (Private)
-
-/*
- Operation method that scans a path.
- */
-
-- (void) scanPath:(NSString *)path;
-
-@end
-
 @implementation SUDirectoryScanner
 
-@synthesize documentsFound;
 @synthesize isScanning;
 
 /*
@@ -26,7 +15,6 @@
 			[pendingQueue setDelegate:self];
 			operationQueue = NULL;
 			pool = NULL;
-			self.documentsFound = 0;
 			self.isScanning = NO;
 		}
 	}
@@ -53,7 +41,7 @@
 }
 
 - (void) addDirectoryPath:(NSString *)path {
-	NSOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(scanPath:) object:path];
+	NSOperation *operation = [[SUDirectoryScanOperation alloc] initWithPath:path inManagedObjectContext:db.managedObjectContext];
 	[pendingQueue addOperation:operation];
 	[operation release];
 }
@@ -70,7 +58,6 @@
 		operationQueue = pendingQueue;
 		pendingQueue = [[SUDeferredOperationQueue alloc] init];
 		[pendingQueue setDelegate:self];
-		self.documentsFound = 0;
 	}
 	
 	[operationQueue run];
@@ -82,10 +69,7 @@
  */
 
 - (void) deferredQueueDidComplete:(SUDeferredOperationQueue *)queue {
-	@synchronized(self) {
-		self.documentsFound = 0;
-		self.isScanning = NO;
-	}
+	self.isScanning = NO;
 	
 	[operationQueue release];
 	operationQueue = NULL;
@@ -98,12 +82,11 @@
 
 - (IBAction) cancelScanning:(id)sender {
 	@synchronized(self) {
-		if (!operationQueue) return;
+		if (!self.isScanning) return;
 		[operationQueue cancelAllOperations];
 		[operationQueue release];
 		operationQueue = NULL;
 		self.isScanning = NO;
-		self.documentsFound = 0;
 	}
 	[[NSNotificationCenter defaultCenter] postNotificationName:SUScanningDoneNotification object:NULL];
 }
@@ -118,18 +101,3 @@
 
 @end
 
-@implementation SUDirectoryScanner (Private)
-
-- (void) scanPath:(NSString *)path {
-	NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:path];
-	NSString *subpath;
-	while (subpath = [enumerator nextObject]) {
-		NSString *fullPath = [path stringByAppendingPathComponent:subpath];
-		if ([[SUDocument scribdFileTypes] containsObject:[fullPath pathExtension]]) {
-			[SUDocument createFromPath:fullPath inManagedObjectContext:db.managedObjectContext];
-			self.documentsFound++;
-		}
-	}
-}
-
-@end

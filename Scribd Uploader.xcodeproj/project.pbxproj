@@ -61,6 +61,7 @@
 		014DB95D0F1EE5FD00F50460 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */; };
 		01684E0B0F271DA700BA6ECB /* NSDictionary_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01684E0A0F271DA700BA6ECB /* NSDictionary_SUAdditions.m */; };
 		017077B70F1C47AC008A3CB0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017077B60F1C47AC008A3CB0 /* Sparkle.framework */; };
+		01A6729E0F3163DC00DA0B76 /* SUDirectoryScanOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A6729D0F3163DC00DA0B76 /* SUDirectoryScanOperation.m */; };
 		01A9664E0F315F4000A60A5C /* Add All.png in Resources */ = {isa = PBXBuildFile; fileRef = 01A9664D0F315F4000A60A5C /* Add All.png */; };
 		01ABF7D70F147AB400EE7142 /* ScribdAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */; };
 		01ABF7FA0F147DCC00EE7142 /* SUSessionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */; };
@@ -190,6 +191,8 @@
 		01684E090F271DA700BA6ECB /* NSDictionary_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_SUAdditions.h; sourceTree = "<group>"; };
 		01684E0A0F271DA700BA6ECB /* NSDictionary_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_SUAdditions.m; sourceTree = "<group>"; };
 		017077B60F1C47AC008A3CB0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Linked Frameworks/Sparkle.framework"; sourceTree = "<group>"; };
+		01A6729C0F3163DC00DA0B76 /* SUDirectoryScanOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDirectoryScanOperation.h; sourceTree = "<group>"; };
+		01A6729D0F3163DC00DA0B76 /* SUDirectoryScanOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDirectoryScanOperation.m; sourceTree = "<group>"; };
 		01A9664D0F315F4000A60A5C /* Add All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add All.png"; sourceTree = "<group>"; };
 		01ABF7F80F147DCC00EE7142 /* SUSessionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSessionHelper.h; sourceTree = "<group>"; };
 		01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSessionHelper.m; sourceTree = "<group>"; };
@@ -392,6 +395,8 @@
 				01684E0A0F271DA700BA6ECB /* NSDictionary_SUAdditions.m */,
 				01E92DFA0F2C6CB5003EBD84 /* SUDeferredOperationQueue.h */,
 				01E92DFB0F2C6CB5003EBD84 /* SUDeferredOperationQueue.m */,
+				01A6729C0F3163DC00DA0B76 /* SUDirectoryScanOperation.h */,
+				01A6729D0F3163DC00DA0B76 /* SUDirectoryScanOperation.m */,
 			);
 			path = "Other Sources";
 			sourceTree = "<group>";
@@ -644,6 +649,7 @@
 				0123846D0F2AAE1F007D2B54 /* EMKeychainProxy.m in Sources */,
 				01E92CE20F2BB94D003EBD84 /* SUDirectoryScanner.m in Sources */,
 				01E92DFC0F2C6CB5003EBD84 /* SUDeferredOperationQueue.m in Sources */,
+				01A6729E0F3163DC00DA0B76 /* SUDirectoryScanOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

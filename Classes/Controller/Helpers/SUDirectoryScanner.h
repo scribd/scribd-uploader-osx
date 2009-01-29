@@ -10,17 +10,9 @@
 @interface SUDirectoryScanner : NSObject {
 	IBOutlet SUDatabaseHelper *db;
 	SUDeferredOperationQueue *operationQueue, *pendingQueue;
-	NSUInteger documentsFound;
 	BOOL isScanning;
 	NSAutoreleasePool *pool;
 }
-
-/*!
- @property documentsFound
- @abstract The total number of uploadable documents found so far.
- */
-
-@property (assign) NSUInteger documentsFound;
 
 /*!
  @property isScanning
