@@ -29,7 +29,7 @@
 	else if ([value isKindOfClass:[NSArray class]]) {
 		NSMutableArray *outArray = [NSMutableArray arrayWithCapacity:[(NSArray *)value count]];
 		for (NSData *data in (NSArray *)value) {
-			if (data && ![data isEqualTo:[NSNull null]]) {
+			if (data && [data isNotEqualTo:[NSNull null]]) {
 				id item = [NSUnarchiver unarchiveObjectWithData:data];
 				[outArray addObject:item];
 			} else {

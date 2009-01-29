@@ -12,6 +12,15 @@
 }
 
 /*
+ Releases fields.
+ */
+
+- (void) dealloc {
+	if (document) [document release];
+	[super dealloc];
+}
+
+/*
  Makes the call to Scribd and sets the document title.
  */
 

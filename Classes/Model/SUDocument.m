@@ -157,9 +157,11 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 		if (kind) [kind release];
 		kind = NULL;
 		
-		SUTitleCleanerOperation *op = [[SUTitleCleanerOperation alloc] initWithDocument:self];
-		[titleCleaningQueue addOperation:op];
-		[op release];
+		if ([change objectForKey:NSKeyValueChangeNewKey] && [[change objectForKey:NSKeyValueChangeNewKey] isNotEqualTo:[NSNull null]]) {
+			SUTitleCleanerOperation *op = [[SUTitleCleanerOperation alloc] initWithDocument:self];
+			[titleCleaningQueue addOperation:op];
+			[op release];
+		}
 	}
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
