@@ -11,7 +11,6 @@
 	IBOutlet SUDatabaseHelper *db;
 	SUDeferredOperationQueue *operationQueue, *pendingQueue;
 	BOOL isScanning;
-	NSAutoreleasePool *pool;
 }
 
 /*!

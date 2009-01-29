@@ -14,7 +14,6 @@
 			pendingQueue = [[SUDeferredOperationQueue alloc] init];
 			[pendingQueue setDelegate:self];
 			operationQueue = NULL;
-			pool = NULL;
 			self.isScanning = NO;
 		}
 	}
@@ -35,7 +34,6 @@
 		}
 	}
 	[pendingQueue release];
-	if (pool) [pool release];
 	
 	[super dealloc];
 }
@@ -47,8 +45,6 @@
 }
 
 - (void) beginScanning {
-	pool = [[NSAutoreleasePool alloc] init];
-	
 	@synchronized(self) {
 		if ([pendingQueue isEmpty]) return;
 		if (self.isScanning) return;
@@ -69,25 +65,19 @@
  */
 
 - (void) deferredQueueDidComplete:(SUDeferredOperationQueue *)queue {
-	self.isScanning = NO;
-	
 	[operationQueue release];
 	operationQueue = NULL;
-	pool = NULL;
 	
+	self.isScanning = NO;
 	[[NSNotificationCenter defaultCenter] postNotificationName:SUScanningDoneNotification object:NULL];
-	
-	[pool release];
 }
 
 - (IBAction) cancelScanning:(id)sender {
-	@synchronized(self) {
-		if (!self.isScanning) return;
-		[operationQueue cancelAllOperations];
-		[operationQueue release];
-		operationQueue = NULL;
-		self.isScanning = NO;
-	}
+	[operationQueue cancelAllOperations];
+	[operationQueue release];
+	operationQueue = NULL;
+	
+	self.isScanning = NO;
 	[[NSNotificationCenter defaultCenter] postNotificationName:SUScanningDoneNotification object:NULL];
 }
 

@@ -1,6 +1,7 @@
 #import "SUDocument.h"
 
 static NSDictionary *kinds = NULL;
+static NSOperationQueue *titleCleaningQueue = NULL;
 
 @interface SUDocument (Private)
 
@@ -36,6 +37,14 @@ static NSDictionary *kinds = NULL;
 @dynamic scribdURL;
 
 #pragma mark Initialization/deallocation
+
+/*
+ Initializes the title-cleaning queue.
+ */
+
++ (void) initialize {
+	titleCleaningQueue = [[NSOperationQueue alloc] init];
+}
 
 /*
  You're not really supposed to override init for managed objects, but I see no
@@ -148,10 +157,9 @@ static NSDictionary *kinds = NULL;
 		if (kind) [kind release];
 		kind = NULL;
 		
-		if (self.path && (!self.title || [self.title isEmpty])) {
-			NSString *suggestedTitle = [[SUScribdAPI sharedAPI] titleForFilename:self.filename];
-			if (suggestedTitle) self.title = suggestedTitle;
-		}
+		SUTitleCleanerOperation *op = [[SUTitleCleanerOperation alloc] initWithDocument:self];
+		[titleCleaningQueue addOperation:op];
+		[op release];
 	}
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }

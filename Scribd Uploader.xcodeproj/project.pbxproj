@@ -61,7 +61,9 @@
 		014DB95D0F1EE5FD00F50460 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */; };
 		01684E0B0F271DA700BA6ECB /* NSDictionary_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01684E0A0F271DA700BA6ECB /* NSDictionary_SUAdditions.m */; };
 		017077B70F1C47AC008A3CB0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017077B60F1C47AC008A3CB0 /* Sparkle.framework */; };
-		01A6729E0F3163DC00DA0B76 /* SUDirectoryScanOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A6729D0F3163DC00DA0B76 /* SUDirectoryScanOperation.m */; };
+		01A672D70F31895800DA0B76 /* SUDeferredOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A672D40F31895800DA0B76 /* SUDeferredOperationQueue.m */; };
+		01A672D80F31895800DA0B76 /* SUDirectoryScanOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A672D60F31895800DA0B76 /* SUDirectoryScanOperation.m */; };
+		01A672DB0F31896600DA0B76 /* SUTitleCleanerOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A672DA0F31896600DA0B76 /* SUTitleCleanerOperation.m */; };
 		01A9664E0F315F4000A60A5C /* Add All.png in Resources */ = {isa = PBXBuildFile; fileRef = 01A9664D0F315F4000A60A5C /* Add All.png */; };
 		01ABF7D70F147AB400EE7142 /* ScribdAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */; };
 		01ABF7FA0F147DCC00EE7142 /* SUSessionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */; };
@@ -79,7 +81,6 @@
 		01E821350F293BB100473993 /* Error.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821320F293BB100473993 /* Error.png */; };
 		01E821360F293BB100473993 /* Go.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821330F293BB100473993 /* Go.png */; };
 		01E92CE20F2BB94D003EBD84 /* SUDirectoryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E92CE10F2BB94D003EBD84 /* SUDirectoryScanner.m */; };
-		01E92DFC0F2C6CB5003EBD84 /* SUDeferredOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E92DFB0F2C6CB5003EBD84 /* SUDeferredOperationQueue.m */; };
 		01EC085F0F1C499100F2098B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 01EC085E0F1C499100F2098B /* dsa_pub.pem */; };
 		01EC08690F1C677400F2098B /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 017077B60F1C47AC008A3CB0 /* Sparkle.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -191,8 +192,12 @@
 		01684E090F271DA700BA6ECB /* NSDictionary_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_SUAdditions.h; sourceTree = "<group>"; };
 		01684E0A0F271DA700BA6ECB /* NSDictionary_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_SUAdditions.m; sourceTree = "<group>"; };
 		017077B60F1C47AC008A3CB0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Linked Frameworks/Sparkle.framework"; sourceTree = "<group>"; };
-		01A6729C0F3163DC00DA0B76 /* SUDirectoryScanOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDirectoryScanOperation.h; sourceTree = "<group>"; };
-		01A6729D0F3163DC00DA0B76 /* SUDirectoryScanOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDirectoryScanOperation.m; sourceTree = "<group>"; };
+		01A672D30F31895800DA0B76 /* SUDeferredOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDeferredOperationQueue.h; sourceTree = "<group>"; };
+		01A672D40F31895800DA0B76 /* SUDeferredOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDeferredOperationQueue.m; sourceTree = "<group>"; };
+		01A672D50F31895800DA0B76 /* SUDirectoryScanOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDirectoryScanOperation.h; sourceTree = "<group>"; };
+		01A672D60F31895800DA0B76 /* SUDirectoryScanOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDirectoryScanOperation.m; sourceTree = "<group>"; };
+		01A672D90F31896600DA0B76 /* SUTitleCleanerOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTitleCleanerOperation.h; sourceTree = "<group>"; };
+		01A672DA0F31896600DA0B76 /* SUTitleCleanerOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTitleCleanerOperation.m; sourceTree = "<group>"; };
 		01A9664D0F315F4000A60A5C /* Add All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add All.png"; sourceTree = "<group>"; };
 		01ABF7F80F147DCC00EE7142 /* SUSessionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSessionHelper.h; sourceTree = "<group>"; };
 		01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSessionHelper.m; sourceTree = "<group>"; };
@@ -218,8 +223,6 @@
 		01E821330F293BB100473993 /* Go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Go.png; sourceTree = "<group>"; };
 		01E92CE00F2BB94D003EBD84 /* SUDirectoryScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDirectoryScanner.h; sourceTree = "<group>"; };
 		01E92CE10F2BB94D003EBD84 /* SUDirectoryScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDirectoryScanner.m; sourceTree = "<group>"; };
-		01E92DFA0F2C6CB5003EBD84 /* SUDeferredOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDeferredOperationQueue.h; sourceTree = "<group>"; };
-		01E92DFB0F2C6CB5003EBD84 /* SUDeferredOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDeferredOperationQueue.m; sourceTree = "<group>"; };
 		01EC085E0F1C499100F2098B /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -382,6 +385,7 @@
 		0128AF0C0F1478F300EC3C28 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				01A672D20F31895800DA0B76 /* Operations */,
 				0128AF0D0F1478F300EC3C28 /* main.m */,
 				0128AF0E0F1478F300EC3C28 /* SUConstants.h */,
 				0128AF0F0F1478F300EC3C28 /* SUConstants.m */,
@@ -393,10 +397,6 @@
 				013C92160F21E53300061162 /* NSIndexPath_SUAdditions.m */,
 				01684E090F271DA700BA6ECB /* NSDictionary_SUAdditions.h */,
 				01684E0A0F271DA700BA6ECB /* NSDictionary_SUAdditions.m */,
-				01E92DFA0F2C6CB5003EBD84 /* SUDeferredOperationQueue.h */,
-				01E92DFB0F2C6CB5003EBD84 /* SUDeferredOperationQueue.m */,
-				01A6729C0F3163DC00DA0B76 /* SUDirectoryScanOperation.h */,
-				01A6729D0F3163DC00DA0B76 /* SUDirectoryScanOperation.m */,
 			);
 			path = "Other Sources";
 			sourceTree = "<group>";
@@ -429,6 +429,19 @@
 				0132C07C0F16BF99000B17C5 /* Scribd Uploader Help */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		01A672D20F31895800DA0B76 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				01A672D30F31895800DA0B76 /* SUDeferredOperationQueue.h */,
+				01A672D40F31895800DA0B76 /* SUDeferredOperationQueue.m */,
+				01A672D50F31895800DA0B76 /* SUDirectoryScanOperation.h */,
+				01A672D60F31895800DA0B76 /* SUDirectoryScanOperation.m */,
+				01A672D90F31896600DA0B76 /* SUTitleCleanerOperation.h */,
+				01A672DA0F31896600DA0B76 /* SUTitleCleanerOperation.m */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 		01AF5FEF0F1D27D300D51D07 /* Vendor */ = {
@@ -648,8 +661,9 @@
 				0123846C0F2AAE1F007D2B54 /* EMKeychainItem.m in Sources */,
 				0123846D0F2AAE1F007D2B54 /* EMKeychainProxy.m in Sources */,
 				01E92CE20F2BB94D003EBD84 /* SUDirectoryScanner.m in Sources */,
-				01E92DFC0F2C6CB5003EBD84 /* SUDeferredOperationQueue.m in Sources */,
-				01A6729E0F3163DC00DA0B76 /* SUDirectoryScanOperation.m in Sources */,
+				01A672D70F31895800DA0B76 /* SUDeferredOperationQueue.m in Sources */,
+				01A672D80F31895800DA0B76 /* SUDirectoryScanOperation.m in Sources */,
+				01A672DB0F31896600DA0B76 /* SUTitleCleanerOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

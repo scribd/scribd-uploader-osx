@@ -22,6 +22,7 @@
 #import "SUDeferredOperationQueue.h"
 
 #import "SUCategory.h"
+#import "SUTitleCleanerOperation.h"
 #import "SUDocument.h"
 #import "SUFileNotFoundAlertDelegate.h"
 #import "SUDatabaseHelper.h"
