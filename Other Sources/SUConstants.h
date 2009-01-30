@@ -110,6 +110,15 @@ NSString *SUDefaultKeyLastCategoryLoad;
 
 NSString *SUDefaultKeyUploadPrivateDefault;
 
+/*!
+ @const SUDefaultKeyManualMetadataDrawer
+ @abstract The User Defaults key for the boolean which indicates if the user
+ manually opens and closes the Information drawer. If false, the program
+ opens the information drawer only when one or more files are selected.
+ */
+
+NSString *SUDefaultKeyManualMetadataDrawer;
+
 #pragma mark Notifications
 
 /*!

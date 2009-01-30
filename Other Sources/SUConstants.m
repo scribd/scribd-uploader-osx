@@ -23,6 +23,7 @@ NSString *SUChangeSettingsAction = @"ChangeSettings";
 NSString *SUDefaultKeySessionUsername = @"sessionUsername";
 NSString *SUDefaultKeyLastCategoryLoad = @"lastCategoryLoad";
 NSString *SUDefaultKeyUploadPrivateDefault = @"privateUploadsByDefault";
+NSString *SUDefaultKeyManualMetadataDrawer = @"manualMetadataDrawer";
 
 /* Notifications */
 NSString *SUUploadCompleteNotification = @"SUUploadCompleteNotification";

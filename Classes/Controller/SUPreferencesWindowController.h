@@ -4,7 +4,7 @@
  */
 
 @interface SUPreferencesWindowController : DBPrefsWindowController {
-	IBOutlet NSView *automaticUpdatesView, *uploadingView;
+	IBOutlet NSView *automaticUpdatesView, *uploadingView, *metadataView;
 	SUUpdater *sparkleUpdater;
 }
 
