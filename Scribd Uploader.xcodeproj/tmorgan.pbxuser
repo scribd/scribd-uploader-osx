@@ -13,13 +13,6 @@
 			sepNavWindowFrame = "{{365, 27}, {826, 863}}";
 		};
 	};
-	011BD6980F2A7E5300C4FD65 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */ = {
-		uiCtxt = {
-			"Xdesign Model Editor Bookmark Key" = {
-			};
-			sepNavWindowFrame = "{{79, 98}, {906, 925}}";
-		};
-	};
 	012384680F2AAE1F007D2B54 /* EMKeychainItem.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1290, 962}}";
@@ -34,6 +27,13 @@
 			sepNavSelRange = "{1179, 0}";
 			sepNavVisRange = "{0, 2145}";
 			sepNavWindowFrame = "{{649, 64}, {906, 925}}";
+		};
+	};
+	0123E96D0F32AF5E00FDF757 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */ = {
+		uiCtxt = {
+			"Xdesign Model Editor Bookmark Key" = {
+			};
+			sepNavWindowFrame = "{{79, 98}, {906, 925}}";
 		};
 	};
 	0128AECC0F14783400EC3C28 /* Scribd Uploader */ = {
@@ -181,9 +181,9 @@
 	};
 	0128AEE80F1478F300EC3C28 /* SUDatabaseHelper.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1158, 2522}}";
-			sepNavSelRange = "{1270, 0}";
-			sepNavVisRange = "{756, 1966}";
+			sepNavIntBoundsRect = "{{0, 0}, {1158, 2444}}";
+			sepNavSelRange = "{1912, 0}";
+			sepNavVisRange = "{984, 2004}";
 			sepNavWindowFrame = "{{600, 97}, {826, 863}}";
 		};
 	};
@@ -1076,7 +1076,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Install;
 		activeExecutable = 0128AECC0F14783400EC3C28 /* Scribd Uploader */;
 		activeTarget = 8D1107260486CEB800E47090 /* Scribd Uploader */;
 		addToTargets = (
@@ -1135,8 +1135,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 254894615;
-			PBXWorkspaceStateSaveDate = 254894615;
+			PBXPerProjectTemplateStateSaveDate = 254979903;
+			PBXWorkspaceStateSaveDate = 254979903;
 		};
 		sourceControlManager = 0128AED40F14783800EC3C28 /* Source Control */;
 		userBuildSettings = {
