@@ -15,6 +15,10 @@ ol,ul { list-style : none; }
 address, caption, cite, code, dfn, em, strong, th, var
 { font-style : normal; font-weight : normal; }
 
+.CodeKeyword { font-family : 'Consola', 'Inconsolata', 'Anadale Mono', 'Monaco', 'Courier', 'Courier New'; font-weight : bold; }
+
+tt { font-family : 'Consola', 'Inconsolata', 'Anadale Mono', 'Monaco', 'Courier', 'Courier New'; }
+
 /* Removes list-style from lists */
 table { border-collapse : collapse; border-spacing : 0; }
 
