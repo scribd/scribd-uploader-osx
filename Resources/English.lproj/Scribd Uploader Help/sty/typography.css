@@ -1,5 +1,11 @@
 /* typography.css      version 1.0.1n  HTML   12-04-08 */
 
+/* ADD: Spacing between subsections of changelist */
+.Subhead + .ListBullet {
+	padding-top: 1.15em;;
+}
+/* END */
+
 #Header {
     margin-top: 2.85em;
     padding-right: 6px
