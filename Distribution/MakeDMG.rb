@@ -28,7 +28,7 @@ mountpoint.gsub! ' ', '\\ '
 
 `SetFile -a C #{mountpoint}`
 
-`ln -s /Applications #{mountpoint}/Applications`
+#`ln -s /Applications #{mountpoint}/Applications`
 
 `hdiutil detach #{mountpoint}`
 `hdiutil convert #{big_dmg} -format UDZO -o #{dmg}`
