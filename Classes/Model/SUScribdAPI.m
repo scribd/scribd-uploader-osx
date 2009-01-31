@@ -1,7 +1,6 @@
 #import "SUScribdAPI.h"
 
 static SUScribdAPI *sharedAPI = NULL;
-static NSDictionary *settings = NULL;
 
 @interface SUScribdAPI (Private)
 
@@ -11,12 +10,6 @@ static NSDictionary *settings = NULL;
  */
 
 - (void) setChildren:(NSMutableSet *)children ofNode:(NSXMLElement *)element managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
-
-/*
- Returns settings in the ScribdAPI.plist resource.
- */
-
-- (NSDictionary *) settings;
 
 /*
  Returns the formatted Scribd API url for a set of parameters and an API method.
@@ -115,6 +108,7 @@ static NSDictionary *settings = NULL;
 	if (self = [super init]) {
 		uploadQueue = [[NSOperationQueue alloc] init];
 		[uploadQueue setMaxConcurrentOperationCount:[[NSUserDefaults standardUserDefaults] integerForKey:@"SUMaximumSimultaneousUploads"]];
+		settings = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
 	}
 	return self;
 }
@@ -125,19 +119,15 @@ static NSDictionary *settings = NULL;
 
 - (void) dealloc {
 	[uploadQueue release];
+	[settings release];
 	[super dealloc];
 }
 
 - (NSDictionary *) callApiMethod:(NSString *)method parameters:(NSDictionary *)parameters error:(NSError **)error {
 	NSURL *url = [self apiUrlWithMethod:method parameters:parameters];
-	NSError *parseError = NULL;
-	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithContentsOfURL:url options:NSXMLDocumentTidyXML error:&parseError];
+	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithContentsOfURL:url options:NSXMLDocumentTidyXML error:error];
 	
-	if (parseError) {
-		*error = parseError;
-		[xml release];
-		return NULL;
-	}
+	if (*error) return NULL; // xml will be nil so no need to release
 	
 	NSDictionary *results = [self parseXML:xml error:error];
 	[xml release];
@@ -161,7 +151,7 @@ static NSDictionary *settings = NULL;
 }
 
 - (NSArray *) autocompletionsForSubstring:(NSString *)substring {
-	NSString *urlString = [[NSString alloc] initWithFormat:[[self settings] objectForKey:@"TagsURL"], [substring stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSString *urlString = [[NSString alloc] initWithFormat:[settings objectForKey:@"TagsURL"], [substring stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 	NSURL *url = [[NSURL alloc] initWithString:urlString];
 	[urlString release];
 	NSError *error = NULL;
@@ -195,7 +185,7 @@ static NSDictionary *settings = NULL;
 }
 
 - (NSString *) titleForFilename:(NSString *)filename {
-	NSString *urlString = [[NSString alloc] initWithFormat:[[self settings] objectForKey:@"TitleCleanURL"], [filename stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSString *urlString = [[NSString alloc] initWithFormat:[settings objectForKey:@"TitleCleanURL"], [filename stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 	NSURL *url = [[NSURL alloc] initWithString:urlString];
 	[urlString release];
 	NSError *error = NULL;
@@ -215,7 +205,7 @@ static NSDictionary *settings = NULL;
 
 - (void) loadCategoriesIntoManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
 	// download category XML from scribd
-	NSURL *url = [[NSURL alloc] initWithString:[[self settings] objectForKey:@"CategoriesURL"]];
+	NSURL *url = [[NSURL alloc] initWithString:[settings objectForKey:@"CategoriesURL"]];
 	NSError *error = NULL;
 	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithContentsOfURL:url options:NSXMLDocumentTidyXML error:&error];
 	[url release];
@@ -262,37 +252,27 @@ static NSDictionary *settings = NULL;
 	}
 }
 
-- (NSDictionary *) settings {
-	if (!settings) settings = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
-	return settings;
-}
-
 - (NSURL *) apiUrlWithMethod:(NSString *)method parameters:(NSDictionary *)parameters {
 	NSMutableDictionary *urlParameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
-	[urlParameters setObject:[[self settings] objectForKey:@"APIKey"] forKey:@"api_key"];
-	[urlParameters setObject:[[self settings] objectForKey:@"APISecret"] forKey:@"api_sig"];
+	[urlParameters setObject:[settings objectForKey:@"APIKey"] forKey:@"api_key"];
+	[urlParameters setObject:[settings objectForKey:@"APISecret"] forKey:@"api_sig"];
 	[urlParameters setObject:method forKey:@"method"];
 	
-	NSMutableArray *urlParameterSubstrings = [[NSMutableArray alloc] initWithCapacity:[parameters count]];
+	NSMutableArray *urlParameterSubstrings = [[NSMutableArray alloc] initWithCapacity:[urlParameters count]];
 	for (NSString *key in urlParameters) {
 		id value = [urlParameters objectForKey:key];
 		NSString *valueString;
 		if ([value isKindOfClass:[NSString class]]) valueString = value;
 		else valueString = [value stringValue];
 		
-		NSString *paramName = [key stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-		NSString *paramValue = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-																	   (CFStringRef)valueString,
-																	   NULL,
-																	   (CFStringRef)@"&",
-																	   NSUTF8StringEncoding);
+		NSString *paramName = [key stringByURLEscapingUsingEncoding:NSUTF8StringEncoding];
+		NSString *paramValue = [valueString stringByURLEscapingUsingEncoding:NSUTF8StringEncoding];
 		NSString *paramString = [[NSString alloc] initWithFormat:@"%@=%@", paramName, paramValue];
 		[urlParameterSubstrings addObject:paramString];
 		[paramString release];
-		[paramValue release];
 	}
 	
-	NSMutableString *urlString = [[NSMutableString alloc] initWithString:[[self settings] objectForKey:@"BaseURL"]];
+	NSMutableString *urlString = [[NSMutableString alloc] initWithString:[settings objectForKey:@"BaseURL"]];
 	[urlString appendString:[urlParameterSubstrings componentsJoinedByString:@"&"]];
 	NSURL *url = [NSURL URLWithString:urlString];
 	

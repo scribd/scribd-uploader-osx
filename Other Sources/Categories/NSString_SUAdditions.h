@@ -1,5 +1,5 @@
 /*!
- @category NSString (SUAdditions)
+ @category NSString(SUAdditions)
  @abstract Utility methods for strings.
  */
 
@@ -30,5 +30,19 @@
  */
 
 - (NSUInteger) lineCount;
+
+/*!
+ @method stringByURLEncoding
+ @abstract Returns a string where all reserved or unsafe characters have been
+ encoded using a percent-escape encoding scheme.
+ @param encoding The string's encoding.
+ @result The URL-encoded string.
+ @discussion Unlike
+ @link //apple_ref/occ/instm/NSString/stringByAddingPercentEscapesUsingEncoding: stringByAddingPercentEscapesUsingEncoding: @/link,
+ this method also encodes URL-safe characters with special meanings, such as
+ ampersand and question mark.
+ */
+
+- (NSString *) stringByURLEscapingUsingEncoding:(NSStringEncoding)encoding;
 
 @end

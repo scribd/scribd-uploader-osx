@@ -1,5 +1,5 @@
 /*!
- @category NSIndexPath (SUAdditions)
+ @category NSIndexPath(SUAdditions)
  @abstract Utility additions to
  @link //apple_ref/occ/cl/NSIndexPath NSIndexPath @/link.
  */

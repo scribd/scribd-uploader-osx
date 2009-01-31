@@ -1,3 +1,9 @@
+/*!
+ @category NSArray(SUAdditions)
+ @abstract Utility additions to the
+ @link //apple_ref/occ/cl/NSDictionary NSDictionary @/link class.
+ */
+
 @interface NSDictionary (SUAdditions)
 
 /*!

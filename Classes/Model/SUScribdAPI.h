@@ -19,6 +19,7 @@
 
 @interface SUScribdAPI : NSObject {
 	NSOperationQueue *uploadQueue;
+	NSDictionary *settings;
 }
 
 /*!

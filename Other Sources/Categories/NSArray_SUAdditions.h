@@ -1,5 +1,5 @@
 /*!
- @category NSArray (SUAdditions)
+ @category NSArray(SUAdditions)
  @abstract Utility additions to the
  @link //apple_ref/occ/cl/NSArray NSArray @/link class.
  */
