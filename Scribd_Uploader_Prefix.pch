@@ -44,8 +44,12 @@
 #import "SUSingleSelectionOnlyValueTransformer.h"
 #import "SUDelimitedStringValueTransformer.h"
 #import "SUIndexPathValueTransformer.h"
+#import "SUMetadataTabValueTransformer.h"
 
 #import "SULoginSheetDelegate.h"
 #import "SUPreferencesWindowController.h"
 #import "SUQuickLookDelegate.h"
+
+#import "SUSingleOnlyValueTransformer.h"
+
 #import "SUDocumentArrayController.h"

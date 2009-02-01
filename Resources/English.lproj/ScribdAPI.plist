@@ -4,8 +4,6 @@
 <dict>
 	<key>BaseURL</key>
 	<string>http://www.scribd.com/api?</string>
-	<key>EditURL</key>
-	<string>http://www.scribd.com/upload/describe_docs?docs=%@</string>
 	<key>TagsURL</key>
 	<string>http://www.scribd.com/tags/suggest?query=%@</string>
 	<key>TitleCleanURL</key>

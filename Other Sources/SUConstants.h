@@ -177,3 +177,11 @@ NSString *SUMyDocsURLInfoKey;
  */
 
 NSString *SUDocumentURLInfoKey;
+
+/*!
+ @const SUDocumentEditURLInfoKey
+ @abstract Info.plist dictionary key whose value is the format of a document's
+ bulk-edit URL on Scribd.com.
+ */
+
+NSString *SUDocumentEditURLInfoKey;

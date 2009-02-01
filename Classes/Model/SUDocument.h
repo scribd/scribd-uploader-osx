@@ -142,21 +142,38 @@
 /*!
  @property scribdURL
  @abstract Returns a URL at which the Scribd document can be viewed.
- @result The URL for the Scribd document, or NULL if the document hasn't been
- uploaded yet.
+ @discussion The URL for the Scribd document, or NULL if the document hasn't
+ been uploaded yet.
  */
 
 @property (readonly) NSURL *scribdURL;
 
 /*!
+ @property editURL
+ @abstract Returns a URL at which the Scribd document can be edited.
+ @discussion The URL to bulk-edit the Scribd document, or NULL if the document
+ hasn't been uploaded yet.
+ */
+
+@property (readonly) NSURL *editURL;
+
+/*!
  @property errorLevel
- @abstract Returns a string describing the error state of this document.
- @result "Success" if no error has occurred, "Caution" if the document was
+ @abstract A string describing the error state of this document.
+ @discussion "Success" if no error has occurred, "Caution" if the document was
  uploaded but an error occurred, "Error" if an error occurred preventing the
  document from being uploaded, or "Pending" if no upload has occurred yet.
  */
 
 @property (readonly) NSString *errorLevel;
+
+/*!
+ @property isUploaded
+ @abstract True if the file has been uploaded to Scribd.com; false if it hasn't
+ yet been uploaded successfully.
+ */
+
+@property (readonly) BOOL isUploaded;
 
 #pragma mark Class methods
 

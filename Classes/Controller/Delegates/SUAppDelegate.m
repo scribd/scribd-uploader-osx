@@ -41,6 +41,7 @@
 	[NSValueTransformer setValueTransformer:[[[SULoginLabelValueTransformer alloc] init] autorelease] forName:@"SULoginLabel"];
 	[NSValueTransformer setValueTransformer:[[[SUDelimitedStringValueTransformer alloc] init] autorelease] forName:@"SUDelimitTags"];
 	[NSValueTransformer setValueTransformer:[[[SUIndexPathValueTransformer alloc] init] autorelease] forName:@"SUIndexPath"];
+	[NSValueTransformer setValueTransformer:[[[SUMetadataTabValueTransformer alloc] init] autorelease] forName:@"SUMetadataTab"];
 }
 
 /*

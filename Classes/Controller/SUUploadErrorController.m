@@ -7,7 +7,7 @@
 	if ([error isEqualTo:[NSNull null]]) {
 		// go to the file
 		SUDocument *doc = [documentController.arrangedObjects objectAtIndex:[index unsignedIntegerValue]];
-		if (doc.scribdID) [[NSWorkspace sharedWorkspace] openURL:doc.scribdURL];
+		if (doc.isUploaded) [[NSWorkspace sharedWorkspace] openURL:doc.scribdURL];
 	} else {
 		// display the error
 		NSAlert *alert = [[NSAlert alloc] init];

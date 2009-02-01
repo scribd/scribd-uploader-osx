@@ -35,3 +35,4 @@ NSString *SUScanningDoneNotification = @"SUScanningDoneNotification";
 /* Info.plist keys */
 NSString *SUMyDocsURLInfoKey = @"SUMyDocsURL";
 NSString *SUDocumentURLInfoKey = @"SUDocumentURL";
+NSString *SUDocumentEditURLInfoKey = @"SUDocumentEditURL";

@@ -35,6 +35,8 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 @dynamic discoverability;
 @dynamic errorLevel;
 @dynamic scribdURL;
+@dynamic editURL;
+@dynamic isUploaded;
 
 #pragma mark Initialization/deallocation
 
@@ -133,9 +135,21 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	return @"Pending";
 }
 
+- (BOOL) isUploaded {
+	return (self.scribdID != NULL);
+}
+
 - (NSURL *) scribdURL {
-	if (!self.scribdID) return NULL;
+	if (!self.isUploaded) return NULL;
 	NSString *urlString = [[NSString alloc] initWithFormat:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUDocumentURLInfoKey], self.scribdID];
+	NSURL *url = [[NSURL alloc] initWithString:urlString];
+	[urlString release];
+	return [url autorelease];
+}
+
+- (NSURL *) editURL {
+	if (!self.isUploaded) return NULL;
+	NSString *urlString = [[NSString alloc] initWithFormat:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUDocumentEditURLInfoKey], self.scribdID];
 	NSURL *url = [[NSURL alloc] initWithString:urlString];
 	[urlString release];
 	return [url autorelease];
