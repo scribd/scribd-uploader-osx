@@ -2521,13 +2521,13 @@ ciBoZWxwIHZpZXdlci4</string>
 										<object class="NSTextField" id="572199447">
 											<reference key="NSNextResponder" ref="147086217"/>
 											<int key="NSvFlags">298</int>
-											<string key="NSFrame">{{17, 274}, {272, 19}}</string>
+											<string key="NSFrame">{{17, 265}, {272, 38}}</string>
 											<reference key="NSSuperview" ref="147086217"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="481211252">
 												<int key="NSCellFlags">67239424</int>
 												<int key="NSCellFlags2">138412032</int>
-												<string key="NSContents">This document has been uploaded.</string>
+												<string key="NSContents">%{value1}@ been uploaded.</string>
 												<object class="NSFont" key="NSSupport">
 													<string key="NSName">LucidaGrande</string>
 													<double key="NSSize">1.500000e+01</double>
@@ -2541,13 +2541,13 @@ ciBoZWxwIHZpZXdlci4</string>
 										<object class="NSTextField" id="299437291">
 											<reference key="NSNextResponder" ref="147086217"/>
 											<int key="NSvFlags">298</int>
-											<string key="NSFrame">{{17, 238}, {272, 28}}</string>
+											<string key="NSFrame">{{17, 229}, {272, 28}}</string>
 											<reference key="NSSuperview" ref="147086217"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="427922603">
 												<int key="NSCellFlags">67239424</int>
 												<int key="NSCellFlags2">4194304</int>
-												<string key="NSContents">It can be viewed and edited on the Scribd.com website.</string>
+												<string key="NSContents">%{value1}@ be viewed and edited on the Scribd.com website.</string>
 												<reference key="NSSupport" ref="360437244"/>
 												<reference key="NSControlView" ref="299437291"/>
 												<reference key="NSBackgroundColor" ref="514063339"/>
@@ -2557,7 +2557,7 @@ ciBoZWxwIHZpZXdlci4</string>
 										<object class="NSButton" id="488315405">
 											<reference key="NSNextResponder" ref="147086217"/>
 											<int key="NSvFlags">300</int>
-											<string key="NSFrame">{{20, 189}, {108, 19}}</string>
+											<string key="NSFrame">{{20, 180}, {108, 19}}</string>
 											<reference key="NSSuperview" ref="147086217"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="563553780">
@@ -2581,7 +2581,7 @@ ciBoZWxwIHZpZXdlci4</string>
 										<object class="NSButton" id="498851580">
 											<reference key="NSNextResponder" ref="147086217"/>
 											<int key="NSvFlags">297</int>
-											<string key="NSFrame">{{183, 189}, {103, 19}}</string>
+											<string key="NSFrame">{{183, 180}, {103, 19}}</string>
 											<reference key="NSSuperview" ref="147086217"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="991308332">
@@ -4946,6 +4946,64 @@ ciBoZWxwIHZpZXdlci4</string>
 					</object>
 					<int key="connectionID">1778</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">displayPatternValue1: selectedObjects.@count</string>
+						<reference key="source" ref="572199447"/>
+						<reference key="destination" ref="603642860"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="572199447"/>
+							<reference key="NSDestination" ref="603642860"/>
+							<string key="NSLabel">displayPatternValue1: selectedObjects.@count</string>
+							<string key="NSBinding">displayPatternValue1</string>
+							<string key="NSKeyPath">selectedObjects.@count</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMutableArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSDisplayPattern</string>
+									<string>NSValueTransformerName</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>%{value1}@ been uploaded.</string>
+									<string>SUPluralizeThisDocumentHas</string>
+								</object>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1788</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">displayPatternValue1: selectedObjects.@count</string>
+						<reference key="source" ref="299437291"/>
+						<reference key="destination" ref="603642860"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="299437291"/>
+							<reference key="NSDestination" ref="603642860"/>
+							<string key="NSLabel">displayPatternValue1: selectedObjects.@count</string>
+							<string key="NSBinding">displayPatternValue1</string>
+							<string key="NSKeyPath">selectedObjects.@count</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMutableArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSDisplayPattern</string>
+									<string>NSValueTransformerName</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>%{value1}@ be viewed and edited on the Scribd.com website.</string>
+									<string>SUPluralizeItCan</string>
+								</object>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1789</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -6280,8 +6338,8 @@ ciBoZWxwIHZpZXdlci4</string>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="488315405"/>
 							<reference ref="498851580"/>
-							<reference ref="572199447"/>
 							<reference ref="299437291"/>
+							<reference ref="572199447"/>
 						</object>
 						<reference key="parent" ref="62588292"/>
 					</object>
@@ -7381,7 +7439,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1778</int>
+			<int key="maxID">1789</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
