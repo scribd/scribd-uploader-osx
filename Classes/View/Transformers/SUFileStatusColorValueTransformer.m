@@ -2,6 +2,8 @@
 
 @implementation SUFileStatusColorValueTransformer
 
+#pragma mark Value transformer
+
 /*
  Creates the NSColor instances.
  */

@@ -2,6 +2,8 @@
 
 @implementation SUPluralizeValueTransformer
 
+#pragma mark Initializing and deallocating
+
 - (id) initWithSingular:(NSString *)sing plural:(NSString *)plu {
 	if (self = [super init]) {
 		singular = [sing retain];
@@ -19,6 +21,8 @@
 	[plural release];
 	[super dealloc];
 }
+
+#pragma mark Value transformer
 
 /*
  This transformer converts between different subclasses of NSObject.

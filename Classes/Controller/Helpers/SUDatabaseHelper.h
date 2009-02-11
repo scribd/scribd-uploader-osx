@@ -11,6 +11,8 @@
 	NSManagedObjectContext *managedObjectContext;
 }
 
+#pragma mark Properties
+
 /*!
  @property managedObjectModel
  @abstract This application's object-relational schema.

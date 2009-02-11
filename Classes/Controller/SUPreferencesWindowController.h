@@ -8,7 +8,11 @@
 	SUUpdater *sparkleUpdater;
 }
 
+#pragma mark Properties
+
 @property (retain) SUUpdater *sparkleUpdater;
+
+#pragma mark Actions
 
 /*!
  @method checkForUpdates:

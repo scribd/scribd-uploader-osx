@@ -2,11 +2,17 @@
 
 @interface SUUploadDelegate (Private)
 
+#pragma mark Helpers
+
 - (void) changeSettings;
 
 @end
 
+#pragma mark -
+
 @implementation SUUploadDelegate
+
+#pragma mark Initializing and deallocating
 
 /*
  Prevent initialization without a document.
@@ -36,6 +42,8 @@
 	[super dealloc];
 }
 
+#pragma mark Delegate responders (ASIHTTPRequest)
+
 - (void) requestFinished:(ASIHTTPRequest *)request {
 	NSError *error = NULL;
 	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithXMLString:[request dataString] options:0 error:&error];
@@ -61,14 +69,6 @@
 	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadCompleteNotification object:self];
 	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadSucceededNotification object:self];
 }
-
-/*
- Handles the dismissal of the alert by releasing the object.
- */
-
-- (void) uploadAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo {
-	[alert release];
-};
 
 - (void) requestFailed:(ASIHTTPRequest *)request {
 	NSError *outerError = [request error];
@@ -101,6 +101,18 @@
 	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadFailedNotification object:self];
 }
 
+#pragma mark Delegate responders (other)
+
+/*
+ Handles the dismissal of the alert by releasing the object.
+ */
+
+- (void) uploadAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo {
+	[alert release];
+};
+
+#pragma mark NSProgressBar emulation
+
 /*
  Compatibility method for the ASIHTTPRequest API (mocks NSProgressBar).
  */
@@ -129,7 +141,11 @@
 
 @end
 
+#pragma mark -
+
 @implementation SUUploadDelegate (Private)
+
+#pragma mark Helpers
 
 - (void) changeSettings {
 	NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];

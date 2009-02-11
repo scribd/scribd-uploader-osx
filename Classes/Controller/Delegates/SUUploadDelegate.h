@@ -17,6 +17,8 @@
 	NSManagedObjectContext *managedObjectContext;
 }
 
+#pragma mark Initializing and deallocating
+
 /*!
  @method initWithDocument:
  @abstract Initializes a new instance that manages the upload process for a
@@ -28,6 +30,8 @@
  */
 
 - (id) initWithDocument:(SUDocument *)doc inManagedObjectContext:(NSManagedObjectContext *)context;
+
+#pragma mark Delegate responders (ASIHTTPRequest)
 
 /*!
  @method requestFinished:

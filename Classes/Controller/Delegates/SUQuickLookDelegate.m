@@ -4,6 +4,8 @@
 
 @implementation SUQuickLookDelegate
 
+#pragma mark Initializing and deallocating
+
 /*
  Checks for Quick Look support and observes changes in file selection.
  */
@@ -18,6 +20,8 @@
 	}
 }
 
+#pragma mark Delegate responders
+
 /*
  Returns the rect that the Quick Look panel will animate from when opened. The
  rectOfRow method gives us a rect relative to the file list view. We need to
@@ -30,6 +34,8 @@
 	rect.origin = [[table window] convertBaseToScreen:rect.origin];
 	return rect;
 }
+
+#pragma mark KVO
 
 /*
  Updates the Quick Look source list.
@@ -55,6 +61,8 @@
 	}
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
+
+#pragma mark Displaying the Quick Look panel
 
 - (void) toggleDisplay {
 	if (!useQuickLook) return;

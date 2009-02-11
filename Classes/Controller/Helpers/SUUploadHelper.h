@@ -24,6 +24,8 @@
 	IBOutlet SUDatabaseHelper *db;
 }
 
+#pragma mark Properties
+
 /*!
  @property isBusy
  @abstract Set by this class when a network operation is in progress, so that a
@@ -107,6 +109,8 @@
 
 @property (retain) NSString *scribdPassword;
 
+#pragma mark Working with Scribd.com
+
 /*!
  @method authenticate
  @abstract Logs in to Scribd with the login and password stored in the user
@@ -136,6 +140,8 @@
  */
 
 - (void) uploadFiles;
+
+#pragma mark Getting state information
 
 /*!
  @method uploadComplete

@@ -2,6 +2,8 @@
 
 @interface SUDatabaseHelper (Private)
 
+#pragma mark Helpers
+
 /*
  Returns the support folder for the application, used to store the Core Data
  store file. This code uses a folder named "Scribd Uploader" for
@@ -10,6 +12,8 @@
  */
 
 - (NSString *) applicationSupportFolder;
+
+#pragma mark Housekeeping
 
 /*
  Removes documents from the list that are no longer on the hard drive.
@@ -31,11 +35,17 @@
 
 @end
 
+#pragma mark -
+
 @implementation SUDatabaseHelper
+
+#pragma mark Properties
 
 @dynamic managedObjectModel;
 @dynamic managedObjectContext;
 @dynamic persistentStoreCoordinator;
+
+#pragma mark Initializing and deallocating
 
 /*
  Removes documents from the list that have since been deleted.
@@ -46,6 +56,19 @@
 	[self resetProgresses];
 	[self purgeCompletedDocuments];
 }
+
+/*
+ Releases retained variables.
+ */
+
+- (void) dealloc {
+	if (managedObjectContext) [managedObjectContext release];
+	if (persistentStoreCoordinator) [persistentStoreCoordinator release];
+	if (managedObjectModel) [managedObjectModel release];
+	[super dealloc];
+}
+
+#pragma mark Dynamic properties
 
 /*
  Lazily initializes the NSManagedObjectModel application schema.
@@ -111,26 +134,21 @@
 	return managedObjectContext;
 }
 
-/*
- Releases retained variables.
- */
-
-- (void) dealloc {
-	if (managedObjectContext) [managedObjectContext release];
-	if (persistentStoreCoordinator) [persistentStoreCoordinator release];
-	if (managedObjectModel) [managedObjectModel release];
-	[super dealloc];
-}
-
 @end
 
+#pragma mark -
+
 @implementation SUDatabaseHelper (Private)
+
+#pragma mark Helpers
 
 - (NSString *) applicationSupportFolder {
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
 	NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
 	return [basePath stringByAppendingPathComponent:@"Scribd Uploader"];
 }
+
+#pragma mark Housekeeping
 
 - (void) purgeNonexistentDocuments {
 	NSError *error = NULL;

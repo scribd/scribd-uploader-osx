@@ -2,6 +2,8 @@
 
 @implementation NSString (SUAdditions)
 
+#pragma mark Identifying and Comparing Strings
+
 - (BOOL) isEmpty {
 	return [self isEqualToString:@""];
 }
@@ -13,10 +15,14 @@
 	return YES;
 }
 
+#pragma mark Determining Line and Paragraph Ranges
+
 - (NSUInteger) lineCount {
 	//TODO there has got to be a more efficient way of doing this
 	return [[self componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] count];
 }
+
+#pragma mark Working with URLs
 
 - (NSString *) stringByURLEscapingUsingEncoding:(NSStringEncoding)encoding {
 	NSMutableString *encodedString = [[NSMutableString alloc] initWithString:[self stringByAddingPercentEscapesUsingEncoding:encoding]];

@@ -2,6 +2,7 @@
 
 @implementation SUSingleOnlyValueTransformer
 
+#pragma mark Value transformer
 
 /*
  This transformer converts between NSNumbers.

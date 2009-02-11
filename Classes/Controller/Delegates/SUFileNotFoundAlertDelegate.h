@@ -8,6 +8,8 @@
 	IBOutlet NSWindow *window;
 }
 
+#pragma mark Showing the alert
+
 /*!
  @method showAlertFor:singleFileName:
  @abstract Displays an alert warning the users that files were removed from

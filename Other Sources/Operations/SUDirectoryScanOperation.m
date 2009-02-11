@@ -2,8 +2,12 @@
 
 @implementation SUDirectoryScanOperation
 
+#pragma mark Properties
+
 @synthesize path;
 @synthesize managedObjectContext;
+
+#pragma mark Initializing and deallocating
 
 - (id) initWithPath:(NSString *)directoryPath inManagedObjectContext:(NSManagedObjectContext *)context {
 	if (self = [super init]) {
@@ -12,6 +16,8 @@
 	}
 	return self;
 }
+
+#pragma mark NSOperation
 
 /*
  Scans a directory for valid files and adds them to the managed object context.

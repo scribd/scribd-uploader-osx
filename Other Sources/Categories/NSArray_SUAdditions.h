@@ -6,6 +6,8 @@
 
 @interface NSArray (SUAdditions)
 
+#pragma mark Initializing an Array
+
 /*!
  @method initWithObject:
  @abstract Initializes an array containing a single object.
@@ -14,6 +16,8 @@
  */
 
 - (NSArray *) initWithObject:(id)object;
+
+#pragma mark Deriving New Arrays
 
 /*!
  @method reversedArray

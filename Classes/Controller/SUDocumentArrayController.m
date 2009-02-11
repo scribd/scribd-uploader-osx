@@ -2,6 +2,8 @@
 
 @implementation SUDocumentArrayController
 
+#pragma mark Initializing and deallocating
+
 /*
  Initializes value transformers.
  */
@@ -13,6 +15,8 @@
 	SUPluralizeValueTransformer *uploadCopyDescription = [[SUPluralizeValueTransformer alloc] initWithSingular:@"It can" plural:@"They can"];
 	[NSValueTransformer setValueTransformer:[uploadCopyDescription autorelease] forName:@"SUPluralizeItCan"];
 }
+
+#pragma mark Delegate responders
 
 /*
  Validates a drop, returning whether the items to be dropped can be dropped in
@@ -40,6 +44,8 @@
 	}
 	return atLeastOneWasAdded;
 }
+
+#pragma mark Actions
 
 - (IBAction) viewOnWebsite:(id)sender {
 	if ([[self selectedObjects] count] == 1) {

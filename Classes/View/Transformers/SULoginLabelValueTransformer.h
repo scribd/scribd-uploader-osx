@@ -9,7 +9,7 @@
  */
 
 @interface SULoginLabelValueTransformer : NSValueTransformer {
-
+	
 }
 
 @end

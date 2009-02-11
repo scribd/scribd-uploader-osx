@@ -2,6 +2,8 @@
 
 @implementation SUFileListView
 
+#pragma mark Event responders
+
 /*
  Listens for spacebar presses and toggles the Quick Look pane.
  */

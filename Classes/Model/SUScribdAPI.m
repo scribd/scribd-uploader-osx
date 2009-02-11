@@ -4,12 +4,16 @@ static SUScribdAPI *sharedAPI = NULL;
 
 @interface SUScribdAPI (Private)
 
+#pragma mark Categories
+
 /*
  Adds a Category entity for every child of the given node to the managed object
  context, given a proxy set for the parent.
  */
 
 - (void) setChildren:(NSMutableSet *)children ofNode:(NSXMLElement *)element managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
+#pragma mark API
 
 /*
  Returns the formatted Scribd API url for a set of parameters and an API method.
@@ -26,7 +30,11 @@ static SUScribdAPI *sharedAPI = NULL;
 
 @end
 
+#pragma mark -
+
 @implementation SUScribdAPI
+
+#pragma mark Initializing and deallocating
 
 /*
  Sets preference defaults.
@@ -38,6 +46,31 @@ static SUScribdAPI *sharedAPI = NULL;
 	[defaults registerDefaults:appDefaults];
 	[appDefaults release];
 }
+
+/*
+ Initializes local variables.
+ */
+
+- (id) init {
+	if (self = [super init]) {
+		uploadQueue = [[NSOperationQueue alloc] init];
+		[uploadQueue setMaxConcurrentOperationCount:[[NSUserDefaults standardUserDefaults] integerForKey:@"SUMaximumSimultaneousUploads"]];
+		settings = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
+	}
+	return self;
+}
+
+/*
+ Releases local variables.
+ */
+
+- (void) dealloc {
+	[uploadQueue release];
+	[settings release];
+	[super dealloc];
+}
+
+#pragma mark Working with the singleton instance
 
 + (SUScribdAPI *) sharedAPI {
 	@synchronized(self) {
@@ -100,28 +133,7 @@ static SUScribdAPI *sharedAPI = NULL;
 	return self;
 }
 
-/*
- Initializes local variables.
- */
-
-- (id) init {
-	if (self = [super init]) {
-		uploadQueue = [[NSOperationQueue alloc] init];
-		[uploadQueue setMaxConcurrentOperationCount:[[NSUserDefaults standardUserDefaults] integerForKey:@"SUMaximumSimultaneousUploads"]];
-		settings = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ScribdAPI" ofType:@"plist"]];
-	}
-	return self;
-}
-
-/*
- Releases local variables.
- */
-
-- (void) dealloc {
-	[uploadQueue release];
-	[settings release];
-	[super dealloc];
-}
+#pragma mark Calling Scribd API methods
 
 - (NSDictionary *) callApiMethod:(NSString *)method parameters:(NSDictionary *)parameters error:(NSError **)error {
 	NSURL *url = [self apiUrlWithMethod:method parameters:parameters];
@@ -149,6 +161,8 @@ static SUScribdAPI *sharedAPI = NULL;
 	[uploadQueue addOperation:uploadOperation];
 	[uploadOperation release];
 }
+
+#pragma mark Using other Scribd.com features
 
 - (NSArray *) autocompletionsForSubstring:(NSString *)substring {
 	NSString *urlString = [[NSString alloc] initWithFormat:[settings objectForKey:@"TagsURL"], [substring stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -239,7 +253,11 @@ static SUScribdAPI *sharedAPI = NULL;
 
 @end
 
+#pragma mark -
+
 @implementation SUScribdAPI (Private)
+
+#pragma mark Categories
 
 - (void) setChildren:(NSMutableSet *)children ofNode:(NSXMLElement *)element managedObjectContext:(NSManagedObjectContext *)managedObjectContext {
 	for (NSXMLElement *child in [element children]) {
@@ -251,6 +269,8 @@ static SUScribdAPI *sharedAPI = NULL;
 		[children addObject:category];
 	}
 }
+
+#pragma mark API
 
 - (NSURL *) apiUrlWithMethod:(NSString *)method parameters:(NSDictionary *)parameters {
 	NSMutableDictionary *urlParameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];

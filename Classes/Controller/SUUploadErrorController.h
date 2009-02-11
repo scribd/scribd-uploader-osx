@@ -11,6 +11,8 @@
 	IBOutlet SUDocumentArrayController *documentController;
 }
 
+#pragma mark Displaying an error
+
 /*!
  @method displayError:
  @abstract Runs the alert sheet for an error.

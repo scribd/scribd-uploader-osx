@@ -2,13 +2,21 @@
 
 @interface SUPreferencesWindowController (Private)
 
+#pragma mark Helpers
+
 - (NSView *) activeView;
 
 @end
 
+#pragma mark -
+
 @implementation SUPreferencesWindowController
 
+#pragma mark Properties
+
 @synthesize sparkleUpdater;
+
+#pragma mark Initializing and deallocating
 
 /*
  Connects the Sparkle Updater shared instance to the local property.
@@ -32,6 +40,8 @@
 	[self addView:metadataView label:@"Metadata" image:[NSImage imageNamed:@"NSInfo"]];
 }
 
+#pragma mark Actions
+
 - (IBAction) checkForUpdates:(id)sender {
 	[sparkleUpdater checkForUpdates:sender];
 }
@@ -46,7 +56,11 @@
 
 @end
 
+#pragma mark -
+
 @implementation SUPreferencesWindowController (Private)
+
+#pragma mark Helpers
 
 - (NSView *) activeView {
 	return [[self window] initialFirstResponder];

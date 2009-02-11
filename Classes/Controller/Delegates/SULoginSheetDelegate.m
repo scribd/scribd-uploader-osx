@@ -2,6 +2,8 @@
 
 @implementation SULoginSheetDelegate
 
+#pragma mark Initializing and deallocating
+
 /*
  Initializes value transformers used by the login sheet.
  */
@@ -9,6 +11,8 @@
 + (void) initialize {
 	[NSValueTransformer setValueTransformer:[[[SUBusyActionValueTransformer alloc] init] autorelease] forName:@"SUBusyAction"];
 }
+
+#pragma mark Delegate responders
 
 /*
  Animates a window resize when the tab changes. Going from Sign Up to Log In, we
@@ -68,6 +72,8 @@
 	if (![action isEqualToString:@"login"]) [uploader uploadFiles]; //TODO "selection" or "all"
 	[sheet orderOut:self];
 }
+
+#pragma mark Actions
 
 - (IBAction) signup:(id)sender {
 	if (sender) [NSThread detachNewThreadSelector:@selector(signup:) toTarget:self withObject:NULL];

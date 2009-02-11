@@ -13,6 +13,8 @@
 	NSManagedObjectContext *managedObjectContext;
 }
 
+#pragma mark Properties
+
 /*!
  @property managedObjectContext
  @abstract The managed object context to search for categories in.

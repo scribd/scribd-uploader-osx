@@ -2,12 +2,16 @@
 
 @interface SUAppDelegate (Private)
 
+#pragma mark Helpers
+
 /*
  Tells the SUScribdAPI to load the categories from the server, then marks the
  current date as the last category load time.
  */
 
 - (void) loadCategories:(id)context;
+
+#pragma mark Notifications
 
 /*
  Responds to the scanning-started notification by opening the sheet.
@@ -23,7 +27,11 @@
 
 @end
 
+#pragma mark -
+
 @implementation SUAppDelegate
+
+#pragma mark Initializing and deallocating
 
 /*
  Registers value transformers.
@@ -77,6 +85,8 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanningDone:) name:SUScanningDoneNotification object:NULL];
 }
 
+#pragma mark Delegate responders
+
 /*
  Returns the NSUndoManager for the application. In this case, the manager
  returned is that of the managed object context for the application.
@@ -86,64 +96,17 @@
 	return [db.managedObjectContext undoManager];
 }
 
-- (IBAction) saveAction:(id)sender {
-	NSError *error = NULL;
-	if (![db.managedObjectContext save:&error]) {
-		[[NSApplication sharedApplication] presentError:error];
-	}
-}
-
-- (IBAction) viewAllDocumentsAction:(id)sender {
-	NSURL *URL = [[NSURL alloc] initWithString:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUMyDocsURLInfoKey]];
-	[[NSWorkspace sharedWorkspace] openURL:URL];
-	[URL release];
-}
-
-- (IBAction) uploadAllAction:(id)sender {
-	if ([[SUSessionHelper sessionHelper] sessionStored])
-		[uploader uploadFiles];
-	else
-		[[NSApplication sharedApplication] beginSheet:loginSheet modalForWindow:window modalDelegate:loginSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:@"all"];
-}
-
-- (IBAction) displayPreferences:(id)sender {
-	[[SUPreferencesWindowController sharedPrefsWindowController] showWindow:sender];
-}
-
 /*
  Disables the Upload button if there are no files to upload or if an upload is
  in progress.
  */
 
 - (BOOL) validateToolbarItem:(NSToolbarItem *)item {
-	if ([item action] == @selector(uploadAllAction:)) {
+	if ([item action] == @selector(uploadAll:)) {
 		NSError *error = NULL;
 		return (![uploader isUploading] && [SUDocument numberOfUploadableInManagedObjectContext:db.managedObjectContext error:&error] > 0);
 	}
 	else return YES;
-}
-
-- (IBAction) loginAction:(id)sender {
-	[[NSApplication sharedApplication] beginSheet:loginSheet modalForWindow:window modalDelegate:loginSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:@"login"];
-}
-
-- (IBAction) addFile:(id)sender {
-	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
-	
-	[openPanel setAllowsMultipleSelection:YES];
-	[openPanel setPrompt:@"Add"];
-	[openPanel beginSheetForDirectory:NULL file:NULL types:[SUDocument scribdFileTypes] modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
-}
-
-- (IBAction) addAllFiles:(id)sender {
-	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
-	
-	[openPanel setAllowsMultipleSelection:YES];
-	[openPanel setPrompt:@"Scan"];
-	[openPanel setMessage:@"Choose a directory to scan for documents:"];
-	[openPanel setCanChooseFiles:NO];
-	[openPanel setCanChooseDirectories:YES];
-	[openPanel beginSheetForDirectory:NULL file:NULL types:NULL modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 }
 
 /*
@@ -213,9 +176,62 @@
 	}
 }
 
+#pragma mark Actions
+
+- (IBAction) saveFileList:(id)sender {
+	NSError *error = NULL;
+	if (![db.managedObjectContext save:&error]) {
+		[[NSApplication sharedApplication] presentError:error];
+	}
+}
+
+- (IBAction) viewAllDocuments:(id)sender {
+	NSURL *URL = [[NSURL alloc] initWithString:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUMyDocsURLInfoKey]];
+	[[NSWorkspace sharedWorkspace] openURL:URL];
+	[URL release];
+}
+
+- (IBAction) uploadAll:(id)sender {
+	if ([[SUSessionHelper sessionHelper] sessionStored])
+		[uploader uploadFiles];
+	else
+		[[NSApplication sharedApplication] beginSheet:loginSheet modalForWindow:window modalDelegate:loginSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:@"all"];
+}
+
+- (IBAction) displayPreferences:(id)sender {
+	[[SUPreferencesWindowController sharedPrefsWindowController] showWindow:sender];
+}
+
+- (IBAction) showLoginSheet:(id)sender {
+	[[NSApplication sharedApplication] beginSheet:loginSheet modalForWindow:window modalDelegate:loginSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:@"login"];
+}
+
+- (IBAction) addFile:(id)sender {
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+	
+	[openPanel setAllowsMultipleSelection:YES];
+	[openPanel setPrompt:@"Add"];
+	[openPanel beginSheetForDirectory:NULL file:NULL types:[SUDocument scribdFileTypes] modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+}
+
+- (IBAction) addAllFiles:(id)sender {
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+	
+	[openPanel setAllowsMultipleSelection:YES];
+	[openPanel setPrompt:@"Scan"];
+	[openPanel setMessage:@"Choose a directory to scan for documents:"];
+	[openPanel setCanChooseFiles:NO];
+	[openPanel setCanChooseDirectories:YES];
+	[openPanel beginSheetForDirectory:NULL file:NULL types:NULL modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+}
+
 @end
 
+#pragma mark -
+
 @implementation SUAppDelegate (Private)
+
+#pragma mark Helpers
 
 - (void) loadCategories:(id)context {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -223,6 +239,8 @@
 	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:SUDefaultKeyLastCategoryLoad];
 	[pool release];
 }
+
+#pragma mark Notifications
 
 - (void) scanningStarted:(id)context {
 	if ([context isKindOfClass:[NSNotification class]]) [NSThread detachNewThreadSelector:@selector(scanningStarted:) toTarget:self withObject:NULL];

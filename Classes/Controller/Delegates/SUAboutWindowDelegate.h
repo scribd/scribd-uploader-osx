@@ -7,6 +7,8 @@
 	
 }
 
+#pragma mark Properties
+
 /*!
  @property version
  @abstract Returns the current human-readable short version number of this
@@ -14,6 +16,8 @@
  */
 
 @property (readonly) NSString *version;
+
+#pragma mark Actions
 
 /*!
  @method showAboutHelp:

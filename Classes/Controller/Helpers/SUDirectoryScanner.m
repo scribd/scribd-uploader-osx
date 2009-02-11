@@ -2,7 +2,11 @@
 
 @implementation SUDirectoryScanner
 
+#pragma mark Properties
+
 @synthesize isScanning;
+
+#pragma mark Initializing and deallocating
 
 /*
  Initializes fields.
@@ -38,11 +42,15 @@
 	[super dealloc];
 }
 
+#pragma mark Setting up the directory scanner
+
 - (void) addDirectoryPath:(NSString *)path {
 	NSOperation *operation = [[SUDirectoryScanOperation alloc] initWithPath:path inManagedObjectContext:db.managedObjectContext];
 	[pendingQueue addOperation:operation];
 	[operation release];
 }
+
+#pragma mark Scanning
 
 - (void) beginScanning {
 	@synchronized(self) {
@@ -60,11 +68,8 @@
 	[[NSNotificationCenter defaultCenter] postNotificationName:SUScanningStartedNotification object:NULL];
 }
 
-/*
- Called when the operation queue completes; closes the sheet.
- */
-
-- (void) deferredQueueDidComplete:(SUDeferredOperationQueue *)queue {
+- (IBAction) cancelScanning:(id)sender {
+	[operationQueue cancelAllOperations];
 	[operationQueue release];
 	operationQueue = NULL;
 	
@@ -72,8 +77,13 @@
 	[[NSNotificationCenter defaultCenter] postNotificationName:SUScanningDoneNotification object:NULL];
 }
 
-- (IBAction) cancelScanning:(id)sender {
-	[operationQueue cancelAllOperations];
+#pragma mark Delegate responders
+
+/*
+ Called when the operation queue completes; closes the sheet.
+ */
+
+- (void) deferredQueueDidComplete:(SUDeferredOperationQueue *)queue {
 	[operationQueue release];
 	operationQueue = NULL;
 	
@@ -90,4 +100,3 @@
 }
 
 @end
-

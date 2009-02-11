@@ -10,6 +10,8 @@
 	IBOutlet SUUploadHelper *uploader;
 }
 
+#pragma mark Actions
+
 /*!
  @method viewOnWebsite:
  @abstract Opens the selected document's web page on Scribd.com in the default

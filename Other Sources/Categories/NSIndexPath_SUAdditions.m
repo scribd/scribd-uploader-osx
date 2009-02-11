@@ -2,6 +2,8 @@
 
 @implementation NSIndexPath (SUAdditions)
 
+#pragma mark Deriving New Index Paths
+
 - (NSIndexPath *) indexPathByRemovingFirstIndex {
 	NSUInteger *indexes = malloc(sizeof(NSUInteger)*([self length] - 1));
 	NSUInteger depth;

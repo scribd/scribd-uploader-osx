@@ -2,6 +2,8 @@
 
 @implementation SUFileNotFoundAlertDelegate
 
+#pragma mark Showing the alert
+
 - (void) showAlertFor:(int)deletedFiles singleFileName:(NSString *)filename {
 	NSAlert *alert = [[NSAlert alloc] init];
 	[alert setAlertStyle:NSWarningAlertStyle];
@@ -24,6 +26,8 @@
 	[alert beginSheetModalForWindow:window modalDelegate:self didEndSelector:@selector(filesNotFoundAlertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 	//TODO this does not display directly under the window
 }
+
+#pragma mark Delegate responders
 
 /*
  Handles the dismissal of the alert by releasing the object.

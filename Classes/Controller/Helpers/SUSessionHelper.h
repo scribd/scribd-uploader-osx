@@ -6,8 +6,10 @@
  */
 
 @interface SUSessionHelper : NSObject {
-
+	
 }
+
+#pragma mark Properties
 
 /*!
  @property key
@@ -24,6 +26,8 @@
 
 @property (readonly) NSString *username;
 
+#pragma mark Working with the singleton instance
+
 /*!
  @method sessionHelper
  @abstract Returns the singleton instance.
@@ -31,6 +35,8 @@
  */
 
 + (SUSessionHelper *) sessionHelper;
+
+#pragma mark Getting and setting the session key
 
 /*!
  @method storeSessionKey:username:
@@ -49,6 +55,8 @@
  */
 
 - (BOOL) sessionStored;
+
+#pragma mark Required setup methods
 
 /*!
  @method setupForLaunch

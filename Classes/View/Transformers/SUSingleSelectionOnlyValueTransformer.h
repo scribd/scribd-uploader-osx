@@ -6,7 +6,7 @@
  */
 
 @interface SUSingleSelectionOnlyValueTransformer : NSValueTransformer {
-
+	
 }
 
 @end

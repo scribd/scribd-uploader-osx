@@ -16,6 +16,8 @@
 	IBOutlet NSTableView *table;
 }
 
+#pragma mark Displaying the Quick Look panel
+
 /*!
  @method toggleDisplay:
  @abstract Shows and hides the Quick Look preview pane.

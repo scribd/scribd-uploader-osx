@@ -2,6 +2,8 @@
 
 @implementation SUBusyActionValueTransformer
 
+#pragma mark Value transformer
+
 /*
  This transformer converts between strings.
  */

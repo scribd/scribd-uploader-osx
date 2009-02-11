@@ -2,6 +2,8 @@
 
 @implementation SULogInButtonTitleValueTransformer
 
+#pragma mark Value transformer
+
 /*
  This transformer converts between session keys (strings) and button titles
  (strings).

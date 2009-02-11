@@ -9,6 +9,8 @@
 	NSManagedObjectContext *managedObjectContext;
 }
 
+#pragma mark Properties
+
 /*!
  @property path
  @abstract The path to the directory that will be searched.
@@ -23,6 +25,8 @@
  */
 
 @property (retain) NSManagedObjectContext *managedObjectContext;
+
+#pragma mark Initializing and deallocating
 
 /*!
  @method initWithPath:inManagedObjectContext:

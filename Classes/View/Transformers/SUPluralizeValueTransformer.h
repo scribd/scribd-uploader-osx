@@ -10,6 +10,8 @@
 	NSString *singular, *plural;
 }
 
+#pragma mark Initializing and deallocating
+
 /*!
  @method initWithSingular:plural:
  @abstract Creates a new transformer with the given singular and plural phrases.
