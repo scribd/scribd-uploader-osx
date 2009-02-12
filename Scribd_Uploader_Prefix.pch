@@ -19,6 +19,7 @@
 #import "NSError_SUAdditions.h"
 #import "NSIndexPath_SUAdditions.h"
 #import "NSDictionary_SUAdditions.h"
+#import "NSApplication_SUAdditions.h"
 #import "SUDeferredOperationQueue.h"
 
 #import "SUCategory.h"

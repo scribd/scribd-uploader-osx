@@ -57,6 +57,20 @@
  */
 
 - (void) awakeFromNib {
+	// make sure we're running at least 10.5
+	NSUInteger major, minor, bugfix;
+	[[NSApplication sharedApplication] getSystemVersionMajor:&major minor:&minor bugfix:&bugfix];
+	if (major != 10 || minor < 5) {
+		NSAlert *alert = [[NSAlert alloc] init];
+		[alert setMessageText:@"Scribd Uploader requires Mac OS X version 10.5.0 or later in order to run."];
+		[alert setInformativeText:@"Mac OS X 10.5, code-named Tiger, is available for purchase at www.apple.com."];
+		[alert setAlertStyle:NSCriticalAlertStyle];
+		[alert addButtonWithTitle:@"Quit"];
+		[alert runModal];
+		[alert release];
+		[[NSApplication sharedApplication] terminate:self];
+	}
+	
 	// create a value transformer that requires an initialized DB
 	[[NSValueTransformer valueTransformerForName:@"SUIndexPath"] setValue:db.managedObjectContext forKey:@"managedObjectContext"];
 	

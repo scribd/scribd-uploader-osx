@@ -80,6 +80,7 @@
 		01BF112B0F2AD45A007CED18 /* Go Clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BF11280F2AD45A007CED18 /* Go Clicked.png */; };
 		01BF112C0F2AD45A007CED18 /* Caution Clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BF11290F2AD45A007CED18 /* Caution Clicked.png */; };
 		01BF112D0F2AD45A007CED18 /* Error Clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BF112A0F2AD45A007CED18 /* Error Clicked.png */; };
+		01E062A40F43DE130026A075 /* NSApplication_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E062A30F43DE130026A075 /* NSApplication_SUAdditions.m */; };
 		01E821340F293BB100473993 /* Caution.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821310F293BB100473993 /* Caution.png */; };
 		01E821350F293BB100473993 /* Error.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821320F293BB100473993 /* Error.png */; };
 		01E821360F293BB100473993 /* Go.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821330F293BB100473993 /* Go.png */; };
@@ -227,6 +228,8 @@
 		01BF11280F2AD45A007CED18 /* Go Clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Go Clicked.png"; sourceTree = "<group>"; };
 		01BF11290F2AD45A007CED18 /* Caution Clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Caution Clicked.png"; sourceTree = "<group>"; };
 		01BF112A0F2AD45A007CED18 /* Error Clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Error Clicked.png"; sourceTree = "<group>"; };
+		01E062A20F43DE130026A075 /* NSApplication_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApplication_SUAdditions.h; sourceTree = "<group>"; };
+		01E062A30F43DE130026A075 /* NSApplication_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApplication_SUAdditions.m; sourceTree = "<group>"; };
 		01E821310F293BB100473993 /* Caution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Caution.png; sourceTree = "<group>"; };
 		01E821320F293BB100473993 /* Error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Error.png; sourceTree = "<group>"; };
 		01E821330F293BB100473993 /* Go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Go.png; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 		010BC0C50F33C9F100C4DE4D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				01E062A20F43DE130026A075 /* NSApplication_SUAdditions.h */,
+				01E062A30F43DE130026A075 /* NSApplication_SUAdditions.m */,
 				010BC0C60F33C9F100C4DE4D /* NSArray_SUAdditions.h */,
 				010BC0C70F33C9F100C4DE4D /* NSArray_SUAdditions.m */,
 				010BC0C80F33C9F100C4DE4D /* NSDictionary_SUAdditions.h */,
@@ -690,6 +695,7 @@
 				012732570F3582FC0067946D /* SUSingleOnlyValueTransformer.m in Sources */,
 				0127325B0F3583C20067946D /* SUMetadataTabValueTransformer.m in Sources */,
 				018352920F3588CF0088C68E /* SUPluralizeValueTransformer.m in Sources */,
+				01E062A40F43DE130026A075 /* NSApplication_SUAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
