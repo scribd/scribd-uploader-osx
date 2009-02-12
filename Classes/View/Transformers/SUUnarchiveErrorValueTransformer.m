@@ -34,9 +34,8 @@
 			if (data && [data isNotEqualTo:[NSNull null]]) {
 				id item = [NSUnarchiver unarchiveObjectWithData:data];
 				[outArray addObject:item];
-			} else {
-				[outArray addObject:[NSNull null]];
 			}
+			else [outArray addObject:[NSNull null]];
 		}
 		return outArray;
 	}

@@ -26,7 +26,8 @@
 		NSString *description = [[NSString alloc] initWithFormat:[errorSettings objectForKey:@"Message"], (invalidateProperty ? [sender valueForKey:invalidateProperty] : NULL)];
 		[newUserInfo setObject:description forKey:NSLocalizedDescriptionKey];
 		[description release];
-	} else {
+	}
+	else {
 		NSString *messageLocation = [[NSString alloc] initWithFormat:@"ErrorMessages.%@.Default", action];
 		NSString *description = [[NSString alloc] initWithFormat:[messages valueForKeyPath:messageLocation], [[self userInfo] objectForKey:NSLocalizedFailureReasonErrorKey]];
 		[messageLocation release];
@@ -69,7 +70,8 @@
 		NSString *description = [[NSString alloc] initWithFormat:[errorSettings objectForKey:@"Message"], docTitle];
 		[newUserInfo setObject:description forKey:NSLocalizedDescriptionKey];
 		[description release];
-	} else {
+	}
+	else {
 		NSString *descLocation = [[NSString alloc] initWithFormat:@"ErrorMessages.%@.Default", action];
 		NSString *description = [[NSString alloc] initWithFormat:[messages valueForKeyPath:descLocation], docTitle, [[self userInfo] objectForKey:NSLocalizedFailureReasonErrorKey]];
 		[descLocation release];

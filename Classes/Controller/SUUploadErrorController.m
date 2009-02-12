@@ -10,7 +10,8 @@
 		// go to the file
 		SUDocument *doc = [documentController.arrangedObjects objectAtIndex:[index unsignedIntegerValue]];
 		if (doc.isUploaded) [[NSWorkspace sharedWorkspace] openURL:doc.scribdURL];
-	} else {
+	}
+	else {
 		// display the error
 		NSAlert *alert = [[NSAlert alloc] init];
 		[alert setAlertStyle:NSWarningAlertStyle]; //TODO warning or critical depending on error type

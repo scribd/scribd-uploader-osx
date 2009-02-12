@@ -83,7 +83,8 @@
 					 NULL];
 		[description release];
 		[recoverySuggestion release];
-	} else {
+	}
+	else {
 		NSString *description = [[NSString alloc] initWithFormat:@"A problem prevented the upload from completing: %@", [outerError localizedDescription]];
 		errorDict = [[NSDictionary alloc] initWithObjectsAndKeys:
 					 description, NSLocalizedDescriptionKey,

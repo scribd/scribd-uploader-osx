@@ -310,7 +310,8 @@ static SUScribdAPI *sharedAPI = NULL;
 			[properties setObject:[child stringValue] forKey:[child name]];
 		}
 		return [properties autorelease];
-	} else {
+	}
+	else {
 		int errorCode;
 		NSDictionary *errorInfo;
 		
