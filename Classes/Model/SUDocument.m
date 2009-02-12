@@ -5,6 +5,8 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 
 @interface SUDocument (Private)
 
+#pragma mark Helpers
+
 /*
  Returns a list of supported filetypes mapped to descriptions of each type.
  */
@@ -13,8 +15,11 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 
 @end
 
+#pragma mark -
 
 @implementation SUDocument
+
+#pragma mark Properties
 
 @dynamic path;
 @dynamic progress;
@@ -38,7 +43,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 @dynamic editURL;
 @dynamic isUploaded;
 
-#pragma mark Initialization/deallocation
+#pragma mark Initializing and deallocating
 
 /*
  Initializes the title-cleaning queue.
@@ -90,8 +95,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	[super dealloc];
 }
 
-#pragma mark -
-#pragma mark Derived properties
+#pragma mark Dynamic properties
 
 - (NSString *) filename {
 	return [[NSFileManager defaultManager] displayNameAtPath:self.path];
@@ -155,8 +159,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	return [url autorelease];
 }
 
-#pragma mark -
-#pragma mark Key paths
+#pragma mark KVO
 
 /*
  When the path changes, we need to release the wrapper and kind to prepare for
@@ -229,8 +232,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	return [NSSet setWithObject:@"scribdID"];
 }
 
-#pragma mark -
-#pragma mark Finders
+#pragma mark Finding documents
 
 + (SUDocument *) findByPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
 	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
@@ -359,8 +361,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	return count;
 }
 
-#pragma mark -
-#pragma mark Creators
+#pragma mark Creating new records
 
 + (SUDocument *) createFromPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
 	SUDocument *existingDocument = NULL;
@@ -372,8 +373,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	return file;
 }
 
-#pragma mark -
-#pragma mark Other
+#pragma mark Configuration information
 
 + (NSArray *) scribdFileTypes {
 	return [[self kinds] allKeys];
@@ -381,7 +381,11 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 
 @end
 
+#pragma mark -
+
 @implementation SUDocument (Private)
+
+#pragma mark Helpers
 
 + (NSDictionary *) kinds {
 	if (!kinds) kinds = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FileTypes" ofType:@"plist"]];

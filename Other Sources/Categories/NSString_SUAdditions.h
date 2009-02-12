@@ -5,6 +5,8 @@
 
 @interface NSString (SUAdditions)
 
+#pragma mark Identifying and Comparing Strings
+
 /*!
  @method isEmpty
  @abstract Returns whether or not the string is empty (no characters).
@@ -23,6 +25,8 @@
 
 - (BOOL) isBlank;
 
+#pragma mark Determining Line and Paragraph Ranges
+
 /*!
  @method lineCount
  @abstract Returns the number of lines in the string.
@@ -30,6 +34,8 @@
  */
 
 - (NSUInteger) lineCount;
+
+#pragma mark Working with URLs
 
 /*!
  @method stringByURLEncoding

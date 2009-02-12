@@ -22,6 +22,8 @@
 	NSDictionary *settings;
 }
 
+#pragma mark Working with the singleton instance
+
 /*!
  @method sharedAPI
  @abstract Returns the singleton instance.
@@ -29,6 +31,8 @@
  */
 
 + (SUScribdAPI *) sharedAPI;
+
+#pragma mark Calling Scribd API methods
 
 /*!
  @method callApiMethod:parameters:error:
@@ -66,6 +70,8 @@
  */
 
 - (void) apiSubmitFile:(SUDocument *)file apiMethod:(NSString *)method parameters:(NSDictionary *)parameters delegate:(id)delegate;
+
+#pragma mark Using other Scribd.com features
 
 /*!
  @method autocompletionsForSubstring:

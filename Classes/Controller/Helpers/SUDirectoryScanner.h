@@ -13,12 +13,16 @@
 	BOOL isScanning;
 }
 
+#pragma mark Properties
+
 /*!
  @property isScanning
  @abstract YES if a scan operation is currently in progress; NO otherwise.
  */
 
 @property (assign) BOOL isScanning;
+
+#pragma mark Setting up the directory scanner
 
 /*!
  @method addDirectoryPath:
@@ -29,6 +33,8 @@
  */
 
 - (void) addDirectoryPath:(NSString *)path;
+
+#pragma mark Scanning
 
 /*!
  @method beginScanning

@@ -2,6 +2,8 @@
 
 @implementation SULoginLabelValueTransformer
 
+#pragma mark Value transformer
+
 /*
  This transformer converts between usernames (strings) and NSLabel values
  (strings).

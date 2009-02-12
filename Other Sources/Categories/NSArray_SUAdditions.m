@@ -2,6 +2,8 @@
 
 @implementation NSArray (SUAdditions)
 
+#pragma mark Initializing an Array
+
 - (NSArray *) initWithObject:(id)object {
 	NSZone *memorySpace = [self zone];
 	[self release];
@@ -9,6 +11,8 @@
 	[newSelf addObject:object];
 	return newSelf;
 }
+
+#pragma mark Deriving New Arrays
 
 - (NSArray *) reversedArray {
 	NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[self count]];

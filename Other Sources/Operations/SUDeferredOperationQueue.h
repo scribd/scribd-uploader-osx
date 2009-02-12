@@ -25,6 +25,8 @@
 	id delegate;
 }
 
+#pragma mark Properties
+
 /*!
  @property isRunning
  @abstract True if the operation queue is currently processing its tasks.
@@ -46,6 +48,8 @@
 
 @property (assign) id delegate;
 
+#pragma mark Starting the queue
+
 /*!
  @method run
  @abstract Begins processing the operations assigned to this queue. After this
@@ -62,6 +66,8 @@
  */
 
 - (BOOL) isFinished;
+
+#pragma mark Managing Operations in the Queue
 
 /*!
  @method isEmpty

@@ -2,11 +2,15 @@
 
 @interface SUUploadHelper (Private)
 
+#pragma mark Dynamic properties
+
 /*
  Returns YES if at least one upload has been started since last launch.
  */
 
 - (BOOL) uploadStarted;
+
+#pragma mark Delegate responders
 
 /*
  Called when a file finishes uploading. Changes the currentlyUploadingCount and
@@ -17,7 +21,11 @@
 
 @end
 
+#pragma mark -
+
 @implementation SUUploadHelper
+
+#pragma mark Properties
 
 @synthesize isBusy;
 @synthesize currentlyUploadingCount;
@@ -30,6 +38,8 @@
 @synthesize newUserName;
 @synthesize scribdLogin;
 @synthesize scribdPassword;
+
+#pragma mark Initializing and deallocating
 
 /*
  Called when the object is first unpacked; initializes instances variables.
@@ -44,6 +54,21 @@
 	uploadDelegates = [[NSMutableSet alloc] init]; // just used to retain delegates which are created in transient autorelease pools
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uploadComplete:) name:SUUploadCompleteNotification object:NULL];
 }
+
+/*
+ Releases retained objects.
+ */
+
+- (void) dealloc {
+	if (newUserLoginError) [newUserLoginError release];
+	if (newUserPasswordError) [newUserPasswordError release];
+	if (newUserEmailError) [newUserEmailError release];
+	if (newUserNameError) [newUserNameError release];
+	[uploadDelegates release];
+	[super dealloc];
+}
+
+#pragma mark Working with Scribd.com
 
 - (BOOL) authenticate {
 	NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:
@@ -158,6 +183,14 @@
 	return YES;
 }
 
+#pragma mark Getting state information
+
+- (BOOL) uploadComplete {
+	return uploadStarted && self.currentlyUploadingCount == 0;
+}
+
+#pragma Dynamic properties
+
 - (BOOL) isUploading {
 	return self.currentlyUploadingCount != 0;
 }
@@ -179,9 +212,7 @@
 	return [NSSet setWithObjects:@"currentlyUploadingCount", @"uploadStarted", NULL];
 }
 
-- (BOOL) uploadComplete {
-	return uploadStarted && self.currentlyUploadingCount == 0;
-}
+#pragma mark Validation
 
 /*
  Key-value coding compliant validator for newUserLogin; checks if the server has
@@ -235,18 +266,7 @@
 	else return YES;
 }
 
-/*
- Releases retained objects.
- */
-
-- (void) dealloc {
-	if (newUserLoginError) [newUserLoginError release];
-	if (newUserPasswordError) [newUserPasswordError release];
-	if (newUserEmailError) [newUserEmailError release];
-	if (newUserNameError) [newUserNameError release];
-	[uploadDelegates release];
-	[super dealloc];
-}
+#pragma mark Delegate responders
 
 /*
  Called when any alert created by this class ends. Releases the alert.
@@ -258,11 +278,17 @@
 
 @end
 
+#pragma mark -
+
 @implementation SUUploadHelper (Private)
+
+#pragma mark Dynamic properties
 
 - (BOOL) uploadStarted {
 	return uploadStarted;
 }
+
+#pragma mark Delegate responders
 
 - (void) uploadComplete:(SUUploadDelegate *)delegate {
 	[uploadDelegates removeObject:delegate];

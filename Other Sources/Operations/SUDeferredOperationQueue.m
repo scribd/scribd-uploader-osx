@@ -1,8 +1,12 @@
 @implementation SUDeferredOperationQueue
 
+#pragma mark Properties
+
 @synthesize isRunning;
 @synthesize hasRun;
 @synthesize delegate;
+
+#pragma mark Initializing and deallocating
 
 /*
  New queues start out suspended. Also initializes fields.
@@ -18,6 +22,8 @@
 	return self;
 }
 
+#pragma mark Managing Operations in the Queue
+
 /*
  Prevents operations from being added once the queue has been activated.
  */
@@ -30,6 +36,12 @@
 	}
 }
 
+- (BOOL) isEmpty {
+	return [self.operations count] == 0;
+}
+
+#pragma mark Starting the queue
+
 - (void) run {
 	@synchronized(self) {
 		if (self.hasRun) return;
@@ -39,6 +51,13 @@
 	
 	[self setSuspended:NO];
 }
+
+- (BOOL) isFinished {
+	for (NSOperation *operation in self.operations) if (![operation isFinished]) return NO;
+	return YES;
+}
+
+#pragma mark KVO
 
 /*
  Received when an operation finishes. Checks to see if all operations have
@@ -60,15 +79,6 @@
 		}
 	}
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-}
-
-- (BOOL) isFinished {
-	for (NSOperation *operation in self.operations) if (![operation isFinished]) return NO;
-	return YES;
-}
-
-- (BOOL) isEmpty {
-	return [self.operations count] == 0;
 }
 
 @end

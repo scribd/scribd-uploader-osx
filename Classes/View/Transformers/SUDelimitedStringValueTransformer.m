@@ -2,7 +2,24 @@
 
 @implementation SUDelimitedStringValueTransformer
 
+#pragma mark Properties
+
 @synthesize delimiter;
+
+#pragma mark Initializing and deallocating
+
+- (id) init {
+	return [self initWithDelimiter:@","];
+}
+
+- (id) initWithDelimiter:(NSString *)delim {
+	if (self = [super init]) {
+		self.delimiter = delim;
+	}
+	return self;
+}
+
+#pragma mark Value transformer
 
 /*
  This transformer converts between different subclasses of NSObject.
@@ -18,17 +35,6 @@
 
 + (BOOL) allowsReverseTransformation {
 	return YES;
-}
-
-- (id) init {
-	return [self initWithDelimiter:@","];
-}
-
-- (id) initWithDelimiter:(NSString *)delim {
-	if (self = [super init]) {
-		self.delimiter = delim;
-	}
-	return self;
 }
 
 /*

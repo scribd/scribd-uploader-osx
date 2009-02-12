@@ -100,7 +100,7 @@
 
 @property (retain) SUCategory *category;
 
-#pragma mark Derived properties
+#pragma mark Dynamic properties
 
 /*!
  @property filename
@@ -175,7 +175,7 @@
 
 @property (readonly) BOOL isUploaded;
 
-#pragma mark Class methods
+#pragma mark Finding documents
 
 /*!
  @method findByPath:inManagedObjectContext:
@@ -187,15 +187,6 @@
  */
 
 + (SUDocument *) findByPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
-
-/*!
- @method scribdFileTypes
- @abstract Returns an array of strings, each containing a valid file extension
- accepted by Scribd.
- @result An array of acceptable file types.
- */
-
-+ (NSArray *) scribdFileTypes;
 
 /*!
  @method findAllInManagedObjectContext:error:
@@ -245,6 +236,8 @@
 
 + (NSUInteger) numberOfUploadableInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error;
 
+#pragma mark Creating new records
+
 /*!
  @method createFromPath:inManagedObjectContext:
  @abstract Creates a new document record from a path.
@@ -255,7 +248,18 @@
 
 + (SUDocument *) createFromPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
-#pragma mark Instance methods
+#pragma mark Configuration information
+
+/*!
+ @method scribdFileTypes
+ @abstract Returns an array of strings, each containing a valid file extension
+ accepted by Scribd.
+ @result An array of acceptable file types.
+ */
+
++ (NSArray *) scribdFileTypes;
+
+#pragma mark Pseudo-properties
 
 /*!
  @method wrapper

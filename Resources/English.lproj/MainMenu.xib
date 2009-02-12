@@ -3122,14 +3122,6 @@ ciBoZWxwIHZpZXdlci4</string>
 					<int key="connectionID">831</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">uploadAllAction:</string>
-						<reference key="source" ref="612578685"/>
-						<reference key="destination" ref="36596628"/>
-					</object>
-					<int key="connectionID">838</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">loginSheetDelegate</string>
 						<reference key="source" ref="612578685"/>
@@ -3487,14 +3479,6 @@ ciBoZWxwIHZpZXdlci4</string>
 					<int key="connectionID">1085</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">loginAction:</string>
-						<reference key="source" ref="612578685"/>
-						<reference key="destination" ref="985169099"/>
-					</object>
-					<int key="connectionID">1090</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">uploader</string>
 						<reference key="source" ref="612578685"/>
@@ -3809,22 +3793,6 @@ ciBoZWxwIHZpZXdlci4</string>
 						<reference key="destination" ref="894670186"/>
 					</object>
 					<int key="connectionID">1205</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">uploadAllAction:</string>
-						<reference key="source" ref="612578685"/>
-						<reference key="destination" ref="944090491"/>
-					</object>
-					<int key="connectionID">1207</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">loginAction:</string>
-						<reference key="source" ref="612578685"/>
-						<reference key="destination" ref="906059679"/>
-					</object>
-					<int key="connectionID">1213</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -4640,14 +4608,6 @@ ciBoZWxwIHZpZXdlci4</string>
 					<int key="connectionID">1699</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">viewAllDocumentsAction:</string>
-						<reference key="source" ref="612578685"/>
-						<reference key="destination" ref="516835730"/>
-					</object>
-					<int key="connectionID">1701</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: scribdLogin</string>
 						<reference key="source" ref="177607311"/>
@@ -5003,6 +4963,46 @@ ciBoZWxwIHZpZXdlci4</string>
 						</object>
 					</object>
 					<int key="connectionID">1789</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">viewAllDocuments:</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="516835730"/>
+					</object>
+					<int key="connectionID">1790</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">uploadAll:</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="36596628"/>
+					</object>
+					<int key="connectionID">1791</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">uploadAll:</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="944090491"/>
+					</object>
+					<int key="connectionID">1792</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showLoginSheet:</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="985169099"/>
+					</object>
+					<int key="connectionID">1793</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showLoginSheet:</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="906059679"/>
+					</object>
+					<int key="connectionID">1794</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -7439,7 +7439,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1789</int>
+			<int key="maxID">1794</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -7474,10 +7474,10 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 							<string>addAllFiles:</string>
 							<string>addFile:</string>
 							<string>displayPreferences:</string>
-							<string>loginAction:</string>
-							<string>saveAction:</string>
-							<string>uploadAllAction:</string>
-							<string>viewAllDocumentsAction:</string>
+							<string>saveFileList:</string>
+							<string>showLoginSheet:</string>
+							<string>uploadAll:</string>
+							<string>viewAllDocuments:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>

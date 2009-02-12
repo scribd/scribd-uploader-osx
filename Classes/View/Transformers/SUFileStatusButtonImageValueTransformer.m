@@ -2,6 +2,8 @@
 
 @implementation SUFileStatusButtonImageValueTransformer
 
+#pragma mark Initializing and deallocating
+
 - (id) init {
 	return [self initWithSuffix:NULL];
 }
@@ -37,6 +39,8 @@
 	[errorImage release];
 	[super dealloc];
 }
+
+#pragma mark Value transformer
 
 /*
  This transformer transforms between a variety of NSObject subclasses.

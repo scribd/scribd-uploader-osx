@@ -11,6 +11,8 @@
 	IBOutlet NSMenuItem *toggleDrawerItem;
 }
 
+#pragma mark Actions
+
 /*!
  @method showHelp:
  @abstract Displays a relevant help topic.

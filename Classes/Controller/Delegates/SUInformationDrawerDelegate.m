@@ -2,10 +2,14 @@
 
 @implementation SUInformationDrawerDelegate
 
+#pragma mark Initializing and deallocating
+
 - (void) awakeFromNib {
 	[tagsField setTokenizingCharacterSet:[NSCharacterSet characterSetWithCharactersInString:@" \n\r,;|-"]];
 	[documentsController addObserver:self forKeyPath:@"selection.@count" options:0 context:NULL];
 }
+
+#pragma mark KVO
 
 /*
  Called when the file list selection changes; shows or hides the information
@@ -27,13 +31,10 @@
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
+#pragma mark Actions
 
 - (IBAction) showHelp:(id)sender {
 	[[NSHelpManager sharedHelpManager] openHelpAnchor:@"adding_metadata" inBook:@"Scribd Uploader Help"];
-}
-
-- (NSArray *) tokenField:(NSTokenField *)tokenField completionsForSubstring:(NSString *)substring indexOfToken:(NSInteger)tokenIndex indexOfSelectedItem:(NSInteger *)selectedIndex {
-	return [[SUScribdAPI sharedAPI] autocompletionsForSubstring:substring];
 }
 
 - (IBAction) toggleMenuItem:(id)sender {
@@ -46,6 +47,12 @@
 		[drawer open:self];
 		[toggleDrawerItem setTitle:@"Hide Information Drawer"];
 	}
+}
+
+#pragma mark Delegate responders
+
+- (NSArray *) tokenField:(NSTokenField *)tokenField completionsForSubstring:(NSString *)substring indexOfToken:(NSInteger)tokenIndex indexOfSelectedItem:(NSInteger *)selectedIndex {
+	return [[SUScribdAPI sharedAPI] autocompletionsForSubstring:substring];
 }
 
 @end

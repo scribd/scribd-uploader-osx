@@ -6,6 +6,8 @@
 
 @interface NSDictionary (SUAdditions)
 
+#pragma mark Initializing an NSDictionary Instance
+
 /*!
  @method initWithObject:forKey:
  @abstract Creates a new dictionary with a single key-value pair.

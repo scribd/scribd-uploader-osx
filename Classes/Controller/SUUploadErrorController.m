@@ -2,6 +2,8 @@
 
 @implementation SUUploadErrorController
 
+#pragma mark Displaying an error
+
 - (void) displayError:(NSArray *)errors atIndex:(NSNumber *)index {
 	NSError *error = [errors objectAtIndex:[index unsignedIntValue]];
 	if ([error isEqualTo:[NSNull null]]) {
@@ -26,6 +28,8 @@
 		[alert beginSheetModalForWindow:window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:NULL];		
 	}
 }
+
+#pragma mark Delegate responders
 
 /*
  Called when an alert is closed; releases the alert.

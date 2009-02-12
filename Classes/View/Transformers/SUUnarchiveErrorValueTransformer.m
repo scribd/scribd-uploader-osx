@@ -2,6 +2,8 @@
 
 @implementation SUUnarchiveErrorValueTransformer
 
+#pragma mark Value transformer
+
 /*
  This class converts between different subclasses of NSObject.
  */

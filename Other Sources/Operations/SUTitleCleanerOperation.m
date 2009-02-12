@@ -2,7 +2,11 @@
 
 @implementation SUTitleCleanerOperation
 
+#pragma mark Properties
+
 @synthesize document;
+
+#pragma mark Initializing and deallocating
 
 - (id) initWithDocument:(SUDocument *)doc {
 	if (self = [super init]) {
@@ -19,6 +23,8 @@
 	if (document) [document release];
 	[super dealloc];
 }
+
+#pragma mark NSOperation
 
 /*
  Makes the call to Scribd and sets the document title.

@@ -2,6 +2,8 @@
 
 @implementation SUPrivateDescriptionValueTransformer
 
+#pragma mark Value transformer
+
 /*
  This transformer converts between different subclasses of NSObject.
  */

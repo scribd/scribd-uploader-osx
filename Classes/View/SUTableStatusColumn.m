@@ -2,6 +2,8 @@
 
 @implementation SUTableStatusColumn
 
+#pragma mark Initializing and deallocating
+
 /*
  Registers value transformers.
  */
@@ -18,6 +20,8 @@
 - (void) awakeFromNib {
 	[[[self tableView] dataSource] addObserver:self forKeyPath:@"arrangedObjects.errorLevel" options:NSKeyValueObservingOptionNew context:NULL];
 }
+
+#pragma mark KVO
 
 /*
  Refreshes the icons of the buttons based on the new file statuses.

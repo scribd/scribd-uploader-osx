@@ -11,6 +11,8 @@
 	IBOutlet NSTabView *tabs;
 }
 
+#pragma mark Actions
+
 /*!
  @method signup:
  @abstract Called when the Sign Up button is pressed. Creates a Scribd account

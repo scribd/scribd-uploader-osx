@@ -2,6 +2,8 @@
 
 @implementation SUCategory
 
+#pragma mark Properties
+
 @dynamic name;
 @dynamic position;
 @dynamic scribdID;
@@ -10,6 +12,8 @@
 @dynamic children;
 
 @dynamic indexPath;
+
+#pragma mark Initializing and deallocating
 
 /*
  Initialize indexPath field.
@@ -29,6 +33,8 @@
 	indexPath = NULL;
 }
 
+#pragma mark Dynamic properties
+
 - (NSIndexPath *) indexPath {
 	if (indexPath) return indexPath;
 	
@@ -36,6 +42,8 @@
 	else indexPath = [NSIndexPath indexPathWithIndex:[self.position unsignedIntegerValue]];
 	return indexPath;
 }
+
+#pragma mark Finding categories
 
 + (SUCategory *) categoryAtIndexPath:(NSIndexPath *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
 	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Category" inManagedObjectContext:managedObjectContext];

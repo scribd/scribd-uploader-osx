@@ -6,6 +6,8 @@
 
 @interface NSIndexPath (SUAdditions)
 
+#pragma mark Deriving New Index Paths
+
 /*!
  @method indexPathByRemovingFirstIndex
  @abstract Returns an index path identical to the receiver, except with the

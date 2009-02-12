@@ -2,6 +2,8 @@
 
 @implementation NSError (SUAdditions)
 
+#pragma mark Adding info
+
 - (NSError *) addMessagesForAction:(NSString *)action sender:(id)sender {
 	if (![[self domain] isEqualToString:SUScribdAPIErrorDomain]) return self;
 	

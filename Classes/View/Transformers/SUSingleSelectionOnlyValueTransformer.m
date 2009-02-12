@@ -2,6 +2,8 @@
 
 @implementation SUSingleSelectionOnlyValueTransformer
 
+#pragma mark Value transformer
+
 /*
  This transformer converts between numeric values.
  */

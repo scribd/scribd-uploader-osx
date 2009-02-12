@@ -11,6 +11,8 @@
 	NSString *delimiter;
 }
 
+#pragma mark Properties
+
 /*!
  @property delimiter
  @abstract The character this value transformer splits and joins strings and
@@ -18,6 +20,8 @@
  */
 
 @property (copy) NSString *delimiter;
+
+#pragma mark Initializating and deallocating
 
 /*!
  @method init

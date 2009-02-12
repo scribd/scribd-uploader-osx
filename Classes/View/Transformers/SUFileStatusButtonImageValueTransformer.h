@@ -17,6 +17,8 @@
 	NSImage *successImage, *cautionImage, *errorImage;
 }
 
+#pragma mark Initializing and deallocating
+
 /*!
  @method initWithSuffix:
  @abstract Initializes the value transformer with a given suffix to append to

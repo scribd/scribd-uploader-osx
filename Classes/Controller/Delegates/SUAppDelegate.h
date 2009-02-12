@@ -16,40 +16,42 @@
 	IBOutlet SUDirectoryScanner *directoryScanner;
 }
 
+#pragma mark Actions
+
 /*!
- @method saveAction:
+ @method saveFileList:
  @abstract Performs the save action for the application, which is to send the
  save: message to the application's managed object context.
  @discussion Any encountered errors are presented to the user.
  @param sender The object that initiated the action.
  */
 
-- (IBAction) saveAction:(id)sender;
+- (IBAction) saveFileList:(id)sender;
 
 /*!
- @method viewAllDocumentsAction:
+ @method viewAllDocuments:
  @abstract Opens the Scribd.com My Docs page in the default web browser.
  @param sender The object that initiated the action.
  */
 
-- (IBAction) viewAllDocumentsAction:(id)sender;
+- (IBAction) viewAllDocuments:(id)sender;
 
 /*!
- @method uploadAllAction:
+ @method uploadAll:
  @abstract Uploads every @link SUDocument SUDocument @/link to Scribd.
  @discussion Any encountered errors are presented to the user.
  @param sender The object that initiated the action.
  */
 
-- (IBAction) uploadAllAction:(id)sender;
+- (IBAction) uploadAll:(id)sender;
 
 /*!
- @method loginAction:
+ @method showLoginSheet:
  @abstract Displays the login sheet.
  @param sender The object that initiated the action.
  */
 
-- (IBAction) loginAction:(id)sender;
+- (IBAction) showLoginSheet:(id)sender;
 
 /*!
  @method addFile:

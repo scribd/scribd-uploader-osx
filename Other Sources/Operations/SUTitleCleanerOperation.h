@@ -11,12 +11,16 @@
 	SUDocument *document;
 }
 
+#pragma mark Properties
+
 /*!
  @property document
  @abstract The document whose title will be cleaned.
  */
 
 @property (retain) SUDocument *document;
+
+#pragma mark Initializing and deallocating
 
 /*!
  @method initWithDocument:

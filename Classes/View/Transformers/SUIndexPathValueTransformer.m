@@ -2,7 +2,24 @@
 
 @implementation SUIndexPathValueTransformer
 
+#pragma mark Properties
+
 @synthesize managedObjectContext;
+
+#pragma mark Initializing and deallocating
+
+/*
+ Initializes instance fields.
+ */
+
+- (id) init {
+	if (self = [super init]) {
+		managedObjectContext = NULL;
+	}
+	return self;
+}
+
+#pragma mark Value transformer
 
 /*
  This transformer converts between different subclasses of NSObject.
@@ -18,17 +35,6 @@
 
 + (BOOL) allowsReverseTransformation {
 	return YES;
-}
-
-/*
- Initializes instance fields.
- */
-
-- (id) init {
-	if (self = [super init]) {
-		managedObjectContext = NULL;
-	}
-	return self;
 }
 
 /*

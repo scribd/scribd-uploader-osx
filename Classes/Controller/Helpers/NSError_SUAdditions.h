@@ -6,6 +6,8 @@
 
 @interface NSError (SUAdditions)
 
+#pragma mark Adding info
+
 /*!
  @method addMessagesForAction:sender:
  @abstract Sets localized description and recovery suggestion messages based on

@@ -61,7 +61,7 @@
 
 @property (copy) NSSet *children;
 
-#pragma mark Derived properties
+#pragma mark Dynamic properties
 
 /*!
  @property indexPath
@@ -71,7 +71,7 @@
 
 @property (readonly) NSIndexPath *indexPath;
 
-#pragma mark Methods
+#pragma mark Finding categories
 
 /*!
  @method categoryAtIndexPath:inManagedObjectContext:

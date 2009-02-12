@@ -4,6 +4,8 @@ static SUSessionHelper *sharedSessionHelper = NULL;
 
 @interface SUSessionHelper (Private)
 
+#pragma mark Pseudo-properties
+
 /*
  Returns the keychain item used to store the Scribd.com session key.
  */
@@ -12,10 +14,16 @@ static SUSessionHelper *sharedSessionHelper = NULL;
 
 @end
 
+#pragma mark -
+
 @implementation SUSessionHelper
+
+#pragma mark Properties
 
 @dynamic key;
 @dynamic username;
+
+#pragma mark Working with the singleton instance
 
 + (SUSessionHelper *) sessionHelper {
 	@synchronized(self) {
@@ -78,9 +86,13 @@ static SUSessionHelper *sharedSessionHelper = NULL;
 	return self;
 }
 
+#pragma mark Required setup methods
+
 - (void) setupForLaunch {
 	if (self.username && ![self keychainItem]) [[NSUserDefaults standardUserDefaults] removeObjectForKey:SUDefaultKeySessionUsername];
 }
+
+#pragma mark Dynamic properties
 
 - (NSString *) key {
 	return [[self keychainItem] password];
@@ -89,6 +101,8 @@ static SUSessionHelper *sharedSessionHelper = NULL;
 - (NSString *) username {
 	return [[NSUserDefaults standardUserDefaults] stringForKey:SUDefaultKeySessionUsername];
 }
+
+#pragma mark Getting and setting the session key
 
 - (void) storeSessionKey:(NSString *)key username:(NSString *)username {
 	EMGenericKeychainItem *keychainItem = [self keychainItem];
@@ -108,7 +122,11 @@ static SUSessionHelper *sharedSessionHelper = NULL;
 
 @end
 
+#pragma mark -
+
 @implementation SUSessionHelper (Private)
+
+#pragma mark Pseudo-properties
 
 - (EMGenericKeychainItem *) keychainItem {
 	return [[EMKeychainProxy sharedProxy] genericKeychainItemForService:@"Scribd Uploader session key" withUsername:self.username];
