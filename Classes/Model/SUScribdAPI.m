@@ -210,7 +210,7 @@ static SUScribdAPI *sharedAPI = NULL;
 	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithContentsOfURL:url options:NSXMLDocumentTidyXML error:&error];
 	[url release];
 	if (error) {
-		[xml release];
+		if (xml) [xml release];
 		return;
 	};
 	
