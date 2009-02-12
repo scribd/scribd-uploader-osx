@@ -53,13 +53,14 @@
 }
 
 /*
- Registers drag-and-drop types for the upload list, configures Growl, and
- reloads categories if necessary.
+ Performs a variety of application startup tasks.
  */
 
 - (void) awakeFromNib {
+	// create a value transformer that requires an initialized DB
 	[[NSValueTransformer valueTransformerForName:@"SUIndexPath"] setValue:db.managedObjectContext forKey:@"managedObjectContext"];
 	
+	// configure valid types for drag and drop
 	NSArray *acceptedTypes = [[NSArray alloc] initWithObject:NSFilenamesPboardType];
 	[uploadTable registerForDraggedTypes:acceptedTypes];
 	[acceptedTypes release];
@@ -68,21 +69,30 @@
 	// configure Growl (necessary because of a bug in growl)
 	[GrowlApplicationBridge setGrowlDelegate:@""];
 	
+	// configure categories controller sorting
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObject:sortDescriptor];
 	[sortDescriptor release];
 	[categoriesController setSortDescriptors:sortDescriptors];
 	[sortDescriptors release];
 	
+	// load categories from website if enough time has passed
 	NSDate *lastCheckTime = [[NSUserDefaults standardUserDefaults] objectForKey:SUDefaultKeyLastCategoryLoad];
 	if (!lastCheckTime || -[lastCheckTime timeIntervalSinceNow] >= SUTimeBetweenCategoryLoads || [SUCategory countInManagedObjectContext:db.managedObjectContext] == 0) {
 		[NSThread detachNewThreadSelector:@selector(loadCategories:) toTarget:self withObject:NULL];
 	}
 	
+	// set up the session helper
 	[[SUSessionHelper sessionHelper] setupForLaunch];
 	
+	// register for scanning notifications
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanningStarted:) name:SUScanningStartedNotification object:NULL];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanningDone:) name:SUScanningDoneNotification object:NULL];
+	
+	// remove docs that have been moved or deleted since last launch
+	NSString *fileName = NULL;
+	NSUInteger fileCount = [db purgeNonexistentDocuments:&fileName];
+	if (fileCount) [fileNotFoundDelegate showAlertFor:fileCount singleFileName:fileName];
 }
 
 #pragma mark Delegate responders

@@ -5,7 +5,6 @@
  */
 
 @interface SUDatabaseHelper : NSObject {
-	IBOutlet SUFileNotFoundAlertDelegate *fileNotFoundAlertDelegate;
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;
 	NSManagedObjectModel *managedObjectModel;
 	NSManagedObjectContext *managedObjectContext;
@@ -38,5 +37,19 @@
  */
 
 @property (readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+#pragma mark Housekeeping
+
+/*!
+ @method purgeNonexistentDocuments:
+ @abstract Removes documents from the queue that no longer exist at their
+ recorded paths.
+ @param singleFileName Will contain a pointer to a string with the name of a
+ file removed. This is useful if only one file is removed and you wish to refer
+ to it by name.
+ @result The number of documents that were removed.
+ */
+
+- (NSUInteger) purgeNonexistentDocuments:(NSString **)singleFileName;
 
 @end

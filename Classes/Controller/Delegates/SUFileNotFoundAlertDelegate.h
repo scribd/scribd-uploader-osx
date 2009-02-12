@@ -19,6 +19,6 @@
  the name of the deleted file.
  */
 
-- (void) showAlertFor:(int)deletedFiles singleFileName:(NSString *)filename;
+- (void) showAlertFor:(NSUInteger)deletedFiles singleFileName:(NSString *)filename;
 
 @end

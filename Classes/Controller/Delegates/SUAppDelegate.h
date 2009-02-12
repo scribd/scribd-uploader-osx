@@ -9,6 +9,7 @@
 @interface SUAppDelegate : NSObject {
 	IBOutlet NSWindow *window, *loginSheet, *directoryScanSheet;
 	IBOutlet SULoginSheetDelegate *loginSheetDelegate;
+	IBOutlet SUFileNotFoundAlertDelegate *fileNotFoundDelegate;
 	IBOutlet SUDatabaseHelper *db;
 	IBOutlet NSTableView *uploadTable;
 	IBOutlet SUUploadHelper *uploader;

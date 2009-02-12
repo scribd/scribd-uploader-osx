@@ -16,12 +16,6 @@
 #pragma mark Housekeeping
 
 /*
- Removes documents from the list that are no longer on the hard drive.
- */
-
-- (void) purgeNonexistentDocuments;
-
-/*
  Removes documents from the list that have been successfully uploaded.
  */
 
@@ -52,7 +46,6 @@
  */
 
 - (void) awakeFromNib {
-	[self purgeNonexistentDocuments];
 	[self resetProgresses];
 	[self purgeCompletedDocuments];
 }
@@ -134,6 +127,26 @@
 	return managedObjectContext;
 }
 
+#pragma mark Housekeeping
+
+- (NSUInteger) purgeNonexistentDocuments:(NSString **)singleFileName {
+	NSError *error = NULL;
+	NSArray *objects = [SUDocument findAllInManagedObjectContext:self.managedObjectContext error:&error];
+	int deleteCount = 0;
+	if (objects) {
+		for (SUDocument *doc in objects) {
+			if (![doc pointsToActualFile]) {
+				// store the name of the file in case it's the only one
+				if (deleteCount == 0) *singleFileName = [doc filename];
+				[self.managedObjectContext deleteObject:doc];
+				deleteCount++;
+			}
+		}
+	}
+	
+	return deleteCount;
+}
+
 @end
 
 #pragma mark -
@@ -149,27 +162,6 @@
 }
 
 #pragma mark Housekeeping
-
-- (void) purgeNonexistentDocuments {
-	NSError *error = NULL;
-	NSArray *objects = [SUDocument findAllInManagedObjectContext:self.managedObjectContext error:&error];
-	int deleteCount = 0;
-	NSString *singleFileName;
-	if (objects) {
-		for (SUDocument *doc in objects) {
-			if (![doc pointsToActualFile]) {
-				// store the name of the file in case it's the only one
-				if (deleteCount == 0) singleFileName = [doc filename];
-				[self.managedObjectContext deleteObject:doc];
-				deleteCount++;
-			}
-		}
-	}
-	
-	if (deleteCount) {
-		[fileNotFoundAlertDelegate showAlertFor:deleteCount singleFileName:singleFileName];
-	}
-}
 
 - (void) purgeCompletedDocuments {
 	NSError *error = NULL;
