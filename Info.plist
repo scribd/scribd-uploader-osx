@@ -19,9 +19,9 @@
 	<key>CFBundleSignature</key>
 	<string>ScrU</string>
 	<key>CFBundleVersion</key>
-	<string>211</string>
+	<string>211.2</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.1.1</string>
+	<string>2.1.1r2</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
