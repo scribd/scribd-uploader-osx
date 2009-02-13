@@ -8,6 +8,7 @@
 @interface SUDocumentArrayController : NSArrayController {
 	IBOutlet SUDatabaseHelper *db;
 	IBOutlet SUUploadHelper *uploader;
+	IBOutlet SUDirectoryScanner *directoryScanner;
 }
 
 #pragma mark Actions

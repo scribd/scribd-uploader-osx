@@ -207,11 +207,13 @@
 		NSArray *filesToAdd = [panel filenames];
 		for (NSString *path in filesToAdd) {
 			BOOL dir = NO;
-			if ([[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&dir] && dir) {
-				[directoryScanner addDirectoryPath:path];
-				willScan = YES;
+			if ([[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&dir]) {
+				if (dir) {
+					[directoryScanner addDirectoryPath:path];
+					willScan = YES;
+				}
+				else [SUDocument createFromPath:path inManagedObjectContext:db.managedObjectContext];
 			}
-			else [SUDocument createFromPath:path inManagedObjectContext:db.managedObjectContext];
 		}
 		if (willScan) [directoryScanner beginScanning];
 	}
