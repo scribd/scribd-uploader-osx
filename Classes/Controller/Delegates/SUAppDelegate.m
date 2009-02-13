@@ -71,6 +71,19 @@
 		[[NSApplication sharedApplication] terminate:self];
 	}
 	
+	// make sure we can make our application support folder
+	BOOL directory = NO;
+	if ([[NSFileManager defaultManager] fileExistsAtPath:db.applicationSupportFolder isDirectory:&directory] && !directory) {
+		NSAlert *alert = [[NSAlert alloc] init];
+		[alert setMessageText:@"There is a file named “Scribd Uploader” in your Home > Library > Application Support folder that must be moved before Scribd Uploader can be launched."];
+		[alert setInformativeText:@"Scribd Uploader creates a folder in your Application Support directory to store your file list."];
+		[alert setAlertStyle:NSCriticalAlertStyle];
+		[alert addButtonWithTitle:@"Quit"];
+		[alert runModal];
+		[alert release];
+		[[NSApplication sharedApplication] terminate:self];
+	}
+	
 	// create a value transformer that requires an initialized DB
 	[[NSValueTransformer valueTransformerForName:@"SUIndexPath"] setValue:db.managedObjectContext forKey:@"managedObjectContext"];
 	
@@ -107,6 +120,10 @@
 	NSString *fileName = NULL;
 	NSUInteger fileCount = [db purgeNonexistentDocuments:&fileName];
 	if (fileCount) [fileNotFoundDelegate showAlertFor:fileCount singleFileName:fileName];
+	
+	// do other persistent-store housekeeping
+	[db purgeCompletedDocuments];
+	[db resetProgresses];
 }
 
 #pragma mark Delegate responders

@@ -1,36 +1,5 @@
 #import "SUDatabaseHelper.h"
 
-@interface SUDatabaseHelper (Private)
-
-#pragma mark Helpers
-
-/*
- Returns the support folder for the application, used to store the Core Data
- store file. This code uses a folder named "Scribd Uploader" for
- the content, either in the NSApplicationSupportDirectory location or (if the
- former cannot be found), the system's temporary directory.
- */
-
-- (NSString *) applicationSupportFolder;
-
-#pragma mark Housekeeping
-
-/*
- Removes documents from the list that have been successfully uploaded.
- */
-
-- (void) purgeCompletedDocuments;
-
-/*
- Resets the progress to zero of any document whose upload was aborted partway through.
- */
-
-- (void) resetProgresses;
-
-@end
-
-#pragma mark -
-
 @implementation SUDatabaseHelper
 
 #pragma mark Properties
@@ -38,17 +7,9 @@
 @dynamic managedObjectModel;
 @dynamic managedObjectContext;
 @dynamic persistentStoreCoordinator;
+@dynamic applicationSupportFolder;
 
 #pragma mark Initializing and deallocating
-
-/*
- Removes documents from the list that have since been deleted.
- */
-
-- (void) awakeFromNib {
-	[self resetProgresses];
-	[self purgeCompletedDocuments];
-}
 
 /*
  Releases retained variables.
@@ -83,28 +44,22 @@
  */
 
 - (NSPersistentStoreCoordinator *) persistentStoreCoordinator {
-	if (persistentStoreCoordinator != NULL) {
-		return persistentStoreCoordinator;
-	}
+	if (persistentStoreCoordinator != NULL) return persistentStoreCoordinator;
 	
-	NSFileManager *fileManager;
-	NSString *applicationSupportFolder = NULL;
 	NSURL *url;
 	NSError *error = NULL;
+	NSString *applicationSupportFolder = self.applicationSupportFolder;
 	
-	fileManager = [NSFileManager defaultManager];
-	applicationSupportFolder = [self applicationSupportFolder];
-	if ( ![fileManager fileExistsAtPath:applicationSupportFolder isDirectory:NULL] ) {
-		[fileManager createDirectoryAtPath:applicationSupportFolder attributes:NULL];
+	if (![[NSFileManager defaultManager] fileExistsAtPath:applicationSupportFolder isDirectory:NULL]) {
+		[[NSFileManager defaultManager] createDirectoryAtPath:applicationSupportFolder attributes:NULL];
 	}
 	
 	url = [NSURL fileURLWithPath:[applicationSupportFolder stringByAppendingPathComponent: @"Queue.xml"]];
 	persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
 	
 	NSDictionary *options = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:NSMigratePersistentStoresAutomaticallyOption];
-	if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:NULL URL:url options:options error:&error]){
-		[[NSApplication sharedApplication] presentError:error];
-	}
+	if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:NULL URL:url options:options error:&error])
+		NSLog(@"Couldn't add persistent store: %@", error);
 	
 	return persistentStoreCoordinator;
 }
@@ -127,6 +82,12 @@
 	return managedObjectContext;
 }
 
+- (NSString *) applicationSupportFolder {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+	NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
+	return [basePath stringByAppendingPathComponent:@"Scribd Uploader"];
+}
+
 #pragma mark Housekeeping
 
 - (NSUInteger) purgeNonexistentDocuments:(NSString **)singleFileName {
@@ -146,22 +107,6 @@
 	
 	return deleteCount;
 }
-
-@end
-
-#pragma mark -
-
-@implementation SUDatabaseHelper (Private)
-
-#pragma mark Helpers
-
-- (NSString *) applicationSupportFolder {
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
-	NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
-	return [basePath stringByAppendingPathComponent:@"Scribd Uploader"];
-}
-
-#pragma mark Housekeeping
 
 - (void) purgeCompletedDocuments {
 	NSError *error = NULL;

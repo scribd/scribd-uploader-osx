@@ -38,6 +38,17 @@
 
 @property (readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+/*!
+ @property applicationSupportFolder
+ @abstract The support folder for the application, used to store the Core Data
+ store file.
+ @discussion This code uses a folder named "Scribd Uploader" for the content,
+ either in the NSApplicationSupportDirectory location or (if the former cannot
+ be found), the system's temporary directory.
+ */
+
+@property (readonly) NSString *applicationSupportFolder;
+
 #pragma mark Housekeeping
 
 /*!
@@ -51,5 +62,20 @@
  */
 
 - (NSUInteger) purgeNonexistentDocuments:(NSString **)singleFileName;
+
+/*!
+ @method purgeCompletedDocuments
+ @abstract Removes documents from the list that have been successfully uploaded.
+ */
+
+- (void) purgeCompletedDocuments;
+
+/*!
+ @method resetProgresses
+ @abstract Resets the progress to zero of any document whose upload was aborted
+ partway through.
+ */
+
+- (void) resetProgresses;
 
 @end
