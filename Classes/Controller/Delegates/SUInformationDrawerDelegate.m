@@ -4,6 +4,10 @@
 
 #pragma mark Initializing and deallocating
 
+/*
+ Configures the tags field and configures KVO.
+ */
+
 - (void) awakeFromNib {
 	[tagsField setTokenizingCharacterSet:[NSCharacterSet characterSetWithCharactersInString:@" \n\r,;|-"]];
 	[documentsController addObserver:self forKeyPath:@"selection.@count" options:0 context:NULL];
@@ -51,8 +55,39 @@
 
 #pragma mark Delegate responders
 
+/*
+ Provides the token field with a list of autocompletions given by Scribd.com
+ */
+
 - (NSArray *) tokenField:(NSTokenField *)tokenField completionsForSubstring:(NSString *)substring indexOfToken:(NSInteger)tokenIndex indexOfSelectedItem:(NSInteger *)selectedIndex {
 	return [[SUScribdAPI sharedAPI] autocompletionsForSubstring:substring];
+}
+
+/*
+ Fades between the pre-uploaded and post-uploaded metadata view.
+ */
+
+- (void) tabView:(NSTabView *)tabView willSelectTabViewItem:(NSTabViewItem *)tabViewItem {
+	NSDictionary *fadeOut = [[NSDictionary alloc] initWithObjectsAndKeys:
+							 [[tabView selectedTabViewItem] view], NSViewAnimationTargetKey,
+							 NSViewAnimationFadeOutEffect, NSViewAnimationEffectKey,
+							 NULL];
+	NSDictionary *fadeIn = [[NSDictionary alloc] initWithObjectsAndKeys:
+							[tabViewItem view], NSViewAnimationTargetKey,
+							NSViewAnimationFadeInEffect, NSViewAnimationEffectKey,
+							NULL];
+	
+	NSArray *effects = [[NSArray alloc] initWithObjects:fadeOut, fadeIn, NULL];
+	[fadeOut release];
+	[fadeIn release];
+	
+	NSViewAnimation *viewAnimation = [[NSViewAnimation alloc] initWithViewAnimations:effects];
+	[effects release];
+	[viewAnimation setDuration:0.25];
+	
+	[viewAnimation startAnimation];
+	
+	[viewAnimation release];
 }
 
 @end
