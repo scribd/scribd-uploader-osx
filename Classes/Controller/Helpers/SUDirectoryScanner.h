@@ -7,6 +7,8 @@
  sheet. It is also a receiver for actions of that sheet.
  */
 
+@class SUDatabaseHelper;
+
 @interface SUDirectoryScanner : NSObject {
 	IBOutlet SUDatabaseHelper *db;
 	SUDeferredOperationQueue *operationQueue, *pendingQueue;

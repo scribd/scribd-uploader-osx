@@ -633,6 +633,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 									</object>
 									<string key="NSFrame">{{1, 17}, {434, 374}}</string>
 									<reference key="NSSuperview" ref="951211197"/>
+									<reference key="NSNextKeyView" ref="698356824"/>
 									<reference key="NSDocView" ref="698356824"/>
 									<reference key="NSBGColor" ref="1031550130"/>
 									<int key="NScvFlags">4</int>
@@ -665,6 +666,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 									</object>
 									<string key="NSFrame">{{1, 0}, {434, 17}}</string>
 									<reference key="NSSuperview" ref="951211197"/>
+									<reference key="NSNextKeyView" ref="839961220"/>
 									<reference key="NSDocView" ref="839961220"/>
 									<reference key="NSBGColor" ref="1031550130"/>
 									<int key="NScvFlags">4</int>
@@ -673,6 +675,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 							</object>
 							<string key="NSFrame">{{20, 44}, {451, 407}}</string>
 							<reference key="NSSuperview" ref="823886803"/>
+							<reference key="NSNextKeyView" ref="162761041"/>
 							<int key="NSsFlags">50</int>
 							<reference key="NSVScroller" ref="561533614"/>
 							<reference key="NSHScroller" ref="439128272"/>
@@ -5050,10 +5053,10 @@ ciBoZWxwIHZpZXdlci4</string>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">directoryScanner</string>
-						<reference key="source" ref="603642860"/>
+						<reference key="source" ref="205390166"/>
 						<reference key="destination" ref="425896352"/>
 					</object>
-					<int key="connectionID">1805</int>
+					<int key="connectionID">1806</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -7519,7 +7522,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1805</int>
+			<int key="maxID">1806</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -7614,6 +7617,10 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				<object class="IBPartialClassDescription">
 					<string key="className">SUDatabaseHelper</string>
 					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">directoryScanner</string>
+						<string key="NS.object.0">SUDirectoryScanner</string>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Classes/Controller/Helpers/SUDatabaseHelper.h</string>
@@ -7656,13 +7663,11 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>db</string>
-							<string>directoryScanner</string>
 							<string>uploader</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>SUDatabaseHelper</string>
-							<string>SUDirectoryScanner</string>
 							<string>SUUploadHelper</string>
 						</object>
 					</object>

@@ -8,6 +8,7 @@
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;
 	NSManagedObjectModel *managedObjectModel;
 	NSManagedObjectContext *managedObjectContext;
+	IBOutlet SUDirectoryScanner *directoryScanner;
 }
 
 #pragma mark Properties
@@ -48,6 +49,20 @@
  */
 
 @property (readonly) NSString *applicationSupportFolder;
+
+#pragma mark Adding files
+
+/*!
+ @method addFiles:
+ @abstract Creates new Document records for each given file path.
+ @param files An array of file paths, as strings.
+ @result The number of files added and directories scanned.
+ @discussion If any directories are included in the list, adds them to the
+ @link SUDirectoryScanner directory scanner @/link and then begins a directory
+ scan.
+ */
+
+- (NSUInteger) addFiles:(NSArray *)files;
 
 #pragma mark Housekeeping
 

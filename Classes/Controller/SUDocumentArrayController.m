@@ -35,26 +35,7 @@
 
 - (BOOL) tableView:(NSTableView *)tableView acceptDrop:(id<NSDraggingInfo>)info row:(int)row dropOperation:(NSTableViewDropOperation)operation {
 	NSArray *files = [[info draggingPasteboard] propertyListForType:NSFilenamesPboardType];
-	BOOL atLeastOneWasAdded = NO, willScan = NO;
-	for (NSString *path in files) {
-		BOOL directory = NO;
-		if ([[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&directory]) {
-			if (directory) {
-				[directoryScanner addDirectoryPath:path];
-				willScan = YES;
-			}
-			else {
-				if ([[SUDocument scribdFileTypes] containsObject:[path pathExtension]])
-					[SUDocument createFromPath:path inManagedObjectContext:db.managedObjectContext];
-			}
-			atLeastOneWasAdded = YES;
-		}
-	}
-	if (willScan) {
-		[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
-		[directoryScanner beginScanning];
-	}
-	return atLeastOneWasAdded;
+	return [db addFiles:files] > 0;
 }
 
 #pragma mark Actions

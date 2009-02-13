@@ -202,21 +202,7 @@
  */
 
 - (void) openPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo {
-	if (returnCode == NSOKButton) {
-		BOOL willScan = NO;
-		NSArray *filesToAdd = [panel filenames];
-		for (NSString *path in filesToAdd) {
-			BOOL dir = NO;
-			if ([[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&dir]) {
-				if (dir) {
-					[directoryScanner addDirectoryPath:path];
-					willScan = YES;
-				}
-				else [SUDocument createFromPath:path inManagedObjectContext:db.managedObjectContext];
-			}
-		}
-		if (willScan) [directoryScanner beginScanning];
-	}
+	if (returnCode == NSOKButton) [db addFiles:[panel filenames]];
 }
 
 #pragma mark Actions
@@ -304,7 +290,9 @@
 }
 
 - (void) scanningDone:(id)context {
-	[[NSApplication sharedApplication] endSheet:directoryScanSheet];
+	@synchronized(directoryScanner) {
+		[[NSApplication sharedApplication] endSheet:directoryScanSheet];
+	}
 }
 
 @end

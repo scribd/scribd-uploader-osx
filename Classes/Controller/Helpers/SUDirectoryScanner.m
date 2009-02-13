@@ -96,7 +96,9 @@
  */
 
 - (void) sheetDidEnd:(NSWindow *)endingSheet returnCode:(int)returnCode contextInfo:(void *)contextInfo {
-	[endingSheet orderOut:self];
+	@synchronized(self) {
+		[endingSheet orderOut:self];
+	}
 }
 
 @end

@@ -99,6 +99,31 @@
 	return [basePath stringByAppendingPathComponent:@"Scribd Uploader"];
 }
 
+#pragma mark Adding files
+
+- (NSUInteger) addFiles:(NSArray *)files {
+	BOOL willScan = NO;
+	NSUInteger filesAdded = 0;
+	
+	for (NSString *path in files) {
+		BOOL directory = NO;
+		if ([[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&directory]) {
+			if (directory) {
+				[directoryScanner addDirectoryPath:path];
+				willScan = YES;
+				filesAdded++;
+			}
+			else {
+				if ([[SUDocument scribdFileTypes] containsObject:[path pathExtension]])
+					[SUDocument createFromPath:path inManagedObjectContext:self.managedObjectContext];
+			}
+			filesAdded++;
+		}
+	}
+	if (willScan) [directoryScanner beginScanning];
+	return filesAdded;
+}
+
 #pragma mark Housekeeping
 
 - (NSUInteger) purgeNonexistentDocuments:(NSString **)singleFileName {
