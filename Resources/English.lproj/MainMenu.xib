@@ -1262,6 +1262,28 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 				</object>
 				<string key="NSName">_NSMainMenu</string>
 			</object>
+			<object class="NSMenu" id="82910101">
+				<string key="NSTitle"/>
+				<object class="NSMutableArray" key="NSMenuItems">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<object class="NSMenuItem" id="341085223">
+						<reference key="NSMenu" ref="82910101"/>
+						<string type="base64-UTF8" key="NSTitle">QWRkIEZpbGVz4oCmA</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="483197288"/>
+						<reference key="NSMixedImage" ref="144534969"/>
+					</object>
+					<object class="NSMenuItem" id="1001338275">
+						<reference key="NSMenu" ref="82910101"/>
+						<string type="base64-UTF8" key="NSTitle">QWRkIEFsbCBpbiBEaXJlY3RvcnnigKY</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="483197288"/>
+						<reference key="NSMixedImage" ref="144534969"/>
+					</object>
+				</object>
+			</object>
 			<object class="NSCustomObject" id="612578685">
 				<string key="NSClassName">SUAppDelegate</string>
 			</object>
@@ -5004,6 +5026,30 @@ ciBoZWxwIHZpZXdlci4</string>
 					</object>
 					<int key="connectionID">1795</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">addFile:</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="341085223"/>
+					</object>
+					<int key="connectionID">1802</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">addAllFiles:</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="1001338275"/>
+					</object>
+					<int key="connectionID">1803</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">dockMenu</string>
+						<reference key="source" ref="547858435"/>
+						<reference key="destination" ref="82910101"/>
+					</object>
+					<int key="connectionID">1804</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -6653,6 +6699,27 @@ ciBoZWxwIHZpZXdlci4</string>
 						<reference key="object" ref="991308332"/>
 						<reference key="parent" ref="498851580"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1796</int>
+						<reference key="object" ref="82910101"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="341085223"/>
+							<reference ref="1001338275"/>
+						</object>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">Dock Menu</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1797</int>
+						<reference key="object" ref="341085223"/>
+						<reference key="parent" ref="82910101"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1801</int>
+						<reference key="object" ref="1001338275"/>
+						<reference key="parent" ref="82910101"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -6825,6 +6892,10 @@ ciBoZWxwIHZpZXdlci4</string>
 					<string>1757.IBPluginDependency</string>
 					<string>1758.IBPluginDependency</string>
 					<string>1759.IBPluginDependency</string>
+					<string>1796.IBEditorWindowLastContentRect</string>
+					<string>1796.IBPluginDependency</string>
+					<string>1797.IBPluginDependency</string>
+					<string>1801.IBPluginDependency</string>
 					<string>196.IBPluginDependency</string>
 					<string>196.ImportedFromIB2</string>
 					<string>2.IBPluginDependency</string>
@@ -7248,6 +7319,10 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>{{557, 742}, {203, 43}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -7439,7 +7514,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1795</int>
+			<int key="maxID">1804</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -7450,6 +7525,13 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Vendor/DBPrefsWindow/DBPrefsWindowController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSApplication</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Other Sources/Categories/NSApplication_SUAdditions.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

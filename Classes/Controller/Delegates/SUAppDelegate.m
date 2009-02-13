@@ -248,16 +248,20 @@
 }
 
 - (IBAction) addFile:(id)sender {
-	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+	[window makeKeyAndOrderFront:self];
 	
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
 	[openPanel setAllowsMultipleSelection:YES];
 	[openPanel setPrompt:@"Add"];
 	[openPanel beginSheetForDirectory:NULL file:NULL types:[SUDocument scribdFileTypes] modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 }
 
 - (IBAction) addAllFiles:(id)sender {
-	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+	[window makeKeyAndOrderFront:self];
 	
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
 	[openPanel setAllowsMultipleSelection:YES];
 	[openPanel setPrompt:@"Scan"];
 	[openPanel setMessage:@"Choose a directory to scan for documents:"];
