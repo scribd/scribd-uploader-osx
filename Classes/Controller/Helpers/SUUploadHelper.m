@@ -296,6 +296,7 @@
 	self.currentlyUploadingCount--;
 	if ([self uploadComplete]) {
 		if (![[NSApplication sharedApplication] isActive])
+			[[NSApplication sharedApplication] requestUserAttention:NSInformationalRequest];
 			[GrowlApplicationBridge notifyWithTitle:@"All uploads have completed."
 										description:@"Your files are now ready to be viewed on Scribd.com."
 								   notificationName:@"All uploads complete"
