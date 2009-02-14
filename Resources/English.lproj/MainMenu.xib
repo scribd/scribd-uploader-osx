@@ -8,6 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="1374"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -633,6 +634,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 									</object>
 									<string key="NSFrame">{{1, 17}, {434, 374}}</string>
 									<reference key="NSSuperview" ref="951211197"/>
+									<reference key="NSNextKeyView" ref="698356824"/>
 									<reference key="NSDocView" ref="698356824"/>
 									<reference key="NSBGColor" ref="1031550130"/>
 									<int key="NScvFlags">4</int>
@@ -665,6 +667,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 									</object>
 									<string key="NSFrame">{{1, 0}, {434, 17}}</string>
 									<reference key="NSSuperview" ref="951211197"/>
+									<reference key="NSNextKeyView" ref="839961220"/>
 									<reference key="NSDocView" ref="839961220"/>
 									<reference key="NSBGColor" ref="1031550130"/>
 									<int key="NScvFlags">4</int>
@@ -673,6 +676,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 							</object>
 							<string key="NSFrame">{{20, 44}, {451, 407}}</string>
 							<reference key="NSSuperview" ref="823886803"/>
+							<reference key="NSNextKeyView" ref="162761041"/>
 							<int key="NSsFlags">50</int>
 							<reference key="NSVScroller" ref="561533614"/>
 							<reference key="NSHScroller" ref="439128272"/>
@@ -1313,6 +1317,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 					<string>tags.name</string>
 					<string>tags</string>
 					<string>isUploaded</string>
+					<string>uploaded</string>
 				</object>
 				<bool key="NSEditable">YES</bool>
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
@@ -2201,7 +2206,6 @@ ciBoZWxwIHZpZXdlci4</string>
 						<int key="NSvFlags">18</int>
 						<string key="NSFrameSize">{306, 484}</string>
 						<reference key="NSSuperview" ref="179715464"/>
-						<reference key="NSWindow"/>
 						<object class="NSMutableArray" key="NSTabViewItems">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="NSTabViewItem" id="105868436">
@@ -2543,7 +2547,6 @@ ciBoZWxwIHZpZXdlci4</string>
 											<int key="NSvFlags">298</int>
 											<string key="NSFrame">{{17, 265}, {272, 38}}</string>
 											<reference key="NSSuperview" ref="147086217"/>
-											<reference key="NSWindow"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="481211252">
 												<int key="NSCellFlags">67239424</int>
@@ -2564,7 +2567,6 @@ ciBoZWxwIHZpZXdlci4</string>
 											<int key="NSvFlags">298</int>
 											<string key="NSFrame">{{17, 229}, {272, 28}}</string>
 											<reference key="NSSuperview" ref="147086217"/>
-											<reference key="NSWindow"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="427922603">
 												<int key="NSCellFlags">67239424</int>
@@ -2581,7 +2583,6 @@ ciBoZWxwIHZpZXdlci4</string>
 											<int key="NSvFlags">300</int>
 											<string key="NSFrame">{{20, 180}, {108, 19}}</string>
 											<reference key="NSSuperview" ref="147086217"/>
-											<reference key="NSWindow"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="563553780">
 												<int key="NSCellFlags">-2080244224</int>
@@ -2606,7 +2607,6 @@ ciBoZWxwIHZpZXdlci4</string>
 											<int key="NSvFlags">297</int>
 											<string key="NSFrame">{{183, 180}, {103, 19}}</string>
 											<reference key="NSSuperview" ref="147086217"/>
-											<reference key="NSWindow"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="991308332">
 												<int key="NSCellFlags">-2080244224</int>
@@ -2625,7 +2625,6 @@ ciBoZWxwIHZpZXdlci4</string>
 									</object>
 									<string key="NSFrameSize">{306, 484}</string>
 									<reference key="NSSuperview" ref="696247091"/>
-									<reference key="NSWindow"/>
 								</object>
 								<string key="NSLabel">After Upload</string>
 								<reference key="NSColor" ref="514063339"/>
@@ -2645,7 +2644,6 @@ ciBoZWxwIHZpZXdlci4</string>
 				</object>
 				<string key="NSFrameSize">{306, 484}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSArrayController" id="159163561">
@@ -4892,41 +4890,6 @@ ciBoZWxwIHZpZXdlci4</string>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">selectedLabel: selection.isUploaded</string>
-						<reference key="source" ref="696247091"/>
-						<reference key="destination" ref="603642860"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="696247091"/>
-							<reference key="NSDestination" ref="603642860"/>
-							<string key="NSLabel">selectedLabel: selection.isUploaded</string>
-							<string key="NSBinding">selectedLabel</string>
-							<string key="NSKeyPath">selection.isUploaded</string>
-							<object class="NSDictionary" key="NSOptions">
-								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSMutableArray" key="dict.sortedKeys">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>NSMultipleValuesPlaceholder</string>
-									<string>NSNoSelectionPlaceholder</string>
-									<string>NSNotApplicablePlaceholder</string>
-									<string>NSNullPlaceholder</string>
-									<string>NSValueTransformerName</string>
-								</object>
-								<object class="NSMutableArray" key="dict.values">
-									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>Before Upload</string>
-									<string>Before Upload</string>
-									<string>Before Upload</string>
-									<string>Before Upload</string>
-									<string>SUMetadataTab</string>
-								</object>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1778</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">displayPatternValue1: selectedObjects.@count</string>
 						<reference key="source" ref="572199447"/>
 						<reference key="destination" ref="603642860"/>
@@ -5070,6 +5033,41 @@ ciBoZWxwIHZpZXdlci4</string>
 						<reference key="destination" ref="264068378"/>
 					</object>
 					<int key="connectionID">1807</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">selectedLabel: selection.uploaded</string>
+						<reference key="source" ref="696247091"/>
+						<reference key="destination" ref="603642860"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="696247091"/>
+							<reference key="NSDestination" ref="603642860"/>
+							<string key="NSLabel">selectedLabel: selection.uploaded</string>
+							<string key="NSBinding">selectedLabel</string>
+							<string key="NSKeyPath">selection.uploaded</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMutableArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSMultipleValuesPlaceholder</string>
+									<string>NSNoSelectionPlaceholder</string>
+									<string>NSNotApplicablePlaceholder</string>
+									<string>NSNullPlaceholder</string>
+									<string>NSValueTransformerName</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>Before Upload</string>
+									<string>Before Upload</string>
+									<string>Before Upload</string>
+									<string>Before Upload</string>
+									<string>SUMetadataTab</string>
+								</object>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1808</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -7535,7 +7533,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1807</int>
+			<int key="maxID">1808</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

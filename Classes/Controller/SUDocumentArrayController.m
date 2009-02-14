@@ -43,14 +43,14 @@
 - (IBAction) viewOnWebsite:(id)sender {
 	if ([[self selectedObjects] count] == 1) {
 		SUDocument *document = [[self selectedObjects] objectAtIndex:0];
-		if (document.isUploaded) [[NSWorkspace sharedWorkspace] openURL:document.scribdURL];
+		if (document.uploaded) [[NSWorkspace sharedWorkspace] openURL:document.scribdURL];
 	}
 }
 
 - (IBAction) editOnWebsite:(id)sender {
 	if ([[self selectedObjects] count] == 1) {
 		SUDocument *document = [[self selectedObjects] objectAtIndex:0];
-		if (document.isUploaded) [[NSWorkspace sharedWorkspace] openURL:document.editURL];
+		if (document.uploaded) [[NSWorkspace sharedWorkspace] openURL:document.editURL];
 	}
 }
 

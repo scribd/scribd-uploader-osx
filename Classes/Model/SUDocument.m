@@ -41,7 +41,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 @dynamic errorLevel;
 @dynamic scribdURL;
 @dynamic editURL;
-@dynamic isUploaded;
+@dynamic uploaded;
 
 #pragma mark Initializing and deallocating
 
@@ -144,7 +144,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 }
 
 - (NSURL *) scribdURL {
-	if (!self.isUploaded) return NULL;
+	if (!self.uploaded) return NULL;
 	NSString *urlString = [[NSString alloc] initWithFormat:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUDocumentURLInfoKey], self.scribdID];
 	NSURL *url = [[NSURL alloc] initWithString:urlString];
 	[urlString release];
@@ -152,7 +152,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 }
 
 - (NSURL *) editURL {
-	if (!self.isUploaded) return NULL;
+	if (!self.uploaded) return NULL;
 	NSString *urlString = [[NSString alloc] initWithFormat:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUDocumentEditURLInfoKey], self.scribdID];
 	NSURL *url = [[NSURL alloc] initWithString:urlString];
 	[urlString release];
@@ -229,6 +229,14 @@ static NSOperationQueue *titleCleaningQueue = NULL;
  */
 
 + (NSSet *) keyPathsForValuesAffectingScribdURL {
+	return [NSSet setWithObject:@"scribdID"];
+}
+
+/*
+ isUploaded is determined by Scribd URL.
+ */
+
++ (NSSet *) keyPathsForValuesAffectingUploaded {
 	return [NSSet setWithObject:@"scribdID"];
 }
 

@@ -168,12 +168,12 @@
 @property (readonly) NSString *errorLevel;
 
 /*!
- @property isUploaded
+ @property uploaded
  @abstract True if the file has been uploaded to Scribd.com; false if it hasn't
  yet been uploaded successfully.
  */
 
-@property (readonly) BOOL isUploaded;
+@property (readonly) BOOL uploaded;
 
 #pragma mark Finding documents
 
