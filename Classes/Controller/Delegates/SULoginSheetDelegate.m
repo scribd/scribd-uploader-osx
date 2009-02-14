@@ -57,8 +57,7 @@
 }
 
 /*
- Called when the sheet is closed. The contextual info includes a string with the
- type of upload we are performing ("selection" or "all"), or "login" if we are
+ Called when the sheet is closed. The contextual info is "login" if we are
  logging in without moving to an upload.
  */
 
@@ -69,7 +68,7 @@
 	}
 	
 	NSString *action = (NSString *)contextInfo;
-	if (![action isEqualToString:@"login"]) [uploader uploadFiles]; //TODO "selection" or "all"
+	if (![action isEqualToString:@"login"]) [uploader uploadFiles];
 	[sheet orderOut:self];
 }
 

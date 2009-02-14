@@ -224,7 +224,7 @@
 	if ([[SUSessionHelper sessionHelper] sessionStored])
 		[uploader uploadFiles];
 	else
-		[[NSApplication sharedApplication] beginSheet:loginSheet modalForWindow:window modalDelegate:loginSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:@"all"];
+		[[NSApplication sharedApplication] beginSheet:loginSheet modalForWindow:window modalDelegate:loginSheetDelegate didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:@"upload"];
 }
 
 - (IBAction) displayPreferences:(id)sender {

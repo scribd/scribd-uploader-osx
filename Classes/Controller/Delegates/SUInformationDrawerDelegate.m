@@ -85,7 +85,7 @@
 	[effects release];
 	[viewAnimation setDuration:0.25];
 	
-	[viewAnimation startAnimation];
+	[viewAnimation startAnimation]; //TODO the tab content isn't updated until after it's animated
 	
 	[viewAnimation release];
 }
