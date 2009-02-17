@@ -1,6 +1,6 @@
 /*!
  @category NSError(SUAdditions)
- @abstract Additions to the @link //apple_ref/occ/cl/NSError NSError @/link for
+ @abstract Additions to @link //apple_ref/occ/cl/NSError NSError @/link for
  handling Scribd.com errors.
  */
 
