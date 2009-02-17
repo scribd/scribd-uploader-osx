@@ -26,7 +26,7 @@
  */
 
 - (id) transformedValue:(id)value {
-	return value ? @"Switch Users" : @"Log In";
+	return value ? NSLocalizedString(@"Switch Users", @"command") : NSLocalizedString(@"Log In", @"command");
 }
 
 @end

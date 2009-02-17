@@ -322,7 +322,7 @@ static SUScribdAPI *sharedAPI = NULL;
 		}
 		else {
 			errorCode = -1;
-			errorInfo = [[NSDictionary alloc] initWithObject:@"Improper format" forKey:NSLocalizedFailureReasonErrorKey];
+			errorInfo = [[NSDictionary alloc] initWithObject:NSLocalizedString(@"Improper format", @"XML response") forKey:NSLocalizedFailureReasonErrorKey];
 		}
 		*error = [NSError errorWithDomain:SUScribdAPIErrorDomain code:errorCode userInfo:errorInfo];
 		[errorInfo release];

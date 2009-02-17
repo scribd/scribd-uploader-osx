@@ -88,7 +88,7 @@
 		[alert setAlertStyle:NSCriticalAlertStyle];
 		[alert setMessageText:[error localizedDescription]];
 		[alert setInformativeText:[error localizedRecoverySuggestion]];
-		[alert addButtonWithTitle:@"OK"];
+		[alert addButtonWithTitle:NSLocalizedString(@"OK", @"command")];
 		[alert setShowsHelp:YES];
 		NSString *anchor = [[NSString alloc] initWithFormat:@"login_%d", [error code]];
 		[alert setHelpAnchor:anchor];
@@ -109,9 +109,9 @@
 - (void) uploadFiles {
 	if (![[SUSessionHelper sessionHelper] sessionStored]) {
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert setMessageText:@"I was unable to log you into Scribd."];
-		[alert setInformativeText:@"You can’t upload files to Scribd without first logging in. You can try uploading your files again later."];
-		[alert addButtonWithTitle:@"OK"];
+		[alert setMessageText:NSLocalizedString(@"I was unable to log you into Scribd.", NULL)];
+		[alert setInformativeText:NSLocalizedString(@"You can’t upload files to Scribd without first logging in. You can try uploading your files again later.", NULL)];
+		[alert addButtonWithTitle:NSLocalizedString(@"OK", @"command")];
 		[alert setAlertStyle:NSCriticalAlertStyle];
 		[alert setShowsHelp:YES];
 		[alert setHelpAnchor:@"existing_account"];
@@ -297,8 +297,8 @@
 	if ([self uploadComplete]) {
 		if (![[NSApplication sharedApplication] isActive])
 			[[NSApplication sharedApplication] requestUserAttention:NSInformationalRequest];
-			[GrowlApplicationBridge notifyWithTitle:@"All uploads have completed."
-										description:@"Your files are now ready to be viewed on Scribd.com."
+			[GrowlApplicationBridge notifyWithTitle:NSLocalizedString(@"All uploads have completed.", NULL)
+										description:NSLocalizedString(@"Your files are now ready to be viewed on Scribd.com.", NULL)
 								   notificationName:@"All uploads complete"
 										   iconData:NULL
 										   priority:0

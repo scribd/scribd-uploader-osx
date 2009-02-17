@@ -25,8 +25,8 @@
  */
 
 - (id) transformedValue:(id)value {
-	if ([value isEqual:@"login"]) return @"Logging in…";
-	else if ([value isEqual:@"signup"]) return @"Signing up…";
+	if ([value isEqual:@"login"]) return NSLocalizedString(@"Logging in…", NULL);
+	else if ([value isEqual:@"signup"]) return NSLocalizedString(@"Signing up…", NULL);
 	else return value;
 }
 

@@ -31,13 +31,13 @@
  */
 
 - (void) setupToolbar {
-	[self addView:automaticUpdatesView label:@"Automatic Updates"];
+	[self addView:automaticUpdatesView label:NSLocalizedString(@"Automatic Updates", @"preference pane")];
 	
 	NSImage *image = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Upload" ofType:@"png"]];
-	[self addView:uploadingView label:@"Uploading" image:image];
+	[self addView:uploadingView label:NSLocalizedString(@"Uploading", @"preference pane") image:image];
 	[image release];
 	
-	[self addView:metadataView label:@"Metadata" image:[NSImage imageNamed:@"NSInfo"]];
+	[self addView:metadataView label:NSLocalizedString(@"Metadata", @"preference pane") image:[NSImage imageNamed:@"NSInfo"]];
 }
 
 #pragma mark Actions

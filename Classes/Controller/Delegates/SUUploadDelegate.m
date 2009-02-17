@@ -75,8 +75,8 @@
 	NSError *innerError = [[outerError userInfo] objectForKey:NSUnderlyingErrorKey];
 	NSDictionary *errorDict;
 	if (innerError) {
-		NSString *description = [[NSString alloc] initWithFormat:@"A problem prevented the upload from completing: %@", [outerError localizedDescription]];
-		NSString *recoverySuggestion = [[NSString alloc] initWithFormat:@"The underlying error was: %@", [innerError localizedDescription]];
+		NSString *description = [[NSString alloc] initWithFormat:NSLocalizedString(@"A problem prevented the upload from completing: %@", NULL), [outerError localizedDescription]];
+		NSString *recoverySuggestion = [[NSString alloc] initWithFormat:NSLocalizedString(@"The underlying error was: %@", NULL), [innerError localizedDescription]];
 		errorDict = [[NSDictionary alloc] initWithObjectsAndKeys:
 					 description, NSLocalizedDescriptionKey,
 					 recoverySuggestion, NSLocalizedRecoverySuggestionErrorKey,
@@ -85,10 +85,10 @@
 		[recoverySuggestion release];
 	}
 	else {
-		NSString *description = [[NSString alloc] initWithFormat:@"A problem prevented the upload from completing: %@", [outerError localizedDescription]];
+		NSString *description = [[NSString alloc] initWithFormat:NSLocalizedString(@"A problem prevented the upload from completing: %@", NULL), [outerError localizedDescription]];
 		errorDict = [[NSDictionary alloc] initWithObjectsAndKeys:
 					 description, NSLocalizedDescriptionKey,
-					 @"No additional information was provided.", NSLocalizedRecoverySuggestionErrorKey,
+					 NSLocalizedString(@"No additional information was provided.", @"about the error"), NSLocalizedRecoverySuggestionErrorKey,
 					 NULL];
 		[description release];
 	}

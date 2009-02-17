@@ -29,7 +29,7 @@
 		}
 	}
 	
-	NSLog(@"Unable to obtain system version: %ld", (long)err);
+	NSLog(NSLocalizedString(@"Unable to obtain system version: %ld", NULL), (long)err);
 	if (major) *major = 10;
 	if (minor) *minor = 0;
 	if (bugfix) *bugfix = 0;

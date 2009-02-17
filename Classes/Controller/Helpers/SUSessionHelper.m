@@ -111,7 +111,7 @@ static SUSessionHelper *sharedSessionHelper = NULL;
 		[keychainItem setPassword:key];
 	}
 	else
-		[[EMKeychainProxy sharedProxy] addGenericKeychainItemForService:@"Scribd Uploader session key" withUsername:username password:key];
+		[[EMKeychainProxy sharedProxy] addGenericKeychainItemForService:NSLocalizedString(@"Scribd Uploader session key", NULL) withUsername:username password:key];
 	
 	[[NSUserDefaults standardUserDefaults] setObject:username forKey:SUDefaultKeySessionUsername];
 }
@@ -129,7 +129,7 @@ static SUSessionHelper *sharedSessionHelper = NULL;
 #pragma mark Pseudo-properties
 
 - (EMGenericKeychainItem *) keychainItem {
-	return [[EMKeychainProxy sharedProxy] genericKeychainItemForService:@"Scribd Uploader session key" withUsername:self.username];
+	return [[EMKeychainProxy sharedProxy] genericKeychainItemForService:NSLocalizedString(@"Scribd Uploader session key", NULL) withUsername:self.username];
 }
 
 @end

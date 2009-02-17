@@ -61,15 +61,15 @@
 	if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:NULL URL:url options:options error:&error]) {
 		if ([error code] == NSPersistentStoreIncompatibleVersionHashError) {
 			NSAlert *alert = [[NSAlert alloc] init];
-			[alert setMessageText:@"It appears you are using an out-of-date version of Scribd Uploader. Please upgrade to the latest version of Scribd Uploader."];
-			[alert setInformativeText:@"You can alternatively remove the Home > Library > Application Support > Scribd Uploader folder to use this version of Scribd Uploader."];
+			[alert setMessageText:NSLocalizedString(@"It appears you are using an out-of-date version of Scribd Uploader. Please upgrade to the latest version of Scribd Uploader.", NULL)];
+			[alert setInformativeText:NSLocalizedString(@"You can alternatively remove the Home > Library > Application Support > Scribd Uploader folder to use this version of Scribd Uploader.", NULL)];
 			[alert setAlertStyle:NSCriticalAlertStyle];
-			[alert addButtonWithTitle:@"Quit"];
+			[alert addButtonWithTitle:NSLocalizedString(@"Quit", @"command")];
 			[alert runModal];
 			[alert release];
 			exit(1); // can't call terminate: because we'll just see this error over and over
 		}
-		else NSLog(@"Couldn't add persistent store: %@", error);
+		else NSLog(NSLocalizedString(@"Couldn’t add persistent store: %@", NULL), error);
 	}
 	
 	return persistentStoreCoordinator;
@@ -96,7 +96,7 @@
 - (NSString *) applicationSupportFolder {
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
 	NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
-	return [basePath stringByAppendingPathComponent:@"Scribd Uploader"];
+	return [basePath stringByAppendingPathComponent:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"]];
 }
 
 #pragma mark Adding files

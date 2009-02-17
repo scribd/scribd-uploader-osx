@@ -26,8 +26,8 @@
 
 - (id) transformedValue:(id)value {
 	if ([value isEqualTo:[NSNumber numberWithBool:true]])
-		return @"Your document is private, so no one will be able to discover it.";
-	else return @"To make your document more discoverable, add more information above.";
+		return NSLocalizedString(@"Your document is private, so no one will be able to discover it.", NULL);
+	else return NSLocalizedString(@"To make your document more discoverable, add more information above.", NULL);
 }
 
 @end

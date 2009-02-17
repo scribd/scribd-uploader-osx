@@ -25,11 +25,11 @@
 		if ([[NSUserDefaults standardUserDefaults] boolForKey:SUDefaultKeyManualMetadataDrawer]) return;
 		if ([[documentsController selectedObjects] count] == 0) {
 			[drawer close:self];
-			[toggleDrawerItem setTitle:@"Show Information Drawer"];
+			[toggleDrawerItem setTitle:NSLocalizedString(@"Show Information Drawer", NULL)];
 		}
 		else {
 			[drawer open:self];
-			[toggleDrawerItem setTitle:@"Hide Information Drawer"];
+			[toggleDrawerItem setTitle:NSLocalizedString(@"Hide Information Drawer", NULL)];
 		}
 	}
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -45,11 +45,11 @@
 	[[NSUserDefaults standardUserDefaults] setBool:true forKey:SUDefaultKeyManualMetadataDrawer];
 	if ([drawer state] == NSDrawerOpenState || [drawer state] == NSDrawerOpeningState) {
 		[drawer close:self];
-		[toggleDrawerItem setTitle:@"Show Information Drawer"];
+		[toggleDrawerItem setTitle:NSLocalizedString(@"Show Information Drawer", NULL)];
 	}
 	else {
 		[drawer open:self];
-		[toggleDrawerItem setTitle:@"Hide Information Drawer"];
+		[toggleDrawerItem setTitle:NSLocalizedString(@"Hide Information Drawer", NULL)];
 	}
 }
 

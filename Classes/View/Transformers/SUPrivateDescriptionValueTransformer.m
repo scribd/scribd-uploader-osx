@@ -26,8 +26,8 @@
 
 - (id) transformedValue:(id)value {
 	if ([value isEqualTo:[NSNumber numberWithBool:true]])
-		return @"This document will only be visible to you or people you choose.";
-	else return @"This document will be visible to everyone once it is uploaded.";
+		return NSLocalizedString(@"This document will only be visible to you or people you choose.", NULL);
+	else return NSLocalizedString(@"This document will be visible to everyone once it is uploaded.", NULL);
 }
 
 @end

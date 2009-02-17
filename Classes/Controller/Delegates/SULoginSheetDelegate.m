@@ -24,7 +24,7 @@
 	int height = 0;
 	if ([[tabViewItem identifier] isEqualTo:@"login"]) {
 		height = 248;
-		[loginSignupButton setTitle:@"Log In"];
+		[loginSignupButton setTitle:NSLocalizedString(@"Log In", @"command")];
 		[loginSignupButton setAction:@selector(login:)];
 		NSRect frame = [[tabView window] frame];
 		frame.origin.y -= (height - frame.size.height);
@@ -44,7 +44,7 @@
 	int height = 0;
 	if ([[tabViewItem identifier] isEqualTo:@"signup"]) {
 		height = 365;
-		[loginSignupButton setTitle:@"Sign Up"];
+		[loginSignupButton setTitle:NSLocalizedString(@"Sign Up", @"command")];
 		[loginSignupButton setAction:@selector(signup:)];
 		NSRect frame = [[tabView window] frame];
 		frame.origin.y -= (height - frame.size.height);

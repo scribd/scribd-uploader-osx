@@ -17,7 +17,7 @@
 		[alert setAlertStyle:NSWarningAlertStyle]; //TODO warning or critical depending on error type
 		[alert setMessageText:[error localizedDescription]];
 		[alert setInformativeText:[error localizedRecoverySuggestion]];
-		[alert addButtonWithTitle:@"OK"];
+		[alert addButtonWithTitle:NSLocalizedString(@"OK", @"command")];
 		
 		NSString *action = NULL;
 		NSString *anchor = @"upload_failed";

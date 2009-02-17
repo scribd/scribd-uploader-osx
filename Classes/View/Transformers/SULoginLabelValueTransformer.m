@@ -27,8 +27,8 @@
  */
 
 - (id) transformedValue:(id)value {
-	if (value) return [NSString stringWithFormat:@"Logged in as %@.", value];
-	else return @"Not logged in.";
+	if (value) return [NSString stringWithFormat:NSLocalizedString(@"Logged in as %@.", NULL), value];
+	else return NSLocalizedString(@"Not logged in.", NULL);
 }
 
 @end

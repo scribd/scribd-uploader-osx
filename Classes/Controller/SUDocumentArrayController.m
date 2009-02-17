@@ -10,9 +10,9 @@
 
 + (void) initialize {
 	[NSValueTransformer setValueTransformer:[[[SUSingleSelectionOnlyValueTransformer alloc] init] autorelease] forName:@"SUSingleOnly"];
-	SUPluralizeValueTransformer *uploadedCopySummary = [[SUPluralizeValueTransformer alloc] initWithSingular:@"This document has" plural:@"These documents have"];
+	SUPluralizeValueTransformer *uploadedCopySummary = [[SUPluralizeValueTransformer alloc] initWithSingular:NSLocalizedString(@"This document has", @"already been uploaded") plural:NSLocalizedString(@"These documents have", @"already been uploaded")];
 	[NSValueTransformer setValueTransformer:[uploadedCopySummary autorelease] forName:@"SUPluralizeThisDocumentHas"];
-	SUPluralizeValueTransformer *uploadCopyDescription = [[SUPluralizeValueTransformer alloc] initWithSingular:@"It can" plural:@"They can"];
+	SUPluralizeValueTransformer *uploadCopyDescription = [[SUPluralizeValueTransformer alloc] initWithSingular:NSLocalizedString(@"It can", @"be viewed") plural:NSLocalizedString(@"They can", @"be viewed")];
 	[NSValueTransformer setValueTransformer:[uploadCopyDescription autorelease] forName:@"SUPluralizeItCan"];
 }
 

@@ -49,11 +49,11 @@
 
 - (NSError *) addMessagesForAction:(NSString *)action title:(NSString *)docTitle {
 	if (![[self domain] isEqualToString:SUScribdAPIErrorDomain]) {
-		NSString *description = [[NSString alloc] initWithFormat:@"Your document was not configured because of a problem: %@", [self localizedDescription]];
+		NSString *description = [[NSString alloc] initWithFormat:NSLocalizedString(@"Your document was not configured because of a problem: %@", NULL), [self localizedDescription]];
 		NSMutableDictionary *info = [[NSMutableDictionary alloc] initWithDictionary:[self userInfo]];
 		[info setObject:description forKey:NSLocalizedDescriptionKey];
 		[description release];
-		[info setObject:@"Your file uploaded successfully, however. You will have to visit Scribd.com to change its metadata." forKey:NSLocalizedRecoverySuggestionErrorKey];
+		[info setObject:NSLocalizedString(@"Your file uploaded successfully, however. You will have to visit Scribd.com to change its metadata.", NULL) forKey:NSLocalizedRecoverySuggestionErrorKey];
 		[info setObject:SUChangeSettingsAction forKey:SUActionErrorKey];
 		NSError *newError = [NSError errorWithDomain:SUScribdAPIErrorDomain code:1 userInfo:info];
 		[info release];

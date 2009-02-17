@@ -64,18 +64,18 @@
 	// build the alert
 	NSAlert *alert = [[NSAlert alloc] init];
 	[alert setAlertStyle:NSWarningAlertStyle];
-	[alert addButtonWithTitle:@"OK"];
+	[alert addButtonWithTitle:NSLocalizedString(@"OK", @"command")];
 	if (deletedFiles == 1) {
-		NSString *message = [[NSString alloc] initWithFormat:@"The file “%@” could not be found.", filename];
+		NSString *message = [[NSString alloc] initWithFormat:NSLocalizedString(@"The file “%@” could not be found.", NULL), filename];
 		[alert setMessageText:message];
 		[message release];
-		[alert setInformativeText:@"It has been removed from the list."];
+		[alert setInformativeText:NSLocalizedString(@"It has been removed from the list.", @"'it' = a file")];
 	}
 	else {
-		NSString *message = [[NSString alloc] initWithFormat:@"%d files could not be found.", deletedFiles];
+		NSString *message = [[NSString alloc] initWithFormat:NSLocalizedString(@"%d files could not be found.", NULL), deletedFiles];
 		[alert setMessageText:message];
 		[message release];
-		[alert setInformativeText:@"These files have been removed from the list."];
+		[alert setInformativeText:NSLocalizedString(@"These files have been removed from the list.", NULL)];
 	}
 	[alert setShowsHelp:YES];
 	[alert setHelpAnchor:@"file_moved"];

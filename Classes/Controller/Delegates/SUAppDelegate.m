@@ -62,10 +62,10 @@
 	[[NSApplication sharedApplication] getSystemVersionMajor:&major minor:&minor bugfix:&bugfix];
 	if (major != 10 || minor < 5) {
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert setMessageText:@"Scribd Uploader requires Mac OS X version 10.5.0 or later in order to run."];
-		[alert setInformativeText:@"Mac OS X 10.5, code-named Tiger, is available for purchase at www.apple.com."];
+		[alert setMessageText:NSLocalizedString(@"Scribd Uploader requires Mac OS X version 10.5.0 or later in order to run.", NULL)];
+		[alert setInformativeText:NSLocalizedString(@"Mac OS X 10.5, code-named Tiger, is available for purchase at www.apple.com.", NULL)];
 		[alert setAlertStyle:NSCriticalAlertStyle];
-		[alert addButtonWithTitle:@"Quit"];
+		[alert addButtonWithTitle:NSLocalizedString(@"Quit", @"command")];
 		[alert runModal];
 		[alert release];
 		[[NSApplication sharedApplication] terminate:self];
@@ -75,10 +75,10 @@
 	BOOL directory = NO;
 	if ([[NSFileManager defaultManager] fileExistsAtPath:db.applicationSupportFolder isDirectory:&directory] && !directory) {
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert setMessageText:@"There is a file named “Scribd Uploader” in your Home > Library > Application Support folder that must be moved before Scribd Uploader can be launched."];
-		[alert setInformativeText:@"Scribd Uploader creates a folder in your Application Support directory to store your file list."];
+		[alert setMessageText:NSLocalizedString(@"There is a file named “Scribd Uploader” in your Home > Library > Application Support folder that must be moved before Scribd Uploader can be launched.", NULL)];
+		[alert setInformativeText:NSLocalizedString(@"Scribd Uploader creates a folder in your Application Support directory to store your file list.", NULL)];
 		[alert setAlertStyle:NSCriticalAlertStyle];
-		[alert addButtonWithTitle:@"Quit"];
+		[alert addButtonWithTitle:NSLocalizedString(@"Quit", @"command")];
 		[alert runModal];
 		[alert release];
 		[[NSApplication sharedApplication] terminate:self];
@@ -174,24 +174,18 @@
 				// recovery steps.
 				
 				BOOL errorResult = [[NSApplication sharedApplication] presentError:error];
-				
-				if (errorResult == YES) {
-					reply = NSTerminateCancel;
-				} 
-				
+				if (errorResult == YES) reply = NSTerminateCancel;
 				else {
-					
-					int alertReturn = NSRunAlertPanel(NULL, @"Could not save changes while quitting. Quit anyway?" , @"Quit anyway", @"Cancel", NULL);
-					if (alertReturn == NSAlertAlternateReturn) {
-						reply = NSTerminateCancel;
-					}
+					int alertReturn = NSRunAlertPanel(NULL,
+													  NSLocalizedString(@"Could not save changes while quitting. Quit anyway?", NULL),
+													  NSLocalizedString(@"Quit anyway", @"command"),
+													  NSLocalizedString(@"Cancel", @"command"),
+													  NULL);
+					if (alertReturn == NSAlertAlternateReturn) reply = NSTerminateCancel;
 				}
 			}
 		}
-		
-		else {
-			reply = NSTerminateCancel;
-		}
+		else reply = NSTerminateCancel;
 	}
 	
 	return reply;
@@ -241,7 +235,7 @@
 	
 	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
 	[openPanel setAllowsMultipleSelection:YES];
-	[openPanel setPrompt:@"Add"];
+	[openPanel setPrompt:NSLocalizedString(@"Add", @"command, as in append")];
 	[openPanel beginSheetForDirectory:NULL file:NULL types:[SUDocument scribdFileTypes] modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 }
 
@@ -251,8 +245,8 @@
 	
 	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
 	[openPanel setAllowsMultipleSelection:YES];
-	[openPanel setPrompt:@"Scan"];
-	[openPanel setMessage:@"Choose a directory to scan for documents:"];
+	[openPanel setPrompt:NSLocalizedString(@"Scan", @"command")];
+	[openPanel setMessage:NSLocalizedString(@"Choose a directory to scan for documents:", NULL)];
 	[openPanel setCanChooseFiles:NO];
 	[openPanel setCanChooseDirectories:YES];
 	[openPanel beginSheetForDirectory:NULL file:NULL types:NULL modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
