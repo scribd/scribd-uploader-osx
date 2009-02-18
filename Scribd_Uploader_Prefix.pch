@@ -35,24 +35,18 @@
 #import "SUScribdAPI.h"
 #import "SUSessionHelper.h"
 
-#import "SUBusyActionValueTransformer.h"
-#import "SUFileStatusButtonImageValueTransformer.h"
-#import "SUFileStatusColorValueTransformer.h"
-#import "SULogInButtonTitleValueTransformer.h"
+#import "SUMappingValueTransformer.h"
+#import "SUToggleValueTransformer.h"
 #import "SULoginLabelValueTransformer.h"
-#import "SUPrivateDescriptionValueTransformer.h"
-#import "SUDiscoverabilityDescriptionValueTransformer.h"
 #import "SUUnarchiveErrorValueTransformer.h"
 #import "SUSingleSelectionOnlyValueTransformer.h"
 #import "SUDelimitedStringValueTransformer.h"
 #import "SUIndexPathValueTransformer.h"
-#import "SUMetadataTabValueTransformer.h"
 
 #import "SULoginSheetDelegate.h"
 #import "SUPreferencesWindowController.h"
 #import "SUQuickLookDelegate.h"
 
-#import "SUSingleOnlyValueTransformer.h"
 #import "SUPluralizeValueTransformer.h"
 
 #import "SUDocumentArrayController.h"

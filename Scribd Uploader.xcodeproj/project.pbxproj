@@ -16,8 +16,6 @@
 		0123846D0F2AAE1F007D2B54 /* EMKeychainProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123846B0F2AAE1F007D2B54 /* EMKeychainProxy.m */; };
 		012385FE0F2AB3D7007D2B54 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012385FD0F2AB3D7007D2B54 /* Security.framework */; };
 		0123E96E0F32AF5E00FDF757 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0123E96D0F32AF5E00FDF757 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */; };
-		012732570F3582FC0067946D /* SUSingleOnlyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 012732560F3582FC0067946D /* SUSingleOnlyValueTransformer.m */; };
-		0127325B0F3583C20067946D /* SUMetadataTabValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0127325A0F3583C20067946D /* SUMetadataTabValueTransformer.m */; };
 		0128AF310F1478F300EC3C28 /* SUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */; };
 		0128AF320F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDD0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.m */; };
 		0128AF330F1478F300EC3C28 /* SULoginSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEDF0F1478F300EC3C28 /* SULoginSheetDelegate.m */; };
@@ -32,12 +30,7 @@
 		0128AF3D0F1478F300EC3C28 /* SUScribdAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF50F1478F300EC3C28 /* SUScribdAPI.m */; };
 		0128AF3E0F1478F300EC3C28 /* SUFileListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF80F1478F300EC3C28 /* SUFileListView.m */; };
 		0128AF3F0F1478F300EC3C28 /* SUTableStatusColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEFA0F1478F300EC3C28 /* SUTableStatusColumn.m */; };
-		0128AF400F1478F300EC3C28 /* SUBusyActionValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEFD0F1478F300EC3C28 /* SUBusyActionValueTransformer.m */; };
-		0128AF410F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEFF0F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.m */; };
-		0128AF420F1478F300EC3C28 /* SUFileStatusColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF010F1478F300EC3C28 /* SUFileStatusColorValueTransformer.m */; };
-		0128AF430F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF030F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.m */; };
 		0128AF440F1478F300EC3C28 /* SULoginLabelValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF050F1478F300EC3C28 /* SULoginLabelValueTransformer.m */; };
-		0128AF450F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF070F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m */; };
 		0128AF460F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF090F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m */; };
 		0128AF480F1478F300EC3C28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF0D0F1478F300EC3C28 /* main.m */; };
 		0128AF490F1478F300EC3C28 /* SUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF0F0F1478F300EC3C28 /* SUConstants.m */; };
@@ -47,7 +40,6 @@
 		0128AF920F14799100EC3C28 /* Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF780F14799100EC3C28 /* Upload.png */; };
 		0128AFA00F1479A000EC3C28 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF9F0F1479A000EC3C28 /* MainMenu.xib */; };
 		012E5DC80F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 012E5DC70F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld */; };
-		012E5E250F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5E240F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m */; };
 		012E5E740F20837C0037ECDA /* SUInformationDrawerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5E730F20837C0037ECDA /* SUInformationDrawerDelegate.m */; };
 		012E5E830F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5E820F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.m */; };
 		012E5EBD0F214EE70037ECDA /* SUCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5EBC0F214EE70037ECDA /* SUCategory.m */; };
@@ -65,6 +57,8 @@
 		0190052C0F4B6A4E0078A8C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0190052B0F4B6A4E0078A8C3 /* InfoPlist.strings */; };
 		019005340F4B6AC90078A8C3 /* Scribd_Uploader_DataModelModel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 019005330F4B6AC90078A8C3 /* Scribd_Uploader_DataModelModel.strings */; };
 		019D58180F4B7A7D001CB943 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 019D58170F4B7A7D001CB943 /* Localizable.strings */; };
+		019D58350F4B9015001CB943 /* SUMappingValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 019D58340F4B9015001CB943 /* SUMappingValueTransformer.m */; };
+		019D586D0F4B95F6001CB943 /* SUToggleValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 019D586C0F4B95F6001CB943 /* SUToggleValueTransformer.m */; };
 		01A672D70F31895800DA0B76 /* SUDeferredOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A672D40F31895800DA0B76 /* SUDeferredOperationQueue.m */; };
 		01A672D80F31895800DA0B76 /* SUDirectoryScanOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A672D60F31895800DA0B76 /* SUDirectoryScanOperation.m */; };
 		01A672DB0F31896600DA0B76 /* SUTitleCleanerOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A672DA0F31896600DA0B76 /* SUTitleCleanerOperation.m */; };
@@ -122,10 +116,6 @@
 		0123846B0F2AAE1F007D2B54 /* EMKeychainProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainProxy.m; sourceTree = "<group>"; };
 		012385FD0F2AB3D7007D2B54 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		0123E96D0F32AF5E00FDF757 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "Scribd_Uploader_DataModel 200-210.xcmappingmodel"; sourceTree = "<group>"; };
-		012732550F3582FC0067946D /* SUSingleOnlyValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSingleOnlyValueTransformer.h; sourceTree = "<group>"; };
-		012732560F3582FC0067946D /* SUSingleOnlyValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSingleOnlyValueTransformer.m; sourceTree = "<group>"; };
-		012732590F3583C20067946D /* SUMetadataTabValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUMetadataTabValueTransformer.h; sourceTree = "<group>"; };
-		0127325A0F3583C20067946D /* SUMetadataTabValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUMetadataTabValueTransformer.m; sourceTree = "<group>"; };
 		0128AEDA0F1478F300EC3C28 /* SUAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAppDelegate.h; sourceTree = "<group>"; };
 		0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUAppDelegate.m; sourceTree = "<group>"; };
 		0128AEDC0F1478F300EC3C28 /* SUFileNotFoundAlertDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileNotFoundAlertDelegate.h; sourceTree = "<group>"; };
@@ -154,18 +144,8 @@
 		0128AEF80F1478F300EC3C28 /* SUFileListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileListView.m; sourceTree = "<group>"; };
 		0128AEF90F1478F300EC3C28 /* SUTableStatusColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTableStatusColumn.h; sourceTree = "<group>"; };
 		0128AEFA0F1478F300EC3C28 /* SUTableStatusColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTableStatusColumn.m; sourceTree = "<group>"; };
-		0128AEFC0F1478F300EC3C28 /* SUBusyActionValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUBusyActionValueTransformer.h; sourceTree = "<group>"; };
-		0128AEFD0F1478F300EC3C28 /* SUBusyActionValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUBusyActionValueTransformer.m; sourceTree = "<group>"; };
-		0128AEFE0F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileStatusButtonImageValueTransformer.h; sourceTree = "<group>"; };
-		0128AEFF0F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileStatusButtonImageValueTransformer.m; sourceTree = "<group>"; };
-		0128AF000F1478F300EC3C28 /* SUFileStatusColorValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileStatusColorValueTransformer.h; sourceTree = "<group>"; };
-		0128AF010F1478F300EC3C28 /* SUFileStatusColorValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileStatusColorValueTransformer.m; sourceTree = "<group>"; };
-		0128AF020F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SULogInButtonTitleValueTransformer.h; sourceTree = "<group>"; };
-		0128AF030F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SULogInButtonTitleValueTransformer.m; sourceTree = "<group>"; };
 		0128AF040F1478F300EC3C28 /* SULoginLabelValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SULoginLabelValueTransformer.h; sourceTree = "<group>"; };
 		0128AF050F1478F300EC3C28 /* SULoginLabelValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SULoginLabelValueTransformer.m; sourceTree = "<group>"; };
-		0128AF060F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUPrivateDescriptionValueTransformer.h; sourceTree = "<group>"; };
-		0128AF070F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUPrivateDescriptionValueTransformer.m; sourceTree = "<group>"; };
 		0128AF080F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUnarchiveErrorValueTransformer.h; sourceTree = "<group>"; };
 		0128AF090F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUnarchiveErrorValueTransformer.m; sourceTree = "<group>"; };
 		0128AF0B0F1478F300EC3C28 /* Scribd_Uploader_DataModel 200.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = "Scribd_Uploader_DataModel 200.xcdatamodel"; sourceTree = "<group>"; };
@@ -179,8 +159,6 @@
 		0128AF770F14799100EC3C28 /* Upload Complete.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Upload Complete.aif"; sourceTree = "<group>"; };
 		0128AF780F14799100EC3C28 /* Upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Upload.png; sourceTree = "<group>"; };
 		012E5DC90F1F32B10037ECDA /* Scribd_Uploader_DataModel 210.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Scribd_Uploader_DataModel 210.xcdatamodel"; sourceTree = "<group>"; };
-		012E5E230F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDiscoverabilityDescriptionValueTransformer.h; sourceTree = "<group>"; };
-		012E5E240F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDiscoverabilityDescriptionValueTransformer.m; sourceTree = "<group>"; };
 		012E5E720F20837C0037ECDA /* SUInformationDrawerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUInformationDrawerDelegate.h; sourceTree = "<group>"; };
 		012E5E730F20837C0037ECDA /* SUInformationDrawerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUInformationDrawerDelegate.m; sourceTree = "<group>"; };
 		012E5E810F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSingleSelectionOnlyValueTransformer.h; sourceTree = "<group>"; };
@@ -204,6 +182,11 @@
 		019005260F4B6A420078A8C3 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0190052F0F4B6AAE0078A8C3 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Scribd_Uploader_DataModelModel.strings; sourceTree = "<group>"; };
 		019D58150F4B7A7A001CB943 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		019D58330F4B9015001CB943 /* SUMappingValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUMappingValueTransformer.h; sourceTree = "<group>"; };
+		019D58340F4B9015001CB943 /* SUMappingValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUMappingValueTransformer.m; sourceTree = "<group>"; };
+		019D58620F4B9524001CB943 /* Scribd_Uploader_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scribd_Uploader_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		019D586B0F4B95F6001CB943 /* SUToggleValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUToggleValueTransformer.h; sourceTree = "<group>"; };
+		019D586C0F4B95F6001CB943 /* SUToggleValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUToggleValueTransformer.m; sourceTree = "<group>"; };
 		01A672D30F31895800DA0B76 /* SUDeferredOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDeferredOperationQueue.h; sourceTree = "<group>"; };
 		01A672D40F31895800DA0B76 /* SUDeferredOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDeferredOperationQueue.m; sourceTree = "<group>"; };
 		01A672D50F31895800DA0B76 /* SUDirectoryScanOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDirectoryScanOperation.h; sourceTree = "<group>"; };
@@ -379,34 +362,22 @@
 		0128AEFB0F1478F300EC3C28 /* Transformers */ = {
 			isa = PBXGroup;
 			children = (
-				0128AEFC0F1478F300EC3C28 /* SUBusyActionValueTransformer.h */,
-				0128AEFD0F1478F300EC3C28 /* SUBusyActionValueTransformer.m */,
-				0128AEFE0F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.h */,
-				0128AEFF0F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.m */,
-				0128AF000F1478F300EC3C28 /* SUFileStatusColorValueTransformer.h */,
-				0128AF010F1478F300EC3C28 /* SUFileStatusColorValueTransformer.m */,
-				0128AF020F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.h */,
-				0128AF030F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.m */,
 				0128AF040F1478F300EC3C28 /* SULoginLabelValueTransformer.h */,
 				0128AF050F1478F300EC3C28 /* SULoginLabelValueTransformer.m */,
-				0128AF060F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.h */,
-				0128AF070F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m */,
 				0128AF080F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.h */,
 				0128AF090F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m */,
-				012E5E230F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.h */,
-				012E5E240F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m */,
 				012E5E810F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.h */,
 				012E5E820F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.m */,
 				012E5EFD0F2175550037ECDA /* SUDelimitedStringValueTransformer.h */,
 				012E5EFE0F2175550037ECDA /* SUDelimitedStringValueTransformer.m */,
 				013C920C0F21E21200061162 /* SUIndexPathValueTransformer.h */,
 				013C920D0F21E21200061162 /* SUIndexPathValueTransformer.m */,
-				012732550F3582FC0067946D /* SUSingleOnlyValueTransformer.h */,
-				012732560F3582FC0067946D /* SUSingleOnlyValueTransformer.m */,
-				012732590F3583C20067946D /* SUMetadataTabValueTransformer.h */,
-				0127325A0F3583C20067946D /* SUMetadataTabValueTransformer.m */,
 				018352900F3588CF0088C68E /* SUPluralizeValueTransformer.h */,
 				018352910F3588CF0088C68E /* SUPluralizeValueTransformer.m */,
+				019D58330F4B9015001CB943 /* SUMappingValueTransformer.h */,
+				019D58340F4B9015001CB943 /* SUMappingValueTransformer.m */,
+				019D586B0F4B95F6001CB943 /* SUToggleValueTransformer.h */,
+				019D586C0F4B95F6001CB943 /* SUToggleValueTransformer.m */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
@@ -424,6 +395,7 @@
 			children = (
 				010BC0C50F33C9F100C4DE4D /* Categories */,
 				01A672D20F31895800DA0B76 /* Operations */,
+				019D58620F4B9524001CB943 /* Scribd_Uploader_Prefix.pch */,
 				0128AF0D0F1478F300EC3C28 /* main.m */,
 				0128AF0E0F1478F300EC3C28 /* SUConstants.h */,
 				0128AF0F0F1478F300EC3C28 /* SUConstants.m */,
@@ -661,12 +633,7 @@
 				0128AF3D0F1478F300EC3C28 /* SUScribdAPI.m in Sources */,
 				0128AF3E0F1478F300EC3C28 /* SUFileListView.m in Sources */,
 				0128AF3F0F1478F300EC3C28 /* SUTableStatusColumn.m in Sources */,
-				0128AF400F1478F300EC3C28 /* SUBusyActionValueTransformer.m in Sources */,
-				0128AF410F1478F300EC3C28 /* SUFileStatusButtonImageValueTransformer.m in Sources */,
-				0128AF420F1478F300EC3C28 /* SUFileStatusColorValueTransformer.m in Sources */,
-				0128AF430F1478F300EC3C28 /* SULogInButtonTitleValueTransformer.m in Sources */,
 				0128AF440F1478F300EC3C28 /* SULoginLabelValueTransformer.m in Sources */,
-				0128AF450F1478F300EC3C28 /* SUPrivateDescriptionValueTransformer.m in Sources */,
 				0128AF460F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m in Sources */,
 				012E5DC80F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld in Sources */,
 				0128AF480F1478F300EC3C28 /* main.m in Sources */,
@@ -679,7 +646,6 @@
 				01AF60010F1D27D300D51D07 /* NSHTTPCookieAdditions.m in Sources */,
 				01AF60020F1D27D300D51D07 /* DBPrefsWindowController.m in Sources */,
 				01AF60050F1D284900D51D07 /* SUPreferencesWindowController.m in Sources */,
-				012E5E250F204DB00037ECDA /* SUDiscoverabilityDescriptionValueTransformer.m in Sources */,
 				012E5E740F20837C0037ECDA /* SUInformationDrawerDelegate.m in Sources */,
 				012E5E830F20853A0037ECDA /* SUSingleSelectionOnlyValueTransformer.m in Sources */,
 				012E5EBD0F214EE70037ECDA /* SUCategory.m in Sources */,
@@ -696,10 +662,10 @@
 				010BC0CF0F33C9F100C4DE4D /* NSDictionary_SUAdditions.m in Sources */,
 				010BC0D00F33C9F100C4DE4D /* NSIndexPath_SUAdditions.m in Sources */,
 				010BC0D10F33C9F100C4DE4D /* NSString_SUAdditions.m in Sources */,
-				012732570F3582FC0067946D /* SUSingleOnlyValueTransformer.m in Sources */,
-				0127325B0F3583C20067946D /* SUMetadataTabValueTransformer.m in Sources */,
 				018352920F3588CF0088C68E /* SUPluralizeValueTransformer.m in Sources */,
 				01E062A40F43DE130026A075 /* NSApplication_SUAdditions.m in Sources */,
+				019D58350F4B9015001CB943 /* SUMappingValueTransformer.m in Sources */,
+				019D586D0F4B95F6001CB943 /* SUToggleValueTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

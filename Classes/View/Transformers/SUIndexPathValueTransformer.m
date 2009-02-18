@@ -19,6 +19,15 @@
 	return self;
 }
 
+/*
+ Releases local memory usage.
+ */
+
+- (void) dealloc {
+	if (managedObjectContext) [managedObjectContext release];
+	[super dealloc];
+}
+
 #pragma mark Value transformer
 
 /*
@@ -35,15 +44,6 @@
 
 + (BOOL) allowsReverseTransformation {
 	return YES;
-}
-
-/*
- Releases local memory usage.
- */
-
-- (void) dealloc {
-	if (managedObjectContext) [managedObjectContext release];
-	[super dealloc];
 }
 
 /*

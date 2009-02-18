@@ -333,15 +333,11 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>26</integer>
-											<integer>18</integer>
-											<integer>2</integer>
-											<integer>1</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 61}, {453, 700}}</string>
+									<string>{{0, 0}, {453, 700}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -364,7 +360,7 @@
 									<real>43</real>
 								</array>
 								<key>RubberWindowFrame</key>
-								<string>1069 106 470 786 0 0 1680 1028 </string>
+								<string>1071 111 470 786 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXSmartGroupTreeModule</string>
@@ -523,7 +519,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>256607306.22983</real>
+	<real>256612804.23857999</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -538,6 +534,7 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>013F58590F27134200391E0D</string>
 		<string>019D58270F4B7C3E001CB943</string>
 		<string>019D58280F4B7C3E001CB943</string>
 		<string>1C530D5B069F1CE1000CFCEE</string>
@@ -547,7 +544,7 @@
 		<string>/Users/tmorgan/Documents/Scribd/scribd-uploader/Scribd Uploader.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>1069 106 470 786 0 0 1680 1028 </string>
+	<string>1071 111 470 786 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -1547,7 +1544,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>013F58590F27134200391E0D</string>
-				<string>019E4C390F2B0380003D92E0</string>
+				<string>019D58410F4B935B001CB943</string>
 				<string>013F58580F27134200391E0D</string>
 			</array>
 			<key>WindowString</key>

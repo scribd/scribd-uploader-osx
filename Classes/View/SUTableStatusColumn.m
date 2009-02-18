@@ -9,8 +9,33 @@
  */
 
 + (void) initialize {
-	[NSValueTransformer setValueTransformer:[[[SUFileStatusButtonImageValueTransformer alloc] init] autorelease] forName:@"SUFileStatusButtonImage"];
-	[NSValueTransformer setValueTransformer:[[[SUFileStatusButtonImageValueTransformer alloc] initWithSuffix:@"Clicked"] autorelease] forName:@"SUFileStatusButtonAlternateImage"];
+	NSImage *successImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Go" ofType:@"png"]];
+	NSImage *cautionImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Caution" ofType:@"png"]];
+	NSImage *errorImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Error" ofType:@"png"]];
+	NSDictionary *imageMappings = [[NSDictionary alloc] initWithObjectsAndKeys:
+								   successImage, @"Success",
+								   cautionImage, @"Caution",
+								   errorImage, @"Error",
+								   NULL];
+	[successImage release];
+	[cautionImage release];
+	[errorImage release];
+	[NSValueTransformer setValueTransformer:[[[SUMappingValueTransformer alloc] initWithDictionary:imageMappings] autorelease] forName:@"SUFileStatusButtonImage"];
+	[imageMappings release];
+	
+	successImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Go Clicked" ofType:@"png"]];
+	cautionImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Caution Clicked" ofType:@"png"]];
+	errorImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Error Clicked" ofType:@"png"]];
+	imageMappings = [[NSDictionary alloc] initWithObjectsAndKeys:
+					 successImage, @"Success",
+					 cautionImage, @"Caution",
+					 errorImage, @"Error",
+					 NULL];
+	[successImage release];
+	[cautionImage release];
+	[errorImage release];
+	[NSValueTransformer setValueTransformer:[[[SUMappingValueTransformer alloc] initWithDictionary:imageMappings] autorelease] forName:@"SUFileStatusButtonAlternateImage"];
+	[imageMappings release];
 }
 
 /*

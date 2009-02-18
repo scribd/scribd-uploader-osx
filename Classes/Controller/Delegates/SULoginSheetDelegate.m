@@ -9,7 +9,12 @@
  */
 
 + (void) initialize {
-	[NSValueTransformer setValueTransformer:[[[SUBusyActionValueTransformer alloc] init] autorelease] forName:@"SUBusyAction"];
+	NSDictionary *busyActionMappings = [[NSDictionary alloc] initWithObjectsAndKeys:
+										NSLocalizedString(@"Logging in…", NULL), @"login",
+										NSLocalizedString(@"Signing up…", NULL), @"signup",
+										NULL];
+	[NSValueTransformer setValueTransformer:[[[SUMappingValueTransformer alloc] initWithDictionary:busyActionMappings] autorelease] forName:@"SUBusyAction"];
+	[busyActionMappings release];
 }
 
 #pragma mark Delegate responders

@@ -38,18 +38,20 @@
  */
 
 + (void) initialize {
-	[NSValueTransformer setValueTransformer:[[[SUPrivateDescriptionValueTransformer alloc] init] autorelease]
+	[NSValueTransformer setValueTransformer:[[[SUToggleValueTransformer alloc] initWithTrueValue:NSLocalizedString(@"This document will only be visible to you or people you choose.", NULL)
+																					  falseValue:NSLocalizedString(@"This document will be visible to everyone once it is uploaded.", NULL)] autorelease]
 									forName:@"SUPrivateDescription"];
-	[NSValueTransformer setValueTransformer:[[[SUDiscoverabilityDescriptionValueTransformer alloc] init] autorelease]
+	[NSValueTransformer setValueTransformer:[[[SUToggleValueTransformer alloc] initWithTrueValue:NSLocalizedString(@"Your document is private, so no one will be able to discover it.", NULL)
+																					  falseValue:NSLocalizedString(@"To make your document more discoverable, add more information above.", NULL)] autorelease]
 									forName:@"SUDiscoverabilityDescription"];
 	[NSValueTransformer setValueTransformer:[[[SUSingleSelectionOnlyValueTransformer alloc] init] autorelease] forName:@"SUSingleSelectionOnly"];
-	[NSValueTransformer setValueTransformer:[[[SUFileStatusColorValueTransformer alloc] init] autorelease] forName:@"SUFileStatusColor"];
 	[NSValueTransformer setValueTransformer:[[[SUUnarchiveErrorValueTransformer alloc] init] autorelease] forName:@"SUUnarchiveError"];
-	[NSValueTransformer setValueTransformer:[[[SULogInButtonTitleValueTransformer alloc] init] autorelease] forName:@"SULogInButtonTitle"];
+	[NSValueTransformer setValueTransformer:[[[SUToggleValueTransformer alloc] initWithTrueValue:NSLocalizedString(@"Switch Users", @"command")
+																					  falseValue:NSLocalizedString(@"Log In", @"command")] autorelease] forName:@"SULogInButtonTitle"];
 	[NSValueTransformer setValueTransformer:[[[SULoginLabelValueTransformer alloc] init] autorelease] forName:@"SULoginLabel"];
 	[NSValueTransformer setValueTransformer:[[[SUDelimitedStringValueTransformer alloc] init] autorelease] forName:@"SUDelimitTags"];
 	[NSValueTransformer setValueTransformer:[[[SUIndexPathValueTransformer alloc] init] autorelease] forName:@"SUIndexPath"];
-	[NSValueTransformer setValueTransformer:[[[SUMetadataTabValueTransformer alloc] init] autorelease] forName:@"SUMetadataTab"];
+	[NSValueTransformer setValueTransformer:[[[SUToggleValueTransformer alloc] initWithTrueValue:@"After Upload" falseValue:@"Before Upload"] autorelease] forName:@"SUMetadataTab"];
 }
 
 /*
