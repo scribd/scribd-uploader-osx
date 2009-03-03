@@ -8,6 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="57"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -42,7 +43,7 @@
 					<object class="NSButton" id="107374716">
 						<reference key="NSNextResponder" ref="370770609"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{18, 162}, {225, 18}}</string>
+						<string key="NSFrame">{{18, 169}, {225, 18}}</string>
 						<reference key="NSSuperview" ref="370770609"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="488766910">
@@ -344,7 +345,7 @@
 					<object class="NSButton" id="29721438">
 						<reference key="NSNextResponder" ref="370770609"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{364, 157}, {25, 25}}</string>
+						<string key="NSFrame">{{364, 164}, {25, 25}}</string>
 						<reference key="NSSuperview" ref="370770609"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="240091443">
@@ -362,14 +363,10 @@
 						</object>
 					</object>
 				</object>
-				<string key="NSFrameSize">{406, 198}</string>
+				<string key="NSFrameSize">{406, 208}</string>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSUserDefaultsController" id="342030020">
-				<object class="NSMutableArray" key="NSDeclaredKeys">
-					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>manualMetadataDrawer</string>
-				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 			<object class="NSCustomView" id="781727162">
@@ -402,7 +399,7 @@
 					<object class="NSTextField" id="575094856">
 						<reference key="NSNextResponder" ref="781727162"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{39, 20}, {218, 70}}</string>
+						<string key="NSFrame">{{37, 20}, {218, 70}}</string>
 						<reference key="NSSuperview" ref="781727162"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="717456478">
@@ -440,11 +437,11 @@
 						</object>
 					</object>
 				</object>
-				<string key="NSFrameSize">{306, 132}</string>
+				<string key="NSFrameSize">{306, 135}</string>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCustomView" id="738941364">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -473,7 +470,7 @@
 					<object class="NSTextField" id="78487533">
 						<reference key="NSNextResponder" ref="738941364"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{36, 20}, {312, 42}}</string>
+						<string key="NSFrame">{{37, 20}, {312, 42}}</string>
 						<reference key="NSSuperview" ref="738941364"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="711037523">
@@ -508,6 +505,7 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{396, 107}</string>
+				<reference key="NSSuperview"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 		</object>
@@ -793,12 +791,12 @@
 						<reference key="object" ref="370770609"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="7656390"/>
-							<reference ref="570925436"/>
-							<reference ref="559921922"/>
-							<reference ref="590990902"/>
-							<reference ref="107374716"/>
 							<reference ref="29721438"/>
+							<reference ref="107374716"/>
+							<reference ref="590990902"/>
+							<reference ref="559921922"/>
+							<reference ref="570925436"/>
+							<reference ref="7656390"/>
 						</object>
 						<reference key="parent" ref="1002"/>
 						<string key="objectName">Automatic Updates</string>
@@ -990,9 +988,9 @@
 						<reference key="object" ref="781727162"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="296165240"/>
 							<reference ref="539124372"/>
 							<reference ref="575094856"/>
-							<reference ref="296165240"/>
 						</object>
 						<reference key="parent" ref="1002"/>
 						<string key="objectName">Uploading</string>
@@ -1183,7 +1181,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{249, 665}, {406, 198}}</string>
+					<string>{{249, 655}, {406, 208}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1194,7 +1192,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{474, 608}, {306, 132}}</string>
+					<string>{{474, 605}, {306, 135}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1272,6 +1270,13 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Vendor/DBPrefsWindow/DBPrefsWindowController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSApplication</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Other Sources/Categories/NSApplication_SUAdditions.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
