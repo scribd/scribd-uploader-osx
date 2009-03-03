@@ -14,28 +14,36 @@
 			sepNavWindowFrame = "{{785, 123}, {826, 863}}";
 		};
 	};
+	010BC0C60F33C9F100C4DE4D /* NSArray_SUAdditions.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {739, 713}}";
+			sepNavSelRange = "{660, 0}";
+			sepNavVisRange = "{0, 667}";
+			sepNavWindowFrame = "{{770, 70}, {798, 841}}";
+		};
+	};
 	010BC0C70F33C9F100C4DE4D /* NSArray_SUAdditions.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {716, 725}}";
 			sepNavSelRange = "{666, 0}";
 			sepNavVisRange = "{0, 666}";
-			sepNavWindowFrame = "{{88, 170}, {775, 853}}";
+			sepNavWindowFrame = "{{755, 106}, {775, 853}}";
 		};
 	};
 	010BC0CC0F33C9F100C4DE4D /* NSString_SUAdditions.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {847, 797}}";
-			sepNavSelRange = "{881, 0}";
-			sepNavVisRange = "{0, 1261}";
+			sepNavSelRange = "{115, 0}";
+			sepNavVisRange = "{0, 1393}";
 			sepNavWindowFrame = "{{716, 15}, {906, 925}}";
 		};
 	};
 	010BC0CD0F33C9F100C4DE4D /* NSString_SUAdditions.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {846, 572}}";
-			sepNavSelRange = "{475, 4}";
-			sepNavVisRange = "{141, 2108}";
-			sepNavWindowFrame = "{{595, 23}, {906, 925}}";
+			sepNavIntBoundsRect = "{{0, 0}, {847, 797}}";
+			sepNavSelRange = "{72, 0}";
+			sepNavVisRange = "{0, 2296}";
+			sepNavWindowFrame = "{{318, 39}, {906, 925}}";
 		};
 	};
 	012384680F2AAE1F007D2B54 /* EMKeychainItem.h */ = {
@@ -118,9 +126,9 @@
 	};
 	0128AEDB0F1478F300EC3C28 /* SUAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1254, 3770}}";
-			sepNavSelRange = "{2476, 0}";
-			sepNavVisRange = "{609, 2505}";
+			sepNavIntBoundsRect = "{{0, 0}, {1254, 3848}}";
+			sepNavSelRange = "{1625, 0}";
+			sepNavVisRange = "{477, 3717}";
 			sepNavWindowFrame = "{{593, 164}, {791, 864}}";
 		};
 	};
@@ -142,9 +150,9 @@
 	};
 	0128AEDE0F1478F300EC3C28 /* SULoginSheetDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {767, 741}}";
+			sepNavIntBoundsRect = "{{0, 0}, {767, 767}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1632}";
+			sepNavVisRange = "{0, 1649}";
 			sepNavWindowFrame = "{{789, 63}, {826, 863}}";
 		};
 	};
@@ -342,10 +350,10 @@
 	};
 	0128AF050F1478F300EC3C28 /* SULoginLabelValueTransformer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {902, 733}}";
+			sepNavIntBoundsRect = "{{0, 0}, {739, 713}}";
 			sepNavSelRange = "{671, 0}";
 			sepNavVisRange = "{0, 671}";
-			sepNavWindowFrame = "{{105, 104}, {961, 861}}";
+			sepNavWindowFrame = "{{105, 124}, {798, 841}}";
 		};
 	};
 	0128AF080F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.h */ = {
@@ -823,6 +831,22 @@
 			sepNavWindowFrame = "{{669, 35}, {924, 961}}";
 		};
 	};
+	01613F040F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {739, 962}}";
+			sepNavSelRange = "{834, 0}";
+			sepNavVisRange = "{0, 1850}";
+			sepNavWindowFrame = "{{666, 54}, {798, 841}}";
+		};
+	};
+	01613F050F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1084, 1157}}";
+			sepNavSelRange = "{1637, 0}";
+			sepNavVisRange = "{1323, 789}";
+			sepNavWindowFrame = "{{217, 70}, {798, 841}}";
+		};
+	};
 	018352900F3588CF0088C68E /* SUPluralizeValueTransformer.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {681, 744}}";
@@ -873,9 +897,9 @@
 	};
 	019D58620F4B9524001CB943 /* Scribd_Uploader_Prefix.pch */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1051, 689}}";
-			sepNavSelRange = "{1160, 0}";
-			sepNavVisRange = "{508, 927}";
+			sepNavIntBoundsRect = "{{0, 0}, {917, 771}}";
+			sepNavSelRange = "{1075, 0}";
+			sepNavVisRange = "{0, 1486}";
 			sepNavWindowFrame = "{{157, 61}, {976, 899}}";
 		};
 	};
@@ -892,7 +916,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {790, 771}}";
 			sepNavSelRange = "{580, 0}";
 			sepNavVisRange = "{0, 1095}";
-			sepNavWindowFrame = "{{221, 41}, {849, 899}}";
+			sepNavWindowFrame = "{{696, 123}, {849, 899}}";
 		};
 	};
 	01A672D90F31896600DA0B76 /* SUTitleCleanerOperation.h */ = {
@@ -1082,8 +1106,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 256603102;
-			PBXWorkspaceStateSaveDate = 256603102;
+			PBXPerProjectTemplateStateSaveDate = 257733018;
+			PBXWorkspaceStateSaveDate = 257733018;
 		};
 		sourceControlManager = 0128AED40F14783800EC3C28 /* Source Control */;
 		userBuildSettings = {

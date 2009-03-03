@@ -37,6 +37,7 @@
 
 #import "SUMappingValueTransformer.h"
 #import "SUToggleValueTransformer.h"
+#import "SUMultipleValuesToggleValueTransformer.h"
 #import "SULoginLabelValueTransformer.h"
 #import "SUUnarchiveErrorValueTransformer.h"
 #import "SUSingleSelectionOnlyValueTransformer.h"

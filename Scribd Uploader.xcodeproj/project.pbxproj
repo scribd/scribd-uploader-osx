@@ -52,6 +52,7 @@
 		014DB9480F1EE55100F50460 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014DB9470F1EE55100F50460 /* Growl.framework */; };
 		014DB94F0F1EE58D00F50460 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 014DB9470F1EE55100F50460 /* Growl.framework */; };
 		014DB95D0F1EE5FD00F50460 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */; };
+		01613F060F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01613F050F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.m */; };
 		017077B70F1C47AC008A3CB0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017077B60F1C47AC008A3CB0 /* Sparkle.framework */; };
 		018352920F3588CF0088C68E /* SUPluralizeValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 018352910F3588CF0088C68E /* SUPluralizeValueTransformer.m */; };
 		0190052C0F4B6A4E0078A8C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0190052B0F4B6A4E0078A8C3 /* InfoPlist.strings */; };
@@ -176,6 +177,8 @@
 		014204E30F29389700C7401A /* Automatic Updates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Automatic Updates.png"; sourceTree = "<group>"; };
 		014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		014DB9470F1EE55100F50460 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = "Linked Frameworks/Growl.framework"; sourceTree = "<group>"; };
+		01613F040F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUMultipleValuesToggleValueTransformer.h; sourceTree = "<group>"; };
+		01613F050F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUMultipleValuesToggleValueTransformer.m; sourceTree = "<group>"; };
 		017077B60F1C47AC008A3CB0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Linked Frameworks/Sparkle.framework"; sourceTree = "<group>"; };
 		018352900F3588CF0088C68E /* SUPluralizeValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUPluralizeValueTransformer.h; sourceTree = "<group>"; };
 		018352910F3588CF0088C68E /* SUPluralizeValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUPluralizeValueTransformer.m; sourceTree = "<group>"; };
@@ -378,6 +381,8 @@
 				019D58340F4B9015001CB943 /* SUMappingValueTransformer.m */,
 				019D586B0F4B95F6001CB943 /* SUToggleValueTransformer.h */,
 				019D586C0F4B95F6001CB943 /* SUToggleValueTransformer.m */,
+				01613F040F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.h */,
+				01613F050F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.m */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
@@ -666,6 +671,7 @@
 				01E062A40F43DE130026A075 /* NSApplication_SUAdditions.m in Sources */,
 				019D58350F4B9015001CB943 /* SUMappingValueTransformer.m in Sources */,
 				019D586D0F4B95F6001CB943 /* SUToggleValueTransformer.m in Sources */,
+				01613F060F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

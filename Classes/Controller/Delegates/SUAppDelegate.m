@@ -38,9 +38,19 @@
  */
 
 + (void) initialize {
-	[NSValueTransformer setValueTransformer:[[[SUToggleValueTransformer alloc] initWithTrueValue:NSLocalizedString(@"This document will only be visible to you or people you choose.", NULL)
-																					  falseValue:NSLocalizedString(@"This document will be visible to everyone once it is uploaded.", NULL)] autorelease]
-									forName:@"SUPrivateDescription"];
+	SUMultipleValuesToggleValueTransformer *privateDescriptionTransformer = [[SUMultipleValuesToggleValueTransformer alloc] init];
+	privateDescriptionTransformer.trueValue = NSLocalizedString(@"%{0} will only be visible to you or people you choose.", NULL);
+	privateDescriptionTransformer.falseValue = NSLocalizedString(@"%{0} will be visible to everyone once %{1} uploaded.", NULL);
+	privateDescriptionTransformer.mixedValue = NSLocalizedString(@"Check this box to make these documents unavailable to other people.", NULL);
+	privateDescriptionTransformer.emptyValue = NSLocalizedString(@"Check this box to make a document unavailable to other people.", NULL);
+	NSArray *singulars = [[NSArray alloc] initWithObjects:NSLocalizedString(@"This document", NULL), NSLocalizedString(@"it is", @"document"), NULL];
+	NSArray *plurals = [[NSArray alloc] initWithObjects:NSLocalizedString(@"These documents", NULL), NSLocalizedString(@"they are", @"document"), NULL];
+	privateDescriptionTransformer.singularInsertions = singulars;
+	privateDescriptionTransformer.pluralInsertions = plurals;
+	[singulars release];
+	[plurals release];
+	[NSValueTransformer setValueTransformer:[privateDescriptionTransformer autorelease] forName:@"SUPrivateDescription"];
+	
 	[NSValueTransformer setValueTransformer:[[[SUToggleValueTransformer alloc] initWithTrueValue:NSLocalizedString(@"Your document is private, so no one will be able to discover it.", NULL)
 																					  falseValue:NSLocalizedString(@"To make your document more discoverable, add more information above.", NULL)] autorelease]
 									forName:@"SUDiscoverabilityDescription"];
