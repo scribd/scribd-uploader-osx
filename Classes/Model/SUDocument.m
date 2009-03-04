@@ -144,7 +144,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	return @"Pending";
 }
 
-- (BOOL) isUploaded {
+- (BOOL) uploaded {
 	return (self.scribdID != NULL);
 }
 
