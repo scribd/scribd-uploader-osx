@@ -15,6 +15,7 @@
 	SUDocument *document;
 	double progress, progressMax;
 	NSManagedObjectContext *managedObjectContext;
+	NSDateFormatter *dateFormatter;
 }
 
 #pragma mark Initializing and deallocating

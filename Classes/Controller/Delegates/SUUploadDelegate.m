@@ -28,6 +28,9 @@
 		progress = 0.0;
 		progressMax = 1.0;
 		managedObjectContext = [context retain];
+		
+		dateFormatter = [[NSDateFormatter alloc] init];
+		[dateFormatter setDateFormat:@"MM/dd/yyyy"];
 	}
 	return self;
 }
@@ -39,6 +42,7 @@
 - (void) dealloc {
 	[document release];
 	[managedObjectContext release];
+	[dateFormatter release];
 	[super dealloc];
 }
 
@@ -155,6 +159,11 @@
 	if (document.title && ![document.title isBlank]) [parameters setObject:document.title forKey:@"title"];
 	if (document.summary && ![document.summary isBlank]) [parameters setObject:document.summary forKey:@"description"];
 	if (document.tags && ![document.tags isBlank]) [parameters setObject:document.tags forKey:@"tags"];
+	if (document.license) [parameters setObject:document.license forKey:@"license"];
+	if (document.author && ![document.author isBlank]) [parameters setObject:document.author forKey:@"author"];
+	if (document.publisher && ![document.publisher isBlank]) [parameters setObject:document.publisher forKey:@"publisher"];
+	if (document.edition && ![document.edition isBlank]) [parameters setObject:document.edition forKey:@"edition"];
+	if (document.datePublished) [parameters setObject:[dateFormatter stringFromDate:document.datePublished] forKey:@"when_published"];
 	if (document.category) {
 		if (document.category.parent) {
 			[parameters setObject:document.category.name forKey:@"subcategory"];
