@@ -75,7 +75,7 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init]; // create a new pool cuz we're going to be autoreleasing a bunch of strings
 	NSUInteger index;
 	for (index = 0; index != [insertions count]; index++) {
-		NSString *token = [NSString stringWithFormat:@"%%{%u}", index];
+		NSString *token = [NSString stringWithFormat:@"{%u}", index];
 		output = [output stringByReplacingOccurrencesOfString:token withString:[insertions objectAtIndex:index]];
 	}
 	[output retain]; // don't release the output string with the pool

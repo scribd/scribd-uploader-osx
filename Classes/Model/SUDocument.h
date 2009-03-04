@@ -18,6 +18,7 @@
 /*!
  @property path
  @abstract The filesystem path to the file being uploaded.
+ @discussion This attribute is required and uniquely identifies a document.
  */
 
 @property (copy) NSString *path;
@@ -26,6 +27,7 @@
  @property progress
  @abstract The fraction of the file which has been uploaded, as a value from 0.0
  to 1.0.
+ @discussion This attribute is set to 0.0 by default.
  */
 
 @property (copy) NSNumber *progress;
@@ -34,6 +36,7 @@
  @property success
  @abstract YES if the file has been uploaded without error, NO if an error
  occurred, and NULL if the file has not completed upload yet.
+ @discussion This attribute is set to NO by default.
  */
 
 @property (copy) NSNumber *success;
@@ -42,6 +45,7 @@
  @property error
  @abstract A serialized @link //apple_ref/occ/cl/NSError NSError @/link with the
  last error returned by the server upon upload.
+ @discussion This attribute is optional.
  */
 
 @property (copy) NSData *error;
@@ -50,6 +54,7 @@
  @property errorIsUnrecoverable
  @abstract YES if the error was bad enough that the document was not uploaded;
  NO if the document was uploaded but another problem occurred.
+ @discussion This attribute is optional.
  */
 
 @property (copy) NSNumber *errorIsUnrecoverable;
@@ -58,6 +63,7 @@
  @property scribdID
  @abstract The Scribd.com ID given to this document, once it has been
  successfully uploaded.
+ @discussion This attribute is nil by default.
  */
 
 @property (copy) NSNumber *scribdID;
@@ -66,6 +72,7 @@
  @property hidden
  @abstract If YES, the document will be uploaded as private. If no, the document
  will be publically viewable.
+ @discussion This attribute is set to NO by default.
  */
 
 @property (copy) NSNumber *hidden;
@@ -73,6 +80,7 @@
 /*!
  @property title
  @abstract The title to use for the Scribd document.
+ @discussion This optional attribute is part of the document metadata.
  */
 
 @property (copy) NSString *title;
@@ -80,6 +88,7 @@
 /*!
  @property summary
  @abstract The description to use for the Scribd document.
+ @discussion This optional attribute is part of the document metadata.
  */
 
 @property (copy) NSString *summary;
@@ -87,9 +96,57 @@
 /*!
  @property tags
  @abstract A comma-delimited list of tags to assign to the document.
+ @discussion This optional attribute is part of the document metadata.
  */
 
 @property (copy) NSString *tags;
+
+/*!
+ @property author
+ @abstract The original author of this work.
+ @discussion This optional attribute is part of the document publisher metadata.
+ */
+
+@property (copy) NSString *author;
+
+/*!
+ @property publisher
+ @abstract The publisher of this edition of the work.
+ @discussion This optional attribute is part of the document publisher metadata.
+ */
+
+@property (copy) NSString *publisher;
+
+/*!
+ @property edition
+ @abstract The edition name or number of this publication of the work.
+ @discussion This optional attribute is part of the document publisher metadata.
+ */
+
+@property (copy) NSString *edition;
+
+/*!
+ @property datePublished
+ @abstract The date this edition of the work was first published.
+ @discussion Only the day portion of this date will be sent to the Scribd.com
+ server. The time portion will be stripped.
+ 
+ This optional attribute is part of the document publisher metadata.
+ */
+
+@property (copy) NSDate *datePublished;
+
+/*!
+ @property license
+ @abstract The license under which this work is distributed.
+ @discussion This is either a Creative Commons abbreviated license name (e.g.,
+ "by-sa" for Attribution share alike), "pd" for public domain, or "c" for
+ traditional copyright.
+ 
+ This attribute is part of the document publisher metadata.
+ */
+
+@property (copy) NSString *license;
 
 #pragma mark Relationships
 

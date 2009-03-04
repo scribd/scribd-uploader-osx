@@ -39,8 +39,8 @@
 
 + (void) initialize {
 	SUMultipleValuesToggleValueTransformer *privateDescriptionTransformer = [[SUMultipleValuesToggleValueTransformer alloc] init];
-	privateDescriptionTransformer.trueValue = NSLocalizedString(@"%{0} will only be visible to you or people you choose.", NULL);
-	privateDescriptionTransformer.falseValue = NSLocalizedString(@"%{0} will be visible to everyone once %{1} uploaded.", NULL);
+	privateDescriptionTransformer.trueValue = NSLocalizedString(@"{0} will only be visible to you or people you choose.", NULL);
+	privateDescriptionTransformer.falseValue = NSLocalizedString(@"{0} will be visible to everyone once {1} uploaded.", NULL);
 	privateDescriptionTransformer.mixedValue = NSLocalizedString(@"Check this box to make these documents unavailable to other people.", NULL);
 	privateDescriptionTransformer.emptyValue = NSLocalizedString(@"Check this box to make a document unavailable to other people.", NULL);
 	NSArray *singulars = [[NSArray alloc] initWithObjects:NSLocalizedString(@"This document", NULL), NSLocalizedString(@"it is", @"document"), NULL];

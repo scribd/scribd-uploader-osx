@@ -4,14 +4,13 @@
 const NSTimeInterval SUTimeBetweenCategoryLoads = 1209600.0; // two weeks
 
 /* Error domains */
+NSString *SUErrorDomain = @"SUErrorDomain";
 NSString *SUScribdAPIErrorDomain = @"SUScribdAPIErrorDomain";
 
 /* Error user-info keys */
 NSString *SUInvalidatePropertyErrorKey = @"SUInvalidateProperty";
 NSString *SUActionErrorKey = @"SUActionErrorKey";
-
-/* Error codes */
-const NSInteger SUErrorCodeUploadFailed = -100;
+NSString *SUInvalidObjectErrorKey = @"SUInvalidObjectErrorKey";
 
 /* Actions */
 NSString *SULogInAction = @"LogIn";

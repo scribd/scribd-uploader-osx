@@ -1,4 +1,4 @@
-/*
+/*!
  @class SUMappingValueTransformer
  @abstract A basic value transformer that maps model objects to view values.
  */

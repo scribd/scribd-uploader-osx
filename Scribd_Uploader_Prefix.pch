@@ -36,6 +36,7 @@
 #import "SUSessionHelper.h"
 
 #import "SUMappingValueTransformer.h"
+#import "SUReversibleMappingValueTransformer.h"
 #import "SUToggleValueTransformer.h"
 #import "SUMultipleValuesToggleValueTransformer.h"
 #import "SULoginLabelValueTransformer.h"

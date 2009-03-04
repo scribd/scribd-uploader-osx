@@ -33,7 +33,7 @@
 		return managedObjectModel;
 	}
 	
-	NSURL *modelURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Scribd_Uploader_DataModel 210" ofType:@"mom" inDirectory:@"Scribd_Uploader_DataModel.momd"]];
+	NSURL *modelURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Scribd_Uploader_DataModel 220" ofType:@"mom" inDirectory:@"Scribd_Uploader_DataModel.momd"]];
 	managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
 	[modelURL release];
 	return managedObjectModel;

@@ -6,7 +6,6 @@
 
 @dynamic name;
 @dynamic position;
-@dynamic scribdID;
 
 @dynamic parent;
 @dynamic children;

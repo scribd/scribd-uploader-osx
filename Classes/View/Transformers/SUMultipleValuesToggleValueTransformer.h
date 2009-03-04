@@ -7,8 +7,8 @@
  appropriately worded in the singular or plural depending on the number of
  incoming boolean values (given as an array).
  
- An output string is specified using tokens such as "%{0}", "%{1}", etc. where
- the number refers to an index in the insertions array. The string at that index
+ An output string is specified using tokens such as "{0}", "{1}", etc. where the
+ number refers to an index in the insertions array. The string at that index
  will be substituted for the token to generate the output string.
  */
 

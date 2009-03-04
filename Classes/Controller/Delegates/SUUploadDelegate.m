@@ -92,7 +92,7 @@
 					 NULL];
 		[description release];
 	}
-	NSError *error = [NSError errorWithDomain:SUScribdAPIErrorDomain code:SUErrorCodeUploadFailed userInfo:errorDict];
+	NSError *error = [NSError errorWithDomain:SUErrorDomain code:SUErrorCodeUploadFailed userInfo:errorDict];
 	[errorDict release];
 	document.success = [NSNumber numberWithBool:NO];
 	document.error = [NSArchiver archivedDataWithRootObject:error];

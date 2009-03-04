@@ -24,7 +24,8 @@
 /*!
  @property name
  @abstract The category's display name.
- @discussion Must be unique in the scope of a parent.
+ @discussion This attribute is required and must be unique in the scope of a
+ parent.
  */
 
 @property (copy) NSString *name;
@@ -32,18 +33,11 @@
 /*!
  @property position
  @abstract The category's position in the display order.
- @discussion The display order is provided by Scribd.com, and is typically by
- name.
+ @discussion This attribute is required. The display order is provided by
+ Scribd.com, and is typically by name.
  */
 
 @property (copy) NSNumber *position;
-
-/*!
- @property scribdID
- @abstract The ID of the category as used by Scribd.com.
- */
-
-@property (copy) NSNumber *scribdID;
 
 #pragma mark Relationships
 

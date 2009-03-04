@@ -8,15 +8,43 @@
 
 const NSTimeInterval SUTimeBetweenCategoryLoads;
 
-#pragma mark Error Domains
+#pragma mark Error domains
+
+/*!
+ @const SUErrorDomain
+ @abstract The domain that @link //apple_ref/occ/cl/NSError NSError @/link
+ instances are initialized with, when pertaining to internal Scribd Uploader
+ errors.
+ */
+
+NSString *SUErrorDomain;
 
 /*!
  @const SUScribdAPIErrorDomain
  @abstract The domain that @link //apple_ref/occ/cl/NSError NSError @/link
- instances are initialized with.
+ instances are initialized with, when pertaining to Scribd.com API errors.
  */
 
 NSString *SUScribdAPIErrorDomain;
+
+#pragma mark Error codes
+
+/*!
+ @enum SUErrorDomainCode
+ @abstract Enumeration of error codes defined in the
+ @link SUErrorDomain SUErrorDomain @/link error domain.
+ @const SUScribdErrorCodeUploadFailed An upload failed for any reason other than
+ a Scribd.com error.
+ @const SUErrorCodeDictionaryMustBePerfect An object expected an
+ @link //apple_ref/occ/cl/NSDictionary NSDictionary @/link to have a strictly
+ one-to-one mapping between keys and values, but found multiple keys that map to
+ the same value.
+ */
+
+enum SUErrorDomainCode {
+	SUErrorCodeUploadFailed = 1,
+	SUErrorCodeDictionaryMustBePerfect
+};
 
 #pragma mark Error user-info keys
 
@@ -37,16 +65,12 @@ NSString *SUInvalidatePropertyErrorKey;
 
 NSString *SUActionErrorKey;
 
-#pragma mark Error codes
-
 /*!
- @const SUErrorCodeUploadFailed
- @abstract The error code for an @link //apple_ref/occ/cl/NSError NSError @/link
- created when an upload could not complete for any reason other than a Scribd
- server error code.
+ @const SUInvalidObjectErrorKey
+ @abstract The key of an object that was determined to be invalid.
  */
 
-const NSInteger SUErrorCodeUploadFailed;
+NSString *SUInvalidObjectErrorKey;
 
 #pragma mark Actions
 

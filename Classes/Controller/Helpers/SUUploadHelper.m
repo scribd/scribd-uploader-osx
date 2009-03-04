@@ -221,7 +221,7 @@
 
 - (BOOL) validateNewUserLogin:(id *)login error:(NSError **)error {
 	if (newUserLoginError) {
-		*error = [newUserLoginError autorelease];
+		if (!error) *error = [newUserLoginError autorelease];
 		return NO;
 	}
 	else return YES;
@@ -234,7 +234,7 @@
 
 - (BOOL) validateNewUserPassword:(id *)password error:(NSError **)error {
 	if (newUserPasswordError) {
-		*error = [newUserPasswordError autorelease];
+		if (!error) *error = [newUserPasswordError autorelease];
 		return NO;
 	}
 	else return YES;
@@ -247,7 +247,7 @@
 
 - (BOOL) validateNewUserEmail:(id *)email error:(NSError **)error {
 	if (newUserEmailError) {
-		*error = [newUserEmailError autorelease];
+		if (!error) *error = [newUserEmailError autorelease];
 		return NO;
 	}
 	else return YES;
@@ -260,7 +260,7 @@
 
 - (BOOL) validateNewUserName:(id *)name error:(NSError **)error {
 	if (newUserNameError) {
-		*error = [newUserNameError autorelease];
+		if (!error) *error = [newUserNameError autorelease];
 		return NO;
 	}
 	else return YES;

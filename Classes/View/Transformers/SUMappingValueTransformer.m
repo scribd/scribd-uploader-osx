@@ -47,7 +47,10 @@
  */
 
 - (id) transformedValue:(id)value {
-	return [mappings objectForKey:value];
+	if (!value) value = [NSNull null];
+	id result = [mappings objectForKey:value];
+	if ([result isEqualTo:[NSNull null]]) return NULL;
+	else return result;
 }
 
 @end

@@ -31,6 +31,11 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 @dynamic title;
 @dynamic summary;
 @dynamic tags;
+@dynamic author;
+@dynamic publisher;
+@dynamic edition;
+@dynamic datePublished;
+@dynamic license;
 
 @dynamic category;
 
