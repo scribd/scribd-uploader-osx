@@ -1,24 +1,31 @@
 /*!
  @class SUDocument
  @abstract Core Data object representing a document to be uploaded. Its entity
- name is "Document".
- @discussion This class adds file-specific operations and derived properties to
- the basic Core Data entity type, as well as some derived properties from the
- path and the metadata.
+ name is "Document". Document paths are URL's (either filesystem or remote) that
+ refer to a document.
+ @discussion This class adds file- and URL-specific operations and derived
+ properties to the basic Core Data entity type, as well as some derived
+ properties from the path and the metadata.
+ 
+ If the path is a filesystem URL (file://...), the file manager is used for many
+ derived properties. If it is a remote URL (e.g., http://...), path splicing is
+ used.
  */
 
 @interface SUDocument : NSManagedObject {
 	NSFileWrapper *wrapper;
 	NSString *kind;
-	NSObject *status;
+	NSURL *URL;
 }
 
 #pragma mark First-order properties
 
 /*!
  @property path
- @abstract The filesystem path to the file being uploaded.
- @discussion This attribute is required and uniquely identifies a document.
+ @abstract The URL string to the file being uploaded.
+ @discussion This attribute is required and uniquely identifies a document. For
+ files on the user's hard drive, it is a filesystem URL. For files over a
+ network or on the Internet, it is a remote URL.
  */
 
 @property (copy) NSString *path;
@@ -160,10 +167,30 @@
 #pragma mark Dynamic properties
 
 /*!
- @property filename
- @abstract The name of the file, derived from the path.
+ @property URL
+ @abstract The URL object for the path.
  @discussion This is a calculated property, and is not written to the persistent
  store.
+ */
+
+@property (readonly) NSURL *URL;
+
+/*!
+ @property fileSystemPath
+ @abstract The path to the file as used by the file system.
+ @discussion This is a calculated property, and is not written to the persistent
+ store.
+ */
+
+@property (readonly) NSString *fileSystemPath;
+
+/*!
+ @property filename
+ @abstract The name of the file, derived from the path.
+ @discussion For local files, the file manager's default representation is used.
+ For remote files, the filename portion of the path is used.
+ 
+ This is a calculated property, and is not written to the persistent store.
  */
 
 @property (readonly) NSString *filename;
@@ -171,17 +198,21 @@
 /*!
  @property icon
  @abstract The icon for the file, derived from the path.
- @discussion This is a calculated property, and is not written to the persistent
- store.
+ @discussion For local files, the file manager is used to retrieve the icon. For
+ remote files, a default image for the file extension is used.
+ 
+ This is a calculated property, and is not written to the persistent store.
  */
 
 @property (readonly) NSImage *icon;
 
 /*!
  @property kind
- @abstract The Finder description of the file's type, derived from the path.
- @discussion This is a calculated property, and is not written to the persistent
- store.
+ @abstract A description of the file's type, derived from the path.
+ @discussion The FileTypes.plist file is used to retrieve a description of a
+ path from its file extension.
+ 
+ This is a calculated property, and is not written to the persistent store.
  */
 
 @property (readonly) NSString *kind;
@@ -328,11 +359,20 @@
 - (NSFileWrapper *) wrapper;
 
 /*!
- @method pointsToActualFile:
+ @method pointsToActualFile
  @abstract Tests if a file actually exists at the path stored by the document.
  @result YES if the path yields an actual file.
  */
 
 - (BOOL) pointsToActualFile;
+
+/*!
+ @method isRemoteFile
+ @abstract Tests if a file's URL is a remote URL.
+ @result YES if the path refers to a remote resource; NO if the path refers to
+ a local file on in the filesystem.
+ */
+
+- (BOOL) isRemoteFile;
 
 @end

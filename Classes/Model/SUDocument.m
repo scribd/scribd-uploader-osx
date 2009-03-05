@@ -39,6 +39,8 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 
 @dynamic category;
 
+@dynamic URL;
+@dynamic fileSystemPath;
 @dynamic filename;
 @dynamic icon;
 @dynamic kind;
@@ -67,7 +69,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	if (self = [super init]) {
 		wrapper = NULL;
 		kind = NULL;
-		status = NULL;
+		URL = NULL;
 	}
 	return self;
 }
@@ -97,23 +99,37 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 - (void) dealloc {
 	if (wrapper) [wrapper release];
 	if (kind) [kind release];
+	if (URL) [URL release];
 	[super dealloc];
 }
 
 #pragma mark Dynamic properties
 
+- (NSURL *) URL {
+	if (!URL) URL = [[NSURL alloc] initWithString:self.path];
+	return URL;
+}
+
+- (NSString *) fileSystemPath {
+	return [URL relativePath];
+}
+
 - (NSString *) filename {
-	return [[NSFileManager defaultManager] displayNameAtPath:self.path];
+	if ([self isRemoteFile]) return [[self.URL relativeString] lastPathComponent];
+	else return [[NSFileManager defaultManager] displayNameAtPath:self.fileSystemPath];
 }
 
 - (NSString *) kind {
 	if (!kind) {
-		kind = [[[SUDocument kinds] objectForKey:[self.path pathExtension]] retain];
+		if ([self isRemoteFile]) kind = [[[SUDocument kinds] objectForKey:[[self.URL relativeString] pathExtension]] retain];
+		else kind = [[[SUDocument kinds] objectForKey:[self.fileSystemPath pathExtension]] retain];
 	}
 	return kind;
 }
 
 - (NSImage *) icon {
+	//TODO remote files
+	if ([self isRemoteFile]) return NULL;
 	return [[self wrapper] icon];
 }
 
@@ -127,12 +143,18 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 }
 
 - (NSFileWrapper *) wrapper {
-	if (!wrapper) wrapper = [[NSFileWrapper alloc] initWithPath:self.path];
+	if ([self isRemoteFile]) return NULL;
+	if (!wrapper) wrapper = [[NSFileWrapper alloc] initWithPath:self.fileSystemPath];
 	return wrapper;
 }
 
 - (BOOL) pointsToActualFile {
-	return [[NSFileManager defaultManager] fileExistsAtPath:self.path];
+	if ([self isRemoteFile]) return NO;
+	return [[NSFileManager defaultManager] fileExistsAtPath:self.fileSystemPath];
+}
+
+- (BOOL) isRemoteFile {
+	return ![URL isFileURL];
 }
 
 - (NSString *) errorLevel {
@@ -186,6 +208,22 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 		}
 	}
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+}
+
+/*
+ When the path changes the URL must change as well.
+ */
+
++ (NSSet *) keyPathsForValuesAffectingURL {
+	return [NSSet setWithObject:@"path"];
+}
+
+/*
+ When the path changes the fileSystemPath must change as well.
+ */
+
++ (NSSet *) keyPathsForValuesAffectingFileSystemPath {
+	return [NSSet setWithObject:@"path"];
 }
 
 /*
@@ -248,10 +286,12 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 #pragma mark Finding documents
 
 + (SUDocument *) findByPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+	NSURL *pathURL = [[NSURL alloc] initFileURLWithPath:[path stringByStandardizingPath]];
 	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"path"];
-	NSExpression *rhs = [NSExpression expressionForConstantValue:[path stringByStandardizingPath]];
+	NSExpression *rhs = [NSExpression expressionForConstantValue:[[pathURL absoluteURL] absoluteString]];
+	[pathURL release];
 	NSPredicate *pathMatches = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
 																	 rightExpression:rhs
 																			modifier:NSDirectPredicateModifier
@@ -377,11 +417,13 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 #pragma mark Creating new records
 
 + (SUDocument *) createFromPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+	NSURL *pathURL = [[NSURL alloc] initFileURLWithPath:[path stringByStandardizingPath]];
 	SUDocument *existingDocument = NULL;
 	if (existingDocument = [SUDocument findByPath:path inManagedObjectContext:managedObjectContext])
 		[managedObjectContext deleteObject:existingDocument];
 	SUDocument *file = [NSEntityDescription insertNewObjectForEntityForName:@"Document" inManagedObjectContext:managedObjectContext];
-	[file setValue:[path stringByStandardizingPath] forKey:@"path"];
+	[file setValue:[[pathURL absoluteURL] absoluteString] forKey:@"path"];
+	[pathURL release];
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:SUDefaultKeyUploadPrivateDefault]) [file setValue:[NSNumber numberWithBool:YES] forKey:@"hidden"];	
 	return file;
 }

@@ -154,7 +154,7 @@ static SUScribdAPI *sharedAPI = NULL;
 	request.uploadProgressDelegate = delegate;
 	//request.downloadProgressDelegate = delegate;
 	
-	[request setFile:file.path forKey:@"file"];
+	[request setFile:file.fileSystemPath forKey:@"file"];
 	for (NSString *key in parameters) [request setPostValue:[parameters objectForKey:key] forKey:key];
 	
 	NSOperation *uploadOperation = [[NSInvocationOperation alloc] initWithTarget:[request autorelease] selector:@selector(start) object:NULL];

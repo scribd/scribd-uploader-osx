@@ -135,7 +135,8 @@
 			
 			NSMutableDictionary *docParams = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 			[docParams setObject:([document.hidden boolValue] ? @"private" : @"public") forKey:@"access"];
-			[[SUScribdAPI sharedAPI] apiSubmitFile:document apiMethod:@"docs.upload" parameters:docParams delegate:delegate];
+			if (![document isRemoteFile]) [[SUScribdAPI sharedAPI] apiSubmitFile:document apiMethod:@"docs.upload" parameters:docParams delegate:delegate];
+			//TODO remote file upload
 			
 			[delegate release]; // the uploadDelegates set will retain it past the life of this thread's autorelease pool
 			[docParams release];
