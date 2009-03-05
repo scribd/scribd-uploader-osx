@@ -172,18 +172,18 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 
 - (NSURL *) scribdURL {
 	if (!self.uploaded) return NULL;
-	NSString *urlString = [[NSString alloc] initWithFormat:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUDocumentURLInfoKey], self.scribdID];
-	NSURL *url = [[NSURL alloc] initWithString:urlString];
-	[urlString release];
-	return [url autorelease];
+	NSString *URLString = [[NSString alloc] initWithFormat:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUDocumentURLInfoKey], self.scribdID];
+	NSURL *viewURL = [[NSURL alloc] initWithString:URLString];
+	[URLString release];
+	return [viewURL autorelease];
 }
 
 - (NSURL *) editURL {
 	if (!self.uploaded) return NULL;
-	NSString *urlString = [[NSString alloc] initWithFormat:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUDocumentEditURLInfoKey], self.scribdID];
-	NSURL *url = [[NSURL alloc] initWithString:urlString];
-	[urlString release];
-	return [url autorelease];
+	NSString *URLString = [[NSString alloc] initWithFormat:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUDocumentEditURLInfoKey], self.scribdID];
+	NSURL *editURL = [[NSURL alloc] initWithString:URLString];
+	[URLString release];
+	return [editURL autorelease];
 }
 
 #pragma mark KVO

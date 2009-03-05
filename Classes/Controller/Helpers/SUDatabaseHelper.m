@@ -46,7 +46,7 @@
 - (NSPersistentStoreCoordinator *) persistentStoreCoordinator {
 	if (persistentStoreCoordinator != NULL) return persistentStoreCoordinator;
 	
-	NSURL *url;
+	NSURL *URL;
 	NSError *error = NULL;
 	NSString *applicationSupportFolder = self.applicationSupportFolder;
 	
@@ -54,11 +54,11 @@
 		[[NSFileManager defaultManager] createDirectoryAtPath:applicationSupportFolder attributes:NULL];
 	}
 	
-	url = [NSURL fileURLWithPath:[applicationSupportFolder stringByAppendingPathComponent: @"Queue.xml"]];
+	URL = [NSURL fileURLWithPath:[applicationSupportFolder stringByAppendingPathComponent: @"Queue.xml"]];
 	persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
 	
 	NSDictionary *options = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:NSMigratePersistentStoresAutomaticallyOption];
-	if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:NULL URL:url options:options error:&error]) {
+	if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:NULL URL:URL options:options error:&error]) {
 		if ([error code] == NSPersistentStoreIncompatibleVersionHashError) {
 			NSAlert *alert = [[NSAlert alloc] init];
 			[alert setMessageText:NSLocalizedString(@"It appears you are using an out-of-date version of Scribd Uploader. Please upgrade to the latest version of Scribd Uploader.", NULL)];
