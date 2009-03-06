@@ -78,7 +78,7 @@
 			"Xdesign Model Editor Bookmark Key" = {
 				UIContextForDetailArea = {
 					_indexOfSelectedPane = 0;
-					_indexOfSelectedView = 0;
+					_indexOfSelectedView = 1;
 				};
 				UIContextForEntityArea = {
 					_indexOfSelectedView = 0;
@@ -99,7 +99,7 @@
 					chosenTableWidths = (
 						103.000000,
 						22.000000,
-						52.080078,
+						51.080078,
 					);
 				};
 				UIContextForLayoutManager = {
@@ -109,8 +109,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {613, 220}}",
-							"{{618, 0}, {323, 220}}",
+							"{{0, 0}, {613, 218}}",
+							"{{618, 0}, {323, 218}}",
 						);
 					};
 					diagramSplitGeometry = {
@@ -129,8 +129,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {202, 220}}",
-							"{{207, 0}, {406, 220}}",
+							"{{0, 0}, {201, 218}}",
+							"{{206, 0}, {405, 218}}",
 						);
 					};
 				};
@@ -219,7 +219,7 @@
 					chosenTableWidthsPT = (
 						128.000000,
 						108.110840,
-						143.570801,
+						142.570801,
 					);
 					chosenTableWidthsRT = (
 						128.000000,
@@ -268,7 +268,7 @@
 		uiCtxt = {
 			"Xdesign Model Editor Bookmark Key" = {
 			};
-			sepNavWindowFrame = "{{274, 165}, {1124, 690}}";
+			sepNavWindowFrame = "{{399, 80}, {1124, 690}}";
 		};
 	};
 	012384680F2AAE1F007D2B54 /* EMKeychainItem.h */ = {
@@ -399,9 +399,9 @@
 	};
 	0128AEE10F1478F300EC3C28 /* SUQuickLookDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1051, 975}}";
-			sepNavSelRange = "{1160, 0}";
-			sepNavVisRange = "{444, 1277}";
+			sepNavIntBoundsRect = "{{0, 0}, {933, 936}}";
+			sepNavSelRange = "{1556, 0}";
+			sepNavVisRange = "{254, 2112}";
 			sepNavWindowFrame = "{{326, 130}, {992, 844}}";
 		};
 	};
@@ -415,9 +415,9 @@
 	};
 	0128AEE30F1478F300EC3C28 /* SUUploadDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1092, 2380}}";
-			sepNavSelRange = "{592, 0}";
-			sepNavVisRange = "{495, 872}";
+			sepNavIntBoundsRect = "{{0, 0}, {885, 2770}}";
+			sepNavSelRange = "{1063, 80}";
+			sepNavVisRange = "{456, 1034}";
 			sepNavWindowFrame = "{{483, 91}, {826, 863}}";
 		};
 	};
@@ -439,17 +439,17 @@
 	};
 	0128AEE70F1478F300EC3C28 /* SUDatabaseHelper.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {885, 1261}}";
-			sepNavSelRange = "{316, 48}";
-			sepNavVisRange = "{0, 1016}";
+			sepNavIntBoundsRect = "{{0, 0}, {1051, 1209}}";
+			sepNavSelRange = "{1605, 4}";
+			sepNavVisRange = "{1097, 1148}";
 			sepNavWindowFrame = "{{766, 123}, {711, 817}}";
 		};
 	};
 	0128AEE80F1478F300EC3C28 /* SUDatabaseHelper.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1158, 2509}}";
-			sepNavSelRange = "{629, 0}";
-			sepNavVisRange = "{0, 747}";
+			sepNavIntBoundsRect = "{{0, 0}, {1224, 2366}}";
+			sepNavSelRange = "{4203, 0}";
+			sepNavVisRange = "{2983, 1743}";
 			sepNavWindowFrame = "{{614, 95}, {826, 863}}";
 		};
 	};
@@ -463,9 +463,9 @@
 	};
 	0128AEEC0F1478F300EC3C28 /* SUUploadHelper.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1051, 4537}}";
-			sepNavSelRange = "{6982, 0}";
-			sepNavVisRange = "{6344, 865}";
+			sepNavIntBoundsRect = "{{0, 0}, {1051, 3991}}";
+			sepNavSelRange = "{4195, 0}";
+			sepNavVisRange = "{3138, 1654}";
 			sepNavWindowFrame = "{{769, 92}, {906, 925}}";
 		};
 	};
@@ -479,10 +479,10 @@
 	};
 	0128AEEE0F1478F300EC3C28 /* SUDocumentArrayController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1524, 715}}";
-			sepNavSelRange = "{769, 0}";
-			sepNavVisRange = "{0, 1551}";
-			sepNavWindowFrame = "{{392, 138}, {992, 844}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1524, 754}}";
+			sepNavSelRange = "{1998, 0}";
+			sepNavVisRange = "{39, 2296}";
+			sepNavWindowFrame = "{{502, 137}, {992, 844}}";
 		};
 	};
 	0128AEEF0F1478F300EC3C28 /* SUUploadErrorController.h */ = {
@@ -503,18 +503,18 @@
 	};
 	0128AEF20F1478F300EC3C28 /* SUDocument.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {732, 4706}}";
-			sepNavSelRange = "{3836, 1}";
-			sepNavVisRange = "{2819, 1477}";
-			sepNavWindowFrame = "{{396, 83}, {791, 864}}";
+			sepNavIntBoundsRect = "{{0, 0}, {786, 4966}}";
+			sepNavSelRange = "{7648, 116}";
+			sepNavVisRange = "{6716, 2175}";
+			sepNavWindowFrame = "{{705, 72}, {791, 864}}";
 		};
 	};
 	0128AEF30F1478F300EC3C28 /* SUDocument.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {845, 5915}}";
-			sepNavSelRange = "{591, 0}";
-			sepNavVisRange = "{0, 983}";
-			sepNavWindowFrame = "{{172, 81}, {904, 915}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1194, 5681}}";
+			sepNavSelRange = "{13903, 0}";
+			sepNavVisRange = "{12267, 2654}";
+			sepNavWindowFrame = "{{550, 75}, {904, 915}}";
 		};
 	};
 	0128AEF40F1478F300EC3C28 /* SUScribdAPI.h */ = {
@@ -527,10 +527,10 @@
 	};
 	0128AEF50F1478F300EC3C28 /* SUScribdAPI.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1068, 3965}}";
-			sepNavSelRange = "{10559, 0}";
-			sepNavVisRange = "{9483, 1272}";
-			sepNavWindowFrame = "{{295, 109}, {992, 844}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1068, 4745}}";
+			sepNavSelRange = "{3251, 0}";
+			sepNavVisRange = "{4599, 2115}";
+			sepNavWindowFrame = "{{565, 106}, {992, 844}}";
 		};
 	};
 	0128AEF70F1478F300EC3C28 /* SUFileListView.h */ = {
@@ -559,9 +559,9 @@
 	};
 	0128AEFA0F1478F300EC3C28 /* SUTableStatusColumn.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1084, 910}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1044, 897}}";
 			sepNavSelRange = "{1498, 0}";
-			sepNavVisRange = "{559, 1063}";
+			sepNavVisRange = "{0, 2715}";
 			sepNavWindowFrame = "{{404, 113}, {976, 899}}";
 		};
 	};
@@ -1067,6 +1067,38 @@
 			sepNavWindowFrame = "{{638, 123}, {798, 841}}";
 		};
 	};
+	01782DB60F60A4E500205ECD /* SUAddURLWindowDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {753, 617}}";
+			sepNavSelRange = "{181, 0}";
+			sepNavVisRange = "{0, 839}";
+			sepNavWindowFrame = "{{624, 21}, {812, 745}}";
+		};
+	};
+	01782DB70F60A4E500205ECD /* SUAddURLWindowDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1084, 429}}";
+			sepNavSelRange = "{409, 0}";
+			sepNavVisRange = "{171, 522}";
+			sepNavWindowFrame = "{{504, 121}, {812, 745}}";
+		};
+	};
+	01782DD00F60A93200205ECD /* SUNotEmptyValueTransformer.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {753, 617}}";
+			sepNavSelRange = "{252, 0}";
+			sepNavVisRange = "{0, 259}";
+			sepNavWindowFrame = "{{695, 101}, {812, 745}}";
+		};
+	};
+	01782DD10F60A93200205ECD /* SUNotEmptyValueTransformer.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {753, 617}}";
+			sepNavSelRange = "{342, 0}";
+			sepNavVisRange = "{0, 641}";
+			sepNavWindowFrame = "{{478, 150}, {812, 745}}";
+		};
+	};
 	018352900F3588CF0088C68E /* SUPluralizeValueTransformer.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {681, 744}}";
@@ -1118,9 +1150,9 @@
 	019D58620F4B9524001CB943 /* Scribd_Uploader_Prefix.pch */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {917, 771}}";
-			sepNavSelRange = "{1035, 0}";
-			sepNavVisRange = "{0, 1534}";
-			sepNavWindowFrame = "{{157, 61}, {976, 899}}";
+			sepNavSelRange = "{1378, 0}";
+			sepNavVisRange = "{0, 1567}";
+			sepNavWindowFrame = "{{561, 58}, {976, 899}}";
 		};
 	};
 	019D586B0F4B95F6001CB943 /* SUToggleValueTransformer.h */ = {
@@ -1134,9 +1166,16 @@
 	019D586C0F4B95F6001CB943 /* SUToggleValueTransformer.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {790, 771}}";
-			sepNavSelRange = "{580, 0}";
+			sepNavSelRange = "{658, 0}";
 			sepNavVisRange = "{0, 1095}";
 			sepNavWindowFrame = "{{696, 123}, {849, 899}}";
+		};
+	};
+	01A672D60F31895800DA0B76 /* SUDirectoryScanOperation.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1051, 507}}";
+			sepNavSelRange = "{686, 4}";
+			sepNavVisRange = "{0, 1028}";
 		};
 	};
 	01A672D90F31896600DA0B76 /* SUTitleCleanerOperation.h */ = {
@@ -1149,9 +1188,9 @@
 	};
 	01A672DA0F31896600DA0B76 /* SUTitleCleanerOperation.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {681, 744}}";
-			sepNavSelRange = "{241, 0}";
-			sepNavVisRange = "{0, 744}";
+			sepNavIntBoundsRect = "{{0, 0}, {1051, 533}}";
+			sepNavSelRange = "{509, 5}";
+			sepNavVisRange = "{126, 618}";
 			sepNavWindowFrame = "{{617, 111}, {740, 872}}";
 		};
 	};
@@ -1169,6 +1208,14 @@
 			sepNavSelRange = "{1830, 0}";
 			sepNavVisRange = "{1263, 1456}";
 			sepNavWindowFrame = "{{719, 100}, {791, 864}}";
+		};
+	};
+	01AF5FF10F1D27D300D51D07 /* ASIFormDataRequest.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {753, 617}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 759}";
+			sepNavWindowFrame = "{{90, 278}, {812, 745}}";
 		};
 	};
 	01AF5FF20F1D27D300D51D07 /* ASIFormDataRequest.m */ = {
@@ -1193,6 +1240,14 @@
 			sepNavSelRange = "{14012, 0}";
 			sepNavVisRange = "{12657, 2042}";
 			sepNavWindowFrame = "{{556, 55}, {924, 961}}";
+		};
+	};
+	01AF5FF60F1D27D300D51D07 /* ASINetworkQueue.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {753, 4121}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 899}";
+			sepNavWindowFrame = "{{113, 257}, {812, 745}}";
 		};
 	};
 	01AF5FF80F1D27D300D51D07 /* NSHTTPCookieAdditions.m */ = {
@@ -1326,8 +1381,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 257826404;
-			PBXWorkspaceStateSaveDate = 257826404;
+			PBXPerProjectTemplateStateSaveDate = 257989964;
+			PBXWorkspaceStateSaveDate = 257989964;
 		};
 		sourceControlManager = 0128AED40F14783800EC3C28 /* Source Control */;
 		userBookmarkGroup = 0122B7380F5DDD8200D2D0DD /* PBXBookmarkGroup */;

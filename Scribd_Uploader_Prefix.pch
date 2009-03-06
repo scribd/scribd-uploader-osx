@@ -1,6 +1,4 @@
-//
 // Prefix header for all source files of the 'Scribd Uploader' target in the 'Scribd Uploader' project
-//
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
@@ -44,6 +42,7 @@
 #import "SUSingleSelectionOnlyValueTransformer.h"
 #import "SUDelimitedStringValueTransformer.h"
 #import "SUIndexPathValueTransformer.h"
+#import "SUNotEmptyValueTransformer.h"
 
 #import "SULoginSheetDelegate.h"
 #import "SUPreferencesWindowController.h"

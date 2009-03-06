@@ -286,12 +286,10 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 #pragma mark Finding documents
 
 + (SUDocument *) findByPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
-	NSURL *pathURL = [[NSURL alloc] initFileURLWithPath:[path stringByStandardizingPath]];
 	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
 	
 	NSExpression *lhs = [NSExpression expressionForKeyPath:@"path"];
-	NSExpression *rhs = [NSExpression expressionForConstantValue:[[pathURL absoluteURL] absoluteString]];
-	[pathURL release];
+	NSExpression *rhs = [NSExpression expressionForConstantValue:path];
 	NSPredicate *pathMatches = [[NSComparisonPredicate alloc] initWithLeftExpression:lhs
 																	 rightExpression:rhs
 																			modifier:NSDirectPredicateModifier
@@ -310,7 +308,6 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	if (objects && [objects count] > 0) return [objects objectAtIndex:0];
 	else return NULL;
 }
-	
 
 + (NSArray *) findAllInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext error:(NSError **)error {
 	NSEntityDescription *docEntity = [NSEntityDescription entityForName:@"Document" inManagedObjectContext:managedObjectContext];
@@ -418,12 +415,26 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 
 + (SUDocument *) createFromPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
 	NSURL *pathURL = [[NSURL alloc] initFileURLWithPath:[path stringByStandardizingPath]];
+	NSURL *absoluteURL = [pathURL absoluteURL];
+	[pathURL release];
 	SUDocument *existingDocument = NULL;
-	if (existingDocument = [SUDocument findByPath:path inManagedObjectContext:managedObjectContext])
+	if (existingDocument = [SUDocument findByPath:[absoluteURL absoluteString] inManagedObjectContext:managedObjectContext])
 		[managedObjectContext deleteObject:existingDocument];
 	SUDocument *file = [NSEntityDescription insertNewObjectForEntityForName:@"Document" inManagedObjectContext:managedObjectContext];
-	[file setValue:[[pathURL absoluteURL] absoluteString] forKey:@"path"];
-	[pathURL release];
+	[file setValue:[absoluteURL absoluteString] forKey:@"path"];
+	if ([[NSUserDefaults standardUserDefaults] objectForKey:SUDefaultKeyUploadPrivateDefault]) [file setValue:[NSNumber numberWithBool:YES] forKey:@"hidden"];	
+	return file;
+}
+
++ (SUDocument *) createFromURLString:(NSString *)URLString inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+	NSURL *URL = [[NSURL alloc] initWithString:URLString];
+	NSURL *absoluteURL = [URL absoluteURL];
+	[URL release];
+	SUDocument *existingDocument = NULL;
+	if (existingDocument = [SUDocument findByPath:[absoluteURL absoluteString] inManagedObjectContext:managedObjectContext])
+		[managedObjectContext deleteObject:existingDocument];
+	SUDocument *file = [NSEntityDescription insertNewObjectForEntityForName:@"Document" inManagedObjectContext:managedObjectContext];
+	[file setValue:[absoluteURL absoluteString] forKey:@"path"];
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:SUDefaultKeyUploadPrivateDefault]) [file setValue:[NSNumber numberWithBool:YES] forKey:@"hidden"];	
 	return file;
 }
