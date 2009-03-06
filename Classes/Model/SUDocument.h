@@ -13,7 +13,6 @@
  */
 
 @interface SUDocument : NSManagedObject {
-	NSFileWrapper *wrapper;
 	NSString *kind;
 	NSURL *URL;
 }
@@ -361,15 +360,6 @@
 + (NSArray *) scribdFileTypes;
 
 #pragma mark Pseudo-properties
-
-/*!
- @method wrapper
- @abstract Returns an @link //apple_ref/occ/cl/NSFileWrapper NSFileWrapper @/link
- for the file pointed to by this object.
- @result A file wrapper for the file.
- */
-
-- (NSFileWrapper *) wrapper;
 
 /*!
  @method pointsToActualFile

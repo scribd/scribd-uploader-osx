@@ -62,12 +62,12 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 
 /*
  You're not really supposed to override init for managed objects, but I see no
- other way I can ensure that wrapper is nilled out before anyone else touches it.
+ other way I can ensure that variables are nilled out before anyone else touches
+ them.
  */
 
 - (id) init {
 	if (self = [super init]) {
-		wrapper = NULL;
 		kind = NULL;
 		URL = NULL;
 	}
@@ -97,7 +97,6 @@ static NSOperationQueue *titleCleaningQueue = NULL;
  */
 
 - (void) dealloc {
-	if (wrapper) [wrapper release];
 	if (kind) [kind release];
 	if (URL) [URL release];
 	[super dealloc];
@@ -123,14 +122,14 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	if (!kind) {
 		if ([self isRemoteFile]) kind = [[[SUDocument kinds] objectForKey:[[self.URL relativeString] pathExtension]] retain];
 		else kind = [[[SUDocument kinds] objectForKey:[self.fileSystemPath pathExtension]] retain];
+		if (!kind) kind = @"document";
 	}
 	return kind;
 }
 
 - (NSImage *) icon {
-	//TODO remote files
-	if ([self isRemoteFile]) return NULL;
-	return [[self wrapper] icon];
+	if ([self isRemoteFile]) return [[NSWorkspace sharedWorkspace] iconForFileType:[self.filename pathExtension]];
+	return [[NSWorkspace sharedWorkspace] iconForFile:self.fileSystemPath];
 }
 
 - (NSNumber *) discoverability {
@@ -140,12 +139,6 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	if ([[NSSpellChecker sharedSpellChecker] countWordsInString:self.title language:NULL] >= 2) disc++;
 	if (self.category) disc++;
 	return [NSNumber numberWithUnsignedInteger:disc];
-}
-
-- (NSFileWrapper *) wrapper {
-	if ([self isRemoteFile]) return NULL;
-	if (!wrapper) wrapper = [[NSFileWrapper alloc] initWithPath:self.fileSystemPath];
-	return wrapper;
 }
 
 - (BOOL) pointsToActualFile {
@@ -189,15 +182,12 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 #pragma mark KVO
 
 /*
- When the path changes, we need to release the wrapper and kind to prepare for
- new lazy inits. We also need to check the title cleaner and suggest a title if
- one hasn't been added yet.
+ When the path changes, we need to check the title cleaner and suggest a title
+ if one hasn't been added yet, and deallocate the kind so it can be recreated.
  */
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	if ([keyPath isEqualToString:@"path"]) {
-		if (wrapper) [wrapper release];
-		wrapper = NULL;
 		if (kind) [kind release];
 		kind = NULL;
 		
