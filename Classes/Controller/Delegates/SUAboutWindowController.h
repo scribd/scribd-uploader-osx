@@ -3,7 +3,7 @@
  @abstract Responder for events in the About window.
  */
 
-@interface SUAboutWindowDelegate : NSObject {
+@interface SUAboutWindowController : NSObject {
 	
 }
 

@@ -1,6 +1,6 @@
-#import "SUAboutWindowDelegate.h"
+#import "SUAboutWindowController.h"
 
-@implementation SUAboutWindowDelegate
+@implementation SUAboutWindowController
 
 #pragma mark Properties
 

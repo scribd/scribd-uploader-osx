@@ -3,7 +3,7 @@
  @abstract Handles events regarding the Add URL window.
  */
 
-@interface SUAddURLWindowDelegate : NSObject {
+@interface SUAddURLWindowController : NSObject {
 	IBOutlet NSWindow *window;
 	IBOutlet SUDatabaseHelper *db;
 	NSString *URLString;

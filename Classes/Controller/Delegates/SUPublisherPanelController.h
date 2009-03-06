@@ -3,7 +3,7 @@
  @abstract Handler for events relating to the publisher panel.
  */
 
-@interface SUPublisherPanelDelegate : NSObject {
+@interface SUPublisherPanelController : NSObject {
 	IBOutlet NSPanel *panel;
 	IBOutlet NSMenuItem *togglePanelItem;
 	IBOutlet NSArrayController *documents;

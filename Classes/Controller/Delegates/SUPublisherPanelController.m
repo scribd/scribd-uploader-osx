@@ -1,6 +1,6 @@
-#import "SUPublisherPanelDelegate.h"
+#import "SUPublisherPanelController.h"
 
-@implementation SUPublisherPanelDelegate
+@implementation SUPublisherPanelController
 
 #pragma mark Initializing and deallocating
 

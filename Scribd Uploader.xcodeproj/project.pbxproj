@@ -12,7 +12,7 @@
 		010BC0CF0F33C9F100C4DE4D /* NSDictionary_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 010BC0C90F33C9F100C4DE4D /* NSDictionary_SUAdditions.m */; };
 		010BC0D00F33C9F100C4DE4D /* NSIndexPath_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 010BC0CB0F33C9F100C4DE4D /* NSIndexPath_SUAdditions.m */; };
 		010BC0D10F33C9F100C4DE4D /* NSString_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 010BC0CD0F33C9F100C4DE4D /* NSString_SUAdditions.m */; };
-		0122B7BE0F5DE6FC00D2D0DD /* SUPublisherPanelDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0122B7BD0F5DE6FC00D2D0DD /* SUPublisherPanelDelegate.m */; };
+		0122B7BE0F5DE6FC00D2D0DD /* SUPublisherPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0122B7BD0F5DE6FC00D2D0DD /* SUPublisherPanelController.m */; };
 		0122B7DF0F5DEE2600D2D0DD /* pd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0122B7D70F5DEE2600D2D0DD /* pd.png */; };
 		0122B7E00F5DEE2600D2D0DD /* by.png in Resources */ = {isa = PBXBuildFile; fileRef = 0122B7D80F5DEE2600D2D0DD /* by.png */; };
 		0122B7E10F5DEE2600D2D0DD /* by-nc.png in Resources */ = {isa = PBXBuildFile; fileRef = 0122B7D90F5DEE2600D2D0DD /* by-nc.png */; };
@@ -59,7 +59,7 @@
 		012E5EBD0F214EE70037ECDA /* SUCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5EBC0F214EE70037ECDA /* SUCategory.m */; };
 		012E5EFF0F2175550037ECDA /* SUDelimitedStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5EFE0F2175550037ECDA /* SUDelimitedStringValueTransformer.m */; };
 		0132C07D0F16BF99000B17C5 /* Scribd Uploader Help in Resources */ = {isa = PBXBuildFile; fileRef = 0132C07C0F16BF99000B17C5 /* Scribd Uploader Help */; };
-		0132C0970F16C3A6000B17C5 /* SUAboutWindowDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */; };
+		0132C0970F16C3A6000B17C5 /* SUAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0132C0960F16C3A6000B17C5 /* SUAboutWindowController.m */; };
 		013C920E0F21E21200061162 /* SUIndexPathValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 013C920D0F21E21200061162 /* SUIndexPathValueTransformer.m */; };
 		014204E40F29389700C7401A /* Automatic Updates.png in Resources */ = {isa = PBXBuildFile; fileRef = 014204E30F29389700C7401A /* Automatic Updates.png */; };
 		014DB9480F1EE55100F50460 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014DB9470F1EE55100F50460 /* Growl.framework */; };
@@ -67,7 +67,7 @@
 		014DB95D0F1EE5FD00F50460 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */; };
 		01613F060F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01613F050F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.m */; };
 		017077B70F1C47AC008A3CB0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017077B60F1C47AC008A3CB0 /* Sparkle.framework */; };
-		01782DB80F60A4E500205ECD /* SUAddURLWindowDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782DB70F60A4E500205ECD /* SUAddURLWindowDelegate.m */; };
+		01782DB80F60A4E500205ECD /* SUAddURLWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782DB70F60A4E500205ECD /* SUAddURLWindowController.m */; };
 		01782DD20F60A93200205ECD /* SUNotEmptyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782DD10F60A93200205ECD /* SUNotEmptyValueTransformer.m */; };
 		017BEF010F60CD1E00E66086 /* SUAPIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 017BEF000F60CD1E00E66086 /* SUAPIHelper.m */; };
 		018352920F3588CF0088C68E /* SUPluralizeValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 018352910F3588CF0088C68E /* SUPluralizeValueTransformer.m */; };
@@ -127,8 +127,8 @@
 		010BC0CB0F33C9F100C4DE4D /* NSIndexPath_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSIndexPath_SUAdditions.m; sourceTree = "<group>"; };
 		010BC0CC0F33C9F100C4DE4D /* NSString_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_SUAdditions.h; sourceTree = "<group>"; };
 		010BC0CD0F33C9F100C4DE4D /* NSString_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_SUAdditions.m; sourceTree = "<group>"; };
-		0122B7BC0F5DE6FC00D2D0DD /* SUPublisherPanelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUPublisherPanelDelegate.h; sourceTree = "<group>"; };
-		0122B7BD0F5DE6FC00D2D0DD /* SUPublisherPanelDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUPublisherPanelDelegate.m; sourceTree = "<group>"; };
+		0122B7BC0F5DE6FC00D2D0DD /* SUPublisherPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUPublisherPanelController.h; path = Delegates/SUPublisherPanelController.h; sourceTree = "<group>"; };
+		0122B7BD0F5DE6FC00D2D0DD /* SUPublisherPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUPublisherPanelController.m; path = Delegates/SUPublisherPanelController.m; sourceTree = "<group>"; };
 		0122B7CD0F5DED7800D2D0DD /* Scribd_Uploader_DataModel 220.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Scribd_Uploader_DataModel 220.xcdatamodel"; sourceTree = "<group>"; };
 		0122B7D70F5DEE2600D2D0DD /* pd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pd.png; sourceTree = "<group>"; };
 		0122B7D80F5DEE2600D2D0DD /* by.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = by.png; sourceTree = "<group>"; };
@@ -203,8 +203,8 @@
 		012E5EFD0F2175550037ECDA /* SUDelimitedStringValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDelimitedStringValueTransformer.h; sourceTree = "<group>"; };
 		012E5EFE0F2175550037ECDA /* SUDelimitedStringValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDelimitedStringValueTransformer.m; sourceTree = "<group>"; };
 		0132C0170F16BF97000B17C5 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/Scribd Uploader Help"; sourceTree = "<group>"; };
-		0132C0950F16C3A6000B17C5 /* SUAboutWindowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAboutWindowDelegate.h; sourceTree = "<group>"; };
-		0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUAboutWindowDelegate.m; sourceTree = "<group>"; };
+		0132C0950F16C3A6000B17C5 /* SUAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUAboutWindowController.h; path = Delegates/SUAboutWindowController.h; sourceTree = "<group>"; };
+		0132C0960F16C3A6000B17C5 /* SUAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUAboutWindowController.m; path = Delegates/SUAboutWindowController.m; sourceTree = "<group>"; };
 		013C920C0F21E21200061162 /* SUIndexPathValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUIndexPathValueTransformer.h; sourceTree = "<group>"; };
 		013C920D0F21E21200061162 /* SUIndexPathValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUIndexPathValueTransformer.m; sourceTree = "<group>"; };
 		014204E30F29389700C7401A /* Automatic Updates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Automatic Updates.png"; sourceTree = "<group>"; };
@@ -213,8 +213,8 @@
 		01613F040F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUMultipleValuesToggleValueTransformer.h; sourceTree = "<group>"; };
 		01613F050F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUMultipleValuesToggleValueTransformer.m; sourceTree = "<group>"; };
 		017077B60F1C47AC008A3CB0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Linked Frameworks/Sparkle.framework"; sourceTree = "<group>"; };
-		01782DB60F60A4E500205ECD /* SUAddURLWindowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAddURLWindowDelegate.h; sourceTree = "<group>"; };
-		01782DB70F60A4E500205ECD /* SUAddURLWindowDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUAddURLWindowDelegate.m; sourceTree = "<group>"; };
+		01782DB60F60A4E500205ECD /* SUAddURLWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUAddURLWindowController.h; path = Delegates/SUAddURLWindowController.h; sourceTree = "<group>"; };
+		01782DB70F60A4E500205ECD /* SUAddURLWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUAddURLWindowController.m; path = Delegates/SUAddURLWindowController.m; sourceTree = "<group>"; };
 		01782DD00F60A93200205ECD /* SUNotEmptyValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUNotEmptyValueTransformer.h; sourceTree = "<group>"; };
 		01782DD10F60A93200205ECD /* SUNotEmptyValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUNotEmptyValueTransformer.m; sourceTree = "<group>"; };
 		017BEEFF0F60CD1E00E66086 /* SUAPIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAPIHelper.h; sourceTree = "<group>"; };
@@ -334,6 +334,12 @@
 				0128AEF00F1478F300EC3C28 /* SUUploadErrorController.m */,
 				01AF60030F1D284900D51D07 /* SUPreferencesWindowController.h */,
 				01AF60040F1D284900D51D07 /* SUPreferencesWindowController.m */,
+				0132C0950F16C3A6000B17C5 /* SUAboutWindowController.h */,
+				0132C0960F16C3A6000B17C5 /* SUAboutWindowController.m */,
+				0122B7BC0F5DE6FC00D2D0DD /* SUPublisherPanelController.h */,
+				0122B7BD0F5DE6FC00D2D0DD /* SUPublisherPanelController.m */,
+				01782DB60F60A4E500205ECD /* SUAddURLWindowController.h */,
+				01782DB70F60A4E500205ECD /* SUAddURLWindowController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -351,14 +357,8 @@
 				0128AEE10F1478F300EC3C28 /* SUQuickLookDelegate.m */,
 				0128AEE20F1478F300EC3C28 /* SUUploadDelegate.h */,
 				0128AEE30F1478F300EC3C28 /* SUUploadDelegate.m */,
-				0132C0950F16C3A6000B17C5 /* SUAboutWindowDelegate.h */,
-				0132C0960F16C3A6000B17C5 /* SUAboutWindowDelegate.m */,
 				012E5E720F20837C0037ECDA /* SUInformationDrawerDelegate.h */,
 				012E5E730F20837C0037ECDA /* SUInformationDrawerDelegate.m */,
-				0122B7BC0F5DE6FC00D2D0DD /* SUPublisherPanelDelegate.h */,
-				0122B7BD0F5DE6FC00D2D0DD /* SUPublisherPanelDelegate.m */,
-				01782DB60F60A4E500205ECD /* SUAddURLWindowDelegate.h */,
-				01782DB70F60A4E500205ECD /* SUAddURLWindowDelegate.m */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -713,7 +713,7 @@
 				0128AF480F1478F300EC3C28 /* main.m in Sources */,
 				0128AF490F1478F300EC3C28 /* SUConstants.m in Sources */,
 				01ABF7FA0F147DCC00EE7142 /* SUSessionHelper.m in Sources */,
-				0132C0970F16C3A6000B17C5 /* SUAboutWindowDelegate.m in Sources */,
+				0132C0970F16C3A6000B17C5 /* SUAboutWindowController.m in Sources */,
 				01AF5FFE0F1D27D300D51D07 /* ASIFormDataRequest.m in Sources */,
 				01AF5FFF0F1D27D300D51D07 /* ASIHTTPRequest.m in Sources */,
 				01AF60000F1D27D300D51D07 /* ASINetworkQueue.m in Sources */,
@@ -741,11 +741,11 @@
 				019D58350F4B9015001CB943 /* SUMappingValueTransformer.m in Sources */,
 				019D586D0F4B95F6001CB943 /* SUToggleValueTransformer.m in Sources */,
 				01613F060F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.m in Sources */,
-				0122B7BE0F5DE6FC00D2D0DD /* SUPublisherPanelDelegate.m in Sources */,
+				0122B7BE0F5DE6FC00D2D0DD /* SUPublisherPanelController.m in Sources */,
 				0122B80B0F5DF45A00D2D0DD /* SUReversibleMappingValueTransformer.m in Sources */,
 				0122B89C0F5E0C8000D2D0DD /* SUAllowNilDateFormatter.m in Sources */,
 				0122B8C20F5E144900D2D0DD /* Scribd_Uploader_DataModel 210-220.xcmappingmodel in Sources */,
-				01782DB80F60A4E500205ECD /* SUAddURLWindowDelegate.m in Sources */,
+				01782DB80F60A4E500205ECD /* SUAddURLWindowController.m in Sources */,
 				01782DD20F60A93200205ECD /* SUNotEmptyValueTransformer.m in Sources */,
 				017BEF010F60CD1E00E66086 /* SUAPIHelper.m in Sources */,
 			);

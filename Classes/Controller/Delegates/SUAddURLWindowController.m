@@ -1,6 +1,6 @@
-#import "SUAddURLWindowDelegate.h"
+#import "SUAddURLWindowController.h"
 
-@implementation SUAddURLWindowDelegate
+@implementation SUAddURLWindowController
 
 #pragma mark Properties
 
