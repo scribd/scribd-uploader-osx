@@ -56,6 +56,22 @@
 - (NSDictionary *) callApiMethod:(NSString *)method parameters:(NSDictionary *)parameters error:(NSError **)error;
 
 /*!
+ @method asynchronouslyCallAPIMethod:apiMethod:parameters:error:
+ @abstract Makes an HTTP call to the Scribd API server, with future events
+ handled by a given delegate.
+ @discussion The HTTP call will be made asynchronously using ASIHTTPRequest.
+ Information, such as progress and errors, are passed to an
+ @link SUUploadDelegate SUUploadDelegate @/link.
+ @param method The Scribd API method.
+ @param parameters A dictionary of API method parameters. Both keys and values
+ should be @link //apple_ref/occ/cl/NSString NSStrings @/link.
+ @param delegate The delegate object that receives progress updates and other
+ events about the HTTP call.
+ */
+
+- (void) asynchronouslyCallAPIMethod:(NSString *)method parameters:(NSDictionary *)parameters delegate:(id)delegate;
+
+/*!
  @method apiSubmitFile:apiMethod:parameters:error:
  @abstract Uploads a file to Scribd via an API method.
  @discussion The HTTP call will be made asynchronously using ASIHTTPRequest.

@@ -146,6 +146,18 @@ static SUScribdAPI *sharedAPI = NULL;
 	return results;
 }
 
+- (void) asynchronouslyCallAPIMethod:(NSString *)method parameters:(NSDictionary *)parameters delegate:(id)delegate {
+	NSURL *URL = [self apiUrlWithMethod:method parameters:parameters];
+	ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:URL];
+	
+	request.delegate = delegate;
+	request.downloadProgressDelegate = delegate;
+	
+	NSOperation *uploadOperation = [[NSInvocationOperation alloc] initWithTarget:[request autorelease] selector:@selector(start) object:NULL];
+	[uploadQueue addOperation:uploadOperation];
+	[uploadOperation release];
+}
+
 - (void) apiSubmitFile:(SUDocument *)file apiMethod:(NSString *)method parameters:(NSDictionary *)parameters delegate:(id)delegate {
 	NSURL *URL = [self apiUrlWithMethod:method parameters:parameters];
 	ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:URL];
