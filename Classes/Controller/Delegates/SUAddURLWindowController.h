@@ -8,6 +8,7 @@
 	IBOutlet SUDatabaseHelper *db;
 	IBOutlet SUImagePreviewView *preview;
 	NSString *URLString;
+	BOOL downloading;
 }
 
 #pragma mark Properties
@@ -18,6 +19,14 @@
  */
 
 @property (retain) NSString *URLString;
+
+/*!
+ @property downloading
+ @abstract YES if an image preview is in the process of being downloaded; NO if
+ no downloading is occurring.
+ */
+
+@property (assign) BOOL downloading;
 
 #pragma mark Actions
 

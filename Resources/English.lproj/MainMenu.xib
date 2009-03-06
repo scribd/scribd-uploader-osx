@@ -3308,6 +3308,13 @@ ciBoZWxwIHZpZXdlci4</string>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSCustomView" id="735188378">
+							<reference key="NSNextResponder" ref="1046003765"/>
+							<int key="NSvFlags">275</int>
+							<string key="NSFrame">{{306, 60}, {96, 125}}</string>
+							<reference key="NSSuperview" ref="1046003765"/>
+							<string key="NSClassName">SUImagePreviewView</string>
+						</object>
 						<object class="NSTextField" id="755845497">
 							<reference key="NSNextResponder" ref="1046003765"/>
 							<int key="NSvFlags">268</int>
@@ -3381,12 +3388,15 @@ ciBoZWxwIHZpZXdlci4</string>
 								<int key="NSPeriodicInterval">25</int>
 							</object>
 						</object>
-						<object class="NSCustomView" id="735188378">
+						<object class="NSProgressIndicator" id="534764770">
 							<reference key="NSNextResponder" ref="1046003765"/>
-							<int key="NSvFlags">275</int>
-							<string key="NSFrame">{{306, 60}, {96, 125}}</string>
+							<int key="NSvFlags">1292</int>
+							<object class="NSPSMatrix" key="NSDrawMatrix"/>
+							<string key="NSFrame">{{346, 115}, {16, 16}}</string>
 							<reference key="NSSuperview" ref="1046003765"/>
-							<string key="NSClassName">SUImagePreviewView</string>
+							<int key="NSpiFlags">20746</int>
+							<double key="NSMinValue">1.600000e+01</double>
+							<double key="NSMaxValue">1.000000e+02</double>
 						</object>
 					</object>
 					<string key="NSFrameSize">{422, 230}</string>
@@ -5950,6 +5960,58 @@ ciBoZWxwIHZpZXdlci4</string>
 					</object>
 					<int key="connectionID">1967</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: downloading</string>
+						<reference key="source" ref="735188378"/>
+						<reference key="destination" ref="147861660"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="735188378"/>
+							<reference key="NSDestination" ref="147861660"/>
+							<string key="NSLabel">hidden: downloading</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">downloading</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1969</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: downloading</string>
+						<reference key="source" ref="534764770"/>
+						<reference key="destination" ref="147861660"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="534764770"/>
+							<reference key="NSDestination" ref="147861660"/>
+							<string key="NSLabel">hidden: downloading</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">downloading</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1975</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">animate: downloading</string>
+						<reference key="source" ref="534764770"/>
+						<reference key="destination" ref="147861660"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="534764770"/>
+							<reference key="NSDestination" ref="147861660"/>
+							<string key="NSLabel">animate: downloading</string>
+							<string key="NSBinding">animate</string>
+							<string key="NSKeyPath">downloading</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1977</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -7941,9 +8003,10 @@ ciBoZWxwIHZpZXdlci4</string>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="755845497"/>
 							<reference ref="185640618"/>
-							<reference ref="735188378"/>
 							<reference ref="1027362900"/>
 							<reference ref="163761540"/>
+							<reference ref="735188378"/>
+							<reference ref="534764770"/>
 						</object>
 						<reference key="parent" ref="414504125"/>
 					</object>
@@ -8017,6 +8080,14 @@ ciBoZWxwIHZpZXdlci4</string>
 					<object class="IBObjectRecord">
 						<int key="objectID">1965</int>
 						<reference key="object" ref="735188378"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+						</object>
+						<reference key="parent" ref="1046003765"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1973</int>
+						<reference key="object" ref="534764770"/>
 						<reference key="parent" ref="1046003765"/>
 					</object>
 				</object>
@@ -8273,6 +8344,7 @@ ciBoZWxwIHZpZXdlci4</string>
 					<string>196.ImportedFromIB2</string>
 					<string>1965.IBAttributePlaceholdersKey</string>
 					<string>1965.IBPluginDependency</string>
+					<string>1973.IBPluginDependency</string>
 					<string>2.IBPluginDependency</string>
 					<string>2.ImportedFromIB2</string>
 					<string>205.IBPluginDependency</string>
@@ -8826,6 +8898,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
@@ -9014,7 +9087,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1967</int>
+			<int key="maxID">1977</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
