@@ -6,6 +6,7 @@
 @interface SUAddURLWindowController : NSObject {
 	IBOutlet NSWindow *window;
 	IBOutlet SUDatabaseHelper *db;
+	IBOutlet SUImagePreviewView *preview;
 	NSString *URLString;
 }
 

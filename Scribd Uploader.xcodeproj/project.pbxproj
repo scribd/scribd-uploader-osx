@@ -60,6 +60,9 @@
 		012E5EFF0F2175550037ECDA /* SUDelimitedStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E5EFE0F2175550037ECDA /* SUDelimitedStringValueTransformer.m */; };
 		0132C07D0F16BF99000B17C5 /* Scribd Uploader Help in Resources */ = {isa = PBXBuildFile; fileRef = 0132C07C0F16BF99000B17C5 /* Scribd Uploader Help */; };
 		0132C0970F16C3A6000B17C5 /* SUAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0132C0960F16C3A6000B17C5 /* SUAboutWindowController.m */; };
+		01377DE20F60ED3E00C9121E /* SUImagePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01377DE10F60ED3E00C9121E /* SUImagePreviewView.m */; };
+		01377DFB0F60F07C00C9121E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01377DFA0F60F07C00C9121E /* QuartzCore.framework */; };
+		01377E140F60F61400C9121E /* Preview Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 01377E130F60F61400C9121E /* Preview Background.png */; };
 		013C920E0F21E21200061162 /* SUIndexPathValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 013C920D0F21E21200061162 /* SUIndexPathValueTransformer.m */; };
 		014204E40F29389700C7401A /* Automatic Updates.png in Resources */ = {isa = PBXBuildFile; fileRef = 014204E30F29389700C7401A /* Automatic Updates.png */; };
 		014DB9480F1EE55100F50460 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014DB9470F1EE55100F50460 /* Growl.framework */; };
@@ -205,6 +208,10 @@
 		0132C0170F16BF97000B17C5 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/Scribd Uploader Help"; sourceTree = "<group>"; };
 		0132C0950F16C3A6000B17C5 /* SUAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUAboutWindowController.h; path = Delegates/SUAboutWindowController.h; sourceTree = "<group>"; };
 		0132C0960F16C3A6000B17C5 /* SUAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUAboutWindowController.m; path = Delegates/SUAboutWindowController.m; sourceTree = "<group>"; };
+		01377DE00F60ED3E00C9121E /* SUImagePreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUImagePreviewView.h; sourceTree = "<group>"; };
+		01377DE10F60ED3E00C9121E /* SUImagePreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUImagePreviewView.m; sourceTree = "<group>"; };
+		01377DFA0F60F07C00C9121E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		01377E130F60F61400C9121E /* Preview Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Preview Background.png"; sourceTree = "<group>"; };
 		013C920C0F21E21200061162 /* SUIndexPathValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUIndexPathValueTransformer.h; sourceTree = "<group>"; };
 		013C920D0F21E21200061162 /* SUIndexPathValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUIndexPathValueTransformer.m; sourceTree = "<group>"; };
 		014204E30F29389700C7401A /* Automatic Updates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Automatic Updates.png"; sourceTree = "<group>"; };
@@ -279,6 +286,7 @@
 				017077B70F1C47AC008A3CB0 /* Sparkle.framework in Frameworks */,
 				014DB9480F1EE55100F50460 /* Growl.framework in Frameworks */,
 				012385FE0F2AB3D7007D2B54 /* Security.framework in Frameworks */,
+				01377DFB0F60F07C00C9121E /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +413,8 @@
 				0128AEF90F1478F300EC3C28 /* SUTableStatusColumn.h */,
 				0128AEFA0F1478F300EC3C28 /* SUTableStatusColumn.m */,
 				0128AEFB0F1478F300EC3C28 /* Transformers */,
+				01377DE00F60ED3E00C9121E /* SUImagePreviewView.h */,
+				01377DE10F60ED3E00C9121E /* SUImagePreviewView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -491,6 +501,7 @@
 				0122B7DC0F5DEE2600D2D0DD /* by-nd.png */,
 				0122B7DD0F5DEE2600D2D0DD /* by-sa.png */,
 				0122B7DE0F5DEE2600D2D0DD /* c.png */,
+				01377E130F60F61400C9121E /* Preview Background.png */,
 				0128AF770F14799100EC3C28 /* Upload Complete.aif */,
 				01EC085E0F1C499100F2098B /* dsa_pub.pem */,
 				014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */,
@@ -558,6 +569,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01377DFA0F60F07C00C9121E /* QuartzCore.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				014DB9470F1EE55100F50460 /* Growl.framework */,
 				017077B60F1C47AC008A3CB0 /* Sparkle.framework */,
@@ -683,6 +695,7 @@
 				0122B7E60F5DEE2600D2D0DD /* c.png in Resources */,
 				0122B8C00F5E141800D2D0DD /* FileTypes.plist in Resources */,
 				0122B8D30F5E1DAC00D2D0DD /* Publisher Info.png in Resources */,
+				01377E140F60F61400C9121E /* Preview Background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,6 +761,7 @@
 				01782DB80F60A4E500205ECD /* SUAddURLWindowController.m in Sources */,
 				01782DD20F60A93200205ECD /* SUNotEmptyValueTransformer.m in Sources */,
 				017BEF010F60CD1E00E66086 /* SUAPIHelper.m in Sources */,
+				01377DE20F60ED3E00C9121E /* SUImagePreviewView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
