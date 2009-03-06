@@ -79,7 +79,7 @@
 	
 	self.busyAction = @"login";
 	self.isBusy = YES;
-	NSDictionary *result = [[SUScribdAPI sharedAPI] callApiMethod:@"user.login" parameters:params error:&error];
+	NSDictionary *result = [[SUScribdAPI sharedAPI] callAPIMethod:@"user.login" parameters:params error:&error];
 	self.isBusy = NO;
 	
 	if (error) {
@@ -135,7 +135,7 @@
 			
 			NSMutableDictionary *docParams = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 			[docParams setObject:([document.hidden boolValue] ? @"private" : @"public") forKey:@"access"];
-			if (![document isRemoteFile]) [[SUScribdAPI sharedAPI] apiSubmitFile:document apiMethod:@"docs.upload" parameters:docParams delegate:delegate];
+			if (![document isRemoteFile]) [[SUScribdAPI sharedAPI] submitFile:document toAPIMethod:@"docs.upload" parameters:docParams delegate:delegate];
 			else {
 				[docParams setObject:document.path forKey:@"url"];
 				[[SUScribdAPI sharedAPI] asynchronouslyCallAPIMethod:@"docs.uploadFromUrl" parameters:docParams delegate:delegate];
@@ -160,7 +160,7 @@
 	
 	self.busyAction = @"signup";
 	self.isBusy = YES;
-	NSDictionary *result = [[SUScribdAPI sharedAPI] callApiMethod:@"user.signup" parameters:params error:&error];
+	NSDictionary *result = [[SUScribdAPI sharedAPI] callAPIMethod:@"user.signup" parameters:params error:&error];
 	self.isBusy = NO;
 	
 	if (error) {

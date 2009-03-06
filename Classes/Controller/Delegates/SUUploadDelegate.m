@@ -173,7 +173,7 @@
 	}
 	
 	NSError *error = NULL;
-	[[SUScribdAPI sharedAPI] callApiMethod:@"docs.changeSettings" parameters:parameters error:&error];
+	[[SUScribdAPI sharedAPI] callAPIMethod:@"docs.changeSettings" parameters:parameters error:&error];
 	[parameters release];
 	
 	if (error) {

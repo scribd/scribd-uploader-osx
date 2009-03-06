@@ -35,7 +35,7 @@
 #pragma mark Calling Scribd API methods
 
 /*!
- @method callApiMethod:parameters:error:
+ @method callAPIMethod:parameters:error:
  @abstract Makes an HTTP call to the Scribd API server and parses the response.
  @discussion The HTTP call will be made synchronously.
  @param method The Scribd API method.
@@ -53,10 +53,10 @@
  returned XML.
  */
 
-- (NSDictionary *) callApiMethod:(NSString *)method parameters:(NSDictionary *)parameters error:(NSError **)error;
+- (NSDictionary *) callAPIMethod:(NSString *)method parameters:(NSDictionary *)parameters error:(NSError **)error;
 
 /*!
- @method asynchronouslyCallAPIMethod:apiMethod:parameters:error:
+ @method asynchronouslyCallAPIMethod:parameters:error:
  @abstract Makes an HTTP call to the Scribd API server, with future events
  handled by a given delegate.
  @discussion The HTTP call will be made asynchronously using ASIHTTPRequest.
@@ -72,7 +72,7 @@
 - (void) asynchronouslyCallAPIMethod:(NSString *)method parameters:(NSDictionary *)parameters delegate:(id)delegate;
 
 /*!
- @method apiSubmitFile:apiMethod:parameters:error:
+ @method submitFile:toAPIMethod:parameters:error:
  @abstract Uploads a file to Scribd via an API method.
  @discussion The HTTP call will be made asynchronously using ASIHTTPRequest.
  Information, such as progress and errors, are passed to an
@@ -85,7 +85,7 @@
  events about the download.
  */
 
-- (void) apiSubmitFile:(SUDocument *)file apiMethod:(NSString *)method parameters:(NSDictionary *)parameters delegate:(id)delegate;
+- (void) submitFile:(SUDocument *)file toAPIMethod:(NSString *)method parameters:(NSDictionary *)parameters delegate:(id)delegate;
 
 #pragma mark Using other Scribd.com features
 

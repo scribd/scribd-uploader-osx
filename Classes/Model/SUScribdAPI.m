@@ -19,7 +19,7 @@ static SUScribdAPI *sharedAPI = NULL;
  Returns the formatted Scribd API URL for a set of parameters and an API method.
  */
 
-- (NSURL *) apiUrlWithMethod:(NSString *)method parameters:(NSDictionary *)parameters;
+- (NSURL *) APIURLWithMethod:(NSString *)method parameters:(NSDictionary *)parameters;
 
 /*
  Converts a Scribd XML response to an NSDictionary and constructs an NSError if
@@ -135,8 +135,8 @@ static SUScribdAPI *sharedAPI = NULL;
 
 #pragma mark Calling Scribd API methods
 
-- (NSDictionary *) callApiMethod:(NSString *)method parameters:(NSDictionary *)parameters error:(NSError **)error {
-	NSURL *URL = [self apiUrlWithMethod:method parameters:parameters];
+- (NSDictionary *) callAPIMethod:(NSString *)method parameters:(NSDictionary *)parameters error:(NSError **)error {
+	NSURL *URL = [self APIURLWithMethod:method parameters:parameters];
 	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithContentsOfURL:URL options:NSXMLDocumentTidyXML error:error];
 	
 	if (*error) return NULL; // xml will be nil so no need to release
@@ -147,7 +147,7 @@ static SUScribdAPI *sharedAPI = NULL;
 }
 
 - (void) asynchronouslyCallAPIMethod:(NSString *)method parameters:(NSDictionary *)parameters delegate:(id)delegate {
-	NSURL *URL = [self apiUrlWithMethod:method parameters:parameters];
+	NSURL *URL = [self APIURLWithMethod:method parameters:parameters];
 	ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:URL];
 	
 	request.delegate = delegate;
@@ -158,8 +158,8 @@ static SUScribdAPI *sharedAPI = NULL;
 	[uploadOperation release];
 }
 
-- (void) apiSubmitFile:(SUDocument *)file apiMethod:(NSString *)method parameters:(NSDictionary *)parameters delegate:(id)delegate {
-	NSURL *URL = [self apiUrlWithMethod:method parameters:parameters];
+- (void) submitFile:(SUDocument *)file toAPIMethod:(NSString *)method parameters:(NSDictionary *)parameters delegate:(id)delegate {
+	NSURL *URL = [self APIURLWithMethod:method parameters:parameters];
 	ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:URL];
 	
 	request.delegate = delegate;
@@ -284,7 +284,7 @@ static SUScribdAPI *sharedAPI = NULL;
 
 #pragma mark API
 
-- (NSURL *) apiUrlWithMethod:(NSString *)method parameters:(NSDictionary *)parameters {
+- (NSURL *) APIURLWithMethod:(NSString *)method parameters:(NSDictionary *)parameters {
 	NSMutableDictionary *URLParameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 	[URLParameters setObject:[settings objectForKey:@"APIKey"] forKey:@"api_key"];
 	[URLParameters setObject:[settings objectForKey:@"APISecret"] forKey:@"api_sig"];
