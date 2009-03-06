@@ -23,6 +23,7 @@
 #import "SUDirectoryScanOperation.h"
 #import "SUDirectoryScanner.h"
 
+#import "SUAPIHelper.h"
 #import "SUCategory.h"
 #import "SUTitleCleanerOperation.h"
 #import "SUDocument.h"

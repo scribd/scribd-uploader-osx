@@ -16,7 +16,7 @@
 
 @property (retain) NSDictionary *mappings;
 
-#pragma mark Initialization and deallocation
+#pragma mark Initializing and deallocating
 
 /*!
  @method initWithDictionary:

@@ -2,7 +2,7 @@
 
 @implementation SUPublisherPanelDelegate
 
-#pragma mark Initialization and deallocation
+#pragma mark Initializing and deallocating
 
 /*
  Configures value transformers.

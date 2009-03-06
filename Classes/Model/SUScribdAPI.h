@@ -19,7 +19,6 @@
 
 @interface SUScribdAPI : NSObject {
 	NSOperationQueue *uploadQueue;
-	NSDictionary *settings;
 }
 
 #pragma mark Working with the singleton instance

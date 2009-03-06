@@ -6,7 +6,7 @@
 
 @synthesize mappings;
 
-#pragma mark Initialization and deallocation
+#pragma mark Initializing and deallocating
 
 - (id) initWithDictionary:(NSDictionary *)dictionary {
 	if (self = [super init]) {

@@ -6,7 +6,7 @@
 
 @synthesize URLString;
 
-#pragma mark Initialization and deallocation
+#pragma mark Initializing and deallocating
 
 /*
  Sets up value transformers.

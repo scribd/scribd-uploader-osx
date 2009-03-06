@@ -7,7 +7,7 @@
 @synthesize trueValue;
 @synthesize falseValue;
 
-#pragma mark Initialization and deallocation
+#pragma mark Initializing and deallocating
 
 - (id) initWithTrueValue:(NSObject *)whenTrue falseValue:(NSObject *)whenFalse {
 	if (self = [super init]) {

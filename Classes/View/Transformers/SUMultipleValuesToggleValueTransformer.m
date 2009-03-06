@@ -11,7 +11,7 @@
 @synthesize singularInsertions;
 @synthesize pluralInsertions;
 
-#pragma mark Initialization and deallocation
+#pragma mark Initializing and deallocating
 
 /*
  Releases local memory usage.

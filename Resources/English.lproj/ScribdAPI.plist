@@ -14,6 +14,16 @@
 	<string>4n01s97v3qimxlixkuz8s</string>
 	<key>APISecret</key>
 	<string>sec-5qwk78grmqsj98veknx86mazrh</string>
+	<key>APIUploadMethod</key>
+	<string>docs.upload</string>
+	<key>APIChangeSettingsMethod</key>
+	<string>docs.changeSettings</string>
+	<key>APIUploadURLMethod</key>
+	<string>docs.uploadFromUrl</string>
+	<key>APILogInMethod</key>
+	<string>user.login</string>
+	<key>APISignUpMethod</key>
+	<string>user.signup</string>
 	<key>ErrorMessages</key>
 	<dict>
 		<key>ChangeSettings</key>
@@ -59,6 +69,11 @@
 			<dict>
 				<key>Message</key>
 				<string>The file could not be uploaded because Scribd doesn’t accept files of that type.</string>
+			</dict>
+			<key>606</key>
+			<dict>
+				<key>Message</key>
+				<string>The file was not uploaded because Scribd.com couldn’t access it.</string>
 			</dict>
 		</dict>
 		<key>SignUp</key>

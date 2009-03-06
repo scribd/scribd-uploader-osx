@@ -24,7 +24,7 @@
 
 @property (retain) NSObject *falseValue;
 
-#pragma mark Initialization and deallocation
+#pragma mark Initializing and deallocating
 
 /*!
  @method initWithTrueValue:falseValue:
