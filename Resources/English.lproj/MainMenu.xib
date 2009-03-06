@@ -3296,7 +3296,7 @@ ciBoZWxwIHZpZXdlci4</string>
 			<object class="NSWindowTemplate" id="414504125">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{196, 374}, {480, 136}}</string>
+				<string key="NSWindowRect">{{578, 404}, {480, 136}}</string>
 				<int key="NSWTFlags">1677722624</int>
 				<string key="NSWindowTitle">Add URL</string>
 				<string key="NSWindowClass">NSWindow</string>
