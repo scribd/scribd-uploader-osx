@@ -9,6 +9,7 @@
 	IBOutlet SUImagePreviewView *preview;
 	NSString *URLString;
 	BOOL downloading;
+	NSMutableData *previewImageData;
 }
 
 #pragma mark Properties

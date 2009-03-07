@@ -1,20 +1,5 @@
 #import "SUAddURLWindowController.h"
 
-@interface SUAddURLWindowController (Private)
-
-#pragma mark Background tasks
-
-/*
- Downloads a PDF, renders the first page to an image, and sets the preview
- window to display the image.
- */
-
-- (void) loadPDF:(id)unused;
-
-@end
-
-#pragma mark -
-
 @implementation SUAddURLWindowController
 
 #pragma mark Properties
@@ -32,14 +17,33 @@
 	[NSValueTransformer setValueTransformer:[[[SUNotEmptyValueTransformer alloc] init] autorelease] forName:@"SUNotEmpty"];
 }
 
+/*
+ Sets up KVO observers and initializes fields.
+ */
+
 - (void) awakeFromNib {
 	[self addObserver:self forKeyPath:@"URLString" options:NSKeyValueObservingOptionNew context:NULL];
+	previewImageData = NULL;
 }
+
+/*
+ Begins a new preview download if the URL is a valid PDF URL.
+ */
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"URLString"]) {
-		if ([[self.URLString pathExtension] isEqualToString:@"pdf"])
-			[NSThread detachNewThreadSelector:@selector(loadPDF:) toTarget:self withObject:NULL];
+		if ([[self.URLString pathExtension] isEqualToString:@"pdf"]) {
+			self.downloading = YES;
+			
+			if (previewImageData) [previewImageData release];
+			previewImageData = [[NSMutableData alloc] init];
+			
+			NSURL *URL = [[NSURL alloc] initWithString:self.URLString];
+			NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
+			[URL release];
+			[[NSURLConnection alloc] initWithRequest:request delegate:self]; // will be released in a delegate method
+			[request release];
+		}
 		else [preview setImage:NULL];
 	}
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -58,28 +62,52 @@
 	[[NSHelpManager sharedHelpManager] openHelpAnchor:@"add_url" inBook:@"Scribd Uploader Help"];
 }
 
-@end
+#pragma mark NSURLConnection delegate
 
-#pragma mark -
+/*
+ Resets the preview data in preparation for a new download.
+ */
 
-@implementation SUAddURLWindowController (Private)
+- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+	[previewImageData setLength:0];
+}
 
-- (void) loadPDF:(id)unused {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	self.downloading = YES;
+/*
+ Appends newly received data to the preview data.
+ */
+
+- (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+	[previewImageData appendData:data];
+}
+
+/*
+ Aborts the preview operation, releasing local variables.
+ */
+
+- (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+	[connection release];
+	[previewImageData release];
+	previewImageData = NULL;
+	self.downloading = NO;
+}
+
+/*
+ Finishes the preview operation, building a preview from the downloaded PDF data
+ and setting up the NSImageView.
+ */
+
+- (void) connectionDidFinishLoading:(NSURLConnection *)connection {
+	NSPDFImageRep *representation = [NSPDFImageRep imageRepWithData:previewImageData];
 	
-	NSURL *URL = [[NSURL alloc] initWithString:self.URLString];
-	NSData *PDFData = [[NSData alloc] initWithContentsOfURL:URL];
-	[URL release];
-	NSPDFImageRep *representation = [NSPDFImageRep imageRepWithData:PDFData];
-	[PDFData release];
+	[connection release];
+	[previewImageData release];
+	previewImageData = NULL;
+	self.downloading = NO;
+	
 	NSImage *image = [[NSImage alloc] initWithSize:[preview bounds].size];
 	[image addRepresentation:representation];
 	[preview setImage:image];
 	[image release];
-	
-	self.downloading = NO;
-	[pool release];
 }
 
 @end
