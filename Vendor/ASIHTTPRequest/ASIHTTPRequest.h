@@ -15,6 +15,7 @@
 #if TARGET_OS_IPHONE
 	#import <CFNetwork/CFNetwork.h>
 #endif
+#import <stdio.h>
 
 typedef enum _ASINetworkErrorType {
     ASIConnectionFailureErrorType = 1,
@@ -23,7 +24,8 @@ typedef enum _ASINetworkErrorType {
     ASIRequestCancelledErrorType = 4,
     ASIUnableToCreateRequestErrorType = 5,
     ASIInternalErrorWhileBuildingRequestType  = 6,
-    ASIInternalErrorWhileApplyingCredentialsType  = 7
+    ASIInternalErrorWhileApplyingCredentialsType  = 7,
+	ASIFileManagementError = 8
 	
 } ASINetworkErrorType;
 
@@ -50,10 +52,10 @@ typedef enum _ASINetworkErrorType {
 	// Can be used to manually insert cookie headers to a request, but it's more likely that sessionCookies will do this for you
 	NSMutableArray *requestCookies;
 	
-	// Will be populated with Cookies
+	// Will be populated with cookies
 	NSArray *responseCookies;
 	
-	// If use cokie persistance is true, network requests will present valid cookies from previous requests
+	// If use useCookiePersistance is true, network requests will present valid cookies from previous requests
 	BOOL useCookiePersistance;
 	
 	// If useKeychainPersistance is true, network requests will attempt to read credentials from the keychain, and will save them in the keychain when they are successfully presented
@@ -62,9 +64,15 @@ typedef enum _ASINetworkErrorType {
 	// If useSessionPersistance is true, network requests will save credentials and reuse for the duration of the session (until clearSession is called)
 	BOOL useSessionPersistance;
 	
+	// If allowCompressedResponse is true, requests will inform the server they can accept compressed data, and will automatically decompress gzipped responses. Default is true.
+	BOOL allowCompressedResponse;
+	
 	// When downloadDestinationPath is set, the result of this request will be downloaded to the file at this location
 	// If downloadDestinationPath is not set, download data will be stored in memory
 	NSString *downloadDestinationPath;
+	
+	//The location that files will be downloaded to. Once a download is complete, files will be decompressed (if necessary) and moved to downloadDestinationPath
+	NSString *temporaryFileDownloadPath;
 	
 	// Used for writing data to a file when downloadDestinationPath is set
 	NSOutputStream *outputStream;
@@ -95,8 +103,8 @@ typedef enum _ASINetworkErrorType {
 	// Whether we've seen the headers of the response yet
     BOOL haveExaminedHeaders;
 	
-	// Data we receive will be stored here
-	NSMutableData *receivedData;
+	// Data we receive will be stored here. Data may be compressed unless allowCompressedResponse is false - you should use [request responseData] instead in most cases
+	NSMutableData *rawResponseData;
 	
 	// Used for sending and receiving data
     CFHTTPMessageRef request;	
@@ -105,6 +113,8 @@ typedef enum _ASINetworkErrorType {
 	// Authentication currently being used for prompting and resuming
     CFHTTPAuthenticationRef requestAuthentication; 
 	NSMutableDictionary *requestCredentials;
+	int authenticationRetryCount;
+	NSString *authenticationMethod;
 	
 	// HTTP status code, eg: 200 = OK, 404 = Not found etc
 	int responseStatusCode;
@@ -154,7 +164,7 @@ typedef enum _ASINetworkErrorType {
 	ASIHTTPRequest *mainRequest;
 	
 	// When NO, this request will only update the progress indicator when it completes
-	// When YES, this request will update the progress indicator according to how much data it has recieved so far
+	// When YES, this request will update the progress indicator according to how much data it has received so far
 	// The default for requests is YES
 	// Also see the comments in ASINetworkQueue.h
 	BOOL showAccurateProgress;
@@ -169,6 +179,8 @@ typedef enum _ASINetworkErrorType {
 	
 	NSStringEncoding defaultResponseEncoding;
 	NSStringEncoding responseEncoding;
+	
+	BOOL allowResumeForFileDownloads;
 }
 
 #pragma mark init / dealloc
@@ -185,13 +197,22 @@ typedef enum _ASINetworkErrorType {
 
 #pragma mark get information about this request
 
-// Returns the contents of the result as an NSString (not appropriate for binary data - used receivedData instead)
-- (NSString *)dataString;
+// Returns the contents of the result as an NSString (not appropriate for binary data - used responseData instead)
+- (NSString *)responseString;
+
+// Response data, automatically uncompressed where appropriate
+- (NSData *)responseData;
+
+// Returns true if the response was gzip compressed
+- (BOOL)isResponseCompressed;
 
 #pragma mark request logic
 
-// Start loading the request
+// Main request loop is in here
 - (void)loadRequest;
+
+// Start the read stream. Called by loadRequest, and again to restart the request when authentication is needed
+- (void)startRequest;
 
 // Cancel loading and clean up
 - (void)cancelLoad;
@@ -272,6 +293,14 @@ typedef enum _ASINetworkErrorType {
 // Dump all session data (authentication and cookies)
 + (void)clearSession;
 
+#pragma mark gzip compression
+
+// Uncompress gzipped data with zlib
++ (NSData *)uncompressZippedData:(NSData*)compressedData;
+
+// Uncompress gzipped data from a file into another file, used when downloading to a file
++ (int)uncompressZippedDataFromFile:(NSString *)sourcePath toFile:(NSString *)destinationPath;
++ (int)uncompressZippedDataFromSource:(FILE *)source toDestination:(FILE *)dest;
 
 @property (retain) NSString *username;
 @property (retain) NSString *password;
@@ -284,6 +313,7 @@ typedef enum _ASINetworkErrorType {
 @property (assign) BOOL useKeychainPersistance;
 @property (assign) BOOL useSessionPersistance;
 @property (retain) NSString *downloadDestinationPath;
+@property (retain) NSString *temporaryFileDownloadPath;
 @property (assign) SEL didFinishSelector;
 @property (assign) SEL didFailSelector;
 @property (retain,readonly) NSString *authenticationRealm;
@@ -296,7 +326,7 @@ typedef enum _ASINetworkErrorType {
 @property (assign) BOOL useCookiePersistance;
 @property (retain) NSDictionary *requestCredentials;
 @property (assign) int responseStatusCode;
-@property (retain) NSMutableData *receivedData;
+@property (retain) NSMutableData *rawResponseData;
 @property (retain) NSDate *lastActivityTime;
 @property (assign) NSTimeInterval timeOutSeconds;
 @property (retain) NSString *requestMethod;
@@ -310,4 +340,6 @@ typedef enum _ASINetworkErrorType {
 @property (assign) unsigned long long uploadBufferSize;
 @property (assign) NSStringEncoding defaultResponseEncoding;
 @property (assign) NSStringEncoding responseEncoding;
+@property (assign) BOOL allowCompressedResponse;
+@property (assign) BOOL allowResumeForFileDownloads;
 @end

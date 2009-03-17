@@ -2,7 +2,7 @@
 //  ASIHTTPRequest.m
 //
 //  Created by Ben Copsey on 04/10/2007.
-//  Copyright 2007-2008 All-Seeing Interactive. All rights reserved.
+//  Copyright 2007-2009 All-Seeing Interactive. All rights reserved.
 //
 //  A guide to the main features is available at:
 //  http://allseeing-i.com/ASIHTTPRequest
@@ -12,6 +12,7 @@
 
 #import "ASIHTTPRequest.h"
 #import "NSHTTPCookieAdditions.h"
+#import <zlib.h>
 
 // We use our own custom run loop mode as CoreAnimation seems to want to hijack our threads otherwise
 static CFStringRef ASIHTTPRequestRunMode = CFSTR("ASIHTTPRequest");
@@ -60,6 +61,7 @@ static NSError *ASIUnableToCreateRequestError;
 	self = [super init];
 	[self setRequestMethod:@"GET"];
 	lastBytesSent = 0;
+
 	showAccurateProgress = YES;
 	shouldResetProgressIndicators = YES;
 	updatedProgress = NO;
@@ -67,18 +69,23 @@ static NSError *ASIUnableToCreateRequestError;
 	[self setPassword:nil];
 	[self setUsername:nil];
 	[self setRequestHeaders:nil];
+	authenticationRetryCount = 0;
+	authenticationMethod = nil;
 	authenticationRealm = nil;
 	outputStream = nil;
 	requestAuthentication = NULL;
 	haveBuiltPostBody = NO;
 	request = NULL;
+	[self setAllowCompressedResponse:YES];
 	[self setDefaultResponseEncoding:NSISOLatin1StringEncoding];
 	[self setUploadBufferSize:0];
 	[self setResponseHeaders:nil];
 	[self setTimeOutSeconds:10];
+	[self setAllowResumeForFileDownloads:NO];
 	[self setUseKeychainPersistance:NO];
 	[self setUseSessionPersistance:YES];
 	[self setUseCookiePersistance:YES];
+	[self setRawResponseData:nil];
 	[self setRequestCookies:[[[NSMutableArray alloc] init] autorelease]];
 	[self setDidFinishSelector:@selector(requestFinished:)];
 	[self setDidFailSelector:@selector(requestFailed:)];
@@ -104,6 +111,7 @@ static NSError *ASIUnableToCreateRequestError;
 	[requestHeaders release];
 	[requestCookies release];
 	[downloadDestinationPath release];
+	[temporaryFileDownloadPath release];
 	[outputStream release];
 	[username release];
 	[password release];
@@ -113,10 +121,11 @@ static NSError *ASIUnableToCreateRequestError;
 	[authenticationLock release];
 	[lastActivityTime release];
 	[responseCookies release];
-	[receivedData release];
+	[rawResponseData release];
 	[responseHeaders release];
 	[requestMethod release];
 	[cancelledLock release];
+	[authenticationMethod release];
 	[super dealloc];
 }
 
@@ -160,22 +169,38 @@ static NSError *ASIUnableToCreateRequestError;
 - (void)cancel
 {
 	[self failWithError:ASIRequestCancelledError];
+	[super cancel];
 	[self cancelLoad];
 	complete = YES;
-	[super cancel];
+
 }
 
 
-// Call this method to get the recieved data as an NSString. Don't use for Binary data!
-- (NSString *)dataString
+// Call this method to get the received data as an NSString. Don't use for Binary data!
+- (NSString *)responseString
 {
-	if (!receivedData) {
+	NSData *data = [self responseData];
+	if (!data) {
 		return nil;
 	}
 	
-	return [[[NSString alloc] initWithBytes:[receivedData bytes] length:[receivedData length] encoding:[self responseEncoding]] autorelease];
+	return [[[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:[self responseEncoding]] autorelease];
 }
 
+- (BOOL)isResponseCompressed
+{
+	NSString *encoding = [[self responseHeaders] objectForKey:@"Content-Encoding"];
+	return encoding && [encoding rangeOfString:@"gzip"].location != NSNotFound;
+}
+
+- (NSData *)responseData
+{	
+	if ([self isResponseCompressed]) {
+		return [ASIHTTPRequest uncompressZippedData:[self rawResponseData]];
+	} else {
+		return [self rawResponseData];
+	}
+}
 
 #pragma mark request logic
 
@@ -243,6 +268,18 @@ static NSError *ASIUnableToCreateRequestError;
 		[self buildPostBody];
 	}
 	
+	
+	// Accept a compressed response
+	if ([self allowCompressedResponse]) {
+		[self addRequestHeader:@"Accept-Encoding" value:@"gzip"];
+	}
+	
+	// Should this request resume an existing download?
+	if ([self allowResumeForFileDownloads] && [self downloadDestinationPath] && [self temporaryFileDownloadPath] && [[NSFileManager defaultManager] fileExistsAtPath:[self temporaryFileDownloadPath]]) {
+		unsigned long long downloadedSoFar = [[[NSFileManager defaultManager] fileAttributesAtPath:[self temporaryFileDownloadPath] traverseLink:NO] fileSize];
+		[self addRequestHeader:@"Range" value:[NSString stringWithFormat:@"bytes=%llu-",downloadedSoFar]];
+	}
+	
 	// Add custom headers
 	NSDictionary *headers;
 	
@@ -267,11 +304,8 @@ static NSError *ASIUnableToCreateRequestError;
 	
 }
 
-
-// Start the request
-- (void)loadRequest
+- (void)startRequest
 {
-
 	[cancelledLock lock];
 	
 	if ([self isCancelled]) {
@@ -296,8 +330,9 @@ static NSError *ASIUnableToCreateRequestError;
 		contentLength = 0;
 	}
 	[self setResponseHeaders:nil];
-    [self setReceivedData:[[[NSMutableData alloc] init] autorelease]];
-    
+	if (![self downloadDestinationPath]) {
+		[self setRawResponseData:[[[NSMutableData alloc] init] autorelease]];
+    }
     // Create the stream for the request.
     readStream = CFReadStreamCreateForStreamedHTTPRequest(kCFAllocatorDefault, request,readStream);
     if (!readStream) {
@@ -338,8 +373,15 @@ static NSError *ASIUnableToCreateRequestError;
 			amount = postLength;
 		}
 		[self resetUploadProgress:amount];
-	}
-	
+	}	
+}
+
+// Start the request
+- (void)loadRequest
+{
+
+
+	[self startRequest];
 	
 	
 	// Record when the request started, so we can timeout if nothing happens
@@ -395,13 +437,17 @@ static NSError *ASIUnableToCreateRequestError;
         readStream = NULL;
     }
 	
-    if (receivedData) {
-		[self setReceivedData:nil];
+    if (rawResponseData) {
+		[self setRawResponseData:nil];
 	
-	// If we were downloading to a file, let's remove it
-	} else if (downloadDestinationPath) {
+	// If we were downloading to a file
+	} else if (temporaryFileDownloadPath) {
 		[outputStream close];
-		[[NSFileManager defaultManager] removeItemAtPath:downloadDestinationPath error:NULL];
+		
+		// If we haven't said we might want to resume, let's remove the temporary file too
+		if (![self allowResumeForFileDownloads]) {
+			[[NSFileManager defaultManager] removeItemAtPath:temporaryFileDownloadPath error:NULL];
+		}
 	}
 	
 	[self setResponseHeaders:nil];
@@ -484,9 +530,10 @@ static NSError *ASIUnableToCreateRequestError;
 {
 	[cancelledLock lock];
 	if ([self isCancelled]) {
+		[cancelledLock unlock];
 		return;
 	}
-	unsigned long long byteCount = [[(NSNumber *)CFReadStreamCopyProperty (readStream, kCFStreamPropertyHTTPRequestBytesWrittenCount) autorelease] unsignedLongLongValue];
+	unsigned long long byteCount = [[(NSNumber *)CFReadStreamCopyProperty(readStream, kCFStreamPropertyHTTPRequestBytesWrittenCount) autorelease] unsignedLongLongValue];
 	
 	// If this is the first time we've written to the buffer, byteCount will be the size of the buffer (currently seems to be 128KB on both Mac and iPhone)
 	// We will remove this from any progress display, as kCFStreamPropertyHTTPRequestBytesWrittenCount does not tell us how much data has actually be written
@@ -569,10 +616,12 @@ static NSError *ASIUnableToCreateRequestError;
 
 - (void)updateDownloadProgress
 {
-	unsigned long long bytesReadSoFar = totalBytesRead;
+	
 	
 	// We won't update download progress until we've examined the headers, since we might need to authenticate
 	if (responseHeaders) {
+		
+		unsigned long long bytesReadSoFar = totalBytesRead;
 		
 		if (bytesReadSoFar > lastBytesRead) {
 			[self setLastActivityTime:[NSDate date]];
@@ -719,8 +768,11 @@ static NSError *ASIUnableToCreateRequestError;
 	BOOL isAuthenticationChallenge = NO;
 	CFHTTPMessageRef headers = (CFHTTPMessageRef)CFReadStreamCopyProperty(readStream, kCFStreamPropertyHTTPResponseHeader);
 	if (CFHTTPMessageIsHeaderComplete(headers)) {
-		responseHeaders = (NSDictionary *)CFHTTPMessageCopyAllHeaderFields(headers);
-		responseStatusCode = CFHTTPMessageGetResponseStatusCode(headers);
+		
+		CFDictionaryRef headerFields = CFHTTPMessageCopyAllHeaderFields(headers);
+		[self setResponseHeaders:(NSDictionary *)headerFields];
+		CFRelease(headerFields);
+		[self setResponseStatusCode:CFHTTPMessageGetResponseStatusCode(headers)];
 		
 		// Is the server response a challenge for credentials?
 		isAuthenticationChallenge = (responseStatusCode == 401);
@@ -745,8 +797,17 @@ static NSError *ASIUnableToCreateRequestError;
 			NSString *contentType = [[self responseHeaders] objectForKey:@"Content-Type"];
 			NSStringEncoding encoding = [self defaultResponseEncoding];
 			if (contentType) {
-				NSArray *parts = [contentType componentsSeparatedByString:@"="];
-				NSString *IANAEncoding = [parts objectAtIndex:[parts count]-1];
+
+				NSString *charsetSeparator = @"charset=";
+				NSScanner *charsetScanner = [NSScanner scannerWithString: contentType];
+				NSString *IANAEncoding = nil;
+
+				if ([charsetScanner scanUpToString: charsetSeparator intoString: NULL] && [charsetScanner scanLocation] < [contentType length])
+				{
+					[charsetScanner setScanLocation: [charsetScanner scanLocation] + [charsetSeparator length]];
+					[charsetScanner scanUpToString: @";" intoString: &IANAEncoding];
+				}
+
 				if (IANAEncoding) {
 					CFStringEncoding cfEncoding = CFStringConvertIANACharSetNameToEncoding((CFStringRef)IANAEncoding);
 					if (cfEncoding != kCFStringEncodingInvalidId) {
@@ -796,7 +857,8 @@ static NSError *ASIUnableToCreateRequestError;
 
 - (BOOL)applyCredentials:(NSMutableDictionary *)newCredentials
 {
-	
+	authenticationRetryCount++;
+
 	if (newCredentials && requestAuthentication && request) {
 		// Apply whatever credentials we've built up to the old request
 		if (CFHTTPMessageApplyCredentialDictionary(request, requestAuthentication, (CFMutableDictionaryRef)newCredentials, NULL)) {
@@ -811,10 +873,10 @@ static NSError *ASIUnableToCreateRequestError;
 				[ASIHTTPRequest setSessionCredentials:newCredentials];
 			}
 			[self setRequestCredentials:newCredentials];
-			return TRUE;
+			return YES;
 		}
 	}
-	return FALSE;
+	return NO;
 }
 
 - (NSMutableDictionary *)findCredentials
@@ -823,6 +885,9 @@ static NSError *ASIUnableToCreateRequestError;
 	
 	// Is an account domain needed? (used currently for NTLM only)
 	if (CFHTTPAuthenticationRequiresAccountDomain(requestAuthentication)) {
+		if (!domain) {
+			[self setDomain:@""];
+		}
 		[newCredentials setObject:domain forKey:(NSString *)kCFHTTPAuthenticationAccountDomain];
 	}
 	
@@ -890,7 +955,9 @@ static NSError *ASIUnableToCreateRequestError;
 		CFHTTPMessageRef responseHeader = (CFHTTPMessageRef) CFReadStreamCopyProperty(readStream,kCFStreamPropertyHTTPResponseHeader);
 		requestAuthentication = CFHTTPAuthenticationCreateFromResponse(NULL, responseHeader);
 		CFRelease(responseHeader);
-	}	
+		authenticationMethod = (NSString *)CFHTTPAuthenticationCopyMethod(requestAuthentication);
+	}
+
 	
 	if (!requestAuthentication) {
 		[self failWithError:[NSError errorWithDomain:NetworkRequestErrorDomain code:ASIInternalErrorWhileApplyingCredentialsType userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Failed to get authentication object from response headers",NSLocalizedDescriptionKey,nil]]];
@@ -928,8 +995,14 @@ static NSError *ASIUnableToCreateRequestError;
 	[self cancelLoad];
 	
 	if (requestCredentials) {
-		if ([self applyCredentials:requestCredentials]) {
-			[self loadRequest];
+		NSLog(@"%hi",authenticationRetryCount);
+		if (((authenticationMethod != (NSString *)kCFHTTPAuthenticationSchemeNTLM) || authenticationRetryCount < 2) && [self applyCredentials:requestCredentials]) {
+			[self startRequest];
+			
+		// We've failed NTLM authentication twice, we should assume our credentials are wrong
+		} else if (authenticationMethod == (NSString *)kCFHTTPAuthenticationSchemeNTLM && authenticationRetryCount == 2) {
+			[self failWithError:ASIAuthenticationError];
+	
 		} else {
 			[self failWithError:[NSError errorWithDomain:NetworkRequestErrorDomain code:ASIInternalErrorWhileApplyingCredentialsType userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Failed to apply credentials to request",NSLocalizedDescriptionKey,nil]]];
 		}
@@ -943,7 +1016,7 @@ static NSError *ASIUnableToCreateRequestError;
 		if (newCredentials) {
 			
 			if ([self applyCredentials:newCredentials]) {
-				[self loadRequest];
+				[self startRequest];
 			} else {
 				[self failWithError:[NSError errorWithDomain:NetworkRequestErrorDomain code:ASIInternalErrorWhileApplyingCredentialsType userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"Failed to apply credentials to request",NSLocalizedDescriptionKey,nil]]];
 			}
@@ -971,7 +1044,7 @@ static NSError *ASIUnableToCreateRequestError;
 
 
 - (void)handleNetworkEvent:(CFStreamEventType)type
-{
+{	
     // Dispatch the stream events.
     switch (type) {
         case kCFStreamEventHasBytesAvailable:
@@ -1001,8 +1074,14 @@ static NSError *ASIUnableToCreateRequestError;
 			return;
 		}
 	}
+	int bufferSize = 2048;
+	if (contentLength > 262144) {
+		bufferSize = 65536;
+	} else if (contentLength > 65536) {
+		bufferSize = 16384;
+	}
 	
-    UInt8 buffer[2048];
+    UInt8 buffer[bufferSize];
     CFIndex bytesRead = CFReadStreamRead(readStream, buffer, sizeof(buffer));
 	
 	
@@ -1018,25 +1097,27 @@ static NSError *ASIUnableToCreateRequestError;
 		// Are we downloading to a file?
 		if (downloadDestinationPath) {
 			if (!outputStream) {
-				outputStream = [[NSOutputStream alloc] initToFileAtPath:downloadDestinationPath append:NO];
+				BOOL append = NO;
+				if (![self temporaryFileDownloadPath]) {
+					[self setTemporaryFileDownloadPath:[NSTemporaryDirectory() stringByAppendingPathComponent:[[NSProcessInfo processInfo] globallyUniqueString]]];
+				} else if ([self allowResumeForFileDownloads]) {
+					append = YES;
+				}
+				
+				outputStream = [[NSOutputStream alloc] initToFileAtPath:temporaryFileDownloadPath append:append];
 				[outputStream open];
 			}
 			[outputStream write:buffer maxLength:bytesRead];
 			
 			//Otherwise, let's add the data to our in-memory store
 		} else {
-			[receivedData appendBytes:buffer length:bytesRead];
+			[rawResponseData appendBytes:buffer length:bytesRead];
 		}
     }
-	
-	
 }
-
 
 - (void)handleStreamComplete
 {
-	
-	
 	//Try to read the headers (if this is a HEAD request handleBytesAvailable available may not be called)
 	if (!responseHeaders) {
 		if ([self readResponseHeadersReturningAuthenticationFailure]) {
@@ -1046,7 +1127,7 @@ static NSError *ASIUnableToCreateRequestError;
 	}
 	[progressLock lock];	
 	complete = YES;
-	[self updateProgressIndicators];	
+	[self updateProgressIndicators];
 	
     if (readStream) {
         CFReadStreamClose(readStream);
@@ -1056,13 +1137,51 @@ static NSError *ASIUnableToCreateRequestError;
         readStream = NULL;
     }
 	
+	NSError *fileError = nil;
+	
 	// Close the output stream as we're done writing to the file
-	if (downloadDestinationPath) {
+	if (temporaryFileDownloadPath) {
 		[outputStream close];
+		
+		// Decompress the file (if necessary) directly to the destination path
+		if ([self isResponseCompressed]) {
+			int decompressionStatus = [ASIHTTPRequest uncompressZippedDataFromFile:temporaryFileDownloadPath toFile:downloadDestinationPath];
+			if (decompressionStatus != Z_OK) {
+				fileError = [NSError errorWithDomain:NetworkRequestErrorDomain code:ASIFileManagementError userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"Decompression of %@ failed with code %hi",temporaryFileDownloadPath,decompressionStatus],NSLocalizedDescriptionKey,nil]];
+			}
+				
+			//Remove the temporary file
+			NSError *removeError = nil;
+			[[NSFileManager defaultManager] removeItemAtPath:temporaryFileDownloadPath error:&removeError];
+			if (removeError) {
+				fileError = [NSError errorWithDomain:NetworkRequestErrorDomain code:ASIFileManagementError userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"Failed to delete file at %@ with error: %@",temporaryFileDownloadPath,removeError],NSLocalizedDescriptionKey,removeError,NSUnderlyingErrorKey,nil]];
+			}			
+		} else {
+					
+			//Remove any file at the destination path
+			NSError *moveError = nil;
+			if ([[NSFileManager defaultManager] fileExistsAtPath:downloadDestinationPath]) {
+				[[NSFileManager defaultManager] removeItemAtPath:downloadDestinationPath error:&moveError];
+				if (moveError) {
+					fileError = [NSError errorWithDomain:NetworkRequestErrorDomain code:ASIFileManagementError userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"Unable to remove file at path '%@'",downloadDestinationPath],NSLocalizedDescriptionKey,moveError,NSUnderlyingErrorKey,nil]];
+				}
+			}
+					
+			//Move the temporary file to the destination path
+			if (!fileError) {
+				[[NSFileManager defaultManager] moveItemAtPath:temporaryFileDownloadPath toPath:downloadDestinationPath error:&moveError];
+				if (moveError) {
+					fileError = [NSError errorWithDomain:NetworkRequestErrorDomain code:ASIFileManagementError userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"Failed to move file from '%@' to '%@'",temporaryFileDownloadPath,downloadDestinationPath],NSLocalizedDescriptionKey,moveError,NSUnderlyingErrorKey,nil]];
+				}
+			}
+		}
 	}
 	[progressLock unlock];
-	[self requestFinished];
-	
+	if (fileError) {
+		[self failWithError:fileError];
+	} else {
+		[self requestFinished];
+	}
 }
 
 
@@ -1071,11 +1190,13 @@ static NSError *ASIUnableToCreateRequestError;
 	NSError *underlyingError = [(NSError *)CFReadStreamCopyError(readStream) autorelease];
 	
 	[self cancelLoad];
+	complete = YES;
 	
 	if (!error) { // We may already have handled this error
 		
 		[self failWithError:[NSError errorWithDomain:NetworkRequestErrorDomain code:ASIConnectionFailureErrorType userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"A connection failure occurred",NSLocalizedDescriptionKey,underlyingError,NSUnderlyingErrorKey,nil]]];
 	}
+    [super cancel];
 }
 
 #pragma mark managing the session
@@ -1148,8 +1269,7 @@ static NSError *ASIUnableToCreateRequestError;
 + (void)setSessionCookies:(NSMutableArray *)newSessionCookies
 {
 	// Remove existing cookies from the persistent store
-	NSHTTPCookie *cookie;
-	for (cookie in newSessionCookies) {
+	for (NSHTTPCookie *cookie in [ASIHTTPRequest sessionCookies]) {
 		[[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
 	}
 	[sessionCookies release];
@@ -1165,6 +1285,144 @@ static NSError *ASIUnableToCreateRequestError;
 }
 
 
+#pragma mark gzip data handling
+
+//
+// Contributed by Shaun Harrison of Enormego, see: http://developers.enormego.com/view/asihttprequest_gzip
+// Based on this: http://deusty.blogspot.com/2007/07/gzip-compressiondecompression.html
+//
++ (NSData *)uncompressZippedData:(NSData*)compressedData
+{
+	if ([compressedData length] == 0) return compressedData;
+	
+	unsigned full_length = [compressedData length];
+	unsigned half_length = [compressedData length] / 2;
+	
+	NSMutableData *decompressed = [NSMutableData dataWithLength: full_length + half_length];
+	BOOL done = NO;
+	int status;
+	
+	z_stream strm;
+	strm.next_in = (Bytef *)[compressedData bytes];
+	strm.avail_in = [compressedData length];
+	strm.total_out = 0;
+	strm.zalloc = Z_NULL;
+	strm.zfree = Z_NULL;
+	
+	if (inflateInit2(&strm, (15+32)) != Z_OK) return nil;
+	
+	while (!done) {
+		// Make sure we have enough room and reset the lengths.
+		if (strm.total_out >= [decompressed length]) {
+			[decompressed increaseLengthBy: half_length];
+		}
+		strm.next_out = [decompressed mutableBytes] + strm.total_out;
+		strm.avail_out = [decompressed length] - strm.total_out;
+		
+		// Inflate another chunk.
+		status = inflate (&strm, Z_SYNC_FLUSH);
+		if (status == Z_STREAM_END) {
+			done = YES;
+		} else if (status != Z_OK) {
+			break;
+		}
+	}
+	if (inflateEnd (&strm) != Z_OK) return nil;
+	
+	// Set real length.
+	if (done) {
+		[decompressed setLength: strm.total_out];
+		return [NSData dataWithData: decompressed];
+	} else {
+		return nil;
+	}
+}
+
+
++ (int)uncompressZippedDataFromFile:(NSString *)sourcePath toFile:(NSString *)destinationPath
+{
+	// Get a FILE struct for the source file
+	FILE *source = fdopen([[NSFileHandle fileHandleForReadingAtPath:sourcePath] fileDescriptor], "r");
+	
+	// Create an empty file at the destination path
+	[[NSFileManager defaultManager] createFileAtPath:destinationPath contents:[NSData data] attributes:nil];
+	
+	// Get a FILE struct for the destination path
+	FILE *dest = fdopen([[NSFileHandle fileHandleForWritingAtPath:destinationPath] fileDescriptor], "w");
+	
+	// Uncompress data in source and save in destination
+	int status = [ASIHTTPRequest uncompressZippedDataFromSource:source toDestination:dest];
+	
+	// Close the files
+	fclose(source);
+	fclose(dest);
+	return status;
+}
+
+//
+// From the zlib sample code by Mark Adler, code here:
+//	http://www.zlib.net/zpipe.c
+//
+#define CHUNK 16384
++ (int)uncompressZippedDataFromSource:(FILE *)source toDestination:(FILE *)dest
+{
+    int ret;
+    unsigned have;
+    z_stream strm;
+    unsigned char in[CHUNK];
+    unsigned char out[CHUNK];
+	
+    /* allocate inflate state */
+    strm.zalloc = Z_NULL;
+    strm.zfree = Z_NULL;
+    strm.opaque = Z_NULL;
+    strm.avail_in = 0;
+    strm.next_in = Z_NULL;
+    ret = inflateInit2(&strm, (15+32));
+    if (ret != Z_OK)
+        return ret;
+	
+    /* decompress until deflate stream ends or end of file */
+    do {
+        strm.avail_in = fread(in, 1, CHUNK, source);
+        if (ferror(source)) {
+            (void)inflateEnd(&strm);
+            return Z_ERRNO;
+        }
+        if (strm.avail_in == 0)
+            break;
+        strm.next_in = in;
+		
+        /* run inflate() on input until output buffer not full */
+        do {
+            strm.avail_out = CHUNK;
+            strm.next_out = out;
+            ret = inflate(&strm, Z_NO_FLUSH);
+            assert(ret != Z_STREAM_ERROR);  /* state not clobbered */
+            switch (ret) {
+				case Z_NEED_DICT:
+					ret = Z_DATA_ERROR;     /* and fall through */
+				case Z_DATA_ERROR:
+				case Z_MEM_ERROR:
+					(void)inflateEnd(&strm);
+					return ret;
+            }
+            have = CHUNK - strm.avail_out;
+            if (fwrite(&out, 1, have, dest) != have || ferror(dest)) {
+                (void)inflateEnd(&strm);
+                return Z_ERRNO;
+            }
+        } while (strm.avail_out == 0);
+		
+        /* done when inflate() says it's done */
+    } while (ret != Z_STREAM_END);
+	
+    /* clean up and return */
+    (void)inflateEnd(&strm);
+    return ret == Z_STREAM_END ? Z_OK : Z_DATA_ERROR;
+}
+	
+
 @synthesize username;
 @synthesize password;
 @synthesize domain;
@@ -1176,6 +1434,7 @@ static NSError *ASIUnableToCreateRequestError;
 @synthesize useSessionPersistance;
 @synthesize useCookiePersistance;
 @synthesize downloadDestinationPath;
+@synthesize temporaryFileDownloadPath;
 @synthesize didFinishSelector;
 @synthesize didFailSelector;
 @synthesize authenticationRealm;
@@ -1187,7 +1446,7 @@ static NSError *ASIUnableToCreateRequestError;
 @synthesize requestCookies;
 @synthesize requestCredentials;
 @synthesize responseStatusCode;
-@synthesize receivedData;
+@synthesize rawResponseData;
 @synthesize lastActivityTime;
 @synthesize timeOutSeconds;
 @synthesize requestMethod;
@@ -1198,8 +1457,9 @@ static NSError *ASIUnableToCreateRequestError;
 @synthesize mainRequest;
 @synthesize totalBytesRead;
 @synthesize showAccurateProgress;
-@synthesize totalBytesRead;
 @synthesize uploadBufferSize;
 @synthesize defaultResponseEncoding;
 @synthesize responseEncoding;
+@synthesize allowCompressedResponse;
+@synthesize allowResumeForFileDownloads;
 @end
