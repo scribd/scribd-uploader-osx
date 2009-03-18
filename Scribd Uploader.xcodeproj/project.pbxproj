@@ -73,6 +73,7 @@
 		01782DB80F60A4E500205ECD /* SUAddURLWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782DB70F60A4E500205ECD /* SUAddURLWindowController.m */; };
 		01782DD20F60A93200205ECD /* SUNotEmptyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782DD10F60A93200205ECD /* SUNotEmptyValueTransformer.m */; };
 		017BEF010F60CD1E00E66086 /* SUAPIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 017BEF000F60CD1E00E66086 /* SUAPIHelper.m */; };
+		017C85890F6F98E10013D7D0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 017C85880F6F98E10013D7D0 /* libz.dylib */; };
 		018352920F3588CF0088C68E /* SUPluralizeValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 018352910F3588CF0088C68E /* SUPluralizeValueTransformer.m */; };
 		0190052C0F4B6A4E0078A8C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0190052B0F4B6A4E0078A8C3 /* InfoPlist.strings */; };
 		019005340F4B6AC90078A8C3 /* Scribd_Uploader_DataModelModel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 019005330F4B6AC90078A8C3 /* Scribd_Uploader_DataModelModel.strings */; };
@@ -226,6 +227,7 @@
 		01782DD10F60A93200205ECD /* SUNotEmptyValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUNotEmptyValueTransformer.m; sourceTree = "<group>"; };
 		017BEEFF0F60CD1E00E66086 /* SUAPIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAPIHelper.h; sourceTree = "<group>"; };
 		017BEF000F60CD1E00E66086 /* SUAPIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUAPIHelper.m; sourceTree = "<group>"; };
+		017C85880F6F98E10013D7D0 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = "<absolute>"; };
 		018352900F3588CF0088C68E /* SUPluralizeValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUPluralizeValueTransformer.h; sourceTree = "<group>"; };
 		018352910F3588CF0088C68E /* SUPluralizeValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUPluralizeValueTransformer.m; sourceTree = "<group>"; };
 		019005260F4B6A420078A8C3 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				014DB9480F1EE55100F50460 /* Growl.framework in Frameworks */,
 				012385FE0F2AB3D7007D2B54 /* Security.framework in Frameworks */,
 				01377DFB0F60F07C00C9121E /* QuartzCore.framework in Frameworks */,
+				017C85890F6F98E10013D7D0 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +572,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				017C85880F6F98E10013D7D0 /* libz.dylib */,
 				01377DFA0F60F07C00C9121E /* QuartzCore.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				014DB9470F1EE55100F50460 /* Growl.framework */,
