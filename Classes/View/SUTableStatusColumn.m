@@ -43,7 +43,17 @@
  */
 
 - (void) awakeFromNib {
+	cells = [[NSMutableDictionary alloc] init];
 	[[[self tableView] dataSource] addObserver:self forKeyPath:@"arrangedObjects.errorLevel" options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+/*
+ Releases local memory usage.
+ */
+
+- (void) dealloc {
+	[cells release];
+	[super dealloc];
 }
 
 #pragma mark KVO
@@ -64,6 +74,20 @@
 		}
 	}
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+}
+
+#pragma mark Setting Component Cells
+
+- (id) dataCellForRow:(NSInteger)row {
+	if (row == -1) return [self dataCell];
+	
+	NSNumber *rowObject = [NSNumber numberWithInteger:row];
+	NSImageCell *cell;
+	if (cell = [cells objectForKey:rowObject]) return cell;
+	
+	cell = [[self dataCell] copy];
+	[cells setObject:cell forKey:rowObject];
+	return cell;
 }
 
 @end
