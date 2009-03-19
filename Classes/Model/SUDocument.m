@@ -110,7 +110,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 }
 
 - (NSString *) fileSystemPath {
-	return [URL relativePath];
+	return [self.URL relativePath];
 }
 
 - (NSString *) filename {
