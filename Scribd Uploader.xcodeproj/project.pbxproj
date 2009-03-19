@@ -43,7 +43,6 @@
 		0128AF3C0F1478F300EC3C28 /* SUDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF30F1478F300EC3C28 /* SUDocument.m */; };
 		0128AF3D0F1478F300EC3C28 /* SUScribdAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF50F1478F300EC3C28 /* SUScribdAPI.m */; };
 		0128AF3E0F1478F300EC3C28 /* SUFileListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF80F1478F300EC3C28 /* SUFileListView.m */; };
-		0128AF3F0F1478F300EC3C28 /* SUTableStatusColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEFA0F1478F300EC3C28 /* SUTableStatusColumn.m */; };
 		0128AF440F1478F300EC3C28 /* SULoginLabelValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF050F1478F300EC3C28 /* SULoginLabelValueTransformer.m */; };
 		0128AF460F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF090F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m */; };
 		0128AF480F1478F300EC3C28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF0D0F1478F300EC3C28 /* main.m */; };
@@ -97,6 +96,7 @@
 		01BF112C0F2AD45A007CED18 /* Caution Clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BF11290F2AD45A007CED18 /* Caution Clicked.png */; };
 		01BF112D0F2AD45A007CED18 /* Error Clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BF112A0F2AD45A007CED18 /* Error Clicked.png */; };
 		01E062A40F43DE130026A075 /* NSApplication_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E062A30F43DE130026A075 /* NSApplication_SUAdditions.m */; };
+		01E3325B0F71C4B2003EB133 /* SUFileListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E3325A0F71C4B2003EB133 /* SUFileListDelegate.m */; };
 		01E821340F293BB100473993 /* Caution.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821310F293BB100473993 /* Caution.png */; };
 		01E821350F293BB100473993 /* Error.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821320F293BB100473993 /* Error.png */; };
 		01E821360F293BB100473993 /* Go.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821330F293BB100473993 /* Go.png */; };
@@ -181,8 +181,6 @@
 		0128AEF50F1478F300EC3C28 /* SUScribdAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUScribdAPI.m; sourceTree = "<group>"; };
 		0128AEF70F1478F300EC3C28 /* SUFileListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileListView.h; sourceTree = "<group>"; };
 		0128AEF80F1478F300EC3C28 /* SUFileListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileListView.m; sourceTree = "<group>"; };
-		0128AEF90F1478F300EC3C28 /* SUTableStatusColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTableStatusColumn.h; sourceTree = "<group>"; };
-		0128AEFA0F1478F300EC3C28 /* SUTableStatusColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTableStatusColumn.m; sourceTree = "<group>"; };
 		0128AF040F1478F300EC3C28 /* SULoginLabelValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SULoginLabelValueTransformer.h; sourceTree = "<group>"; };
 		0128AF050F1478F300EC3C28 /* SULoginLabelValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SULoginLabelValueTransformer.m; sourceTree = "<group>"; };
 		0128AF080F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUnarchiveErrorValueTransformer.h; sourceTree = "<group>"; };
@@ -266,6 +264,8 @@
 		01BF112A0F2AD45A007CED18 /* Error Clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Error Clicked.png"; sourceTree = "<group>"; };
 		01E062A20F43DE130026A075 /* NSApplication_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApplication_SUAdditions.h; sourceTree = "<group>"; };
 		01E062A30F43DE130026A075 /* NSApplication_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApplication_SUAdditions.m; sourceTree = "<group>"; };
+		01E332590F71C4B2003EB133 /* SUFileListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileListDelegate.h; sourceTree = "<group>"; };
+		01E3325A0F71C4B2003EB133 /* SUFileListDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileListDelegate.m; sourceTree = "<group>"; };
 		01E821310F293BB100473993 /* Caution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Caution.png; sourceTree = "<group>"; };
 		01E821320F293BB100473993 /* Error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Error.png; sourceTree = "<group>"; };
 		01E821330F293BB100473993 /* Go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Go.png; sourceTree = "<group>"; };
@@ -370,6 +370,8 @@
 				0128AEE30F1478F300EC3C28 /* SUUploadDelegate.m */,
 				012E5E720F20837C0037ECDA /* SUInformationDrawerDelegate.h */,
 				012E5E730F20837C0037ECDA /* SUInformationDrawerDelegate.m */,
+				01E332590F71C4B2003EB133 /* SUFileListDelegate.h */,
+				01E3325A0F71C4B2003EB133 /* SUFileListDelegate.m */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -413,8 +415,6 @@
 				0122B89B0F5E0C8000D2D0DD /* SUAllowNilDateFormatter.m */,
 				0128AEF70F1478F300EC3C28 /* SUFileListView.h */,
 				0128AEF80F1478F300EC3C28 /* SUFileListView.m */,
-				0128AEF90F1478F300EC3C28 /* SUTableStatusColumn.h */,
-				0128AEFA0F1478F300EC3C28 /* SUTableStatusColumn.m */,
 				0128AEFB0F1478F300EC3C28 /* Transformers */,
 				01377DE00F60ED3E00C9121E /* SUImagePreviewView.h */,
 				01377DE10F60ED3E00C9121E /* SUImagePreviewView.m */,
@@ -723,7 +723,6 @@
 				0128AF3C0F1478F300EC3C28 /* SUDocument.m in Sources */,
 				0128AF3D0F1478F300EC3C28 /* SUScribdAPI.m in Sources */,
 				0128AF3E0F1478F300EC3C28 /* SUFileListView.m in Sources */,
-				0128AF3F0F1478F300EC3C28 /* SUTableStatusColumn.m in Sources */,
 				0128AF440F1478F300EC3C28 /* SULoginLabelValueTransformer.m in Sources */,
 				0128AF460F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m in Sources */,
 				012E5DC80F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld in Sources */,
@@ -766,6 +765,7 @@
 				01782DD20F60A93200205ECD /* SUNotEmptyValueTransformer.m in Sources */,
 				017BEF010F60CD1E00E66086 /* SUAPIHelper.m in Sources */,
 				01377DE20F60ED3E00C9121E /* SUImagePreviewView.m in Sources */,
+				01E3325B0F71C4B2003EB133 /* SUFileListDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
