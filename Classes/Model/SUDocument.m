@@ -147,7 +147,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 }
 
 - (BOOL) isRemoteFile {
-	return ![URL isFileURL];
+	return ![self.URL isFileURL];
 }
 
 - (NSString *) errorLevel {
