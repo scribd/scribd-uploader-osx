@@ -36,6 +36,8 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 @dynamic edition;
 @dynamic datePublished;
 @dynamic license;
+@dynamic converting;
+@dynamic assigningProperties;
 
 @dynamic category;
 
@@ -49,6 +51,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 @dynamic scribdURL;
 @dynamic editURL;
 @dynamic uploaded;
+@dynamic postProcessing;
 
 #pragma mark Initializing and deallocating
 
@@ -163,6 +166,10 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	return (self.scribdID != NULL);
 }
 
+- (BOOL) postProcessing {
+	return (self.uploaded && ([self.converting boolValue] || [self.assigningProperties boolValue]));
+}
+
 - (NSURL *) scribdURL {
 	if (!self.uploaded) return NULL;
 	NSString *URLString = [[NSString alloc] initWithFormat:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUDocumentURLInfoKey], self.scribdID];
@@ -271,6 +278,10 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 
 + (NSSet *) keyPathsForValuesAffectingUploaded {
 	return [NSSet setWithObject:@"scribdID"];
+}
+
++ (NSSet *) keyPathsForValuesAffectingPostProcessing {
+	return [NSSet setWithObjects:@"scribdID", @"converting", @"assigningProperties", NULL];
 }
 
 #pragma mark Finding documents

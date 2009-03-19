@@ -1178,8 +1178,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 								<string key="NSFrame">{{48, 18}, {372, 12}}</string>
 								<reference key="NSSuperview" ref="824448272"/>
 								<int key="NSpiFlags">16648</int>
-								<double key="NSMinValue">2.000000e+01</double>
-								<double key="NSMaxValue">1.000000e+02</double>
+								<double key="NSMaxValue">1.000000e+00</double>
 							</object>
 							<object class="NSButton" id="657577237">
 								<reference key="NSNextResponder" ref="824448272"/>
@@ -5957,26 +5956,6 @@ ciBoZWxwIHZpZXdlci4</string>
 					<int key="connectionID">2043</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: representedObject.progress</string>
-						<reference key="source" ref="456910245"/>
-						<reference key="destination" ref="727563930"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="456910245"/>
-							<reference key="NSDestination" ref="727563930"/>
-							<string key="NSLabel">value: representedObject.progress</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">representedObject.progress</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSNullPlaceholder</string>
-								<real value="0.000000e+00" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2044</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="107978051"/>
@@ -6015,6 +5994,42 @@ ciBoZWxwIHZpZXdlci4</string>
 						<reference key="destination" ref="205390166"/>
 					</object>
 					<int key="connectionID">2077</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: representedObject.progress</string>
+						<reference key="source" ref="456910245"/>
+						<reference key="destination" ref="727563930"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="456910245"/>
+							<reference key="NSDestination" ref="727563930"/>
+							<string key="NSLabel">value: representedObject.progress</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">representedObject.progress</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSNullPlaceholder</string>
+								<real value="0.000000e+00" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">2080</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">isIndeterminate: representedObject.postProcessing</string>
+						<reference key="source" ref="456910245"/>
+						<reference key="destination" ref="727563930"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="456910245"/>
+							<reference key="NSDestination" ref="727563930"/>
+							<string key="NSLabel">isIndeterminate: representedObject.postProcessing</string>
+							<string key="NSBinding">isIndeterminate</string>
+							<string key="NSKeyPath">representedObject.postProcessing</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">2085</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -9087,7 +9102,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">2077</int>
+			<int key="maxID">2085</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

@@ -154,6 +154,26 @@
 
 @property (copy) NSString *license;
 
+/*!
+ @property converting
+ @abstract True if the document is being converted by Scribd.com. The conversion
+ process begins once the document has finished uploading.
+ @discussion This transient attribute is set to NO when the document has
+ finished converting or before it has been uploaded.
+ */
+
+@property (copy) NSNumber *converting;
+
+/*!
+ @property assigningProperties
+ @abstract True if the document has been uploaded and the metadata is being sent
+ to Scribd.com. This process occurs immediately after upload is complete.
+ @discussion This transient attribute is set to NO when the document has its
+ attributes set or before it has been uploaded.
+ */
+
+@property (copy) NSNumber *assigningProperties;
+
 #pragma mark Relationships
 
 /*!
@@ -261,6 +281,15 @@
  */
 
 @property (readonly) BOOL uploaded;
+
+/*!
+ @property postProcessing
+ @abstract Returns YES if the document has been uploaded and is undergoing
+ post-upload processing (setting attributes and converting). Returns NO if this
+ process is complete or if the document has not yet been uploaded.
+ */
+
+@property (readonly) BOOL postProcessing;
 
 #pragma mark Finding documents
 

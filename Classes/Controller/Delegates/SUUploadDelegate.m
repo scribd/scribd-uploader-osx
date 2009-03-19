@@ -58,7 +58,7 @@
 			document.success = [NSNumber numberWithBool:YES];
 			document.error = NULL;
 			document.scribdID = [NSNumber numberWithInteger:[[response objectForKey:@"doc_id"] integerValue]];
-			[self changeSettings];
+			[NSThread detachNewThreadSelector:@selector(changeSettings) toTarget:self withObject:NULL];
 		}
 		else document.success = [NSNumber numberWithBool:NO];
 		[xml release];
@@ -153,6 +153,9 @@
 #pragma mark Helpers
 
 - (void) changeSettings {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	document.assigningProperties = [NSNumber numberWithBool:YES];
+	
 	NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
 	[parameters setObject:[SUSessionHelper sessionHelper].key forKey:@"session_key"];
 	[parameters setObject:document.scribdID forKey:@"doc_ids"];
@@ -182,6 +185,9 @@
 		document.errorIsUnrecoverable = [NSNumber numberWithBool:NO];
 		document.success = [NSNumber numberWithBool:NO];
 	}
+	
+	document.assigningProperties = [NSNumber numberWithBool:NO];
+	[pool release];
 }
 
 @end
