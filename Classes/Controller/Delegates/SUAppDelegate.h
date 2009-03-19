@@ -11,7 +11,6 @@
 	IBOutlet SULoginSheetDelegate *loginSheetDelegate;
 	IBOutlet SUFileNotFoundAlertDelegate *fileNotFoundDelegate;
 	IBOutlet SUDatabaseHelper *db;
-	IBOutlet NSTableView *uploadTable;
 	IBOutlet SUUploadHelper *uploader;
 	IBOutlet NSTreeController *categoriesController;
 	IBOutlet SUDirectoryScanner *directoryScanner;

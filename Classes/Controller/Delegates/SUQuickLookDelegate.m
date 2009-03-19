@@ -30,9 +30,10 @@
  */
 
 - (NSRect) previewPanel:(NSPanel*)panel frameForURL:(NSURL*)URL {
-	NSRect rect = [table convertRectToBase:[table rectOfRow:[filesController selectionIndex]]];
-	rect.origin = [[table window] convertBaseToScreen:rect.origin];
-	return rect;
+	//NSRect rect = [table convertRectToBase:[table rectOfRow:[filesController selectionIndex]]];
+	//rect.origin = [[table window] convertBaseToScreen:rect.origin];
+	//return rect;
+	return NSZeroRect; //TODO
 }
 
 #pragma mark KVO

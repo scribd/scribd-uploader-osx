@@ -4,12 +4,11 @@
 
 #pragma mark Displaying an error
 
-- (void) displayError:(NSArray *)errors atIndex:(NSNumber *)index {
-	NSError *error = [errors objectAtIndex:[index unsignedIntValue]];
-	if ([error isEqualTo:[NSNull null]]) {
+- (IBAction) displayError:(SUDocument *)document {
+	NSError *error = (document.error ? [NSUnarchiver unarchiveObjectWithData:document.error] : NULL);
+	if (!error) {
 		// go to the file
-		SUDocument *doc = [documentController.arrangedObjects objectAtIndex:[index unsignedIntegerValue]];
-		if (doc.uploaded) [[NSWorkspace sharedWorkspace] openURL:doc.scribdURL];
+		if (document.scribdURL) [[NSWorkspace sharedWorkspace] openURL:document.scribdURL];
 	}
 	else {
 		// display the error

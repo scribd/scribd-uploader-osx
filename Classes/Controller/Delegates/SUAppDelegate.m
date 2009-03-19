@@ -62,6 +62,41 @@
 	[NSValueTransformer setValueTransformer:[[[SUDelimitedStringValueTransformer alloc] init] autorelease] forName:@"SUDelimitTags"];
 	[NSValueTransformer setValueTransformer:[[[SUIndexPathValueTransformer alloc] init] autorelease] forName:@"SUIndexPath"];
 	[NSValueTransformer setValueTransformer:[[[SUToggleValueTransformer alloc] initWithTrueValue:@"After Upload" falseValue:@"Before Upload"] autorelease] forName:@"SUMetadataTab"];
+	
+	NSImage *successImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Go" ofType:@"png"]];
+	NSImage *cautionImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Caution" ofType:@"png"]];
+	NSImage *errorImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Error" ofType:@"png"]];
+	NSDictionary *imageMappings = [[NSDictionary alloc] initWithObjectsAndKeys:
+								   successImage, @"Success",
+								   cautionImage, @"Caution",
+								   errorImage, @"Error",
+								   NULL];
+	[successImage release];
+	[cautionImage release];
+	[errorImage release];
+	[NSValueTransformer setValueTransformer:[[[SUMappingValueTransformer alloc] initWithDictionary:imageMappings] autorelease] forName:@"SUFileStatusButtonImage"];
+	[imageMappings release];
+	
+	successImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Go Clicked" ofType:@"png"]];
+	cautionImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Caution Clicked" ofType:@"png"]];
+	errorImage = [[NSImage alloc] initByReferencingFile:[[NSBundle mainBundle] pathForResource:@"Error Clicked" ofType:@"png"]];
+	imageMappings = [[NSDictionary alloc] initWithObjectsAndKeys:
+					 successImage, @"Success",
+					 cautionImage, @"Caution",
+					 errorImage, @"Error",
+					 NULL];
+	[successImage release];
+	[cautionImage release];
+	[errorImage release];
+	[NSValueTransformer setValueTransformer:[[[SUMappingValueTransformer alloc] initWithDictionary:imageMappings] autorelease] forName:@"SUFileStatusButtonAlternateImage"];
+	[imageMappings release];
+	
+	NSDictionary *statusButtonToolTips = [[NSDictionary alloc] initWithObjectsAndKeys:
+										  NSLocalizedString(@"Click this button to view your document on Scribd.com.", NULL), @"Success",
+										  NSLocalizedString(@"Click this button to learn more about why your document could not be uploaded.", NULL), @"Error",
+										  NSLocalizedString(@"Click this button to learn more about why your document could not have its metadata assigned.", NULL), @"Caution",
+										  NULL];
+	[NSValueTransformer setValueTransformer:[[[SUMappingValueTransformer alloc] initWithDictionary:statusButtonToolTips] autorelease] forName:@"SUStatusButtonToolTip"];
 }
 
 /*
@@ -98,12 +133,6 @@
 	
 	// create a value transformer that requires an initialized DB
 	[[NSValueTransformer valueTransformerForName:@"SUIndexPath"] setValue:db.managedObjectContext forKey:@"managedObjectContext"];
-	
-	// configure valid types for drag and drop
-	NSArray *acceptedTypes = [[NSArray alloc] initWithObject:NSFilenamesPboardType];
-	[uploadTable registerForDraggedTypes:acceptedTypes];
-	[acceptedTypes release];
-	[uploadTable setVerticalMotionCanBeginDrag:NO];
 	
 	// configure Growl (necessary because of a bug in growl)
 	[GrowlApplicationBridge setGrowlDelegate:@""];

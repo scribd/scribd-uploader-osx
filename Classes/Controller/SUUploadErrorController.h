@@ -15,14 +15,16 @@
 
 /*!
  @method displayError:
- @abstract Runs the alert sheet for an error.
- @param errors An array of all upload errors.
- @param index The index of the error to display.
+ @abstract Runs the alert sheet for an document.
+ @param document The document to display an error for.
  @discussion The error's localized description will become the main alert text,
  and the error's localized recovery suggestion will become the alert's
  informative text.
+ 
+ If the document has been successfully uploaded, this method opens the
+ document's Scribd.com web page.
  */
 
-- (void) displayError:(NSArray *)errors atIndex:(NSNumber *)index;
+- (IBAction) displayError:(SUDocument *)document;
 
 @end

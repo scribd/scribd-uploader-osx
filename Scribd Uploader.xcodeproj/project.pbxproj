@@ -24,7 +24,6 @@
 		0122B80B0F5DF45A00D2D0DD /* SUReversibleMappingValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0122B80A0F5DF45A00D2D0DD /* SUReversibleMappingValueTransformer.m */; };
 		0122B89C0F5E0C8000D2D0DD /* SUAllowNilDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0122B89B0F5E0C8000D2D0DD /* SUAllowNilDateFormatter.m */; };
 		0122B8C00F5E141800D2D0DD /* FileTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0122B8BF0F5E141800D2D0DD /* FileTypes.plist */; };
-		0122B8C20F5E144900D2D0DD /* Scribd_Uploader_DataModel 210-220.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0122B8C10F5E144900D2D0DD /* Scribd_Uploader_DataModel 210-220.xcmappingmodel */; };
 		0122B8D30F5E1DAC00D2D0DD /* Publisher Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 0122B8D20F5E1DAC00D2D0DD /* Publisher Info.png */; };
 		0123846C0F2AAE1F007D2B54 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 012384690F2AAE1F007D2B54 /* EMKeychainItem.m */; };
 		0123846D0F2AAE1F007D2B54 /* EMKeychainProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0123846B0F2AAE1F007D2B54 /* EMKeychainProxy.m */; };
@@ -42,7 +41,7 @@
 		0128AF3B0F1478F300EC3C28 /* SUUploadErrorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF00F1478F300EC3C28 /* SUUploadErrorController.m */; };
 		0128AF3C0F1478F300EC3C28 /* SUDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF30F1478F300EC3C28 /* SUDocument.m */; };
 		0128AF3D0F1478F300EC3C28 /* SUScribdAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF50F1478F300EC3C28 /* SUScribdAPI.m */; };
-		0128AF3E0F1478F300EC3C28 /* SUFileListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF80F1478F300EC3C28 /* SUFileListView.m */; };
+		0128AF3E0F1478F300EC3C28 /* SUKeyResponseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AEF80F1478F300EC3C28 /* SUKeyResponseCollectionView.m */; };
 		0128AF440F1478F300EC3C28 /* SULoginLabelValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF050F1478F300EC3C28 /* SULoginLabelValueTransformer.m */; };
 		0128AF460F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF090F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m */; };
 		0128AF480F1478F300EC3C28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128AF0D0F1478F300EC3C28 /* main.m */; };
@@ -76,6 +75,10 @@
 		018352920F3588CF0088C68E /* SUPluralizeValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 018352910F3588CF0088C68E /* SUPluralizeValueTransformer.m */; };
 		0190052C0F4B6A4E0078A8C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0190052B0F4B6A4E0078A8C3 /* InfoPlist.strings */; };
 		019005340F4B6AC90078A8C3 /* Scribd_Uploader_DataModelModel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 019005330F4B6AC90078A8C3 /* Scribd_Uploader_DataModelModel.strings */; };
+		0192F2950F71F030002B9547 /* SUSelectableCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0192F2940F71F030002B9547 /* SUSelectableCollectionViewItem.m */; };
+		0192F2B70F71F6CC002B9547 /* Scribd_Uploader_dataModel 210-220.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0192F2B60F71F6CC002B9547 /* Scribd_Uploader_dataModel 210-220.xcmappingmodel */; };
+		0192F3350F72126C002B9547 /* SUDroppableCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0192F3340F72126C002B9547 /* SUDroppableCollectionView.m */; };
+		0192F3390F7212F9002B9547 /* SUFileListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0192F3380F7212F9002B9547 /* SUFileListViewDelegate.m */; };
 		019D58180F4B7A7D001CB943 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 019D58170F4B7A7D001CB943 /* Localizable.strings */; };
 		019D58350F4B9015001CB943 /* SUMappingValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 019D58340F4B9015001CB943 /* SUMappingValueTransformer.m */; };
 		019D586D0F4B95F6001CB943 /* SUToggleValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 019D586C0F4B95F6001CB943 /* SUToggleValueTransformer.m */; };
@@ -96,7 +99,6 @@
 		01BF112C0F2AD45A007CED18 /* Caution Clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BF11290F2AD45A007CED18 /* Caution Clicked.png */; };
 		01BF112D0F2AD45A007CED18 /* Error Clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BF112A0F2AD45A007CED18 /* Error Clicked.png */; };
 		01E062A40F43DE130026A075 /* NSApplication_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E062A30F43DE130026A075 /* NSApplication_SUAdditions.m */; };
-		01E3325B0F71C4B2003EB133 /* SUFileListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E3325A0F71C4B2003EB133 /* SUFileListDelegate.m */; };
 		01E821340F293BB100473993 /* Caution.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821310F293BB100473993 /* Caution.png */; };
 		01E821350F293BB100473993 /* Error.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821320F293BB100473993 /* Error.png */; };
 		01E821360F293BB100473993 /* Go.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821330F293BB100473993 /* Go.png */; };
@@ -147,7 +149,6 @@
 		0122B89A0F5E0C8000D2D0DD /* SUAllowNilDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAllowNilDateFormatter.h; sourceTree = "<group>"; };
 		0122B89B0F5E0C8000D2D0DD /* SUAllowNilDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUAllowNilDateFormatter.m; sourceTree = "<group>"; };
 		0122B8BD0F5E141300D2D0DD /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = English.lproj/FileTypes.plist; sourceTree = "<group>"; };
-		0122B8C10F5E144900D2D0DD /* Scribd_Uploader_DataModel 210-220.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "Scribd_Uploader_DataModel 210-220.xcmappingmodel"; sourceTree = "<group>"; };
 		0122B8D20F5E1DAC00D2D0DD /* Publisher Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Publisher Info.png"; sourceTree = "<group>"; };
 		012384680F2AAE1F007D2B54 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
 		012384690F2AAE1F007D2B54 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
@@ -179,8 +180,8 @@
 		0128AEF30F1478F300EC3C28 /* SUDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDocument.m; sourceTree = "<group>"; };
 		0128AEF40F1478F300EC3C28 /* SUScribdAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUScribdAPI.h; sourceTree = "<group>"; };
 		0128AEF50F1478F300EC3C28 /* SUScribdAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUScribdAPI.m; sourceTree = "<group>"; };
-		0128AEF70F1478F300EC3C28 /* SUFileListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileListView.h; sourceTree = "<group>"; };
-		0128AEF80F1478F300EC3C28 /* SUFileListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileListView.m; sourceTree = "<group>"; };
+		0128AEF70F1478F300EC3C28 /* SUKeyResponseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUKeyResponseCollectionView.h; sourceTree = "<group>"; };
+		0128AEF80F1478F300EC3C28 /* SUKeyResponseCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUKeyResponseCollectionView.m; sourceTree = "<group>"; };
 		0128AF040F1478F300EC3C28 /* SULoginLabelValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SULoginLabelValueTransformer.h; sourceTree = "<group>"; };
 		0128AF050F1478F300EC3C28 /* SULoginLabelValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SULoginLabelValueTransformer.m; sourceTree = "<group>"; };
 		0128AF080F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUnarchiveErrorValueTransformer.h; sourceTree = "<group>"; };
@@ -230,6 +231,13 @@
 		018352910F3588CF0088C68E /* SUPluralizeValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUPluralizeValueTransformer.m; sourceTree = "<group>"; };
 		019005260F4B6A420078A8C3 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0190052F0F4B6AAE0078A8C3 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Scribd_Uploader_DataModelModel.strings; sourceTree = "<group>"; };
+		0192F2930F71F030002B9547 /* SUSelectableCollectionViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSelectableCollectionViewItem.h; sourceTree = "<group>"; };
+		0192F2940F71F030002B9547 /* SUSelectableCollectionViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSelectableCollectionViewItem.m; sourceTree = "<group>"; };
+		0192F2B60F71F6CC002B9547 /* Scribd_Uploader_dataModel 210-220.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "Scribd_Uploader_dataModel 210-220.xcmappingmodel"; sourceTree = "<group>"; };
+		0192F3330F72126C002B9547 /* SUDroppableCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDroppableCollectionView.h; sourceTree = "<group>"; };
+		0192F3340F72126C002B9547 /* SUDroppableCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDroppableCollectionView.m; sourceTree = "<group>"; };
+		0192F3370F7212F9002B9547 /* SUFileListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileListViewDelegate.h; sourceTree = "<group>"; };
+		0192F3380F7212F9002B9547 /* SUFileListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileListViewDelegate.m; sourceTree = "<group>"; };
 		019D58150F4B7A7A001CB943 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		019D58330F4B9015001CB943 /* SUMappingValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUMappingValueTransformer.h; sourceTree = "<group>"; };
 		019D58340F4B9015001CB943 /* SUMappingValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUMappingValueTransformer.m; sourceTree = "<group>"; };
@@ -264,8 +272,6 @@
 		01BF112A0F2AD45A007CED18 /* Error Clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Error Clicked.png"; sourceTree = "<group>"; };
 		01E062A20F43DE130026A075 /* NSApplication_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApplication_SUAdditions.h; sourceTree = "<group>"; };
 		01E062A30F43DE130026A075 /* NSApplication_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApplication_SUAdditions.m; sourceTree = "<group>"; };
-		01E332590F71C4B2003EB133 /* SUFileListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileListDelegate.h; sourceTree = "<group>"; };
-		01E3325A0F71C4B2003EB133 /* SUFileListDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileListDelegate.m; sourceTree = "<group>"; };
 		01E821310F293BB100473993 /* Caution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Caution.png; sourceTree = "<group>"; };
 		01E821320F293BB100473993 /* Error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Error.png; sourceTree = "<group>"; };
 		01E821330F293BB100473993 /* Go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Go.png; sourceTree = "<group>"; };
@@ -370,8 +376,8 @@
 				0128AEE30F1478F300EC3C28 /* SUUploadDelegate.m */,
 				012E5E720F20837C0037ECDA /* SUInformationDrawerDelegate.h */,
 				012E5E730F20837C0037ECDA /* SUInformationDrawerDelegate.m */,
-				01E332590F71C4B2003EB133 /* SUFileListDelegate.h */,
-				01E3325A0F71C4B2003EB133 /* SUFileListDelegate.m */,
+				0192F3370F7212F9002B9547 /* SUFileListViewDelegate.h */,
+				0192F3380F7212F9002B9547 /* SUFileListViewDelegate.m */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -413,11 +419,15 @@
 			children = (
 				0122B89A0F5E0C8000D2D0DD /* SUAllowNilDateFormatter.h */,
 				0122B89B0F5E0C8000D2D0DD /* SUAllowNilDateFormatter.m */,
-				0128AEF70F1478F300EC3C28 /* SUFileListView.h */,
-				0128AEF80F1478F300EC3C28 /* SUFileListView.m */,
+				0128AEF70F1478F300EC3C28 /* SUKeyResponseCollectionView.h */,
+				0128AEF80F1478F300EC3C28 /* SUKeyResponseCollectionView.m */,
 				0128AEFB0F1478F300EC3C28 /* Transformers */,
 				01377DE00F60ED3E00C9121E /* SUImagePreviewView.h */,
 				01377DE10F60ED3E00C9121E /* SUImagePreviewView.m */,
+				0192F2930F71F030002B9547 /* SUSelectableCollectionViewItem.h */,
+				0192F2940F71F030002B9547 /* SUSelectableCollectionViewItem.m */,
+				0192F3330F72126C002B9547 /* SUDroppableCollectionView.h */,
+				0192F3340F72126C002B9547 /* SUDroppableCollectionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -722,7 +732,7 @@
 				0128AF3B0F1478F300EC3C28 /* SUUploadErrorController.m in Sources */,
 				0128AF3C0F1478F300EC3C28 /* SUDocument.m in Sources */,
 				0128AF3D0F1478F300EC3C28 /* SUScribdAPI.m in Sources */,
-				0128AF3E0F1478F300EC3C28 /* SUFileListView.m in Sources */,
+				0128AF3E0F1478F300EC3C28 /* SUKeyResponseCollectionView.m in Sources */,
 				0128AF440F1478F300EC3C28 /* SULoginLabelValueTransformer.m in Sources */,
 				0128AF460F1478F300EC3C28 /* SUUnarchiveErrorValueTransformer.m in Sources */,
 				012E5DC80F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld in Sources */,
@@ -760,12 +770,14 @@
 				0122B7BE0F5DE6FC00D2D0DD /* SUPublisherPanelController.m in Sources */,
 				0122B80B0F5DF45A00D2D0DD /* SUReversibleMappingValueTransformer.m in Sources */,
 				0122B89C0F5E0C8000D2D0DD /* SUAllowNilDateFormatter.m in Sources */,
-				0122B8C20F5E144900D2D0DD /* Scribd_Uploader_DataModel 210-220.xcmappingmodel in Sources */,
 				01782DB80F60A4E500205ECD /* SUAddURLWindowController.m in Sources */,
 				01782DD20F60A93200205ECD /* SUNotEmptyValueTransformer.m in Sources */,
 				017BEF010F60CD1E00E66086 /* SUAPIHelper.m in Sources */,
 				01377DE20F60ED3E00C9121E /* SUImagePreviewView.m in Sources */,
-				01E3325B0F71C4B2003EB133 /* SUFileListDelegate.m in Sources */,
+				0192F2950F71F030002B9547 /* SUSelectableCollectionViewItem.m in Sources */,
+				0192F2B70F71F6CC002B9547 /* Scribd_Uploader_dataModel 210-220.xcmappingmodel in Sources */,
+				0192F3350F72126C002B9547 /* SUDroppableCollectionView.m in Sources */,
+				0192F3390F7212F9002B9547 /* SUFileListViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,7 +1001,7 @@
 				012E5DC90F1F32B10037ECDA /* Scribd_Uploader_DataModel 210.xcdatamodel */,
 				0122B7CD0F5DED7800D2D0DD /* Scribd_Uploader_DataModel 220.xcdatamodel */,
 				0123E96D0F32AF5E00FDF757 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */,
-				0122B8C10F5E144900D2D0DD /* Scribd_Uploader_DataModel 210-220.xcmappingmodel */,
+				0192F2B60F71F6CC002B9547 /* Scribd_Uploader_dataModel 210-220.xcmappingmodel */,
 			);
 			currentVersion = 0122B7CD0F5DED7800D2D0DD /* Scribd_Uploader_DataModel 220.xcdatamodel */;
 			path = Scribd_Uploader_DataModel.xcdatamodeld;
