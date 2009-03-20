@@ -1,3 +1,5 @@
+@class SUCollectionView;
+
 /*!
  @class SUQuickLookDelegate
  @abstract Interface for the Quick Look feature of Mac OS X 10.5 that allows
@@ -13,7 +15,8 @@
 @interface SUQuickLookDelegate : NSObject {
 	BOOL useQuickLook;
 	IBOutlet NSArrayController *filesController;
-	IBOutlet NSCollectionView *fileListView;
+	IBOutlet SUCollectionView *fileListView;
+	IBOutlet NSScrollView *scrollView;
 }
 
 #pragma mark Displaying the Quick Look panel

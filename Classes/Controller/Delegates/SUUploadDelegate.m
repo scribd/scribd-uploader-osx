@@ -4,6 +4,18 @@
 
 #pragma mark Helpers
 
+/*
+ Creates an NSTimer that periodically checks the conversion status and updates
+ the document's attributes as appropriate.
+ */
+
+- (void) trackConversionStatus;
+
+/*
+ Sends a docs.changeSettings call to the server, setting the document's
+ metadata. This method is intended to be run in a thread.
+ */
+
 - (void) changeSettings;
 
 @end
@@ -57,8 +69,10 @@
 		if (response) {
 			document.success = [NSNumber numberWithBool:YES];
 			document.error = NULL;
+			document.converting = [NSNumber numberWithBool:YES];
 			document.scribdID = [NSNumber numberWithInteger:[[response objectForKey:@"doc_id"] integerValue]];
 			[NSThread detachNewThreadSelector:@selector(changeSettings) toTarget:self withObject:NULL];
+			[self trackConversionStatus];
 		}
 		else document.success = [NSNumber numberWithBool:NO];
 		[xml release];
@@ -188,6 +202,10 @@
 	
 	document.assigningProperties = [NSNumber numberWithBool:NO];
 	[pool release];
+}
+
+- (void) trackConversionStatus {
+	[[[SUConversionStatusTracker alloc] initWithDocument:document] autorelease];
 }
 
 @end

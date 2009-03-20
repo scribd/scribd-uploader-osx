@@ -30,10 +30,14 @@
  */
 
 - (NSRect) previewPanel:(NSPanel*)panel frameForURL:(NSURL*)URL {
-	//NSRect rect = [table convertRectToBase:[table rectOfRow:[filesController selectionIndex]]];
-	//rect.origin = [[table window] convertBaseToScreen:rect.origin];
-	//return rect;
-	return NSZeroRect; //TODO
+	NSRect rect = [fileListView rectAtIndex:[filesController selectionIndex]];
+	rect.origin = [[fileListView window] convertBaseToScreen:rect.origin];
+	
+	NSRect viewRect = [scrollView convertRect:[scrollView frame] toView:[[scrollView window] contentView]];
+	viewRect = [scrollView convertRectToBase:viewRect];
+	viewRect.origin = [[scrollView window] convertBaseToScreen:viewRect.origin];
+	if (NSIntersectsRect(viewRect, rect)) return rect;
+	else return NSZeroRect;
 }
 
 #pragma mark KVO

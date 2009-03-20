@@ -1,6 +1,39 @@
-#import "SUKeyResponseCollectionView.h"
+#import "SUCollectionView.h"
 
-@implementation SUKeyResponseCollectionView
+@implementation SUCollectionView
+
+#pragma mark Initializing and deallocating
+
+- (void) awakeFromNib {
+	itemRects = [[NSMutableDictionary alloc] init];
+	if ([delegate respondsToSelector:@selector(dragTypesForCollectionView:)])
+		[self registerForDraggedTypes:[delegate dragTypesForCollectionView:self]];
+}
+
+- (void) dealloc {
+	[itemRects release];
+	[super dealloc];
+}
+
+#pragma mark Modifying the Collection View Item
+
+- (NSCollectionViewItem *) newItemForRepresentedObject:(id)object {
+	NSCollectionViewItem *item = [super newItemForRepresentedObject:object];
+	[itemRects setObject:[item view] forKey:[NSNumber numberWithUnsignedInteger:[[self content] indexOfObject:object]]];
+	return item;
+}
+
+#pragma mark Querying information about collection view items
+
+- (NSRect) rectOfObject:(id)object {
+	return [self rectAtIndex:[[self content] indexOfObject:object]];
+}
+
+- (NSRect) rectAtIndex:(NSUInteger)index {
+	NSRect rect = [[itemRects objectForKey:[NSNumber numberWithUnsignedInteger:index]] frame];
+	rect = [self convertRectToBase:rect];
+	return rect;
+}
 
 #pragma mark Event responders
 
@@ -77,6 +110,31 @@
 	
 	// if we didn't handle the key event, assume it's a menu item's key equivalent
 	if (!handled) [[[NSApplication sharedApplication] mainMenu] performKeyEquivalent:event];
+}
+
+#pragma mark Drag and drop
+
+- (NSDragOperation) draggingEntered:(id<NSDraggingInfo>)sender {
+	if ([delegate respondsToSelector:@selector(collectionView:willBeginDrag:)])
+		return [delegate collectionView:self willBeginDrag:sender];
+	else return NSDragOperationNone;
+}
+
+- (BOOL) prepareForDragOperation:(id<NSDraggingInfo>)sender {
+	if ([delegate respondsToSelector:@selector(collectionView:shouldAcceptDrag:)])
+		return [delegate collectionView:self shouldAcceptDrag:sender];
+	else return YES;
+}
+
+- (BOOL) performDragOperation:(id<NSDraggingInfo>)sender {
+	if ([delegate respondsToSelector:@selector(collectionView:willAcceptDrag:)])
+		return [delegate collectionView:self willAcceptDrag:sender];
+	else return NO;
+}
+
+- (void) concludeDragOperation:(id<NSDraggingInfo>)sender {
+	if ([delegate respondsToSelector:@selector(collectionView:didAcceptDrag:)])
+		[delegate collectionView:self didAcceptDrag:sender];
 }
 
 @end

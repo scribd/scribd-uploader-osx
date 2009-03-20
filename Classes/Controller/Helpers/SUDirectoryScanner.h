@@ -1,3 +1,5 @@
+@class SUDatabaseHelper;
+
 /*!
  @class SUDirectoryScanner
  @abstract Performs a scan on a set of directory paths, searching each for
@@ -6,8 +8,6 @@
  This class's properties are also used as bindings for the file scan progress
  sheet. It is also a receiver for actions of that sheet.
  */
-
-@class SUDatabaseHelper;
 
 @interface SUDirectoryScanner : NSObject {
 	IBOutlet SUDatabaseHelper *db;

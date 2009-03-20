@@ -6,7 +6,7 @@
  The view accepts files for drag-and-drop operations.
  */
 
-- (NSArray *) dragTypesForCollectionView:(SUDroppableCollectionView *)view {
+- (NSArray *) dragTypesForCollectionView:(SUCollectionView *)view {
 	return [NSArray arrayWithObject:NSFilenamesPboardType];
 }
 
@@ -15,7 +15,7 @@
  otherwise rejects the drag.
  */
 
-- (NSDragOperation) collectionView:(SUDroppableCollectionView *)view willBeginDrag:(id<NSDraggingInfo>)drag {
+- (NSDragOperation) collectionView:(SUCollectionView *)view willBeginDrag:(id<NSDraggingInfo>)drag {
 	if (!uploader.isUploading && [[[drag draggingPasteboard] types] containsObject:NSFilenamesPboardType])
 		return NSDragOperationGeneric;
 	else return NSDragOperationNone;
@@ -25,7 +25,7 @@
  Adds the dragged files to the managed object context.
  */
 
-- (BOOL) collectionView:(SUDroppableCollectionView *)view willAcceptDrag:(id<NSDraggingInfo>)drag {
+- (BOOL) collectionView:(SUCollectionView *)view willAcceptDrag:(id<NSDraggingInfo>)drag {
 	NSArray *files = [[drag draggingPasteboard] propertyListForType:NSFilenamesPboardType];
 	return [db addFiles:files] > 0;
 }
