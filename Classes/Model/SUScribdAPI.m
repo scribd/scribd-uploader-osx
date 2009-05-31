@@ -1,6 +1,7 @@
 #import "SUScribdAPI.h"
 
 static SUScribdAPI *sharedAPI = NULL;
+static NSString *SUDefaultKeyMaximumSimultaneousUploads = @"SUMaximumSimultaneousUploads";
 
 @interface SUScribdAPI (Private)
 
@@ -42,7 +43,7 @@ static SUScribdAPI *sharedAPI = NULL;
 
 + (void) initialize {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSDictionary *appDefaults = [[NSDictionary alloc] initWithObject:[NSNumber numberWithInteger:4] forKey:@"SUMaximumSimultaneousUploads"];
+	NSDictionary *appDefaults = [[NSDictionary alloc] initWithObject:[NSNumber numberWithInteger:4] forKey:@"SUDefaultKeyMaximumSimultaneousUploads"];
 	[defaults registerDefaults:appDefaults];
 	[appDefaults release];
 }
@@ -54,7 +55,7 @@ static SUScribdAPI *sharedAPI = NULL;
 - (id) init {
 	if (self = [super init]) {
 		uploadQueue = [[NSOperationQueue alloc] init];
-		[uploadQueue setMaxConcurrentOperationCount:[[NSUserDefaults standardUserDefaults] integerForKey:@"SUMaximumSimultaneousUploads"]];
+		[uploadQueue setMaxConcurrentOperationCount:[[NSUserDefaults standardUserDefaults] integerForKey:SUDefaultKeyMaximumSimultaneousUploads]];
 	}
 	return self;
 }

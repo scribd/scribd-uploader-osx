@@ -19,10 +19,10 @@ NSString *SUUploadAction = @"Upload";
 NSString *SUChangeSettingsAction = @"ChangeSettings";
 
 /* User defaults keys */
-NSString *SUDefaultKeySessionUsername = @"sessionUsername";
-NSString *SUDefaultKeyLastCategoryLoad = @"lastCategoryLoad";
-NSString *SUDefaultKeyUploadPrivateDefault = @"privateUploadsByDefault";
-NSString *SUDefaultKeyManualMetadataDrawer = @"manualMetadataDrawer";
+NSString *SUDefaultKeySessionUsername = @"SUSessionUsername";
+NSString *SUDefaultKeyLastCategoryLoad = @"SULastCategoryLoad";
+NSString *SUDefaultKeyUploadPrivateDefault = @"SUUploadPrivateDefault";
+NSString *SUDefaultKeyManualMetadataDrawer = @"SUManualMetadataDrawer";
 
 /* Notifications */
 NSString *SUUploadCompleteNotification = @"SUUploadCompleteNotification";
