@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">9G55</string>
+		<string key="IBDocument.SystemVersion">9J61</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">949.43</string>
+		<string key="IBDocument.AppKitVersion">949.46</string>
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -37,6 +37,9 @@
 			</object>
 			<object class="NSCustomObject" id="612578685">
 				<string key="NSClassName">SUAppDelegate</string>
+			</object>
+			<object class="NSCustomObject" id="1043703483">
+				<string key="NSClassName">SUMoveApplicationHelper</string>
 			</object>
 			<object class="NSMenu" id="1055885701">
 				<string key="NSTitle">MainMenu</string>
@@ -1136,7 +1139,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 			</object>
 			<object class="NSCollectionViewItem" id="727563930"/>
 			<object class="NSBox" id="547998932">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">12</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1162,7 +1165,6 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 								</object>
 								<string key="NSFrame">{{9, 9}, {32, 32}}</string>
 								<reference key="NSSuperview" ref="824448272"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSImageCell" key="NSCell" id="600593974">
 									<int key="NSCellFlags">130560</int>
@@ -1180,7 +1182,6 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 								<object class="NSPSMatrix" key="NSDrawMatrix"/>
 								<string key="NSFrame">{{48, 18}, {372, 12}}</string>
 								<reference key="NSSuperview" ref="824448272"/>
-								<reference key="NSWindow"/>
 								<int key="NSpiFlags">16648</int>
 								<double key="NSMaxValue">1.000000e+00</double>
 							</object>
@@ -1189,7 +1190,6 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 								<int key="NSvFlags">265</int>
 								<string key="NSFrame">{{427, 17}, {15, 15}}</string>
 								<reference key="NSSuperview" ref="824448272"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="357866835">
 									<int key="NSCellFlags">67239424</int>
@@ -1222,7 +1222,6 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 								<int key="NSvFlags">266</int>
 								<string key="NSFrame">{{46, 33}, {469, 14}}</string>
 								<reference key="NSSuperview" ref="824448272"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSTextFieldCell" key="NSCell" id="1064702380">
 									<int key="NSCellFlags">68288064</int>
@@ -1237,12 +1236,9 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 						</object>
 						<string key="NSFrameSize">{450, 50}</string>
 						<reference key="NSSuperview" ref="547998932"/>
-						<reference key="NSWindow"/>
 					</object>
 				</object>
 				<string key="NSFrameSize">{450, 50}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<string key="NSOffsets">{0, 0}</string>
 				<object class="NSTextFieldCell" key="NSTitleCell">
 					<int key="NSCellFlags">67239424</int>
@@ -6065,6 +6061,14 @@ ciBoZWxwIHZpZXdlci4</string>
 					</object>
 					<int key="connectionID">2088</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">applicationDirectoryChecker</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="1043703483"/>
+					</object>
+					<int key="connectionID">2090</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -8135,6 +8139,11 @@ ciBoZWxwIHZpZXdlci4</string>
 						<reference key="object" ref="960976572"/>
 						<reference key="parent" ref="0"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">2089</int>
+						<reference key="object" ref="1043703483"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -8414,6 +8423,7 @@ ciBoZWxwIHZpZXdlci4</string>
 					<string>205.IBPluginDependency</string>
 					<string>205.ImportedFromIB2</string>
 					<string>2072.IBPluginDependency</string>
+					<string>2089.IBPluginDependency</string>
 					<string>21.IBEditorWindowLastContentRect</string>
 					<string>21.IBWindowTemplateEditedContentRect</string>
 					<string>21.ImportedFromIB2</string>
@@ -8976,6 +8986,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{335, 312}, {490, 488}}</string>
 					<string>{{335, 312}, {490, 488}}</string>
 					<reference ref="9"/>
@@ -9136,7 +9147,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">2088</int>
+			<int key="maxID">2090</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -9258,6 +9269,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>applicationDirectoryChecker</string>
 							<string>categoriesController</string>
 							<string>db</string>
 							<string>directoryScanSheet</string>
@@ -9270,6 +9282,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>SUMoveApplicationHelper</string>
 							<string>NSTreeController</string>
 							<string>SUDatabaseHelper</string>
 							<string>NSWindow</string>
@@ -9491,6 +9504,14 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Classes/Controller/Delegates/SULoginSheetDelegate.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">SUMoveApplicationHelper</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Classes/Controller/Helpers/SUMoveApplicationHelper.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

@@ -35,6 +35,7 @@
 #import "SUUploadDelegate.h"
 #import "SUScribdAPI.h"
 #import "SUSessionHelper.h"
+#import "SUMoveApplicationHelper.h"
 
 #import "SUMappingValueTransformer.h"
 #import "SUReversibleMappingValueTransformer.h"

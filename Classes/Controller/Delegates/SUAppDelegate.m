@@ -165,6 +165,9 @@
 	// do other persistent-store housekeeping
 	[db purgeCompletedDocuments];
 	[db resetProgresses];
+	
+	// check the application directory
+	[applicationDirectoryChecker checkApplicationFolder];
 }
 
 #pragma mark Delegate responders
