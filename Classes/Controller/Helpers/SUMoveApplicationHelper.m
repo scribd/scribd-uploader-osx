@@ -1,6 +1,6 @@
 #import "SUMoveApplicationHelper.h"
 
-static NSString *SUHasCheckedApplicationFolder = @"SUHasCheckedApplicationFolder";
+static NSString *SUDefaultKeyHasCheckedApplicationFolder = @"SUHasCheckedApplicationFolder";
 static NSString *newPath = NULL;
 
 @interface SUMoveApplicationHelper (Private)
@@ -32,7 +32,7 @@ static NSString *newPath = NULL;
 @implementation SUMoveApplicationHelper (Private)
 
 - (BOOL) shouldCheckApplicationFolder {
-	return ![[NSUserDefaults standardUserDefaults] boolForKey:SUHasCheckedApplicationFolder];
+	return ![[NSUserDefaults standardUserDefaults] boolForKey:SUDefaultKeyHasCheckedApplicationFolder];
 }
 
 - (BOOL) applicationIsInApplicationsFolder {
@@ -79,7 +79,7 @@ static NSString *newPath = NULL;
 }
 
 - (void) setHasCheckedFolder {
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:SUHasCheckedApplicationFolder];
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:SUDefaultKeyHasCheckedApplicationFolder];
 }
 
 - (void) relaunch {

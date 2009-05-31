@@ -8,6 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="2"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -427,7 +428,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<string key="NSWindowContentMinSize">{491, 450}</string>
 				<object class="NSView" key="NSWindowView" id="823886803">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -805,6 +806,7 @@ ELIAAAAAAAgACAAIAAgAAQABAAEAAQ</bytes>
 						</object>
 					</object>
 					<string key="NSFrameSize">{491, 496}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
 				<string key="NSMinSize">{491, 528}</string>
@@ -2225,6 +2227,10 @@ ciBoZWxwIHZpZXdlci4</string>
 				<string key="NSClassName">SUDatabaseHelper</string>
 			</object>
 			<object class="NSUserDefaultsController" id="706999351">
+				<object class="NSMutableArray" key="NSDeclaredKeys">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>SUSessionUsername</string>
+				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="27757150">
@@ -4036,26 +4042,6 @@ ciBoZWxwIHZpZXdlci4</string>
 					<int key="connectionID">1068</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.sessionUsername</string>
-						<reference key="source" ref="231784562"/>
-						<reference key="destination" ref="706999351"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="231784562"/>
-							<reference key="NSDestination" ref="706999351"/>
-							<string key="NSLabel">value: values.sessionUsername</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.sessionUsername</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">SULoginLabel</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1085</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">uploader</string>
 						<reference key="source" ref="612578685"/>
@@ -5598,26 +5584,6 @@ ciBoZWxwIHZpZXdlci4</string>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">title: values.sessionUsername</string>
-						<reference key="source" ref="985169099"/>
-						<reference key="destination" ref="706999351"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="985169099"/>
-							<reference key="NSDestination" ref="706999351"/>
-							<string key="NSLabel">title: values.sessionUsername</string>
-							<string key="NSBinding">title</string>
-							<string key="NSKeyPath">values.sessionUsername</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">SULogInButtonTitle</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1809</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selectedObjects.hidden</string>
 						<reference key="source" ref="372162428"/>
 						<reference key="destination" ref="603642860"/>
@@ -6041,6 +6007,46 @@ ciBoZWxwIHZpZXdlci4</string>
 						<reference key="destination" ref="518235406"/>
 					</object>
 					<int key="connectionID">1982</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.SUSessionUsername</string>
+						<reference key="source" ref="231784562"/>
+						<reference key="destination" ref="706999351"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="231784562"/>
+							<reference key="NSDestination" ref="706999351"/>
+							<string key="NSLabel">value: values.SUSessionUsername</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.SUSessionUsername</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">SULoginLabel</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1983</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: values.SUSessionUsername</string>
+						<reference key="source" ref="985169099"/>
+						<reference key="destination" ref="706999351"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="985169099"/>
+							<reference key="NSDestination" ref="706999351"/>
+							<string key="NSLabel">title: values.SUSessionUsername</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">values.SUSessionUsername</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">SULogInButtonTitle</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1984</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -9009,7 +9015,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{414, 763}, {617, 0}}</string>
+					<string>{{359, 763}, {617, 0}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -9130,7 +9136,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1982</int>
+			<int key="maxID">1984</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
