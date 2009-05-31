@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">9G55</string>
+		<string key="IBDocument.SystemVersion">9J61</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">949.43</string>
+		<string key="IBDocument.AppKitVersion">949.46</string>
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -3411,6 +3411,9 @@ ciBoZWxwIHZpZXdlci4</string>
 			<object class="NSCustomObject" id="147861660">
 				<string key="NSClassName">SUAddURLWindowController</string>
 			</object>
+			<object class="NSCustomObject" id="518235406">
+				<string key="NSClassName">SUMoveApplicationHelper</string>
+			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
@@ -6031,6 +6034,14 @@ ciBoZWxwIHZpZXdlci4</string>
 					</object>
 					<int key="connectionID">1980</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">applicationDirectoryChecker</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="518235406"/>
+					</object>
+					<int key="connectionID">1982</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -8115,6 +8126,11 @@ ciBoZWxwIHZpZXdlci4</string>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Table Delegate</string>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1981</int>
+						<reference key="object" ref="518235406"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -8371,6 +8387,7 @@ ciBoZWxwIHZpZXdlci4</string>
 					<string>1965.IBPluginDependency</string>
 					<string>1973.IBPluginDependency</string>
 					<string>1978.IBPluginDependency</string>
+					<string>1981.IBPluginDependency</string>
 					<string>2.IBPluginDependency</string>
 					<string>2.ImportedFromIB2</string>
 					<string>205.IBPluginDependency</string>
@@ -8925,6 +8942,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
@@ -9112,7 +9130,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1980</int>
+			<int key="maxID">1982</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -9234,6 +9252,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>applicationDirectoryChecker</string>
 							<string>categoriesController</string>
 							<string>db</string>
 							<string>directoryScanSheet</string>
@@ -9247,6 +9266,7 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>SUMoveApplicationHelper</string>
 							<string>NSTreeController</string>
 							<string>SUDatabaseHelper</string>
 							<string>NSWindow</string>
@@ -9448,6 +9468,14 @@ dG8gc2VlIHRoaXMgZG9jdW1lbnQuA</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Classes/Controller/Delegates/SULoginSheetDelegate.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">SUMoveApplicationHelper</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Classes/Controller/Helpers/SUMoveApplicationHelper.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

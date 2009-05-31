@@ -97,6 +97,7 @@
 		01BF112D0F2AD45A007CED18 /* Error Clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BF112A0F2AD45A007CED18 /* Error Clicked.png */; };
 		01E062A40F43DE130026A075 /* NSApplication_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E062A30F43DE130026A075 /* NSApplication_SUAdditions.m */; };
 		01E3325B0F71C4B2003EB133 /* SUFileListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E3325A0F71C4B2003EB133 /* SUFileListDelegate.m */; };
+		01E719730FD312310002982A /* SUMoveApplicationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E719720FD312310002982A /* SUMoveApplicationHelper.m */; };
 		01E821340F293BB100473993 /* Caution.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821310F293BB100473993 /* Caution.png */; };
 		01E821350F293BB100473993 /* Error.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821320F293BB100473993 /* Error.png */; };
 		01E821360F293BB100473993 /* Go.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821330F293BB100473993 /* Go.png */; };
@@ -266,6 +267,8 @@
 		01E062A30F43DE130026A075 /* NSApplication_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApplication_SUAdditions.m; sourceTree = "<group>"; };
 		01E332590F71C4B2003EB133 /* SUFileListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileListDelegate.h; sourceTree = "<group>"; };
 		01E3325A0F71C4B2003EB133 /* SUFileListDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileListDelegate.m; sourceTree = "<group>"; };
+		01E719710FD312310002982A /* SUMoveApplicationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUMoveApplicationHelper.h; sourceTree = "<group>"; };
+		01E719720FD312310002982A /* SUMoveApplicationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUMoveApplicationHelper.m; sourceTree = "<group>"; };
 		01E821310F293BB100473993 /* Caution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Caution.png; sourceTree = "<group>"; };
 		01E821320F293BB100473993 /* Error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Error.png; sourceTree = "<group>"; };
 		01E821330F293BB100473993 /* Go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Go.png; sourceTree = "<group>"; };
@@ -391,6 +394,8 @@
 				01E92CE10F2BB94D003EBD84 /* SUDirectoryScanner.m */,
 				017BEEFF0F60CD1E00E66086 /* SUAPIHelper.h */,
 				017BEF000F60CD1E00E66086 /* SUAPIHelper.m */,
+				01E719710FD312310002982A /* SUMoveApplicationHelper.h */,
+				01E719720FD312310002982A /* SUMoveApplicationHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -766,6 +771,7 @@
 				017BEF010F60CD1E00E66086 /* SUAPIHelper.m in Sources */,
 				01377DE20F60ED3E00C9121E /* SUImagePreviewView.m in Sources */,
 				01E3325B0F71C4B2003EB133 /* SUFileListDelegate.m in Sources */,
+				01E719730FD312310002982A /* SUMoveApplicationHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
