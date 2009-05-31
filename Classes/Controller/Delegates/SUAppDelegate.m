@@ -138,7 +138,7 @@
 	[db resetProgresses];
 	
 	// check the application directory
-	[applicationDirectoryChecker checkApplicationFolder];
+	[[TMMoveToApplicationsFolder applicationMover] checkApplicationFolder];
 }
 
 #pragma mark Delegate responders
