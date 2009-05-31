@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0103D6011022B3BA00D8968C /* SUMoveApplicationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0103D5FF1022B3BA00D8968C /* SUMoveApplicationHelper.m */; };
+		0103D6741022B88B00D8968C /* TMMoveToApplicationsFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0103D65A1022B88B00D8968C /* TMMoveToApplicationsFolder.m */; };
 		0106EE850F154403001B701B /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0106EE840F154403001B701B /* Icon.icns */; };
 		010BC0CE0F33C9F100C4DE4D /* NSArray_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 010BC0C70F33C9F100C4DE4D /* NSArray_SUAdditions.m */; };
 		010BC0CF0F33C9F100C4DE4D /* NSDictionary_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 010BC0C90F33C9F100C4DE4D /* NSDictionary_SUAdditions.m */; };
@@ -124,8 +124,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0103D5FF1022B3BA00D8968C /* SUMoveApplicationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUMoveApplicationHelper.m; sourceTree = "<group>"; };
-		0103D6001022B3BA00D8968C /* SUMoveApplicationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUMoveApplicationHelper.h; sourceTree = "<group>"; };
+		0103D6591022B88B00D8968C /* TMMoveToApplicationsFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMMoveToApplicationsFolder.h; sourceTree = "<group>"; };
+		0103D65A1022B88B00D8968C /* TMMoveToApplicationsFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMMoveToApplicationsFolder.m; sourceTree = "<group>"; };
 		0106EE840F154403001B701B /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		0106EE870F15441C001B701B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		010BC0C60F33C9F100C4DE4D /* NSArray_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArray_SUAdditions.h; sourceTree = "<group>"; };
@@ -305,6 +305,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0103D62F1022B88B00D8968C /* TMMoveToApplicationsFolder */ = {
+			isa = PBXGroup;
+			children = (
+				0103D6591022B88B00D8968C /* TMMoveToApplicationsFolder.h */,
+				0103D65A1022B88B00D8968C /* TMMoveToApplicationsFolder.m */,
+			);
+			path = TMMoveToApplicationsFolder;
+			sourceTree = "<group>";
+		};
 		010BC0C50F33C9F100C4DE4D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,8 +407,6 @@
 				01ABF7F90F147DCC00EE7142 /* SUSessionHelper.m */,
 				01E92CE00F2BB94D003EBD84 /* SUDirectoryScanner.h */,
 				01E92CE10F2BB94D003EBD84 /* SUDirectoryScanner.m */,
-				0103D5FF1022B3BA00D8968C /* SUMoveApplicationHelper.m */,
-				0103D6001022B3BA00D8968C /* SUMoveApplicationHelper.h */,
 				017BEEFF0F60CD1E00E66086 /* SUAPIHelper.h */,
 				017BEF000F60CD1E00E66086 /* SUAPIHelper.m */,
 				0175F32A0F7244CF0046C032 /* SUConversionStatusTracker.h */,
@@ -548,6 +555,7 @@
 				01AF5FF90F1D27D300D51D07 /* DBPrefsWindow */,
 				012384670F2AAE1F007D2B54 /* EMKeychain */,
 				01AF5FFC0F1D27D300D51D07 /* QuickLook */,
+				0103D62F1022B88B00D8968C /* TMMoveToApplicationsFolder */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -783,7 +791,7 @@
 				0192F3390F7212F9002B9547 /* SUFileListViewDelegate.m in Sources */,
 				0175F3230F72438B0046C032 /* Scribd_Uploader_DataModel 210-220.xcmappingmodel in Sources */,
 				0175F32C0F7244CF0046C032 /* SUConversionStatusTracker.m in Sources */,
-				0103D6011022B3BA00D8968C /* SUMoveApplicationHelper.m in Sources */,
+				0103D6741022B88B00D8968C /* TMMoveToApplicationsFolder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

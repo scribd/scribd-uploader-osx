@@ -1,0 +1,3 @@
+[submodule "Vendor/TMMoveToApplicationsFolder"]
+	path = Vendor/TMMoveToApplicationsFolder
+	url = git://github.com/RISCfuture/TMMoveToApplicationsFolder.git

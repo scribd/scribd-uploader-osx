@@ -14,7 +14,6 @@
 	IBOutlet SUUploadHelper *uploader;
 	IBOutlet NSTreeController *categoriesController;
 	IBOutlet SUDirectoryScanner *directoryScanner;
-	IBOutlet SUMoveApplicationHelper *applicationDirectoryChecker;
 }
 
 #pragma mark Actions
