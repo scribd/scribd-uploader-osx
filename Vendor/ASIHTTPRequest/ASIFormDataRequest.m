@@ -3,7 +3,7 @@
 //  asi-http-request
 //
 //  Created by Ben Copsey on 07/11/2008.
-//  Copyright 2008 All-Seeing Interactive. All rights reserved.
+//  Copyright 2008-2009 All-Seeing Interactive. All rights reserved.
 //
 
 #import "ASIFormDataRequest.h"
@@ -19,6 +19,11 @@
 	postData = nil;
 	fileData = nil;	
 	return self;
+}
+
++ (id)requestWithURL:(NSURL *)newURL
+{
+	return [[[self alloc] initWithURL:newURL] autorelease];
 }
 
 - (void)dealloc
@@ -44,10 +49,7 @@
 	if (!fileData) {
 		fileData = [[NSMutableDictionary alloc] init];
 	}
-	NSMutableDictionary *file = [[[NSMutableDictionary alloc] init] autorelease];
-	[file setObject:[NSData dataWithContentsOfFile:filePath options:NSUncachedRead error:NULL] forKey:@"data"];
-	[file setObject:[filePath lastPathComponent] forKey:@"filename"];
-	[fileData setValue:file forKey:key];
+	[fileData setValue:filePath forKey:key];
 	[self setRequestMethod:@"POST"];
 }
 
@@ -56,10 +58,7 @@
 	if (!fileData) {
 		fileData = [[NSMutableDictionary alloc] init];
 	}
-	NSMutableDictionary *file = [[[NSMutableDictionary alloc] init] autorelease];
-	[file setObject:data forKey:@"data"];
-	[file setObject:@"file" forKey:@"filename"];
-	[fileData setValue:file forKey:key];
+	[fileData setObject:data forKey:key];
 	[self setRequestMethod:@"POST"];	
 }
 
@@ -69,15 +68,17 @@
 		[super buildPostBody];
 		return;
 	}	
-
-	NSMutableData *body = [[[NSMutableData alloc] init] autorelease];
+	if ([fileData count] > 0) {
+		[self setShouldStreamPostDataFromDisk:YES];
+	}
+	 
 	
 	// Set your own boundary string only if really obsessive. We don't bother to check if post data contains the boundary, since it's pretty unlikely that it does.
 	NSString *stringBoundary = @"0xKhTmLbOuNdArY";
 	
 	[self addRequestHeader:@"Content-Type" value:[NSString stringWithFormat:@"multipart/form-data; boundary=%@",stringBoundary]];
 	
-	[body appendData:[[NSString stringWithFormat:@"--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[self appendPostData:[[NSString stringWithFormat:@"--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	
 	// Adds post data
 	NSData *endItemBoundary = [[NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding];
@@ -85,11 +86,11 @@
 	NSString *key;
 	int i=0;
 	while (key = [e nextObject]) {
-		[body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",key] dataUsingEncoding:NSUTF8StringEncoding]];
-		[body appendData:[[postData objectForKey:key] dataUsingEncoding:NSUTF8StringEncoding]];
+		[self appendPostData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",key] dataUsingEncoding:NSUTF8StringEncoding]];
+		[self appendPostData:[[postData objectForKey:key] dataUsingEncoding:NSUTF8StringEncoding]];
 		i++;
 		if (i != [postData count] || [fileData count] > 0) { //Only add the boundary if this is not the last item in the post body
-			[body appendData:endItemBoundary];
+			[self appendPostData:endItemBoundary];
 		}
 	}
 	
@@ -98,22 +99,27 @@
 	e = [fileData keyEnumerator];
 	i=0;
 	while (key = [e nextObject]) {
-		NSDictionary *fileInfo = [fileData objectForKey:key];
-		[body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",key,[fileInfo objectForKey:@"filename"]] dataUsingEncoding:NSUTF8StringEncoding]];
-		[body appendData:contentTypeHeader];
-		[body appendData: [fileInfo objectForKey:@"data"]];
+		NSString *fileName = @"file";
+		id file =  [fileData objectForKey:key];
+		if ([file isKindOfClass:[NSString class]]) {
+			fileName = (NSString *)file;
+		}
+		[self appendPostData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",key,fileName] dataUsingEncoding:NSUTF8StringEncoding]];
+		[self appendPostData:contentTypeHeader];
+		if ([file isKindOfClass:[NSString class]]) {
+			[self appendPostDataFromFile:fileName];
+		} else {
+			[self appendPostData:file];
+		}
 		i++;
 		// Only add the boundary if this is not the last item in the post body
 		if (i != [fileData count]) { 
-			[body appendData:endItemBoundary];
+			[self appendPostData:endItemBoundary];
 		}
 	}
 	
-	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[self appendPostData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	
-	[self setPostBody:body];
-	
-
 	[super buildPostBody];
 }
 

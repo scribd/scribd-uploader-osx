@@ -5,7 +5,10 @@
 #import <QuartzCore/QuartzCore.h>
 #endif
 
+#import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
+#import "ASINetworkQueue.h"
+
 #import "QuickLook.h"
 #import "DBPrefsWindowController.h"
 #import <Sparkle/SUUpdater.h>
