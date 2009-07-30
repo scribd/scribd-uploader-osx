@@ -43,7 +43,7 @@ static NSString *SUDefaultKeyMaximumSimultaneousUploads = @"SUMaximumSimultaneou
 
 + (void) initialize {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSDictionary *appDefaults = [[NSDictionary alloc] initWithObject:[NSNumber numberWithInteger:4] forKey:@"SUDefaultKeyMaximumSimultaneousUploads"];
+	NSDictionary *appDefaults = [[NSDictionary alloc] initWithObject:[NSNumber numberWithInteger:4] forKey:SUDefaultKeyMaximumSimultaneousUploads];
 	[defaults registerDefaults:appDefaults];
 	[appDefaults release];
 }
