@@ -139,7 +139,7 @@
 - (void) setDoubleValue:(double)value {
 	progress = value;
 	document.progress = [NSNumber numberWithDouble:progress/progressMax];
-	if (!document.startTime) document.startTime = [NSDate date]; // start the timer when we get our first data chunk
+	if (document.startTime == NULL) document.startTime = [NSDate date]; // start the timer when we get our first data chunk
 }
 
 /*
@@ -149,7 +149,7 @@
 - (void) incrementBy:(double)amount {
 	progress += amount;
 	document.progress = [NSNumber numberWithDouble:progress/progressMax];
-	if (!document.startTime) document.startTime = [NSDate date]; // start the timer when we get our first data chunk
+	if (document.startTime == NULL) document.startTime = [NSDate date]; // start the timer when we get our first data chunk
 }
 
 /*

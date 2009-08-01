@@ -60,7 +60,7 @@
 - (id) transformedValue:(id)value {
 	if ([value isKindOfClass:[NSNumber class]]) {
 		double scalar = [(NSNumber *)value doubleValue];
-		if (scalar <= 0.0) return NSLocalizedString(@"unknown", @"unknown numeric value");
+		if (scalar <= 0.0) return NSLocalizedString(@"?", @"unknown numeric value");
 		
 		NSString *largestUnit = NULL;
 		double largestUnitScalar;
@@ -82,7 +82,7 @@
 		NSString *valueString = [numberFormatter stringFromNumber:[NSNumber numberWithLongLong:round(largestUnitScalar)]];
 		return [NSString stringWithFormat:NSLocalizedString(@"%@ %@", @"number and its unit"), valueString, largestUnit];
 	}
-	else if (!value || value == [NSNull null]) return NSLocalizedString(@"unknown", @"unknown numeric value");
+	else if (!value || value == [NSNull null]) return NSLocalizedString(@"?", @"unknown numeric value");
 	else return value;
 }
 

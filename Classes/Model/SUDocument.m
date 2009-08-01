@@ -58,6 +58,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 @dynamic totalBytes;
 @dynamic estimatedSecondsRemaining;
 @dynamic uploading;
+@dynamic pending;
 
 #pragma mark Initializing and deallocating
 
@@ -232,6 +233,10 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	return (!self.uploaded && self.startTime != NULL);
 }
 
+- (BOOL) pending {
+	return (self.startTime == NULL);
+}
+
 #pragma mark KVO
 
 /*
@@ -315,6 +320,10 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 
 + (NSSet *) keyPathsForValuesAffectingUploading {
 	return [NSSet setWithObjects:@"startTime", @"uploaded", NULL];
+}
+
++ (NSSet *) keyPathsForValuesAffectingPending {
+	return [NSSet setWithObject:@"startTime"];
 }
 
 #pragma mark Finding documents

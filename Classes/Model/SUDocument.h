@@ -18,7 +18,7 @@
 	NSNumber *size;
 }
 
-#pragma mark First-order properties (database)
+#pragma mark First-order properties (file properties)
 
 /*!
  @property path
@@ -155,6 +155,8 @@
 
 @property (copy) NSString *license;
 
+#pragma mark Properties (upload status)
+
 /*!
  @property converting
  @abstract True if the document is being converted by Scribd.com. The conversion
@@ -202,7 +204,7 @@
 
 @property (retain) SUCategory *category;
 
-#pragma mark Dynamic properties
+#pragma mark Dynamic properties (file properties)
 
 /*!
  @property URL
@@ -272,6 +274,8 @@
  been uploaded yet.
  */
 
+#pragma mark Dynamic properties (URLs)
+
 @property (readonly) NSURL *scribdURL;
 
 /*!
@@ -283,6 +287,8 @@
 
 @property (readonly) NSURL *editURL;
 
+#pragma mark Dynamic properties (errors)
+
 /*!
  @property errorLevel
  @abstract A string describing the error state of this document.
@@ -292,6 +298,8 @@
  */
 
 @property (readonly) NSString *errorLevel;
+
+#pragma mark Dynamic properties (upload status)
 
 /*!
  @property uploaded
@@ -350,6 +358,13 @@
  */
 
 @property (readonly) BOOL uploading;
+
+/*!
+ @property pending
+ @abstract Whether or not this document has not begun uploading.
+ */
+
+@property (readonly) BOOL pending;
 
 #pragma mark Finding documents
 
