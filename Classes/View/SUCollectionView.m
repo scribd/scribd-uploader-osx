@@ -6,8 +6,17 @@
 
 - (void) awakeFromNib {
 	itemRects = [[NSMutableDictionary alloc] init];
-	if ([delegate respondsToSelector:@selector(dragTypesForCollectionView:)])
-		[self registerForDraggedTypes:[delegate dragTypesForCollectionView:self]];
+	if ([delegate respondsToSelector:@selector(dragTypesForCollectionView:)]) {
+		NSMethodSignature *sig = [[delegate class] instanceMethodSignatureForSelector:@selector(dragTypesForCollectionView:)];
+		NSInvocation *invoc = [NSInvocation invocationWithMethodSignature:sig];
+		[invoc setTarget:delegate];
+		[invoc setSelector:@selector(dragTypesForCollectionView:)];
+		[invoc setArgument:&self atIndex:2];
+		[invoc invoke];
+		id result;
+		[invoc getReturnValue:&result];
+		[self registerForDraggedTypes:result];
+	}
 }
 
 - (void) dealloc {
@@ -115,26 +124,62 @@
 #pragma mark Drag and drop
 
 - (NSDragOperation) draggingEntered:(id<NSDraggingInfo>)sender {
-	if ([delegate respondsToSelector:@selector(collectionView:willBeginDrag:)])
-		return [delegate collectionView:self willBeginDrag:sender];
+	if ([delegate respondsToSelector:@selector(collectionView:willBeginDrag:)]) {
+		NSMethodSignature *sig = [[delegate class] instanceMethodSignatureForSelector:@selector(collectionView:willBeginDrag:)];
+		NSInvocation *invoc = [NSInvocation invocationWithMethodSignature:sig];
+		[invoc setTarget:delegate];
+		[invoc setSelector:@selector(collectionView:willBeginDrag:)];
+		[invoc setArgument:&self atIndex:2];
+		[invoc setArgument:&sender atIndex:3];
+		[invoc invoke];
+		BOOL result;
+		[invoc getReturnValue:&result];
+		return result;
+	}
 	else return NSDragOperationNone;
 }
 
 - (BOOL) prepareForDragOperation:(id<NSDraggingInfo>)sender {
-	if ([delegate respondsToSelector:@selector(collectionView:shouldAcceptDrag:)])
-		return [delegate collectionView:self shouldAcceptDrag:sender];
+	if ([delegate respondsToSelector:@selector(collectionView:shouldAcceptDrag:)]) {
+		NSMethodSignature *sig = [[delegate class] instanceMethodSignatureForSelector:@selector(collectionView:shouldAcceptDrag:)];
+		NSInvocation *invoc = [NSInvocation invocationWithMethodSignature:sig];
+		[invoc setSelector:@selector(collectionView:shouldAcceptDrag:)];
+		[invoc setArgument:&self atIndex:2];
+		[invoc setArgument:&sender atIndex:3];
+		[invoc invoke];
+		BOOL result;
+		[invoc getReturnValue:&result];
+		return result;
+	}
 	else return YES;
 }
 
 - (BOOL) performDragOperation:(id<NSDraggingInfo>)sender {
-	if ([delegate respondsToSelector:@selector(collectionView:willAcceptDrag:)])
-		return [delegate collectionView:self willAcceptDrag:sender];
+	if ([delegate respondsToSelector:@selector(collectionView:willAcceptDrag:)]) {
+		NSMethodSignature *sig = [[delegate class] instanceMethodSignatureForSelector:@selector(collectionView:willAcceptDrag:)];
+		NSInvocation *invoc = [NSInvocation invocationWithMethodSignature:sig];
+		[invoc setTarget:delegate];
+		[invoc setSelector:@selector(collectionView:willAcceptDrag:)];
+		[invoc setArgument:&self atIndex:2];
+		[invoc setArgument:&sender atIndex:3];
+		[invoc invoke];
+		BOOL result;
+		[invoc getReturnValue:&result];
+		return result;
+	}
 	else return NO;
 }
 
 - (void) concludeDragOperation:(id<NSDraggingInfo>)sender {
-	if ([delegate respondsToSelector:@selector(collectionView:didAcceptDrag:)])
-		[delegate collectionView:self didAcceptDrag:sender];
+	if ([delegate respondsToSelector:@selector(collectionView:didAcceptDrag:)]) {
+		NSMethodSignature *sig = [[delegate class] instanceMethodSignatureForSelector:@selector(collectionView:didAcceptDrag:)];
+		NSInvocation *invoc = [NSInvocation invocationWithMethodSignature:sig];
+		[invoc setTarget:delegate];
+		[invoc setSelector:@selector(collectionView:didAcceptDrag:)];
+		[invoc setArgument:&self atIndex:2];
+		[invoc setArgument:&sender atIndex:3];
+		[invoc invoke];
+	}
 }
 
 @end
