@@ -50,6 +50,7 @@
  */
 
 - (void) requestFinished:(ASIHTTPRequest *)request {
+	document.conversionComplete = [NSNumber numberWithBool:YES];
 	NSError *error = NULL;
 	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithXMLString:[request responseString] options:0 error:&error];
 	if (xml) {

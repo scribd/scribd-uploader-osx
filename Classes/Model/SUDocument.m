@@ -37,7 +37,9 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 @dynamic datePublished;
 @dynamic license;
 @dynamic converting;
+@dynamic conversionComplete;
 @dynamic assigningProperties;
+@dynamic startTime;
 
 @dynamic category;
 
@@ -52,6 +54,10 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 @dynamic editURL;
 @dynamic uploaded;
 @dynamic postProcessing;
+@dynamic bytesUploaded;
+@dynamic totalBytes;
+@dynamic estimatedSecondsRemaining;
+@dynamic uploading;
 
 #pragma mark Initializing and deallocating
 
@@ -73,6 +79,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	if (self = [super init]) {
 		kind = NULL;
 		URL = NULL;
+		size = NULL;
 	}
 	return self;
 }
@@ -117,13 +124,13 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 }
 
 - (NSString *) filename {
-	if ([self isRemoteFile]) return [[self.URL relativeString] lastPathComponent];
+	if ([self remoteFile]) return [[self.URL relativeString] lastPathComponent];
 	else return [[NSFileManager defaultManager] displayNameAtPath:self.fileSystemPath];
 }
 
 - (NSString *) kind {
 	if (!kind) {
-		if ([self isRemoteFile]) kind = [[[SUDocument kinds] objectForKey:[[self.URL relativeString] pathExtension]] retain];
+		if ([self remoteFile]) kind = [[[SUDocument kinds] objectForKey:[[self.URL relativeString] pathExtension]] retain];
 		else kind = [[[SUDocument kinds] objectForKey:[self.fileSystemPath pathExtension]] retain];
 		if (!kind) kind = @"document";
 	}
@@ -131,7 +138,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 }
 
 - (NSImage *) icon {
-	if ([self isRemoteFile]) return [[NSWorkspace sharedWorkspace] iconForFileType:[self.filename pathExtension]];
+	if ([self remoteFile]) return [[NSWorkspace sharedWorkspace] iconForFileType:[self.filename pathExtension]];
 	return [[NSWorkspace sharedWorkspace] iconForFile:self.fileSystemPath];
 }
 
@@ -145,11 +152,11 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 }
 
 - (BOOL) pointsToActualFile {
-	if ([self isRemoteFile]) return NO;
+	if ([self remoteFile]) return NO;
 	return [[NSFileManager defaultManager] fileExistsAtPath:self.fileSystemPath];
 }
 
-- (BOOL) isRemoteFile {
+- (BOOL) remoteFile {
 	return ![self.URL isFileURL];
 }
 
@@ -186,6 +193,45 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	return [editURL autorelease];
 }
 
+- (NSNumber *) bytesUploaded {
+	if ([self hasSize])
+		return [NSNumber numberWithUnsignedLongLong:([self.totalBytes doubleValue]*[self.progress doubleValue])];
+	else return NULL;
+}
+
+- (NSNumber *) totalBytes {
+	if (!size) {
+		if (![self remoteFile]) {
+			NSError *error = NULL;
+			NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:self.fileSystemPath error:&error];
+			if (!error) size = [attrs objectForKey:NSFileSize];
+			if (!size) size = [NSNumber numberWithUnsignedLongLong:0];
+		}
+		else size = [NSNumber numberWithUnsignedLongLong:0];
+		[size retain];
+	}
+	return size;
+}
+
+- (BOOL) hasSize {
+	return (self.totalBytes && [self.totalBytes unsignedLongLongValue] > 0L);
+}
+
+- (NSNumber *) estimatedSecondsRemaining {
+	if ([self hasSize] && self.uploading) {
+		NSTimeInterval secondsSoFar = -[self.startTime timeIntervalSinceNow];
+		if (secondsSoFar <= 0.0) return NULL;
+		double averageBytesPerSecond = [self.bytesUploaded doubleValue]/secondsSoFar;
+		double totalTimeOfUpload = [self.totalBytes doubleValue]/averageBytesPerSecond;
+		return [NSNumber numberWithUnsignedLongLong:(unsigned long long)totalTimeOfUpload];
+	}
+	else return NULL;
+}
+
+- (BOOL) uploading {
+	return (!self.uploaded && self.startTime != NULL);
+}
+
 #pragma mark KVO
 
 /*
@@ -207,74 +253,41 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
-/*
- When the path changes the URL must change as well.
- */
-
 + (NSSet *) keyPathsForValuesAffectingURL {
 	return [NSSet setWithObject:@"path"];
 }
-
-/*
- When the path changes the fileSystemPath must change as well.
- */
 
 + (NSSet *) keyPathsForValuesAffectingFileSystemPath {
 	return [NSSet setWithObject:@"path"];
 }
 
-/*
- When the path changes the filename must change as well.
- */
-
 + (NSSet *) keyPathsForValuesAffectingFilename {
 	return [NSSet setWithObject:@"path"];
 }
-
-/*
- When the path changes the kind must change as well.
- */
 
 + (NSSet *) keyPathsForValuesAffectingKind {
 	return [NSSet setWithObject:@"path"];
 }
 
-/*
- When the path changes the icon must change as well.
- */
-
 + (NSSet *) keyPathsForValuesAffectingIcon {
 	return [NSSet setWithObject:@"path"];
 }
-
-/*
- Discoverability is determined by title, description, category, and the private
- setting.
- */
 
 + (NSSet *) keyPathsForValuesAffectingDiscoverability {
 	return [NSSet setWithObjects:@"title", @"summary", @"category", @"hidden", NULL];
 }
 
-/*
- Error level is determined by success, error, and unrecoverable status.
- */
-
 + (NSSet *) keyPathsForValuesAffectingErrorLevel {
 	return [NSSet setWithObjects:@"error", @"success", @"errorIsUnrecoverable", NULL];
 }
 
-/*
- Scribd URL is determined by Scribd URL.
- */
++ (NSSet *) keyPathsForValuesAffectingRemoteFile {
+	return [NSSet setWithObject:@"URL"];
+}
 
 + (NSSet *) keyPathsForValuesAffectingScribdURL {
 	return [NSSet setWithObject:@"scribdID"];
 }
-
-/*
- isUploaded is determined by Scribd URL.
- */
 
 + (NSSet *) keyPathsForValuesAffectingUploaded {
 	return [NSSet setWithObject:@"scribdID"];
@@ -282,6 +295,26 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 
 + (NSSet *) keyPathsForValuesAffectingPostProcessing {
 	return [NSSet setWithObjects:@"scribdID", @"converting", @"assigningProperties", NULL];
+}
+
++ (NSSet *) keyPathsForValuesAffectingBytesUploaded {
+	return [NSSet setWithObjects:@"hasSize", @"progress", @"totalBytes", NULL];
+}
+
++ (NSSet *) keyPathsForValuesAffectingTotalBytes {
+	return [NSSet setWithObjects:@"remoteFile", @"path", NULL];
+}
+
++ (NSSet *) keyPathsForValuesAffectingHasSize {
+	return [NSSet setWithObject:@"totalBytes"];
+}
+
++ (NSSet *) keyPathsForValuesAffectingEstimatedSecondsRemaining {
+	return [NSSet setWithObjects:@"hasSize", @"uploading", @"startTime", @"bytesUploaded", @"totalBytes", NULL];
+}
+
++ (NSSet *) keyPathsForValuesAffectingUploading {
+	return [NSSet setWithObjects:@"startTime", @"uploaded", NULL];
 }
 
 #pragma mark Finding documents

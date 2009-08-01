@@ -135,7 +135,7 @@
 			
 			NSMutableDictionary *docParams = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 			[docParams setObject:([document.hidden boolValue] ? @"private" : @"public") forKey:@"access"];
-			if (![document isRemoteFile]) [[SUScribdAPI sharedAPI] submitFile:document toAPIMethod:[[SUAPIHelper helper].settings objectForKey:@"APIUploadMethod"] parameters:docParams delegate:delegate];
+			if (![document remoteFile]) [[SUScribdAPI sharedAPI] submitFile:document toAPIMethod:[[SUAPIHelper helper].settings objectForKey:@"APIUploadMethod"] parameters:docParams delegate:delegate];
 			else {
 				[docParams setObject:document.path forKey:@"url"];
 				[[SUScribdAPI sharedAPI] asynchronouslyCallAPIMethod:[[SUAPIHelper helper].settings objectForKey:@"APIUploadURLMethod"] parameters:docParams delegate:delegate];

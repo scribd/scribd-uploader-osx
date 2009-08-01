@@ -132,7 +132,7 @@
 	int deleteCount = 0;
 	if (objects) {
 		for (SUDocument *doc in objects) {
-			if (![doc isRemoteFile] && ![doc pointsToActualFile]) {
+			if (![doc remoteFile] && ![doc pointsToActualFile]) {
 				// store the name of the file in case it's the only one
 				if (deleteCount == 0) *singleFileName = [doc filename];
 				[self.managedObjectContext deleteObject:doc];

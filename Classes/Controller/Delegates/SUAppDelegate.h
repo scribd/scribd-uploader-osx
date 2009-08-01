@@ -29,14 +29,6 @@
 - (IBAction) saveFileList:(id)sender;
 
 /*!
- @method viewAllDocuments:
- @abstract Opens the Scribd.com My Docs page in the default web browser.
- @param sender The object that initiated the action.
- */
-
-- (IBAction) viewAllDocuments:(id)sender;
-
-/*!
  @method uploadAll:
  @abstract Uploads every @link SUDocument SUDocument @/link to Scribd.
  @discussion Any encountered errors are presented to the user.

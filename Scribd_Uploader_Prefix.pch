@@ -51,6 +51,7 @@
 #import "SUIndexPathValueTransformer.h"
 #import "SUNotEmptyValueTransformer.h"
 #import "SUPluralizeValueTransformer.h"
+#import "SUHumanizeDimensionValueTransformer.h"
 
 #import "SULoginSheetDelegate.h"
 #import "SUPreferencesWindowController.h"

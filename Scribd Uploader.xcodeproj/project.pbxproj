@@ -69,7 +69,6 @@
 		014DB95D0F1EE5FD00F50460 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 014DB7DA0F1EE31400F50460 /* Growl Registration Ticket.growlRegDict */; };
 		01613F060F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01613F050F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.m */; };
 		017077B70F1C47AC008A3CB0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017077B60F1C47AC008A3CB0 /* Sparkle.framework */; };
-		0175F3230F72438B0046C032 /* Scribd_Uploader_DataModel 210-220.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0175F3220F72438B0046C032 /* Scribd_Uploader_DataModel 210-220.xcmappingmodel */; };
 		0175F32C0F7244CF0046C032 /* SUConversionStatusTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0175F32B0F7244CF0046C032 /* SUConversionStatusTracker.m */; };
 		01782DB80F60A4E500205ECD /* SUAddURLWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782DB70F60A4E500205ECD /* SUAddURLWindowController.m */; };
 		01782DD20F60A93200205ECD /* SUNotEmptyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782DD10F60A93200205ECD /* SUNotEmptyValueTransformer.m */; };
@@ -80,6 +79,8 @@
 		019005340F4B6AC90078A8C3 /* Scribd_Uploader_DataModelModel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 019005330F4B6AC90078A8C3 /* Scribd_Uploader_DataModelModel.strings */; };
 		0192F2950F71F030002B9547 /* SUSelectableCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0192F2940F71F030002B9547 /* SUSelectableCollectionViewItem.m */; };
 		0192F3390F7212F9002B9547 /* SUFileListViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0192F3380F7212F9002B9547 /* SUFileListViewDelegate.m */; };
+		019A2CCE1023F8D000D0FE77 /* SUHumanizeDimensionValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 019A2CCD1023F8D000D0FE77 /* SUHumanizeDimensionValueTransformer.m */; };
+		019A2D13102428C000D0FE77 /* Scribd_Uploader_DataModel 210-220.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 019A2D12102428C000D0FE77 /* Scribd_Uploader_DataModel 210-220.xcmappingmodel */; };
 		019D58180F4B7A7D001CB943 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 019D58170F4B7A7D001CB943 /* Localizable.strings */; };
 		019D58350F4B9015001CB943 /* SUMappingValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 019D58340F4B9015001CB943 /* SUMappingValueTransformer.m */; };
 		019D586D0F4B95F6001CB943 /* SUToggleValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 019D586C0F4B95F6001CB943 /* SUToggleValueTransformer.m */; };
@@ -227,7 +228,6 @@
 		01613F040F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUMultipleValuesToggleValueTransformer.h; sourceTree = "<group>"; };
 		01613F050F54EDB900CBCB7E /* SUMultipleValuesToggleValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUMultipleValuesToggleValueTransformer.m; sourceTree = "<group>"; };
 		017077B60F1C47AC008A3CB0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Linked Frameworks/Sparkle.framework"; sourceTree = "<group>"; };
-		0175F3220F72438B0046C032 /* Scribd_Uploader_DataModel 210-220.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "Scribd_Uploader_DataModel 210-220.xcmappingmodel"; sourceTree = "<group>"; };
 		0175F32A0F7244CF0046C032 /* SUConversionStatusTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUConversionStatusTracker.h; sourceTree = "<group>"; };
 		0175F32B0F7244CF0046C032 /* SUConversionStatusTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUConversionStatusTracker.m; sourceTree = "<group>"; };
 		01782DB60F60A4E500205ECD /* SUAddURLWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUAddURLWindowController.h; path = Delegates/SUAddURLWindowController.h; sourceTree = "<group>"; };
@@ -245,6 +245,9 @@
 		0192F2940F71F030002B9547 /* SUSelectableCollectionViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSelectableCollectionViewItem.m; sourceTree = "<group>"; };
 		0192F3370F7212F9002B9547 /* SUFileListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileListViewDelegate.h; sourceTree = "<group>"; };
 		0192F3380F7212F9002B9547 /* SUFileListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileListViewDelegate.m; sourceTree = "<group>"; };
+		019A2CCC1023F8D000D0FE77 /* SUHumanizeDimensionValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUHumanizeDimensionValueTransformer.h; sourceTree = "<group>"; };
+		019A2CCD1023F8D000D0FE77 /* SUHumanizeDimensionValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUHumanizeDimensionValueTransformer.m; sourceTree = "<group>"; };
+		019A2D12102428C000D0FE77 /* Scribd_Uploader_DataModel 210-220.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "Scribd_Uploader_DataModel 210-220.xcmappingmodel"; sourceTree = "<group>"; };
 		019D58150F4B7A7A001CB943 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		019D58330F4B9015001CB943 /* SUMappingValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUMappingValueTransformer.h; sourceTree = "<group>"; };
 		019D58340F4B9015001CB943 /* SUMappingValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUMappingValueTransformer.m; sourceTree = "<group>"; };
@@ -481,6 +484,8 @@
 				0122B80A0F5DF45A00D2D0DD /* SUReversibleMappingValueTransformer.m */,
 				01782DD00F60A93200205ECD /* SUNotEmptyValueTransformer.h */,
 				01782DD10F60A93200205ECD /* SUNotEmptyValueTransformer.m */,
+				019A2CCC1023F8D000D0FE77 /* SUHumanizeDimensionValueTransformer.h */,
+				019A2CCD1023F8D000D0FE77 /* SUHumanizeDimensionValueTransformer.m */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
@@ -804,7 +809,6 @@
 				01377DE20F60ED3E00C9121E /* SUImagePreviewView.m in Sources */,
 				0192F2950F71F030002B9547 /* SUSelectableCollectionViewItem.m in Sources */,
 				0192F3390F7212F9002B9547 /* SUFileListViewDelegate.m in Sources */,
-				0175F3230F72438B0046C032 /* Scribd_Uploader_DataModel 210-220.xcmappingmodel in Sources */,
 				0175F32C0F7244CF0046C032 /* SUConversionStatusTracker.m in Sources */,
 				0103D6741022B88B00D8968C /* TMMoveToApplicationsFolder.m in Sources */,
 				01C1B9E51022BAD900C4BDAE /* ASIFormDataRequest.m in Sources */,
@@ -814,6 +818,8 @@
 				01C1B9E91022BAD900C4BDAE /* ASIS3BucketObject.m in Sources */,
 				01C1B9EA1022BAD900C4BDAE /* ASIS3ListRequest.m in Sources */,
 				01C1B9EB1022BAD900C4BDAE /* ASIS3Request.m in Sources */,
+				019A2CCE1023F8D000D0FE77 /* SUHumanizeDimensionValueTransformer.m in Sources */,
+				019A2D13102428C000D0FE77 /* Scribd_Uploader_DataModel 210-220.xcmappingmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1037,7 +1043,7 @@
 				012E5DC90F1F32B10037ECDA /* Scribd_Uploader_DataModel 210.xcdatamodel */,
 				0122B7CD0F5DED7800D2D0DD /* Scribd_Uploader_DataModel 220.xcdatamodel */,
 				0123E96D0F32AF5E00FDF757 /* Scribd_Uploader_DataModel 200-210.xcmappingmodel */,
-				0175F3220F72438B0046C032 /* Scribd_Uploader_DataModel 210-220.xcmappingmodel */,
+				019A2D12102428C000D0FE77 /* Scribd_Uploader_DataModel 210-220.xcmappingmodel */,
 			);
 			currentVersion = 0122B7CD0F5DED7800D2D0DD /* Scribd_Uploader_DataModel 220.xcdatamodel */;
 			path = Scribd_Uploader_DataModel.xcdatamodeld;

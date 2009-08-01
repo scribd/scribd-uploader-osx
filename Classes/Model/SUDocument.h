@@ -15,9 +15,10 @@
 @interface SUDocument : NSManagedObject {
 	NSString *kind;
 	NSURL *URL;
+	NSNumber *size;
 }
 
-#pragma mark First-order properties
+#pragma mark First-order properties (database)
 
 /*!
  @property path
@@ -165,6 +166,14 @@
 @property (copy) NSNumber *converting;
 
 /*!
+ @property conversionComplete
+ @abstract True if the document has been uploaded, and conversion has either
+ completed or failed.
+ */
+
+@property (copy) NSNumber *conversionComplete;
+
+/*!
  @property assigningProperties
  @abstract True if the document has been uploaded and the metadata is being sent
  to Scribd.com. This process occurs immediately after upload is complete.
@@ -173,6 +182,16 @@
  */
 
 @property (copy) NSNumber *assigningProperties;
+
+/*!
+ @property startTime
+ @abstract The time at which the upload began.
+ @discussion This transient attribute is set to NULL if the upload has not yet
+ begun. It must be set by an outside object. The SUDocument instance does not
+ maintain this attribute.
+ */
+
+@property (copy) NSDate *startTime;
 
 #pragma mark Relationships
 
@@ -291,6 +310,47 @@
 
 @property (readonly) BOOL postProcessing;
 
+/*!
+ @property bytesUploaded
+ @abstract The total number of bytes uploaded so far, calculated from the
+ @link progress progress @/link and the @link totalBytes totalBytes @/link.
+ @discussion The number will be an unsigned long long value. Returns NULL if the
+ value could not be calculated.
+ */
+
+@property (readonly) NSNumber *bytesUploaded;
+
+/*!
+ @property totalBytes
+ @abstract The size of the file in bytes. For local files, uses the file manager
+ to determine the size. For remote files, returns
+ @link //apple_ref/occ/cl/NSNull NSNull @/link.
+ @discussion The number will be an unsigned long long value. Returns
+ @link //apple_ref/occ/cl/NSNull NSNull @/link if the size could not be
+ calculated.
+ */
+
+@property (readonly) NSNumber *totalBytes;
+
+/*!
+ @property estimatedSecondsRemaining
+ @abstract Returns an estimate of the number of seconds remaining until the file
+ is finished uploading. This value is calculated from @link progress progress
+ @/link and @link uploadStartTime uploadStartTime @/link.
+ @discussion The number will be an unsigned long long value. Returns NULL if the
+ time could not be calculated.
+ */
+
+@property (readonly) NSNumber *estimatedSecondsRemaining;
+
+/*!
+ @property uploading
+ @abstract YES if the file is currently being uploaded, or NO if it has either
+ finished or has not yet started.
+ */
+
+@property (readonly) BOOL uploading;
+
 #pragma mark Finding documents
 
 /*!
@@ -399,12 +459,21 @@
 - (BOOL) pointsToActualFile;
 
 /*!
- @method isRemoteFile
+ @method remoteFile
  @abstract Tests if a file's URL is a remote URL.
  @result YES if the path refers to a remote resource; NO if the path refers to
  a local file on in the filesystem.
  */
 
-- (BOOL) isRemoteFile;
+- (BOOL) remoteFile;
+
+/*!
+ @method hasSize
+ @abstract Returns YES if the file is local and has a nonzero file size.
+ @result YES if the file has a size suitable for calculations, NO if
+ calculations on the file size should not be performed.
+ */
+
+- (BOOL) hasSize;
 
 @end

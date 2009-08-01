@@ -97,6 +97,30 @@
 										  NSLocalizedString(@"Click this button to learn more about why your document could not have its metadata assigned.", NULL), @"Caution",
 										  NULL];
 	[NSValueTransformer setValueTransformer:[[[SUMappingValueTransformer alloc] initWithDictionary:statusButtonToolTips] autorelease] forName:@"SUStatusButtonToolTip"];
+	
+	NSDictionary *timeUnits = [[NSDictionary alloc] initWithObjectsAndKeys:
+							   [NSNumber numberWithDouble:1], @"seconds",
+							   [NSNumber numberWithDouble:60], @"minutes",
+							   [NSNumber numberWithDouble:60*60], @"hours",
+							   [NSNumber numberWithDouble:60*60*24], @"days",
+							   NULL];
+	SUHumanizeDimensionValueTransformer *timeValueTransformer = [[SUHumanizeDimensionValueTransformer alloc] init];
+	timeValueTransformer.units = timeUnits;
+	timeValueTransformer.rootUnit = @"seconds";
+	[timeUnits release];
+	[NSValueTransformer setValueTransformer:[timeValueTransformer autorelease] forName:@"SUHumanizeSeconds"];
+	
+	NSDictionary *informationUnits = [[NSDictionary alloc] initWithObjectsAndKeys:
+									  [NSNumber numberWithDouble:1], @"bytes",
+									  [NSNumber numberWithDouble:1024], @"KB",
+									  [NSNumber numberWithDouble:1024*1024], @"MB",
+									  [NSNumber numberWithDouble:1024*1024*1024], @"GB",
+									  NULL];
+	SUHumanizeDimensionValueTransformer *informationValueTransformer = [[SUHumanizeDimensionValueTransformer alloc] init];
+	informationValueTransformer.units = informationUnits;
+	informationValueTransformer.rootUnit = @"bytes";
+	[informationUnits release];
+	[NSValueTransformer setValueTransformer:[informationValueTransformer autorelease] forName:@"SUHumanizeBytes"];
 }
 
 /*
@@ -250,12 +274,6 @@
 	if (![db.managedObjectContext save:&error]) {
 		[[NSApplication sharedApplication] presentError:error];
 	}
-}
-
-- (IBAction) viewAllDocuments:(id)sender {
-	NSURL *URL = [[NSURL alloc] initWithString:[[[NSBundle mainBundle] infoDictionary] objectForKey:SUMyDocsURLInfoKey]];
-	[[NSWorkspace sharedWorkspace] openURL:URL];
-	[URL release];
 }
 
 - (IBAction) uploadAll:(id)sender {

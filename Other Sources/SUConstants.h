@@ -39,11 +39,14 @@ NSString *SUScribdAPIErrorDomain;
  @link //apple_ref/occ/cl/NSDictionary NSDictionary @/link to have a strictly
  one-to-one mapping between keys and values, but found multiple keys that map to
  the same value.
+ @const SUErrorCodeUnknownFileSize An error occurred when trying to determine
+ the size of a local file.
  */
 
 enum SUErrorDomainCode {
 	SUErrorCodeUploadFailed = 1,
-	SUErrorCodeDictionaryMustBePerfect
+	SUErrorCodeDictionaryMustBePerfect,
+	SUErrorCodeUnknownFileSize
 };
 
 #pragma mark Error user-info keys
@@ -71,6 +74,14 @@ NSString *SUActionErrorKey;
  */
 
 NSString *SUInvalidObjectErrorKey;
+
+/*!
+ @const SUInvalidObjectErrorKey
+ @abstract The key of a @link SUDocument SUDocument @/link instance that had the
+ error.
+ */
+
+NSString *SUDocumentErrorKey;
 
 #pragma mark Actions
 
