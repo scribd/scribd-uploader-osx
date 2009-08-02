@@ -86,19 +86,20 @@
 		error = [error addMessagesForAction:SULogInAction sender:self];
 		NSAlert *alert = [[NSAlert alloc] init];
 		[alert setAlertStyle:NSCriticalAlertStyle];
+		[alert addButtonWithTitle:NSLocalizedString(@"OK", @"command")];
 		if ([error code] == NSURLErrorZeroByteResource) {
 			[alert setMessageText:NSLocalizedString(@"You are not connected to the Internet.", NULL)];
 			[alert setInformativeText:NSLocalizedString(@"Please connect to the Internet and try again.", NULL)];
+			[alert addButtonWithTitle:NSLocalizedString(@"Open Network Diagnostics", @"command")];
 		}
 		else {
 			[alert setMessageText:[error localizedDescription]];
 			if ([error localizedRecoverySuggestion]) [alert setInformativeText:[error localizedRecoverySuggestion]];
+			NSString *anchor = [[NSString alloc] initWithFormat:@"login_%d", [error code]];
+			[alert setShowsHelp:YES];
+			[alert setHelpAnchor:anchor];
+			[anchor release];
 		}
-		[alert addButtonWithTitle:NSLocalizedString(@"OK", @"command")];
-		[alert setShowsHelp:YES];
-		NSString *anchor = [[NSString alloc] initWithFormat:@"login_%d", [error code]];
-		[alert setHelpAnchor:anchor];
-		[anchor release];
 		
 		[alert beginSheetModalForWindow:loginSheet modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 		
@@ -173,19 +174,20 @@
 		error = [error addMessagesForAction:SUSignUpAction sender:self];
 		NSAlert *alert = [[NSAlert alloc] init];
 		[alert setAlertStyle:NSCriticalAlertStyle];
+		[alert addButtonWithTitle:NSLocalizedString(@"OK", @"command")];
 		if ([error code] == NSURLErrorZeroByteResource) {
 			[alert setMessageText:NSLocalizedString(@"You are not connected to the Internet.", NULL)];
 			[alert setInformativeText:NSLocalizedString(@"Please connect to the Internet and try again.", NULL)];
+			[alert addButtonWithTitle:NSLocalizedString(@"Open Network Diagnostics", @"command")];
 		}
 		else {
 			[alert setMessageText:[error localizedDescription]];
 			if ([error localizedRecoverySuggestion]) [alert setInformativeText:[error localizedRecoverySuggestion]];
+			NSString *anchor = [[NSString alloc] initWithFormat:@"signup_%d", [error code]];
+			[alert setShowsHelp:YES];
+			[alert setHelpAnchor:anchor];
+			[anchor release];
 		}
-		[alert addButtonWithTitle:@"OK"];
-		[alert setShowsHelp:YES];
-		NSString *anchor = [[NSString alloc] initWithFormat:@"signup_%d", [error code]];
-		[alert setHelpAnchor:anchor];
-		[anchor release];
 
 		[alert beginSheetModalForWindow:loginSheet modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 		
@@ -290,6 +292,11 @@
 
 - (void) alertDidEnd:(NSAlert *)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo {
 	[alert release];
+	if (returnCode == NSAlertSecondButtonReturn) {
+		CFURLRef URLRef = CFURLCreateWithString(kCFAllocatorDefault, (CFStringRef)([[SUAPIHelper helper].settings objectForKey:@"BaseURL"]), NULL);
+		CFNetDiagnosticRef details = CFNetDiagnosticCreateWithURL(kCFAllocatorDefault, URLRef);
+		CFNetDiagnosticDiagnoseProblemInteractively(details);
+	}
 }
 
 @end
