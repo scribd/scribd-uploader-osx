@@ -3,25 +3,6 @@
 @implementation SUReversibleMappingValueTransformer
 
 /*
- Ensures that a dictionary has a perfect hash before setting the mapping
- attribute.
- */
-
-- (BOOL) validateMappings:(id *)dictionary error:(NSError **)error {
-	if (*dictionary == NULL) return YES;
-	
-	// make sure dictionary is symmetric
-	for (id value in [*dictionary values]) {
-		if ([[*dictionary allKeysForObject:value] count] > 1) {
-			NSDictionary *userInfo = [NSDictionary dictionaryWithObject:*dictionary forKey:SUInvalidObjectErrorKey];
-			if (!error) *error = [NSError errorWithDomain:SUErrorDomain code:SUErrorCodeDictionaryMustBePerfect userInfo:userInfo];
-			return NO;
-		}
-	}
-	return YES;
-}
-
-/*
  This is a two-way value transformer.
  */
 
@@ -42,10 +23,8 @@
 		if ([result isEqualTo:[NSNull null]]) return NULL;
 		else return result;
 	}
-	if ([keys count] > 1) {
-		NSDictionary *userInfo = [NSDictionary dictionaryWithObject:mappings forKey:SUInvalidObjectErrorKey];
-		[[NSError errorWithDomain:SUErrorDomain code:SUErrorCodeDictionaryMustBePerfect userInfo:userInfo] raise];
-	}
+	if ([keys count] > 1)
+		[NSException raise:SUExceptionDictionaryMustBePerfect format:@"Tried to use a non-symmetrically perfect dictionary with SUReversibleMappingValueTransformer."];
 	return NULL;
 }
 

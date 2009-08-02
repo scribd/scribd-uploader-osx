@@ -12,6 +12,10 @@ NSString *SUInvalidatePropertyErrorKey = @"SUInvalidateProperty";
 NSString *SUActionErrorKey = @"SUActionErrorKey";
 NSString *SUInvalidObjectErrorKey = @"SUInvalidObjectErrorKey";
 
+/* Exceptions */
+
+NSString *SUExceptionDictionaryMustBePerfect = @"SUExceptionDictionaryMustBePerfect";
+
 /* Actions */
 NSString *SULogInAction = @"LogIn";
 NSString *SUSignUpAction = @"SignUp";

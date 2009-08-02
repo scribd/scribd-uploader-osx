@@ -35,18 +35,10 @@ NSString *SUScribdAPIErrorDomain;
  @link SUErrorDomain SUErrorDomain @/link error domain.
  @const SUScribdErrorCodeUploadFailed An upload failed for any reason other than
  a Scribd.com error.
- @const SUErrorCodeDictionaryMustBePerfect An object expected an
- @link //apple_ref/occ/cl/NSDictionary NSDictionary @/link to have a strictly
- one-to-one mapping between keys and values, but found multiple keys that map to
- the same value.
- @const SUErrorCodeUnknownFileSize An error occurred when trying to determine
- the size of a local file.
  */
 
 enum SUErrorDomainCode {
-	SUErrorCodeUploadFailed = 1,
-	SUErrorCodeDictionaryMustBePerfect,
-	SUErrorCodeUnknownFileSize
+	SUErrorCodeUploadFailed = 1
 };
 
 #pragma mark Error user-info keys
@@ -82,6 +74,17 @@ NSString *SUInvalidObjectErrorKey;
  */
 
 NSString *SUDocumentErrorKey;
+
+#pragma mark Exceptions
+
+/*!
+ @const SUExceptionDictionaryMustBePerfect
+ @abstract Raised by
+ @link SUReversibleMappingValueTransformer SUReversibleMappingValueTransformer @/link
+ if given a dictionary that is not symmetrically perfect.
+ */
+
+NSString *SUExceptionDictionaryMustBePerfect;
 
 #pragma mark Actions
 
