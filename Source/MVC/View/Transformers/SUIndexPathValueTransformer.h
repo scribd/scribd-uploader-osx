@@ -10,7 +10,8 @@
  */
 
 @interface SUIndexPathValueTransformer : NSValueTransformer {
-	NSManagedObjectContext *managedObjectContext;
+	@private
+		NSManagedObjectContext *managedObjectContext;
 }
 
 #pragma mark Properties

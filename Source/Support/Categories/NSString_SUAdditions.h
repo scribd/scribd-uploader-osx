@@ -38,7 +38,7 @@
 #pragma mark Working with URLs
 
 /*!
- @method stringByURLEncoding
+ @method stringByURLEscapingUsingEncoding:
  @abstract Returns a string where all reserved or unsafe characters have been
  encoded using a percent-escape encoding scheme.
  @param encoding The string's encoding.

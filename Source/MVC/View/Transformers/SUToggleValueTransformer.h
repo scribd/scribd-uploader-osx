@@ -5,7 +5,8 @@
  */
 
 @interface SUToggleValueTransformer : NSValueTransformer {
-	NSObject *trueValue, *falseValue;
+	@protected
+		NSObject *trueValue, *falseValue;
 }
 
 #pragma mark Properties

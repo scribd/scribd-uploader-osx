@@ -5,10 +5,11 @@
  */
 
 @interface SULoginSheetDelegate : NSObject {
-	IBOutlet NSButton *loginSignupButton;
-	IBOutlet NSWindow *sheet;
-	IBOutlet SUUploadHelper *uploader;
-	IBOutlet NSTabView *tabs;
+	@private
+		IBOutlet NSButton *loginSignupButton;
+		IBOutlet NSWindow *sheet;
+		IBOutlet SUUploadHelper *uploader;
+		IBOutlet NSTabView *tabs;
 }
 
 #pragma mark Actions

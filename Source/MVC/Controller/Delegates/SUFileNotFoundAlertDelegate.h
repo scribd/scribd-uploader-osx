@@ -5,7 +5,8 @@
  */
 
 @interface SUFileNotFoundAlertDelegate : NSObject {
-	IBOutlet NSWindow *window;
+	@private
+		IBOutlet NSWindow *window;
 }
 
 #pragma mark Showing the alert

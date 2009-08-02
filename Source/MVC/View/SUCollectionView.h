@@ -1,7 +1,7 @@
 /*!
  @class SUCollectionView
  @abstract A subclass of
- @link //apple_ref/occ/cl/NSScrollView NSScrollView @/link adds a key-event
+ @link //apple_ref/occ/cl/NSScrollView NSCollectionView @/link adds a key-event
  support, Quick Look support, and drag-and-drop support.
  @discussion This class adds key-event and Quick Look support. If the spacebar
  is pressed, this class tells the
@@ -16,9 +16,11 @@
  */
 
 @interface SUCollectionView : NSCollectionView {
-	IBOutlet SUQuickLookDelegate *quickLook;
-	IBOutlet id delegate;
-	NSMutableDictionary *itemRects;
+	@protected
+		IBOutlet id delegate;
+	@private
+		IBOutlet SUQuickLookDelegate *quickLook;
+		NSMutableDictionary *itemRects;
 }
 
 #pragma mark Querying information about collection view items

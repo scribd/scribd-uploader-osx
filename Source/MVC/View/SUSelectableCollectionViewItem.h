@@ -11,7 +11,8 @@
  */
 
 @interface SUSelectableCollectionViewItem : NSCollectionViewItem {
-	IBOutlet NSBox *selectionBox;
+	@protected
+		IBOutlet NSBox *selectionBox;
 }
 
 @end

@@ -16,7 +16,8 @@
  */
 
 @interface SUCategory : NSManagedObject {
-	NSIndexPath *indexPath;
+	@protected
+		NSIndexPath *indexPath;
 }
 
 #pragma mark First-order properties

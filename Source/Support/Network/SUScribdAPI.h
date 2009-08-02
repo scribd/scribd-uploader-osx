@@ -18,7 +18,8 @@
  */
 
 @interface SUScribdAPI : NSObject {
-	NSOperationQueue *uploadQueue;
+	@protected
+		NSOperationQueue *uploadQueue;
 }
 
 #pragma mark Working with the singleton instance

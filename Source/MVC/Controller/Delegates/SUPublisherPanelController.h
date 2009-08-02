@@ -4,9 +4,10 @@
  */
 
 @interface SUPublisherPanelController : NSObject {
-	IBOutlet NSPanel *panel;
-	IBOutlet NSMenuItem *togglePanelItem;
-	IBOutlet NSArrayController *documents;
+	@private
+		IBOutlet NSPanel *panel;
+		IBOutlet NSMenuItem *togglePanelItem;
+		IBOutlet NSArrayController *documents;
 }
 
 /*!

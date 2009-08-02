@@ -8,7 +8,8 @@
  */
 
 @interface SUTitleCleanerOperation : NSOperation {
-	SUDocument *document;
+	@protected
+		SUDocument *document;
 }
 
 #pragma mark Properties

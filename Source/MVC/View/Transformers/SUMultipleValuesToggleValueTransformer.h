@@ -1,6 +1,6 @@
 /*!
  @class SUMultipleValuesToggleValueTransformer
- @abstract Similr to
+ @abstract Similar to
  @link SUToggleValueTransformer SUToggleValueTransformer @/link, but takes an
  array of boolean values. Returns a string that depends on the incoming boolean
  values (whether they are all true, all false, or mixed) and is also
@@ -13,8 +13,9 @@
  */
 
 @interface SUMultipleValuesToggleValueTransformer : NSValueTransformer {
-	NSArray *singularInsertions, *pluralInsertions;
-	NSString *trueValue, *falseValue, *emptyValue, *mixedValue;
+	@protected
+		NSArray *singularInsertions, *pluralInsertions;
+		NSString *trueValue, *falseValue, *emptyValue, *mixedValue;
 }
 
 #pragma mark Properties

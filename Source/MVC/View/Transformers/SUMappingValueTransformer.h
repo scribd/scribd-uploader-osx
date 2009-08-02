@@ -4,7 +4,8 @@
  */
 
 @interface SUMappingValueTransformer : NSValueTransformer {
-	NSDictionary *mappings;
+	@protected
+		NSDictionary *mappings;
 }
 
 #pragma mark Properties

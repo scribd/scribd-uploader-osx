@@ -4,12 +4,13 @@
  */
 
 @interface SUAddURLWindowController : NSObject {
-	IBOutlet NSWindow *window;
-	IBOutlet SUDatabaseHelper *db;
-	IBOutlet SUImagePreviewView *preview;
-	NSString *URLString;
-	BOOL downloading;
-	NSMutableData *previewImageData;
+	@private
+		IBOutlet NSWindow *window;
+		IBOutlet SUDatabaseHelper *db;
+		IBOutlet SUImagePreviewView *preview;
+		NSString *URLString;
+		BOOL downloading;
+		NSMutableData *previewImageData;
 }
 
 #pragma mark Properties

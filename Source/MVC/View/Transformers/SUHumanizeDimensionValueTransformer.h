@@ -11,9 +11,10 @@
  */
 
 @interface SUHumanizeDimensionValueTransformer : NSObject {
-	NSDictionary *units;
-	NSString *rootUnit;
-	NSNumberFormatter *numberFormatter;
+	@protected
+		NSDictionary *units;
+		NSString *rootUnit;
+		NSNumberFormatter *numberFormatter;
 }
 
 #pragma mark Properties

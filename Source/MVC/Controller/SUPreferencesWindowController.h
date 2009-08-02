@@ -4,8 +4,9 @@
  */
 
 @interface SUPreferencesWindowController : DBPrefsWindowController {
-	IBOutlet NSView *automaticUpdatesView, *uploadingView, *metadataView;
-	SUUpdater *sparkleUpdater;
+	@private
+		IBOutlet NSView *automaticUpdatesView, *uploadingView, *metadataView;
+		SUUpdater *sparkleUpdater;
 }
 
 #pragma mark Properties

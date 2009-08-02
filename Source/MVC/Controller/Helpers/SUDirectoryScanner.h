@@ -10,9 +10,11 @@
  */
 
 @interface SUDirectoryScanner : NSObject {
-	IBOutlet SUDatabaseHelper *db;
-	SUDeferredOperationQueue *operationQueue, *pendingQueue;
-	BOOL isScanning;
+	@protected
+		SUDeferredOperationQueue *operationQueue, *pendingQueue;
+		BOOL isScanning;
+	@private
+		IBOutlet SUDatabaseHelper *db;
 }
 
 #pragma mark Properties

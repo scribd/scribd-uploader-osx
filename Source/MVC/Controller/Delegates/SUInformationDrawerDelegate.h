@@ -5,10 +5,11 @@
  */
 
 @interface SUInformationDrawerDelegate : NSObject {
-	IBOutlet SUDocumentArrayController *documentsController;
-	IBOutlet NSTokenField *tagsField;
-	IBOutlet NSDrawer *drawer;
-	IBOutlet NSMenuItem *toggleDrawerItem;
+	@private
+		IBOutlet SUDocumentArrayController *documentsController;
+		IBOutlet NSTokenField *tagsField;
+		IBOutlet NSDrawer *drawer;
+		IBOutlet NSMenuItem *toggleDrawerItem;
 }
 
 #pragma mark Actions

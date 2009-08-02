@@ -13,9 +13,10 @@
  */
 
 @interface SUDocument : NSManagedObject {
-	NSString *kind;
-	NSURL *URL;
-	NSNumber *size;
+	@protected
+		NSString *kind;
+		NSURL *URL;
+		NSNumber *size;
 }
 
 #pragma mark First-order properties (file properties)

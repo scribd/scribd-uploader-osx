@@ -4,8 +4,9 @@
  */
 
 @interface SUFileListViewDelegate : NSObject {
-	IBOutlet SUUploadHelper *uploader;
-	IBOutlet SUDatabaseHelper *db;
+	@private
+		IBOutlet SUUploadHelper *uploader;
+		IBOutlet SUDatabaseHelper *db;
 }
 
 @end

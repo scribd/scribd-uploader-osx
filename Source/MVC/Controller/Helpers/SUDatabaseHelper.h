@@ -5,10 +5,11 @@
  */
 
 @interface SUDatabaseHelper : NSObject {
-	NSPersistentStoreCoordinator *persistentStoreCoordinator;
-	NSManagedObjectModel *managedObjectModel;
-	NSManagedObjectContext *managedObjectContext;
-	IBOutlet SUDirectoryScanner *directoryScanner;
+	@private
+		NSPersistentStoreCoordinator *persistentStoreCoordinator;
+		NSManagedObjectModel *managedObjectModel;
+		NSManagedObjectContext *managedObjectContext;
+		IBOutlet SUDirectoryScanner *directoryScanner;
 }
 
 #pragma mark Properties

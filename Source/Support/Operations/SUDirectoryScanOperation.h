@@ -5,8 +5,10 @@
  */
 
 @interface SUDirectoryScanOperation : NSOperation {
-	NSString *path;
-	NSManagedObjectContext *managedObjectContext;
+	@protected
+		NSString *path;
+	@private
+		NSManagedObjectContext *managedObjectContext;
 }
 
 #pragma mark Properties

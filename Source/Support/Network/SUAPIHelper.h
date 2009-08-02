@@ -4,7 +4,8 @@
  */
 
 @interface SUAPIHelper : NSObject {
-	NSDictionary *settings;
+	@protected
+		NSDictionary *settings;
 }
 
 #pragma mark Properties
@@ -17,6 +18,12 @@
 @property (readonly) NSDictionary *settings;
 
 #pragma mark Working with the singleton instance
+
+/*!
+ @method helper
+ @abstract Returns the singleton instance.
+ @result The singleton instance.
+ */
 
 + (SUAPIHelper *) helper;
 

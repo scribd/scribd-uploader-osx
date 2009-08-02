@@ -13,15 +13,16 @@
  */
 
 @interface SUUploadHelper : NSObject {
-	BOOL isBusy, uploadStarted;
-	NSUInteger currentlyUploadingCount;
-	NSString *busyAction;
-	NSString *scribdLogin, *scribdPassword;
-	NSString *newUserLogin, *newUserEmail, *newUserPassword, *newUserName;
-	NSError *newUserLoginError, *newUserEmailError, *newUserPasswordError, *newUserNameError;
-	NSMutableSet *uploadDelegates;
-	IBOutlet NSWindow *uploadWindow, *loginSheet;
-	IBOutlet SUDatabaseHelper *db;
+	@private
+		BOOL isBusy, uploadStarted;
+		NSUInteger currentlyUploadingCount;
+		NSString *busyAction;
+		NSString *scribdLogin, *scribdPassword;
+		NSString *newUserLogin, *newUserEmail, *newUserPassword, *newUserName;
+		NSError *newUserLoginError, *newUserEmailError, *newUserPasswordError, *newUserNameError;
+		NSMutableSet *uploadDelegates;
+		IBOutlet NSWindow *uploadWindow, *loginSheet;
+		IBOutlet SUDatabaseHelper *db;
 }
 
 #pragma mark Properties

@@ -11,8 +11,10 @@
  */
 
 @interface SUConversionStatusTracker : NSObject {
-	SUDocument *document;
-	NSTimer *timer;
+	@protected
+		NSTimer *timer;
+	@private
+		SUDocument *document;
 }
 
 #pragma mark Properties

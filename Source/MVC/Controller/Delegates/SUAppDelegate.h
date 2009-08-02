@@ -7,13 +7,14 @@
  */
 
 @interface SUAppDelegate : NSObject {
-	IBOutlet NSWindow *window, *loginSheet, *directoryScanSheet;
-	IBOutlet SULoginSheetDelegate *loginSheetDelegate;
-	IBOutlet SUFileNotFoundAlertDelegate *fileNotFoundDelegate;
-	IBOutlet SUDatabaseHelper *db;
-	IBOutlet SUUploadHelper *uploader;
-	IBOutlet NSTreeController *categoriesController;
-	IBOutlet SUDirectoryScanner *directoryScanner;
+	@private
+		IBOutlet NSWindow *window, *loginSheet, *directoryScanSheet;
+		IBOutlet SULoginSheetDelegate *loginSheetDelegate;
+		IBOutlet SUFileNotFoundAlertDelegate *fileNotFoundDelegate;
+		IBOutlet SUDatabaseHelper *db;
+		IBOutlet SUUploadHelper *uploader;
+		IBOutlet NSTreeController *categoriesController;
+		IBOutlet SUDirectoryScanner *directoryScanner;
 }
 
 #pragma mark Actions

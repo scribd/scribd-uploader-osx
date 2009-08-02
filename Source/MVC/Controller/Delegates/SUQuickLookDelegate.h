@@ -13,10 +13,11 @@
  */
 
 @interface SUQuickLookDelegate : NSObject {
-	BOOL useQuickLook;
-	IBOutlet NSArrayController *filesController;
-	IBOutlet SUCollectionView *fileListView;
-	IBOutlet NSScrollView *scrollView;
+	@private
+		BOOL useQuickLook;
+		IBOutlet NSArrayController *filesController;
+		IBOutlet SUCollectionView *fileListView;
+		IBOutlet NSScrollView *scrollView;
 }
 
 #pragma mark Displaying the Quick Look panel

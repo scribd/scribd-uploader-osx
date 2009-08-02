@@ -8,7 +8,8 @@
  */
 
 @interface SUDelimitedStringValueTransformer : NSValueTransformer {
-	NSString *delimiter;
+	@protected
+		NSString *delimiter;
 }
 
 #pragma mark Properties

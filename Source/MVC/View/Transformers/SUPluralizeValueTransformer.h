@@ -7,7 +7,8 @@
  */
 
 @interface SUPluralizeValueTransformer : NSObject {
-	NSString *singular, *plural;
+	@protected
+		NSString *singular, *plural;
 }
 
 #pragma mark Initializing and deallocating

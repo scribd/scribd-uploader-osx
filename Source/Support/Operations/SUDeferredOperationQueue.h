@@ -20,9 +20,10 @@
  */
 
 @interface SUDeferredOperationQueue : NSOperationQueue {
-	BOOL isRunning;
-	BOOL hasRun;
-	id delegate;
+	@protected
+		BOOL isRunning;
+		BOOL hasRun;
+		id delegate;
 }
 
 #pragma mark Properties
