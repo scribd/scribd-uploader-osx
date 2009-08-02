@@ -86,8 +86,14 @@
 		error = [error addMessagesForAction:SULogInAction sender:self];
 		NSAlert *alert = [[NSAlert alloc] init];
 		[alert setAlertStyle:NSCriticalAlertStyle];
-		[alert setMessageText:[error localizedDescription]];
-		[alert setInformativeText:[error localizedRecoverySuggestion]];
+		if ([error code] == NSURLErrorZeroByteResource) {
+			[alert setMessageText:NSLocalizedString(@"You are not connected to the Internet.", NULL)];
+			[alert setInformativeText:NSLocalizedString(@"Please connect to the Internet and try again.", NULL)];
+		}
+		else {
+			[alert setMessageText:[error localizedDescription]];
+			if ([error localizedRecoverySuggestion]) [alert setInformativeText:[error localizedRecoverySuggestion]];
+		}
 		[alert addButtonWithTitle:NSLocalizedString(@"OK", @"command")];
 		[alert setShowsHelp:YES];
 		NSString *anchor = [[NSString alloc] initWithFormat:@"login_%d", [error code]];
@@ -167,8 +173,14 @@
 		error = [error addMessagesForAction:SUSignUpAction sender:self];
 		NSAlert *alert = [[NSAlert alloc] init];
 		[alert setAlertStyle:NSCriticalAlertStyle];
-		[alert setMessageText:[error localizedDescription]];
-		[alert setInformativeText:[error localizedRecoverySuggestion]];
+		if ([error code] == NSURLErrorZeroByteResource) {
+			[alert setMessageText:NSLocalizedString(@"You are not connected to the Internet.", NULL)];
+			[alert setInformativeText:NSLocalizedString(@"Please connect to the Internet and try again.", NULL)];
+		}
+		else {
+			[alert setMessageText:[error localizedDescription]];
+			if ([error localizedRecoverySuggestion]) [alert setInformativeText:[error localizedRecoverySuggestion]];
+		}
 		[alert addButtonWithTitle:@"OK"];
 		[alert setShowsHelp:YES];
 		NSString *anchor = [[NSString alloc] initWithFormat:@"signup_%d", [error code]];
