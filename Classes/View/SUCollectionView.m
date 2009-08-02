@@ -71,15 +71,22 @@
 	NSUInteger lastItem = [[self content] count] - 1; // the highest possible selection index
 	
 	NSUInteger charIndex;
+	NSInteger indexToScrollTo = -1; // the location to scroll the view to, if any
 	for (charIndex = 0; charIndex != [[event characters] length]; charIndex++) {
 		switch (characters[charIndex]) {
 			case NSUpArrowFunctionKey:
 				// if we aren't selecting anything when we press the up arrow, select the last item in the list
-				if ([indexes count] == 0) [indexes addIndex:lastItem];
+				if ([indexes count] == 0) {
+					[indexes addIndex:lastItem];
+					indexToScrollTo = lastItem;
+				}
 				else {
 					// if we are holding the shift key increase the selection's lower bound by one if possible
 					if (([event modifierFlags] & NSShiftKeyMask) || ([event modifierFlags] & NSCommandKeyMask)) {
-						if ([indexes firstIndex] > 0) [indexes addIndex:([indexes firstIndex] - 1)];
+						if ([indexes firstIndex] > 0) {
+							[indexes addIndex:([indexes firstIndex] - 1)];
+							indexToScrollTo = [indexes firstIndex] - 1;
+						}
 					}
 					// if not, set the selection to the previous item
 					else {
@@ -87,17 +94,24 @@
 						// if we have the first item selected as part of a group, and we hit the up arrow, select only the first item
 						[indexes removeAllIndexes];
 						[indexes addIndex:index];
+						indexToScrollTo = index;
 					}
 				}
 				handled = YES;
 				break;
 			case NSDownArrowFunctionKey:
 				// if we aren't selecting anything when we press the down arrow, select the first item in the list
-				if ([indexes count] == 0) [indexes addIndex:0];
+				if ([indexes count] == 0) {
+					[indexes addIndex:0];
+					indexToScrollTo = 0;
+				}
 				else {
 					// if we are holding the shift key increase the selection's upper bound by one if possible
 					if (([event modifierFlags] & NSShiftKeyMask) || ([event modifierFlags] & NSCommandKeyMask)) {
-						if ([indexes firstIndex] < lastItem) [indexes addIndex:([indexes lastIndex] + 1)];
+						if ([indexes firstIndex] < lastItem) {
+							[indexes addIndex:([indexes lastIndex] + 1)];
+							indexToScrollTo = [indexes lastIndex] + 1;
+						}
 					}
 					// if not, set the selection to the next item
 					else {
@@ -105,6 +119,7 @@
 						// if we have the last item selected as part of a group, and we hit the down arrow, select only the last item
 						[indexes removeAllIndexes];
 						[indexes addIndex:index];
+						indexToScrollTo = index;
 					}
 				}
 				handled = YES;
@@ -116,6 +131,11 @@
 	[self setSelectionIndexes:indexes];
 	[indexes release];
 	free(characters);
+	
+	// make the new selection visible if it's not
+	if (handled && indexToScrollTo != -1) {
+		[self scrollRectToVisible:[[itemRects objectForKey:[NSNumber numberWithUnsignedInteger:indexToScrollTo]] frame]];
+	}
 	
 	// if we didn't handle the key event, assume it's a menu item's key equivalent
 	if (!handled) [[[NSApplication sharedApplication] mainMenu] performKeyEquivalent:event];

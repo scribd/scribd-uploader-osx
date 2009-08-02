@@ -23,7 +23,25 @@
 
 #pragma mark Querying information about collection view items
 
+/*!
+ @method rectOfObject:
+ @abstract Given an object that exists in the collection backing this collection
+ view, returns the rect of its corresponding view item in the local coordinate
+ system.
+ @param object The object in the collection.
+ @result The rect of the collection item view.
+ */
+
 - (NSRect) rectOfObject:(id)object;
+
+/*!
+ @method rectAtIndex:
+ @abstract Given an index in the collection backing this collection view,
+ returns the rect of its corresponding view item in the local coordinate system.
+ @param object The index in the collection.
+ @result The rect of the collection item view.
+ */
+
 - (NSRect) rectAtIndex:(NSUInteger)index;
 
 @end
