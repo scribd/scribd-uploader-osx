@@ -2,8 +2,9 @@
 
 /*!
  @class SUQuickLookDelegate
- @abstract Interface for the Quick Look feature of Mac OS X 10.5 that allows
- users to get floating previews of their files.
+ @abstract Delegate class that responds to Quick Look events by displaying the
+ Quick Look preview pane available in Mac OS X 10.5. This class also monitors
+ the file list selection and updates the Quick Look preview window's contents.
  @discussion This class uses private Apple API's to the Quick Look technology.
  If Quick Look is not available (e.g., when running on an earlier version of OS
  X, this class disables itself.

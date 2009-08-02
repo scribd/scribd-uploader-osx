@@ -1,8 +1,13 @@
 /*!
  @class SUSessionHelper
- @abstract Singleton class with helper methods for managing Scribd sessions.
+ @abstract This singleton class has methods for working with the Scribd.com
+ session.
  @discussion Scribd session information is stored in the shared user defaults
- object.
+ object. It is a session key linked with the login of the Scribd.com user owning
+ the session.
+ 
+ The @link setupForLaunch setupForLaunch @/link method should be called when the
+ application first starts up.
  */
 
 @interface SUSessionHelper : NSObject {

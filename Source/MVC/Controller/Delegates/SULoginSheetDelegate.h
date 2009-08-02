@@ -1,7 +1,7 @@
 /*!
  @class SULoginSheetDelegate
- @abstract Delegate class for the login/signup sheet. Handles animations for
- switching between tabs.
+ @abstract Delegate class for the login/signup sheet that responds to actions
+ and performs the animation when switching between tabs.
  */
 
 @interface SULoginSheetDelegate : NSObject {

@@ -31,7 +31,7 @@
 #import "SUCategory.h"
 #import "SUTitleCleanerOperation.h"
 #import "SUDocument.h"
-#import "SUFileNotFoundAlertDelegate.h"
+#import "SUFileNotFoundAlerter.h"
 #import "SUDatabaseHelper.h"
 #import "SUUploadHelper.h"
 #import "SUConversionStatusTracker.h"

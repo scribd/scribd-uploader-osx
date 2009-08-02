@@ -2,6 +2,8 @@
 
 @implementation NSApplication (SUAdditions)
 
+#pragma mark Getting information about the operating system
+
 - (void) getSystemVersionMajor:(NSUInteger *)major minor:(NSUInteger *)minor bugfix:(NSUInteger *)bugfix {
 	SInt32 systemVersion, versionMajor, versionMinor, versionBugfix;
 	OSErr err = Gestalt(gestaltSystemVersion, &systemVersion);

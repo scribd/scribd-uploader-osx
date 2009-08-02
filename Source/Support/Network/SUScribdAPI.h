@@ -1,10 +1,9 @@
 /*!
  @class SUScribdAPI
  @abstract An Objective-C interface to the Scribd HTTP API.
- @discussion
- This singleton class acts as a basic library to communicate with the Scribd API
- server. It constructs valid API URL's, sends them to the Scribd API server, and
- parses the resulting XML.
+ @discussion This singleton class acts as a basic library to communicate with
+ the Scribd API server. It constructs valid API URL's, sends them to the Scribd
+ API server, and parses the resulting XML.
  
  API information must be specified in a plist file titled "SUScribdAPI" in the
  root resources directory. This plist file must contain the following keys:

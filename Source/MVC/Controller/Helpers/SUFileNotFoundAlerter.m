@@ -1,6 +1,6 @@
-#import "SUFileNotFoundAlertDelegate.h"
+#import "SUFileNotFoundAlerter.h"
 
-@interface SUFileNotFoundAlertDelegate (Private)
+@interface SUFileNotFoundAlerter (Private)
 
 #pragma mark Alert
 
@@ -14,7 +14,7 @@
 
 #pragma mark -
 
-@implementation SUFileNotFoundAlertDelegate
+@implementation SUFileNotFoundAlerter
 
 #pragma mark Showing the alert
 
@@ -30,6 +30,11 @@
 }
 
 #pragma mark KVO
+
+/*
+ Responds to the window becoming visible by showing the alert. This defers the
+ alert display until the window is ready for the sheet.
+ */
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"visible"]) {
@@ -53,7 +58,7 @@
 
 @end
 
-@implementation SUFileNotFoundAlertDelegate (Private)
+@implementation SUFileNotFoundAlerter (Private)
 
 #pragma mark Alert
 

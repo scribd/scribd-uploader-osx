@@ -2,6 +2,8 @@
 
 @implementation SUFileListViewDelegate
 
+#pragma mark Drag and drop
+
 /*
  The view accepts files for drag-and-drop operations.
  */

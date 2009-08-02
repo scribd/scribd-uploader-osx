@@ -120,16 +120,6 @@
 	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadDidFailNotification object:self];
 }
 
-#pragma mark Delegate responders (other)
-
-/*
- Handles the dismissal of the alert by releasing the object.
- */
-
-- (void) uploadAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo {
-	[alert release];
-};
-
 #pragma mark NSProgressBar emulation
 
 /*

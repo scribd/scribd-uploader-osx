@@ -1,10 +1,10 @@
 /*!
  @class SUFileNotFoundAlertDelegate
  @discussion This class displays an alert when the upload list contains files
- that no longer exist.
+ that no longer exist, and acts as the delegate for that alert.
  */
 
-@interface SUFileNotFoundAlertDelegate : NSObject {
+@interface SUFileNotFoundAlerter : NSObject {
 	@private
 		IBOutlet NSWindow *window;
 }

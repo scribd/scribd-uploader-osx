@@ -10,7 +10,7 @@
 	@private
 		IBOutlet NSWindow *window, *loginSheet, *directoryScanSheet;
 		IBOutlet SULoginSheetDelegate *loginSheetDelegate;
-		IBOutlet SUFileNotFoundAlertDelegate *fileNotFoundDelegate;
+		IBOutlet SUFileNotFoundAlerter *fileNotFoundDelegate;
 		IBOutlet SUDatabaseHelper *db;
 		IBOutlet SUUploadHelper *uploader;
 		IBOutlet NSTreeController *categoriesController;

@@ -1,6 +1,7 @@
 /*!
  @category NSString(SUAdditions)
- @abstract Utility methods for strings.
+ @abstract Utility methods for the
+ @link //apple_ref/occ/cl/NSString NSString @/link class.
  */
 
 @interface NSString (SUAdditions)

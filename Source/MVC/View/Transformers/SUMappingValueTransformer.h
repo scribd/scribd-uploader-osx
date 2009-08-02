@@ -1,6 +1,9 @@
 /*!
  @class SUMappingValueTransformer
  @abstract A basic value transformer that maps model objects to view values.
+ @discussion Before using this object, assign a dictionary to the
+ @link mappings mappings @/link property. This dictionary maps model values to
+ view values.
  */
 
 @interface SUMappingValueTransformer : NSValueTransformer {

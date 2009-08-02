@@ -1,6 +1,7 @@
 /*!
  @class SUAddURLWindowDelegate
- @abstract Handles events regarding the Add URL window.
+ @abstract This class manages the state of and responds to events from the Add
+ URL window.
  */
 
 @interface SUAddURLWindowController : NSObject {

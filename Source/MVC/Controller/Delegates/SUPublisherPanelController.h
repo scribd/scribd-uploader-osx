@@ -1,6 +1,7 @@
 /*!
  @class SUPublisherPanelDelegate
- @abstract Handler for events relating to the publisher panel.
+ @abstract Delegate for the Publisher Information panel that responds to events
+ from the panel and initializes its value transformer.
  */
 
 @interface SUPublisherPanelController : NSObject {

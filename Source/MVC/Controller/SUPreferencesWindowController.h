@@ -1,6 +1,6 @@
 /*!
  @class SUPreferencesWindowController
- @abstract Handles events for and sets up the Preferences window.
+ @abstract Sets up and responds to events from the Preferences window.
  */
 
 @interface SUPreferencesWindowController : DBPrefsWindowController {
@@ -10,6 +10,13 @@
 }
 
 #pragma mark Properties
+
+/*!
+ @property sparkleUpdater
+ @abstract The Sparkle SUUpdater instance that will perform the update check.
+ @discussion This property is automatically assigned upon awakening from the xib
+ file.
+ */
 
 @property (retain) SUUpdater *sparkleUpdater;
 

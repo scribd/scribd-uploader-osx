@@ -1,6 +1,7 @@
 /*!
  @class SUFileListViewDelegate
- @abstract Drag-and-drop delegate for the file list.
+ @abstract This class receives and handles drag-and-drop events from the file
+ list view.
  */
 
 @interface SUFileListViewDelegate : NSObject {

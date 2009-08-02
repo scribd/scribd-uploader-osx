@@ -1,6 +1,7 @@
 /*!
  @class SUAboutWindowDelegate
- @abstract Responder for events in the About window.
+ @abstract This class provides data to and responds to events from the About
+ window.
  */
 
 @interface SUAboutWindowController : NSObject {

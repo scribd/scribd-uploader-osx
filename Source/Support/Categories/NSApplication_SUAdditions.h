@@ -1,4 +1,12 @@
+/*!
+ @category NSApplication(SUAdditions)
+ @abstract Scribd Uploader-specific additions to
+ @link //apple_ref/occ/cl/NSApplication NSApplication @/link.
+ */
+
 @interface NSApplication (SUAdditions)
+
+#pragma mark Getting information about the operating system
 
 /*!
  @method getSystemVersionMajor:minor:bugfix:

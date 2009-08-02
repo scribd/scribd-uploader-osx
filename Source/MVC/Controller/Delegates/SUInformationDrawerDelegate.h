@@ -1,7 +1,12 @@
 /*!
  @class SUInformationDrawerDelegate
- @abstract Receives events from the information panel. This class is also the
- delegate for the Tags token field.
+ @abstract Delegate class that responds to changes in the Information drawer and
+ its token field.
+ @discussion This class shows or hides the Information drawer as the selection
+ changes, changing the name of the "Show/Hide Information Drawer" menu item as
+ appropriate. It also performs the fade effect as the selection changes between
+ uploaded and pending files. Finally, it provides the content for the Tags token
+ field.
  */
 
 @interface SUInformationDrawerDelegate : NSObject {

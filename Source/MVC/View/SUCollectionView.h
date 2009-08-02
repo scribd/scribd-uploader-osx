@@ -1,15 +1,16 @@
 /*!
  @class SUCollectionView
  @abstract A subclass of
- @link //apple_ref/occ/cl/NSScrollView NSCollectionView @/link adds a key-event
- support, Quick Look support, and drag-and-drop support.
+ @link //apple_ref/occ/cl/NSCollectionView NSCollectionView @/link adds Quick
+ Look support, keyboard selection changes, and drag-and-drop support.
  @discussion This class adds key-event and Quick Look support. If the spacebar
- is pressed, this class tells the
- @link SUQuickLookDelegate SUQuickLookDelegate @/link to toggle the Quick Look
- preview pane. The quickLook outlet must be connected for this to work.
+ is pressed, this class tells the delegate to toggle the Quick Look preview
+ pane. The quickLook outlet must be connected for this to work. The delegate
+ must implement the toggleDisplay method.
  
  If the up or down arrows are selected, the selection is changed according to
- keyboard selection navigation standards.
+ keyboard selection navigation standards. If the shift key is pressed, the
+ selection is grown. The view is scrolled to keep the selection change visible.
  
  This class adds drag-and-drop support. You must connect a delegate that
  responds to drag-and-drop methods.

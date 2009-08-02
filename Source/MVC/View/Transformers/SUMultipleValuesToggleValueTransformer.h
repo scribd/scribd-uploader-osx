@@ -6,10 +6,9 @@
  values (whether they are all true, all false, or mixed) and is also
  appropriately worded in the singular or plural depending on the number of
  incoming boolean values (given as an array).
- 
- An output string is specified using tokens such as "{0}", "{1}", etc. where the
- number refers to an index in the insertions array. The string at that index
- will be substituted for the token to generate the output string.
+ @discussion An output string is specified using tokens such as "{0}", "{1}",
+ etc. where the number refers to an index in the insertions array. The string at
+ that index will be substituted for the token to generate the output string.
  */
 
 @interface SUMultipleValuesToggleValueTransformer : NSValueTransformer {
