@@ -84,8 +84,8 @@
 		document.errorIsUnrecoverable = [NSNumber numberWithBool:YES];
 	}
 	
-	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadCompleteNotification object:self];
-	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadSucceededNotification object:self];
+	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadDidCompleteNotification object:self];
+	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadDidSucceedNotification object:self];
 }
 
 - (void) requestFailed:(ASIHTTPRequest *)request {
@@ -116,8 +116,8 @@
 	document.error = [NSArchiver archivedDataWithRootObject:error];
 	document.errorIsUnrecoverable = [NSNumber numberWithBool:YES];
 	
-	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadCompleteNotification object:self];
-	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadFailedNotification object:self];
+	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadDidCompleteNotification object:self];
+	[[NSNotificationCenter defaultCenter] postNotificationName:SUUploadDidFailNotification object:self];
 }
 
 #pragma mark Delegate responders (other)

@@ -178,8 +178,8 @@
 	[[SUSessionHelper sessionHelper] setupForLaunch];
 	
 	// register for scanning notifications
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanningStarted:) name:SUScanningStartedNotification object:NULL];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanningDone:) name:SUScanningDoneNotification object:NULL];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanningStarted:) name:SUScanningDidBeginNotification object:NULL];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanningDone:) name:SUScanningDidCompleteNotification object:NULL];
 	
 	// remove docs that have been moved or deleted since last launch
 	NSString *fileName = NULL;

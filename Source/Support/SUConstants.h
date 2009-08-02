@@ -157,43 +157,43 @@ NSString *SUDefaultKeyManualMetadataDrawer;
 #pragma mark Notifications
 
 /*!
- @const SUUploadCompleteNotification
+ @const SUUploadDidCompleteNotification
  @abstract Posted when a file completes or fails uploading. The included object
  is the @link SUUploadDelegate SUUploadDelegate @/link for the upload.
  */
 
-NSString *SUUploadCompleteNotification;
+NSString *SUUploadDidCompleteNotification;
 
 /*!
- @const SUUploadSucceededNotification
+ @const SUUploadDidSucceedNotification
  @abstract Posted when a file uploads successfully. The included object is the
  @link SUUploadDelegate SUUploadDelegate @/link for the upload.
  */
 
-NSString *SUUploadSucceededNotification;
+NSString *SUUploadDidSucceedNotification;
 
 /*!
- @const SUUploadFailedNotification
+ @const SUUploadDidFailNotification
  @abstract Posted when a file fails to upload. The included object is the
  @link SUUploadDelegate SUUploadDelegate @/link for the upload.
  */
 
-NSString *SUUploadFailedNotification;
+NSString *SUUploadDidFailNotification;
 
 /*!
- @const SUScanningStartedNotification
+ @const SUScanningDidBeginNotification
  @abstract Posted by @link SUDirectoryScanner SUDirectoryScanner @/link when a
  directory scan commences.
  */
 
-NSString *SUScanningStartedNotification;
+NSString *SUScanningDidBeginNotification;
 /*!
- @const SUScanningDoneNotification
+ @const SUScanningDidCompleteNotification
  @abstract Posted by @link SUDirectoryScanner SUDirectoryScanner @/link when a
  directory scan completes.
  */
 
-NSString *SUScanningDoneNotification;
+NSString *SUScanningDidCompleteNotification;
 
 #pragma mark Info.plist keys
 

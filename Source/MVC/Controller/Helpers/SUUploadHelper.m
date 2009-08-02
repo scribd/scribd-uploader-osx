@@ -52,7 +52,7 @@
 	self.scribdLogin = [[SUSessionHelper sessionHelper] username];
 	newUserLoginError = newUserPasswordError = newUserEmailError = newUserNameError = NULL;
 	uploadDelegates = [[NSMutableSet alloc] init]; // just used to retain delegates which are created in transient autorelease pools
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uploadComplete:) name:SUUploadCompleteNotification object:NULL];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uploadComplete:) name:SUUploadDidCompleteNotification object:NULL];
 }
 
 /*

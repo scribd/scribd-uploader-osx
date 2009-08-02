@@ -65,7 +65,7 @@
 	}
 	
 	[operationQueue run];
-	[[NSNotificationCenter defaultCenter] postNotificationName:SUScanningStartedNotification object:NULL];
+	[[NSNotificationCenter defaultCenter] postNotificationName:SUScanningDidBeginNotification object:NULL];
 }
 
 - (IBAction) cancelScanning:(id)sender {
@@ -74,7 +74,7 @@
 	operationQueue = NULL;
 	
 	self.isScanning = NO;
-	[[NSNotificationCenter defaultCenter] postNotificationName:SUScanningDoneNotification object:NULL];
+	[[NSNotificationCenter defaultCenter] postNotificationName:SUScanningDidCompleteNotification object:NULL];
 }
 
 #pragma mark Delegate responders
@@ -88,7 +88,7 @@
 	operationQueue = NULL;
 	
 	self.isScanning = NO;
-	[[NSNotificationCenter defaultCenter] postNotificationName:SUScanningDoneNotification object:NULL];
+	[[NSNotificationCenter defaultCenter] postNotificationName:SUScanningDidCompleteNotification object:NULL];
 }
 
 /*

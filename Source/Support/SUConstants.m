@@ -25,11 +25,11 @@ NSString *SUDefaultKeyUploadPrivateDefault = @"SUUploadPrivateDefault";
 NSString *SUDefaultKeyManualMetadataDrawer = @"SUManualMetadataDrawer";
 
 /* Notifications */
-NSString *SUUploadCompleteNotification = @"SUUploadCompleteNotification";
-NSString *SUUploadSucceededNotification = @"SUUploadSucceededNotification";
-NSString *SUUploadFailedNotification = @"SUUploadFailedNotification";
-NSString *SUScanningStartedNotification = @"SUScanningStartedNotification";
-NSString *SUScanningDoneNotification = @"SUScanningDoneNotification";
+NSString *SUUploadDidCompleteNotification = @"SUUploadDidCompleteNotification";
+NSString *SUUploadDidSucceedNotification = @"SUUploadDidSucceedNotification";
+NSString *SUUploadDidFailNotification = @"SUUploadDidFailNotification";
+NSString *SUScanningDidBeginNotification = @"SUScanningDidBeginNotification";
+NSString *SUScanningDidCompleteNotification = @"SUScanningDidCompleteNotification";
 
 /* Info.plist keys */
 NSString *SUMyDocsURLInfoKey = @"SUMyDocsURL";
