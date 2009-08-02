@@ -296,6 +296,8 @@
 		CFURLRef URLRef = CFURLCreateWithString(kCFAllocatorDefault, (CFStringRef)([[SUAPIHelper helper].settings objectForKey:@"BaseURL"]), NULL);
 		CFNetDiagnosticRef details = CFNetDiagnosticCreateWithURL(kCFAllocatorDefault, URLRef);
 		CFNetDiagnosticDiagnoseProblemInteractively(details);
+		CFRelease(details);
+		CFRelease(URLRef);
 	}
 }
 
