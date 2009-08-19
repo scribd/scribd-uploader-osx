@@ -80,7 +80,8 @@
 		}
 		
 		NSString *valueString = [numberFormatter stringFromNumber:[NSNumber numberWithLongLong:round(largestUnitScalar)]];
-		return [NSString stringWithFormat:NSLocalizedString(@"%@ %@", @"number and its unit"), valueString, largestUnit];
+		NSString *unit = (round(largestUnitScalar) == 1 ? largestUnit : [[TMInflector inflector] pluralize:largestUnit]);
+		return [NSString stringWithFormat:NSLocalizedString(@"%@ %@", @"number and its unit"), valueString, unit];
 	}
 	else if (!value || value == [NSNull null]) return NSLocalizedString(@"?", @"unknown numeric value");
 	else return value;

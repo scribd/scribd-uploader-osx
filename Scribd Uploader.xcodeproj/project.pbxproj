@@ -30,6 +30,11 @@
 		0128AFA00F1479A000EC3C28 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0128AF9F0F1479A000EC3C28 /* MainMenu.xib */; };
 		012E5DC80F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 012E5DC70F1F32B10037ECDA /* Scribd_Uploader_DataModel.xcdatamodeld */; };
 		0132C07D0F16BF99000B17C5 /* Scribd Uploader Help in Resources */ = {isa = PBXBuildFile; fileRef = 0132C07C0F16BF99000B17C5 /* Scribd Uploader Help */; };
+		0134A7A1103BC4ED00E2F1C6 /* NSString+TMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134A798103BC4ED00E2F1C6 /* NSString+TMAdditions.m */; };
+		0134A7A2103BC4ED00E2F1C6 /* NSString+TMInflections.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134A79A103BC4ED00E2F1C6 /* NSString+TMInflections.m */; };
+		0134A7A3103BC4ED00E2F1C6 /* RKRegex+TMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134A79C103BC4ED00E2F1C6 /* RKRegex+TMAdditions.m */; };
+		0134A7A4103BC4ED00E2F1C6 /* TMInflector+Inflections.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134A79E103BC4ED00E2F1C6 /* TMInflector+Inflections.m */; };
+		0134A7A5103BC4ED00E2F1C6 /* TMInflector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0134A7A0103BC4ED00E2F1C6 /* TMInflector.m */; };
 		01377DFB0F60F07C00C9121E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01377DFA0F60F07C00C9121E /* QuartzCore.framework */; };
 		01377E140F60F61400C9121E /* Preview Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 01377E130F60F61400C9121E /* Preview Background.png */; };
 		014204E40F29389700C7401A /* Automatic Updates.png in Resources */ = {isa = PBXBuildFile; fileRef = 014204E30F29389700C7401A /* Automatic Updates.png */; };
@@ -106,6 +111,8 @@
 		01C1B9EA1022BAD900C4BDAE /* ASIS3ListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C1B9E21022BAD900C4BDAE /* ASIS3ListRequest.m */; };
 		01C1B9EB1022BAD900C4BDAE /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C1B9E41022BAD900C4BDAE /* ASIS3Request.m */; };
 		01C1B9FA1022BC1000C4BDAE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C1B9F91022BC1000C4BDAE /* SystemConfiguration.framework */; };
+		01C21F0B1034FB5F00A30E31 /* RegexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C21F0A1034FB5F00A30E31 /* RegexKit.framework */; };
+		01C21F101034FB7400A30E31 /* RegexKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 01C21F0A1034FB5F00A30E31 /* RegexKit.framework */; };
 		01E821340F293BB100473993 /* Caution.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821310F293BB100473993 /* Caution.png */; };
 		01E821350F293BB100473993 /* Error.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821320F293BB100473993 /* Error.png */; };
 		01E821360F293BB100473993 /* Go.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E821330F293BB100473993 /* Go.png */; };
@@ -121,6 +128,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				01C21F101034FB7400A30E31 /* RegexKit.framework in CopyFiles */,
 				014DB94F0F1EE58D00F50460 /* Growl.framework in CopyFiles */,
 				01EC08690F1C677400F2098B /* Sparkle.framework in CopyFiles */,
 			);
@@ -159,6 +167,17 @@
 		0128AF780F14799100EC3C28 /* Upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Upload.png; sourceTree = "<group>"; };
 		012E5DC90F1F32B10037ECDA /* Scribd_Uploader_DataModel 210.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Scribd_Uploader_DataModel 210.xcdatamodel"; sourceTree = "<group>"; };
 		0132C0170F16BF97000B17C5 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/Scribd Uploader Help"; sourceTree = "<group>"; };
+		0134A797103BC4ED00E2F1C6 /* NSString+TMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TMAdditions.h"; sourceTree = "<group>"; };
+		0134A798103BC4ED00E2F1C6 /* NSString+TMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TMAdditions.m"; sourceTree = "<group>"; };
+		0134A799103BC4ED00E2F1C6 /* NSString+TMInflections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TMInflections.h"; sourceTree = "<group>"; };
+		0134A79A103BC4ED00E2F1C6 /* NSString+TMInflections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TMInflections.m"; sourceTree = "<group>"; };
+		0134A79B103BC4ED00E2F1C6 /* RKRegex+TMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RKRegex+TMAdditions.h"; sourceTree = "<group>"; };
+		0134A79C103BC4ED00E2F1C6 /* RKRegex+TMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RKRegex+TMAdditions.m"; sourceTree = "<group>"; };
+		0134A79D103BC4ED00E2F1C6 /* TMInflector+Inflections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TMInflector+Inflections.h"; sourceTree = "<group>"; };
+		0134A79E103BC4ED00E2F1C6 /* TMInflector+Inflections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TMInflector+Inflections.m"; sourceTree = "<group>"; };
+		0134A79F103BC4ED00E2F1C6 /* TMInflector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMInflector.h; sourceTree = "<group>"; };
+		0134A7A0103BC4ED00E2F1C6 /* TMInflector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMInflector.m; sourceTree = "<group>"; };
+		0134A7DB103BE21A00E2F1C6 /* TMInflector-Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TMInflector-Base.h"; sourceTree = "<group>"; };
 		01377DFA0F60F07C00C9121E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		01377E130F60F61400C9121E /* Preview Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Preview Background.png"; sourceTree = "<group>"; };
 		014204E30F29389700C7401A /* Automatic Updates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Automatic Updates.png"; sourceTree = "<group>"; };
@@ -291,6 +310,7 @@
 		01C1B9E31022BAD900C4BDAE /* ASIS3Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIS3Request.h; sourceTree = "<group>"; };
 		01C1B9E41022BAD900C4BDAE /* ASIS3Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3Request.m; sourceTree = "<group>"; };
 		01C1B9F91022BC1000C4BDAE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		01C21F0A1034FB5F00A30E31 /* RegexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RegexKit.framework; path = Local/Frameworks/RegexKit.framework; sourceTree = DEVELOPER_DIR; };
 		01E821310F293BB100473993 /* Caution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Caution.png; sourceTree = "<group>"; };
 		01E821320F293BB100473993 /* Error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Error.png; sourceTree = "<group>"; };
 		01E821330F293BB100473993 /* Go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Go.png; sourceTree = "<group>"; };
@@ -314,6 +334,7 @@
 				01377DFB0F60F07C00C9121E /* QuartzCore.framework in Frameworks */,
 				017C85890F6F98E10013D7D0 /* libz.dylib in Frameworks */,
 				01C1B9FA1022BC1000C4BDAE /* SystemConfiguration.framework in Frameworks */,
+				01C21F0B1034FB5F00A30E31 /* RegexKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +408,25 @@
 				0132C07C0F16BF99000B17C5 /* Scribd Uploader Help */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0134A796103BC4ED00E2F1C6 /* TMInflector */ = {
+			isa = PBXGroup;
+			children = (
+				0134A7DB103BE21A00E2F1C6 /* TMInflector-Base.h */,
+				0134A797103BC4ED00E2F1C6 /* NSString+TMAdditions.h */,
+				0134A798103BC4ED00E2F1C6 /* NSString+TMAdditions.m */,
+				0134A799103BC4ED00E2F1C6 /* NSString+TMInflections.h */,
+				0134A79A103BC4ED00E2F1C6 /* NSString+TMInflections.m */,
+				0134A79B103BC4ED00E2F1C6 /* RKRegex+TMAdditions.h */,
+				0134A79C103BC4ED00E2F1C6 /* RKRegex+TMAdditions.m */,
+				0134A79D103BC4ED00E2F1C6 /* TMInflector+Inflections.h */,
+				0134A79E103BC4ED00E2F1C6 /* TMInflector+Inflections.m */,
+				0134A79F103BC4ED00E2F1C6 /* TMInflector.h */,
+				0134A7A0103BC4ED00E2F1C6 /* TMInflector.m */,
+			);
+			name = TMInflector;
+			path = TMInflector/Library;
 			sourceTree = "<group>";
 		};
 		01A0777110261489004E309C /* Source */ = {
@@ -589,6 +629,7 @@
 				01AF5FF90F1D27D300D51D07 /* DBPrefsWindow */,
 				012384670F2AAE1F007D2B54 /* EMKeychain */,
 				01AF5FFC0F1D27D300D51D07 /* QuickLook */,
+				0134A796103BC4ED00E2F1C6 /* TMInflector */,
 				0103D62F1022B88B00D8968C /* TMMoveToApplicationsFolder */,
 			);
 			path = Vendor;
@@ -635,6 +676,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01C21F0A1034FB5F00A30E31 /* RegexKit.framework */,
 				01C1B9F91022BC1000C4BDAE /* SystemConfiguration.framework */,
 				017C85880F6F98E10013D7D0 /* libz.dylib */,
 				01377DFA0F60F07C00C9121E /* QuartzCore.framework */,
@@ -836,6 +878,11 @@
 				01A0780D10261489004E309C /* SUDirectoryScanOperation.m in Sources */,
 				01A0780E10261489004E309C /* SUTitleCleanerOperation.m in Sources */,
 				01A0780F10261489004E309C /* SUConstants.m in Sources */,
+				0134A7A1103BC4ED00E2F1C6 /* NSString+TMAdditions.m in Sources */,
+				0134A7A2103BC4ED00E2F1C6 /* NSString+TMInflections.m in Sources */,
+				0134A7A3103BC4ED00E2F1C6 /* RKRegex+TMAdditions.m in Sources */,
+				0134A7A4103BC4ED00E2F1C6 /* TMInflector+Inflections.m in Sources */,
+				0134A7A5103BC4ED00E2F1C6 /* TMInflector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -937,6 +984,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/Linked Frameworks\"",
+					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
@@ -958,6 +1006,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/Linked Frameworks\"",
+					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -981,6 +1030,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/Linked Frameworks\"",
+					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
