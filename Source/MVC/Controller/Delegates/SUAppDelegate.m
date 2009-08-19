@@ -121,7 +121,6 @@
 	informationValueTransformer.rootUnit = @"byte";
 	[informationUnits release];
 	[NSValueTransformer setValueTransformer:[informationValueTransformer autorelease] forName:@"SUHumanizeBytes"];
-	[[TMInflector inflector] addUncountableWords:@"KB", @"MB", @"GB", NULL];
 }
 
 /*
@@ -193,6 +192,9 @@
 	
 	// check the application directory
 	[[TMMoveToApplicationsFolder applicationMover] checkApplicationFolder];
+	
+	// add uncountable abbreviations
+	[[TMInflector inflector] addUncountableWords:@"kb", @"mb", @"gb", NULL];
 }
 
 #pragma mark Delegate responders
