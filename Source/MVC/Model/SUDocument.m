@@ -221,9 +221,9 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 - (NSNumber *) estimatedSecondsRemaining {
 	if ([self hasSize] && self.uploading) {
 		NSTimeInterval secondsSoFar = -[self.startTime timeIntervalSinceNow];
-		if (secondsSoFar <= 0.0) return NULL;
-		double averageBytesPerSecond = [self.bytesUploaded doubleValue]/secondsSoFar;
-		double totalTimeOfUpload = [self.totalBytes doubleValue]/averageBytesPerSecond;
+		if (secondsSoFar <= 2.0) return NULL; // give the estimate a few seconds to settle down
+		double progressPerSecond = [self.progress doubleValue]/secondsSoFar;
+		double totalTimeOfUpload = 1.0/progressPerSecond;
 		return [NSNumber numberWithUnsignedLongLong:(unsigned long long)totalTimeOfUpload];
 	}
 	else return NULL;
