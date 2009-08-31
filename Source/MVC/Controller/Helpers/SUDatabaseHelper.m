@@ -51,7 +51,17 @@
 	NSString *applicationSupportFolder = self.applicationSupportFolder;
 	
 	if (![[NSFileManager defaultManager] fileExistsAtPath:applicationSupportFolder isDirectory:NULL]) {
-		[[NSFileManager defaultManager] createDirectoryAtPath:applicationSupportFolder attributes:NULL];
+		[[NSFileManager defaultManager] createDirectoryAtPath:applicationSupportFolder withIntermediateDirectories:YES attributes:NULL error:&error];
+		if (error) {
+			NSAlert *alert = [[NSAlert alloc] init];
+			[alert setMessageText:NSLocalizedString(@"I couldn't create the application support folder.", NULL)];
+			[alert setInformativeText:NSLocalizedString(@"You should recreate the Home > Library > Application Support > Scribd Uploader folder.", NULL)];
+			[alert setAlertStyle:NSCriticalAlertStyle];
+			[alert addButtonWithTitle:NSLocalizedString(@"Quit", @"command")];
+			[alert runModal];
+			[alert release];
+			exit(1); // can't call terminate: because we'll just see this error over and over
+		}
 	}
 	
 	URL = [NSURL fileURLWithPath:[applicationSupportFolder stringByAppendingPathComponent: @"Queue.xml"]];

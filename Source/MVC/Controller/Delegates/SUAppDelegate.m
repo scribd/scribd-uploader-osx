@@ -158,9 +158,6 @@
 	// create a value transformer that requires an initialized DB
 	[[NSValueTransformer valueTransformerForName:@"SUIndexPath"] setValue:db.managedObjectContext forKey:@"managedObjectContext"];
 	
-	// configure Growl (necessary because of a bug in growl)
-	[GrowlApplicationBridge setGrowlDelegate:@""];
-	
 	// configure categories controller sorting
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObject:sortDescriptor];
