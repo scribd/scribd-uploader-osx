@@ -1,4 +1,4 @@
-/*Copyright (c) 2007 Extendmac, LLC. <support@extendmac.com>
+/*Copyright (c) 2008 Extendmac, LLC. <support@extendmac.com>
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -26,37 +26,66 @@
 
 @implementation EMKeychainProxy
 
-static EMKeychainProxy* sharedProxy;
+static EMKeychainProxy *sharedProxy = nil;
 
+#pragma mark -
+#pragma mark Shared Singleton
 + (id)sharedProxy
 {
 	if (!sharedProxy)
-	{
-		sharedProxy = [[EMKeychainProxy alloc] init];
-	}
+		[[EMKeychainProxy alloc] init];
 	return sharedProxy;
 }
-- (void)lockKeychain
+
++ (id)allocWithZone:(NSZone *)zone
 {
-	SecKeychainLock(NULL);
+	if (!sharedProxy)
+	{
+		sharedProxy = [super allocWithZone:zone];
+		return sharedProxy;
+	}
+	return nil;
 }
-- (void)unlockKeychain
+
+- (id)copyWithZone:(NSZone *)zone
 {
-	SecKeychainUnlock(NULL, 0, NULL, NO);
+    return self;
 }
-- (void)setLogsErrors:(BOOL)flag
+
+- (id)retain
 {
-	_logErrors = flag;
+    return self;
+}
+
+- (unsigned)retainCount
+{
+    return UINT_MAX;  //denotes an object that cannot be released
+}
+
+- (void)release
+{
+    //do nothing
+}
+
+- (id)autorelease
+{
+    return self;
 }
 
 #pragma mark -
+#pragma mark Accessors
+
+- (BOOL)logsErrors { return _logErrors; }
+
+- (void)setLogsErrors:(BOOL)flag { _logErrors = flag; }
+
+#pragma mark -
 #pragma mark Getting Keychain Items
-- (EMGenericKeychainItem *)genericKeychainItemForService:(NSString *)serviceNameString withUsername:(NSString *)usernameString
+- (EMGenericKeychainItem *)genericKeychainItemForService:(NSString *)serviceNameString 
+											withUsername:(NSString *)usernameString
 {
 	if (!usernameString || [usernameString length] == 0)
-	{
 		return nil;
-	}
 	
 	const char *serviceName = [serviceNameString UTF8String];
 	const char *username = [usernameString UTF8String];
@@ -75,15 +104,19 @@ static EMKeychainProxy* sharedProxy;
 		return nil;
 	}
 	NSString *passwordString = [NSString stringWithCString:password length:passwordLength];
+	SecKeychainItemFreeContent(NULL, password);
 
 	return [EMGenericKeychainItem genericKeychainItem:item forServiceName:serviceNameString username:usernameString password:passwordString];
 }
-- (EMInternetKeychainItem *)internetKeychainItemForServer:(NSString *)serverString withUsername:(NSString *)usernameString path:(NSString *)pathString port:(int)port protocol:(SecProtocolType)protocol
+
+- (EMInternetKeychainItem *)internetKeychainItemForServer:(NSString *)serverString
+											 withUsername:(NSString *)usernameString
+													 path:(NSString *)pathString
+													 port:(NSInteger)port
+												 protocol:(SecProtocolType)protocol
 {
 	if (!usernameString || [usernameString length] == 0 || !serverString || [serverString length] == 0)
-	{
 		return nil;
-	}
 	const char *server = [serverString UTF8String];
 	const char *username = [usernameString UTF8String];
 	const char *path = [pathString UTF8String];
@@ -97,7 +130,15 @@ static EMKeychainProxy* sharedProxy;
 	char *password = nil;
 	
 	SecKeychainItemRef item = nil;
-	OSStatus returnStatus = SecKeychainFindInternetPassword(NULL, strlen(server), server, 0, NULL, strlen(username), username, strlen(path), path, port, protocol, kSecAuthenticationTypeDefault, &passwordLength, (void **)&password, &item);
+	//0 is kSecAuthenticationTypeAny
+	OSStatus returnStatus = SecKeychainFindInternetPassword(NULL, strlen(server), server, 0, NULL, strlen(username), username, strlen(path), path, port, protocol, 0, &passwordLength, (void **)&password, &item);
+	
+	if (returnStatus != noErr && protocol == kSecProtocolTypeFTP)
+	{
+		//Some clients (like Transmit) still save passwords with kSecProtocolTypeFTPAccount, which was deprecated.  Let's check for that.
+		protocol = kSecProtocolTypeFTPAccount;		
+		returnStatus = SecKeychainFindInternetPassword(NULL, strlen(server), server, 0, NULL, strlen(username), username, strlen(path), path, port, protocol, 0, &passwordLength, (void **)&password, &item);
+	}
 	
 	if (returnStatus != noErr || !item)
 	{
@@ -108,18 +149,19 @@ static EMKeychainProxy* sharedProxy;
 		return nil;
 	}
 	NSString *passwordString = [NSString stringWithCString:password length:passwordLength];
+	SecKeychainItemFreeContent(NULL, password);
 	
 	return [EMInternetKeychainItem internetKeychainItem:item forServer:serverString username:usernameString password:passwordString path:pathString port:port protocol:protocol];
 }
 
 #pragma mark -
 #pragma mark Saving Passwords
-- (EMGenericKeychainItem *)addGenericKeychainItemForService:(NSString *)serviceNameString withUsername:(NSString *)usernameString password:(NSString *)passwordString
+- (EMGenericKeychainItem *)addGenericKeychainItemForService:(NSString *)serviceNameString
+											   withUsername:(NSString *)usernameString
+												   password:(NSString *)passwordString
 {
 	if (!usernameString || [usernameString length] == 0 || !serviceNameString || [serviceNameString length] == 0)
-	{
 		return nil;
-	}	
 	const char *serviceName = [serviceNameString UTF8String];
 	const char *username = [usernameString UTF8String];
 	const char *password = [passwordString UTF8String];
@@ -134,12 +176,16 @@ static EMKeychainProxy* sharedProxy;
 	}
 	return [EMGenericKeychainItem genericKeychainItem:item forServiceName:serviceNameString username:usernameString password:passwordString];
 }
-- (EMInternetKeychainItem *)addInternetKeychainItemForServer:(NSString *)serverString withUsername:(NSString *)usernameString password:(NSString *)passwordString path:(NSString *)pathString port:(int)port protocol:(SecProtocolType)protocol
+
+- (EMInternetKeychainItem *)addInternetKeychainItemForServer:(NSString *)serverString
+												withUsername:(NSString *)usernameString
+													password:(NSString *)passwordString
+														path:(NSString *)pathString
+														port:(NSInteger)port
+													protocol:(SecProtocolType)protocol
 {
 	if (!usernameString || [usernameString length] == 0 || !serverString || [serverString length] == 0 || !passwordString || [passwordString length] == 0)
-	{
 		return nil;
-	}	
 	const char *server = [serverString UTF8String];
 	const char *username = [usernameString UTF8String];
 	const char *password = [passwordString UTF8String];
@@ -160,4 +206,17 @@ static EMKeychainProxy* sharedProxy;
 	}
 	return [EMInternetKeychainItem internetKeychainItem:item forServer:serverString username:usernameString password:passwordString path:pathString port:port protocol:protocol];
 }
+
+#pragma mark -
+#pragma mark Misc
+- (void)lockKeychain
+{
+	SecKeychainLock(NULL);
+}
+
+- (void)unlockKeychain
+{
+	SecKeychainUnlock(NULL, 0, NULL, NO);
+}
+
 @end
