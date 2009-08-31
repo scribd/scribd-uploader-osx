@@ -4,3 +4,6 @@
 [submodule "Vendor/TMInflector"]
 	path = Vendor/TMInflector
 	url = git://github.com/RISCfuture/TMInflector.git
+[submodule "Vendor/ASIHTTPRequest"]
+	path = Vendor/ASIHTTPRequest
+	url = git://github.com/pokeb/asi-http-request.git
