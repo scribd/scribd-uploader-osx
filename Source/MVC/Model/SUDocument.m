@@ -469,10 +469,8 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	return file;
 }
 
-+ (SUDocument *) createFromURLString:(NSString *)URLString inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
-	NSURL *URL = [[NSURL alloc] initWithString:URLString];
++ (SUDocument *) createFromURL:(NSURL *)URL inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
 	NSURL *absoluteURL = [URL absoluteURL];
-	[URL release];
 	SUDocument *existingDocument = NULL;
 	if (existingDocument = [SUDocument findByPath:[absoluteURL absoluteString] inManagedObjectContext:managedObjectContext])
 		[managedObjectContext deleteObject:existingDocument];
@@ -480,6 +478,13 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 	[file setValue:[absoluteURL absoluteString] forKey:@"path"];
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:SUDefaultKeyUploadPrivateDefault]) [file setValue:[NSNumber numberWithBool:YES] forKey:@"hidden"];	
 	return file;
+}
+
++ (SUDocument *) createFromURLString:(NSString *)URLString inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+	NSURL *URL = [[NSURL alloc] initWithString:URLString];
+	SUDocument *doc = [self createFromURL:URL inManagedObjectContext:managedObjectContext];
+	[URL release];
+	return doc;
 }
 
 #pragma mark Configuration information

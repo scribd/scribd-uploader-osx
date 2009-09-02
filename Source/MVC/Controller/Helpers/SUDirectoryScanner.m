@@ -64,8 +64,14 @@
 		[pendingQueue setDelegate:self];
 	}
 	
-	[operationQueue run];
-	[[NSNotificationCenter defaultCenter] postNotificationName:SUScanningDidBeginNotification object:NULL];
+	//[operationQueue run];
+	//[[NSNotificationCenter defaultCenter] postNotificationName:SUScanningDidBeginNotif
+	//BUG - Doesn't draw the collection view items unless the documents are added in the main thread
+	
+	for (SUDirectoryScanOperation *op in [operationQueue operations]) [op main];
+	[operationQueue release];
+	operationQueue = NULL;
+	self.isScanning = NO;
 }
 
 - (IBAction) cancelScanning:(id)sender {

@@ -25,13 +25,18 @@
  */
 
 - (void) main {
-	NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:self.path];
-	NSString *subpath;
-	while (![self isCancelled] && (subpath = [enumerator nextObject])) {
-		NSString *fullPath = [self.path stringByAppendingPathComponent:subpath];
-		if ([[SUDocument scribdFileTypes] containsObject:[fullPath pathExtension]]) {
-			[SUDocument createFromPath:fullPath inManagedObjectContext:self.managedObjectContext];
-		}
+	BOOL (^errorHandler)(NSURL *, NSError *) = ^(NSURL *URL, NSError *error){
+		NSLog(@"An error occurred while scanning %@: %@", [self.path lastPathComponent], [error localizedDescription]);
+		return YES;
+	};
+	NSURL *URL = [[NSURL alloc] initFileURLWithPath:self.path];
+	NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtURL:URL includingPropertiesForKeys:NULL options:(NSDirectoryEnumerationSkipsPackageDescendants|NSDirectoryEnumerationSkipsHiddenFiles) errorHandler:errorHandler];
+	[URL release];
+	
+	NSURL *fileURL;
+	while (![self isCancelled] && (fileURL = [enumerator nextObject])) {
+		if ([[SUDocument scribdFileTypes] containsObject:[[fileURL path] pathExtension]])
+			[SUDocument createFromURL:fileURL inManagedObjectContext:self.managedObjectContext];
 	}
 }
 

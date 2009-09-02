@@ -28,4 +28,14 @@
 
 - (NSArray *) reversedArray;
 
+/*!
+ @method map:
+ @abstract Returns a new array created by applying block to each element in this
+ array.
+ @param block The operation to perform on each element.
+ @result A new array resulting from the map operation.
+ */
+
+- (NSArray *) map:(id (^)(id value))block;
+
 @end

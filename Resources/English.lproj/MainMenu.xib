@@ -8288,14 +8288,14 @@
 				<integer value="1" key="2.ImportedFromIB2"/>
 				<string key="2000.CustomClassName">SUSelectableCollectionViewItem</string>
 				<string key="2000.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="2038.IBEditorWindowLastContentRect">{{269, 411}, {475, 50}}</string>
+				<string key="2038.IBEditorWindowLastContentRect">{{324, 623}, {475, 50}}</string>
 				<string key="2038.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="205.ImportedFromIB2"/>
 				<string key="2097.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2098.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="21.IBEditorWindowLastContentRect">{{258, 207}, {490, 481}}</string>
+				<string key="21.IBEditorWindowLastContentRect">{{390, 222}, {490, 481}}</string>
 				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="21.IBWindowTemplateEditedContentRect">{{258, 207}, {490, 481}}</string>
+				<string key="21.IBWindowTemplateEditedContentRect">{{390, 222}, {490, 481}}</string>
 				<integer value="1" key="21.ImportedFromIB2"/>
 				<integer value="1" key="21.NSWindowTemplate.visibleAtLaunch"/>
 				<boolean value="NO" key="21.windowTemplate.hasMaxSize"/>
@@ -8438,7 +8438,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">2201</int>
+			<int key="maxID">2202</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

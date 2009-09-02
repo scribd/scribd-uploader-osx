@@ -30,7 +30,7 @@
  */
 
 - (NSRect) previewPanel:(NSPanel*)panel frameForURL:(NSURL*)URL {
-	NSRect rect = [fileListView rectAtIndex:[filesController selectionIndex]];
+	NSRect rect = [fileListView frameForItemAtIndex:[filesController selectionIndex]];
 	rect.origin = [[fileListView window] convertBaseToScreen:rect.origin];
 	
 	NSRect viewRect = [scrollView convertRect:[scrollView frame] toView:[[scrollView window] contentView]];

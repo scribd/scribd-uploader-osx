@@ -4,7 +4,7 @@
  list view.
  */
 
-@interface SUFileListViewDelegate : NSObject {
+@interface SUFileListViewDelegate : NSObject <NSCollectionViewDelegate> {
 	@private
 		IBOutlet SUUploadHelper *uploader;
 		IBOutlet SUDatabaseHelper *db;

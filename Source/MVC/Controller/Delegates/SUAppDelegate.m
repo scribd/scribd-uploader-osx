@@ -259,14 +259,6 @@
 	return reply;
 }
 
-/*
- Called when the Open panel is closed. Adds files to the managed object context.
- */
-
-- (void) openPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo {
-	if (returnCode == NSOKButton) [db addFiles:[panel filenames]];
-}
-
 #pragma mark Actions
 
 - (IBAction) saveFileList:(id)sender {
@@ -298,7 +290,11 @@
 	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
 	[openPanel setAllowsMultipleSelection:YES];
 	[openPanel setPrompt:NSLocalizedString(@"Add", @"command, as in append")];
-	[openPanel beginSheetForDirectory:NULL file:NULL types:[SUDocument scribdFileTypes] modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+	[openPanel setAllowedFileTypes:[SUDocument scribdFileTypes]];
+	void (^handler)(NSInteger) = ^(NSInteger returnCode) {
+		if (returnCode == NSOKButton) [db addFiles:[openPanel filenames]];
+	};
+	[openPanel beginSheetModalForWindow:window completionHandler:handler];
 }
 
 - (IBAction) addAllFiles:(id)sender {
@@ -311,7 +307,10 @@
 	[openPanel setMessage:NSLocalizedString(@"Choose a directory to scan for documents:", NULL)];
 	[openPanel setCanChooseFiles:NO];
 	[openPanel setCanChooseDirectories:YES];
-	[openPanel beginSheetForDirectory:NULL file:NULL types:NULL modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+	void (^handler)(NSInteger) = ^(NSInteger returnCode) {
+		if (returnCode == NSOKButton) [db addFiles:[openPanel filenames]];
+	};
+	[openPanel beginSheetModalForWindow:window completionHandler:handler];
 }
 
 @end
