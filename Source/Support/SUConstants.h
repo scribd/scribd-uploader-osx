@@ -86,6 +86,15 @@ NSString *SUDocumentErrorKey;
 
 NSString *SUExceptionDictionaryMustBePerfect;
 
+/*!
+ @const SUExceptionMustHaveRootUnit
+ @abstract Raised by
+ @link SUHumanizeDimensionValueTransformer SUHumanizeDimensionValueTransformer @/link
+ if given the empty initializer.
+ */
+
+NSString *SUExceptionMustHaveRootUnit;
+
 #pragma mark Actions
 
 /*!

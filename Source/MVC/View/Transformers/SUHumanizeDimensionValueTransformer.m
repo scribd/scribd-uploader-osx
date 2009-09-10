@@ -1,21 +1,31 @@
 #import "SUHumanizeDimensionValueTransformer.h"
 
+void SUReleaseUnit(SUHumanizeUnit *unit) {
+	if (unit->next) SUReleaseUnit(unit->next);
+	unit->next = NULL;
+	[unit->name release];
+	free(unit);
+}
+
 @implementation SUHumanizeDimensionValueTransformer
-
-#pragma mark Properties
-
-@synthesize units;
-@synthesize rootUnit;
 
 #pragma mark Initializing and deallocating
 
 /*
- Initialize instance variables.
+ Require the designated initializer.
  */
 
 - (id) init {
+	[[NSException exceptionWithName:SUExceptionMustHaveRootUnit reason:@"Cannot initialize a SUHumanizeDimensionValueTransformer without a root unit" userInfo:NULL] raise];
+}
+
+- (id) initWithRootUnit:(NSString *)name {
 	if (self = [super init]) {
-		units = [[NSDictionary alloc] init];
+		firstUnit = malloc(sizeof(SUHumanizeUnit));
+		firstUnit->name = [name retain];
+		firstUnit->value = 1;
+		firstUnit->next = NULL;
+		
 		numberFormatter = [[NSNumberFormatter alloc] init];
 		[numberFormatter setFormatterBehavior:[NSNumberFormatter defaultFormatterBehavior]];
 	}
@@ -27,10 +37,28 @@
  */
 
 - (void) dealloc {
-	[units release];
-	[rootUnit release];
+	SUReleaseUnit(firstUnit);
+	firstUnit = NULL;
 	[numberFormatter release];
 	[super dealloc];
+}
+
+#pragma mark Configuring
+
+- (void) addUnitWithName:(NSString *)name sizeInRootUnits:(double)value {
+	SUHumanizeUnit *unit = firstUnit;
+	SUHumanizeUnit *prev = NULL;
+	while (unit->value > value) {
+		prev = unit;
+		unit = unit->next;
+	}
+	
+	SUHumanizeUnit *new = malloc(sizeof(SUHumanizeUnit));
+	new->name = [name retain];
+	new->value = value;
+	new->next = unit;
+	if (prev) prev->next = new;
+	else firstUnit = new;
 }
 
 #pragma mark Value transformer
@@ -60,28 +88,25 @@
 - (id) transformedValue:(id)value {
 	if ([value isKindOfClass:[NSNumber class]]) {
 		double scalar = [(NSNumber *)value doubleValue];
-		if (scalar <= 0.0) return NSLocalizedString(@"?", @"unknown numeric value");
 		
-		NSString *largestUnit = NULL;
-		double largestUnitScalar;
+		SUHumanizeUnit *prev = NULL;
+		SUHumanizeUnit *unit = firstUnit;
+		double scalarInUnits;
 		
-		if (scalar <= 1.0) {
-			largestUnit = self.rootUnit;
-			largestUnitScalar = scalar;
-		}
-		else {
-			for (NSString *unit in self.units) {
-				double thisUnitScalar = scalar/[[self.units objectForKey:unit] doubleValue];
-				if ((!largestUnit || thisUnitScalar < largestUnitScalar) && thisUnitScalar >= 1.0) {
-					largestUnitScalar = thisUnitScalar;
-					largestUnit = unit;
-				}
+		while (YES) {
+			scalarInUnits = scalar/unit->value;
+			if (scalarInUnits >= 1.0) break; // first unit whose value is at least 1
+			if (unit->next) {
+				// advance to the next-smallest unit
+				prev = unit;
+				unit = unit->next;
 			}
+			else break; // end of the line; use the smallest unit we've got
 		}
 		
-		NSString *valueString = [numberFormatter stringFromNumber:[NSNumber numberWithLongLong:round(largestUnitScalar)]];
-		NSString *unit = (round(largestUnitScalar) == 1 ? largestUnit : [[TMInflector inflector] pluralize:largestUnit]);
-		return [NSString stringWithFormat:NSLocalizedString(@"%@ %@", @"number and its unit"), valueString, unit];
+		NSString *valueString = [numberFormatter stringFromNumber:[NSNumber numberWithLongLong:round(scalarInUnits)]];
+		NSString *unitString = (round(scalarInUnits) == 1 ? unit->name : [[TMInflector inflector] pluralize:unit->name]);
+		return [NSString stringWithFormat:NSLocalizedString(@"%@ %@", @"number and its unit"), valueString, unitString];
 	}
 	else if (!value || value == [NSNull null]) return NSLocalizedString(@"?", @"unknown numeric value");
 	else return value;

@@ -98,28 +98,16 @@
 										  NULL];
 	[NSValueTransformer setValueTransformer:[[[SUMappingValueTransformer alloc] initWithDictionary:statusButtonToolTips] autorelease] forName:@"SUStatusButtonToolTip"];
 	
-	NSDictionary *timeUnits = [[NSDictionary alloc] initWithObjectsAndKeys:
-							   [NSNumber numberWithDouble:1], NSLocalizedString(@"second", @"unit of time"),
-							   [NSNumber numberWithDouble:60], NSLocalizedString(@"minute", @"unit of time"),
-							   [NSNumber numberWithDouble:60*60], NSLocalizedString(@"hour", @"unit of time"),
-							   [NSNumber numberWithDouble:60*60*24], NSLocalizedString(@"day", @"unit of time"),
-							   NULL];
-	SUHumanizeDimensionValueTransformer *timeValueTransformer = [[SUHumanizeDimensionValueTransformer alloc] init];
-	timeValueTransformer.units = timeUnits;
-	timeValueTransformer.rootUnit = NSLocalizedString(@"second", @"unit of time");
-	[timeUnits release];
+	SUHumanizeDimensionValueTransformer *timeValueTransformer = [[SUHumanizeDimensionValueTransformer alloc] initWithRootUnit:NSLocalizedString(@"second", @"unit of time")];
+	[timeValueTransformer addUnitWithName:NSLocalizedString(@"minute", @"unit of time") sizeInRootUnits:60];
+	[timeValueTransformer addUnitWithName:NSLocalizedString(@"hour", @"unit of time") sizeInRootUnits:60*60];
+	[timeValueTransformer addUnitWithName:NSLocalizedString(@"day", @"unit of time") sizeInRootUnits:60*60*24];
 	[NSValueTransformer setValueTransformer:[timeValueTransformer autorelease] forName:@"SUHumanizeSeconds"];
 	
-	NSDictionary *informationUnits = [[NSDictionary alloc] initWithObjectsAndKeys:
-									  [NSNumber numberWithDouble:1], NSLocalizedString(@"byte", @"unit of data"),
-									  [NSNumber numberWithDouble:1024], NSLocalizedString(@"KB", @"kilobyte"),
-									  [NSNumber numberWithDouble:1024*1024], NSLocalizedString(@"MB", @"megabyte"),
-									  [NSNumber numberWithDouble:1024*1024*1024], NSLocalizedString(@"GB", @"gigabyte"),
-									  NULL];
-	SUHumanizeDimensionValueTransformer *informationValueTransformer = [[SUHumanizeDimensionValueTransformer alloc] init];
-	informationValueTransformer.units = informationUnits;
-	informationValueTransformer.rootUnit = NSLocalizedString(@"byte", @"unit of data");
-	[informationUnits release];
+	SUHumanizeDimensionValueTransformer *informationValueTransformer = [[SUHumanizeDimensionValueTransformer alloc] initWithRootUnit:NSLocalizedString(@"byte", @"unit of data")];
+	[informationValueTransformer addUnitWithName:NSLocalizedString(@"KB", @"kilobyte") sizeInRootUnits:1024];
+	[informationValueTransformer addUnitWithName:NSLocalizedString(@"MB", @"megabyte") sizeInRootUnits:1024*1024];
+	[informationValueTransformer addUnitWithName:NSLocalizedString(@"GB", @"gigabyte") sizeInRootUnits:1024*1024*1024];
 	[NSValueTransformer setValueTransformer:[informationValueTransformer autorelease] forName:@"SUHumanizeBytes"];
 }
 

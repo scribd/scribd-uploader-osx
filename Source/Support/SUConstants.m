@@ -13,8 +13,8 @@ NSString *SUActionErrorKey = @"SUActionErrorKey";
 NSString *SUInvalidObjectErrorKey = @"SUInvalidObjectErrorKey";
 
 /* Exceptions */
-
 NSString *SUExceptionDictionaryMustBePerfect = @"SUExceptionDictionaryMustBePerfect";
+NSString *SUExceptionMustHaveRootUnit = @"SUExceptionMustHaveRootUnit";
 
 /* Actions */
 NSString *SULogInAction = @"LogIn";
