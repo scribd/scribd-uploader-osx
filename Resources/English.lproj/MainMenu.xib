@@ -819,7 +819,7 @@
 				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<string key="NSWindowContentMinSize">{490, 390}</string>
 				<object class="NSView" key="NSWindowView" id="823886803">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSTextField" id="231784562">
@@ -827,7 +827,6 @@
 							<int key="NSvFlags">290</int>
 							<string key="NSFrame">{{100, 11}, {372, 14}}</string>
 							<reference key="NSSuperview" ref="823886803"/>
-							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="477221439">
 								<int key="NSCellFlags">68288064</int>
@@ -864,7 +863,6 @@
 							<int key="NSvFlags">292</int>
 							<string key="NSFrame">{{20, 8}, {75, 19}}</string>
 							<reference key="NSSuperview" ref="823886803"/>
-							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="1060321455">
 								<int key="NSCellFlags">67239424</int>
@@ -897,7 +895,6 @@
 											<int key="NSvFlags">274</int>
 											<string key="NSFrameSize">{490, 445}</string>
 											<reference key="NSSuperview" ref="296081867"/>
-											<reference key="NSWindow"/>
 											<string key="NSMinGridSize">{0, 0}</string>
 											<string key="NSMaxGridSize">{0, 0}</string>
 											<int key="NSMaxNumberOfGridRows">0</int>
@@ -920,7 +917,6 @@
 									</array>
 									<string key="NSFrame">{{1, 1}, {490, 445}}</string>
 									<reference key="NSSuperview" ref="728014009"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="107978051"/>
 									<reference key="NSDocView" ref="107978051"/>
 									<reference key="NSBGColor" ref="514063339"/>
@@ -931,7 +927,6 @@
 									<int key="NSvFlags">-2147483392</int>
 									<string key="NSFrame">{{434, 1}, {15, 398}}</string>
 									<reference key="NSSuperview" ref="728014009"/>
-									<reference key="NSWindow"/>
 									<reference key="NSTarget" ref="728014009"/>
 									<string key="NSAction">_doScroller:</string>
 									<double key="NSCurValue">1</double>
@@ -942,7 +937,6 @@
 									<int key="NSvFlags">-2147483392</int>
 									<string key="NSFrame">{{-100, -100}, {434, 15}}</string>
 									<reference key="NSSuperview" ref="728014009"/>
-									<reference key="NSWindow"/>
 									<int key="NSsFlags">1</int>
 									<reference key="NSTarget" ref="728014009"/>
 									<string key="NSAction">_doScroller:</string>
@@ -951,7 +945,6 @@
 							</array>
 							<string key="NSFrame">{{-1, 35}, {492, 447}}</string>
 							<reference key="NSSuperview" ref="823886803"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="296081867"/>
 							<int key="NSsFlags">530</int>
 							<reference key="NSVScroller" ref="22568733"/>
@@ -960,8 +953,6 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{490, 481}</string>
-					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
 				<string key="NSMinSize">{490, 468}</string>
@@ -5468,39 +5459,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">animate: representedObject.postProcessing</string>
-						<reference key="source" ref="456910245"/>
-						<reference key="destination" ref="727563930"/>
-						<object class="NSNibBindingConnector" key="connector" id="240120522">
-							<reference key="NSSource" ref="456910245"/>
-							<reference key="NSDestination" ref="727563930"/>
-							<string key="NSLabel">animate: representedObject.postProcessing</string>
-							<string key="NSBinding">animate</string>
-							<string key="NSKeyPath">representedObject.postProcessing</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2087</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">isIndeterminate: representedObject.postProcessing</string>
-						<reference key="source" ref="456910245"/>
-						<reference key="destination" ref="727563930"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="456910245"/>
-							<reference key="NSDestination" ref="727563930"/>
-							<string key="NSLabel">isIndeterminate: representedObject.postProcessing</string>
-							<string key="NSBinding">isIndeterminate</string>
-							<string key="NSKeyPath">representedObject.postProcessing</string>
-							<reference key="NSPreviousConnector" ref="240120522"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2088</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.SUSessionUsername</string>
 						<reference key="source" ref="231784562"/>
 						<reference key="destination" ref="706999351"/>
@@ -5619,30 +5577,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden2: representedObject.startTime</string>
-						<reference key="source" ref="422423480"/>
-						<reference key="destination" ref="727563930"/>
-						<object class="NSNibBindingConnector" key="connector" id="2278">
-							<reference key="NSSource" ref="422423480"/>
-							<reference key="NSDestination" ref="727563930"/>
-							<string key="NSLabel">hidden2: representedObject.startTime</string>
-							<string key="NSBinding">hidden2</string>
-							<string key="NSKeyPath">representedObject.startTime</string>
-							<dictionary key="NSOptions">
-								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
-								<integer value="-1" key="NSNoSelectionPlaceholder"/>
-								<integer value="-1" key="NSNotApplicablePlaceholder"/>
-								<integer value="-1" key="NSNullPlaceholder"/>
-								<string key="NSValueTransformerName">NSIsNil</string>
-							</dictionary>
-							<reference key="NSPreviousConnector" ref="704923604"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2146</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">hidden: representedObject.conversionComplete</string>
 						<reference key="source" ref="456910245"/>
 						<reference key="destination" ref="727563930"/>
@@ -5656,29 +5590,6 @@
 						</object>
 					</object>
 					<int key="connectionID">2149</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden3: representedObject.conversionComplete</string>
-						<reference key="source" ref="422423480"/>
-						<reference key="destination" ref="727563930"/>
-						<object class="NSNibBindingConnector" key="connector" id="335720939">
-							<reference key="NSSource" ref="422423480"/>
-							<reference key="NSDestination" ref="727563930"/>
-							<string key="NSLabel">hidden3: representedObject.conversionComplete</string>
-							<string key="NSBinding">hidden3</string>
-							<string key="NSKeyPath">representedObject.conversionComplete</string>
-							<dictionary key="NSOptions">
-								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
-								<integer value="-1" key="NSNoSelectionPlaceholder"/>
-								<integer value="-1" key="NSNotApplicablePlaceholder"/>
-								<integer value="-1" key="NSNullPlaceholder"/>
-							</dictionary>
-							<reference key="NSPreviousConnector" ref="2278"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2150</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -5731,97 +5642,6 @@
 						</object>
 					</object>
 					<int key="connectionID">2176</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden4: representedObject.assigningProperties</string>
-						<reference key="source" ref="422423480"/>
-						<reference key="destination" ref="727563930"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="422423480"/>
-							<reference key="NSDestination" ref="727563930"/>
-							<string key="NSLabel">hidden4: representedObject.assigningProperties</string>
-							<string key="NSBinding">hidden4</string>
-							<string key="NSKeyPath">representedObject.assigningProperties</string>
-							<dictionary key="NSOptions">
-								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
-								<integer value="-1" key="NSNoSelectionPlaceholder"/>
-								<integer value="-1" key="NSNotApplicablePlaceholder"/>
-								<integer value="-1" key="NSNullPlaceholder"/>
-							</dictionary>
-							<reference key="NSPreviousConnector" ref="335720939"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2178</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden: representedObject.startTime</string>
-						<reference key="source" ref="583834432"/>
-						<reference key="destination" ref="727563930"/>
-						<object class="NSNibBindingConnector" key="connector" id="636460731">
-							<reference key="NSSource" ref="583834432"/>
-							<reference key="NSDestination" ref="727563930"/>
-							<string key="NSLabel">hidden: representedObject.startTime</string>
-							<string key="NSBinding">hidden</string>
-							<string key="NSKeyPath">representedObject.startTime</string>
-							<dictionary key="NSOptions">
-								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
-								<integer value="-1" key="NSNoSelectionPlaceholder"/>
-								<integer value="-1" key="NSNotApplicablePlaceholder"/>
-								<integer value="-1" key="NSNullPlaceholder"/>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2179</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden2: representedObject.conversionComplete</string>
-						<reference key="source" ref="583834432"/>
-						<reference key="destination" ref="727563930"/>
-						<object class="NSNibBindingConnector" key="connector" id="531126138">
-							<reference key="NSSource" ref="583834432"/>
-							<reference key="NSDestination" ref="727563930"/>
-							<string key="NSLabel">hidden2: representedObject.conversionComplete</string>
-							<string key="NSBinding">hidden2</string>
-							<string key="NSKeyPath">representedObject.conversionComplete</string>
-							<dictionary key="NSOptions">
-								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
-								<integer value="-1" key="NSNoSelectionPlaceholder"/>
-								<integer value="-1" key="NSNotApplicablePlaceholder"/>
-								<integer value="-1" key="NSNullPlaceholder"/>
-							</dictionary>
-							<reference key="NSPreviousConnector" ref="636460731"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2180</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden3: representedObject.uploading</string>
-						<reference key="source" ref="583834432"/>
-						<reference key="destination" ref="727563930"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="583834432"/>
-							<reference key="NSDestination" ref="727563930"/>
-							<string key="NSLabel">hidden3: representedObject.uploading</string>
-							<string key="NSBinding">hidden3</string>
-							<string key="NSKeyPath">representedObject.uploading</string>
-							<dictionary key="NSOptions">
-								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
-								<integer value="-1" key="NSNoSelectionPlaceholder"/>
-								<integer value="-1" key="NSNotApplicablePlaceholder"/>
-								<integer value="-1" key="NSNullPlaceholder"/>
-							</dictionary>
-							<reference key="NSPreviousConnector" ref="531126138"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2181</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -5907,6 +5727,199 @@
 						</object>
 					</object>
 					<int key="connectionID">2201</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden2: representedObject.startTime</string>
+						<reference key="source" ref="422423480"/>
+						<reference key="destination" ref="727563930"/>
+						<object class="NSNibBindingConnector" key="connector" id="2278">
+							<reference key="NSSource" ref="422423480"/>
+							<reference key="NSDestination" ref="727563930"/>
+							<string key="NSLabel">hidden2: representedObject.startTime</string>
+							<string key="NSBinding">hidden2</string>
+							<string key="NSKeyPath">representedObject.startTime</string>
+							<dictionary key="NSOptions">
+								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="-1" key="NSNoSelectionPlaceholder"/>
+								<integer value="-1" key="NSNotApplicablePlaceholder"/>
+								<integer value="-1" key="NSNullPlaceholder"/>
+								<string key="NSValueTransformerName">NSIsNil</string>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="704923604"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">2206</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden3: representedObject.conversionComplete</string>
+						<reference key="source" ref="422423480"/>
+						<reference key="destination" ref="727563930"/>
+						<object class="NSNibBindingConnector" key="connector" id="335720939">
+							<reference key="NSSource" ref="422423480"/>
+							<reference key="NSDestination" ref="727563930"/>
+							<string key="NSLabel">hidden3: representedObject.conversionComplete</string>
+							<string key="NSBinding">hidden3</string>
+							<string key="NSKeyPath">representedObject.conversionComplete</string>
+							<dictionary key="NSOptions">
+								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="-1" key="NSNoSelectionPlaceholder"/>
+								<integer value="-1" key="NSNotApplicablePlaceholder"/>
+								<integer value="-1" key="NSNullPlaceholder"/>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="2278"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">2207</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden4: representedObject.assigningProperties</string>
+						<reference key="source" ref="422423480"/>
+						<reference key="destination" ref="727563930"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="422423480"/>
+							<reference key="NSDestination" ref="727563930"/>
+							<string key="NSLabel">hidden4: representedObject.assigningProperties</string>
+							<string key="NSBinding">hidden4</string>
+							<string key="NSKeyPath">representedObject.assigningProperties</string>
+							<dictionary key="NSOptions">
+								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="-1" key="NSNoSelectionPlaceholder"/>
+								<integer value="-1" key="NSNotApplicablePlaceholder"/>
+								<integer value="-1" key="NSNullPlaceholder"/>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="335720939"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">2208</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: representedObject.startTime</string>
+						<reference key="source" ref="583834432"/>
+						<reference key="destination" ref="727563930"/>
+						<object class="NSNibBindingConnector" key="connector" id="665261878">
+							<reference key="NSSource" ref="583834432"/>
+							<reference key="NSDestination" ref="727563930"/>
+							<string key="NSLabel">hidden: representedObject.startTime</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">representedObject.startTime</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSIsNil</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">2209</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden2: representedObject.conversionComplete</string>
+						<reference key="source" ref="583834432"/>
+						<reference key="destination" ref="727563930"/>
+						<object class="NSNibBindingConnector" key="connector" id="531126138">
+							<reference key="NSSource" ref="583834432"/>
+							<reference key="NSDestination" ref="727563930"/>
+							<string key="NSLabel">hidden2: representedObject.conversionComplete</string>
+							<string key="NSBinding">hidden2</string>
+							<string key="NSKeyPath">representedObject.conversionComplete</string>
+							<dictionary key="NSOptions">
+								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="-1" key="NSNoSelectionPlaceholder"/>
+								<integer value="-1" key="NSNotApplicablePlaceholder"/>
+								<integer value="-1" key="NSNullPlaceholder"/>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="665261878"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">2210</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden3: representedObject.uploading</string>
+						<reference key="source" ref="583834432"/>
+						<reference key="destination" ref="727563930"/>
+						<object class="NSNibBindingConnector" key="connector" id="2196">
+							<reference key="NSSource" ref="583834432"/>
+							<reference key="NSDestination" ref="727563930"/>
+							<string key="NSLabel">hidden3: representedObject.uploading</string>
+							<string key="NSBinding">hidden3</string>
+							<string key="NSKeyPath">representedObject.uploading</string>
+							<dictionary key="NSOptions">
+								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="-1" key="NSNoSelectionPlaceholder"/>
+								<integer value="-1" key="NSNotApplicablePlaceholder"/>
+								<integer value="-1" key="NSNullPlaceholder"/>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="531126138"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">2211</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden4: representedObject.assigningProperties</string>
+						<reference key="source" ref="583834432"/>
+						<reference key="destination" ref="727563930"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="583834432"/>
+							<reference key="NSDestination" ref="727563930"/>
+							<string key="NSLabel">hidden4: representedObject.assigningProperties</string>
+							<string key="NSBinding">hidden4</string>
+							<string key="NSKeyPath">representedObject.assigningProperties</string>
+							<dictionary key="NSOptions">
+								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="-1" key="NSNoSelectionPlaceholder"/>
+								<integer value="-1" key="NSNotApplicablePlaceholder"/>
+								<integer value="-1" key="NSNullPlaceholder"/>
+								<string key="NSValueTransformerName">NSNegateBoolean</string>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="2196"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">2214</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">animate: representedObject.postProcessing</string>
+						<reference key="source" ref="456910245"/>
+						<reference key="destination" ref="727563930"/>
+						<object class="NSNibBindingConnector" key="connector" id="240120522">
+							<reference key="NSSource" ref="456910245"/>
+							<reference key="NSDestination" ref="727563930"/>
+							<string key="NSLabel">animate: representedObject.postProcessing</string>
+							<string key="NSBinding">animate</string>
+							<string key="NSKeyPath">representedObject.postProcessing</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">2216</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">isIndeterminate: representedObject.postProcessing</string>
+						<reference key="source" ref="456910245"/>
+						<reference key="destination" ref="727563930"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="456910245"/>
+							<reference key="NSDestination" ref="727563930"/>
+							<string key="NSLabel">isIndeterminate: representedObject.postProcessing</string>
+							<string key="NSBinding">isIndeterminate</string>
+							<string key="NSKeyPath">representedObject.postProcessing</string>
+							<reference key="NSPreviousConnector" ref="240120522"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">2217</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -8438,7 +8451,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">2202</int>
+			<int key="maxID">2217</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
