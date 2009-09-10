@@ -55,7 +55,6 @@
 	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithXMLString:[request responseString] options:0 error:&error];
 	if (xml) {
 		NSDictionary *response = [[SUScribdAPI sharedAPI] parseResponseXML:xml error:&error];
-		//TODO shouldn't use a private method here
 		if (response) {
 			NSString *status = [response objectForKey:@"conversion_status"];
 			if (!status) return;
