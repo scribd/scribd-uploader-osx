@@ -86,6 +86,23 @@
 
 - (void) submitFile:(SUDocument *)file toAPIMethod:(NSString *)method parameters:(NSDictionary *)parameters delegate:(id)delegate;
 
+/*!
+ @method parseResponseXML:error:
+ @abstract Converts a Scribd XML response to an
+ @link //apple_ref/occ/cl/NSDictionary NSDictionary @/link and constructs an
+ @link //apple_ref/occ/cl/NSError NSError @/link if necessary. Returns NULL if
+ the XML cannot be parsed.
+ @param xml The XML returned by Scribd.com.
+ @param error Upon exit, will contain an error if the response contains an
+ error code. The error code will be equal to the error code returned in the XML,
+ and its localized failure reason will be taken from the XML error description.
+ If the XML could not be parsed, the error code will be -1.
+ @result A dictionary describing the response. The dictionary's keys and values
+ will be pulled from the response XML.
+ */
+
+- (NSDictionary *) parseResponseXML:(NSXMLDocument *)xml error:(NSError **)error;
+
 #pragma mark Using other Scribd.com features
 
 /*!

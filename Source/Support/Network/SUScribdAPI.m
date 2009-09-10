@@ -22,13 +22,6 @@ static NSString *SUDefaultKeyMaximumSimultaneousUploads = @"SUMaximumSimultaneou
 
 - (NSURL *) APIURLWithMethod:(NSString *)method parameters:(NSDictionary *)parameters;
 
-/*
- Converts a Scribd XML response to an NSDictionary and constructs an NSError if
- necessary. Returns NULL if the XML cannot be parsed.
- */
-
-- (NSDictionary *) parseXML:(NSXMLDocument *)xml error:(NSError **)error;
-
 @end
 
 #pragma mark -
@@ -140,7 +133,7 @@ static NSString *SUDefaultKeyMaximumSimultaneousUploads = @"SUMaximumSimultaneou
 	
 	if (*error) return NULL; // xml will be nil so no need to release
 	
-	NSDictionary *results = [self parseXML:xml error:error];
+	NSDictionary *results = [self parseResponseXML:xml error:error];
 	[xml release];
 	return results;
 }
@@ -262,6 +255,33 @@ static NSString *SUDefaultKeyMaximumSimultaneousUploads = @"SUMaximumSimultaneou
 	[xml release];
 }
 
+- (NSDictionary *) parseResponseXML:(NSXMLDocument *)xml error:(NSError **)error {
+	if ([[[[xml rootElement] attributeForName:@"stat"] stringValue] isEqualToString:@"ok"]) {
+		NSMutableDictionary *properties = [[NSMutableDictionary alloc] initWithCapacity:[[xml rootElement] childCount]];
+		for (NSXMLElement *child in [[xml rootElement] children]) {
+			[properties setObject:[child stringValue] forKey:[child name]];
+		}
+		return [properties autorelease];
+	}
+	else {
+		int errorCode;
+		NSDictionary *errorInfo;
+		
+		NSXMLElement *errorNode = [[[xml rootElement] elementsForName:@"error"] objectAtIndex:0];
+		if (errorNode) {
+			errorCode = [[[errorNode attributeForName:@"code"] stringValue] integerValue];
+			errorInfo = [[NSDictionary alloc] initWithObject:[[errorNode attributeForName:@"message"] stringValue] forKey:NSLocalizedFailureReasonErrorKey];
+		}
+		else {
+			errorCode = -1;
+			errorInfo = [[NSDictionary alloc] initWithObject:NSLocalizedString(@"Improper format", @"XML response") forKey:NSLocalizedFailureReasonErrorKey];
+		}
+		*error = [NSError errorWithDomain:SUScribdAPIErrorDomain code:errorCode userInfo:errorInfo];
+		[errorInfo release];
+		return NULL;
+	}
+}
+
 @end
 
 #pragma mark -
@@ -312,33 +332,6 @@ static NSString *SUDefaultKeyMaximumSimultaneousUploads = @"SUMaximumSimultaneou
 	[URLParameterSubstrings release];
 	
 	return URL;
-}
-
-- (NSDictionary *) parseXML:(NSXMLDocument *)xml error:(NSError **)error {
-	if ([[[[xml rootElement] attributeForName:@"stat"] stringValue] isEqualToString:@"ok"]) {
-		NSMutableDictionary *properties = [[NSMutableDictionary alloc] initWithCapacity:[[xml rootElement] childCount]];
-		for (NSXMLElement *child in [[xml rootElement] children]) {
-			[properties setObject:[child stringValue] forKey:[child name]];
-		}
-		return [properties autorelease];
-	}
-	else {
-		int errorCode;
-		NSDictionary *errorInfo;
-		
-		NSXMLElement *errorNode = [[[xml rootElement] elementsForName:@"error"] objectAtIndex:0];
-		if (errorNode) {
-			errorCode = [[[errorNode attributeForName:@"code"] stringValue] integerValue];
-			errorInfo = [[NSDictionary alloc] initWithObject:[[errorNode attributeForName:@"message"] stringValue] forKey:NSLocalizedFailureReasonErrorKey];
-		}
-		else {
-			errorCode = -1;
-			errorInfo = [[NSDictionary alloc] initWithObject:NSLocalizedString(@"Improper format", @"XML response") forKey:NSLocalizedFailureReasonErrorKey];
-		}
-		*error = [NSError errorWithDomain:SUScribdAPIErrorDomain code:errorCode userInfo:errorInfo];
-		[errorInfo release];
-		return NULL;
-	}
 }
 
 @end
