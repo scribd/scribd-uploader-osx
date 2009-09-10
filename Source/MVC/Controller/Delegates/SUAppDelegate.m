@@ -116,13 +116,13 @@
  */
 
 - (void) awakeFromNib {
-	// make sure we're running at least 10.5
+	// make sure we're running at least 10.6
 	NSUInteger major, minor, bugfix;
 	[[NSApplication sharedApplication] getSystemVersionMajor:&major minor:&minor bugfix:&bugfix];
-	if (major != 10 || minor < 5) {
+	if (major != 10 || minor < 6) {
 		NSAlert *alert = [[NSAlert alloc] init];
-		[alert setMessageText:NSLocalizedString(@"Scribd Uploader requires Mac OS X version 10.5.0 or later in order to run.", NULL)];
-		[alert setInformativeText:NSLocalizedString(@"Mac OS X 10.5, code-named Tiger, is available for purchase at www.apple.com.", NULL)];
+		[alert setMessageText:NSLocalizedString(@"Scribd Uploader requires Mac OS X version 10.6.0 or later in order to run.", NULL)];
+		[alert setInformativeText:NSLocalizedString(@"Mac OS X 10.6, code-named Snow Leopard, is available for purchase at www.apple.com.", NULL)];
 		[alert setAlertStyle:NSCriticalAlertStyle];
 		[alert addButtonWithTitle:NSLocalizedString(@"Quit", @"command")];
 		[alert runModal];
