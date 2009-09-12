@@ -4,6 +4,7 @@
 
 - (void) awakeFromNib {
 	[self registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
+	[self setBackgroundColors:[NSColor controlAlternatingRowBackgroundColors]]; //TODO set this in the xib
 }
 
 - (void) keyDown:(NSEvent *)event {

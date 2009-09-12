@@ -904,9 +904,9 @@
 													<int key="NSColorSpace">3</int>
 													<bytes key="NSWhite">MQA</bytes>
 												</object>
-												<object class="NSColor" id="542515683">
-													<int key="NSColorSpace">2</int>
-													<bytes key="NSRGB">MC45Mjk0MTE4MyAwLjk1Mjk0MTI0IDAuOTk2MDc4NDkAA</bytes>
+												<object class="NSColor" id="153041423">
+													<int key="NSColorSpace">1</int>
+													<bytes key="NSRGB">MC45NjA3ODQzMTM3IDAuOTY4NjI3NDUxIDAuOTg0MzEzNzI1NQA</bytes>
 												</object>
 											</array>
 											<bool key="NSSelectable">YES</bool>
@@ -8288,7 +8288,7 @@
 				<string key="1982.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1983.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1984.CustomClassName">SUCollectionView</string>
-				<reference key="1984.IBCollectionViewIntegration.secondaryColor" ref="542515683"/>
+				<reference key="1984.IBCollectionViewIntegration.secondaryColor" ref="153041423"/>
 				<string key="1984.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1991.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1992.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
