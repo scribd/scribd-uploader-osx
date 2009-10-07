@@ -15,5 +15,9 @@
 		<array>
 			<string>All uploads complete</string>
 		</array>
+		<key>DefaultNotifications</key>
+		<array>
+			<string>All uploads complete</string>
+		</array>
     </dict>
 </plist>
