@@ -25,7 +25,7 @@
 - (NSArray *) map:(id (^)(id value))block {
 	NSMutableArray *mappedArray = [[NSMutableArray alloc] initWithCapacity:[self count]];
 	for (id object in self) [mappedArray addObject:block(object)];
-	return mappedArray;
+	return [mappedArray autorelease];
 }
 
 @end

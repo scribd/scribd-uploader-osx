@@ -47,11 +47,11 @@
 }
 
 - (IBAction) showHelp:(id)sender {
-	NSString *anchor;
+	NSString *anchor = NULL;
 	if ([[self activeView] isEqualTo:automaticUpdatesView]) anchor = @"automatic_updates";
 	if ([[self activeView] isEqualTo:uploadingView]) anchor = @"uploading_preferences";
 	if ([[self activeView] isEqualTo:metadataView]) anchor = @"metadata_preferences";
-	[[NSHelpManager sharedHelpManager] openHelpAnchor:anchor inBook:@"Scribd Uploader Help"];
+	if (anchor) [[NSHelpManager sharedHelpManager] openHelpAnchor:anchor inBook:@"Scribd Uploader Help"];
 }
 
 @end

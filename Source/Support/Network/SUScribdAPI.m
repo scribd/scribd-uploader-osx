@@ -131,7 +131,10 @@ static NSString *SUDefaultKeyMaximumSimultaneousUploads = @"SUMaximumSimultaneou
 	NSURL *URL = [self APIURLWithMethod:method parameters:parameters];
 	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithContentsOfURL:URL options:NSXMLDocumentTidyXML error:error];
 	
-	if (*error) return NULL; // xml will be nil so no need to release
+	if (error && *error) {
+		if (xml) [xml release];
+		return NULL;
+	}
 	
 	NSDictionary *results = [self parseResponseXML:xml error:error];
 	[xml release];
@@ -276,7 +279,7 @@ static NSString *SUDefaultKeyMaximumSimultaneousUploads = @"SUMaximumSimultaneou
 			errorCode = -1;
 			errorInfo = [[NSDictionary alloc] initWithObject:NSLocalizedString(@"Improper format", @"XML response") forKey:NSLocalizedFailureReasonErrorKey];
 		}
-		*error = [NSError errorWithDomain:SUScribdAPIErrorDomain code:errorCode userInfo:errorInfo];
+		if (error) *error = [NSError errorWithDomain:SUScribdAPIErrorDomain code:errorCode userInfo:errorInfo];
 		[errorInfo release];
 		return NULL;
 	}

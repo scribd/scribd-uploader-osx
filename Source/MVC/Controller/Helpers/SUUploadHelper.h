@@ -21,7 +21,7 @@
 		NSString *newUserLogin, *newUserEmail, *newUserPassword, *newUserName;
 		NSError *newUserLoginError, *newUserEmailError, *newUserPasswordError, *newUserNameError;
 		NSMutableSet *uploadDelegates;
-		IBOutlet NSWindow *uploadWindow, *loginSheet;
+		IBOutlet NSWindow *loginSheet;
 		IBOutlet SUDatabaseHelper *db;
 }
 

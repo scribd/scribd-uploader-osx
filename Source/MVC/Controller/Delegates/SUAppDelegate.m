@@ -97,6 +97,7 @@
 										  NSLocalizedString(@"Click this button to learn more about why your document could not have its metadata assigned.", NULL), @"Caution",
 										  NULL];
 	[NSValueTransformer setValueTransformer:[[[SUMappingValueTransformer alloc] initWithDictionary:statusButtonToolTips] autorelease] forName:@"SUStatusButtonToolTip"];
+	[statusButtonToolTips release];
 	
 	SUHumanizeDimensionValueTransformer *timeValueTransformer = [[SUHumanizeDimensionValueTransformer alloc] initWithRootUnit:NSLocalizedString(@"second", @"unit of time")];
 	[timeValueTransformer addUnitWithName:NSLocalizedString(@"minute", @"unit of time") sizeInRootUnits:60];

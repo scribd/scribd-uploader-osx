@@ -9,7 +9,6 @@
 @interface SUUploadErrorController : NSObject {
 	@private
 		IBOutlet NSWindow *window;
-		IBOutlet SUDocumentArrayController *documentController;
 }
 
 #pragma mark Displaying an error

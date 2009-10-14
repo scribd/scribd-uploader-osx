@@ -89,18 +89,13 @@ void SUReleaseUnit(SUHumanizeUnit *unit) {
 	if ([value isKindOfClass:[NSNumber class]]) {
 		double scalar = [(NSNumber *)value doubleValue];
 		
-		SUHumanizeUnit *prev = NULL;
 		SUHumanizeUnit *unit = firstUnit;
 		double scalarInUnits;
 		
 		while (YES) {
 			scalarInUnits = scalar/unit->value;
 			if (scalarInUnits >= 1.0) break; // first unit whose value is at least 1
-			if (unit->next) {
-				// advance to the next-smallest unit
-				prev = unit;
-				unit = unit->next;
-			}
+			if (unit->next) unit = unit->next; // advance to the next-smallest unit
 			else break; // end of the line; use the smallest unit we've got
 		}
 		

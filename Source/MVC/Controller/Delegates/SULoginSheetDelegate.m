@@ -103,10 +103,10 @@
 
 - (IBAction) showHelp:(id)sender {
 	NSString *selectedTab = [[tabs selectedTabViewItem] identifier];
-	NSString *anchor;
+	NSString *anchor = NULL;
 	if ([selectedTab isEqualToString:@"login"]) anchor = @"existing_account";
 	else if ([selectedTab isEqualToString:@"signup"]) anchor = @"new_account";
-	[[NSHelpManager sharedHelpManager] openHelpAnchor:anchor inBook:@"Scribd Uploader Help"];
+	if (anchor) [[NSHelpManager sharedHelpManager] openHelpAnchor:anchor inBook:@"Scribd Uploader Help"];
 }
 
 @end
