@@ -219,6 +219,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 }
 
 - (NSNumber *) estimatedSecondsRemaining {
+	if ([self.progress doubleValue] >= 1) return 0;
 	if ([self hasSize] && self.uploading) {
 		NSTimeInterval secondsSoFar = -[self.startTime timeIntervalSinceNow];
 		if (secondsSoFar <= 2.0) return NULL; // give the estimate a few seconds to settle down
