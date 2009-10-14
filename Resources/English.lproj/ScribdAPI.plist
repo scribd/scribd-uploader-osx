@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BaseURL</key>
-	<string>http://www.scribd.com/api?</string>
+	<string>http://api.scribd.com/api?</string>
 	<key>TagsURL</key>
 	<string>http://www.scribd.com/tags/suggest?query=%@</string>
 	<key>TitleCleanURL</key>
