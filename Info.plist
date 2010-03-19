@@ -41,8 +41,8 @@
 	<key>SUDocumentURL</key>
 	<string>http://www.scribd.com/doc/%@</string>
 	<key>SUMyDocsURL</key>
-	<string>http://www.scribd.com/my_docs</string>
+	<string>http://www.scribd.com/documents</string>
 	<key>SUDocumentEditURL</key>
-	<string>http://www.scribd.com/word/document_edit_bulk?docs=%@</string>
+	<string>http://www.scribd.com/word/document_edit/%@</string>
 </dict>
 </plist>
