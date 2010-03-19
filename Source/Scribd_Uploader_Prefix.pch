@@ -13,7 +13,7 @@
 #import "DBPrefsWindowController.h"
 #import <Sparkle/SUUpdater.h>
 #import <Growl/GrowlApplicationBridge.h>
-#import "EMKeychainProxy.h"
+#import "EMKeychainItem.h"
 #import <RegexKit/RegexKit.h>
 #import "TMInflector-Base.h"
 
