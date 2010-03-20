@@ -1,4 +1,4 @@
-#import "NSApplication_SUAdditions.h"
+#import "NSApplication+SUAdditions.h"
 
 @implementation NSApplication (SUAdditions)
 

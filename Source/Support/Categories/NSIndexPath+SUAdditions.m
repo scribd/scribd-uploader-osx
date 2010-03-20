@@ -1,4 +1,4 @@
-#import "NSIndexPath_SUAdditions.h"
+#import "NSIndexPath+SUAdditions.h"
 
 @implementation NSIndexPath (SUAdditions)
 

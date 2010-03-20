@@ -1,4 +1,4 @@
-#import "NSDictionary_SUAdditions.h"
+#import "NSDictionary+SUAdditions.h"
 
 @implementation NSDictionary (SUAdditions)
 

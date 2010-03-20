@@ -1,4 +1,4 @@
-#import "NSArray_SUAdditions.h"
+#import "NSArray+SUAdditions.h"
 
 @implementation NSArray (SUAdditions)
 

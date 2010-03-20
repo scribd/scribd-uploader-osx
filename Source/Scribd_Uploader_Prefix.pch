@@ -18,12 +18,12 @@
 #import "TMInflector-Base.h"
 
 #import "SUConstants.h"
-#import "NSString_SUAdditions.h"
-#import "NSArray_SUAdditions.h"
-#import "NSError_SUAdditions.h"
-#import "NSIndexPath_SUAdditions.h"
-#import "NSDictionary_SUAdditions.h"
-#import "NSApplication_SUAdditions.h"
+#import "NSString+SUAdditions.h"
+#import "NSArray+SUAdditions.h"
+#import "NSError+SUAdditions.h"
+#import "NSIndexPath+SUAdditions.h"
+#import "NSDictionary+SUAdditions.h"
+#import "NSApplication+SUAdditions.h"
 #import "SUDeferredOperationQueue.h"
 
 #import "SUDirectoryScanOperation.h"
@@ -31,7 +31,12 @@
 
 #import "SUAPIHelper.h"
 #import "SUCategory.h"
+#import "SUCategory+Finders.h"
 #import "SUDocument.h"
+#import "SUDocument+Finders.h"
+#import "SUDocument+Generators.h"
+#import "SUDocument+KVO.h"
+
 #import "SUFileNotFoundAlerter.h"
 #import "SUDatabaseHelper.h"
 #import "SUUploadHelper.h"

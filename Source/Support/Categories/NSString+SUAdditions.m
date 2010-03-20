@@ -1,4 +1,4 @@
-#import "NSString_SUAdditions.h"
+#import "NSString+SUAdditions.h"
 
 @implementation NSString (SUAdditions)
 

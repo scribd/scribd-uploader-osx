@@ -1,4 +1,4 @@
-#import "NSError_SUAdditions.h"
+#import "NSError+SUAdditions.h"
 
 @implementation NSError (SUAdditions)
 

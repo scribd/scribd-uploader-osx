@@ -30,6 +30,10 @@
 		0100FB1E11542F8D00640BA2 /* SUDocument+QuickLook.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100FB1D11542F8D00640BA2 /* SUDocument+QuickLook.m */; };
 		0100FB4C1154342000640BA2 /* SUFileListWindowDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100FB4B1154342000640BA2 /* SUFileListWindowDelegate.m */; };
 		0100FBE811543AC200640BA2 /* SUQuickLookDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100FBE711543AC200640BA2 /* SUQuickLookDataSource.m */; };
+		0100FCDB1154718500640BA2 /* SUCategory+Finders.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100FCDA1154718500640BA2 /* SUCategory+Finders.m */; };
+		0100FCDF1154720200640BA2 /* SUDocument+Finders.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100FCDE1154720200640BA2 /* SUDocument+Finders.m */; };
+		0100FCE41154727C00640BA2 /* SUDocument+Generators.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100FCE31154727C00640BA2 /* SUDocument+Generators.m */; };
+		0100FCE81154732400640BA2 /* SUDocument+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100FCE71154732400640BA2 /* SUDocument+KVO.m */; };
 		0103D6741022B88B00D8968C /* TMMoveToApplicationsFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0103D65A1022B88B00D8968C /* TMMoveToApplicationsFolder.m */; };
 		0106EE850F154403001B701B /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0106EE840F154403001B701B /* Icon.icns */; };
 		010CD8DE107D4C8B0039199D /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010CD8DC107D4C8B0039199D /* Growl.framework */; };
@@ -80,7 +84,7 @@
 		01A077E510261489004E309C /* SULoginSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0778110261489004E309C /* SULoginSheetDelegate.m */; };
 		01A077E610261489004E309C /* SUPublisherPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0778310261489004E309C /* SUPublisherPanelController.m */; };
 		01A077E810261489004E309C /* SUUploadDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0778710261489004E309C /* SUUploadDelegate.m */; };
-		01A077E910261489004E309C /* NSError_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0778A10261489004E309C /* NSError_SUAdditions.m */; };
+		01A077E910261489004E309C /* NSError+SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0778A10261489004E309C /* NSError+SUAdditions.m */; };
 		01A077EA10261489004E309C /* SUConversionStatusTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0778C10261489004E309C /* SUConversionStatusTracker.m */; };
 		01A077EB10261489004E309C /* SUDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0778E10261489004E309C /* SUDatabaseHelper.m */; };
 		01A077EC10261489004E309C /* SUDirectoryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0779010261489004E309C /* SUDirectoryScanner.m */; };
@@ -108,11 +112,11 @@
 		01A0780210261489004E309C /* SUSingleSelectionOnlyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077BF10261489004E309C /* SUSingleSelectionOnlyValueTransformer.m */; };
 		01A0780310261489004E309C /* SUToggleValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077C110261489004E309C /* SUToggleValueTransformer.m */; };
 		01A0780410261489004E309C /* SUUnarchiveErrorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077C310261489004E309C /* SUUnarchiveErrorValueTransformer.m */; };
-		01A0780510261489004E309C /* NSApplication_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077C810261489004E309C /* NSApplication_SUAdditions.m */; };
-		01A0780610261489004E309C /* NSArray_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077CA10261489004E309C /* NSArray_SUAdditions.m */; };
-		01A0780710261489004E309C /* NSDictionary_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077CC10261489004E309C /* NSDictionary_SUAdditions.m */; };
-		01A0780810261489004E309C /* NSIndexPath_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077CE10261489004E309C /* NSIndexPath_SUAdditions.m */; };
-		01A0780910261489004E309C /* NSString_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077D010261489004E309C /* NSString_SUAdditions.m */; };
+		01A0780510261489004E309C /* NSApplication+SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077C810261489004E309C /* NSApplication+SUAdditions.m */; };
+		01A0780610261489004E309C /* NSArray+SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077CA10261489004E309C /* NSArray+SUAdditions.m */; };
+		01A0780710261489004E309C /* NSDictionary+SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077CC10261489004E309C /* NSDictionary+SUAdditions.m */; };
+		01A0780810261489004E309C /* NSIndexPath+SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077CE10261489004E309C /* NSIndexPath+SUAdditions.m */; };
+		01A0780910261489004E309C /* NSString+SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077D010261489004E309C /* NSString+SUAdditions.m */; };
 		01A0780A10261489004E309C /* SUAPIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077D310261489004E309C /* SUAPIHelper.m */; };
 		01A0780B10261489004E309C /* SUScribdAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077D510261489004E309C /* SUScribdAPI.m */; };
 		01A0780C10261489004E309C /* SUDeferredOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077D810261489004E309C /* SUDeferredOperationQueue.m */; };
@@ -345,6 +349,14 @@
 		0100FB4B1154342000640BA2 /* SUFileListWindowDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileListWindowDelegate.m; sourceTree = "<group>"; };
 		0100FBE611543AC200640BA2 /* SUQuickLookDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUQuickLookDataSource.h; sourceTree = "<group>"; };
 		0100FBE711543AC200640BA2 /* SUQuickLookDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUQuickLookDataSource.m; sourceTree = "<group>"; };
+		0100FCD91154718500640BA2 /* SUCategory+Finders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUCategory+Finders.h"; sourceTree = "<group>"; };
+		0100FCDA1154718500640BA2 /* SUCategory+Finders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SUCategory+Finders.m"; sourceTree = "<group>"; };
+		0100FCDD1154720200640BA2 /* SUDocument+Finders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUDocument+Finders.h"; sourceTree = "<group>"; };
+		0100FCDE1154720200640BA2 /* SUDocument+Finders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SUDocument+Finders.m"; sourceTree = "<group>"; };
+		0100FCE21154727C00640BA2 /* SUDocument+Generators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUDocument+Generators.h"; sourceTree = "<group>"; };
+		0100FCE31154727C00640BA2 /* SUDocument+Generators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SUDocument+Generators.m"; sourceTree = "<group>"; };
+		0100FCE61154732400640BA2 /* SUDocument+KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUDocument+KVO.h"; sourceTree = "<group>"; };
+		0100FCE71154732400640BA2 /* SUDocument+KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SUDocument+KVO.m"; sourceTree = "<group>"; };
 		0103D6591022B88B00D8968C /* TMMoveToApplicationsFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMMoveToApplicationsFolder.h; sourceTree = "<group>"; };
 		0103D65A1022B88B00D8968C /* TMMoveToApplicationsFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMMoveToApplicationsFolder.m; sourceTree = "<group>"; };
 		0106EE840F154403001B701B /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
@@ -414,8 +426,8 @@
 		01A0778310261489004E309C /* SUPublisherPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUPublisherPanelController.m; sourceTree = "<group>"; };
 		01A0778610261489004E309C /* SUUploadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUploadDelegate.h; sourceTree = "<group>"; };
 		01A0778710261489004E309C /* SUUploadDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUploadDelegate.m; sourceTree = "<group>"; };
-		01A0778910261489004E309C /* NSError_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSError_SUAdditions.h; sourceTree = "<group>"; };
-		01A0778A10261489004E309C /* NSError_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSError_SUAdditions.m; sourceTree = "<group>"; };
+		01A0778910261489004E309C /* NSError+SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+SUAdditions.h"; sourceTree = "<group>"; };
+		01A0778A10261489004E309C /* NSError+SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+SUAdditions.m"; sourceTree = "<group>"; };
 		01A0778B10261489004E309C /* SUConversionStatusTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUConversionStatusTracker.h; sourceTree = "<group>"; };
 		01A0778C10261489004E309C /* SUConversionStatusTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUConversionStatusTracker.m; sourceTree = "<group>"; };
 		01A0778D10261489004E309C /* SUDatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDatabaseHelper.h; sourceTree = "<group>"; };
@@ -471,16 +483,16 @@
 		01A077C210261489004E309C /* SUUnarchiveErrorValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUnarchiveErrorValueTransformer.h; sourceTree = "<group>"; };
 		01A077C310261489004E309C /* SUUnarchiveErrorValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUnarchiveErrorValueTransformer.m; sourceTree = "<group>"; };
 		01A077C410261489004E309C /* Scribd_Uploader_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scribd_Uploader_Prefix.pch; sourceTree = "<group>"; };
-		01A077C710261489004E309C /* NSApplication_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApplication_SUAdditions.h; sourceTree = "<group>"; };
-		01A077C810261489004E309C /* NSApplication_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApplication_SUAdditions.m; sourceTree = "<group>"; };
-		01A077C910261489004E309C /* NSArray_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArray_SUAdditions.h; sourceTree = "<group>"; };
-		01A077CA10261489004E309C /* NSArray_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArray_SUAdditions.m; sourceTree = "<group>"; };
-		01A077CB10261489004E309C /* NSDictionary_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_SUAdditions.h; sourceTree = "<group>"; };
-		01A077CC10261489004E309C /* NSDictionary_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_SUAdditions.m; sourceTree = "<group>"; };
-		01A077CD10261489004E309C /* NSIndexPath_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSIndexPath_SUAdditions.h; sourceTree = "<group>"; };
-		01A077CE10261489004E309C /* NSIndexPath_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSIndexPath_SUAdditions.m; sourceTree = "<group>"; };
-		01A077CF10261489004E309C /* NSString_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_SUAdditions.h; sourceTree = "<group>"; };
-		01A077D010261489004E309C /* NSString_SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_SUAdditions.m; sourceTree = "<group>"; };
+		01A077C710261489004E309C /* NSApplication+SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+SUAdditions.h"; sourceTree = "<group>"; };
+		01A077C810261489004E309C /* NSApplication+SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+SUAdditions.m"; sourceTree = "<group>"; };
+		01A077C910261489004E309C /* NSArray+SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SUAdditions.h"; sourceTree = "<group>"; };
+		01A077CA10261489004E309C /* NSArray+SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SUAdditions.m"; sourceTree = "<group>"; };
+		01A077CB10261489004E309C /* NSDictionary+SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SUAdditions.h"; sourceTree = "<group>"; };
+		01A077CC10261489004E309C /* NSDictionary+SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SUAdditions.m"; sourceTree = "<group>"; };
+		01A077CD10261489004E309C /* NSIndexPath+SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+SUAdditions.h"; sourceTree = "<group>"; };
+		01A077CE10261489004E309C /* NSIndexPath+SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+SUAdditions.m"; sourceTree = "<group>"; };
+		01A077CF10261489004E309C /* NSString+SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SUAdditions.h"; sourceTree = "<group>"; };
+		01A077D010261489004E309C /* NSString+SUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SUAdditions.m"; sourceTree = "<group>"; };
 		01A077D210261489004E309C /* SUAPIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUAPIHelper.h; sourceTree = "<group>"; };
 		01A077D310261489004E309C /* SUAPIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUAPIHelper.m; sourceTree = "<group>"; };
 		01A077D410261489004E309C /* SUScribdAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUScribdAPI.h; sourceTree = "<group>"; };
@@ -1163,8 +1175,8 @@
 		01A0778810261489004E309C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				01A0778910261489004E309C /* NSError_SUAdditions.h */,
-				01A0778A10261489004E309C /* NSError_SUAdditions.m */,
+				01A0778910261489004E309C /* NSError+SUAdditions.h */,
+				01A0778A10261489004E309C /* NSError+SUAdditions.m */,
 				01A0778B10261489004E309C /* SUConversionStatusTracker.h */,
 				01A0778C10261489004E309C /* SUConversionStatusTracker.m */,
 				01A0778D10261489004E309C /* SUDatabaseHelper.h */,
@@ -1186,8 +1198,16 @@
 			children = (
 				01A0779E10261489004E309C /* SUCategory.h */,
 				01A0779F10261489004E309C /* SUCategory.m */,
+				0100FCD91154718500640BA2 /* SUCategory+Finders.h */,
+				0100FCDA1154718500640BA2 /* SUCategory+Finders.m */,
 				01A077A010261489004E309C /* SUDocument.h */,
 				01A077A110261489004E309C /* SUDocument.m */,
+				0100FCDD1154720200640BA2 /* SUDocument+Finders.h */,
+				0100FCDE1154720200640BA2 /* SUDocument+Finders.m */,
+				0100FCE21154727C00640BA2 /* SUDocument+Generators.h */,
+				0100FCE31154727C00640BA2 /* SUDocument+Generators.m */,
+				0100FCE61154732400640BA2 /* SUDocument+KVO.h */,
+				0100FCE71154732400640BA2 /* SUDocument+KVO.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1254,16 +1274,16 @@
 		01A077C610261489004E309C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				01A077C710261489004E309C /* NSApplication_SUAdditions.h */,
-				01A077C810261489004E309C /* NSApplication_SUAdditions.m */,
-				01A077C910261489004E309C /* NSArray_SUAdditions.h */,
-				01A077CA10261489004E309C /* NSArray_SUAdditions.m */,
-				01A077CB10261489004E309C /* NSDictionary_SUAdditions.h */,
-				01A077CC10261489004E309C /* NSDictionary_SUAdditions.m */,
-				01A077CD10261489004E309C /* NSIndexPath_SUAdditions.h */,
-				01A077CE10261489004E309C /* NSIndexPath_SUAdditions.m */,
-				01A077CF10261489004E309C /* NSString_SUAdditions.h */,
-				01A077D010261489004E309C /* NSString_SUAdditions.m */,
+				01A077C710261489004E309C /* NSApplication+SUAdditions.h */,
+				01A077C810261489004E309C /* NSApplication+SUAdditions.m */,
+				01A077C910261489004E309C /* NSArray+SUAdditions.h */,
+				01A077CA10261489004E309C /* NSArray+SUAdditions.m */,
+				01A077CB10261489004E309C /* NSDictionary+SUAdditions.h */,
+				01A077CC10261489004E309C /* NSDictionary+SUAdditions.m */,
+				01A077CD10261489004E309C /* NSIndexPath+SUAdditions.h */,
+				01A077CE10261489004E309C /* NSIndexPath+SUAdditions.m */,
+				01A077CF10261489004E309C /* NSString+SUAdditions.h */,
+				01A077D010261489004E309C /* NSString+SUAdditions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1531,7 +1551,7 @@
 				01A077E510261489004E309C /* SULoginSheetDelegate.m in Sources */,
 				01A077E610261489004E309C /* SUPublisherPanelController.m in Sources */,
 				01A077E810261489004E309C /* SUUploadDelegate.m in Sources */,
-				01A077E910261489004E309C /* NSError_SUAdditions.m in Sources */,
+				01A077E910261489004E309C /* NSError+SUAdditions.m in Sources */,
 				01A077EA10261489004E309C /* SUConversionStatusTracker.m in Sources */,
 				01A077EB10261489004E309C /* SUDatabaseHelper.m in Sources */,
 				01A077EC10261489004E309C /* SUDirectoryScanner.m in Sources */,
@@ -1559,11 +1579,11 @@
 				01A0780210261489004E309C /* SUSingleSelectionOnlyValueTransformer.m in Sources */,
 				01A0780310261489004E309C /* SUToggleValueTransformer.m in Sources */,
 				01A0780410261489004E309C /* SUUnarchiveErrorValueTransformer.m in Sources */,
-				01A0780510261489004E309C /* NSApplication_SUAdditions.m in Sources */,
-				01A0780610261489004E309C /* NSArray_SUAdditions.m in Sources */,
-				01A0780710261489004E309C /* NSDictionary_SUAdditions.m in Sources */,
-				01A0780810261489004E309C /* NSIndexPath_SUAdditions.m in Sources */,
-				01A0780910261489004E309C /* NSString_SUAdditions.m in Sources */,
+				01A0780510261489004E309C /* NSApplication+SUAdditions.m in Sources */,
+				01A0780610261489004E309C /* NSArray+SUAdditions.m in Sources */,
+				01A0780710261489004E309C /* NSDictionary+SUAdditions.m in Sources */,
+				01A0780810261489004E309C /* NSIndexPath+SUAdditions.m in Sources */,
+				01A0780910261489004E309C /* NSString+SUAdditions.m in Sources */,
 				01A0780A10261489004E309C /* SUAPIHelper.m in Sources */,
 				01A0780B10261489004E309C /* SUScribdAPI.m in Sources */,
 				01A0780C10261489004E309C /* SUDeferredOperationQueue.m in Sources */,
@@ -1578,6 +1598,10 @@
 				0100FB1E11542F8D00640BA2 /* SUDocument+QuickLook.m in Sources */,
 				0100FB4C1154342000640BA2 /* SUFileListWindowDelegate.m in Sources */,
 				0100FBE811543AC200640BA2 /* SUQuickLookDataSource.m in Sources */,
+				0100FCDB1154718500640BA2 /* SUCategory+Finders.m in Sources */,
+				0100FCDF1154720200640BA2 /* SUDocument+Finders.m in Sources */,
+				0100FCE41154727C00640BA2 /* SUDocument+Generators.m in Sources */,
+				0100FCE81154732400640BA2 /* SUDocument+KVO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
