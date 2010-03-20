@@ -1,10 +1,10 @@
 /*!
  @class SUFileListViewDelegate
  @abstract This class receives and handles drag-and-drop events from the file
- list view.
+ list view, and acts as the Quick Look controller.
  */
 
-@interface SUFileListViewDelegate : NSObject <NSCollectionViewDelegate> {
+@interface SUFileListViewDelegate : NSObject {
 	@private
 		IBOutlet SUUploadHelper *uploader;
 		IBOutlet SUDatabaseHelper *db;

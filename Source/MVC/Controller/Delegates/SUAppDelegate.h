@@ -15,6 +15,7 @@
 		IBOutlet SUUploadHelper *uploader;
 		IBOutlet NSTreeController *categoriesController;
 		IBOutlet SUDirectoryScanner *directoryScanner;
+		IBOutlet NSMenuItem *quickLookMenuItem;
 }
 
 #pragma mark Actions
@@ -72,5 +73,13 @@
  */
 
 - (IBAction) displayPreferences:(id)sender;
+
+/*!
+ @method toggleQuickLookPanel:
+ @abstract Displays the Quick Look panel and toggles the menu item title.
+ @param sender The object that initiated the action.
+ */
+
+- (IBAction) toggleQuickLookPanel:(id)sender;
 
 @end

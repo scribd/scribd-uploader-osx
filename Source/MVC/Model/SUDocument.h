@@ -1,3 +1,5 @@
+#define SUPreviewIconSize 32.0
+
 /*!
  @class SUDocument
  @abstract Core Data object representing a document to be uploaded. Its entity
@@ -17,6 +19,7 @@
 		NSString *kind;
 		NSURL *URL;
 		NSNumber *size;
+		NSImage *icon;
 }
 
 #pragma mark First-order properties (file properties)

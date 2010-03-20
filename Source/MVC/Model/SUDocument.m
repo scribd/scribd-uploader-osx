@@ -1,7 +1,7 @@
 #import "SUDocument.h"
 
-static NSDictionary *kinds = NULL;
-static NSOperationQueue *titleCleaningQueue = NULL;
+static NSDictionary *kinds = NULL, *quickLookOptions = NULL;
+static NSOperationQueue *titleCleaningQueue = NULL, *downloadIconQueue = NULL;
 
 @interface SUDocument (Private)
 
@@ -12,6 +12,14 @@ static NSOperationQueue *titleCleaningQueue = NULL;
  */
 
 + (NSDictionary *) kinds;
+
+#pragma mark Setters
+
+/*
+ Private setter used for when the icon image is generated in another thread.
+ */
+
+- (void) setIcon:(NSImage *)icon;
 
 @end
 
@@ -81,6 +89,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 		kind = NULL;
 		URL = NULL;
 		size = NULL;
+		icon = NULL;
 	}
 	return self;
 }
@@ -110,6 +119,7 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 - (void) dealloc {
 	if (kind) [kind release];
 	if (URL) [URL release];
+	if (icon) [icon release];
 	[super dealloc];
 }
 
@@ -139,8 +149,34 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 }
 
 - (NSImage *) icon {
-	if ([self remoteFile]) return [[NSWorkspace sharedWorkspace] iconForFileType:[self.filename pathExtension]];
-	return [[NSWorkspace sharedWorkspace] iconForFile:self.fileSystemPath];
+	if (!icon) {
+		if ([self remoteFile]) icon = [[NSWorkspace sharedWorkspace] iconForFileType:[self.filename pathExtension]];
+		else icon = [[NSWorkspace sharedWorkspace] iconForFile:self.fileSystemPath];
+		[icon retain];
+		[icon setSize:NSMakeSize(SUPreviewIconSize, SUPreviewIconSize)];
+		
+		if (![self remoteFile]) {
+			if (!downloadIconQueue) {
+				downloadIconQueue = [[NSOperationQueue alloc] init];
+				[downloadIconQueue setMaxConcurrentOperationCount:2];
+				quickLookOptions = [[NSDictionary alloc] initWithObjectsAndKeys:
+									(id)kCFBooleanTrue, (id)kQLThumbnailOptionIconModeKey,
+									NULL];
+			}
+			
+			[downloadIconQueue addOperationWithBlock:^{
+				CGImageRef quickLookIcon = QLThumbnailImageCreate(NULL, (CFURLRef)self.URL, CGSizeMake(SUPreviewIconSize, SUPreviewIconSize), (CFDictionaryRef)quickLookOptions);
+				if (quickLookIcon) {
+					NSImage *betterIcon = [[NSImage alloc] initWithCGImage:quickLookIcon size:NSMakeSize(SUPreviewIconSize, SUPreviewIconSize)];
+					[self performSelectorOnMainThread:@selector(setIcon:) withObject:betterIcon waitUntilDone:NO];
+					[betterIcon release];
+					CFRelease(quickLookIcon);
+				}
+			}];			
+		}
+	}
+	
+	return icon;
 }
 
 - (NSNumber *) discoverability {
@@ -505,6 +541,14 @@ static NSOperationQueue *titleCleaningQueue = NULL;
 + (NSDictionary *) kinds {
 	if (!kinds) kinds = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FileTypes" ofType:@"plist"]];
 	return kinds;
+}
+
+#pragma mark Setters
+
+- (void) setIcon:(NSImage *)newIcon {
+	NSImage *oldIcon = self.icon;
+	icon = [newIcon retain];
+	[oldIcon release];
 }
 
 @end

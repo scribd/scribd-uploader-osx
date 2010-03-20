@@ -186,28 +186,6 @@
 #pragma mark Delegate responders
 
 /*
- Returns the NSUndoManager for the application. In this case, the manager
- returned is that of the managed object context for the application.
- */
-
-- (NSUndoManager *) windowWillReturnUndoManager:(NSWindow *)window {
-	return [db.managedObjectContext undoManager];
-}
-
-/*
- Disables the Upload button if there are no files to upload or if an upload is
- in progress.
- */
-
-- (BOOL) validateToolbarItem:(NSToolbarItem *)item {
-	if ([item action] == @selector(uploadAll:)) {
-		NSError *error = NULL;
-		return (![uploader isUploading] && [SUDocument numberOfUploadableInManagedObjectContext:db.managedObjectContext error:&error] > 0);
-	}
-	else return YES;
-}
-
-/*
  Implementation of the applicationShouldTerminate: method, used here to
  handle the saving of changes in the application managed object context
  before the application terminates.
@@ -300,6 +278,17 @@
 		if (returnCode == NSOKButton) [db addFiles:[openPanel filenames]];
 	};
 	[openPanel beginSheetModalForWindow:window completionHandler:handler];
+}
+
+- (IBAction) toggleQuickLookPanel:(id)sender {
+	if ([QLPreviewPanel sharedPreviewPanelExists] && [[QLPreviewPanel sharedPreviewPanel] isVisible]) {
+		[[QLPreviewPanel sharedPreviewPanel] orderOut:sender];
+		[quickLookMenuItem setTitle:NSLocalizedString(@"Open Quick Look Panel", NULL)];
+	}
+	else {
+		[[QLPreviewPanel sharedPreviewPanel] makeKeyAndOrderFront:sender];
+		[quickLookMenuItem setTitle:NSLocalizedString(@"Close Quick Look Panel", NULL)];
+	}
 }
 
 @end

@@ -25,6 +25,11 @@
 		0100F95411540A7E00640BA2 /* ASIS3ObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100F8CF11540A5E00640BA2 /* ASIS3ObjectRequest.m */; };
 		0100F95611540A7E00640BA2 /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100F8D111540A5E00640BA2 /* ASIS3Request.m */; };
 		0100F95811540A7E00640BA2 /* ASIS3ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100F8D311540A5E00640BA2 /* ASIS3ServiceRequest.m */; };
+		0100F9B21154141300640BA2 /* QuickLookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0100F9B11154141300640BA2 /* QuickLookUI.framework */; };
+		0100FA5411541EC300640BA2 /* SUQuickLookDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100FA5311541EC300640BA2 /* SUQuickLookDelegate.m */; };
+		0100FB1E11542F8D00640BA2 /* SUDocument+QuickLook.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100FB1D11542F8D00640BA2 /* SUDocument+QuickLook.m */; };
+		0100FB4C1154342000640BA2 /* SUFileListWindowDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100FB4B1154342000640BA2 /* SUFileListWindowDelegate.m */; };
+		0100FBE811543AC200640BA2 /* SUQuickLookDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100FBE711543AC200640BA2 /* SUQuickLookDataSource.m */; };
 		0103D6741022B88B00D8968C /* TMMoveToApplicationsFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0103D65A1022B88B00D8968C /* TMMoveToApplicationsFolder.m */; };
 		0106EE850F154403001B701B /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0106EE840F154403001B701B /* Icon.icns */; };
 		010CD8DE107D4C8B0039199D /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010CD8DC107D4C8B0039199D /* Growl.framework */; };
@@ -74,7 +79,6 @@
 		01A077E410261489004E309C /* SUInformationDrawerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0777F10261489004E309C /* SUInformationDrawerDelegate.m */; };
 		01A077E510261489004E309C /* SULoginSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0778110261489004E309C /* SULoginSheetDelegate.m */; };
 		01A077E610261489004E309C /* SUPublisherPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0778310261489004E309C /* SUPublisherPanelController.m */; };
-		01A077E710261489004E309C /* SUQuickLookDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0778510261489004E309C /* SUQuickLookDelegate.m */; };
 		01A077E810261489004E309C /* SUUploadDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0778710261489004E309C /* SUUploadDelegate.m */; };
 		01A077E910261489004E309C /* NSError_SUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0778A10261489004E309C /* NSError_SUAdditions.m */; };
 		01A077EA10261489004E309C /* SUConversionStatusTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0778C10261489004E309C /* SUConversionStatusTracker.m */; };
@@ -137,28 +141,28 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0100F90711540A5E00640BA2 /* iPhone.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1D6058910D05DD3D006BFB54 /* ASIHTTPRequest.app */;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
 			remoteInfo = iPhone;
 		};
 		0100F92511540A5E00640BA2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0100F90711540A5E00640BA2 /* iPhone.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = B55B60C70F765BB00064029C /* Tests.app */;
+			remoteGlobalIDString = B55B60C70F765BB00064029C;
 			remoteInfo = Tests;
 		};
 		0100F92E11540A5E00640BA2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0100F91611540A5E00640BA2 /* Mac.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8D1107320486CEB800E47090 /* Scribd Uploader.app */;
+			remoteGlobalIDString = 8D1107320486CEB800E47090;
 			remoteInfo = Mac;
 		};
 		0100F93011540A5E00640BA2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0100F91611540A5E00640BA2 /* Mac.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = B55B5EDF0F7658C70064029C /* Unit Tests (GHUnit).app */;
+			remoteGlobalIDString = B55B5EDF0F7658C70064029C;
 			remoteInfo = "Unit Tests (GHUnit)";
 		};
 /* End PBXContainerItemProxy section */
@@ -333,6 +337,15 @@
 		0100F91911540A5E00640BA2 /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		0100F91A11540A5E00640BA2 /* set_version_number.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = set_version_number.rb; sourceTree = "<group>"; };
 		0100F91B11540A5E00640BA2 /* strict.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = strict.xcconfig; sourceTree = "<group>"; };
+		0100F9B11154141300640BA2 /* QuickLookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookUI.framework; path = /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuickLookUI.framework; sourceTree = "<absolute>"; };
+		0100FA5211541EC300640BA2 /* SUQuickLookDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUQuickLookDelegate.h; sourceTree = "<group>"; };
+		0100FA5311541EC300640BA2 /* SUQuickLookDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUQuickLookDelegate.m; sourceTree = "<group>"; };
+		0100FB1C11542F8D00640BA2 /* SUDocument+QuickLook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUDocument+QuickLook.h"; sourceTree = "<group>"; };
+		0100FB1D11542F8D00640BA2 /* SUDocument+QuickLook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SUDocument+QuickLook.m"; sourceTree = "<group>"; };
+		0100FB4A1154342000640BA2 /* SUFileListWindowDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileListWindowDelegate.h; sourceTree = "<group>"; };
+		0100FB4B1154342000640BA2 /* SUFileListWindowDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileListWindowDelegate.m; sourceTree = "<group>"; };
+		0100FBE611543AC200640BA2 /* SUQuickLookDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUQuickLookDataSource.h; sourceTree = "<group>"; };
+		0100FBE711543AC200640BA2 /* SUQuickLookDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUQuickLookDataSource.m; sourceTree = "<group>"; };
 		0103D6591022B88B00D8968C /* TMMoveToApplicationsFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMMoveToApplicationsFolder.h; sourceTree = "<group>"; };
 		0103D65A1022B88B00D8968C /* TMMoveToApplicationsFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMMoveToApplicationsFolder.m; sourceTree = "<group>"; };
 		0106EE840F154403001B701B /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
@@ -400,8 +413,6 @@
 		01A0778110261489004E309C /* SULoginSheetDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SULoginSheetDelegate.m; sourceTree = "<group>"; };
 		01A0778210261489004E309C /* SUPublisherPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUPublisherPanelController.h; sourceTree = "<group>"; };
 		01A0778310261489004E309C /* SUPublisherPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUPublisherPanelController.m; sourceTree = "<group>"; };
-		01A0778410261489004E309C /* SUQuickLookDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUQuickLookDelegate.h; sourceTree = "<group>"; };
-		01A0778510261489004E309C /* SUQuickLookDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUQuickLookDelegate.m; sourceTree = "<group>"; };
 		01A0778610261489004E309C /* SUUploadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUUploadDelegate.h; sourceTree = "<group>"; };
 		01A0778710261489004E309C /* SUUploadDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUUploadDelegate.m; sourceTree = "<group>"; };
 		01A0778910261489004E309C /* NSError_SUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSError_SUAdditions.h; sourceTree = "<group>"; };
@@ -486,7 +497,6 @@
 		01A9664D0F315F4000A60A5C /* Add All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add All.png"; sourceTree = "<group>"; };
 		01AF5FFA0F1D27D300D51D07 /* DBPrefsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPrefsWindowController.h; sourceTree = "<group>"; };
 		01AF5FFB0F1D27D300D51D07 /* DBPrefsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPrefsWindowController.m; sourceTree = "<group>"; };
-		01AF5FFD0F1D27D300D51D07 /* QuickLook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickLook.h; sourceTree = "<group>"; };
 		01AF60230F1D2FE200D51D07 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
 		01BF11280F2AD45A007CED18 /* Go Clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Go Clicked.png"; sourceTree = "<group>"; };
 		01BF11290F2AD45A007CED18 /* Caution Clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Caution Clicked.png"; sourceTree = "<group>"; };
@@ -517,6 +527,7 @@
 				01C21F0B1034FB5F00A30E31 /* RegexKit.framework in Frameworks */,
 				010CD8DE107D4C8B0039199D /* Growl.framework in Frameworks */,
 				010CD8DF107D4C8B0039199D /* Sparkle.framework in Frameworks */,
+				0100F9B21154141300640BA2 /* QuickLookUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,6 +1000,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0100FA4E11541EAD00640BA2 /* Quick Look */ = {
+			isa = PBXGroup;
+			children = (
+				0100FB1C11542F8D00640BA2 /* SUDocument+QuickLook.h */,
+				0100FB1D11542F8D00640BA2 /* SUDocument+QuickLook.m */,
+				0100FA5211541EC300640BA2 /* SUQuickLookDelegate.h */,
+				0100FA5311541EC300640BA2 /* SUQuickLookDelegate.m */,
+				0100FBE611543AC200640BA2 /* SUQuickLookDataSource.h */,
+				0100FBE711543AC200640BA2 /* SUQuickLookDataSource.m */,
+			);
+			path = "Quick Look";
+			sourceTree = "<group>";
+		};
 		0103D62F1022B88B00D8968C /* TMMoveToApplicationsFolder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1101,6 +1125,7 @@
 		01A0777410261489004E309C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0100FA4E11541EAD00640BA2 /* Quick Look */,
 				01A0777510261489004E309C /* Delegates */,
 				01A0778810261489004E309C /* Helpers */,
 				01A0779710261489004E309C /* SUDocumentArrayController.h */,
@@ -1124,14 +1149,14 @@
 				01A0777B10261489004E309C /* SUAppDelegate.m */,
 				01A0777C10261489004E309C /* SUFileListViewDelegate.h */,
 				01A0777D10261489004E309C /* SUFileListViewDelegate.m */,
+				0100FB4A1154342000640BA2 /* SUFileListWindowDelegate.h */,
+				0100FB4B1154342000640BA2 /* SUFileListWindowDelegate.m */,
 				01A0777E10261489004E309C /* SUInformationDrawerDelegate.h */,
 				01A0777F10261489004E309C /* SUInformationDrawerDelegate.m */,
 				01A0778010261489004E309C /* SULoginSheetDelegate.h */,
 				01A0778110261489004E309C /* SULoginSheetDelegate.m */,
 				01A0778210261489004E309C /* SUPublisherPanelController.h */,
 				01A0778310261489004E309C /* SUPublisherPanelController.m */,
-				01A0778410261489004E309C /* SUQuickLookDelegate.h */,
-				01A0778510261489004E309C /* SUQuickLookDelegate.m */,
 				01A0778610261489004E309C /* SUUploadDelegate.h */,
 				01A0778710261489004E309C /* SUUploadDelegate.m */,
 			);
@@ -1276,7 +1301,6 @@
 				0100F85811540A5D00640BA2 /* ASIHTTPRequest */,
 				01AF5FF90F1D27D300D51D07 /* DBPrefsWindow */,
 				012384670F2AAE1F007D2B54 /* EMKeychain */,
-				01AF5FFC0F1D27D300D51D07 /* QuickLook */,
 				0134A796103BC4ED00E2F1C6 /* TMInflector */,
 				0103D62F1022B88B00D8968C /* TMMoveToApplicationsFolder */,
 			);
@@ -1292,17 +1316,10 @@
 			path = DBPrefsWindow;
 			sourceTree = "<group>";
 		};
-		01AF5FFC0F1D27D300D51D07 /* QuickLook */ = {
-			isa = PBXGroup;
-			children = (
-				01AF5FFD0F1D27D300D51D07 /* QuickLook.h */,
-			);
-			path = QuickLook;
-			sourceTree = "<group>";
-		};
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0100F9B11154141300640BA2 /* QuickLookUI.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				01377DFA0F60F07C00C9121E /* QuartzCore.framework */,
 				01C1B9F91022BC1000C4BDAE /* SystemConfiguration.framework */,
@@ -1518,7 +1535,6 @@
 				01A077E410261489004E309C /* SUInformationDrawerDelegate.m in Sources */,
 				01A077E510261489004E309C /* SULoginSheetDelegate.m in Sources */,
 				01A077E610261489004E309C /* SUPublisherPanelController.m in Sources */,
-				01A077E710261489004E309C /* SUQuickLookDelegate.m in Sources */,
 				01A077E810261489004E309C /* SUUploadDelegate.m in Sources */,
 				01A077E910261489004E309C /* NSError_SUAdditions.m in Sources */,
 				01A077EA10261489004E309C /* SUConversionStatusTracker.m in Sources */,
@@ -1564,6 +1580,10 @@
 				0134A7A3103BC4ED00E2F1C6 /* RKRegex+TMAdditions.m in Sources */,
 				0134A7A4103BC4ED00E2F1C6 /* TMInflector+Inflections.m in Sources */,
 				0134A7A5103BC4ED00E2F1C6 /* TMInflector.m in Sources */,
+				0100FA5411541EC300640BA2 /* SUQuickLookDelegate.m in Sources */,
+				0100FB1E11542F8D00640BA2 /* SUDocument+QuickLook.m in Sources */,
+				0100FB4C1154342000640BA2 /* SUFileListWindowDelegate.m in Sources */,
+				0100FBE811543AC200640BA2 /* SUQuickLookDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1685,6 +1705,7 @@
 					"\"$(SRCROOT)/Linked Frameworks\"",
 					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
 					"\"$(SRCROOT)/Vendor/ASIHTTPRequest/Frameworks\"",
+					"\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Quartz.framework/Versions/A/Frameworks\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
@@ -1708,6 +1729,7 @@
 					"\"$(SRCROOT)/Linked Frameworks\"",
 					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
 					"\"$(SRCROOT)/Vendor/ASIHTTPRequest/Frameworks\"",
+					"\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Quartz.framework/Versions/A/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -1733,6 +1755,7 @@
 					"\"$(SRCROOT)/Linked Frameworks\"",
 					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
 					"\"$(SRCROOT)/Vendor/ASIHTTPRequest/Frameworks\"",
+					"\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Quartz.framework/Versions/A/Frameworks\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;

@@ -3,13 +3,13 @@
 #ifdef __OBJC__
 #import <Cocoa/Cocoa.h>
 #import <QuartzCore/QuartzCore.h>
+#import <QuickLookUI/QuickLookUI.h>
 #endif
 
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "ASINetworkQueue.h"
 
-#import "QuickLook.h"
 #import "DBPrefsWindowController.h"
 #import <Sparkle/SUUpdater.h>
 #import <Growl/GrowlApplicationBridge.h>
@@ -57,8 +57,8 @@
 
 #import "SULoginSheetDelegate.h"
 #import "SUPreferencesWindowController.h"
-#import "SUQuickLookDelegate.h"
 
 #import "SUDocumentArrayController.h"
 #import "SUImagePreviewView.h"
+#import "SUAppDelegate.h"
 #import "SUCollectionView.h"
