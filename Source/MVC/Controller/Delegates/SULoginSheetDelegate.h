@@ -1,7 +1,9 @@
 /*!
- @class SULoginSheetDelegate
- @abstract Delegate class for the login/signup sheet that responds to actions
- and performs the animation when switching between tabs.
+ @brief Delegate class for the login/signup sheet.
+ @details This class responds to actions from the login/signup sheet, delegating
+ them to the appropriate handlers, validates user input from the fields of
+ the sheet, and configures value transformers used by the sheet.
+ @ingroup delegates
  */
 
 @interface SULoginSheetDelegate : NSObject {
@@ -13,47 +15,46 @@
 }
 
 #pragma mark Actions
+/** @name Actions */
+//@{
 
 /*!
- @method signup:
- @abstract Called when the Sign Up button is pressed. Creates a Scribd account
- and continues the upload process.
+ @brief Called when the Sign Up button is pressed. Creates a Scribd account and
+ continues the upload process.
  @param sender The object that sent the action.
- @discussion If this method is called by a view event, a sender is provided. The
- method then calls itself in a new thread with a NULL sender. The second call
- with the NULL argument will invoke the signup process.
+ @details If this method is called by a view event, a sender is provided. The
+ method then calls itself in a new thread with a @c NULL sender. The second call
+ with the @c NULL argument will invoke the signup process.
  */
 
 - (IBAction) signup:(id)sender;
 
 /*!
- @method login:
- @abstract Called when the Log In button is pressed. Logs into a Scribd account
- and continues the upload process.
+ @brief Called when the Log In button is pressed. Logs into a Scribd account and
+ continues the upload process.
  @param sender The object that sent the action.
- @discussion If this method is called by a view event, a sender is provided. The
- method then calls itself in a new thread with a NULL sender. The second call
- with the NULL argument will invoke the login process.
+ @details If this method is called by a view event, a sender is provided. The
+ method then calls itself in a new thread with a @c NULL sender. The second call
+ with the @c NULL argument will invoke the login process.
  */
 
 - (IBAction) login:(id)sender;
 
 /*!
- @method cancel:
- @abstract Called when the Cancel button is pressed. Dismisses the sheet and
- aborts the upload process.
- @param sender The object that sent the action.
+ @brief Called when the Cancel button is pressed. Dismisses the sheet and aborts
+ the upload process.
+ @param sender The object that sent the action (unused).
  */
 
 - (IBAction) cancel:(id)sender;
 
 /*!
- @method showHelp:
- @abstract Displays the Scribd Uploader Help window with contextual information
+ @brief Displays the Scribd Uploader Help window with contextual information
  depending on which tab is selected.
- @param sender The object that sent the action.
+ @param sender The object that sent the action (unused).
  */
 
 - (IBAction) showHelp:(id)sender;
 
+//@}
 @end

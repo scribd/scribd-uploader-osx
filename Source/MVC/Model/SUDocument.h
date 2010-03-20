@@ -1,17 +1,17 @@
 #define SUPreviewIconSize 32.0
 
 /*!
- @class SUDocument
- @abstract Core Data object representing a document to be uploaded. Its entity
- name is "Document". Document paths are URL's (either filesystem or remote) that
+ @brief Core Data object representing a document to be uploaded. Its entity name
+ is @c Document. Document paths are URLs (either filesystem or remote) that
  refer to a document.
- @discussion This class adds file- and URL-specific operations and derived
+ @details This class adds file- and URL-specific operations and derived
  properties to the basic Core Data entity type, as well as some derived
  properties from the path and the metadata.
  
- If the path is a filesystem URL (file://...), the file manager is used for many
- derived properties. If it is a remote URL (e.g., http://...), path splicing is
- used.
+ If the path is a filesystem URL (<tt>file://<i>...</i></tt>), the file manager
+ is used for many derived properties. If it is a remote URL
+ (<tt>http://<i>...</i></tt>), path splicing and network operations are used.
+ @ingroup model
  */
 
 @interface SUDocument : NSManagedObject {
@@ -22,124 +22,88 @@
 		NSImage *icon;
 }
 
-#pragma mark First-order properties (file properties)
+#pragma mark Defining properties
+/** @name Defining properties */
+//@{
 
 /*!
- @property path
- @abstract The URL string to the file being uploaded.
- @discussion This attribute is required and uniquely identifies a document. For
+ @brief The URL string to the file being uploaded.
+ @details This attribute is required and uniquely identifies a document. For
  files on the user's hard drive, it is a filesystem URL. For files over a
  network or on the Internet, it is a remote URL.
+ @see URL
+ @see fileSystemPath
  */
 
 @property (copy) NSString *path;
 
 /*!
- @property progress
- @abstract The fraction of the file which has been uploaded, as a value from 0.0
- to 1.0.
- @discussion This attribute is set to 0.0 by default.
- */
-
-@property (copy) NSNumber *progress;
-
-/*!
- @property success
- @abstract YES if the file has been uploaded without error, NO if an error
- occurred, and NULL if the file has not completed upload yet.
- @discussion This attribute is set to NO by default.
- */
-
-@property (copy) NSNumber *success;
-
-/*!
- @property error
- @abstract A serialized @link //apple_ref/occ/cl/NSError NSError @/link with the
- last error returned by the server upon upload.
- @discussion This attribute is optional.
- */
-
-@property (copy) NSData *error;
-
-/*!
- @property errorIsUnrecoverable
- @abstract YES if the error was bad enough that the document was not uploaded;
- NO if the document was uploaded but another problem occurred.
- @discussion This attribute is optional.
- */
-
-@property (copy) NSNumber *errorIsUnrecoverable;
-
-/*!
- @property scribdID
- @abstract The Scribd.com ID given to this document, once it has been
- successfully uploaded.
- @discussion This attribute is nil by default.
+ @brief The Scribd.com ID given to this document, once it has been successfully
+ uploaded.
+ @details This attribute is @c NULL by default.
  */
 
 @property (copy) NSNumber *scribdID;
 
+//@}
+
+#pragma mark User-configurable properties
+/** @name User-configurable properties */
+//@{
+
 /*!
- @property hidden
- @abstract If YES, the document will be uploaded as private. If no, the document
- will be publically viewable.
- @discussion This attribute is set to NO by default.
+ @brief If @c YES, the document will be uploaded as private. If @c NO, the
+ document will be publically viewable.
+ @details This attribute is set to @c NO by default.
  */
 
 @property (copy) NSNumber *hidden;
 
 /*!
- @property title
- @abstract The title to use for the Scribd document.
- @discussion This optional attribute is part of the document metadata.
+ @brief The title to use for the Scribd document.
+ @details This optional attribute is part of the document metadata.
  */
 
 @property (copy) NSString *title;
 
 /*!
- @property summary
- @abstract The description to use for the Scribd document.
- @discussion This optional attribute is part of the document metadata.
+ @brief The description to use for the Scribd document.
+ @details This optional attribute is part of the document metadata.
  */
 
 @property (copy) NSString *summary;
 
 /*!
- @property tags
- @abstract A comma-delimited list of tags to assign to the document.
- @discussion This optional attribute is part of the document metadata.
+ @brief A comma-delimited list of tags to assign to the document.
+ @details This optional attribute is part of the document metadata.
  */
 
 @property (copy) NSString *tags;
 
 /*!
- @property author
- @abstract The original author of this work.
- @discussion This optional attribute is part of the document publisher metadata.
+ @brief The original author of this work.
+ @details This optional attribute is part of the document publisher metadata.
  */
 
 @property (copy) NSString *author;
 
 /*!
- @property publisher
- @abstract The publisher of this edition of the work.
- @discussion This optional attribute is part of the document publisher metadata.
+ @brief The publisher of this edition of the work.
+ @details This optional attribute is part of the document publisher metadata.
  */
 
 @property (copy) NSString *publisher;
 
 /*!
- @property edition
- @abstract The edition name or number of this publication of the work.
- @discussion This optional attribute is part of the document publisher metadata.
+ @brief The edition name or number of this publication of the work.
+ @details This optional attribute is part of the document publisher metadata.
  */
 
 @property (copy) NSString *edition;
 
 /*!
- @property datePublished
- @abstract The date this edition of the work was first published.
- @discussion Only the day portion of this date will be sent to the Scribd.com
+ @brief The date this edition of the work was first published.
+ @details Only the day portion of this date will be sent to the Scribd.com
  server. The time portion will be stripped.
  
  This optional attribute is part of the document publisher metadata.
@@ -148,10 +112,9 @@
 @property (copy) NSDate *datePublished;
 
 /*!
- @property license
- @abstract The license under which this work is distributed.
- @discussion This is either a Creative Commons abbreviated license name (e.g.,
- "by-sa" for Attribution share alike), "pd" for public domain, or "c" for
+ @brief The license under which this work is distributed.
+ @details This is either a Creative Commons abbreviated license name (e.g.,
+ @c by-sa for Attribution share alike), @c pd for public domain, or @c c for
  traditional copyright.
  
  This attribute is part of the document publisher metadata.
@@ -159,79 +122,102 @@
 
 @property (copy) NSString *license;
 
-#pragma mark Properties (upload status)
+//@}
+
+#pragma mark Upload status
+/** @name Upload status */
+//@{
 
 /*!
- @property converting
- @abstract True if the document is being converted by Scribd.com. The conversion
- process begins once the document has finished uploading.
- @discussion This transient attribute is set to NO when the document has
- finished converting or before it has been uploaded.
+ @brief The total number of bytes uploaded so far, calculated from the
+ @link progress @endlink and the @link totalBytes @endlink.
+ @details The number will be an <tt>unsigned long long</tt> value. Returns
+ @c NULL if the value could not be calculated.
  */
 
-@property (copy) NSNumber *converting;
-
 /*!
- @property conversionComplete
- @abstract True if the document has been uploaded, and conversion has either
- completed or failed.
- */
-
-@property (copy) NSNumber *conversionComplete;
-
-/*!
- @property assigningProperties
- @abstract True if the document has been uploaded and the metadata is being sent
- to Scribd.com. This process occurs immediately after upload is complete.
- @discussion This transient attribute is set to NO when the document has its
- attributes set or before it has been uploaded.
- */
-
-@property (copy) NSNumber *assigningProperties;
-
-/*!
- @property startTime
- @abstract The time at which the upload began.
- @discussion This transient attribute is set to NULL if the upload has not yet
- begun. It must be set by an outside object. The SUDocument instance does not
+ @brief The time at which the upload began.
+ @details This transient attribute is set to @c NULL if the upload has not yet
+ begun. It must be set by an outside object. The @c SUDocument instance does not
  maintain this attribute.
  */
 
 @property (copy) NSDate *startTime;
 
-#pragma mark Relationships
+/*!
+ @brief The fraction of the file which has been uploaded, as a value from 0.0 to
+ 1.0.
+ @details This attribute is set to 0.0 by default.
+ */
+
+@property (copy) NSNumber *progress;
 
 /*!
- @property category
- @abstract The Category assigned to this document.
+ @brief The amount of data uploaded to Scribd thus far from this file, in bytes.
+ @details The number will be an <tt>unsigned long long</tt> value. For remote
+ files, returns @c NULL.
+ @see hasSize
+ */
+
+@property (readonly) NSNumber *bytesUploaded;
+
+/*!
+ @brief The size of the file in bytes. For local files, uses the file manager to
+ determine the size. For remote files, returns @c NULL.
+ @details The number will be an <tt>unsigned long long</tt> value. Returns
+ @c NULL if the size could not be calculated.
+ @see hasSize
+ */
+
+@property (readonly) NSNumber *totalBytes;
+
+/*!
+ @brief Returns an estimate of the number of seconds remaining until the file
+ is finished uploading. This value is calculated from @link progress @endlink
+ and @link startTime @endlink.
+ @details The number will be an <tt>unsigned long long</tt> value. Returns
+ @c NULL if the time could not be calculated.
+ */
+
+@property (readonly) NSNumber *estimatedSecondsRemaining;
+
+//@}
+
+#pragma mark Relationships
+/** @name Relationships */
+//@{
+
+/*!
+ @brief The @c Category assigned to this document.
  */
 
 @property (retain) SUCategory *category;
 
-#pragma mark Dynamic properties (file properties)
+//@}
+
+#pragma mark File properties
+/** @name File properties */
+//@{
 
 /*!
- @property URL
- @abstract The URL object for the path.
- @discussion This is a calculated property, and is not written to the persistent
+ @brief The URL object for the path.
+ @details This is a calculated property, and is not written to the persistent
  store.
  */
 
 @property (readonly) NSURL *URL;
 
 /*!
- @property fileSystemPath
- @abstract The path to the file as used by the file system.
- @discussion This is a calculated property, and is not written to the persistent
+ @brief The path to the file as used by the file system.
+ @details This is a calculated property, and is not written to the persistent
  store.
  */
 
 @property (readonly) NSString *fileSystemPath;
 
 /*!
- @property filename
- @abstract The name of the file, derived from the path.
- @discussion For local files, the file manager's default representation is used.
+ @brief The name of the file, derived from the path.
+ @details For local files, the file manager's default representation is used.
  For remote files, the filename portion of the path is used.
  
  This is a calculated property, and is not written to the persistent store.
@@ -240,10 +226,13 @@
 @property (readonly) NSString *filename;
 
 /*!
- @property icon
- @abstract The icon for the file, derived from the path.
- @discussion For local files, the file manager is used to retrieve the icon. For
- remote files, a default image for the file extension is used.
+ @brief The icon for the file, derived from the path.
+ @details For local files, the file manager is used to generate the icon. For
+ remote files, a default icon for the file's extension is used.
+ 
+ For local files only, the first time this property is accessed, a separate
+ thread is spawned that uses Quick Look to generate a preview icon. The property
+ is changed when the thread exits successfully.
  
  This is a calculated property, and is not written to the persistent store.
  */
@@ -251,9 +240,8 @@
 @property (readonly) NSImage *icon;
 
 /*!
- @property kind
- @abstract A description of the file's type, derived from the path.
- @discussion The FileTypes.plist file is used to retrieve a description of a
+ @brief A description of the file's type, derived from the path.
+ @details The @c FileTypes.plist file is used to retrieve a description of a
  path from its file extension.
  
  This is a calculated property, and is not written to the persistent store.
@@ -262,151 +250,189 @@
 @property (readonly) NSString *kind;
 
 /*!
- @property discoverability
- @abstract A numerical index of how easy it is for others to find this document
+ @brief A numerical index of how easy it is for others to find this document
  in normal searching.
- @discussion The discoverability is based on the length of the title and summary
- as well as the presence of other metadata.
+ @details The discoverability is based on the length of the title and summary as
+ well as the presence of other metadata.
  */
 
 @property (readonly) NSNumber *discoverability;
 
 /*!
- @property scribdURL
- @abstract Returns a URL at which the Scribd document can be viewed.
- @discussion The URL for the Scribd document, or NULL if the document hasn't
+ @brief Returns a URL at which the Scribd document can be viewed.
+ @details The URL for the Scribd document, or @c NULL if the document hasn't
  been uploaded yet.
  */
 
-#pragma mark Dynamic properties (URLs)
+//@}
+
+#pragma mark Scribd URLs
+/** @name Scribd URLs */
+//@{
+
+/*!
+ @brief Returns a URL at which the Scribd document can be viewed.
+ @details @c NULL if the document hasn't been uploaded yet.
+ */
 
 @property (readonly) NSURL *scribdURL;
 
 /*!
- @property editURL
- @abstract Returns a URL at which the Scribd document can be edited.
- @discussion The URL to bulk-edit the Scribd document, or NULL if the document
- hasn't been uploaded yet.
+ @brief Returns a URL at which the Scribd document can be edited.
+ @details @c NULL if the document hasn't been uploaded yet.
  */
 
 @property (readonly) NSURL *editURL;
 
-#pragma mark Dynamic properties (errors)
+//@}
+
+#pragma mark Errors
+/** @name Errors */
+//@{
 
 /*!
- @property errorLevel
- @abstract A string describing the error state of this document.
- @discussion "Success" if no error has occurred, "Caution" if the document was
- uploaded but an error occurred, "Error" if an error occurred preventing the
- document from being uploaded, or "Pending" if no upload has occurred yet.
+ @brief A serialized @c NSError with the last error returned by the server upon
+ upload.
+ @details This attribute is optional.
+ @see errorIsUnrecoverable
+ */
+
+@property (copy) NSData *error;
+
+/*!
+ @brief @c YES if the error was bad enough that the document was not uploaded;
+ @c NO if the document was uploaded but another problem occurred.
+ @details This attribute is optional.
+ @see error
+ */
+
+@property (copy) NSNumber *errorIsUnrecoverable;
+
+
+/*!
+ @brief A string describing the error state of this document.
+ @details @c Success if no error has occurred, @c Caution if the document was
+ uploaded but an error occurred, @c Error if an error occurred preventing the
+ document from being uploaded, or @c Pending if no upload has occurred yet.
  */
 
 @property (readonly) NSString *errorLevel;
 
-#pragma mark Dynamic properties (upload status)
+//@}
+
+#pragma mark States
+/** @name States */
+//@{
 
 /*!
- @property uploaded
- @abstract True if the file has been uploaded to Scribd.com; false if it hasn't
+ @brief Whether or not this document has not begun uploading.
+ */
+
+@property (readonly) BOOL pending;
+
+/*!
+ @brief @c YES if the file is currently being uploaded, or @c NO if it has
+ either finished or has not yet started.
+ */
+
+@property (readonly) BOOL uploading;
+
+/*!
+ @brief @c YES if the file has been uploaded to Scribd.com; @c NO if it hasn't
  yet been uploaded successfully.
  */
 
 @property (readonly) BOOL uploaded;
 
 /*!
- @property postProcessing
- @abstract Returns YES if the document has been uploaded and is undergoing
- post-upload processing (setting attributes and converting). Returns NO if this
- process is complete or if the document has not yet been uploaded.
+ @brief Returns @c YES if the document has been uploaded and is undergoing
+ post-upload processing (setting attributes and converting). Returns @c NO if
+ this process is complete or if the document has not yet been uploaded.
+ @see converting
+ @see assigningProperties
  */
 
 @property (readonly) BOOL postProcessing;
 
 /*!
- @property bytesUploaded
- @abstract The total number of bytes uploaded so far, calculated from the
- @link progress progress @/link and the @link totalBytes totalBytes @/link.
- @discussion The number will be an unsigned long long value. Returns NULL if the
- value could not be calculated.
+ @brief @c YES if the document is being converted by Scribd.com. The conversion
+ process begins once the document has finished uploading.
+ @details This transient attribute is set to @c NO when the document has
+ finished converting or before it has been uploaded.
  */
 
-@property (readonly) NSNumber *bytesUploaded;
+@property (copy) NSNumber *converting;
 
 /*!
- @property totalBytes
- @abstract The size of the file in bytes. For local files, uses the file manager
- to determine the size. For remote files, returns
- @link //apple_ref/occ/cl/NSNull NSNull @/link.
- @discussion The number will be an unsigned long long value. Returns
- @link //apple_ref/occ/cl/NSNull NSNull @/link if the size could not be
- calculated.
+ @brief @c YES if the document has been uploaded, and conversion has either
+ completed or failed.
  */
 
-@property (readonly) NSNumber *totalBytes;
+@property (copy) NSNumber *conversionComplete;
 
 /*!
- @property estimatedSecondsRemaining
- @abstract Returns an estimate of the number of seconds remaining until the file
- is finished uploading. This value is calculated from @link progress progress
- @/link and @link uploadStartTime uploadStartTime @/link.
- @discussion The number will be an unsigned long long value. Returns NULL if the
- time could not be calculated.
+ @brief @c YES if the document has been uploaded and the metadata is being sent
+ to Scribd.com. This process occurs immediately after upload is complete.
+ @details This transient attribute is set to @c NO when the document has its
+ attributes set or before it has been uploaded.
  */
 
-@property (readonly) NSNumber *estimatedSecondsRemaining;
+@property (copy) NSNumber *assigningProperties;
 
 /*!
- @property uploading
- @abstract YES if the file is currently being uploaded, or NO if it has either
- finished or has not yet started.
+ @brief @c YES if the file has been uploaded without error, @c NO if an error
+ occurred, and @c NULL if the file has not completed upload yet.
+ @details Obviously @c YES and @c NO are represented as @c NSNumber instances,
+ and @c NULL is a pointer to address @c 0x0.
+ @details This attribute is set to @c NO by default.
  */
 
-@property (readonly) BOOL uploading;
+@property (copy) NSNumber *success;
 
-/*!
- @property pending
- @abstract Whether or not this document has not begun uploading.
- */
-
-@property (readonly) BOOL pending;
+//@}
 
 #pragma mark Configuration information
+/** @name Configuration information */
+//@{
 
 /*!
- @method scribdFileTypes
- @abstract Returns an array of strings, each containing a valid file extension
+ @brief Returns an array of strings, each containing a valid file extension
  accepted by Scribd.
  @result An array of acceptable file types.
  */
 
 + (NSArray *) scribdFileTypes;
 
-#pragma mark Pseudo-properties
+//@}
+
+#pragma mark Predicate methods
+/** @name Predicate methods */
+//@{
 
 /*!
- @method pointsToActualFile
- @abstract Tests if a file actually exists at the path stored by the document.
- @result YES if the path yields an actual file.
+ @brief Tests if a file actually exists at the path stored by the document.
+ @result @c YES if the path yields an actual file.
  */
 
 - (BOOL) pointsToActualFile;
 
 /*!
- @method remoteFile
- @abstract Tests if a file's URL is a remote URL.
- @result YES if the path refers to a remote resource; NO if the path refers to
- a local file on in the filesystem.
+ @brief Tests if a file's URL is a remote URL.
+ @result @c YES if the path refers to a remote resource; @c NO if the path
+ refers to a local file on in the filesystem.
+ @see URL
  */
 
 - (BOOL) remoteFile;
 
 /*!
- @method hasSize
- @abstract Returns YES if the file is local and has a nonzero file size.
- @result YES if the file has a size suitable for calculations, NO if
+ @brief Returns @c YES if the file is local and has a nonzero file size.
+ @result @c YES if the file has a size suitable for calculations, @c NO if
  calculations on the file size should not be performed.
+ @see totalBytes
  */
 
 - (BOOL) hasSize;
 
+//@}
 @end

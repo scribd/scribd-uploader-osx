@@ -1,7 +1,9 @@
 /*!
- @class SUAppDelegate
- @discussion This is the delegate object for the main file list window. Manages
- Quick Look features.
+ @brief The delegate for the main file list window.
+ @details This class manages some Undo and toolbar events, and configures the
+ Quick Look preview panel when the window gains and relinquishes control of the
+ Quick Look system.
+ @ingroup delegates
  */
 
 @interface SUFileListWindowDelegate : NSObject {

@@ -1,12 +1,12 @@
 @class SUDatabaseHelper;
 
 /*!
- @class SUDirectoryScanner
- @abstract Performs a scan on a set of directory paths, searching each for
+ @brief Performs a scan on a set of directory paths, searching each for
  uploadable documents and adding those documents to the managed object context.
  
  This class's properties are also used as bindings for the file scan progress
- sheet. It is also a receiver for actions of that sheet.
+ sheet. It is also a delegate for actions of that sheet.
+ @ingroup helpers
  */
 
 @interface SUDirectoryScanner : NSObject {
@@ -17,35 +17,37 @@
 		IBOutlet SUDatabaseHelper *db;
 }
 
-#pragma mark Properties
-
-/*!
- @property isScanning
- @abstract YES if a scan operation is currently in progress; NO otherwise.
- */
-
-@property (assign) BOOL isScanning;
-
 #pragma mark Setting up the directory scanner
+/** @name Setting up the directory scanner */
+//@{
 
 /*!
- @method addDirectoryPath:
- @abstract Queues a directory to be scanned.
+ @brief Queues a directory to be scanned.
  @param path The path to the directory.
- @discussion This directory will be scanned upon the next call to
- @link beginScanning beginScanning @/link.
+ @details This directory will be scanned upon the next call to
+ @link SUDirectoryScanner::beginScanning beginScanning @endlink.
  */
 
 - (void) addDirectoryPath:(NSString *)path;
 
+//@}
+
 #pragma mark Scanning
+/** @name Scanning */
+//@{
 
 /*!
- @method beginScanning
- @abstract Displays the scan progress sheet and begins scanning all queued
+ @brief @c YES if a scan operation is currently in progress; @c NO otherwise.
+ */
+
+@property (assign) BOOL isScanning;
+
+/*!
+ @brief Displays the scan progress sheet and begins scanning all queued
  directories for uploadable files. Adds qualifying files to the file list.
- @discussion This method plus @link addDirectoryPath: addDirectoryPath: @/link
- are non-blocking and thread-safe: Any calls made to addDirectoryPath: while a
+ @details This method plus
+ @link SUDirectoryScanner::addDirectoryPath: addDirectoryPath: @endlink are
+ non-blocking and thread-safe: Any calls made to @c addDirectoryPath: while a
  scan is in progress are placed in a separate queue to be used during the next
  scan.
  
@@ -55,11 +57,11 @@
 - (void) beginScanning;
 
 /*!
- @method cancelScanning:
- @abstract Cancels the current scan.
- @param sender The object that initiated the action.
+ @brief Cancels the current scan.
+ @param sender The object that initiated the action (unused).
  */
 
 - (IBAction) cancelScanning:(id)sender;
 
+//@}
 @end

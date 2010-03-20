@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.scribd.documentation.Uploader.docset</string>
+	<key>CFBundleName</key>
+	<string>Scribd Uploader</string>
+	<key>DocSetFeedName</key>
+	<string>Scribd Uploader Documentation</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>DocSetDescription</key>
+	<string>Source code documentation for the Scribd Uploader application, version 3.0.</string>
+	<key>DocSetPublisherIdentifier</key>
+	<string>com.scribd.documentation</string>
+	<key>DocSetPublisherName</key>
+	<string>Scribd</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright ©2008 Scribd Inc. All rights reserved.</string>
+</dict>
+</plist>

@@ -42,7 +42,7 @@
 }
 
 - (IBAction) toggleMenuItem:(id)sender {
-	[[NSUserDefaults standardUserDefaults] setBool:true forKey:SUDefaultKeyManualMetadataDrawer];
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:SUDefaultKeyManualMetadataDrawer];
 	if ([drawer state] == NSDrawerOpenState || [drawer state] == NSDrawerOpeningState) {
 		[drawer close:self];
 		[toggleDrawerItem setTitle:NSLocalizedString(@"Show Information Drawer", NULL)];

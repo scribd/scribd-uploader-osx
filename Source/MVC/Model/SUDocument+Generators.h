@@ -1,6 +1,6 @@
 /*!
- @category SUDocument(Generators)
- @abstract Methods for creating new @link SUDocument SUDocument @/link records.
+ @brief Methods for creating new SUDocument records.
+ @ingroup model
  */
 
 @interface SUDocument (Generators)
@@ -8,8 +8,7 @@
 #pragma mark Creating new records
 
 /*!
- @method createFromPath:inManagedObjectContext:
- @abstract Creates a new document record from a file system path to a local file.
+ @brief Creates a new document record from a file system path to a local file.
  @param path The path to the file.
  @param managedObjectContext The managed object context to insert the document
  into.
@@ -19,8 +18,7 @@
 + (SUDocument *) createFromPath:(NSString *)path inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 /*!
- @method createFromURL:inManagedObjectContext:
- @abstract Creates a new document record from a URL to either a local or remote
+ @brief Creates a new document record from a URL to either a local or remote
  file.
  @param URL The URL for the file.
  @param managedObjectContext The managed object context to insert the document
@@ -31,8 +29,7 @@
 + (SUDocument *) createFromURL:(NSURL *)URL inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 /*!
- @method createFromURLString:inManagedObjectContext:
- @abstract Creates a new document record from a URL to either a local or remote
+ @brief Creates a new document record from a URL to either a local or remote
  file.
  @param URLString The URL string for the file.
  @param managedObjectContext The managed object context to insert the document

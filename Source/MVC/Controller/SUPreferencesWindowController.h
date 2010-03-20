@@ -1,6 +1,6 @@
 /*!
- @class SUPreferencesWindowController
- @abstract Sets up and responds to events from the Preferences window.
+ @brief Sets up, and responds to events from, the Preferences window.
+ @ingroup controller
  */
 
 @interface SUPreferencesWindowController : DBPrefsWindowController {
@@ -12,30 +12,30 @@
 #pragma mark Properties
 
 /*!
- @property sparkleUpdater
- @abstract The Sparkle SUUpdater instance that will perform the update check.
- @discussion This property is automatically assigned upon awakening from the xib
+ @brief The Sparkle @c SUUpdater instance that will perform the update check.
+ @details This property is automatically assigned upon awakening from the xib
  file.
  */
 
 @property (retain) SUUpdater *sparkleUpdater;
 
 #pragma mark Actions
+/** @name Actions */
+//@{
 
 /*!
- @method checkForUpdates:
- @abstract Uses the Sparkle Updater to check for updates manually.
- @param sender The object that initiated the action.
+ @brief Uses the Sparkle Updater to check for updates manually.
+ @param sender The object that initiated the action (unused).
  */
 
 - (IBAction) checkForUpdates:(id)sender;
 
 /*!
- @method showHelp:
- @abstract Displays a help page relevant to the selected tab.
- @param sender The object that initiated the action.
+ @brief Displays a help page relevant to the selected tab.
+ @param sender The object that initiated the action (unused).
  */
 
 - (IBAction) showHelp:(id)sender;
 
+//@}
 @end

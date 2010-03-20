@@ -1,7 +1,7 @@
 /*!
- @class SUAboutWindowDelegate
- @abstract This class provides data to and responds to events from the About
+ @brief This class provides data to and responds to events from the About
  window.
+ @ingroup delegates
  */
 
 @interface SUAboutWindowController : NSObject {
@@ -9,24 +9,29 @@
 }
 
 #pragma mark Properties
+/** @name Program information */
+//@{
 
 /*!
- @property version
- @abstract Returns the current human-readable short version number of this
+ @brief Returns the current human-readable short version number of this
  application.
  */
 
 @property (readonly) NSString *version;
 
+//@}
+
 #pragma mark Actions
+/** @name Actions */
+//@{
 
 /*!
- @method showAboutHelp:
- @abstract Opens the help window with the About page open, where the user can
+ @brief Opens the help window with the About page open, where the user can
  then navigate to contact, license, and version history information.
- @param sender The object that called this method.
+ @param sender The object that called this method (unused).
  */
 
 - (IBAction) showAboutHelp:(id)sender;
 
+//@}
 @end

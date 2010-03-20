@@ -1,0 +1,235 @@
+html {
+	border: 0;
+	height: 100%;
+	margin: 0;
+	max-height: 100%;
+	padding: 0;
+}
+
+body {
+	font: normal normal normal 12px/normal 'Lucida Grande', Geneva, Helvetica, Arial, sans-serif;
+	background-color: white;
+	min-width: 550px;
+	border: 0px;
+	color: black;
+	height: 100%;
+	max-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font: normal normal bold 30px/normal 'Lucida Grande', Geneva, Helvetica, Arial, sans-serif;
+	margin-bottom: 25px;
+	margin-top: 1em;
+}
+
+h2 {
+	font-size: 24px;
+	border-bottom: 1px solid rgb(145, 150, 153);
+	font-size: 24px;
+	margin: 2.5em 0 0.83em 0;
+	padding-bottom: 2px;
+}
+
+h2 a {
+	color: black;
+}
+
+h3.version {
+	display: none;
+}
+
+ul {
+	list-style: square outside;
+	margin: 0 0 0 30px;
+	padding: 0 0 12px 6px;
+	-webkit-padding-start: 40px;
+}
+
+li {
+	margin-top: 7px;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(51, 102, 204);
+}
+
+a:visited {
+	color: rgb(51, 102, 204);
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	color: rgb(51, 102, 204);
+}
+
+a.el, code {
+	font: 9pt Menlo, Courier, mono;
+}
+
+header {
+	background-color: rgb(138, 152, 169);
+	border-bottom: 1px solid rgb(43, 51, 79);
+	height: 25px;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	width: 100%;
+	position: fixed;
+	z-index: 900;
+	min-width: 598px;
+}
+
+header h1 {
+	font-size: 11pt;
+	font-weight: normal;
+	margin: 0;
+	padding: 3px 0px 2px 0px;
+	text-align: center;
+	text-shadow: rgb(213, 213, 213) 0px 1px 0px;
+	white-space: nowrap;
+}
+
+header a {
+	text-decoration: none;
+	color: black;
+}
+
+header a:visited {
+	color: black;
+}
+
+header a:active {
+	color: black;
+}
+
+.navigation {
+	position: fixed;
+	left: 0px;
+	top: 26px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: 0;
+	border-right: 1px solid rgb(172, 172, 172);
+	width: 229px;
+	background-color: rgb(228, 235, 247);
+	bottom: 19px;
+}
+
+.navigation ul {
+	list-style: none;
+	margin: 0;
+	padding: 12px 0 18px 0;
+}
+
+.navigation li {
+	font-weight: bold;
+	font-size: 11px;
+	text-overflow: ellipsis;
+	padding: 0 0 7px 0;
+	padding: 0 0 0 20px;
+}
+
+.navigation li a {
+	color: black;
+}
+
+.contents {
+	position: absolute;
+	left: 230px;
+	min-width: 320px;
+	top: 26px;
+	z-index: 1;
+	overflow: auto;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-bottom: 40px;
+	right: 0;
+}
+
+.contents h1 small {
+	display: none;
+}
+
+.contents .groupHeader {
+	font-size: 17px;
+	font-weight: bold;
+	margin-top: 16px;
+}
+
+.memItemLeft, .mdescLeft, .mdescRight {
+	display: none;
+}
+
+.memItemRight {
+	height: 15px;
+	margin: 2px 0 0 0;
+	font-size: 11px;
+	padding-left: 36px;
+	padding-top: 3px;
+}
+
+.memItemRight a.el {
+	font-size: 11px;
+}
+
+.memproto {
+	font: 9pt Menlo, Courier, mono;
+}
+
+.memdoc dd {
+	margin-left: 0px;
+}
+
+.memdoc td {
+	display: block;
+	margin-left: 5px;
+}
+
+.memdoc td em {
+	margin-left: -10px;
+}
+
+.memitem {
+	margin-top: 40px;
+}
+
+hr {
+	display: none;
+}
+
+table h2 {
+	font-size: 20px;
+	font-weight: bold;
+	border-bottom: none;
+}
+
+footer {
+	min-width: 578px;
+	border-top: 1px solid rgb(43, 51, 79);
+	bottom: 0px;
+	font-size: 10px;
+	height: 15px;
+	left: 0px;
+	overflow: hidden;
+	padding: 3px 10px 0px 10px;
+	position: fixed;
+	right: 0px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	z-index: 901;
+	background-color: rgb(138, 152, 169);
+}
+
+div#MSearchBox {
+	padding-top: 25px;
+}
+
+div#MSearchBox img {
+	display: none;
+}

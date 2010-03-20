@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		0100FD6C115491CB00640BA2 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0100FD761154923300640BA2 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				0100FD6B115491CB00640BA2 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		0100F93511540A7E00640BA2 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100F8AE11540A5E00640BA2 /* ASIFormDataRequest.m */; };
 		0100F93711540A7E00640BA2 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100F8B011540A5E00640BA2 /* ASIHTTPRequest.m */; };
@@ -363,6 +377,7 @@
 		0106EE870F15441C001B701B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		010CD8DC107D4C8B0039199D /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = "Linked Frameworks/Growl.framework"; sourceTree = "<group>"; };
 		010CD8DD107D4C8B0039199D /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "Linked Frameworks/Sparkle.framework"; sourceTree = "<group>"; };
+		011FEAFA115F0B1A00CA7C34 /* Documentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Documentation.h; path = ../Documentation.h; sourceTree = "<group>"; };
 		0122B7CD0F5DED7800D2D0DD /* Scribd_Uploader_DataModel 220.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Scribd_Uploader_DataModel 220.xcdatamodel"; sourceTree = "<group>"; };
 		0122B7D70F5DEE2600D2D0DD /* pd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pd.png; sourceTree = "<group>"; };
 		0122B7D80F5DEE2600D2D0DD /* by.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = by.png; sourceTree = "<group>"; };
@@ -1267,6 +1282,7 @@
 				01A077D610261489004E309C /* Operations */,
 				01A077DD10261489004E309C /* SUConstants.h */,
 				01A077DE10261489004E309C /* SUConstants.m */,
+				011FEAFA115F0B1A00CA7C34 /* Documentation.h */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -1390,7 +1406,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* Scribd Uploader */ = {
+		8D1107260486CEB800E47090 /* Mac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26FC0A840875C7B200E6366F /* Build configuration list for PBXNativeTarget "Scribd Uploader" */;
 			buildPhases = (
@@ -1434,7 +1450,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* Scribd Uploader */,
+				8D1107260486CEB800E47090 /* Mac */,
+				0100FD6C115491CB00640BA2 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -1512,6 +1529,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0100FD6B115491CB00640BA2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -Rf Documentation/docset Documentation/html Documentation/xml\n/opt/local/bin/doxygen\ncp DocSet-Info.plist Documentation/html/Info.plist\ncd Documentation/html\nmake\nmake install\ncd -";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
@@ -1691,6 +1724,37 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0100FD6D115491CC00640BA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PATH = "/opt/local/bin:/usr/local/bin:$PATH";
+				PRODUCT_NAME = Documentation;
+			};
+			name = Debug;
+		};
+		0100FD6E115491CC00640BA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PATH = "/opt/local/bin:/usr/local/bin:$PATH";
+				PRODUCT_NAME = Documentation;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		0100FD6F115491CC00640BA2 /* Install */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PATH = "/opt/local/bin:/usr/local/bin:$PATH";
+				PRODUCT_NAME = Documentation;
+			};
+			name = Install;
+		};
 		01F476A00F1E7D2800DED8E2 /* Install */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1826,6 +1890,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0100FD761154923300640BA2 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0100FD6D115491CC00640BA2 /* Debug */,
+				0100FD6E115491CC00640BA2 /* Release */,
+				0100FD6F115491CC00640BA2 /* Install */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		26FC0A840875C7B200E6366F /* Build configuration list for PBXNativeTarget "Scribd Uploader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

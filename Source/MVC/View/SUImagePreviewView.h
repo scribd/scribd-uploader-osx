@@ -1,9 +1,9 @@
 /*!
- @class SUImagePreviewView
- @abstract A subclass of @link //apple_ref/occ/cl/NSImageView NSImageView @/link
- that renders a blank page and drop shadow behind its image.
- @discussion The background image is pulled from the Preview Background.png
- file in the application bundle.
+ @brief A subclass of @c NSImageView that renders a blank page and drop shadow
+ behind its image.
+ @details The background image is pulled from the <tt>Preview
+ Background.png</tt> file in the application bundle.
+ @ingroup view
  */
 
 @interface SUImagePreviewView : NSImageView {

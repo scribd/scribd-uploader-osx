@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Information about the Scribd Uploader source code</title>
+		<meta name="keywords" content="source code, developer, api, doxygen, headerdoc" />
+		<meta name="project" content="Scribd Uploader Help" />
+		<meta name="description" content="How to view Scribd Uploader's source code documentation." />
+		<link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+		<link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+	</head>
+
+	<body class="en">
+		<div id="Nav">
+			<a id="source" />
+			<div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Scribd Uploader Help">Home</a></div>
+			<!-- div id="NavRight"><a class="NavLinkRight" href="help:anchor='index' bookID=Scribd Uploader Help">Index</a></div -->
+		</div>
+		
+		<div class="AppleTopic">
+			<div class="Section">
+				<div id="Header">
+					<div id="Icon"><img id="iconimg" src="../gfx/icon32.png" alt="Scribd Uploader icon" height="32" width="32" /></div>
+					<div class="Name">Information about the Scribd Uploader source code</div>
+				</div>
+				<div class="AppleTopicBody">
+					<div class="Intro">
+						<p class="Para">The source code for Scribd Uploader is fully documented using <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a>. You can download and install Doxygen and use it to generate documentation for the Scribd Uploader code to assist you while developing. Doxygen generates documentation in many formats, but the configuration file (&ldquo;Doxyfile&rdquo;) provided with the source code enables HTML and DocSet output only.</p>
+						<p class="Para">The HTML output can be viewed in any web browser, and the DocSet output is automatically copied to Xcode&rsquo;s documentation folder when generated, making it available right in Xcode. A token file is also generated so that Research Assistant can be used to provide pop-up documentation when developing Scribd Uploader.</p>
+						<p class="Para">You can install the Mac OS X Doxygen application, install it via <a href="http://www.macports.org/">MacPorts</a>, or compile and install Doxygen from source.</p>
+						<p class="Para">If you already have Doxygen installed, you can skip this next section to learn how to generate the Scribd Uploader documentation.</p>
+					</div>
+					<div class="Task">
+						<div class="Name">To use the Doxygen Mac OS X front-end:</div>
+						<ol class="ListNumber">
+							<li>
+								<p class="Para">Visit <a href="http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc">http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc</a> in your web browser.</p>
+							</li>
+							<li>
+								<p class="Para">Download and install the application available from the disk image under &ldquo;A universal binary distribution for Mac OS X 10.5 (Leopard).&rdquo;</p>
+							</li>
+							<li>
+								<p class="Para">Open the Scribd Uploader.xcodeproj project in Xcode.</p>
+							</li>
+							<li>
+								<p class="Para">Edit the Run Script phase of the Documentation target.</p>
+							</li>
+							<li>
+								<p class="Para">Change the line <span class="CodeBody">/opt/local/bin/doxygen</span> to the path to your <span class="CodeBody">doxygen</span> tool.</p>
+								<p class="Para">This tool is located within the Doxygen.app application you just installed. If, for example, you installed it into the Applications folder, the tool&rsquo;s path would be <span class="CodeBody">/Applications/Doxygen.app/Contents/Resources/doxygen</span>.</p>
+							</li>
+						</ol>
+					</div>
+					<div class="Task">
+						<div class="Name">To install Doxygen from MacPorts:</div>
+						<ol class="ListNumber">
+							<li>
+								<p class="Para">Install MacPorts if you have not already done so.</p>
+								<p class="Para">Installation instructions can be found by visiting <a href="http://www.macports.org/install.php">http://www.macports.org/install.php</a> in your web browser.</p>
+							</li>
+							<li>
+								<p class="Para">Open Terminal and run the command <span class="CodeBody">sudo port install graphviz +no_x11 +no_pangocairo doxygen</span>.</p>
+							</li>
+						</ol>
+					</div>
+					<div class="Task">
+						<div class="Name">To compile Doxygen from source:</div>
+						<ol class="ListNumber">
+							<li>
+								<p class="Para">Visit <a href="http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc">http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc</a> in your web browser.</p>
+							</li>
+							<li>
+								<p class="Para">Download and install the archive under &ldquo;The source distribution.&rdquo;</p>
+							</li>
+							<li>
+								<p class="Para">Visit <a href="http://www.stack.nl/~dimitri/doxygen/install.html#install_src_unix">http://www.stack.nl/~dimitri/doxygen/install.html#install_src_unix</a> in your web browser and follow the instructions to complete the installation.</p>
+							</li>
+							<li>
+								<p class="Para">Open the Scribd Uploader.xcodeproj project in Xcode.</p>
+							</li>
+							<li>
+								<p class="Para">Edit the Run Script phase of the Documentation target.</p>
+							</li>
+							<li>
+								<p class="Para">Change the line <span class="CodeBody">/opt/local/bin/doxygen</span> to the path to your <span class="CodeBody">doxygen</span> tool.</p>
+								<p class="Para">If you used the default installation settings, the tool&rsquo;s path would be <span class="CodeBody">/usr/local/bin/doxygen</span>.</p>
+							</li>
+						</ol>
+					</div>
+					<div class="Outro">
+						<p class="Para">With Doxygen installed, you can now generate the HTML and DocSet documentation for Scribd Uploader.</p>
+					</div>
+					<div class="Task">
+						<div class="Name">To generate and view the source documentation for Scribd Uploader:</div>
+						<ol class="ListNumber">
+							<li>
+								<p class="Para">In Xcode, activate the Documentation target.</p>
+							</li>
+							<li>
+								<p class="Para">Choose Build under the Build menu.</p>
+								<p class="Para">Xcode will run the shell script that generates the documentation.</p>
+							</li>
+							<li>
+								<p class="Para">Once the build is complete, quit and re-launch Xcode.</p>
+								<p class="Para">You only have to do this the very first time you build the Documentation target.</p>
+							</li>
+							<li>
+								<p class="Para">Choose Developer Documentation under the Help menu.</p>
+							</li>
+							<li>
+								<p class="Para">Under the Home toolbar menu, you should now see a &ldquo;Scribd Uploader&rdquo; help section. Select it.</p>
+								<p class="Para">You must re-run the Documentation target if you change the documentation for any header file and want to see those changes reflected in the DocSet.</p>
+							</li>
+						</ol>
+					</div>
+					<div class="Outro">
+						<table type="Multicolumn" cols="2" border="0" cellspacing="2" cellpadding="2">
+							<tr class="TableHead">
+								<th>
+									<div class="TableHead">To learn about</div>
+								</th>
+								<th>
+									<div class="TableHead">Go to</div>
+								</th>
+							</tr>
+							<tr>
+								<td>
+									<p class="Para">How to contribute to the Scribd Uploader project</p>
+								</td>
+								<td>
+									<p class="Para"><a href="help:anchor='edit_code' bookID=Scribd Uploader Help">Add to or modify the code for Scribd Uploader</a></p>
+									<p class="Para"><a href="help:anchor='redistribution_license' bookID=Scribd Uploader Help">View the license for redistributing modified copies of Scribd Uploader</a></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p class="Para">How to deploy new versions of Scribd Uploader</p>
+								</td>
+								<td>
+									<p class="Para"><a href="help:anchor='deployment' bookID=Scribd Uploader Help">Deploying new versions of Scribd Uploader</a></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p class="Para">The Scribd Uploader project home page</p>
+								</td>
+								<td>
+									<p class="Para"><a href="http://github.com/RISCfuture/scribd-uploader">Scribd Uploader developer project site</a></p>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
