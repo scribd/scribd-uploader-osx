@@ -117,7 +117,6 @@
 		01A0780B10261489004E309C /* SUScribdAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077D510261489004E309C /* SUScribdAPI.m */; };
 		01A0780C10261489004E309C /* SUDeferredOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077D810261489004E309C /* SUDeferredOperationQueue.m */; };
 		01A0780D10261489004E309C /* SUDirectoryScanOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077DA10261489004E309C /* SUDirectoryScanOperation.m */; };
-		01A0780E10261489004E309C /* SUTitleCleanerOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077DC10261489004E309C /* SUTitleCleanerOperation.m */; };
 		01A0780F10261489004E309C /* SUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A077DE10261489004E309C /* SUConstants.m */; };
 		01A9664E0F315F4000A60A5C /* Add All.png in Resources */ = {isa = PBXBuildFile; fileRef = 01A9664D0F315F4000A60A5C /* Add All.png */; };
 		01ABF7D70F147AB400EE7142 /* ScribdAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01ABF7D60F147AB400EE7142 /* ScribdAPI.plist */; };
@@ -490,8 +489,6 @@
 		01A077D810261489004E309C /* SUDeferredOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDeferredOperationQueue.m; sourceTree = "<group>"; };
 		01A077D910261489004E309C /* SUDirectoryScanOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUDirectoryScanOperation.h; sourceTree = "<group>"; };
 		01A077DA10261489004E309C /* SUDirectoryScanOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUDirectoryScanOperation.m; sourceTree = "<group>"; };
-		01A077DB10261489004E309C /* SUTitleCleanerOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUTitleCleanerOperation.h; sourceTree = "<group>"; };
-		01A077DC10261489004E309C /* SUTitleCleanerOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUTitleCleanerOperation.m; sourceTree = "<group>"; };
 		01A077DD10261489004E309C /* SUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUConstants.h; sourceTree = "<group>"; };
 		01A077DE10261489004E309C /* SUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUConstants.m; sourceTree = "<group>"; };
 		01A9664D0F315F4000A60A5C /* Add All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add All.png"; sourceTree = "<group>"; };
@@ -1289,8 +1286,6 @@
 				01A077D810261489004E309C /* SUDeferredOperationQueue.m */,
 				01A077D910261489004E309C /* SUDirectoryScanOperation.h */,
 				01A077DA10261489004E309C /* SUDirectoryScanOperation.m */,
-				01A077DB10261489004E309C /* SUTitleCleanerOperation.h */,
-				01A077DC10261489004E309C /* SUTitleCleanerOperation.m */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -1573,7 +1568,6 @@
 				01A0780B10261489004E309C /* SUScribdAPI.m in Sources */,
 				01A0780C10261489004E309C /* SUDeferredOperationQueue.m in Sources */,
 				01A0780D10261489004E309C /* SUDirectoryScanOperation.m in Sources */,
-				01A0780E10261489004E309C /* SUTitleCleanerOperation.m in Sources */,
 				01A0780F10261489004E309C /* SUConstants.m in Sources */,
 				0134A7A1103BC4ED00E2F1C6 /* NSString+TMAdditions.m in Sources */,
 				0134A7A2103BC4ED00E2F1C6 /* NSString+TMInflections.m in Sources */,

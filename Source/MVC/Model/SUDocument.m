@@ -287,9 +287,13 @@ static NSOperationQueue *titleCleaningQueue = NULL, *downloadIconQueue = NULL;
 		kind = NULL;
 		
 		if ([change objectForKey:NSKeyValueChangeNewKey] && [[change objectForKey:NSKeyValueChangeNewKey] isNotEqualTo:[NSNull null]]) {
-			SUTitleCleanerOperation *op = [[SUTitleCleanerOperation alloc] initWithDocument:self];
-			[titleCleaningQueue addOperation:op];
-			[op release];
+			[titleCleaningQueue addOperationWithBlock:^{
+				if (self.path && (!self.title || [self.title isEmpty])) {
+					NSString *suggestedTitle = [[SUScribdAPI sharedAPI] titleForFilename:self.filename];
+					if (suggestedTitle)
+						[self performSelectorOnMainThread:@selector(setTitle:) withObject:suggestedTitle waitUntilDone:NO];
+				}
+			}];
 		}
 	}
 	else [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
