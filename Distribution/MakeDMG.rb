@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+#
+# Produces an Internet-enabled disk image to be uploaded for distribution.
 
 info_plist = File.read("Info.plist")
 version = info_plist.scan(/<key>CFBundleShortVersionString<\/key>\n\s*<string>(.+?)<\/string>/).first.first
