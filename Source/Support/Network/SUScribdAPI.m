@@ -309,7 +309,6 @@ static NSString *SUDefaultKeyMaximumSimultaneousUploads = @"SUMaximumSimultaneou
 - (NSURL *) APIURLWithMethod:(NSString *)method parameters:(NSDictionary *)parameters {
 	NSMutableDictionary *URLParameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 	[URLParameters setObject:[[SUAPIHelper helper].settings objectForKey:@"APIKey"] forKey:@"api_key"];
-	[URLParameters setObject:[[SUAPIHelper helper].settings objectForKey:@"APISecret"] forKey:@"api_sig"];
 	[URLParameters setObject:method forKey:@"method"];
 	
 	NSMutableArray *URLParameterSubstrings = [[NSMutableArray alloc] initWithCapacity:[URLParameters count]];

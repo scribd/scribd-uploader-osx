@@ -12,8 +12,6 @@
 	<string>http://www.scribd.com/categories.xml</string>
 	<key>APIKey</key>
 	<string>4n01s97v3qimxlixkuz8s</string>
-	<key>APISecret</key>
-	<string>sec-5qwk78grmqsj98veknx86mazrh</string>
 	<key>APIUploadMethod</key>
 	<string>docs.upload</string>
 	<key>APIChangeSettingsMethod</key>
