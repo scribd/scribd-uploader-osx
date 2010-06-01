@@ -23,7 +23,15 @@
 			[sender willChangeValueForKey:invalidateProperty];
 			[sender didChangeValueForKey:invalidateProperty];
 		}
-		NSString *description = [[NSString alloc] initWithFormat:[errorSettings objectForKey:@"Message"], (invalidateProperty ? [sender valueForKey:invalidateProperty] : NULL)];
+		
+		NSString *description;
+		@try {
+			description = [[NSString alloc] initWithFormat:[errorSettings objectForKey:@"Message"], (invalidateProperty ? [sender valueForKey:invalidateProperty] : NULL)];
+		}
+		@catch (NSException *e) {
+			NSLog(@"Received unexpected error code %@.%i", action, [self code]);
+			exit(1);
+		}
 		[newUserInfo setObject:description forKey:NSLocalizedDescriptionKey];
 		[description release];
 	}
